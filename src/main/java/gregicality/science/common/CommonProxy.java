@@ -1,7 +1,9 @@
 package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
+import gregicality.science.api.GAMaterials;
 import gregicality.science.api.fluid.GAMetaFluids;
+import gregicality.science.api.materials.GAOrePrefix;
 import gregicality.science.common.item.GAHeatingCoil;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.GAMetaItems;
@@ -9,6 +11,7 @@ import gregicality.science.api.pipelike.opticalfiber.ItemBlockOpticalFiber;
 import gregicality.science.loaders.recipes.*;
 import gregicality.science.loaders.recipes.categories.handlers.*;
 import gregicality.science.api.GALog;
+import gregtech.api.GregTechAPI;
 import gregtech.api.recipes.recipeproperties.BlastTemperatureProperty;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.blocks.VariantItemBlock;
@@ -113,6 +116,13 @@ public class CommonProxy {
         registry.register(createItemBlock(GAMetaBlocks.SENSOR_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GAMetaBlocks.EMITTER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GAMetaBlocks.NUCLEAR_CASING, VariantItemBlock::new));
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGH)
+    public static void registerMaterials(GregTechAPI.MaterialEvent event) {
+        GAMaterials.register();
+        GAOrePrefix.initIconSets();
+        GAOrePrefix.initPrefixes();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)

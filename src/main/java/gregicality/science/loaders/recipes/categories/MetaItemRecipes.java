@@ -33,15 +33,6 @@ public class MetaItemRecipes {
                 .outputs(PYROLYTIC_CARBON.getStackForm())
                 .buildAndRegister();
 
-        // Freedom Wrench
-        ASSEMBLER_RECIPES.recipeBuilder().duration(200).EUt(512)
-                .inputs(ELECTRIC_MOTOR_HV.getStackForm())
-                .input(circuit, Advanced, 2)
-                .input(stick, StainlessSteel)
-                .fluidInputs(SolderingAlloy.getFluid(L * 10))
-                .outputs(FREEDOM_WRENCH.getStackForm())
-                .buildAndRegister();
-
         // Cooling Containers
         ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(380).EUt(1150000)
                 .input(plate, Steel, 64)

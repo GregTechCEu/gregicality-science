@@ -1,13 +1,13 @@
 package gregicality.science.api.capabilities.impl;
 
-
 import gregicality.science.api.capabilities.IQubitContainer;
 import gregicality.science.api.machines.multi.qubit.QubitRecipeMapMultiblockController;
+import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.recipes.Recipe;
 import net.minecraft.nbt.NBTTagCompound;
 
-public class QubitConsumeRecipeLogic extends GAMultiblockRecipeLogic {
+public class QubitConsumeRecipeLogic extends MultiblockRecipeLogic {
 
 
     private int recipeQubit;

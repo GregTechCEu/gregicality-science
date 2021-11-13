@@ -1,6 +1,5 @@
 package gregicality.science.api.machines.multi.advance;
 
-import gregicality.science.api.capabilities.impl.GAMultiblockRecipeLogic;
 import gregicality.science.client.ClientHandler;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.fusion.GACryostatCasing;
@@ -10,10 +9,7 @@ import gregicality.science.common.item.fusion.GAVacuumCasing;
 import gregicality.science.loaders.recipes.GARecipeMaps;
 import gregtech.api.GTValues;
 import gregtech.api.capability.IEnergyContainer;
-import gregtech.api.capability.impl.EnergyContainerHandler;
-import gregtech.api.capability.impl.EnergyContainerList;
-import gregtech.api.capability.impl.FluidTankList;
-import gregtech.api.capability.impl.ItemHandlerList;
+import gregtech.api.capability.impl.*;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -278,7 +274,7 @@ public class MetaTileEntityAdvFusionReactor extends RecipeMapMultiblockControlle
         return ClientHandler.FUSION_REACTOR_OVERLAY;
     }
 
-    public class AdvFusionRecipeLogic extends GAMultiblockRecipeLogic {
+    public class AdvFusionRecipeLogic extends MultiblockRecipeLogic {
 
 
         public AdvFusionRecipeLogic(RecipeMapMultiblockController tileEntity) {
@@ -286,7 +282,6 @@ public class MetaTileEntityAdvFusionReactor extends RecipeMapMultiblockControlle
         }
 
         @Override
-
         public void updateWorkable() {
             super.updateWorkable();
             if (!isActive && heat > 0) {

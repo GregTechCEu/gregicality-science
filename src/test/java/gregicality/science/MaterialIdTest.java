@@ -5,7 +5,6 @@ import gregicality.science.api.fluid.GAMetaFluids;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.GAMetaTileEntities;
 import gregtech.api.GTValues;
-import gregtech.api.unification.material.MaterialRegistry;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTLog;
 import gregtech.common.MetaFluids;
@@ -31,9 +30,7 @@ public class MaterialIdTest {
         GTLog.init(LogManager.getLogger(GTValues.MODID)); // yes this was necessary
         Materials.register();
         GAEnums.onConstruction();
-        GAMaterials gaMaterials = new GAMaterials();
-        gaMaterials.onMaterialsInit();
-        MaterialRegistry.freeze();
+        GAMaterials.register();
         MetaFluids.init();
         GAMetaFluids.init();
 

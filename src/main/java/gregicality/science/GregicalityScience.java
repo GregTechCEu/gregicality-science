@@ -1,19 +1,20 @@
 package gregicality.science;
 
+import gregicality.science.api.GALog;
 import gregicality.science.api.capabilities.GregicalityCapabilities;
+import gregicality.science.api.covers.CoverBehaviors;
 import gregicality.science.common.CommonProxy;
 import gregicality.science.common.GAConfig;
-import gregicality.science.api.covers.CoverBehaviors;
-import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.integrations.theoneprobe.TheOneProbeCompatibility;
-import gregicality.science.api.GALog;
 import gregtech.api.GTValues;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.event.FMLConstructionEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import java.io.IOException;
 
@@ -42,7 +43,6 @@ public class GregicalityScience {
         GALog.init(event.getModLog());
         proxy.preLoad();
         GregicalityCapabilities.init();
-        MinecraftForge.EVENT_BUS.register(new GAEventHandler());
 
         GAMetaBlocks.init();
         GAMetaTileEntities.init();

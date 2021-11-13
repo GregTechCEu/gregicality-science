@@ -1,11 +1,11 @@
 package gregicality.science.api.machines.multi.nuclear;
 
-import gregicality.science.api.capabilities.impl.GAMultiblockRecipeLogic;
-import gregicality.science.api.capabilities.impl.GARecipeMapMultiblockController;
+import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.multiblock.BlockPattern;
 import gregtech.api.multiblock.FactoryBlockPattern;
 import gregtech.api.render.ICubeRenderer;
@@ -18,13 +18,13 @@ import net.minecraft.util.ResourceLocation;
 import static gregicality.science.loaders.recipes.GARecipeMaps.GAS_CENTRIFUGE_RECIPES;
 import static gregtech.api.render.Textures.CLEAN_STAINLESS_STEEL_CASING;
 
-public class MetaTileEntityGasCentrifuge extends GARecipeMapMultiblockController {
+public class MetaTileEntityGasCentrifuge extends RecipeMapMultiblockController {
 
     private static final MultiblockAbility<?>[] ALLOWED_ABILITIES = {MultiblockAbility.IMPORT_FLUIDS, MultiblockAbility.EXPORT_FLUIDS, MultiblockAbility.INPUT_ENERGY, MultiblockAbility.IMPORT_ITEMS, MultiblockAbility.MAINTENANCE_HATCH};
 
     public MetaTileEntityGasCentrifuge(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GAS_CENTRIFUGE_RECIPES);
-        this.recipeMapWorkable = new GAMultiblockRecipeLogic(this) {
+        this.recipeMapWorkable = new MultiblockRecipeLogic(this) {
             {
                 allowOverclocking = false;
             }

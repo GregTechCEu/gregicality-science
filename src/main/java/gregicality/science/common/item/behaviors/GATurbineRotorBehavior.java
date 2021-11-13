@@ -19,12 +19,12 @@ public class GATurbineRotorBehavior extends TurbineRotorBehavior {
     @Override
     public int getPartMaxDurability(ItemStack stack) {
         ToolProperty property = getPartMaterial(stack).getProperty(PropertyKey.TOOL);
-        return property.toolDurability * toolDurabilityModifier;
+        return property.getToolDurability() * toolDurabilityModifier;
     }
 
     @Override
     public double getRotorEfficiency(ItemStack stack) {
         Material material = getPartMaterial(stack);
-        return material == null ? 0.01 : material.getProperty(PropertyKey.TOOL).toolSpeed / rotorEfficiencyDivisor;
+        return material == null ? 0.01 : material.getProperty(PropertyKey.TOOL).getToolSpeed() / rotorEfficiencyDivisor;
     }
 }

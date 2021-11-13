@@ -1,14 +1,13 @@
 package gregicality.science.api.machines.multi;
 
-import gregicality.science.api.capabilities.impl.GAMultiblockRecipeLogic;
-import gregicality.science.api.capabilities.impl.GARecipeMapMultiblockController;
 import gregicality.science.common.item.components.PumpCasing;
-import gregicality.science.common.item.metal.MetalCasing1;
 import gregicality.science.loaders.recipes.GARecipeMaps;
+import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.multiblock.BlockPattern;
 import gregtech.api.multiblock.BlockWorldState;
 import gregtech.api.multiblock.FactoryBlockPattern;
@@ -30,13 +29,12 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import static gregicality.science.client.ClientHandler.HASTELLOY_N_CASING;
-import static gregicality.science.common.item.GAMetaBlocks.METAL_CASING_1;
 
-public class MetaTileEntityPlasmaCondenser extends GARecipeMapMultiblockController {
+public class MetaTileEntityPlasmaCondenser extends RecipeMapMultiblockController {
 
     public MetaTileEntityPlasmaCondenser(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GARecipeMaps.PLASMA_CONDENSER_RECIPES);
-        this.recipeMapWorkable = new GAMultiblockRecipeLogic(this) {
+        this.recipeMapWorkable = new MultiblockRecipeLogic(this) {
             @Override
             protected long getMaxVoltage() {
                 return maxVoltage;

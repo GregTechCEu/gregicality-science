@@ -16,12 +16,12 @@ import gregicality.science.api.machines.multi.qubit.*;
 import gregicality.science.api.machines.multi.simple.*;
 import gregicality.science.loaders.recipes.GARecipeMaps;
 import gregtech.api.GTValues;
-import gregtech.api.GregTechAPI;
 import gregtech.api.metatileentity.SimpleGeneratorMetaTileEntity;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
 import gregtech.api.render.Textures;
 import net.minecraft.util.ResourceLocation;
 
+import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
 import static gregtech.common.metatileentities.MetaTileEntities.registerSimpleMetaTileEntity;
 
 public class GAMetaTileEntities {
@@ -75,52 +75,52 @@ public class GAMetaTileEntities {
         registerSimpleMetaTileEntity(GREEN_HOUSE, 2030, "green_house", GARecipeMaps.GREEN_HOUSE_RECIPES, Textures.FERMENTER_OVERLAY, true, GAMetaTileEntities::location);
 
         // Simple Generators
-        NAQUADAH_REACTOR[4] = GregTechAPI.registerMetaTileEntity(2051, new SimpleGeneratorMetaTileEntity(location("naquadah_reactor.mk2"), GARecipeMaps.NAQUADAH_REACTOR_FUELS, ClientHandler.NAQADAH_OVERLAY, 5));
-        NAQUADAH_REACTOR[5] = GregTechAPI.registerMetaTileEntity(2052, new SimpleGeneratorMetaTileEntity(location("naquadah_reactor.mk3"), GARecipeMaps.NAQUADAH_REACTOR_FUELS, ClientHandler.NAQADAH_OVERLAY, 6));
-        NAQUADAH_REACTOR[6] = GregTechAPI.registerMetaTileEntity(2053, new SimpleGeneratorMetaTileEntity(location("naquadah_reactor.mk4"), GARecipeMaps.NAQUADAH_REACTOR_FUELS, ClientHandler.NAQADAH_OVERLAY, 7));
+        NAQUADAH_REACTOR[4] = registerMetaTileEntity(2051, new SimpleGeneratorMetaTileEntity(location("naquadah_reactor.mk2"), GARecipeMaps.NAQUADAH_REACTOR_FUELS, ClientHandler.NAQADAH_OVERLAY, 5));
+        NAQUADAH_REACTOR[5] = registerMetaTileEntity(2052, new SimpleGeneratorMetaTileEntity(location("naquadah_reactor.mk3"), GARecipeMaps.NAQUADAH_REACTOR_FUELS, ClientHandler.NAQADAH_OVERLAY, 6));
+        NAQUADAH_REACTOR[6] = registerMetaTileEntity(2053, new SimpleGeneratorMetaTileEntity(location("naquadah_reactor.mk4"), GARecipeMaps.NAQUADAH_REACTOR_FUELS, ClientHandler.NAQADAH_OVERLAY, 7));
 
-        ROCKET_GENERATOR[3] = GregTechAPI.registerMetaTileEntity(2065, new SimpleGeneratorMetaTileEntity(location("rocket_generator.mk1"), GARecipeMaps.ROCKET_FUEL_RECIPES, ClientHandler.ROCKET_OVERLAY, 4));
-        ROCKET_GENERATOR[4] = GregTechAPI.registerMetaTileEntity(2066, new SimpleGeneratorMetaTileEntity(location("rocket_generator.mk2"), GARecipeMaps.ROCKET_FUEL_RECIPES, ClientHandler.ROCKET_OVERLAY, 5));
-        ROCKET_GENERATOR[5] = GregTechAPI.registerMetaTileEntity(2067, new SimpleGeneratorMetaTileEntity(location("rocket_generator.mk3"), GARecipeMaps.ROCKET_FUEL_RECIPES, ClientHandler.ROCKET_OVERLAY, 6));
+        ROCKET_GENERATOR[3] = registerMetaTileEntity(2065, new SimpleGeneratorMetaTileEntity(location("rocket_generator.mk1"), GARecipeMaps.ROCKET_FUEL_RECIPES, ClientHandler.ROCKET_OVERLAY, 4));
+        ROCKET_GENERATOR[4] = registerMetaTileEntity(2066, new SimpleGeneratorMetaTileEntity(location("rocket_generator.mk2"), GARecipeMaps.ROCKET_FUEL_RECIPES, ClientHandler.ROCKET_OVERLAY, 5));
+        ROCKET_GENERATOR[5] = registerMetaTileEntity(2067, new SimpleGeneratorMetaTileEntity(location("rocket_generator.mk3"), GARecipeMaps.ROCKET_FUEL_RECIPES, ClientHandler.ROCKET_OVERLAY, 6));
 
         // Steam Machines
-        STEAM_PUMP = GregTechAPI.registerMetaTileEntity(2075, new MetaTileEntitySteamPump(location("pump.steam")));
-        STEAM_MIXER = GregTechAPI.registerMetaTileEntity(2077, new MetaTileEntitySteamMixer(location("steam_mixer")));
-        STEAM_MINER = GregTechAPI.registerMetaTileEntity(2079, new TileEntitySteamMiner(location("steam_miner")));
+        STEAM_PUMP = registerMetaTileEntity(2075, new MetaTileEntitySteamPump(location("pump.steam")));
+        STEAM_MIXER = registerMetaTileEntity(2077, new MetaTileEntitySteamMixer(location("steam_mixer")));
+        STEAM_MINER = registerMetaTileEntity(2079, new TileEntitySteamMiner(location("steam_miner")));
 
         // Multiblocks
 
         // "Upgraded Versions"
-        LARGE_CIRCUIT_ASSEMBLY_LINE = GregTechAPI.registerMetaTileEntity(3000, new TileEntityLargeCircuitAssemblyLine(location("large_circuit_assembly")));
-        LARGE_ROCKET_ENGINE = GregTechAPI.registerMetaTileEntity(3015, new MetaTileEntityLargeRocketEngine(location("large_rocket_engine")));
-        LARGE_NAQUADAH_REACTOR = GregTechAPI.registerMetaTileEntity(3018, new MetaTileEntityLargeNaquadahReactor(location("large_naquadah_reactor")));
+        LARGE_CIRCUIT_ASSEMBLY_LINE = registerMetaTileEntity(3000, new TileEntityLargeCircuitAssemblyLine(location("large_circuit_assembly")));
+        LARGE_ROCKET_ENGINE = registerMetaTileEntity(3015, new MetaTileEntityLargeRocketEngine(location("large_rocket_engine")));
+        LARGE_NAQUADAH_REACTOR = registerMetaTileEntity(3018, new MetaTileEntityLargeNaquadahReactor(location("large_naquadah_reactor")));
 
         // Totally new Multis
-        VOID_MINER[0] = GregTechAPI.registerMetaTileEntity(3201, new MetaTileEntityVoidMiner(location("void_miner"), GTValues.UV, GAConfig.multis.voidMiner.maxTemp));
-        VOID_MINER[1] = GregTechAPI.registerMetaTileEntity(3202, new MetaTileEntityVoidMiner(location("void_miner.uhv"), GTValues.UHV, GAConfig.multis.voidMiner.maxTempUHV));
-        VOID_MINER[2] = GregTechAPI.registerMetaTileEntity(3203, new MetaTileEntityVoidMiner(location("void_miner.uev"), GTValues.UEV, GAConfig.multis.voidMiner.maxTempUEV));
-        HYPER_REACTOR_I = GregTechAPI.registerMetaTileEntity(3204, new MetaTileEntityHyperReactorI(location("hyper_reactor.i"), GAConfig.multis.hyperReactors.euGeneration[0]));
-        HYPER_REACTOR_II = GregTechAPI.registerMetaTileEntity(3205, new MetaTileEntityHyperReactorII(location("hyper_reactor.ii"), GAConfig.multis.hyperReactors.euGeneration[1]));
-        HYPER_REACTOR_III = GregTechAPI.registerMetaTileEntity(3206, new MetaTileEntityHyperReactorIII(location("hyper_reactor.iii"), GAConfig.multis.hyperReactors.euGeneration[2]));
-        STELLAR_FORGE = GregTechAPI.registerMetaTileEntity(3207, new MetaTileEntityStellarForge(location("stellar_forge")));
-        ADVANCED_FUSION_REACTOR = GregTechAPI.registerMetaTileEntity(3208, new MetaTileEntityAdvFusionReactor(location("advanced_fusion_reactor")));
-        QUBIT_COMPUTER = GregTechAPI.registerMetaTileEntity(3209, new MetaTileEntityQubitComputer(location("qubit_computer")));
-        BIO_REACTOR = GregTechAPI.registerMetaTileEntity(3210, new MetaTileEntityBioReactor(location("bio_reactor")));
-        PLASMA_CONDENSER = GregTechAPI.registerMetaTileEntity(3211, new MetaTileEntityPlasmaCondenser(location("plasma_condenser")));
-        COSMIC_RAY_DETECTOR = GregTechAPI.registerMetaTileEntity(3212, new MetaTileEntityCosmicRayDetector(location("cosmic_ray_detector")));
+        VOID_MINER[0] = registerMetaTileEntity(3201, new MetaTileEntityVoidMiner(location("void_miner"), GTValues.UV, GAConfig.multis.voidMiner.maxTemp));
+        VOID_MINER[1] = registerMetaTileEntity(3202, new MetaTileEntityVoidMiner(location("void_miner.uhv"), GTValues.UHV, GAConfig.multis.voidMiner.maxTempUHV));
+        VOID_MINER[2] = registerMetaTileEntity(3203, new MetaTileEntityVoidMiner(location("void_miner.uev"), GTValues.UEV, GAConfig.multis.voidMiner.maxTempUEV));
+        HYPER_REACTOR_I = registerMetaTileEntity(3204, new MetaTileEntityHyperReactorI(location("hyper_reactor.i"), GAConfig.multis.hyperReactors.euGeneration[0]));
+        HYPER_REACTOR_II = registerMetaTileEntity(3205, new MetaTileEntityHyperReactorII(location("hyper_reactor.ii"), GAConfig.multis.hyperReactors.euGeneration[1]));
+        HYPER_REACTOR_III = registerMetaTileEntity(3206, new MetaTileEntityHyperReactorIII(location("hyper_reactor.iii"), GAConfig.multis.hyperReactors.euGeneration[2]));
+        STELLAR_FORGE = registerMetaTileEntity(3207, new MetaTileEntityStellarForge(location("stellar_forge")));
+        ADVANCED_FUSION_REACTOR = registerMetaTileEntity(3208, new MetaTileEntityAdvFusionReactor(location("advanced_fusion_reactor")));
+        QUBIT_COMPUTER = registerMetaTileEntity(3209, new MetaTileEntityQubitComputer(location("qubit_computer")));
+        BIO_REACTOR = registerMetaTileEntity(3210, new MetaTileEntityBioReactor(location("bio_reactor")));
+        PLASMA_CONDENSER = registerMetaTileEntity(3211, new MetaTileEntityPlasmaCondenser(location("plasma_condenser")));
+        COSMIC_RAY_DETECTOR = registerMetaTileEntity(3212, new MetaTileEntityCosmicRayDetector(location("cosmic_ray_detector")));
 
         // Misc MTEs
-        QBIT_INPUT_HATCH[0] = GregTechAPI.registerMetaTileEntity(3603, new MetaTileEntityQubitHatch(location("qubit_hatch.input.16"), 0, 16, false));
-        QBIT_OUTPUT_HATCH[0] = GregTechAPI.registerMetaTileEntity(3604, new MetaTileEntityQubitHatch(location("qubit_hatch.output.1"), 0, 1, true));
+        QBIT_INPUT_HATCH[0] = registerMetaTileEntity(3603, new MetaTileEntityQubitHatch(location("qubit_hatch.input.16"), 0, 16, false));
+        QBIT_OUTPUT_HATCH[0] = registerMetaTileEntity(3604, new MetaTileEntityQubitHatch(location("qubit_hatch.output.1"), 0, 1, true));
 
         // TODO Nuclear Rework
-        //GAS_CENTRIFUGE = GregTechAPI.registerMetaTileEntity(4020, new MetaTileEntityGasCentrifuge(location("gas_centrifuge")));
-        //HOT_COOLANT_TURBINE = GregTechAPI.registerMetaTileEntity(2544, new MetaTileEntityHotCoolantTurbine(location("large_turbine.hot_coolant"), MetaTileEntityHotCoolantTurbine.TurbineType.HOT_COOLANT));
-        //NUCLEAR_REACTOR = GregTechAPI.registerMetaTileEntity(2545, new MetaTileEntityNuclearReactor(location("nuclear_reactor"), GARecipeMaps.NUCLEAR_REACTOR_RECIPES));
-        //NUCLEAR_BREEDER = GregTechAPI.registerMetaTileEntity(2546, new MetaTileEntityNuclearReactor(location("nuclear_breeder"), GARecipeMaps.NUCLEAR_BREEDER_RECIPES));
-        //ROTOR_HOLDER[0] = GregTechAPI.registerMetaTileEntity(3600, new MetaTileEntityRotorHolderForNuclearCoolant(location("rotor_holder.hv"), GTValues.HV, 1.1f));
-        //ROTOR_HOLDER[1] = GregTechAPI.registerMetaTileEntity(3601, new MetaTileEntityRotorHolderForNuclearCoolant(location("rotor_holder.luv"), GTValues.LuV, 1.35f));
-        //ROTOR_HOLDER[2] = GregTechAPI.registerMetaTileEntity(3602, new MetaTileEntityRotorHolderForNuclearCoolant(location("rotor_holder.uhv"), GTValues.UHV, 1.7f));
+        //GAS_CENTRIFUGE = registerMetaTileEntity(4020, new MetaTileEntityGasCentrifuge(location("gas_centrifuge")));
+        //HOT_COOLANT_TURBINE = registerMetaTileEntity(2544, new MetaTileEntityHotCoolantTurbine(location("large_turbine.hot_coolant"), MetaTileEntityHotCoolantTurbine.TurbineType.HOT_COOLANT));
+        //NUCLEAR_REACTOR = registerMetaTileEntity(2545, new MetaTileEntityNuclearReactor(location("nuclear_reactor"), GARecipeMaps.NUCLEAR_REACTOR_RECIPES));
+        //NUCLEAR_BREEDER = registerMetaTileEntity(2546, new MetaTileEntityNuclearReactor(location("nuclear_breeder"), GARecipeMaps.NUCLEAR_BREEDER_RECIPES));
+        //ROTOR_HOLDER[0] = registerMetaTileEntity(3600, new MetaTileEntityRotorHolderForNuclearCoolant(location("rotor_holder.hv"), GTValues.HV, 1.1f));
+        //ROTOR_HOLDER[1] = registerMetaTileEntity(3601, new MetaTileEntityRotorHolderForNuclearCoolant(location("rotor_holder.luv"), GTValues.LuV, 1.35f));
+        //ROTOR_HOLDER[2] = registerMetaTileEntity(3602, new MetaTileEntityRotorHolderForNuclearCoolant(location("rotor_holder.uhv"), GTValues.UHV, 1.7f));
     }
 
     public static ResourceLocation location(String name) {

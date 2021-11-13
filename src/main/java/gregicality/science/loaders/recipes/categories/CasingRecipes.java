@@ -169,63 +169,6 @@ public class CasingRecipes {
                 .fluidInputs(Naquadria.getFluid(L * 10))
                 .outputs(GAMetaBlocks.MUTLIBLOCK_CASING2.getItemVariant(TIERED_HULL_UIV))
                 .buildAndRegister();
-
-        // Battery Tower Cells
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(240).duration(1200)
-                .input(plateDouble, Lead, 4)
-                .fluidInputs(Oxygen.getFluid(16000))
-                .inputs(MetaBlocks.METAL_CASING.getItemVariant(STEEL_SOLID))
-                .outputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_HV))
-                .buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(960).duration(1200)
-                .input(plateDouble, Titanium, 4)
-                .fluidInputs(Nitrogen.getFluid(16000))
-                .inputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_HV))
-                .outputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_EV))
-                .buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(3840).duration(1200)
-                .input(plateDouble, TungstenSteel, 4)
-                .fluidInputs(Helium.getFluid(8000))
-                .inputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_EV))
-                .outputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_IV))
-                .buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(15360).duration(1200)
-                .input(plateDouble, Iridium, 4)
-                .fluidInputs(Argon.getFluid(4000))
-                .inputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_IV))
-                .outputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_LUV))
-                .buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(61440).duration(1200)
-                .input(plateDouble, NaquadahAlloy, 4)
-                .fluidInputs(Radon.getFluid(4000))
-                .inputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_LUV))
-                .outputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_ZPM))
-                .buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(245760).duration(1200)
-                .input(plateDouble, Tritanium, 4)
-                .fluidInputs(Krypton.getFluid(4000))
-                .inputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_ZPM))
-                .outputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_UV))
-                .buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(983040).duration(1200)
-                .input(plateDouble, Seaborgium, 4)
-                .fluidInputs(Xenon.getFluid(4000))
-                .inputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_UV))
-                .outputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_UHV))
-                .buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(3932160).duration(1200)
-                .input(plateDouble, Bohrium, 4)
-                .fluidInputs(FreeAlphaGas.getFluid(4000))
-                .inputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_UHV))
-                .outputs(GAMetaBlocks.CELL_CASING.getItemVariant(CELL_UEV))
-                .buildAndRegister();
     }
 
     private static void tieredGlass() {
@@ -353,23 +296,6 @@ public class CasingRecipes {
                 .input(plateDense, ReactorSteel, 4)
                 .input(plateDense, StainlessSteel, 2)
                 .outputs(GAMetaBlocks.MUTLIBLOCK_CASING.getItemVariant(CLADDED_REACTOR_CASING, 4))
-                .buildAndRegister();
-
-        // Large Assembler Casing
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(8000).duration(600)
-                .fluidInputs(HastelloyN.getFluid(L * 4))
-                .inputs(GAMetaBlocks.METAL_CASING_2.getItemVariant(MetalCasing2.CasingType.STABALLOY, 2))
-                .input(circuit, Advanced)
-                .outputs(GAMetaBlocks.MUTLIBLOCK_CASING.getItemVariant(LARGE_ASSEMBLER, 2))
-                .buildAndRegister();
-
-        // Laser-Safe Casing
-        ASSEMBLER_RECIPES.recipeBuilder().duration(100).EUt(7680)
-                .fluidInputs(Polybenzimidazole.getFluid(144))
-                .input(frameGt, Zeron100)
-                .input(plate, HG1223, 6)
-                .inputs(OreDictUnifier.get(dye, MarkerMaterials.Color.Black, 6))
-                .outputs(GAMetaBlocks.MUTLIBLOCK_CASING2.getItemVariant(LASER_ENGRAVER))
                 .buildAndRegister();
 
         // Fusion Casing Recipes

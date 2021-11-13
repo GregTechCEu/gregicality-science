@@ -18,7 +18,7 @@ public class GAMultiblockCasing extends VariantBlock<GAMultiblockCasing.CasingTy
         setResistance(10.0f);
         setSoundType(SoundType.METAL);
         setHarvestLevel("wrench", 2);
-        setDefaultState(getState(CasingType.ASSEMBLY_LINE_CASING));
+        setDefaultState(getState(CasingType.TIERED_HULL_ULV));
     }
 
     @Override
@@ -27,10 +27,6 @@ public class GAMultiblockCasing extends VariantBlock<GAMultiblockCasing.CasingTy
     }
 
     public enum CasingType implements IStringSerializable {
-
-        ASSEMBLY_LINE_CASING("assembly_line_casing", -1),
-        CHEMICALLY_INERT("chemically_inert_casing", -1),
-        LARGE_ASSEMBLER("large_assembler_casing", -1),
         TIERED_HULL_ULV("tiered_hull_ulv", 0),
         TIERED_HULL_LV("tiered_hull_lv", 1),
         TIERED_HULL_MV("tiered_hull_mv", 2),

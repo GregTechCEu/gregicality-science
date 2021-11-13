@@ -3,9 +3,9 @@ package gregicality.science.api.machines.multi.qubit;
 import com.google.common.collect.Lists;
 import gregicality.science.api.capabilities.GregicalityCapabilities;
 import gregicality.science.api.capabilities.IQubitContainer;
-import gregicality.science.api.capabilities.impl.GARecipeMapMultiblockController;
 import gregicality.science.api.capabilities.impl.QubitConsumeRecipeLogic;
 import gregicality.science.api.capabilities.impl.QubitContainerList;
+import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.multiblock.PatternMatchContext;
 import gregtech.api.recipes.RecipeMap;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +16,7 @@ import net.minecraft.util.text.TextFormatting;
 
 import java.util.List;
 
-public abstract class QubitRecipeMapMultiblockController extends GARecipeMapMultiblockController {
+public abstract class QubitRecipeMapMultiblockController extends RecipeMapMultiblockController {
 
     protected IQubitContainer inputQubit;
     protected IQubitContainer outputQubit;

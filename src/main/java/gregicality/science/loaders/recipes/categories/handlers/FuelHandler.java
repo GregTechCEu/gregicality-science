@@ -1,11 +1,5 @@
 package gregicality.science.loaders.recipes.categories.handlers;
 
-import forestry.core.fluids.Fluids;
-import gregicality.science.common.GAConfig;
-import gregicality.science.loaders.recipes.helper.HelperMethods;
-import gregtech.api.unification.material.Materials;
-import net.minecraftforge.fml.common.Loader;
-
 import static gregicality.science.api.GAMaterials.*;
 import static gregicality.science.loaders.recipes.helper.HelperMethods.*;
 import static gregtech.api.GTValues.*;
@@ -22,24 +16,7 @@ import static gregtech.loaders.recipe.FuelRecipes.*;
  */
 public class FuelHandler {
 
-    /**
-     * This effectively overrides GT Materials to use Forestry ones if the mod is loaded. By not specifying
-     * "Materials." before the material name, it will default to this one instead. For example:
-     *
-     *     registerDieselGeneratorFuel(Ethanol.getFluid(2), 12, LV);
-     *
-     * This looks like the standard material, but it will use the Forestry fluid if Forestry is loaded,
-     * and if Forestry Integration is enabled.
-     */
-    private static HelperMethods.GenericFluid Ethanol = new HelperMethods.GenericFluid(Materials.Ethanol);
-    private static HelperMethods.GenericFluid SeedOil = new HelperMethods.GenericFluid(Materials.SeedOil);
-
     public static void init() {
-
-        if (Loader.isModLoaded(MODID_FR) && GAConfig.Misc.ForestryIntegration) {
-            Ethanol = new HelperMethods.GenericFluid(Fluids.BIO_ETHANOL);
-            SeedOil = new HelperMethods.GenericFluid(Fluids.SEED_OIL);
-        }
 
         // Steam Turbine
         registerSteamGeneratorFuel(Steam.getFluid(640), 10, LV);

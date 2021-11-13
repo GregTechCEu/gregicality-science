@@ -1,18 +1,17 @@
 package gregicality.science.api.machines.multi;
 
-import gregicality.science.api.capabilities.impl.GAMultiblockRecipeLogic;
-import gregicality.science.api.capabilities.impl.GARecipeMapMultiblockController;
 import gregicality.science.client.ClientHandler;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.GAMultiblockCasing2;
 import gregicality.science.common.item.components.EmitterCasing;
 import gregicality.science.common.item.fusion.GAFusionCasing;
-import gregicality.science.common.item.metal.MetalCasing2;
 import gregicality.science.loaders.recipes.GARecipeMaps;
+import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.multiblock.BlockPattern;
 import gregtech.api.multiblock.BlockWorldState;
 import gregtech.api.multiblock.FactoryBlockPattern;
@@ -29,10 +28,9 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import static gregicality.science.client.ClientHandler.ENRICHED_NAQUADAH_ALLOY_CASING;
-import static gregicality.science.common.item.GAMetaBlocks.METAL_CASING_2;
 
 
-public class MetaTileEntityStellarForge extends GARecipeMapMultiblockController {
+public class MetaTileEntityStellarForge extends RecipeMapMultiblockController {
 
     private static final MultiblockAbility<?>[] ALLOWED_ABILITIES = {
             MultiblockAbility.IMPORT_ITEMS, MultiblockAbility.IMPORT_FLUIDS,
@@ -44,7 +42,7 @@ public class MetaTileEntityStellarForge extends GARecipeMapMultiblockController 
 
     public MetaTileEntityStellarForge(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GARecipeMaps.STELLAR_FORGE_RECIPES);
-        this.recipeMapWorkable = new GAMultiblockRecipeLogic(this) {
+        this.recipeMapWorkable = new MultiblockRecipeLogic(this) {
             @Override
             protected long getMaxVoltage() {
                 return maxVoltage;

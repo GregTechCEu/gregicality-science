@@ -1,6 +1,5 @@
 package gregicality.science.api.machines.multi.nuclear;
 
-import gregicality.science.api.capabilities.impl.GARecipeMapMultiblockController;
 import gregicality.science.client.ClientHandler;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.GAMultiblockCasing;
@@ -10,6 +9,7 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.multiblock.BlockPattern;
 import gregtech.api.multiblock.BlockWorldState;
 import gregtech.api.multiblock.FactoryBlockPattern;
@@ -45,8 +45,7 @@ import java.util.function.Predicate;
 
 import static gregicality.science.common.item.GAMetaBlocks.NUCLEAR_CASING;
 
-
-public class MetaTileEntityNuclearReactor extends GARecipeMapMultiblockController {
+public class MetaTileEntityNuclearReactor extends RecipeMapMultiblockController {
 
     public enum RodType implements IStringSerializable {
         THORIUM(0, NUCLEAR_CASING.getState(NuclearCasing.CasingType.THORIUM)),

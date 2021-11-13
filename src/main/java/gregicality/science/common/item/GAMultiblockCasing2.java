@@ -34,8 +34,7 @@ public class GAMultiblockCasing2 extends VariantBlock<GAMultiblockCasing2.Casing
         TIERED_HULL_UMV("tiered_hull_umv", 12),
         TIERED_HULL_UXV("tiered_hull_uxv", 13),
         STELLAR_CONTAINMENT("stellar_containment", -1),
-        BIO_REACTOR("bio_reactor_casing", -1),
-        LASER_ENGRAVER("laser_engraver_casing", -1);
+        BIO_REACTOR("bio_reactor_casing", -1);
 
         private final String name;
         private final int tier;

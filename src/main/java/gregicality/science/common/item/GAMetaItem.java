@@ -84,12 +84,12 @@ public class GAMetaItem extends StandardMetaItem {
 
         // T8: Bioware
         BIOWARE_PROCESSOR = addItem(50, "circuit.bioware_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Ultimate);
-        BIOWARE_ASSEMBLY = addItem(51, "circuit.bioware_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Superconductor);
+        BIOWARE_ASSEMBLY = addItem(51, "circuit.bioware_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Super);
         BIOWARE_COMPUTER = addItem(52, "circuit.bioware_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Infinite);
         BIOWARE_MAINFRAME = addItem(53, "circuit.bioware_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Ultra);
 
         // T9: Optical
-        OPTICAL_PROCESSOR = addItem(54,"circuit.optical_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Superconductor);
+        OPTICAL_PROCESSOR = addItem(54,"circuit.optical_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Super);
         OPTICAL_ASSEMBLY = addItem(55,"circuit.optical_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Infinite);
         OPTICAL_COMPUTER = addItem(56,"circuit.optical_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Ultra);
         OPTICAL_MAINFRAME = addItem(57,"circuit.optical_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Insane);
@@ -98,18 +98,18 @@ public class GAMetaItem extends StandardMetaItem {
         EXOTIC_PROCESSOR = addItem(58, "circuit.exotic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Infinite);
         EXOTIC_ASSEMBLY = addItem(59, "circuit.exotic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Ultra);
         EXOTIC_COMPUTER = addItem(60, "circuit.exotic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Insane);
-        EXOTIC_MAINFRAME = addItem(61, "circuit.exotic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UMVCircuit);
+        EXOTIC_MAINFRAME = addItem(61, "circuit.exotic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Epic);
 
         // T11: Cosmic
         COSMIC_PROCESSOR = addItem(62, "circuit.cosmic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Ultra);
         COSMIC_ASSEMBLY = addItem(63, "circuit.cosmic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Insane);
-        COSMIC_COMPUTER = addItem(64, "circuit.cosmic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UMVCircuit);
-        COSMIC_MAINFRAME = addItem(65, "circuit.cosmic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXVCircuit);
+        COSMIC_COMPUTER = addItem(64, "circuit.cosmic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Epic);
+        COSMIC_MAINFRAME = addItem(65, "circuit.cosmic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Legendary);
 
         // T12: Supracausal
         SUPRACAUSAL_PROCESSOR = addItem(66, "circuit.supracausal_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Insane);
-        SUPRACAUSAL_ASSEMBLY = addItem(67, "circuit.supracausal_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UMVCircuit);
-        SUPRACAUSAL_COMPUTER = addItem(68, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXVCircuit);
+        SUPRACAUSAL_ASSEMBLY = addItem(67, "circuit.supracausal_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Epic);
+        SUPRACAUSAL_COMPUTER = addItem(68, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Legendary);
         SUPRACAUSAL_MAINFRAME = addItem(69, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Maximum);
 
         /////////////////////////////////////

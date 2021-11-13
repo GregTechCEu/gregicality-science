@@ -1,11 +1,9 @@
 package gregicality.science.api;
 
 import gregicality.science.api.materials.*;
-import gregtech.api.unification.material.IMaterialHandler;
 import gregtech.api.unification.material.Material;
 
-@IMaterialHandler.RegisterMaterialHandler
-public class GAMaterials implements IMaterialHandler {
+public class GAMaterials {
 
     // NEW ELEMENTS todo
     public static Material MetastableOganesson;
@@ -1116,8 +1114,7 @@ public class GAMaterials implements IMaterialHandler {
     public static Material CoAcABCatalyst;
     public static Material DrillingMudMixture;
 
-    @Override
-    public void onMaterialsInit() {
+    public static void register() {
 
         /*
          * Element Materials, IDs 3000-3499
@@ -1156,9 +1153,5 @@ public class GAMaterials implements IMaterialHandler {
         GAHighDegreeMaterials.register();
 
         GAMaterialFlagAddition.init();
-
-        // TODO Clean this up once GT uses events for Material Registration
-        GAOrePrefix.initIconSets();
-        GAOrePrefix.initPrefixes();
     }
 }
