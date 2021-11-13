@@ -1,0 +1,88 @@
+package gregicadditions.machines.multi.simple;
+
+import gregicadditions.GAConfig;
+import gregicadditions.client.ClientHandler;
+import gregicadditions.item.GAMetaBlocks;
+import gregicadditions.item.GAMultiblockCasing;
+import gregicadditions.item.GATransparentCasing;
+import gregicadditions.item.components.ConveyorCasing;
+import gregicadditions.item.components.RobotArmCasing;
+import gregtech.api.metatileentity.MetaTileEntity;
+import gregtech.api.metatileentity.MetaTileEntityHolder;
+import gregtech.api.metatileentity.multiblock.IMultiblockPart;
+import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.multiblock.BlockPattern;
+import gregtech.api.multiblock.FactoryBlockPattern;
+import gregtech.api.multiblock.PatternMatchContext;
+import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.render.ICubeRenderer;
+import gregtech.api.render.OrientedOverlayRenderer;
+import gregtech.api.render.Textures;
+import gregtech.common.blocks.BlockBoilerCasing;
+import gregtech.common.blocks.MetaBlocks;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.ResourceLocation;
+
+import javax.annotation.Nonnull;
+import java.util.Arrays;
+import java.util.Collections;
+
+import static gregtech.api.util.RelativeDirection.*;
+
+public class TileEntityLargeAssembler extends LargeSimpleRecipeMapMultiblockController {
+
+	private static final MultiblockAbility<?>[] ALLOWED_ABILITIES = {MultiblockAbility.IMPORT_ITEMS, MultiblockAbility.EXPORT_ITEMS, MultiblockAbility.IMPORT_FLUIDS, MultiblockAbility.EXPORT_FLUIDS, MultiblockAbility.INPUT_ENERGY, MultiblockAbility.MAINTENANCE_HATCH};
+
+
+	public TileEntityLargeAssembler(ResourceLocation metaTileEntityId) {
+		super(metaTileEntityId, RecipeMaps.ASSEMBLER_RECIPES, GAConfig.multis.largeAssembler.euPercentage, GAConfig.multis.largeAssembler.durationPercentage, GAConfig.multis.largeAssembler.chancedBoostPercentage, GAConfig.multis.largeAssembler.stack);
+	}
+
+	@Override
+	public MetaTileEntity createMetaTileEntity(MetaTileEntityHolder holder) {
+		return new TileEntityLargeAssembler(metaTileEntityId);
+	}
+
+	@Override
+	protected BlockPattern createStructurePattern() {
+		return FactoryBlockPattern.start(FRONT, UP, RIGHT)
+				.aisle("XXXX", "XXXX", "XXXX", "XXXX")
+				.aisle("XXXX", "SCRX", "XPPX", "XXXX")
+				.aisle("XXXX", "RCPX", "G#PX", "GGGX").setRepeatable(0, 9)
+				.aisle("XXXX", "XXXX", "XXXX", "XXXX")
+				.setAmountAtLeast('X', 25)
+				.where('S', selfPredicate())
+				.where('X', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
+				.where('#', state -> true)
+				.where('R', robotArmPredicate())
+				.where('C', conveyorPredicate())
+				.where('G', statePredicate(GAMetaBlocks.TRANSPARENT_CASING.getState(GATransparentCasing.CasingType.OSMIRIDIUM_GLASS)))
+				.where('P', statePredicate(MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.TUNGSTENSTEEL_PIPE)))
+				.build();
+	}
+
+	public IBlockState getCasingState() {
+		return GAMetaBlocks.MUTLIBLOCK_CASING.getState(GAMultiblockCasing.CasingType.LARGE_ASSEMBLER);
+	}
+
+	@Override
+	public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
+		return ClientHandler.LARGE_ASSEMBLER;
+	}
+
+	@Override
+	protected void formStructure(PatternMatchContext context) {
+		super.formStructure(context);
+		ConveyorCasing.CasingType conveyor = context.getOrDefault("Conveyor", ConveyorCasing.CasingType.CONVEYOR_LV);
+		RobotArmCasing.CasingType robotArm = context.getOrDefault("RobotArm", RobotArmCasing.CasingType.ROBOT_ARM_LV);
+		int min = Collections.min(Arrays.asList(conveyor.getTier(), robotArm.getTier()));
+		maxVoltage = (long) (Math.pow(4, min) * 8);
+	}
+
+	@Nonnull
+	@Override
+	protected OrientedOverlayRenderer getFrontOverlay() {
+		return Textures.ASSEMBLER_OVERLAY;
+	}
+
+}

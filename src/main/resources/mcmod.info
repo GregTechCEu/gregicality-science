@@ -1,0 +1,25 @@
+[
+  {
+    "modid": "gregicality",
+    "name": "Gregicality",
+    "description": "The big spook takes your lunch money.  Who reads these?",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "rhuneau",
+      "hjae78",
+      "Shadows_of_Fire",
+      "TheEmosewaPixel",
+      "Bartz24",
+      "bartimaeusnek"
+    ],
+    "credits": "The creators of GTCE, GT5U and most importantly, GregoriusT.",
+    "logoFile": "assets/gregicality/logo.png",
+    "screenshots": [],
+    "dependencies": [
+      "gregtech"
+    ]
+  }
+]

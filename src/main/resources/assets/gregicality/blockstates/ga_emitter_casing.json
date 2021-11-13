@@ -1,0 +1,83 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "textures": {
+      "all": "gregtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "variant": {
+      "emitter_lv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_lv"
+        }
+      },
+      "emitter_mv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_mv"
+        }
+      },
+      "emitter_hv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_hv"
+        }
+      },
+      "emitter_ev": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_ev"
+        }
+      },
+      "emitter_iv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_iv"
+        }
+      },
+      "emitter_luv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_luv"
+        }
+      },
+      "emitter_zpm": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_zpm"
+        }
+      },
+      "emitter_uv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_uv"
+        }
+      },
+      "emitter_uhv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_uhv"
+        }
+      },
+      "emitter_uev": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_uev"
+        }
+      },
+      "emitter_uiv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_uiv"
+        }
+      },
+      "emitter_umv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_umv"
+        }
+      },
+      "emitter_uxv": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_uxv"
+        }
+      },
+      "emitter_max": {
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/component_block_max"
+        }
+      }
+    }
+  }
+}

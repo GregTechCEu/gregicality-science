@@ -1,0 +1,73 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "textures": {
+      "all": "gregtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "variant": {
+      "casing_thorium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/thorium"
+        }
+      },
+      "casing_protactinium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/protactinium"
+        }
+      },
+      "casing_uranium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/uranium"
+        }
+      },
+      "casing_neptunium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/neptunium"
+        }
+      },
+      "casing_plutonium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/plutonium"
+        }
+      },
+      "casing_americium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/americium"
+        }
+      },
+      "casing_curium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/curium"
+        }
+      },
+      "casing_berkelium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/berkelium"
+        }
+      },
+      "casing_californium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/californium"
+        }
+      },
+      "casing_einsteinium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/einsteinium"
+        }
+      },
+      "casing_fermium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/fermium"
+        }
+      },
+      "casing_mendelevium": {
+        "textures": {
+          "all": "gregicality:blocks/casings/mendelevium"
+        }
+      }
+    }
+  }
+}
