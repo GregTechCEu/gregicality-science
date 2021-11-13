@@ -2,13 +2,11 @@ package gregicadditions.jei;
 
 import gregicadditions.Gregicality;
 import gregicadditions.machines.multi.impl.HotCoolantRecipeLogic;
-import gregicadditions.machines.multi.simple.MultiRecipeMapMultiblockController;
 import gregicadditions.recipes.impl.nuclear.GTHotCoolantRecipeWrapper;
 import gregicadditions.recipes.impl.nuclear.HotCoolantRecipeMap;
 import gregicadditions.recipes.impl.nuclear.HotCoolantRecipeMapCategory;
 import gregicadditions.recipes.compat.jei.GADrillingRigCategory;
 import gregicadditions.recipes.compat.jei.GADrillingRigRecipeWrapper;
-import gregicadditions.worldgen.PumpjackHandler;
 import gregtech.api.GregTechAPI;
 import gregtech.api.capability.GregtechTileCapabilities;
 import gregtech.api.capability.IControllable;
@@ -24,8 +22,6 @@ import net.minecraft.util.ResourceLocation;
 import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static gregicadditions.machines.GAMetaTileEntities.FLUID_DRILLING_PLANT;
 
 @JEIPlugin
 public class JEIGAPlugin implements IModPlugin {
@@ -54,7 +50,7 @@ public class JEIGAPlugin implements IModPlugin {
             registry.addRecipes(recipeList, Gregicality.MODID + ":" + hotCoolantRecipeMap.unlocalizedName);
         }
 
-        // Register Fluid Drilling Recipes and Catalysts
+        // Register Fluid Drilling Recipes and Catalysts todo remove
         List<IRecipeWrapper> fluidRecipe = PumpjackHandler.reservoirList.entrySet().stream()
                 .map(reservoirTypeIntegerEntry -> new GADrillingRigRecipeWrapper(reservoirTypeIntegerEntry.getKey(), reservoirTypeIntegerEntry.getValue()))
                 .collect(Collectors.toList());
@@ -74,14 +70,8 @@ public class JEIGAPlugin implements IModPlugin {
                     HotCoolantRecipeMap recipeMap = ((HotCoolantRecipeLogic) workableCapability).recipeMap;
                     registry.addRecipeCatalyst(metaTileEntity.getStackForm(), Gregicality.MODID + ":" + recipeMap.unlocalizedName);
                 } else if (workableCapability instanceof AbstractRecipeLogic) {
-                    if (metaTileEntity instanceof MultiRecipeMapMultiblockController) {
-                        for (RecipeMap<?> recipeMap : ((MultiRecipeMapMultiblockController) metaTileEntity).getRecipeMaps()) {
-                            registry.addRecipeCatalyst(metaTileEntity.getStackForm(), Gregicality.MODID + ":" + recipeMap.unlocalizedName);
-                        }
-                    } else { // todo is this else needed?
-                        RecipeMap<?> recipeMap = ((AbstractRecipeLogic) workableCapability).recipeMap;
-                        registry.addRecipeCatalyst(metaTileEntity.getStackForm(), Gregicality.MODID + ":" + recipeMap.unlocalizedName);
-                    }
+                    RecipeMap<?> recipeMap = ((AbstractRecipeLogic) workableCapability).recipeMap;
+                    registry.addRecipeCatalyst(metaTileEntity.getStackForm(), Gregicality.MODID + ":" + recipeMap.unlocalizedName);
                 }
             }
         }

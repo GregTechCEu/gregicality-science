@@ -27,8 +27,8 @@ import java.io.IOException;
         dependencies = "required-after:gregtech@[2.0,);")
 public class Gregicality {
 
-    public static final String MODID = "gregicality";
-    public static final String NAME = "Gregicality";
+    public static final String MODID = "gcys";
+    public static final String NAME = "Gregicality: Science";
     public static final String VERSION = "@VERSION@";
 
     @SidedProxy(modId = MODID, clientSide = "gregicadditions.ClientProxy", serverSide = "gregicadditions.CommonProxy")
@@ -61,13 +61,6 @@ public class Gregicality {
             TheOneProbeCompatibility.registerCompatibility();
         }
         CoverBehaviors.init();
-        GAConfig.addConfigReservoirs(GAConfig.extraction.reservoirs);
-        PumpjackHandler.oilChance = GAConfig.Extraction.reservoirChance;
-    }
-
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-        PumpjackHandler.recalculateChances(true);
     }
 
     @EventHandler

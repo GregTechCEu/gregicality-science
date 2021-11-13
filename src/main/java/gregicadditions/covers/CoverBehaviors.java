@@ -36,8 +36,5 @@ public class CoverBehaviors {
         registerBehavior(115, new ResourceLocation(Gregicality.MODID, "pump.umv"), GAMetaItems.ELECTRIC_PUMP_UMV, (tile, side) -> new CoverPump(tile, side, 9, Integer.MAX_VALUE));
         registerBehavior(116, new ResourceLocation(Gregicality.MODID, "pump.uxv"), GAMetaItems.ELECTRIC_PUMP_UXV, (tile, side) -> new CoverPump(tile, side, 9, Integer.MAX_VALUE));
         registerBehavior(117, new ResourceLocation(Gregicality.MODID, "pump.max"), GAMetaItems.ELECTRIC_PUMP_MAX, (tile, side) -> new CoverPump(tile, side, 9, Integer.MAX_VALUE));
-
-        // Digital Interface Cover TODO Move to CEu
-        registerBehavior(118, new ResourceLocation(Gregicality.MODID, CoverDigitalInterface.path), GAMetaItems.COVER_DIGITAL_INTERFACE, CoverDigitalInterface::new);
     }
 }

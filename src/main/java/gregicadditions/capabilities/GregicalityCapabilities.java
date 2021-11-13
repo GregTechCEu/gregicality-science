@@ -11,9 +11,6 @@ import static gregtech.api.capability.SimpleCapabilityManager.registerCapability
 @Mod.EventBusSubscriber(modid = Gregicality.MODID)
 public class GregicalityCapabilities {
 
-    @CapabilityInject(IMultiRecipe.class)
-    public static Capability<IMultiRecipe> MULTI_RECIPE_CAPABILITY;
-
     @CapabilityInject(IQubitContainer.class)
     public static Capability<IQubitContainer> QBIT_CAPABILITY;
 
@@ -21,7 +18,6 @@ public class GregicalityCapabilities {
     public static MultiblockAbility<IQubitContainer> OUTPUT_QBIT = new MultiblockAbility();
 
     public static void init() {
-        registerCapabilityWithNoDefault(IMultiRecipe.class);
         registerCapabilityWithNoDefault(IQubitContainer.class);
     }
 }

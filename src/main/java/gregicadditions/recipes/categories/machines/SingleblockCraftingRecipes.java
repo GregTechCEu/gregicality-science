@@ -11,14 +11,6 @@ public class SingleblockCraftingRecipes {
 
     public static void init() {
 
-        registerMachineRecipe(GAMetaTileEntities.MINER,
-                "WPW", "CMC", "SPS",
-                'M', HULL,
-                'P', PISTON,
-                'C', CIRCUIT,
-                'W', MetaItems.COMPONENT_GRINDER_DIAMOND,
-                'S', SENSOR);
-
         registerMachineRecipe(GAMetaTileEntities.DEHYDRATOR,
                 "WCW", "MHM", "GAG",
                 'C', CIRCUIT,
@@ -43,16 +35,6 @@ public class SingleblockCraftingRecipes {
                 'C', CIRCUIT,
                 'G', GLASS,
                 'A', ROBOT_ARM);
-
-        registerMachineRecipe(GAMetaTileEntities.DISASSEMBLER,
-                "RSV", "PMV", "ICI",
-                'M', HULL,
-                'C', CABLE,
-                'R', ROBOT_ARM,
-                'P', PUMP,
-                'S', SENSOR,
-                'V', CONVEYOR,
-                'I', CIRCUIT);
 
         registerMachineRecipe(GAMetaTileEntities.NAQUADAH_REACTOR,
                 "RCR", "FMF", "QCQ",
