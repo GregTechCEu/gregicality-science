@@ -1,11 +1,13 @@
 package gregicality.science;
 
-import gregicality.science.capabilities.GregicalityCapabilities;
-import gregicality.science.covers.CoverBehaviors;
-import gregicality.science.item.GAMetaBlocks;
-import gregicality.science.machines.GAMetaTileEntities;
-import gregicality.science.theoneprobe.TheOneProbeCompatibility;
-import gregicality.science.utils.GALog;
+import gregicality.science.api.capabilities.GregicalityCapabilities;
+import gregicality.science.common.CommonProxy;
+import gregicality.science.common.GAConfig;
+import gregicality.science.api.covers.CoverBehaviors;
+import gregicality.science.common.item.GAMetaBlocks;
+import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.integrations.theoneprobe.TheOneProbeCompatibility;
+import gregicality.science.api.GALog;
 import gregtech.api.GTValues;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -25,7 +27,7 @@ public class GregicalityScience {
     public static final String NAME = "Gregicality: Science";
     public static final String VERSION = "@VERSION@";
 
-    @SidedProxy(modId = MODID, clientSide = "gregicality.science.ClientProxy", serverSide = "gregicality.science.CommonProxy")
+    @SidedProxy(modId = MODID, clientSide = "gregicality.science.common.ClientProxy", serverSide = "gregicality.science.common.CommonProxy")
     public static CommonProxy proxy;
 
     @EventHandler
