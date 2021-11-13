@@ -4,20 +4,14 @@ import gregicadditions.capabilities.GregicalityCapabilities;
 import gregicadditions.covers.CoverBehaviors;
 import gregicadditions.item.GAMetaBlocks;
 import gregicadditions.machines.GAMetaTileEntities;
-import gregicadditions.network.IPSaveData;
-import gregicadditions.network.NetworkHandler;
 import gregicadditions.theoneprobe.TheOneProbeCompatibility;
 import gregicadditions.utils.GALog;
-import gregicadditions.worldgen.PumpjackHandler;
 import gregtech.api.GTValues;
-import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
-import net.minecraftforge.fml.relauncher.Side;
 
 import java.io.IOException;
 
@@ -44,7 +38,6 @@ public class Gregicality {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         GALog.init(event.getModLog());
-        NetworkHandler.preInit();
         proxy.preLoad();
         GregicalityCapabilities.init();
         MinecraftForge.EVENT_BUS.register(new GAEventHandler());
@@ -61,20 +54,5 @@ public class Gregicality {
             TheOneProbeCompatibility.registerCompatibility();
         }
         CoverBehaviors.init();
-    }
-
-    @EventHandler
-    public void serverStarted(FMLServerStartedEvent event) {
-        if (FMLCommonHandler.instance().getEffectiveSide() == Side.SERVER) {
-            World world = FMLCommonHandler.instance().getMinecraftServerInstance().getEntityWorld();
-            if (!world.isRemote) {
-                IPSaveData worldData = (IPSaveData) world.loadData(IPSaveData.class, IPSaveData.dataName);
-                if (worldData == null) {
-                    worldData = new IPSaveData(IPSaveData.dataName);
-                    world.setData(IPSaveData.dataName, worldData);
-                }
-                IPSaveData.setInstance(world.provider.getDimension(), worldData);
-            }
-        }
     }
 }

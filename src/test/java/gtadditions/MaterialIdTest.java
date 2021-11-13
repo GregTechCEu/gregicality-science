@@ -76,8 +76,8 @@ public class MaterialIdTest {
                 MetaTileEntities.LARGE_COMBUSTION_ENGINE
         );
         assertNotNull(
-                "Gregicality MetaTileEntity is still null!",
-                GAMetaTileEntities.ALLOY_BLAST_FURNACE
+                "Gregicality: Science MetaTileEntity is still null!",
+                GAMetaTileEntities.STELLAR_FORGE
         );
     }
 }

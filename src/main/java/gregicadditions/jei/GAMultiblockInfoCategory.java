@@ -37,7 +37,6 @@ public class GAMultiblockInfoCategory implements IRecipeCategory<MultiblockInfoR
                     .put("void_miner", new MultiblockInfoRecipeWrapper(new VoidMinerInfo()))
                     .put("large_rocket_engine", new MultiblockInfoRecipeWrapper(new LargeRocketEngineInfo()))
                     .put("large_naquadah_reactor", new MultiblockInfoRecipeWrapper(new LargeNaquadahReactorInfo()))
-                    .put("battery_tower", new MultiblockInfoRecipeWrapper(new BatteryTowerInfo()))
                     .put("hyper_reactor_1", new MultiblockInfoRecipeWrapper(new HyperReactor1Info()))
                     .put("hyper_reactor_2", new MultiblockInfoRecipeWrapper(new HyperReactor2Info()))
                     .put("hyper_reactor_3", new MultiblockInfoRecipeWrapper(new HyperReactor3Info()))

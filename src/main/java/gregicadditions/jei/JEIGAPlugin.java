@@ -5,8 +5,6 @@ import gregicadditions.machines.multi.impl.HotCoolantRecipeLogic;
 import gregicadditions.recipes.impl.nuclear.GTHotCoolantRecipeWrapper;
 import gregicadditions.recipes.impl.nuclear.HotCoolantRecipeMap;
 import gregicadditions.recipes.impl.nuclear.HotCoolantRecipeMapCategory;
-import gregicadditions.recipes.compat.jei.GADrillingRigCategory;
-import gregicadditions.recipes.compat.jei.GADrillingRigRecipeWrapper;
 import gregtech.api.GregTechAPI;
 import gregtech.api.capability.GregtechTileCapabilities;
 import gregtech.api.capability.IControllable;
@@ -24,14 +22,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @JEIPlugin
+@SuppressWarnings("unused") // handled by the annotation
 public class JEIGAPlugin implements IModPlugin {
-
-    public static IJeiRuntime jeiRuntime;
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
         registry.addRecipeCategories(new GAMultiblockInfoCategory(registry.getJeiHelpers()));
-        registry.addRecipeCategories(new GADrillingRigCategory(registry.getJeiHelpers().getGuiHelper()));
         for (HotCoolantRecipeMap hotCoolantRecipeMap : HotCoolantRecipeMap.getRecipeMaps()) {
             registry.addRecipeCategories(new HotCoolantRecipeMapCategory(hotCoolantRecipeMap, registry.getJeiHelpers().getGuiHelper()));
         }
@@ -49,15 +45,6 @@ public class JEIGAPlugin implements IModPlugin {
                     .collect(Collectors.toList());
             registry.addRecipes(recipeList, Gregicality.MODID + ":" + hotCoolantRecipeMap.unlocalizedName);
         }
-
-        // Register Fluid Drilling Recipes and Catalysts todo remove
-        List<IRecipeWrapper> fluidRecipe = PumpjackHandler.reservoirList.entrySet().stream()
-                .map(reservoirTypeIntegerEntry -> new GADrillingRigRecipeWrapper(reservoirTypeIntegerEntry.getKey(), reservoirTypeIntegerEntry.getValue()))
-                .collect(Collectors.toList());
-        registry.addRecipes(fluidRecipe, Gregicality.MODID + ":drilling_rig");
-        registry.addRecipeCatalyst(FLUID_DRILLING_PLANT[0].getStackForm(), Gregicality.MODID + ":drilling_rig");
-        registry.addRecipeCatalyst(FLUID_DRILLING_PLANT[1].getStackForm(), Gregicality.MODID + ":drilling_rig");
-        registry.addRecipeCatalyst(FLUID_DRILLING_PLANT[2].getStackForm(), Gregicality.MODID + ":drilling_rig");
 
         // todo clean this up
         // Register something?
@@ -83,10 +70,5 @@ public class JEIGAPlugin implements IModPlugin {
                     VanillaTypes.ITEM,
                     infoPage.getDescription());
         });
-    }
-
-    @Override
-    public void onRuntimeAvailable(@Nonnull IJeiRuntime jeiRuntime) {
-        JEIGAPlugin.jeiRuntime = jeiRuntime;
     }
 }

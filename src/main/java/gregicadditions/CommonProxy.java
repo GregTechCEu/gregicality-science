@@ -4,15 +4,10 @@ import gregicadditions.fluid.GAMetaFluids;
 import gregicadditions.item.GAHeatingCoil;
 import gregicadditions.item.GAMetaBlocks;
 import gregicadditions.item.GAMetaItems;
-import gregicadditions.network.IPSaveData;
-import gregicadditions.network.MessageReservoirListSync;
-import gregicadditions.network.NetworkHandler;
 import gregicadditions.pipelike.opticalfiber.ItemBlockOpticalFiber;
 import gregicadditions.recipes.*;
 import gregicadditions.recipes.categories.handlers.*;
 import gregicadditions.utils.GALog;
-import gregicadditions.worldgen.PumpjackHandler;
-import gregicadditions.worldgen.WorldGenRegister;
 import gregtech.api.recipes.recipeproperties.BlastTemperatureProperty;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.blocks.VariantItemBlock;
@@ -24,17 +19,12 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 
@@ -48,18 +38,14 @@ public class CommonProxy {
         GAMetaFluids.init();
     }
 
-    public void onLoad() throws IOException {
-        if (GAConfig.Misc.reverseAfterCT)
-            registerRecipesAfterCT();
+    public void onLoad() {
         setRemovedMaterialTooltips();
-        WorldGenRegister.init();
     }
 
     // This method is used to set tooltips for materials to be removed in the future.
     // If we want to staggered-remove a material, apply a warning to it here.
     private static final String REMOVED_MAT_TOOLTIP = TextFormatting.RED + "This will be removed in next release!";
     private static void setRemovedMaterialTooltips() {
-
     }
 
     @SubscribeEvent
@@ -189,39 +175,5 @@ public class CommonProxy {
     public static void registerRecipesLowest(RegistryEvent.Register<IRecipe> event) {
         RecipeHandler.runRecipeGeneration();
         RecipeHandler.generatedRecipes();
-        if (!GAConfig.Misc.reverseAfterCT)
-            registerRecipesAfterCT();
-    }
-
-    // These recipes are generated at the beginning of the preInit2() phase with the proper config set.
-    // This is not great practice, but ensures that they are run AFTER CraftTweaker,
-    // meaning they will follow the recipes in the map with CraftTweaker changes,
-    // being significantly easier for modpack authors.
-    private static void registerRecipesAfterCT() {
-        ElectricImplosionHandler.buildElectricImplosionRecipes();
-        if (GAConfig.Misc.enableDisassembly)
-            DisassemblyHandler.buildDisassemblerRecipes();
-    }
-
-    @SubscribeEvent(priority = EventPriority.HIGH)
-    public static void onLogin(PlayerEvent.PlayerLoggedInEvent event) {
-        if (!event.player.world.isRemote) {
-            HashMap<PumpjackHandler.ReservoirType, Integer> packetMap = new HashMap<>();
-            for (Map.Entry<PumpjackHandler.ReservoirType, Integer> e : PumpjackHandler.reservoirList.entrySet()) {
-                if (e.getKey() != null && e.getValue() != null)
-                    packetMap.put(e.getKey(), e.getValue());
-            }
-            NetworkHandler.INSTANCE.sendToAll(new MessageReservoirListSync(packetMap));
-        }
-    }
-
-    @SubscribeEvent
-    public static void onSave(WorldEvent.Save event) {
-        IPSaveData.setDirty(0);
-    }
-
-    @SubscribeEvent
-    public static void onUnload(WorldEvent.Unload event) {
-        IPSaveData.setDirty(0);
     }
 }

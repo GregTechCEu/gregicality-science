@@ -1,17 +1,14 @@
 package gregicadditions.recipes;
 
 import gregicadditions.GAConfig;
-import gregicadditions.fluid.GAMetaFluids;
 import gregicadditions.item.GAExplosive;
 import gregicadditions.item.GAMetaBlocks;
 import gregicadditions.recipes.categories.*;
 import gregicadditions.recipes.categories.circuits.CircuitRecipes;
 import gregicadditions.recipes.categories.machines.MachineCraftingRecipes;
 import gregicadditions.recipes.chain.*;
-import gregicadditions.recipes.impl.LargeRecipeBuilder;
 import gregicadditions.utils.GALog;
 import gregtech.api.GTValues;
-import gregtech.api.items.toolitem.ToolMetaItem;
 import gregtech.api.recipes.*;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
@@ -35,7 +32,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static gregicadditions.GAMaterials.*;
@@ -155,22 +151,8 @@ public class RecipeHandler {
         CasingRecipes.init();
         SuperconductorRecipes.init();
         MiscRecipes.init();
-        //MetalCasingRecipes.init(); todo broken for some reason
-    }
-
-    /**
-     * Large Machine Recipes.
-     * These are run after other RecipeMaps are finalized
-     * since they often take recipes from other maps.
-     */
-    public static void registerLargeMachineRecipes() {
-
-        registerLargeMachineRecipes(LASER_ENGRAVER_RECIPES, LARGE_ENGRAVER_RECIPES);
-        registerLargeMachineRecipes(CENTRIFUGE_RECIPES, LARGE_CENTRIFUGE_RECIPES);
-
-        registerLargeMixerRecipes();
-        registerAlloyBlastRecipes();
         registerGreenHouseRecipes();
+        //MetalCasingRecipes.init(); todo broken for some reason
     }
 
     /**
@@ -693,171 +675,6 @@ public class RecipeHandler {
                     .output(ingot, material)
                     .buildAndRegister();
         }
-    }
-
-    private static void registerLargeMachineRecipes(RecipeMap<?> mapToCopy, RecipeMap<LargeRecipeBuilder> mapToForm) {
-
-        for (Recipe recipe : mapToCopy.getRecipeList()) {
-
-            mapToForm.recipeBuilder()
-                    .EUt(recipe.getEUt())
-                    .duration(recipe.getDuration())
-                    .inputsIngredients(recipe.getInputs())
-                    .outputs(recipe.getOutputs())
-                    .fluidInputs(recipe.getFluidInputs())
-                    .fluidOutputs(recipe.getFluidOutputs())
-                    .chancedOutputs(recipe.getChancedOutputs())
-                    .buildAndRegister();
-        }
-    }
-
-    /**
-     * Large Mixer Recipe Creation.
-     * Copies the Mixer RecipeMap.
-     *
-     * This RecipeMap also applies a circuit to every recipe to avoid conflicts.
-     */
-    private static void registerLargeMixerRecipes() {
-        MIXER_RECIPES.getRecipeList().forEach(recipe -> {
-            List<CountableIngredient> inputList = new ArrayList<>();
-            IntCircuitIngredient circuitIngredient = null;
-
-            // Make sure 2 circuits do not end up in the recipe
-            for (CountableIngredient input : recipe.getInputs()) {
-                if (!(input.getIngredient() instanceof IntCircuitIngredient))
-                    inputList.add(input);
-                else
-                    circuitIngredient = (IntCircuitIngredient) input.getIngredient();
-            }
-
-            if (circuitIngredient == null)
-                circuitIngredient = new IntCircuitIngredient(inputList.size() + recipe.getFluidInputs().size());
-
-            LARGE_MIXER_RECIPES.recipeBuilder()
-                    .notConsumable(circuitIngredient)
-                    .EUt(recipe.getEUt())
-                    .duration(recipe.getDuration())
-                    .fluidInputs(recipe.getFluidInputs())
-                    .inputsIngredients(inputList)
-                    .outputs(recipe.getOutputs())
-                    .fluidOutputs(recipe.getFluidOutputs())
-                    .buildAndRegister();
-        });
-    }
-
-    /**
-     * Alloy Blast Furnace Recipe creation.
-     * Uses the Large Mixer RecipeMap to look up compositions of alloys.
-     *
-     * This Recipe Registration MUST be run after the Large Mixer recipe addition.
-     */
-    private static void registerAlloyBlastRecipes() {
-        for (Material material : MaterialRegistry.MATERIAL_REGISTRY) {
-            if (!(material.hasProperty(PropertyKey.INGOT)))
-                continue;
-            if (material.getBlastTemperature() == 0)
-                continue;
-
-            // This could use some code cleanup
-            LARGE_MIXER_RECIPES.getRecipeList().stream()
-                    .filter(recipe -> recipe.getOutputs().size() == 1)
-                    .filter(recipe -> recipe.getFluidOutputs().size() == 0)
-                    .filter(recipe -> recipe.getOutputs().get(0).isItemEqualIgnoreDurability(OreDictUnifier.get(dust, material)))
-                    .findFirst()
-                    .ifPresent(recipe -> {
-                        ItemStack itemStack = recipe.getOutputs().get(0);
-                        Material ingot = OreDictUnifier.getUnificationEntry(itemStack).material;
-                        int duration = Math.max(1, (int) (ingot.getAverageMass() * ingot.getBlastTemperature() / 100));
-                        if(ingot.getBlastTemperature() <= 1750) {
-                            BLAST_ALLOY_RECIPES.recipeBuilder()
-                                    .duration(duration * 50 / 100)
-                                    .EUt(30 * ingot.getBlastTemperature() / 100)
-                                    .fluidInputs(recipe.getFluidInputs())
-                                    .inputsIngredients(recipe.getInputs())
-                                    .fluidOutputs(ingot.getFluid(itemStack.getCount() * GTValues.L))
-                                    .blastFurnaceTemp(ingot.getBlastTemperature())
-                                    .buildAndRegister();
-                        } else {
-                            BLAST_ALLOY_RECIPES.recipeBuilder()
-                                    .duration(duration * 50 / 100)
-                                    .EUt(30 * ingot.getBlastTemperature() / 100)
-                                    .fluidInputs(recipe.getFluidInputs())
-                                    .inputsIngredients(recipe.getInputs())
-                                    .fluidOutputs(GAMetaFluids.getMoltenFluid(material, itemStack.getCount() * GTValues.L))
-                                    .blastFurnaceTemp(ingot.getBlastTemperature())
-                                    .buildAndRegister();
-                            VACUUM_RECIPES.recipeBuilder()
-                                    .duration((int) (material.getAverageMass() * 5))
-                                    .EUt(30 * ingot.getBlastTemperature() / 100)
-                                    .fluidInputs(GAMetaFluids.getMoltenFluid(material, GTValues.L))
-                                    .fluidOutputs(ingot.getFluid(GTValues.L))
-                                    .buildAndRegister();
-                        }
-                    });
-        }
-
-        // Soldering Alloy
-        BLAST_ALLOY_RECIPES.recipeBuilder().duration(775).EUt(120)
-                .input(dust, Tin, 9)
-                .input(dust, Antimony)
-                .fluidOutputs(SolderingAlloy.getFluid(L * 10))
-                .blastFurnaceTemp(700)
-                .notConsumable(new IntCircuitIngredient(10))
-                .buildAndRegister();
-
-        // Red Alloy
-        BLAST_ALLOY_RECIPES.recipeBuilder().duration(473).EUt(120)
-                .input(dust, Redstone, 3)
-                .input(dust, Copper)
-                .fluidOutputs(RedAlloy.getFluid(L * 4))
-                .blastFurnaceTemp(600)
-                .buildAndRegister();
-
-        // Magnalium
-        BLAST_ALLOY_RECIPES.recipeBuilder().duration(320).EUt(120)
-                .input(dust, Aluminium, 2)
-                .input(dust, Magnesium)
-                .fluidOutputs(Magnalium.getFluid(L * 3))
-                .blastFurnaceTemp(900)
-                .buildAndRegister();
-
-        // Tin Alloy
-        BLAST_ALLOY_RECIPES.recipeBuilder().duration(556).EUt(120)
-                .input(dust, Tin)
-                .input(dust, Iron)
-                .fluidOutputs(TinAlloy.getFluid(L * 2))
-                .blastFurnaceTemp(600)
-                .notConsumable(new IntCircuitIngredient(2))
-                .buildAndRegister();
-
-        BLAST_ALLOY_RECIPES.recipeBuilder().duration(556).EUt(120)
-                .input(dust, Tin)
-                .input(dust, WroughtIron)
-                .fluidOutputs(TinAlloy.getFluid(L * 2))
-                .blastFurnaceTemp(600)
-                .notConsumable(new IntCircuitIngredient(2))
-                .buildAndRegister();
-
-        // Battery Alloy
-        BLAST_ALLOY_RECIPES.recipeBuilder().duration(512).EUt(120)
-                .input(dust, Lead, 4)
-                .input(dust, Antimony)
-                .fluidOutputs(BatteryAlloy.getFluid(L * 5))
-                .blastFurnaceTemp(700)
-                .notConsumable(new IntCircuitIngredient(5))
-                .buildAndRegister();
-
-        // Reactor Steel
-        BLAST_ALLOY_RECIPES.recipeBuilder().duration(12000).EUt(120)
-                .notConsumable(new IntCircuitIngredient(5))
-                .input(dust, Iron, 15)
-                .input(dust, Niobium, 1)
-                .input(dust, Vanadium, 4)
-                .input(dust, Carbon, 2)
-                .fluidInputs(Argon.getFluid(1000))
-                .fluidOutputs(ReactorSteel.getFluid(L * 22))
-                .blastFurnaceTemp(3800)
-                .buildAndRegister();
     }
 
     /**

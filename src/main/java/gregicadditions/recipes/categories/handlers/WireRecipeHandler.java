@@ -32,6 +32,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.loaders.oreprocessing.WireRecipeHandler.INSULATION_MATERIALS;
 
+// TODO remove this class, set the GA_INSULATIONS values to some List/Map in CEu
 public class WireRecipeHandler {
 
     /**

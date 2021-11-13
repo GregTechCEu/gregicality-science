@@ -28,7 +28,6 @@ public class ClientProxy extends CommonProxy {
         TextureUtils.addIconRegister(GAMetaFluids::registerSprites);
     }
 
-
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         GAMetaBlocks.registerStateMappers();
