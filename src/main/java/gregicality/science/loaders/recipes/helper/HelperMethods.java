@@ -3,7 +3,6 @@ package gregicality.science.loaders.recipes.helper;
 import com.google.common.base.Preconditions;
 import forestry.core.fluids.Fluids;
 import gregicality.science.loaders.recipes.GARecipeMaps;
-import gregicality.science.loaders.recipes.impl.nuclear.HotCoolantRecipe;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.recipes.FuelRecipe;
 import gregtech.api.unification.material.Material;
@@ -151,10 +150,6 @@ public class HelperMethods {
 
     public static void registerRocketFuel(FluidStack fuelStack, int duration, int tier) {
         GARecipeMaps.ROCKET_FUEL_RECIPES.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
-    }
-
-    public static void registerHotCoolantTurbineFuel(FluidStack input, Material output, int duration, int tier) {
-        GARecipeMaps.HOT_COOLANT_TURBINE_FUELS.addRecipe(new HotCoolantRecipe(input, duration, GTValues.V[tier], output.getFluid(input.amount)));
     }
 
     public static void registerQubitGeneratorFuel(OrePrefix prefix, Material material, int duration, int tier) {

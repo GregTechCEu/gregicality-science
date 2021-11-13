@@ -1,4 +1,4 @@
-package gregicality.science.integrations.jei.multi.advance;
+package gregicality.science.integrations.jei.multi;
 
 import gregicality.science.common.item.metal.MetalCasing1;
 import gregicality.science.integrations.jei.GAMultiblockShapeInfo;

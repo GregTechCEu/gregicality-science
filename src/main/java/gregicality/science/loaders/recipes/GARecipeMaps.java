@@ -2,8 +2,6 @@ package gregicality.science.loaders.recipes;
 
 import crafttweaker.annotations.ZenRegister;
 import gregicality.science.loaders.recipes.impl.*;
-import gregicality.science.loaders.recipes.impl.nuclear.HotCoolantRecipeMap;
-import gregicality.science.loaders.recipes.impl.QubitProducerRecipeBuilder;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
@@ -39,16 +37,6 @@ public class GARecipeMaps {
 
 
     // Multiblock Recipe Maps ==========================================================================================
-
-    @ZenProperty
-    public static final RecipeMap<NuclearReactorBuilder> NUCLEAR_REACTOR_RECIPES = new RecipeMap<>("nuclear_reactor",
-            1, 3, 1, 2, 0, 0, 0, 0, new NuclearReactorBuilder().EUt(480), false);
-
-
-    @ZenProperty
-    public static final RecipeMap<NuclearReactorBuilder> NUCLEAR_BREEDER_RECIPES = new RecipeMap<>("nuclear_breeder",
-            1, 3, 1, 4, 0, 0, 0, 0, new NuclearReactorBuilder().EUt(480), false);
-
 
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES = new RecipeMap<>("bio_reactor",
@@ -97,8 +85,4 @@ public class GARecipeMaps {
 
     @ZenProperty
     public static final FuelRecipeMap HYPER_REACTOR_FUELS = new FuelRecipeMap("hyper_reactor");
-
-
-    @ZenProperty
-    public static final HotCoolantRecipeMap HOT_COOLANT_TURBINE_FUELS = new HotCoolantRecipeMap("hot_coolant_turbine");
 }

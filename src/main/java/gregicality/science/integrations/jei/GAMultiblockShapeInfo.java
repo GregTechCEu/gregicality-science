@@ -18,6 +18,7 @@ import java.util.Map;
 
 import static gregtech.api.util.RelativeDirection.*;
 
+// TODO delete
 public class GAMultiblockShapeInfo extends MultiblockShapeInfo {
 
     private final BlockInfo[][][] blocks; //[z][y][x]

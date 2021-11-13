@@ -1,4 +1,4 @@
-package gregicality.science.integrations.jei;
+package gregicality.science.integrations.jei.multi;
 
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.fusion.GACryostatCasing;
@@ -6,6 +6,7 @@ import gregicality.science.common.item.fusion.GADivertorCasing;
 import gregicality.science.common.item.fusion.GAFusionCasing;
 import gregicality.science.common.item.fusion.GAVacuumCasing;
 import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.integrations.jei.GAMultiblockShapeInfo;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.metatileentities.MetaTileEntities;

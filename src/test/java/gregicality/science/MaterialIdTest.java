@@ -1,7 +1,6 @@
 package gregicality.science;
 
 import gregicality.science.api.GAMaterials;
-import gregicality.science.api.fluid.GAMetaFluids;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.GAMetaTileEntities;
 import gregtech.api.GTValues;
@@ -32,7 +31,6 @@ public class MaterialIdTest {
         GAEnums.onConstruction();
         GAMaterials.register();
         MetaFluids.init();
-        GAMetaFluids.init();
 
         // Bootstrap the GTCE MetaTileEntity System
         MetaBlocks.init();

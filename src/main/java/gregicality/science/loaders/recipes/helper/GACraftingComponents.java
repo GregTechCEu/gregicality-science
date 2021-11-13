@@ -8,7 +8,6 @@ import gregtech.api.GTValues;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.loaders.recipe.CraftingComponent;
-import gregtech.loaders.recipe.component.IComponentHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -19,15 +18,13 @@ import static gregicality.science.api.GAMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
-@IComponentHandler.RegisterComponentHandler
-public class GACraftingComponents implements IComponentHandler {
+public class GACraftingComponents {
 
     public static CraftingComponent.Component GEAR;
     public static CraftingComponent.Component CABLE_DOUBLE;
     public static CraftingComponent.Component PLATE_DENSE;
 
-    @Override
-    public void onComponentsInit() {
+    public static void register() {
         CraftingComponent.PUMP.appendIngredients(ImmutableMap.of(
                 9, GAMetaItems.ELECTRIC_PUMP_UHV,
                 10, GAMetaItems.ELECTRIC_PUMP_UEV,

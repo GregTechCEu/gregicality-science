@@ -2,7 +2,6 @@ package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
 import gregicality.science.api.GAMaterials;
-import gregicality.science.api.fluid.GAMetaFluids;
 import gregicality.science.api.materials.GAOrePrefix;
 import gregicality.science.common.item.GAHeatingCoil;
 import gregicality.science.common.item.GAMetaBlocks;
@@ -11,10 +10,12 @@ import gregicality.science.api.pipelike.opticalfiber.ItemBlockOpticalFiber;
 import gregicality.science.loaders.recipes.*;
 import gregicality.science.loaders.recipes.categories.handlers.*;
 import gregicality.science.api.GALog;
+import gregicality.science.loaders.recipes.helper.GACraftingComponents;
 import gregtech.api.GregTechAPI;
 import gregtech.api.recipes.recipeproperties.BlastTemperatureProperty;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.blocks.VariantItemBlock;
+import gregtech.loaders.recipe.CraftingComponent;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -39,7 +40,6 @@ public class CommonProxy {
 
     public void preLoad() {
         GAMetaItems.init();
-        GAMetaFluids.init();
     }
 
     public void onLoad() {
@@ -84,7 +84,6 @@ public class CommonProxy {
         registry.register(GAMetaBlocks.ROBOT_ARM_CASING);
         registry.register(GAMetaBlocks.SENSOR_CASING);
         registry.register(GAMetaBlocks.EMITTER_CASING);
-        registry.register(GAMetaBlocks.NUCLEAR_CASING);
         registry.register(OPTICAL_FIBER);
     }
 
@@ -115,7 +114,6 @@ public class CommonProxy {
         registry.register(createItemBlock(GAMetaBlocks.ROBOT_ARM_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GAMetaBlocks.SENSOR_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GAMetaBlocks.EMITTER_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.NUCLEAR_CASING, VariantItemBlock::new));
     }
 
     @SubscribeEvent(priority = EventPriority.HIGH)
@@ -123,6 +121,11 @@ public class CommonProxy {
         GAMaterials.register();
         GAOrePrefix.initIconSets();
         GAOrePrefix.initPrefixes();
+    }
+
+    @SubscribeEvent
+    public static void registerComponents(GregTechAPI.RegisterEvent<CraftingComponent> event) {
+        GACraftingComponents.register();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)

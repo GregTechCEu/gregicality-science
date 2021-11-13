@@ -60,9 +60,6 @@ public class GAMetaBlocks {
     public static RobotArmCasing ROBOT_ARM_CASING;
     public static SensorCasing SENSOR_CASING;
 
-    //nuclear casing
-    public static NuclearCasing NUCLEAR_CASING;
-
     public static BlockOpticalFiber OPTICAL_FIBER;
 
 
@@ -128,9 +125,6 @@ public class GAMetaBlocks {
         EMITTER_CASING = new EmitterCasing();
         EMITTER_CASING.setRegistryName("ga_emitter_casing");
 
-        NUCLEAR_CASING = new NuclearCasing();
-        NUCLEAR_CASING.setRegistryName("ga_nuclear_casing");
-
         OPTICAL_FIBER = new BlockOpticalFiber();
         OPTICAL_FIBER.setRegistryName("ga_cable");
 
@@ -181,7 +175,6 @@ public class GAMetaBlocks {
         registerItemModel(PUMP_CASING);
         registerItemModel(ROBOT_ARM_CASING);
         registerItemModel(SENSOR_CASING);
-        registerItemModel(NUCLEAR_CASING);
     }
 
     public static void registerTileEntity() {

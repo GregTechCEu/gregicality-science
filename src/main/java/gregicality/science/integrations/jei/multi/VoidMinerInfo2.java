@@ -1,4 +1,4 @@
-package gregicality.science.integrations.jei.multi.miner;
+package gregicality.science.integrations.jei.multi;
 
 import com.google.common.collect.Lists;
 import gregicality.science.common.item.metal.MetalCasing1;

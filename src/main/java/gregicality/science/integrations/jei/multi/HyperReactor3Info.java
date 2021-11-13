@@ -1,4 +1,4 @@
-package gregicality.science.integrations.jei.multi.advance;
+package gregicality.science.integrations.jei.multi;
 
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.GAReactorCasing;
