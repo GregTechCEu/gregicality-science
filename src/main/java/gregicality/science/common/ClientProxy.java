@@ -2,7 +2,7 @@ package gregicality.science.common;
 
 import gregicality.science.client.model.ReTexturedModelLoader;
 import gregicality.science.client.renderer.OpticalFiberRenderer;
-import gregicality.science.common.item.GAMetaBlocks;
+import gregicality.science.common.block.GAMetaBlocks;
 import gregicality.science.api.GCYSciLog;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -23,7 +23,6 @@ public class ClientProxy extends CommonProxy {
         GCYSciLog.logger.info(Minecraft.getMinecraft().getFramebuffer().isStencilEnabled());
         OpticalFiberRenderer.preInit();
         ModelLoaderRegistry.registerLoader(new ReTexturedModelLoader());
-        //TextureUtils.addIconRegister(GAMetaFluids::registerSprites);
     }
 
     @SubscribeEvent

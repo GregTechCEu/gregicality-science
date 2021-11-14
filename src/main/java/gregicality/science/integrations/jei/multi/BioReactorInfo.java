@@ -1,14 +1,14 @@
 package gregicality.science.integrations.jei.multi;
 
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.common.item.GAMultiblockCasing2;
-import gregicality.science.common.item.GATransparentCasing;
-import gregicality.science.common.item.components.EmitterCasing;
-import gregicality.science.common.item.components.FieldGenCasing;
-import gregicality.science.common.item.components.PumpCasing;
-import gregicality.science.common.item.components.SensorCasing;
+import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GAMultiblockCasing2;
+import gregicality.science.common.block.GATransparentCasing;
+import gregicality.science.common.block.components.EmitterCasing;
+import gregicality.science.common.block.components.FieldGenCasing;
+import gregicality.science.common.block.components.PumpCasing;
+import gregicality.science.common.block.components.SensorCasing;
 import gregicality.science.integrations.jei.GAMultiblockShapeInfo;
-import gregicality.science.common.machines.GCYSciTileEntities;
+import gregicality.science.common.machine.GCYSciTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.metatileentities.MetaTileEntities;

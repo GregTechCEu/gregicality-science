@@ -1,10 +1,9 @@
 package gregicality.science.api.machines;
 
 import com.google.common.collect.Lists;
-import gregicality.science.api.capabilities.GregicalityCapabilities;
+import gregicality.science.api.capabilities.GCYSciCapabilities;
 import gregicality.science.api.capabilities.IQubitContainer;
-import gregicality.science.api.capabilities.impl.QubitConsumeRecipeLogic;
-import gregicality.science.api.capabilities.impl.QubitContainerList;
+import gregicality.science.api.recipe.QubitConsumeRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.multiblock.PatternMatchContext;
 import gregtech.api.recipes.RecipeMap;
@@ -50,8 +49,8 @@ public abstract class QubitRecipeMapMultiblockController extends RecipeMapMultib
     }
 
     private void initializeAbilities() {
-        this.inputQubit = new QubitContainerList(getAbilities(GregicalityCapabilities.INPUT_QBIT));
-        this.outputQubit = new QubitContainerList(getAbilities(GregicalityCapabilities.OUTPUT_QBIT));
+        this.inputQubit = new QubitContainerList(getAbilities(GCYSciCapabilities.INPUT_QBIT));
+        this.outputQubit = new QubitContainerList(getAbilities(GCYSciCapabilities.OUTPUT_QBIT));
     }
 
     private void resetTileAbilities() {

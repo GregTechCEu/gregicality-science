@@ -1,8 +1,8 @@
 package gregicality.science.loaders.recipes.chain;
 
 import gregicality.science.api.GCYSciMaterials;
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.common.item.GAExplosive;
+import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GAExplosive;
 
 import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GAMetaItems.*;

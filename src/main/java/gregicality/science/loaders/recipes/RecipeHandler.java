@@ -1,11 +1,11 @@
 package gregicality.science.loaders.recipes;
 
 import gregicality.science.common.GCYSciConfig;
-import gregicality.science.common.item.GAExplosive;
-import gregicality.science.common.item.GAMetaBlocks;
+import gregicality.science.common.block.GAExplosive;
+import gregicality.science.common.block.GAMetaBlocks;
 import gregicality.science.loaders.recipes.categories.*;
 import gregicality.science.loaders.recipes.categories.circuits.CircuitRecipes;
-import gregicality.science.loaders.recipes.categories.machines.MachineCraftingRecipes;
+import gregicality.science.loaders.recipes.categories.MachineCraftingRecipes;
 import gregicality.science.loaders.recipes.chain.*;
 import gregicality.science.api.GCYSciLog;
 import gregtech.api.GTValues;

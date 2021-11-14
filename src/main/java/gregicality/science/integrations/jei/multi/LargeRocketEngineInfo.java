@@ -2,7 +2,7 @@ package gregicality.science.integrations.jei.multi;
 
 import gregicality.science.common.item.metal.MetalCasing1;
 import gregicality.science.integrations.jei.GAMultiblockShapeInfo;
-import gregicality.science.common.machines.GCYSciTileEntities;
+import gregicality.science.common.machine.GCYSciTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.blocks.BlockMultiblockCasing;
@@ -21,7 +21,7 @@ import net.minecraft.util.text.TextFormatting;
 import java.util.Collections;
 import java.util.List;
 
-import static gregicality.science.common.item.GAMetaBlocks.METAL_CASING_1;
+import static gregicality.science.common.block.GAMetaBlocks.METAL_CASING_1;
 
 public class LargeRocketEngineInfo extends MultiblockInfoPage {
 

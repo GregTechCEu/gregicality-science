@@ -1,7 +1,7 @@
 [
   {
-    "modid": "gregicality",
-    "name": "Gregicality",
+    "modid": "gcy_science",
+    "name": "Gregicality: Science",
     "description": "The big spook takes your lunch money.  Who reads these?",
     "version": "${version}",
     "mcversion": "${mcversion}",

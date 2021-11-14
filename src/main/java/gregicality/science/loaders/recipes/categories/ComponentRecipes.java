@@ -53,7 +53,7 @@ public class ComponentRecipes {
                 .input(foil, Osmiridium, 32)
                 .input(wireGtDouble, Duranium, 8)
                 .input(gemExquisite, Diamond, 2)
-                .input(circuit, Superconductor, 2)
+                .input(circuit, Super, 2)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .outputs(EMITTER_UV.getStackForm())
                 .buildAndRegister();
@@ -112,7 +112,7 @@ public class ComponentRecipes {
                 .input(foil, Osmiridium, 32)
                 .input(wireGtDouble, Duranium, 8)
                 .input(gemExquisite, Diamond, 2)
-                .input(circuit, Superconductor, 2)
+                .input(circuit, Super, 2)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .outputs(SENSOR_UV.getStackForm())
                 .buildAndRegister();
@@ -170,7 +170,7 @@ public class ComponentRecipes {
                 .inputs(GRAVI_STAR.getStackForm())
                 .input(wireFine, Osmium, 64)
                 .input(cableGtOctal, Duranium, 4)
-                .input(circuit, Superconductor, 2)
+                .input(circuit, Super, 2)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .outputs(FIELD_GENERATOR_UV.getStackForm())
                 .buildAndRegister();
@@ -258,7 +258,7 @@ public class ComponentRecipes {
                 .input(ingot, HDCS)
                 .inputs(ELECTRIC_MOTOR_UEV.getStackForm(2))
                 .inputs(ELECTRIC_PISTON_UEV.getStackForm())
-                .input(circuit, Superconductor, 8)
+                .input(circuit, Super, 8)
                 .fluidInputs(SolderingAlloy.getFluid(L * 4))
                 .fluidInputs(Lubricant.getFluid(2000))
                 .outputs(ROBOT_ARM_UEV.getStackForm())

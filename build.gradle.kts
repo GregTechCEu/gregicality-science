@@ -31,14 +31,14 @@ val config: Properties = file("build.properties").inputStream().let {
     return@let prop
 }
 
-val modVersion = config["gregicality.version"] as String
+val modVersion = config["gcy_science.version"] as String
 val mcVersion = config["mc.version"] as String
 val forgeVersion = "$mcVersion-${config["forge.version"]}"
 val shortVersion = mcVersion.substring(0, mcVersion.lastIndexOf("."))
 val strippedVersion = shortVersion.replace(".", "") + "0";
 
 version = "$mcVersion-$modVersion"
-group = "gregicadditions"
+group = "gregicality"
 
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -54,7 +54,7 @@ configure<UserBaseExtension> {
     mappings = config["mcp.version"] as String
     runDir = "run"
     replace("@VERSION@", modVersion)
-    replaceIn("Gregicality.java")
+    replaceIn("GregicalityScience.java")
 }
 
 repositories {
@@ -132,8 +132,8 @@ processResources.apply {
 val jar: Jar by tasks
 jar.apply {
     manifest {
-        attributes(mapOf("FMLAT" to "gregicality_at.cfg",
+        attributes(mapOf("FMLAT" to "gcy_science_at.cfg",
             "FMLCorePluginContainsFMLMod" to "true",
-            "FMLCorePlugin" to "gregicadditions.coremod.GACoreMod"))
+            "FMLCorePlugin" to "gregicality.science.core.GCYSciCoreMod"))
     }
 }

@@ -3,8 +3,8 @@ package gregicality.science.common;
 import gregicality.science.GregicalityScience;
 import gregicality.science.api.GCYSciMaterials;
 import gregicality.science.api.materials.GAOrePrefix;
-import gregicality.science.common.item.GAHeatingCoil;
-import gregicality.science.common.item.GAMetaBlocks;
+import gregicality.science.common.block.GAHeatingCoil;
+import gregicality.science.common.block.GAMetaBlocks;
 import gregicality.science.common.item.GAMetaItems;
 import gregicality.science.api.pipelike.opticalfiber.ItemBlockOpticalFiber;
 import gregicality.science.loaders.recipes.*;
@@ -33,7 +33,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import java.util.Objects;
 import java.util.function.Function;
 
-import static gregicality.science.common.item.GAMetaBlocks.OPTICAL_FIBER;
+import static gregicality.science.common.block.GAMetaBlocks.OPTICAL_FIBER;
 
 @Mod.EventBusSubscriber(modid = GregicalityScience.MODID)
 public class CommonProxy {
@@ -153,8 +153,6 @@ public class CommonProxy {
         // Register GTCE Material Handlers
         RecipeHandler.register();
         WireRecipeHandler.register();
-        NuclearHandler.register();
-//        OreRecipeHandler.register(); todo material processing handlers
         VoidMinerHandler.register();
 
         // Register OreDictionary Entries

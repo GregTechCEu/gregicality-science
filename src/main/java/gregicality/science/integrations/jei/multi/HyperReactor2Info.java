@@ -1,9 +1,9 @@
 package gregicality.science.integrations.jei.multi;
 
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.common.item.GAReactorCasing;
+import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GAReactorCasing;
 import gregicality.science.integrations.jei.GAMultiblockShapeInfo;
-import gregicality.science.common.machines.GCYSciTileEntities;
+import gregicality.science.common.machine.GCYSciTileEntities;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;

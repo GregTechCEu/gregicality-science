@@ -1,7 +1,8 @@
 package gregicality.science.loaders.recipes;
 
 import crafttweaker.annotations.ZenRegister;
-import gregicality.science.loaders.recipes.impl.*;
+import gregicality.science.api.recipe.AdvFusionRecipeBuilder;
+import gregicality.science.api.recipe.QubitProducerRecipeBuilder;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;

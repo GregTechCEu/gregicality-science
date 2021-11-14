@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipes.categories;
 
-import gregicality.science.common.item.*;
-import gregicality.science.common.item.components.*;
+import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GAMultiblockCasing2;
 import gregicality.science.common.item.metal.MetalCasing2;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.ModHandler;
@@ -18,19 +18,19 @@ import java.util.Arrays;
 
 import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.CellCasing.CellType.*;
-import static gregicality.science.common.item.GAHeatingCoil.CoilType.*;
+import static gregicality.science.common.block.GAHeatingCoil.CoilType.*;
 import static gregicality.science.common.item.GAMetaItems.*;
-import static gregicality.science.common.item.GAMultiblockCasing.CasingType.*;
-import static gregicality.science.common.item.GAMultiblockCasing2.CasingType.*;
-import static gregicality.science.common.item.GAQuantumCasing.CasingType.COMPUTER;
-import static gregicality.science.common.item.GAReactorCasing.CasingType.*;
-import static gregicality.science.common.item.fusion.GAFusionCasing.CasingType.*;
+import static gregicality.science.common.block.GAMultiblockCasing.CasingType.*;
+import static gregicality.science.common.block.GAMultiblockCasing2.CasingType.*;
+import static gregicality.science.common.block.GAQuantumCasing.CasingType.COMPUTER;
+import static gregicality.science.common.block.GAReactorCasing.CasingType.*;
+import static gregicality.science.common.block.fusion.GAFusionCasing.CasingType.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Tier.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregicality.science.common.item.GATransparentCasing.CasingType.*;
+import static gregicality.science.common.block.GATransparentCasing.CasingType.*;
 import static gregtech.common.blocks.BlockFusionCoil.CoilType.FUSION_COIL;
 import static gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType.*;
 import static gregtech.common.items.MetaItems.*;

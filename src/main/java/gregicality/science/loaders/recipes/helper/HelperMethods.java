@@ -160,47 +160,4 @@ public class HelperMethods {
                 .EUt((int)GTValues.V[tier])
                 .buildAndRegister();
     }
-
-    /**
-     * Small Helper class useful for Forestry compatibility. If we are generating a recipe with either a
-     * GT Fluid or a Forestry Fluid, we can use this class to make it easier to code.
-     * An example of how to use it:
-     *
-     * <cr>
-     *     boolean forestry = Loader.isModLoaded(MODID_FR) && GAConfig.Misc.ForestryIntegration;
-     *
-     *     GenericFluid Ethanol = forestry ?
-     *             new GenericFluid(Fluids.BIO_ETHANOL) :
-     *             new GenericFluid(Materials.Ethanol);
-     *
-     *     registerDieselGeneratorFuel(Ethanol.getFluid(2), 12, LV);
-     * </cr>
-     */
-    public static class GenericFluid {
-
-        // Only one of these must be initialized for any given instance of GenericFluid
-        private Material material;
-        private Fluids fluids;
-
-        public GenericFluid(Fluids fluids) {
-            this.fluids = fluids;
-        }
-
-        public GenericFluid(Material material) {
-            Preconditions.checkArgument(material.hasFluid());
-            this.material = material;
-        }
-
-        /**
-         * Create a FluidStack of the Material.
-         *
-         * @return A FluidStack with specified amount
-         */
-        public FluidStack getFluid(int amount) {
-            if (material == null)
-                return fluids.getFluid(amount);
-            else
-                return material.getFluid(amount);
-        }
-    }
 }
