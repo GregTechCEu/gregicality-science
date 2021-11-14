@@ -1,6 +1,6 @@
 package gregicality.science.loaders.recipes.impl;
 
-import gregicality.science.api.GALog;
+import gregicality.science.api.GCYSciLog;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import java.util.HashMap;
 import java.util.Map;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 
 @MethodsReturnNonnullByDefault
@@ -81,7 +81,7 @@ public class AdvFusionRecipeBuilder extends RecipeBuilder<AdvFusionRecipeBuilder
 
     public AdvFusionRecipeBuilder coilTier(int coilTier) {
         if (coilTier <= 0) {
-            GALog.logger.error("Advanced Fusion Coil tier cannot be less than or equal to 0", new IllegalArgumentException());
+            GCYSciLog.logger.error("Advanced Fusion Coil tier cannot be less than or equal to 0", new IllegalArgumentException());
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.coilTier = coilTier;
@@ -91,7 +91,7 @@ public class AdvFusionRecipeBuilder extends RecipeBuilder<AdvFusionRecipeBuilder
 
     public AdvFusionRecipeBuilder euStart(long eu) {
         if (eu <= 0) {
-            GALog.logger.error("Advanced Fusion EU to start cannot be less than or equal to 0", new IllegalArgumentException());
+            GCYSciLog.logger.error("Advanced Fusion EU to start cannot be less than or equal to 0", new IllegalArgumentException());
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.euStart = eu;
@@ -100,7 +100,7 @@ public class AdvFusionRecipeBuilder extends RecipeBuilder<AdvFusionRecipeBuilder
 
     public AdvFusionRecipeBuilder euReturn(int percentage) {
         if (percentage < 0) {
-            GALog.logger.error("Advanced Fusion EU return cannot be less than 0", new IllegalArgumentException());
+            GCYSciLog.logger.error("Advanced Fusion EU return cannot be less than 0", new IllegalArgumentException());
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.euReturn = percentage;
@@ -135,7 +135,7 @@ public class AdvFusionRecipeBuilder extends RecipeBuilder<AdvFusionRecipeBuilder
             }
         } else {
             recipeMap.addRecipe(this.build());
-            GALog.logger.info("Potentially incorrect Advanced Fusion Recipe with fluid inputs not equal to 2 added.");
+            GCYSciLog.logger.info("Potentially incorrect Advanced Fusion Recipe with fluid inputs not equal to 2 added.");
         }
     }
 

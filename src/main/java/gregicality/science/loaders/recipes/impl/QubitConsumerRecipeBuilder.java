@@ -1,6 +1,6 @@
 package gregicality.science.loaders.recipes.impl;
 
-import gregicality.science.common.GAConfig;
+import gregicality.science.common.GCYSciConfig;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
@@ -25,7 +25,7 @@ public class QubitConsumerRecipeBuilder extends RecipeBuilder<QubitConsumerRecip
     private static final List<FluidStack> SOLDER_FLUIDS = new ArrayList<>();
 
     static {
-        for (String fluid : GAConfig.Misc.solderingFluidList) {
+        for (String fluid : GCYSciConfig.Misc.solderingFluidList) {
             String[] fluidSplit = fluid.split(":");
             int rawAmount = Integer.parseInt(fluidSplit[1]);
             int amount = rawAmount < 1 ? 1 : Math.min(rawAmount, 64000);

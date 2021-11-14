@@ -8,26 +8,6 @@
   },
   "variants": {
     "variant": {
-      "coke_oven_bricks": {
-        "textures": {
-          "all": "gregtech:blocks/casings/solid/machine_coke_oven_bricks"
-        }
-      },
-      "assembly_line_casing": {
-        "textures": {
-          "all": "gregtech:blocks/casings/gearbox/machine_casing_gearbox_assembly_line"
-        }
-      },
-      "chemically_inert_casing": {
-        "textures": {
-          "all": "gregtech:blocks/casings/solid/machine_casing_chemically_inert"
-        }
-      },
-      "large_assembler_casing": {
-        "textures": {
-          "all": "gregtech:blocks/casings/solid/machine_casing_large_assembler"
-        }
-      },
       "tiered_hull_ulv": {
         "textures": {
           "all": "gregtech:blocks/casings/solid/machine_casing_tiered_hull_ulv"

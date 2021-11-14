@@ -2,7 +2,7 @@ package gregicality.science.api.materials;
 
 import gregtech.api.unification.material.Material;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.api.materials.GAMaterialFlags.GA_CORE_METAL;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.SHINY;

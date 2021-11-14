@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.common.GAConfig;
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.GCYSciConfig;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -15,7 +15,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 public class DigitalInterfaces {
     public static void init() {
         int tier = 3;
-        for (String fluid : GAConfig.Misc.solderingFluidList) {
+        for (String fluid : GCYSciConfig.Misc.solderingFluidList) {
             String[] fluidSplit = fluid.split(":");
             int amount = Integer.parseInt(fluidSplit[1]);
             if (amount > 64000) {
@@ -51,7 +51,7 @@ public class DigitalInterfaces {
                     .inputs(MetaTileEntities.HULL[tier].getStackForm())
                     .input(wireFine, AnnealedCopper, 8)
                     .fluidInputs(fluidStack)
-                    .outputs(GAMetaTileEntities.MONITOR_SCREEN.getStackForm())
+                    .outputs(GCYSciTileEntities.MONITOR_SCREEN.getStackForm())
                     .buildAndRegister();
 
             ASSEMBLER_RECIPES.recipeBuilder().duration(100).EUt(500)
@@ -59,7 +59,7 @@ public class DigitalInterfaces {
                     .inputs(MetaTileEntities.HULL[tier].getStackForm())
                     .input(circuit, MarkerMaterials.Tier.Advanced, 2)
                     .fluidInputs(fluidStack)
-                    .outputs(GAMetaTileEntities.CENTRAL_MONITOR.getStackForm())
+                    .outputs(GCYSciTileEntities.CENTRAL_MONITOR.getStackForm())
                     .buildAndRegister();
 
             ASSEMBLER_RECIPES.recipeBuilder().duration(100).EUt(500)

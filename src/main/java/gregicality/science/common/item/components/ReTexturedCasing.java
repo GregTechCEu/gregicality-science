@@ -1,12 +1,12 @@
 package gregicality.science.common.item.components;
 
 import com.google.common.collect.ImmutableMap;
-import gregicality.science.common.GAConfig;
+import gregicality.science.common.GCYSciConfig;
 import gregicality.science.client.model.IReTexturedModel;
 import gregicality.science.client.model.ReTexturedModel;
 import gregicality.science.client.model.ReTexturedModelLoader;
 import gregicality.science.utils.BlockPatternChecker;
-import gregicality.science.api.GALog;
+import gregicality.science.api.GCYSciLog;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.api.multiblock.PatternMatchContext;
@@ -51,7 +51,7 @@ public abstract class ReTexturedCasing<T extends Enum<T> & IStringSerializable> 
 
     @Override
     public void register(IBlockState state, ResourceLocation path) {
-        if (GAConfig.client.AdvancedCasingModel) {
+        if (GCYSciConfig.client.AdvancedCasingModel) {
             ReTexturedModelLoader.register(this, path, new ReTexturedModel(getModels(state)));
         }
     }
@@ -146,7 +146,7 @@ public abstract class ReTexturedCasing<T extends Enum<T> & IStringSerializable> 
                 }
             }
         } catch (Throwable e) {
-            GALog.logger.error(pos);
+            GCYSciLog.logger.error(pos);
             e.printStackTrace();
         }
         return null;

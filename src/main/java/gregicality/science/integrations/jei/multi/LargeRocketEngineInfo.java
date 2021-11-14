@@ -2,7 +2,7 @@ package gregicality.science.integrations.jei.multi;
 
 import gregicality.science.common.item.metal.MetalCasing1;
 import gregicality.science.integrations.jei.GAMultiblockShapeInfo;
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.blocks.BlockMultiblockCasing;
@@ -27,7 +27,7 @@ public class LargeRocketEngineInfo extends MultiblockInfoPage {
 
     @Override
     public MultiblockControllerBase getController() {
-        return GAMetaTileEntities.LARGE_ROCKET_ENGINE;
+        return GCYSciTileEntities.LARGE_ROCKET_ENGINE;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class LargeRocketEngineInfo extends MultiblockInfoPage {
             builder.aisle("CCC", "C#F", "CAC");
         }
         builder.aisle("CCC", "CEC", "CCC")
-                .where('S', GAMetaTileEntities.LARGE_ROCKET_ENGINE, EnumFacing.NORTH)
+                .where('S', GCYSciTileEntities.LARGE_ROCKET_ENGINE, EnumFacing.NORTH)
                 .where('M', maintenanceIfEnabled(METAL_CASING_1.getState(MetalCasing1.CasingType.NITINOL_60)), EnumFacing.NORTH)
                 .where('C', METAL_CASING_1.getState(MetalCasing1.CasingType.NITINOL_60))
                 .where('F', MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.EAST)

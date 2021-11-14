@@ -1,6 +1,6 @@
 package gregicality.science.loaders.recipes.categories.machines;
 
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
@@ -14,14 +14,13 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.api.materials.GAOrePrefix.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static gregtech.api.recipes.ModHandler.removeTieredRecipeByName;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.recipes.ingredients.IntCircuitIngredient.getIntegratedCircuit;
-import static gregtech.api.unification.material.MarkerMaterials.Tier.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
@@ -116,12 +115,12 @@ public class MachineCraftingRecipes {
         //ModHandler.addShapedRecipe("ga_rotor_holder_uhv", GAMetaTileEntities.ROTOR_HOLDER[2].getStackForm(), "WHW", "WRW", "WWW", 'H', MetaTileEntities.HULL[UHV].getStackForm(), 'W', new UnificationEntry(wireGtHex, Duranium),             'R', new UnificationEntry(gear, Seaborgium));
 
         // Custom Hatches
-        ModHandler.addShapedRecipe("ga_qubit_input_hatch",  GAMetaTileEntities.QBIT_INPUT_HATCH[0].getStackForm(),  "   ", "CM ", "   ", 'M', MetaTileEntities.HULL[ZPM].getStackForm(), 'C', new UnificationEntry(opticalFiberHex));
-        ModHandler.addShapedRecipe("ga_qubit_output_hatch", GAMetaTileEntities.QBIT_OUTPUT_HATCH[0].getStackForm(), "   ", " MC", "   ", 'M', MetaTileEntities.HULL[ZPM].getStackForm(), 'C', new UnificationEntry(opticalFiberSingle));
+        ModHandler.addShapedRecipe("ga_qubit_input_hatch",  GCYSciTileEntities.QBIT_INPUT_HATCH[0].getStackForm(),  "   ", "CM ", "   ", 'M', MetaTileEntities.HULL[ZPM].getStackForm(), 'C', new UnificationEntry(opticalFiberHex));
+        ModHandler.addShapedRecipe("ga_qubit_output_hatch", GCYSciTileEntities.QBIT_OUTPUT_HATCH[0].getStackForm(), "   ", " MC", "   ", 'M', MetaTileEntities.HULL[ZPM].getStackForm(), 'C', new UnificationEntry(opticalFiberSingle));
 
         //Steam Machines
-        ModHandler.addShapedRecipe("ga_steam_mixer", GAMetaTileEntities.STEAM_MIXER.getStackForm(), "GRG", "GPG", "PMP", 'M', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL), 'P', new UnificationEntry(pipeSmallFluid, Bronze), 'R', new UnificationEntry(rotor, Bronze), 'G', Blocks.GLASS);
-        ModHandler.addShapedRecipe("ga_steam_pump", GAMetaTileEntities.STEAM_PUMP.getStackForm(), "NLN", "NMN", "LRL", 'N', new UnificationEntry(pipeNormalFluid, Bronze), 'L', new UnificationEntry(pipeLargeFluid, Bronze), 'M', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL), 'R', new UnificationEntry(rotor, Bronze));
-        ModHandler.addShapedRecipe("ga_steam_miner", GAMetaTileEntities.STEAM_MINER.getStackForm(), "DSD", "SMS", "RSR", 'M', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL), 'S', new UnificationEntry(pipeNormalFluid, Bronze), 'D', Items.DIAMOND, 'R', new UnificationEntry(rotor, Bronze));
+        ModHandler.addShapedRecipe("ga_steam_mixer", GCYSciTileEntities.STEAM_MIXER.getStackForm(), "GRG", "GPG", "PMP", 'M', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL), 'P', new UnificationEntry(pipeSmallFluid, Bronze), 'R', new UnificationEntry(rotor, Bronze), 'G', Blocks.GLASS);
+        ModHandler.addShapedRecipe("ga_steam_pump", GCYSciTileEntities.STEAM_PUMP.getStackForm(), "NLN", "NMN", "LRL", 'N', new UnificationEntry(pipeNormalFluid, Bronze), 'L', new UnificationEntry(pipeLargeFluid, Bronze), 'M', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL), 'R', new UnificationEntry(rotor, Bronze));
+        ModHandler.addShapedRecipe("ga_steam_miner", GCYSciTileEntities.STEAM_MINER.getStackForm(), "DSD", "SMS", "RSR", 'M', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL), 'S', new UnificationEntry(pipeNormalFluid, Bronze), 'D', Items.DIAMOND, 'R', new UnificationEntry(rotor, Bronze));
     }
 }

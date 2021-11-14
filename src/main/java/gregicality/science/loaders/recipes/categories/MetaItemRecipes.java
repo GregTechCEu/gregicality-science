@@ -13,7 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GAMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;

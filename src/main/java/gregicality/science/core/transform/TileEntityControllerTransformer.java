@@ -1,7 +1,7 @@
 package gregicality.science.core.transform;
 
-import gregicality.science.core.GAClassTransformer.ClassMapper;
-import gregicality.science.core.GAClassTransformer.GAMethodVisitor;
+import gregicality.science.core.GCYSciTransformer.ClassMapper;
+import gregicality.science.core.GCYSciTransformer.GAMethodVisitor;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;

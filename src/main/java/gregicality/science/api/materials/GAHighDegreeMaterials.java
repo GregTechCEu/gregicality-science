@@ -8,7 +8,7 @@ import static gregtech.api.unification.material.Material.FluidType;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 
 /**
  * High Degree Materials, IDs 18500-19999

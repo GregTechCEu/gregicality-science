@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GAMetaItems.INSULATION_WIRE_ASSEMBLY;
 import static gregtech.api.GTValues.M;
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;

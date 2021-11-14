@@ -1,11 +1,11 @@
 package gregicality.science.loaders.recipes.categories.circuits;
 
-import gregicality.science.api.GAMaterials;
+import gregicality.science.api.GCYSciMaterials;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GAMetaItems.*;
-import static gregicality.science.loaders.recipes.GARecipeMaps.*;
+import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Color.*;
@@ -160,7 +160,7 @@ public class WaferRecipes {
 
         LARGE_CHEMICAL_RECIPES.recipeBuilder().duration(390).EUt(983040)
                 .inputs(UHASOC_WAFER.getStackForm())
-                .fluidInputs(GAMaterials.ZBLAN.getFluid(L))
+                .fluidInputs(GCYSciMaterials.ZBLAN.getFluid(L))
                 .fluidInputs(CarbonNanotubes.getFluid(L))
                 .fluidInputs(SeaborgiumDopedNanotubes.getFluid(L))
                 .input(dust, IndiumPhospide)

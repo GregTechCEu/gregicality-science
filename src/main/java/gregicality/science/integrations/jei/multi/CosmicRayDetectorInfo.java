@@ -1,6 +1,6 @@
 package gregicality.science.integrations.jei.multi;
 
-import gregicality.science.api.GAMaterials;
+import gregicality.science.api.GCYSciMaterials;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.components.EmitterCasing;
 import gregicality.science.common.item.components.FieldGenCasing;
@@ -8,7 +8,7 @@ import gregicality.science.common.item.components.PumpCasing;
 import gregicality.science.common.item.components.SensorCasing;
 import gregicality.science.common.item.metal.MetalCasing2;
 import gregicality.science.integrations.jei.GAMultiblockShapeInfo;
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.blocks.BlockFusionCoil;
@@ -26,7 +26,7 @@ import java.util.List;
 public class CosmicRayDetectorInfo extends MultiblockInfoPage {
     @Override
     public MultiblockControllerBase getController() {
-        return GAMetaTileEntities.COSMIC_RAY_DETECTOR;
+        return GCYSciTileEntities.COSMIC_RAY_DETECTOR;
     }
 
     @Override
@@ -48,13 +48,13 @@ public class CosmicRayDetectorInfo extends MultiblockInfoPage {
                 .aisle("###############", "###############", "###############", "###############", "###############", "###############", "#######x#######", "####xxx#xxx####", "###x#######x###", "###############")
                 .aisle("###############", "###############", "###############", "###############", "###############", "###############", "###############", "######xxx######", "####xx###xx####", "###############")
                 .aisle("###############", "###############", "###############", "###############", "###############", "###############", "###############", "###############", "######xxx######", "###############")
-                .where('S', GAMetaTileEntities.COSMIC_RAY_DETECTOR, EnumFacing.NORTH)
+                .where('S', GCYSciTileEntities.COSMIC_RAY_DETECTOR, EnumFacing.NORTH)
                 .where('M', maintenanceIfEnabled(GAMetaBlocks.METAL_CASING_2.getState(MetalCasing2.CasingType.QUANTUM)), EnumFacing.NORTH)
                 .where('e', MetaTileEntities.ENERGY_INPUT_HATCH[GTValues.UHV], EnumFacing.NORTH)
                 .where('f', MetaTileEntities.FLUID_EXPORT_HATCH[0], EnumFacing.NORTH)
                 .where('X', GAMetaBlocks.METAL_CASING_2.getState(MetalCasing2.CasingType.QUANTUM))
                 .where('x', GAMetaBlocks.METAL_CASING_2.getState(MetalCasing2.CasingType.TRITANIUM))
-                .where('C', MetaBlocks.FRAMES.get(GAMaterials.BlackTitanium).getDefaultState())
+                .where('C', MetaBlocks.FRAMES.get(GCYSciMaterials.BlackTitanium).getDefaultState())
                 .where('c', MetaBlocks.FUSION_COIL.getState(BlockFusionCoil.CoilType.SUPERCONDUCTOR))
                 .where('F', GAMetaBlocks.FIELD_GEN_CASING.getState(FieldGenCasing.CasingType.FIELD_GENERATOR_UHV))
                 .where('E', GAMetaBlocks.EMITTER_CASING.getState(EmitterCasing.CasingType.EMITTER_UHV))

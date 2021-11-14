@@ -1,13 +1,13 @@
 package gregicality.science.loaders.recipes.categories.circuits.components;
 
-import gregicality.science.common.GAConfig;
+import gregicality.science.common.GCYSciConfig;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregicality.science.common.item.GAMetaItems.*;
@@ -18,7 +18,7 @@ public class ExoticComponents{
     private static final List<FluidStack> SOLDER_FLUIDS = new ArrayList<>();
 
     static {
-        for (String fluid : GAConfig.Misc.solderingFluidList) {
+        for (String fluid : GCYSciConfig.Misc.solderingFluidList) {
             String[] fluidSplit = fluid.split(":");
             int rawAmount = Integer.parseInt(fluidSplit[1]);
             int amount = rawAmount < 1 ? 1 : Math.min(rawAmount, 64000);

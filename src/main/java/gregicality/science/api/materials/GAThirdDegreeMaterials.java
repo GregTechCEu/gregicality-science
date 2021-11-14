@@ -1,13 +1,13 @@
 package gregicality.science.api.materials;
 
-import gregicality.science.api.GAMaterials;
+import gregicality.science.api.GCYSciMaterials;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 
 
 import static com.google.common.collect.ImmutableList.of;
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.api.materials.GAMaterialFlags.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -111,7 +111,7 @@ public class GAThirdDegreeMaterials {
                 .ingot()
                 .colorAverage().iconSet(MaterialIconSet.SHINY)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(GAMaterials.ZBLAN, 1 , ErbiumTrifluoride, 1)
+                .components(GCYSciMaterials.ZBLAN, 1 , ErbiumTrifluoride, 1)
                 .build();
 
         // Free ID 15514

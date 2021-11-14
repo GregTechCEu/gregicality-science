@@ -4,8 +4,8 @@ import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import static gregicality.science.api.GAMaterials.*;
-import static gregicality.science.loaders.recipes.GARecipeMaps.LARGE_MIXER_RECIPES;
+import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.LARGE_MIXER_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;

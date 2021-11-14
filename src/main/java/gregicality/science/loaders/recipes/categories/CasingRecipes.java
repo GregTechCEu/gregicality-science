@@ -5,7 +5,6 @@ import gregicality.science.common.item.components.*;
 import gregicality.science.common.item.metal.MetalCasing2;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.*;
@@ -17,7 +16,7 @@ import net.minecraft.util.IStringSerializable;
 
 import java.util.Arrays;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.CellCasing.CellType.*;
 import static gregicality.science.common.item.GAHeatingCoil.CoilType.*;
 import static gregicality.science.common.item.GAMetaItems.*;
@@ -33,7 +32,6 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregicality.science.common.item.GATransparentCasing.CasingType.*;
 import static gregtech.common.blocks.BlockFusionCoil.CoilType.FUSION_COIL;
-import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.*;
 import static gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType.*;
 import static gregtech.common.items.MetaItems.*;
 

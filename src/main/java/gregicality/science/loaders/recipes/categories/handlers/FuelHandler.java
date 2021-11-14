@@ -1,6 +1,6 @@
 package gregicality.science.loaders.recipes.categories.handlers;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.loaders.recipes.helper.HelperMethods.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.MarkerMaterials.Tier.*;
@@ -21,28 +21,10 @@ public class FuelHandler {
         // Steam Turbine
         registerSteamGeneratorFuel(Steam.getFluid(640), 10, LV);
 
-        // Nuclear Reactor Turbine
-        //registerHotCoolantTurbineFuel(getHotFluid(Steam,                570), Steam,                1, EV);
-        //registerHotCoolantTurbineFuel(getHotFluid(Deuterium,            240), Deuterium,            1, EV);
-        //registerHotCoolantTurbineFuel(getHotFluid(SodiumPotassiumAlloy, 120), SodiumPotassiumAlloy, 1, EV);
-        //registerHotCoolantTurbineFuel(getHotFluid(Sodium,               100), Sodium,               1, EV);
-        //registerHotCoolantTurbineFuel(getHotFluid(FLiNaK,                50), FLiNaK,               1, EV);
-        //registerHotCoolantTurbineFuel(getHotFluid(FLiBe,                 55), FLiBe,                1, EV);
-        //registerHotCoolantTurbineFuel(getHotFluid(LeadBismuthEutectic,   60), LeadBismuthEutectic,  1, EV);
-
-        registerHotCoolantTurbineFuel(SupercriticalSteam               .getFluid(570), Steam,                10000, EV);
-        registerHotCoolantTurbineFuel(SupercriticalDeuterium           .getFluid(240), Deuterium,            10000, EV);
-        registerHotCoolantTurbineFuel(SupercriticalSodiumPotassiumAlloy.getFluid(120), SodiumPotassiumAlloy, 10000, EV);
-        registerHotCoolantTurbineFuel(SupercriticalSodium              .getFluid(100), Sodium,               10000, EV);
-        registerHotCoolantTurbineFuel(SupercriticalFLiNaK              .getFluid( 50), FLiNaK,               10000, EV);
-        registerHotCoolantTurbineFuel(SupercriticalFLiBe               .getFluid( 55), FLiBe,                10000, EV);
-        registerHotCoolantTurbineFuel(SupercriticalLeadBismuthEutectic .getFluid( 60), LeadBismuthEutectic,  10000, EV);
-
         // Gas Turbine Fuels
         registerGasGeneratorFuel(NaquadahGas       .getFluid( 1),  8000, LV);
         registerGasGeneratorFuel(LightNaquadahFuel .getFluid( 1),  4000, LV);
         registerGasGeneratorFuel(LightENaquadahFuel.getFluid( 1), 10000, LV);
-
 
         // Plasma Generator
         registerPlasmaFuel(Radon     .getPlasma(1), 6144, LV);
@@ -83,15 +65,15 @@ public class FuelHandler {
         registerHyperReactorFuel(HyperFuelIV .getFluid(1), 6000, UV);
 
         // Qubit Generator
-        registerQubitGeneratorFuel(circuit, Elite,           1, UV);
-        registerQubitGeneratorFuel(circuit, Master,          4, UV);
-        registerQubitGeneratorFuel(circuit, Ultimate,       15, UV);
-        registerQubitGeneratorFuel(circuit, Superconductor, 50, UV);
-        registerQubitGeneratorFuel(circuit, Infinite,      200, UV);
-        registerQubitGeneratorFuel(circuit, Ultra,         800, UV);
-        registerQubitGeneratorFuel(circuit, Insane,       3200, UV);
-        registerQubitGeneratorFuel(circuit, UMVCircuit,  12800, UV);
-        registerQubitGeneratorFuel(circuit, UXVCircuit,  51200, UV);
-        registerQubitGeneratorFuel(circuit, Maximum,    102400, UV);
+        registerQubitGeneratorFuel(circuit, Elite,     1, UV);
+        registerQubitGeneratorFuel(circuit, Master,    4, UV);
+        registerQubitGeneratorFuel(circuit, Ultimate,  15, UV);
+        registerQubitGeneratorFuel(circuit, Super,     50, UV);
+        registerQubitGeneratorFuel(circuit, Infinite,  200, UV);
+        registerQubitGeneratorFuel(circuit, Ultra,     800, UV);
+        registerQubitGeneratorFuel(circuit, Insane,    3200, UV);
+        registerQubitGeneratorFuel(circuit, Epic,      12800, UV);
+        registerQubitGeneratorFuel(circuit, Legendary, 51200, UV);
+        registerQubitGeneratorFuel(circuit, Maximum,   102400, UV);
     }
 }

@@ -5,7 +5,7 @@ import gregicality.science.common.item.GAReactorCasing;
 import gregicality.science.common.item.GATransparentCasing;
 import gregicality.science.common.item.metal.MetalCasing2;
 import gregicality.science.integrations.jei.GAMultiblockShapeInfo;
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.integration.jei.multiblock.MultiblockInfoPage;
@@ -22,7 +22,7 @@ import static gregicality.science.common.item.GAMetaBlocks.METAL_CASING_2;
 public class HyperReactor1Info extends MultiblockInfoPage {
     @Override
     public MultiblockControllerBase getController() {
-        return GAMetaTileEntities.HYPER_REACTOR_I;
+        return GCYSciTileEntities.HYPER_REACTOR[0];
     }
 
     @Override
@@ -33,7 +33,7 @@ public class HyperReactor1Info extends MultiblockInfoPage {
                 .aisle("SCCCE", "G#H#G", "GHHHG", "G#H#G", "CCCCC")
                 .aisle("FCCCC", "G###G", "G#H#G", "G###G", "CCCCC")
                 .aisle("CCCCC", "CGGGC", "CGGGC", "CGGGC", "CCCCC")
-                .where('S', GAMetaTileEntities.HYPER_REACTOR_I, EnumFacing.WEST)
+                .where('S', GCYSciTileEntities.HYPER_REACTOR[0], EnumFacing.WEST)
                 .where('M', maintenanceIfEnabled(METAL_CASING_2.getState(MetalCasing2.CasingType.NAQUADRIA)), EnumFacing.WEST)
                 .where('C', METAL_CASING_2.getState(MetalCasing2.CasingType.NAQUADRIA))
                 .where('F', MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.WEST)

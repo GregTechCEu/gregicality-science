@@ -2,7 +2,7 @@ package gregicality.science.loaders.recipes.helper;
 
 import com.google.common.base.Preconditions;
 import forestry.core.fluids.Fluids;
-import gregicality.science.loaders.recipes.GARecipeMaps;
+import gregicality.science.loaders.recipes.GCYSciRecipeMaps;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.recipes.FuelRecipe;
 import gregtech.api.unification.material.Material;
@@ -141,19 +141,19 @@ public class HelperMethods {
     //              Fuel Recipe Helpers              //
     ///////////////////////////////////////////////////
     public static void registerNaquadahReactorFuel(FluidStack fuelStack, int duration, int tier) {
-        GARecipeMaps.NAQUADAH_REACTOR_FUELS.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
+        GCYSciRecipeMaps.NAQUADAH_REACTOR_FUELS.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
     }
 
     public static void registerHyperReactorFuel(FluidStack fuelStack, int duration, int tier) {
-        GARecipeMaps.HYPER_REACTOR_FUELS.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
+        GCYSciRecipeMaps.HYPER_REACTOR_FUELS.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
     }
 
     public static void registerRocketFuel(FluidStack fuelStack, int duration, int tier) {
-        GARecipeMaps.ROCKET_FUEL_RECIPES.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
+        GCYSciRecipeMaps.ROCKET_FUEL_RECIPES.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
     }
 
     public static void registerQubitGeneratorFuel(OrePrefix prefix, Material material, int duration, int tier) {
-        GARecipeMaps.SIMPLE_QUBIT_GENERATOR.recipeBuilder()
+        GCYSciRecipeMaps.SIMPLE_QUBIT_GENERATOR.recipeBuilder()
                 .qubit(1)
                 .input(prefix, material)
                 .duration(duration)

@@ -4,7 +4,7 @@ import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.GAReactorCasing;
 import gregicality.science.common.item.GATransparentCasing;
 import gregicality.science.integrations.jei.GAMultiblockShapeInfo;
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
@@ -22,7 +22,7 @@ import static gregtech.api.unification.material.Materials.Naquadria;
 public class HyperReactor3Info extends MultiblockInfoPage {
     @Override
     public MultiblockControllerBase getController() {
-        return GAMetaTileEntities.HYPER_REACTOR_III;
+        return GCYSciTileEntities.HYPER_REACTOR[2];
     }
 
     @Override
@@ -39,7 +39,7 @@ public class HyperReactor3Info extends MultiblockInfoPage {
                   .aisle("##F#####F##","##F#####F##","##F#####F##","##F#####F##","##F#####F##", "##F#####F##", "##FCCCCCF##", "##C#####C##", "#C#######C#", "#C#######C#", "#C#######C#", "#C#######C#", "#C#######C#", "##C#####C##", "###CCCCC###", "###########")
                   .aisle("###########","###########","###########","###########","###########", "###########", "###########", "###CCCCC###", "##CC###CC##", "##C#####C##", "##C#####C##", "##C#####C##", "##CC###CC##", "###CCCCC###", "###########", "###########")
                   .aisle("###########","###########","###########","###########","###########", "###########", "###########", "###########", "####CCC####", "###CCCCC###", "###CCECC###", "###CCCCC###", "####CCC####", "###########", "###########", "###########")
-                  .where('S', GAMetaTileEntities.HYPER_REACTOR_III, EnumFacing.NORTH)
+                  .where('S', GCYSciTileEntities.HYPER_REACTOR[2], EnumFacing.NORTH)
                   .where('M', maintenanceIfEnabled(GAMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CASING_2)), EnumFacing.NORTH)
                   .where('C', GAMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CASING_2))
                   .where('f', MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.NORTH)

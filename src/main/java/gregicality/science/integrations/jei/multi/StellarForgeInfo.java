@@ -6,7 +6,7 @@ import gregicality.science.common.item.components.EmitterCasing;
 import gregicality.science.common.item.fusion.GAFusionCasing;
 import gregicality.science.common.item.metal.MetalCasing2;
 import gregicality.science.integrations.jei.GAMultiblockShapeInfo;
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.integration.jei.multiblock.MultiblockInfoPage;
@@ -24,7 +24,7 @@ import java.util.List;
 public class StellarForgeInfo extends MultiblockInfoPage {
     @Override
     public MultiblockControllerBase getController() {
-        return GAMetaTileEntities.STELLAR_FORGE;
+        return GCYSciTileEntities.STELLAR_FORGE;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class StellarForgeInfo extends MultiblockInfoPage {
                 .where('C', GAMetaBlocks.METAL_CASING_2.getState(MetalCasing2.CasingType.ENRICHED_NAQUADAH_ALLOY))
                 .where('X', GAMetaBlocks.MUTLIBLOCK_CASING2.getState(GAMultiblockCasing2.CasingType.STELLAR_CONTAINMENT))
                 .where('F', GAMetaBlocks.FUSION_CASING.getState(GAFusionCasing.CasingType.FUSION_COIL_2))
-                .where('S', GAMetaTileEntities.STELLAR_FORGE, EnumFacing.WEST)
+                .where('S', GCYSciTileEntities.STELLAR_FORGE, EnumFacing.WEST)
                 .where('H', maintenanceIfEnabled(GAMetaBlocks.METAL_CASING_2.getState(MetalCasing2.CasingType.ENRICHED_NAQUADAH_ALLOY)), EnumFacing.WEST)
                 .where('E', MetaTileEntities.ENERGY_INPUT_HATCH[8], EnumFacing.EAST)
                 .where('f', MetaTileEntities.FLUID_EXPORT_HATCH[4], EnumFacing.WEST)

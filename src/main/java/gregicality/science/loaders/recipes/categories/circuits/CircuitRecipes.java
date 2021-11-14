@@ -1,8 +1,8 @@
 package gregicality.science.loaders.recipes.categories.circuits;
 
-import gregicality.science.api.GAMaterials;
+import gregicality.science.api.GCYSciMaterials;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GAMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -65,7 +65,7 @@ public class CircuitRecipes {
                 .inputs(SMD_DIODE_BIOWARE.getStackForm(32))
                 .inputs(SMD_RESISTOR_BIOWARE.getStackForm(32))
                 .inputs(NEURO_PROCESSOR.getStackForm())
-                .input(wireGtSingle, GAMaterials.StrontiumTaraniumTBCCO, 2)
+                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 2)
                 .inputs(UHPIC.getStackForm(16))
                 .inputs(ARAM.getStackForm(64))
                 .input(plate, Tritanium, 2)
@@ -86,7 +86,7 @@ public class CircuitRecipes {
                 .inputs(SMD_DIODE_BIOWARE.getStackForm(64))
                 .inputs(SMD_RESISTOR_BIOWARE.getStackForm(64))
                 .inputs(NEURO_PROCESSOR.getStackForm(2))
-                .input(wireGtSingle, GAMaterials.StrontiumTaraniumTBCCO, 6)
+                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 6)
                 .inputs(UHPIC.getStackForm(32))
                 .input(plate, Adamantium, 2)
                 .input(frameGt, Adamantium)
@@ -142,7 +142,7 @@ public class CircuitRecipes {
                 .inputs(SMD_DIODE_OPTICAL.getStackForm(32))
                 .inputs(SMD_RESISTOR_OPTICAL.getStackForm(32))
                 .inputs(OPTICAL_SOC.getStackForm())
-                .input(wireGtSingle, GAMaterials.StrontiumTaraniumTBCCO, 2)
+                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 2)
                 .inputs(CLADDED_OPTICAL_FIBER_CORE.getStackForm(16))
                 .inputs(UHPIC.getStackForm(32))
                 .inputs(ARAM.getStackForm(64))
@@ -205,7 +205,7 @@ public class CircuitRecipes {
                 .inputs(QUBIT_CENTRAL_PROCESSING_UNIT.getStackForm(4))
                 .input(plate, EnrichedNaquadahAlloy, 2)
                 .inputs(ARAM.getStackForm(2))
-                .input(wireGtSingle, GAMaterials.StrontiumTaraniumTBCCO, 2)
+                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 2)
                 .fluidInputs(EnrichedNaquadahAlloy.getFluid(144))
                 .fluidInputs(TriniumTitanium.getFluid(144))
                 .fluidInputs(Quantum.getFluid(144))
@@ -277,7 +277,7 @@ public class CircuitRecipes {
                 .inputs(SMD_RESISTOR_COSMIC.getStackForm(64))
                 .inputs(NEURO_PROCESSOR.getStackForm(4))
                 .inputs(OPTICAL_PROCESSING_CORE.getStackForm(2))
-                .input(wireGtSingle, GAMaterials.StrontiumTaraniumTBCCO, 4)
+                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 4)
                 .inputs(ARAM.getStackForm(64))
                 .inputs(ARAM.getStackForm(64))
                 .input(plate, Quantum, 2)
@@ -344,7 +344,7 @@ public class CircuitRecipes {
                 .inputs(MICROWORMHOLE_GENERATOR.getStackForm())
                 .inputs(SUPRACAUSAL_PROCESSING_CORE.getStackForm())
                 .input(plate, SuperheavyHAlloy, 4)
-                .input(wireGtSingle, GAMaterials.StrontiumTaraniumTBCCO, 8)
+                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 8)
                 .outputs(SUPRACAUSAL_PROCESSOR.getStackForm())
                 .solderMultiplier(4)
                 .buildAndRegister();

@@ -3,7 +3,7 @@ package gregicality.science.integrations.jei.multi;
 import com.google.common.collect.Lists;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.GAQuantumCasing;
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.integration.jei.multiblock.MultiblockInfoPage;
@@ -17,7 +17,7 @@ public class QubitComputerInfo extends MultiblockInfoPage {
 
     @Override
     public MultiblockControllerBase getController() {
-        return GAMetaTileEntities.QUBIT_COMPUTER;
+        return GCYSciTileEntities.QUBIT_COMPUTER;
     }
 
     @Override
@@ -27,11 +27,11 @@ public class QubitComputerInfo extends MultiblockInfoPage {
                 .aisle("OC", "SC", "CC", "CC")
                 .aisle("EC", "MC", "CC", "CC")
                 .aisle("CC", "CC", "CC", "CC")
-                .where('S', GAMetaTileEntities.QUBIT_COMPUTER, EnumFacing.WEST)
+                .where('S', GCYSciTileEntities.QUBIT_COMPUTER, EnumFacing.WEST)
                 .where('M', maintenanceIfEnabled(GAMetaBlocks.QUANTUM_CASING.getState(GAQuantumCasing.CasingType.COMPUTER)), EnumFacing.WEST)
                 .where('C', GAMetaBlocks.QUANTUM_CASING.getState(GAQuantumCasing.CasingType.COMPUTER))
                 .where('I', MetaTileEntities.ITEM_IMPORT_BUS[4], EnumFacing.WEST)
-                .where('O', GAMetaTileEntities.QBIT_OUTPUT_HATCH[0], EnumFacing.WEST)
+                .where('O', GCYSciTileEntities.QBIT_OUTPUT_HATCH[0], EnumFacing.WEST)
                 .where('E', MetaTileEntities.ENERGY_INPUT_HATCH[4], EnumFacing.WEST)
                 .build());
     }

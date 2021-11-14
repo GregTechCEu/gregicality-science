@@ -1,11 +1,11 @@
 package gregicality.science;
 
-import gregicality.science.api.GALog;
+import gregicality.science.api.GCYSciLog;
 import gregicality.science.api.capabilities.GregicalityCapabilities;
 import gregicality.science.api.covers.CoverBehaviors;
 import gregicality.science.common.CommonProxy;
-import gregicality.science.common.GAConfig;
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.GCYSciConfig;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.integrations.theoneprobe.TheOneProbeCompatibility;
 import gregtech.api.GTValues;
@@ -21,10 +21,10 @@ import java.io.IOException;
 @Mod(   modid        = GregicalityScience.MODID,
         name         = GregicalityScience.NAME,
         version      = GregicalityScience.VERSION,
-        dependencies = "required-after:gregtech@[2.0,);required-after:gcym")
+        dependencies = "required-after:gregtech@[2.0,);required-after:gcy_multiblocks")
 public class GregicalityScience {
 
-    public static final String MODID = "gcys";
+    public static final String MODID = "gcy_science";
     public static final String NAME = "Gregicality: Science";
     public static final String VERSION = "@VERSION@";
 
@@ -34,25 +34,25 @@ public class GregicalityScience {
     @EventHandler
     public void onConstruction(FMLConstructionEvent event) {
         GAEnums.onConstruction();
-        GAConfig.syncMachineConfigs();
+        GCYSciConfig.syncMachineConfigs();
         GTValues.HT = true; // force GTCEu to register UHV+ Hulls, Casings, Basic Electric Pieces like Transformers, Bat Buffers, etc.
     }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        GALog.init(event.getModLog());
+        GCYSciLog.init(event.getModLog());
         proxy.preLoad();
         GregicalityCapabilities.init();
 
         GAMetaBlocks.init();
-        GAMetaTileEntities.init();
+        GCYSciTileEntities.init();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) throws IOException {
         proxy.onLoad();
         if (GTValues.isModLoaded(GTValues.MODID_TOP)) {
-            GALog.logger.info("TheOneProbe found. Enabling integration...");
+            GCYSciLog.logger.info("TheOneProbe found. Enabling integration...");
             TheOneProbeCompatibility.registerCompatibility();
         }
         CoverBehaviors.init();

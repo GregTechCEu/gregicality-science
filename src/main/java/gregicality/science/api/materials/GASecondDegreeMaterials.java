@@ -1,11 +1,11 @@
 package gregicality.science.api.materials;
 
-import gregicality.science.api.GAMaterials;
+import gregicality.science.api.GCYSciMaterials;
 import gregtech.api.unification.material.Material;
 
 import static gregicality.science.api.materials.GAMaterialFlags.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 
@@ -1315,7 +1315,7 @@ public class GASecondDegreeMaterials {
                 .dust()
                 .color(0x45ABF4).iconSet(SHINY)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Ruthenium, 1, Seaborgium, 1, GAMaterials.Celestine, 4)
+                .components(Ruthenium, 1, Seaborgium, 1, GCYSciMaterials.Celestine, 4)
                 .build();
 
         FullereneSuperconductor = new Material.Builder(11696, "fullerene_superconductor")

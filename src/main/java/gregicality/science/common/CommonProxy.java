@@ -1,7 +1,7 @@
 package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
-import gregicality.science.api.GAMaterials;
+import gregicality.science.api.GCYSciMaterials;
 import gregicality.science.api.materials.GAOrePrefix;
 import gregicality.science.common.item.GAHeatingCoil;
 import gregicality.science.common.item.GAMetaBlocks;
@@ -9,8 +9,8 @@ import gregicality.science.common.item.GAMetaItems;
 import gregicality.science.api.pipelike.opticalfiber.ItemBlockOpticalFiber;
 import gregicality.science.loaders.recipes.*;
 import gregicality.science.loaders.recipes.categories.handlers.*;
-import gregicality.science.api.GALog;
-import gregicality.science.loaders.recipes.helper.GACraftingComponents;
+import gregicality.science.api.GCYSciLog;
+import gregicality.science.loaders.recipes.helper.GCYSciComponents;
 import gregtech.api.GregTechAPI;
 import gregtech.api.recipes.recipeproperties.BlastTemperatureProperty;
 import gregtech.api.unification.ore.OrePrefix;
@@ -61,7 +61,7 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        GALog.logger.info("Registering blocks...");
+        GCYSciLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
         registry.register(GAMetaBlocks.MUTLIBLOCK_CASING);
         registry.register(GAMetaBlocks.MUTLIBLOCK_CASING2);
@@ -90,7 +90,7 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        GALog.logger.info("Registering Items...");
+        GCYSciLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
 
         registry.register(createItemBlock(GAMetaBlocks.OPTICAL_FIBER, ItemBlockOpticalFiber::new));
@@ -118,19 +118,18 @@ public class CommonProxy {
 
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerMaterials(GregTechAPI.MaterialEvent event) {
-        GAMaterials.register();
-        GAOrePrefix.initIconSets();
+        GCYSciMaterials.register();
         GAOrePrefix.initPrefixes();
     }
 
     @SubscribeEvent
     public static void registerComponents(GregTechAPI.RegisterEvent<CraftingComponent> event) {
-        GACraftingComponents.register();
+        GCYSciComponents.register();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
-        GALog.logger.info("Registering recipe low...");
+        GCYSciLog.logger.info("Registering recipe low...");
 
         for (GAHeatingCoil.CoilType values : GAHeatingCoil.CoilType.values()) {
             BlastTemperatureProperty.registerCoilType(values.getCoilTemperature(), null,
@@ -149,7 +148,7 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerOrePrefix(RegistryEvent.Register<IRecipe> event) {
-        GALog.logger.info("Registering ore prefix...");
+        GCYSciLog.logger.info("Registering ore prefix...");
 
         // Register GTCE Material Handlers
         RecipeHandler.register();

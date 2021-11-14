@@ -1,17 +1,17 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.api.GAMaterials;
+import gregicality.science.api.GCYSciMaterials;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.fusion.GACryostatCasing;
 import gregicality.science.common.item.fusion.GADivertorCasing;
 import gregicality.science.common.item.fusion.GAFusionCasing;
 import gregicality.science.common.item.fusion.GAVacuumCasing;
-import gregicality.science.common.GAMetaTileEntities;
+import gregicality.science.common.machines.GCYSciTileEntities;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GAMetaItems.*;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
@@ -31,7 +31,7 @@ public class FusionComponents {
                 .inputs(OreDictUnifier.get(wireGtQuadruple, EnrichedNaquadahTriniumEuropiumDuranide, 64))
                 .input(circuit, MarkerMaterials.Tier.Infinite, 4)
                 .fluidInputs(SolderingAlloy.getFluid(2880 * 2))
-                .outputs(GAMetaTileEntities.ADVANCED_FUSION_REACTOR.getStackForm())
+                .outputs(GCYSciTileEntities.ADVANCED_FUSION_REACTOR.getStackForm())
                 .buildAndRegister();
 
         RecipeMaps.ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(100).EUt(500000)
@@ -46,7 +46,7 @@ public class FusionComponents {
                 .buildAndRegister();
 
         RecipeMaps.ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(100).EUt(2000000)
-                .input(wireGtOctal, GAMaterials.StrontiumTaraniumTBCCO, 4)
+                .input(wireGtOctal, GCYSciMaterials.StrontiumTaraniumTBCCO, 4)
                 .input(plate, Bohrium, 2)
                 .input(plate, Fermium, 4)
                 .inputs(NEUTRON_REFLECTOR.getStackForm(16))

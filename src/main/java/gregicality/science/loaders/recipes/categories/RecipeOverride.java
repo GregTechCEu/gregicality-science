@@ -1,6 +1,6 @@
 package gregicality.science.loaders.recipes.categories;
 
-import gregicality.science.common.GAConfig;
+import gregicality.science.common.GCYSciConfig;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
@@ -14,7 +14,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.GTValues.W;
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
@@ -223,7 +223,7 @@ public class RecipeOverride {
 
         // Log -> Charcoal Recipes
         // TODO Ignores Forestry wood, still needed?
-        if (GAConfig.GT5U.DisableLogToCharcoalSmelting) {
+        if (GCYSciConfig.GT5U.DisableLogToCharcoalSmelting) {
             List<ItemStack> allWoodLogs = OreDictionary.getOres("logWood")
                                                        .stream()
                                                        .flatMap(stack -> ModHandler.getAllSubItems(stack).stream())

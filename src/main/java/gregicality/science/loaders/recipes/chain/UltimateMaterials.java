@@ -1,15 +1,15 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.api.GAMaterials;
+import gregicality.science.api.GCYSciMaterials;
 import gregicality.science.common.item.GAMetaBlocks;
 import gregicality.science.common.item.GAExplosive;
 import gregicality.science.common.item.fusion.GAFusionCasing;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 
-import static gregicality.science.api.GAMaterials.*;
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GAMetaItems.*;
-import static gregicality.science.loaders.recipes.GARecipeMaps.*;
+import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -165,7 +165,7 @@ public class UltimateMaterials {
                 .input(dust, Lanthanoids, 15)
                 .input(dust, Actinoids, 13)
                 .fluidInputs(NonMetals.getFluid(15000))
-                .fluidInputs(GAMaterials.NobleGasesMixture.getFluid(6000))
+                .fluidInputs(GCYSciMaterials.NobleGasesMixture.getFluid(6000))
                 .output(dust, Periodicium, 115)
                 .buildAndRegister();
 

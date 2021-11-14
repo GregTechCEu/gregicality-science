@@ -7,7 +7,6 @@ import gregicality.science.common.item.fusion.GACryostatCasing;
 import gregicality.science.common.item.fusion.GADivertorCasing;
 import gregicality.science.common.item.fusion.GAFusionCasing;
 import gregicality.science.common.item.fusion.GAVacuumCasing;
-import gregicality.science.common.item.metal.NuclearCasing;
 import gregicality.science.api.pipelike.opticalfiber.BlockOpticalFiber;
 import gregicality.science.api.pipelike.opticalfiber.OpticalFiberSize;
 import gregicality.science.api.pipelike.opticalfiber.tile.TileEntityOpticalFiber;
@@ -186,7 +185,7 @@ public class GAMetaBlocks {
     public static void registerStateMappers() {
         ModelLoader.setCustomStateMapper(OPTICAL_FIBER, new DefaultStateMapper() {
             @Override
-            protected @Nonnull ModelResourceLocation getModelResourceLocation(IBlockState state) {
+            protected @Nonnull ModelResourceLocation getModelResourceLocation(@Nonnull IBlockState state) {
                 return OpticalFiberRenderer.MODEL_LOCATION;
             }
         });
