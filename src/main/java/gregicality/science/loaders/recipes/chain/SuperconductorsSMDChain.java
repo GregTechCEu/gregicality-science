@@ -1,14 +1,14 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.common.item.GAExplosive;
+import gregicality.science.common.block.GCYSciMetaBlocks;
+import gregicality.science.common.block.GAExplosive;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.material.Material;
 import net.minecraft.item.ItemStack;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GAMetaItems.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -687,7 +687,7 @@ public class SuperconductorsSMDChain {
 
         // AcH3 + 9H -> AcH12 (multiplied by 18)
         STELLAR_FORGE_RECIPES.recipeBuilder().duration(260).EUt(7800000)
-                .inputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.NAQUADRIA_CHARGE))
+                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.NAQUADRIA_CHARGE))
                 .input(dust, ActiniumHydride, 72)
                 .fluidInputs(Hydrogen.getFluid(162000))
                 .fluidOutputs(ActiniumSuperhydride.getPlasma(72000))

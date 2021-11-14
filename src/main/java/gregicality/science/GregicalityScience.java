@@ -1,13 +1,13 @@
 package gregicality.science;
 
 import gregicality.science.api.GCYSciLog;
-import gregicality.science.api.capabilities.GregicalityCapabilities;
-import gregicality.science.api.covers.CoverBehaviors;
+import gregicality.science.api.capability.GCYSciCapabilities;
 import gregicality.science.common.CommonProxy;
 import gregicality.science.common.GCYSciConfig;
-import gregicality.science.common.machines.GCYSciTileEntities;
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.integrations.theoneprobe.TheOneProbeCompatibility;
+import gregicality.science.common.machine.GCYSciTileEntities;
+import gregicality.science.common.block.GCYSciMetaBlocks;
+import gregicality.science.common.item.cover.CoverBehaviors;
+import gregicality.science.integration.theoneprobe.TheOneProbeCompatibility;
 import gregtech.api.GTValues;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -33,7 +33,6 @@ public class GregicalityScience {
 
     @EventHandler
     public void onConstruction(FMLConstructionEvent event) {
-        GAEnums.onConstruction();
         GCYSciConfig.syncMachineConfigs();
         GTValues.HT = true; // force GTCEu to register UHV+ Hulls, Casings, Basic Electric Pieces like Transformers, Bat Buffers, etc.
     }
@@ -42,9 +41,9 @@ public class GregicalityScience {
     public void preInit(FMLPreInitializationEvent event) {
         GCYSciLog.init(event.getModLog());
         proxy.preLoad();
-        GregicalityCapabilities.init();
+        GCYSciCapabilities.init();
 
-        GAMetaBlocks.init();
+        GCYSciMetaBlocks.init();
         GCYSciTileEntities.init();
     }
 

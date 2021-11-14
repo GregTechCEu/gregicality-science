@@ -3,8 +3,8 @@ package gregicality.science.loaders.recipes.chain;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GAMetaItems.NANOTOME;
-import static gregicality.science.common.item.GAMetaItems.PIEZOELECTRIC_CRYSTAL;
+import static gregicality.science.common.item.GCYSciMetaItems.NANOTOME;
+import static gregicality.science.common.item.GCYSciMetaItems.PIEZOELECTRIC_CRYSTAL;
 import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;

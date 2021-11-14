@@ -1,9 +1,9 @@
 package gregicality.science.loaders.recipes.helper;
 
 import com.google.common.collect.ImmutableMap;
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.common.item.GAMetaItems;
-import gregicality.science.common.item.GATransparentCasing;
+import gregicality.science.common.block.GCYSciMetaBlocks;
+import gregicality.science.common.item.GCYSciMetaItems;
+import gregicality.science.common.block.GATransparentCasing;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
@@ -26,12 +26,12 @@ public class GCYSciComponents {
 
     public static void register() {
         CraftingComponent.PUMP.appendIngredients(ImmutableMap.of(
-                9, GAMetaItems.ELECTRIC_PUMP_UHV,
-                10, GAMetaItems.ELECTRIC_PUMP_UEV,
-                11, GAMetaItems.ELECTRIC_PUMP_UIV,
-                12, GAMetaItems.ELECTRIC_PUMP_UMV,
-                13, GAMetaItems.ELECTRIC_PUMP_UXV));
-        CraftingComponent.PUMP.appendIngredients(ImmutableMap.of(14, GAMetaItems.ELECTRIC_PUMP_MAX));
+                9, GCYSciMetaItems.ELECTRIC_PUMP_UHV,
+                10, GCYSciMetaItems.ELECTRIC_PUMP_UEV,
+                11, GCYSciMetaItems.ELECTRIC_PUMP_UIV,
+                12, GCYSciMetaItems.ELECTRIC_PUMP_UMV,
+                13, GCYSciMetaItems.ELECTRIC_PUMP_UXV));
+        CraftingComponent.PUMP.appendIngredients(ImmutableMap.of(14, GCYSciMetaItems.ELECTRIC_PUMP_MAX));
 
         CraftingComponent.CABLE.appendIngredients(ImmutableMap.of(
                 9, new UnificationEntry(cableGtSingle, AbyssalAlloy),
@@ -64,14 +64,14 @@ public class GCYSciComponents {
         CraftingComponent.GLASS.appendIngredients(ImmutableMap.of(
                 0, new ItemStack(Blocks.GLASS, 1, GTValues.W),
                 1, new ItemStack(Blocks.GLASS, 1, GTValues.W),
-                2, GAMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.REINFORCED_GLASS),
-                3, GAMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.BOROSILICATE_GLASS),
-                4, GAMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.NICKEL_GLASS)));
+                2, GCYSciMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.REINFORCED_GLASS),
+                3, GCYSciMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.BOROSILICATE_GLASS),
+                4, GCYSciMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.NICKEL_GLASS)));
         CraftingComponent.GLASS.appendIngredients(ImmutableMap.of(
-                5, GAMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.CHROME_GLASS),
-                6, GAMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.TUNGSTEN_GLASS),
-                7, GAMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.IRIDIUM_GLASS),
-                GTValues.FALLBACK, GAMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.OSMIRIDIUM_GLASS)));
+                5, GCYSciMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.CHROME_GLASS),
+                6, GCYSciMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.TUNGSTEN_GLASS),
+                7, GCYSciMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.IRIDIUM_GLASS),
+                GTValues.FALLBACK, GCYSciMetaBlocks.TRANSPARENT_CASING.getItemVariant(GATransparentCasing.CasingType.OSMIRIDIUM_GLASS)));
 
         CraftingComponent.PLATE.appendIngredients(ImmutableMap.of(
                 6, new UnificationEntry(plate, RhodiumPlatedPalladium),
@@ -84,61 +84,61 @@ public class GCYSciComponents {
                 GTValues.FALLBACK, new UnificationEntry(plate, Neutronium)));
 
         CraftingComponent.MOTOR.appendIngredients(ImmutableMap.of(
-                9, GAMetaItems.ELECTRIC_MOTOR_UHV,
-                10, GAMetaItems.ELECTRIC_MOTOR_UEV,
-                11, GAMetaItems.ELECTRIC_MOTOR_UIV,
-                12, GAMetaItems.ELECTRIC_MOTOR_UMV,
-                13, GAMetaItems.ELECTRIC_MOTOR_UXV));
-        CraftingComponent.MOTOR.appendIngredients(ImmutableMap.of(14, GAMetaItems.ELECTRIC_MOTOR_MAX));
+                9, GCYSciMetaItems.ELECTRIC_MOTOR_UHV,
+                10, GCYSciMetaItems.ELECTRIC_MOTOR_UEV,
+                11, GCYSciMetaItems.ELECTRIC_MOTOR_UIV,
+                12, GCYSciMetaItems.ELECTRIC_MOTOR_UMV,
+                13, GCYSciMetaItems.ELECTRIC_MOTOR_UXV));
+        CraftingComponent.MOTOR.appendIngredients(ImmutableMap.of(14, GCYSciMetaItems.ELECTRIC_MOTOR_MAX));
 
         CraftingComponent.ROTOR.appendIngredients(ImmutableMap.of(
                 9, new UnificationEntry(rotor, Ruridit),
                 GTValues.FALLBACK, new UnificationEntry(rotor, Neutronium)));
 
         CraftingComponent.SENSOR.appendIngredients(ImmutableMap.of(
-                9, GAMetaItems.SENSOR_UHV,
-                10, GAMetaItems.SENSOR_UEV,
-                11, GAMetaItems.SENSOR_UIV,
-                12, GAMetaItems.SENSOR_UMV,
-                13, GAMetaItems.SENSOR_UXV));
-        CraftingComponent.SENSOR.appendIngredients(ImmutableMap.of(14, GAMetaItems.SENSOR_MAX));
+                9, GCYSciMetaItems.SENSOR_UHV,
+                10, GCYSciMetaItems.SENSOR_UEV,
+                11, GCYSciMetaItems.SENSOR_UIV,
+                12, GCYSciMetaItems.SENSOR_UMV,
+                13, GCYSciMetaItems.SENSOR_UXV));
+        CraftingComponent.SENSOR.appendIngredients(ImmutableMap.of(14, GCYSciMetaItems.SENSOR_MAX));
 
         // Grinder, no changes needed yet
 
         // Diamond, no changes needed yet
 
         CraftingComponent.PISTON.appendIngredients(ImmutableMap.of(
-                9, GAMetaItems.ELECTRIC_PISTON_UHV,
-                10, GAMetaItems.ELECTRIC_PISTON_UEV,
-                11, GAMetaItems.ELECTRIC_PISTON_UIV,
-                12, GAMetaItems.ELECTRIC_PISTON_UMV,
-                13, GAMetaItems.ELECTRIC_PISTON_UXV));
-        CraftingComponent.PISTON.appendIngredients(ImmutableMap.of(14, GAMetaItems.ELECTRIC_PISTON_MAX));
+                9, GCYSciMetaItems.ELECTRIC_PISTON_UHV,
+                10, GCYSciMetaItems.ELECTRIC_PISTON_UEV,
+                11, GCYSciMetaItems.ELECTRIC_PISTON_UIV,
+                12, GCYSciMetaItems.ELECTRIC_PISTON_UMV,
+                13, GCYSciMetaItems.ELECTRIC_PISTON_UXV));
+        CraftingComponent.PISTON.appendIngredients(ImmutableMap.of(14, GCYSciMetaItems.ELECTRIC_PISTON_MAX));
 
         CraftingComponent.EMITTER.appendIngredients(ImmutableMap.of(
-                9, GAMetaItems.EMITTER_UHV,
-                10, GAMetaItems.EMITTER_UEV,
-                11, GAMetaItems.EMITTER_UIV,
-                12, GAMetaItems.EMITTER_UMV,
-                13, GAMetaItems.EMITTER_UXV));
-        CraftingComponent.EMITTER.appendIngredients(ImmutableMap.of(14, GAMetaItems.EMITTER_MAX));
+                9, GCYSciMetaItems.EMITTER_UHV,
+                10, GCYSciMetaItems.EMITTER_UEV,
+                11, GCYSciMetaItems.EMITTER_UIV,
+                12, GCYSciMetaItems.EMITTER_UMV,
+                13, GCYSciMetaItems.EMITTER_UXV));
+        CraftingComponent.EMITTER.appendIngredients(ImmutableMap.of(14, GCYSciMetaItems.EMITTER_MAX));
 
         CraftingComponent.CONVEYOR.appendIngredients(ImmutableMap.of(
-                9, GAMetaItems.CONVEYOR_MODULE_UHV,
-                10, GAMetaItems.CONVEYOR_MODULE_UEV,
-                11, GAMetaItems.CONVEYOR_MODULE_UIV,
-                12, GAMetaItems.CONVEYOR_MODULE_UMV,
-                13, GAMetaItems.CONVEYOR_MODULE_UXV));
-        CraftingComponent.CONVEYOR.appendIngredients(ImmutableMap.of(14, GAMetaItems.CONVEYOR_MODULE_MAX));
+                9, GCYSciMetaItems.CONVEYOR_MODULE_UHV,
+                10, GCYSciMetaItems.CONVEYOR_MODULE_UEV,
+                11, GCYSciMetaItems.CONVEYOR_MODULE_UIV,
+                12, GCYSciMetaItems.CONVEYOR_MODULE_UMV,
+                13, GCYSciMetaItems.CONVEYOR_MODULE_UXV));
+        CraftingComponent.CONVEYOR.appendIngredients(ImmutableMap.of(14, GCYSciMetaItems.CONVEYOR_MODULE_MAX));
 
         CraftingComponent.ROBOT_ARM.appendIngredients(ImmutableMap.of(
-                9, GAMetaItems.ROBOT_ARM_UHV,
-                10, GAMetaItems.ROBOT_ARM_UEV,
-                11, GAMetaItems.ROBOT_ARM_UIV,
-                12, GAMetaItems.ROBOT_ARM_UMV,
-                13, GAMetaItems.ROBOT_ARM_UXV));
+                9, GCYSciMetaItems.ROBOT_ARM_UHV,
+                10, GCYSciMetaItems.ROBOT_ARM_UEV,
+                11, GCYSciMetaItems.ROBOT_ARM_UIV,
+                12, GCYSciMetaItems.ROBOT_ARM_UMV,
+                13, GCYSciMetaItems.ROBOT_ARM_UXV));
         CraftingComponent.ROBOT_ARM.appendIngredients(ImmutableMap.of(
-                14, GAMetaItems.ROBOT_ARM_MAX
+                14, GCYSciMetaItems.ROBOT_ARM_MAX
         ));
 
         CraftingComponent.COIL_HEATING.appendIngredients(ImmutableMap.of(
@@ -167,12 +167,12 @@ public class GCYSciComponents {
         // Stick Distillation, no changes needed yet
 
         CraftingComponent.FIELD_GENERATOR.appendIngredients(ImmutableMap.<Integer, Object>builder()
-                .put(9, GAMetaItems.FIELD_GENERATOR_UHV)
-                .put(10, GAMetaItems.FIELD_GENERATOR_UEV)
-                .put(11, GAMetaItems.FIELD_GENERATOR_UIV)
-                .put(12, GAMetaItems.FIELD_GENERATOR_UMV)
-                .put(13, GAMetaItems.FIELD_GENERATOR_UXV)
-                .put(14, GAMetaItems.FIELD_GENERATOR_MAX)
+                .put(9, GCYSciMetaItems.FIELD_GENERATOR_UHV)
+                .put(10, GCYSciMetaItems.FIELD_GENERATOR_UEV)
+                .put(11, GCYSciMetaItems.FIELD_GENERATOR_UIV)
+                .put(12, GCYSciMetaItems.FIELD_GENERATOR_UMV)
+                .put(13, GCYSciMetaItems.FIELD_GENERATOR_UXV)
+                .put(14, GCYSciMetaItems.FIELD_GENERATOR_MAX)
                 .build()
         );
 

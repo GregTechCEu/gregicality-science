@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import static gregicality.science.client.GCYSciTextures.NITINOL_60_CASING;
-import static gregicality.science.common.block.GAMetaBlocks.METAL_CASING_1;
+import static gregicality.science.common.block.GCYSciMetaBlocks.METAL_CASING_1;
 import static gregtech.api.util.RelativeDirection.*;
 
 public class MetaTileEntityLargeRocketEngine extends FueledMultiblockController {

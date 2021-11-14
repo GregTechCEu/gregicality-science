@@ -1,14 +1,14 @@
 package gregicality.science.loaders.recipes.chain;
 
 import gregicality.science.api.GCYSciMaterials;
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.common.item.GAExplosive;
-import gregicality.science.common.item.fusion.GAFusionCasing;
+import gregicality.science.common.block.GCYSciMetaBlocks;
+import gregicality.science.common.block.GAExplosive;
+import gregicality.science.common.block.fusion.GAFusionCasing;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GAMetaItems.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.common.items.MetaItems.*;
@@ -195,7 +195,7 @@ public class UltimateMaterials {
 
         ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(150).EUt(15000000)
                 .input(frameGt, QCDMatter)
-                .inputs(GAMetaBlocks.FUSION_CASING.getItemVariant(GAFusionCasing.CasingType.ADV_FUSION_COIL_4))
+                .inputs(GCYSciMetaBlocks.FUSION_CASING.getItemVariant(GAFusionCasing.CasingType.ADV_FUSION_COIL_4))
                 .inputs(ELECTRIC_PUMP_UMV.getStackForm(2))
                 .input(circuit, MarkerMaterials.Tier.Insane)
                 .input(pipeLargeFluid, Neutronium, 4)
@@ -208,7 +208,7 @@ public class UltimateMaterials {
         STELLAR_FORGE_RECIPES.recipeBuilder().duration(10).EUt(125000000)
                 .input(block, Neutronium, 5)
                 .input(block, HeavyQuarkDegenerateMatter, 5)
-                .inputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE))
+                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE))
                 .fluidInputs(HeavyLeptonMix.getFluid(6000))
                 .fluidInputs(Gluons.getFluid(6000))
                 .fluidInputs(Periodicium.getFluid(2736))
@@ -223,7 +223,7 @@ public class UltimateMaterials {
 
         STELLAR_FORGE_RECIPES.recipeBuilder().duration(10).EUt(125000000)
                 .inputs(DENSE_NEUTRON_PLASMA_CELL.getStackForm())
-                .inputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE,2))
+                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE,2))
                 .outputs(COSMIC_NEUTRON_PLASMA_CELL.getStackForm())
                 .buildAndRegister();
 
@@ -254,7 +254,7 @@ public class UltimateMaterials {
 
         STELLAR_FORGE_RECIPES.recipeBuilder().duration(10).EUt(800000000)
                 .inputs(HIGHLY_DENSE_POLYMER_PLATE.getStackForm())
-                .inputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE))
+                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE))
                 .fluidOutputs(CosmicMeshPlasma.getFluid(1000))
                 .buildAndRegister();
 
@@ -295,13 +295,13 @@ public class UltimateMaterials {
 
         STELLAR_FORGE_RECIPES.recipeBuilder().duration(10).EUt(10000000)
                 .inputs(COSMIC_FABRIC.getStackForm())
-                .inputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE))
+                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE))
                 .fluidOutputs(CosmicMeshPlasma.getFluid(1000))
                 .buildAndRegister();
 
         STELLAR_FORGE_RECIPES.recipeBuilder().duration(10).EUt(10000000)
                 .inputs(COSMIC_MESH.getStackForm())
-                .inputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE))
+                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.QCD_CHARGE))
                 .fluidOutputs(CosmicMeshPlasma.getFluid(1000))
                 .buildAndRegister();
     }

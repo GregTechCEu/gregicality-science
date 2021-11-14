@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipes.categories;
 
-import gregicality.science.common.item.GAExplosive;
-import gregicality.science.common.item.GAMetaBlocks;
+import gregicality.science.common.block.GAExplosive;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GAMetaItems.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Color.Magenta;
@@ -191,11 +191,11 @@ public class MetaItemRecipes {
         CHEMICAL_RECIPES.recipeBuilder().duration(80).EUt(480)
                 .inputs(GELLED_TOLUENE.getStackForm(4))
                 .fluidInputs(NitrationMixture.getFluid(200))
-                .outputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.ITNT))
+                .outputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.ITNT))
                 .fluidOutputs(DilutedSulfuricAcid.getFluid(150))
                 .buildAndRegister();
 
-        ModHandler.addShapedRecipe("powder_barrel", GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.POWDER_BARREL),
+        ModHandler.addShapedRecipe("powder_barrel", GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.POWDER_BARREL),
                 "PSP", "GGG", "PGP",
                 'P', new UnificationEntry(plate, Wood),
                 'S', "string",

@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipes.categories.circuits.components;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GAMetaItems.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Color.White;

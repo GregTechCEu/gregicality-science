@@ -2,10 +2,10 @@ package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
 import gregicality.science.api.GCYSciMaterials;
-import gregicality.science.api.materials.GAOrePrefix;
+import gregicality.science.api.material.GAOrePrefix;
 import gregicality.science.common.block.GAHeatingCoil;
-import gregicality.science.common.block.GAMetaBlocks;
-import gregicality.science.common.item.GAMetaItems;
+import gregicality.science.common.block.GCYSciMetaBlocks;
+import gregicality.science.common.item.GCYSciMetaItems;
 import gregicality.science.api.pipelike.opticalfiber.ItemBlockOpticalFiber;
 import gregicality.science.loaders.recipes.*;
 import gregicality.science.loaders.recipes.categories.handlers.*;
@@ -33,13 +33,13 @@ import net.minecraftforge.registries.IForgeRegistry;
 import java.util.Objects;
 import java.util.function.Function;
 
-import static gregicality.science.common.block.GAMetaBlocks.OPTICAL_FIBER;
+import static gregicality.science.common.block.GCYSciMetaBlocks.OPTICAL_FIBER;
 
 @Mod.EventBusSubscriber(modid = GregicalityScience.MODID)
 public class CommonProxy {
 
     public void preLoad() {
-        GAMetaItems.init();
+        GCYSciMetaItems.init();
     }
 
     public void onLoad() {
@@ -63,27 +63,27 @@ public class CommonProxy {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         GCYSciLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
-        registry.register(GAMetaBlocks.MUTLIBLOCK_CASING);
-        registry.register(GAMetaBlocks.MUTLIBLOCK_CASING2);
-        registry.register(GAMetaBlocks.SIMPLE_BLOCK);
-        registry.register(GAMetaBlocks.EXPLOSIVE);
-        registry.register(GAMetaBlocks.QUANTUM_CASING);
-        registry.register(GAMetaBlocks.REACTOR_CASING);
-        registry.register(GAMetaBlocks.FUSION_CASING);
-        registry.register(GAMetaBlocks.VACUUM_CASING);
+        registry.register(GCYSciMetaBlocks.MUTLIBLOCK_CASING);
+        registry.register(GCYSciMetaBlocks.MUTLIBLOCK_CASING2);
+        registry.register(GCYSciMetaBlocks.SIMPLE_BLOCK);
+        registry.register(GCYSciMetaBlocks.EXPLOSIVE);
+        registry.register(GCYSciMetaBlocks.QUANTUM_CASING);
+        registry.register(GCYSciMetaBlocks.REACTOR_CASING);
+        registry.register(GCYSciMetaBlocks.FUSION_CASING);
+        registry.register(GCYSciMetaBlocks.VACUUM_CASING);
 
-        registry.register(GAMetaBlocks.HEATING_COIL);
-        registry.register(GAMetaBlocks.DIVERTOR_CASING);
-        registry.register(GAMetaBlocks.CRYOSTAT_CASING);
-        registry.register(GAMetaBlocks.TRANSPARENT_CASING);
-        registry.register(GAMetaBlocks.CONVEYOR_CASING);
-        registry.register(GAMetaBlocks.FIELD_GEN_CASING);
-        registry.register(GAMetaBlocks.MOTOR_CASING);
-        registry.register(GAMetaBlocks.PISTON_CASING);
-        registry.register(GAMetaBlocks.PUMP_CASING);
-        registry.register(GAMetaBlocks.ROBOT_ARM_CASING);
-        registry.register(GAMetaBlocks.SENSOR_CASING);
-        registry.register(GAMetaBlocks.EMITTER_CASING);
+        registry.register(GCYSciMetaBlocks.HEATING_COIL);
+        registry.register(GCYSciMetaBlocks.DIVERTOR_CASING);
+        registry.register(GCYSciMetaBlocks.CRYOSTAT_CASING);
+        registry.register(GCYSciMetaBlocks.TRANSPARENT_CASING);
+        registry.register(GCYSciMetaBlocks.CONVEYOR_CASING);
+        registry.register(GCYSciMetaBlocks.FIELD_GEN_CASING);
+        registry.register(GCYSciMetaBlocks.MOTOR_CASING);
+        registry.register(GCYSciMetaBlocks.PISTON_CASING);
+        registry.register(GCYSciMetaBlocks.PUMP_CASING);
+        registry.register(GCYSciMetaBlocks.ROBOT_ARM_CASING);
+        registry.register(GCYSciMetaBlocks.SENSOR_CASING);
+        registry.register(GCYSciMetaBlocks.EMITTER_CASING);
         registry.register(OPTICAL_FIBER);
     }
 
@@ -93,27 +93,27 @@ public class CommonProxy {
         GCYSciLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
 
-        registry.register(createItemBlock(GAMetaBlocks.OPTICAL_FIBER, ItemBlockOpticalFiber::new));
-        registry.register(createItemBlock(GAMetaBlocks.MUTLIBLOCK_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.MUTLIBLOCK_CASING2, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.SIMPLE_BLOCK, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.EXPLOSIVE, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.QUANTUM_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.REACTOR_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.FUSION_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.VACUUM_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.HEATING_COIL, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.DIVERTOR_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.CRYOSTAT_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.CONVEYOR_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.FIELD_GEN_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.MOTOR_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.PISTON_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.PUMP_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.ROBOT_ARM_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.SENSOR_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GAMetaBlocks.EMITTER_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.OPTICAL_FIBER, ItemBlockOpticalFiber::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.MUTLIBLOCK_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.MUTLIBLOCK_CASING2, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.SIMPLE_BLOCK, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.EXPLOSIVE, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.QUANTUM_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.REACTOR_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.FUSION_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.VACUUM_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.HEATING_COIL, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.DIVERTOR_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.CRYOSTAT_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.CONVEYOR_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.FIELD_GEN_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.MOTOR_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.PISTON_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.PUMP_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.ROBOT_ARM_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.SENSOR_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSciMetaBlocks.EMITTER_CASING, VariantItemBlock::new));
     }
 
     @SubscribeEvent(priority = EventPriority.HIGH)
@@ -156,8 +156,8 @@ public class CommonProxy {
         VoidMinerHandler.register();
 
         // Register OreDictionary Entries
-        GAMetaItems.registerOreDict();
-        GAMetaBlocks.registerOreDict();
+        GCYSciMetaItems.registerOreDict();
+        GCYSciMetaBlocks.registerOreDict();
 
         // Run GTCE Material Handlers
         OrePrefix.runMaterialHandlers();

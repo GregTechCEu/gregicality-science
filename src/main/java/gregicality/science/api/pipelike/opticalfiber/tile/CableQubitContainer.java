@@ -1,7 +1,7 @@
 package gregicality.science.api.pipelike.opticalfiber.tile;
 
-import gregicality.science.api.capabilities.GregicalityCapabilities;
-import gregicality.science.api.capabilities.IQubitContainer;
+import gregicality.science.api.capability.GCYSciCapabilities;
+import gregicality.science.api.capability.IQubitContainer;
 import gregicality.science.api.pipelike.opticalfiber.OpticalFiberProperties;
 import gregicality.science.api.pipelike.opticalfiber.OpticalFiberSize;
 import gregicality.science.api.pipelike.opticalfiber.net.OpticalFiberNet;
@@ -68,7 +68,7 @@ public class CableQubitContainer implements IQubitContainer {
             if (tileEntity == null || tileEntityCable.getPipeBlock().getPipeTileEntity(tileEntity) != null) {
                 continue; //do not emit into other cable tile entities
             }
-            IQubitContainer qubitContainer = tileEntity.getCapability(GregicalityCapabilities.QBIT_CAPABILITY, facing.getOpposite());
+            IQubitContainer qubitContainer = tileEntity.getCapability(GCYSciCapabilities.QBIT_CAPABILITY, facing.getOpposite());
             if (qubitContainer == null) continue;
             currentParallel += qubitContainer.acceptQubitFromNetwork(facing.getOpposite(), voltage, amperage - currentParallel);
             if (currentParallel == amperage)

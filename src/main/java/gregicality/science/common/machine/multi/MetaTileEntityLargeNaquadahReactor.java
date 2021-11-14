@@ -1,6 +1,6 @@
 package gregicality.science.common.machine.multi;
 
-import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAMultiblockCasing;
 import gregicality.science.common.item.metal.MetalCasing2;
 import gregicality.science.loaders.recipes.GCYSciRecipeMaps;
@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import static gregicality.science.client.GCYSciTextures.NAQUADRIA_CASING;
-import static gregicality.science.common.block.GAMetaBlocks.METAL_CASING_2;
+import static gregicality.science.common.block.GCYSciMetaBlocks.METAL_CASING_2;
 import static gregtech.api.unification.material.Materials.Naquadria;
 
 public class MetaTileEntityLargeNaquadahReactor extends FueledMultiblockController {
@@ -98,7 +98,7 @@ public class MetaTileEntityLargeNaquadahReactor extends FueledMultiblockControll
                 .where('L', statePredicate(getCasingState()))
                 .where('C', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
                 .where('G', statePredicate(MetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.MultiblockCasingType.GRATE_CASING)))
-                .where('g', statePredicate(GAMetaBlocks.MUTLIBLOCK_CASING.getState(GAMultiblockCasing.CasingType.TUNGSTENSTEEL_GEARBOX_CASING)))
+                .where('g', statePredicate(GCYSciMetaBlocks.MUTLIBLOCK_CASING.getState(GAMultiblockCasing.CasingType.TUNGSTENSTEEL_GEARBOX_CASING)))
                 .where('F', statePredicate(MetaBlocks.FRAMES.get(Naquadria).getDefaultState()))
                 .where('P', statePredicate(MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.TUNGSTENSTEEL_PIPE)))
                 .where('m', abilityPartPredicate(MultiblockAbility.MAINTENANCE_HATCH).or(statePredicate(getCasingState())))

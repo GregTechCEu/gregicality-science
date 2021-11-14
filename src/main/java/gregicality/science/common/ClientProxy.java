@@ -2,7 +2,7 @@ package gregicality.science.common;
 
 import gregicality.science.client.model.ReTexturedModelLoader;
 import gregicality.science.client.renderer.OpticalFiberRenderer;
-import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.api.GCYSciLog;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -27,7 +27,7 @@ public class ClientProxy extends CommonProxy {
 
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-        GAMetaBlocks.registerStateMappers();
-        GAMetaBlocks.registerItemModels();
+        GCYSciMetaBlocks.registerStateMappers();
+        GCYSciMetaBlocks.registerItemModels();
     }
 }

@@ -1,10 +1,10 @@
 package gregicality.science.common.machine.multi;
 
-import gregicality.science.api.capabilities.GCYSciCapabilities;
+import gregicality.science.api.capability.GCYSciCapabilities;
 import gregicality.science.api.recipe.QubitProducerRecipeLogic;
-import gregicality.science.api.machines.QubitRecipeMapMultiblockController;
+import gregicality.science.api.machine.QubitRecipeMapMultiblockController;
 import gregicality.science.client.GCYSciTextures;
-import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAQuantumCasing;
 import gregicality.science.loaders.recipes.GCYSciRecipeMaps;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -46,7 +46,7 @@ public class MetaTileEntityQubitComputer extends QubitRecipeMapMultiblockControl
     }
 
     protected IBlockState getCasingState() {
-        return GAMetaBlocks.QUANTUM_CASING.getState(GAQuantumCasing.CasingType.COMPUTER);
+        return GCYSciMetaBlocks.QUANTUM_CASING.getState(GAQuantumCasing.CasingType.COMPUTER);
     }
 
     @Override

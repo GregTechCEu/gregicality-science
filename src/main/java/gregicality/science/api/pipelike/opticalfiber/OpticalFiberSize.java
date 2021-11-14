@@ -1,6 +1,6 @@
 package gregicality.science.api.pipelike.opticalfiber;
 
-import gregicality.science.api.materials.GAOrePrefix;
+import gregicality.science.api.material.GAOrePrefix;
 import gregtech.api.pipenet.block.material.IMaterialPipeType;
 import gregtech.api.unification.ore.OrePrefix;
 

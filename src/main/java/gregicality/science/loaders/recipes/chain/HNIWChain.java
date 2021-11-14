@@ -1,6 +1,6 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.common.item.GAMetaItems;
+import gregicality.science.common.item.GCYSciMetaItems;
 
 import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
@@ -185,7 +185,7 @@ public class HNIWChain {
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Toluene.getFluid(1000))
                 .fluidInputs(Chlorine.getFluid(1000))
-                .notConsumable(GAMetaItems.UVA_HALIDE_LAMP.getStackForm())
+                .notConsumable(GCYSciMetaItems.UVA_HALIDE_LAMP.getStackForm())
                 .fluidOutputs(BenzylChloride.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .EUt(480)

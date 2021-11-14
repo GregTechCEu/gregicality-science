@@ -1,7 +1,7 @@
 package gregicality.science.api.pipelike.opticalfiber;
 
-import gregicality.science.api.capabilities.GregicalityCapabilities;
-import gregicality.science.api.capabilities.IQubitContainer;
+import gregicality.science.api.capability.GCYSciCapabilities;
+import gregicality.science.api.capability.IQubitContainer;
 import gregicality.science.api.pipelike.opticalfiber.net.WorldOpticalFiberNet;
 import gregicality.science.api.pipelike.opticalfiber.tile.TileEntityOpticalFiber;
 import gregicality.science.api.pipelike.opticalfiber.tile.TileEntityOpticalFiberTickable;
@@ -68,7 +68,7 @@ public class BlockOpticalFiber extends BlockSimplePipe<OpticalFiberSize, Optical
             //do not connect to null cables and ignore cables
             if (tileEntity == null || getPipeTileEntity(tileEntity) != null) continue;
             EnumFacing opposite = side.getOpposite();
-            IQubitContainer qubitContainer = tileEntity.getCapability(GregicalityCapabilities.QBIT_CAPABILITY, opposite);
+            IQubitContainer qubitContainer = tileEntity.getCapability(GCYSciCapabilities.QBIT_CAPABILITY, opposite);
             if (qubitContainer != null) {
                 activeNodeConnections |= 1 << side.getIndex();
             }

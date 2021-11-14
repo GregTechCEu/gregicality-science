@@ -1,12 +1,12 @@
 package gregicality.science.loaders.recipes.categories.circuits.components;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GAExplosive.ExplosiveType.LEPTONIC_CHARGE;
-import static gregicality.science.common.item.GAExplosive.ExplosiveType.QCD_CHARGE;
-import static gregicality.science.common.item.GAMetaBlocks.EXPLOSIVE;
-import static gregicality.science.common.item.GAMetaBlocks.FUSION_CASING;
-import static gregicality.science.common.item.GAMetaItems.*;
-import static gregicality.science.common.item.fusion.GAFusionCasing.CasingType.ADV_FUSION_COIL_1;
+import static gregicality.science.common.block.GAExplosive.ExplosiveType.LEPTONIC_CHARGE;
+import static gregicality.science.common.block.GAExplosive.ExplosiveType.QCD_CHARGE;
+import static gregicality.science.common.block.GCYSciMetaBlocks.EXPLOSIVE;
+import static gregicality.science.common.block.GCYSciMetaBlocks.FUSION_CASING;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
+import static gregicality.science.common.block.fusion.GAFusionCasing.CasingType.ADV_FUSION_COIL_1;
 import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;

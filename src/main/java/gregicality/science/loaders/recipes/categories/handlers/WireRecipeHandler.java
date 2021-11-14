@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GAMetaItems.INSULATION_WIRE_ASSEMBLY;
+import static gregicality.science.common.item.GCYSciMetaItems.INSULATION_WIRE_ASSEMBLY;
 import static gregtech.api.GTValues.M;
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;

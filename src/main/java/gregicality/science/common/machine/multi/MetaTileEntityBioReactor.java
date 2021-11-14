@@ -1,7 +1,7 @@
 package gregicality.science.common.machine.multi;
 
 import gregicality.science.client.GCYSciTextures;
-import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAMultiblockCasing2;
 import gregicality.science.common.block.GATransparentCasing;
 import gregicality.science.common.block.components.EmitterCasing;
@@ -67,7 +67,7 @@ public class MetaTileEntityBioReactor extends RecipeMapMultiblockController {
                 .where('X', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
                 .where('L', statePredicate(getCasingState()))
                 .where('#', isAirPredicate())
-                .where('G', statePredicate(GAMetaBlocks.TRANSPARENT_CASING.getState(GATransparentCasing.CasingType.OSMIRIDIUM_GLASS)))
+                .where('G', statePredicate(GCYSciMetaBlocks.TRANSPARENT_CASING.getState(GATransparentCasing.CasingType.OSMIRIDIUM_GLASS)))
                 .where('F', fieldGenPredicate())
                 .where('E', emitterPredicate())
                 .where('s', sensorPredicate())
@@ -160,7 +160,7 @@ public class MetaTileEntityBioReactor extends RecipeMapMultiblockController {
     }
 
     private IBlockState getCasingState() {
-        return GAMetaBlocks.MUTLIBLOCK_CASING2.getState(GAMultiblockCasing2.CasingType.BIO_REACTOR);
+        return GCYSciMetaBlocks.MUTLIBLOCK_CASING2.getState(GAMultiblockCasing2.CasingType.BIO_REACTOR);
     }
 
     @Override

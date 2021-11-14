@@ -1,8 +1,8 @@
 package gregicality.science;
 
 import gregicality.science.api.GCYSciMaterials;
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.common.machines.GCYSciTileEntities;
+import gregicality.science.common.block.GCYSciMetaBlocks;
+import gregicality.science.common.machine.GCYSciTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTLog;
@@ -34,7 +34,7 @@ public class MaterialIdTest {
 
         // Bootstrap the GTCE MetaTileEntity System
         MetaBlocks.init();
-        GAMetaBlocks.init();
+        GCYSciMetaBlocks.init();
         MetaTileEntities.init();
         GCYSciTileEntities.init();
     }

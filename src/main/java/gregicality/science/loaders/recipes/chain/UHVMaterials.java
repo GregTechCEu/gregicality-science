@@ -1,13 +1,13 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.common.item.GAExplosive;
-import gregicality.science.common.item.GASimpleBlock;
+import gregicality.science.common.block.GCYSciMetaBlocks;
+import gregicality.science.common.block.GAExplosive;
+import gregicality.science.common.block.GASimpleBlock;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.common.items.MetaItems;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GAMetaItems.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -25,14 +25,14 @@ public class UHVMaterials {
                 .input(bolt, Titanium, 4)
                 .input(dust, HexanitroHexaaxaisowurtzitane)
                 .fluidInputs(GlycerylTrinitrate.getFluid(1000))
-                .outputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.NAQUADRIA_CHARGE))
+                .outputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.NAQUADRIA_CHARGE))
                 .EUt(1966080)
                 .duration(100)
                 .buildAndRegister();
 
         STELLAR_FORGE_RECIPES.recipeBuilder()
                 .input(ingot, Rhenium)
-                .inputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.NAQUADRIA_CHARGE))
+                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.NAQUADRIA_CHARGE))
                 .fluidOutputs(ElectronDegenerateRhenium.getPlasma(144))
                 .EUt(1966080)
                 .duration(20)
@@ -84,7 +84,7 @@ public class UHVMaterials {
                 .inputs(DEGENERATE_RHENIUM_PLATE.getStackForm())
                 .fluidInputs(Tritanium.getFluid(144))
                 .fluidInputs(GlycerylTrinitrate.getFluid(2500))
-                .outputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.TARANIUM_CHARGE))
+                .outputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.TARANIUM_CHARGE))
                 .EUt(125000000)
                 .duration(5)
                 .buildAndRegister();
@@ -103,14 +103,14 @@ public class UHVMaterials {
         FLUID_SOLIDFICATION_RECIPES.recipeBuilder()
                 .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
                 .fluidInputs(SuperheavyMix.getFluid(1000))
-                .outputs(GAMetaBlocks.SIMPLE_BLOCK.getItemVariant(GASimpleBlock.BlockType.SUPERHEAVY_BLOCK))
+                .outputs(GCYSciMetaBlocks.SIMPLE_BLOCK.getItemVariant(GASimpleBlock.BlockType.SUPERHEAVY_BLOCK))
                 .EUt(100000000)
                 .duration(40)
                 .buildAndRegister();
 
         STELLAR_FORGE_RECIPES.recipeBuilder()
-                .inputs(GAMetaBlocks.SIMPLE_BLOCK.getItemVariant(GASimpleBlock.BlockType.SUPERHEAVY_BLOCK))
-                .inputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.TARANIUM_CHARGE))
+                .inputs(GCYSciMetaBlocks.SIMPLE_BLOCK.getItemVariant(GASimpleBlock.BlockType.SUPERHEAVY_BLOCK))
+                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.TARANIUM_CHARGE))
                 .fluidOutputs(NeutronPlasma.getFluid(1000))
                 .EUt(100000000)
                 .duration(10)

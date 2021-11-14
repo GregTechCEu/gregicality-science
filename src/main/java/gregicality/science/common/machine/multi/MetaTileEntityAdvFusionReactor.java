@@ -1,7 +1,7 @@
 package gregicality.science.common.machine.multi;
 
 import gregicality.science.client.GCYSciTextures;
-import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.fusion.GACryostatCasing;
 import gregicality.science.common.block.fusion.GADivertorCasing;
 import gregicality.science.common.block.fusion.GAFusionCasing;
@@ -90,7 +90,7 @@ public class MetaTileEntityAdvFusionReactor extends RecipeMapMultiblockControlle
                 .where('d', divertorPredicate().or(tilePredicate((state, tile) -> tile instanceof MetaTileEntityEnergyHatch)).or(abilityPartPredicate(ALLOWED_ABILITIES)))
                 .where('v', vacuumPredicate().or(tilePredicate((state, tile) -> tile instanceof MetaTileEntityEnergyHatch)).or(abilityPartPredicate(ALLOWED_ABILITIES)))
                 .where('c', cryostatPredicate().or(tilePredicate((state, tile) -> tile instanceof MetaTileEntityEnergyHatch)).or(abilityPartPredicate(ALLOWED_ABILITIES)))
-                .where('b', statePredicate(GAMetaBlocks.FUSION_CASING.getState(GAFusionCasing.CasingType.FUSION_BLANKET)).or(tilePredicate((state, tile) -> tile instanceof MetaTileEntityEnergyHatch)).or(abilityPartPredicate(ALLOWED_ABILITIES)))
+                .where('b', statePredicate(GCYSciMetaBlocks.FUSION_CASING.getState(GAFusionCasing.CasingType.FUSION_BLANKET)).or(tilePredicate((state, tile) -> tile instanceof MetaTileEntityEnergyHatch)).or(abilityPartPredicate(ALLOWED_ABILITIES)))
                 .setAmountAtMost('E', 16)
                 .where('E', tilePredicate((state, tile) -> tile instanceof MetaTileEntityEnergyHatch))
                 .setAmountAtMost('I', 3)
@@ -106,7 +106,7 @@ public class MetaTileEntityAdvFusionReactor extends RecipeMapMultiblockControlle
     }
 
     private IBlockState getCasingState() {
-        return GAMetaBlocks.FUSION_CASING.getState(GAFusionCasing.CasingType.ADV_FUSION_CASING);
+        return GCYSciMetaBlocks.FUSION_CASING.getState(GAFusionCasing.CasingType.ADV_FUSION_CASING);
     }
 
     @Override

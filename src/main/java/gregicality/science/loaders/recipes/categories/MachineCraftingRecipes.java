@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipes.categories;
 
 import gregicality.science.api.GCYSciMaterials;
-import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.machine.GCYSciTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.ModHandler;
@@ -14,9 +14,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.api.materials.GAOrePrefix.*;
-import static gregicality.science.common.item.GAMetaItems.*;
-import static gregicality.science.common.item.GAMetaItems.FIELD_GENERATOR_UEV;
+import static gregicality.science.api.material.GAOrePrefix.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
+import static gregicality.science.common.item.GCYSciMetaItems.FIELD_GENERATOR_UEV;
 import static gregicality.science.common.block.GAQuantumCasing.CasingType.COMPUTER;
 import static gregicality.science.common.block.fusion.GAFusionCasing.CasingType.ADV_FUSION_COIL_3;
 import static gregicality.science.common.machine.GCYSciTileEntities.*;
@@ -279,7 +279,7 @@ public class MachineCraftingRecipes {
                 .inputs(SENSOR_UIV.getStackForm(4))
                 .inputs(SCINTILLATOR.getStackForm(2))
                 .inputs(LEPTON_TRAP_CRYSTAL.getStackForm(4))
-                .inputs(GAMetaBlocks.FUSION_CASING.getItemVariant(ADV_FUSION_COIL_3, 2))
+                .inputs(GCYSciMetaBlocks.FUSION_CASING.getItemVariant(ADV_FUSION_COIL_3, 2))
                 .outputs(COSMIC_RAY_DETECTOR.getStackForm())
                 .buildAndRegister();
 
@@ -389,10 +389,10 @@ public class MachineCraftingRecipes {
                 .input(plate, Bohrium, 16)
                 .input(gearSmall, Bohrium, 16)
                 .input(round, Bohrium, 16)
-                .inputs(GAMetaBlocks.QUANTUM_CASING.getItemVariant(COMPUTER, 4))
-                .inputs(GAMetaBlocks.QUANTUM_CASING.getItemVariant(COMPUTER, 4))
-                .inputs(GAMetaBlocks.QUANTUM_CASING.getItemVariant(COMPUTER, 4))
-                .inputs(GAMetaBlocks.QUANTUM_CASING.getItemVariant(COMPUTER, 4))
+                .inputs(GCYSciMetaBlocks.QUANTUM_CASING.getItemVariant(COMPUTER, 4))
+                .inputs(GCYSciMetaBlocks.QUANTUM_CASING.getItemVariant(COMPUTER, 4))
+                .inputs(GCYSciMetaBlocks.QUANTUM_CASING.getItemVariant(COMPUTER, 4))
+                .inputs(GCYSciMetaBlocks.QUANTUM_CASING.getItemVariant(COMPUTER, 4))
                 .inputs(ROBOT_ARM_UEV.getStackForm(2))
                 .inputs(FIELD_GENERATOR_UEV.getStackForm(2))
                 .input(wireGtHex, BlackTitanium, 16)

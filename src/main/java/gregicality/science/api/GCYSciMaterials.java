@@ -1,6 +1,6 @@
 package gregicality.science.api;
 
-import gregicality.science.api.materials.*;
+import gregicality.science.api.material.*;
 import gregtech.api.unification.material.Material;
 
 public class GCYSciMaterials {

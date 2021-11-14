@@ -51,8 +51,8 @@ import java.util.Map;
 import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.loaders.recipes.categories.handlers.VoidMinerHandler.*;
 import static gregicality.science.client.GCYSciTextures.*;
-import static gregicality.science.common.block.GAMetaBlocks.METAL_CASING_1;
-import static gregicality.science.common.block.GAMetaBlocks.METAL_CASING_2;
+import static gregicality.science.common.block.GCYSciMetaBlocks.METAL_CASING_1;
+import static gregicality.science.common.block.GCYSciMetaBlocks.METAL_CASING_2;
 import static gregtech.api.unification.material.Materials.*;
 
 public class MetaTileEntityVoidMiner extends MultiblockWithDisplayBase { //todo soft hammerable
@@ -71,7 +71,6 @@ public class MetaTileEntityVoidMiner extends MultiblockWithDisplayBase { //todo 
     private int temperature = 0;
     private double currentDrillingFluid = CONSUME_START;
     private final long energyDrain;
-
 
     public MetaTileEntityVoidMiner(ResourceLocation metaTileEntityId, int tier, int temp) {
         super(metaTileEntityId);
@@ -203,13 +202,11 @@ public class MetaTileEntityVoidMiner extends MultiblockWithDisplayBase { //todo 
                 ores.stream().limit(10).peek(itemStack -> itemStack.setCount(getWorld().rand.nextInt(nbOres * nbOres) + 1)).forEach(itemStack -> {
                     addItemsToItemHandler(outputInventory, false, Collections.singletonList(itemStack));
                 });
-
-
             }
         }
     }
 
-    List<ItemStack> getOres() {
+    protected List<ItemStack> getOres() {
         switch(tier) {
             case 8:
                 return ORES;

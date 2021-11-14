@@ -1,7 +1,7 @@
 package gregicality.science.api.recipe;
 
-import gregicality.science.api.capabilities.IQubitContainer;
-import gregicality.science.api.machines.QubitRecipeMapMultiblockController;
+import gregicality.science.api.capability.IQubitContainer;
+import gregicality.science.api.machine.QubitRecipeMapMultiblockController;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.recipes.Recipe;

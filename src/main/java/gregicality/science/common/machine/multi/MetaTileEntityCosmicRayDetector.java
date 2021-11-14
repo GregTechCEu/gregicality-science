@@ -48,7 +48,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 
 import static gregicality.science.client.GCYSciTextures.QUANTUM_CASING;
-import static gregicality.science.common.block.GAMetaBlocks.METAL_CASING_2;
+import static gregicality.science.common.block.GCYSciMetaBlocks.METAL_CASING_2;
 
 public class MetaTileEntityCosmicRayDetector extends MultiblockWithDisplayBase { //todo maintenance, controller turns on when running
 

@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipes.chain;
 
 import gregicality.science.common.GCYSciConfig;
-import gregicality.science.common.machines.GCYSciTileEntities;
+import gregicality.science.common.machine.GCYSciTileEntities;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraftforge.fluids.FluidRegistry;

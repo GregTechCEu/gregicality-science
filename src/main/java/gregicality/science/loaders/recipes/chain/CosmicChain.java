@@ -1,10 +1,10 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.common.item.GAMetaBlocks;
-import gregicality.science.common.item.GAExplosive;
+import gregicality.science.common.block.GCYSciMetaBlocks;
+import gregicality.science.common.block.GAExplosive;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GAMetaItems.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -15,7 +15,7 @@ public class CosmicChain { // TODO
     public static void init() {
 
         STELLAR_FORGE_RECIPES.recipeBuilder().duration(60).EUt(14000000)
-                .inputs(GAMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.LEPTONIC_CHARGE))
+                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.LEPTONIC_CHARGE))
                 .inputs(DEGENERATE_RHENIUM_PLATE.getStackForm())
                 .fluidOutputs(QuarkGluonPlasma.getFluid(2000))
                 .buildAndRegister();

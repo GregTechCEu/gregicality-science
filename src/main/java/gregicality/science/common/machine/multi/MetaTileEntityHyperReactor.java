@@ -2,11 +2,11 @@ package gregicality.science.common.machine.multi;
 
 import gregicality.science.client.GCYSciTextures;
 import gregicality.science.common.GCYSciConfig;
-import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAMultiblockCasing;
 import gregicality.science.common.block.GAReactorCasing;
 import gregicality.science.common.block.GATransparentCasing;
-import gregicality.science.api.machines.GABoostableWorkableHandler;
+import gregicality.science.api.machine.GABoostableWorkableHandler;
 import gregicality.science.loaders.recipes.GCYSciRecipeMaps;
 import gregicality.science.api.GCYSciLog;
 import gregtech.api.capability.impl.FuelRecipeLogic;
@@ -122,9 +122,9 @@ public class MetaTileEntityHyperReactor extends FueledMultiblockController {
                 .aisle("CCSCC", "CGGGC", "CGGGC", "CGGGC", "CCCCC")
                 .where('S', selfPredicate())
                 .where('C', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
-                .where('T', statePredicate(GAMetaBlocks.MUTLIBLOCK_CASING.getState(GAMultiblockCasing.CasingType.TIERED_HULL_UV)))
-                .where('G', statePredicate(GAMetaBlocks.TRANSPARENT_CASING.getState(GATransparentCasing.CasingType.OSMIRIDIUM_GLASS)))
-                .where('H', statePredicate(GAMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CORE)))
+                .where('T', statePredicate(GCYSciMetaBlocks.MUTLIBLOCK_CASING.getState(GAMultiblockCasing.CasingType.TIERED_HULL_UV)))
+                .where('G', statePredicate(GCYSciMetaBlocks.TRANSPARENT_CASING.getState(GATransparentCasing.CasingType.OSMIRIDIUM_GLASS)))
+                .where('H', statePredicate(GCYSciMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CORE)))
                 .where('#', isAirPredicate())
                 .setAmountAtLeast('c', 55)
                 .where('c', statePredicate(getCasingState()))
@@ -152,7 +152,7 @@ public class MetaTileEntityHyperReactor extends FueledMultiblockController {
                 .where('#', (tile) -> true)
                 .where('S', selfPredicate())
                 .where('F', statePredicate(MetaBlocks.FRAMES.get(Materials.Naquadria).getDefaultState()))
-                .where('H', statePredicate(GAMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CORE_2)))
+                .where('H', statePredicate(GCYSciMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CORE_2)))
                 .setAmountAtLeast('c', 220)
                 .where('c', statePredicate(getCasingState()))
                 .build();
@@ -175,8 +175,8 @@ public class MetaTileEntityHyperReactor extends FueledMultiblockController {
                 .where('#', (tile) -> true)
                 .where('S', selfPredicate())
                 .where('F', statePredicate(MetaBlocks.FRAMES.get(Materials.Naquadria).getDefaultState()))
-                .where('H', statePredicate(GAMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CORE_3)))
-                .where('G', statePredicate(GAMetaBlocks.TRANSPARENT_CASING.getState(GATransparentCasing.CasingType.OSMIRIDIUM_GLASS)))
+                .where('H', statePredicate(GCYSciMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CORE_3)))
+                .where('G', statePredicate(GCYSciMetaBlocks.TRANSPARENT_CASING.getState(GATransparentCasing.CasingType.OSMIRIDIUM_GLASS)))
                 .setAmountAtLeast('c', 250)
                 .where('c', statePredicate(getCasingState()))
                 .build();
@@ -193,8 +193,8 @@ public class MetaTileEntityHyperReactor extends FueledMultiblockController {
 
     protected IBlockState getCasingState() {
         switch (tier_internal) {
-            case 1: return GAMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CASING);
-            case 2: return GAMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CASING_2);
+            case 1: return GCYSciMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CASING);
+            case 2: return GCYSciMetaBlocks.REACTOR_CASING.getState(GAReactorCasing.CasingType.HYPER_CASING_2);
             default: return METAL_CASING_2.getState(MetalCasing2.CasingType.NAQUADRIA);
         }
     }

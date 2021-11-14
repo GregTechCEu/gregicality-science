@@ -1,7 +1,7 @@
 package gregicality.science.common.machine.multi;
 
 import gregicality.science.client.GCYSciTextures;
-import gregicality.science.common.block.GAMetaBlocks;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAMultiblockCasing2;
 import gregicality.science.common.block.components.EmitterCasing;
 import gregicality.science.common.block.fusion.GAFusionCasing;
@@ -70,8 +70,8 @@ public class MetaTileEntityStellarForge extends RecipeMapMultiblockController {
                 .aisle("###############", "######CSC######", "######C#C######", "######C#C######", "######C#C######", "######C#C######", "######C#C######", "######CCC######", "###############")
                 .where('M', emitterPredicate())
                 .where('C', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
-                .where('X', statePredicate(GAMetaBlocks.MUTLIBLOCK_CASING2.getState(GAMultiblockCasing2.CasingType.STELLAR_CONTAINMENT)))
-                .where('F', statePredicate(GAMetaBlocks.FUSION_CASING.getState(GAFusionCasing.CasingType.FUSION_COIL_2)))
+                .where('X', statePredicate(GCYSciMetaBlocks.MUTLIBLOCK_CASING2.getState(GAMultiblockCasing2.CasingType.STELLAR_CONTAINMENT)))
+                .where('F', statePredicate(GCYSciMetaBlocks.FUSION_CASING.getState(GAFusionCasing.CasingType.FUSION_COIL_2)))
                 .where('S', selfPredicate())
                 .where('#', (tile) -> true)
                 .build();
