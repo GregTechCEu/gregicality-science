@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipes.categories.handlers;
 
-import gregicality.science.common.GCYSciConfig;
 import gregicality.science.api.GCYSciLog;
+import gregicality.science.common.GCYSciConfig;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.ore.OrePrefix;

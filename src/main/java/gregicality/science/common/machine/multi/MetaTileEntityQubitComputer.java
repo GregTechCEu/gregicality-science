@@ -1,11 +1,11 @@
 package gregicality.science.common.machine.multi;
 
 import gregicality.science.api.capability.GCYSciCapabilities;
-import gregicality.science.api.recipe.QubitProducerRecipeLogic;
 import gregicality.science.api.machine.QubitRecipeMapMultiblockController;
+import gregicality.science.api.recipe.QubitProducerRecipeLogic;
 import gregicality.science.client.GCYSciTextures;
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAQuantumCasing;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.loaders.recipes.GCYSciRecipeMaps;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;

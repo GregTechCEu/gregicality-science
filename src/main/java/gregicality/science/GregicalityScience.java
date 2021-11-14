@@ -4,9 +4,9 @@ import gregicality.science.api.GCYSciLog;
 import gregicality.science.api.capability.GCYSciCapabilities;
 import gregicality.science.common.CommonProxy;
 import gregicality.science.common.GCYSciConfig;
-import gregicality.science.common.machine.GCYSciTileEntities;
 import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.item.cover.CoverBehaviors;
+import gregicality.science.common.machine.GCYSciTileEntities;
 import gregicality.science.integration.theoneprobe.TheOneProbeCompatibility;
 import gregtech.api.GTValues;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +21,7 @@ import java.io.IOException;
 @Mod(   modid        = GregicalityScience.MODID,
         name         = GregicalityScience.NAME,
         version      = GregicalityScience.VERSION,
-        dependencies = "required-after:gregtech@[2.0,);required-after:gcy_multiblocks")
+        dependencies = GTValues.MOD_VERSION_DEP + "required-after:gcy_multiblocks")
 public class GregicalityScience {
 
     public static final String MODID = "gcy_science";

@@ -63,13 +63,6 @@ public class GCYSciRecipeMaps {
 
 
     @ZenProperty
-    public static final RecipeMap<IntCircuitRecipeBuilder> GAS_CENTRIFUGE_RECIPES = new RecipeMap<>("gas_centrifuge",
-            0, 1, 0, 0, 1, 1, 0, 3, new IntCircuitRecipeBuilder(), false)
-            .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.VERTICAL_INVERTED);
-
-
-    @ZenProperty
     public static final RecipeMap<AdvFusionRecipeBuilder> ADV_FUSION_RECIPES = new RecipeMap<>("adv_fusion",
             0, 0, 0, 0, 2, 3, 1, 3, new AdvFusionRecipeBuilder(), false);
 

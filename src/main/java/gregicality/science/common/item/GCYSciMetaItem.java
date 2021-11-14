@@ -1,6 +1,6 @@
 package gregicality.science.common.item;
 
-import gregicality.science.common.item.behaviors.*;
+import gregicality.science.common.item.behaviors.GATurbineRotorBehavior;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;

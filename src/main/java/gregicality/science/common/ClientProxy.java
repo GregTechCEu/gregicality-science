@@ -1,9 +1,9 @@
 package gregicality.science.common;
 
+import gregicality.science.api.GCYSciLog;
 import gregicality.science.client.model.ReTexturedModelLoader;
 import gregicality.science.client.renderer.OpticalFiberRenderer;
 import gregicality.science.common.block.GCYSciMetaBlocks;
-import gregicality.science.api.GCYSciLog;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoaderRegistry;

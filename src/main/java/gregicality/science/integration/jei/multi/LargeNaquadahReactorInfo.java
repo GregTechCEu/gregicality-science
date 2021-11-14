@@ -1,10 +1,10 @@
 package gregicality.science.integration.jei.multi;
 
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAMultiblockCasing;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.item.metal.MetalCasing2;
-import gregicality.science.integration.jei.GAMultiblockShapeInfo;
 import gregicality.science.common.machine.GCYSciTileEntities;
+import gregicality.science.integration.jei.GAMultiblockShapeInfo;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.blocks.BlockBoilerCasing;
 import gregtech.common.blocks.BlockFusionCoil;

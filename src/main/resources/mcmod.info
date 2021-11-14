@@ -8,6 +8,8 @@
     "url": "",
     "updateUrl": "",
     "authorList": [
+      "dan",
+      "TechLord22",
       "rhuneau",
       "hjae78",
       "Shadows_of_Fire",
@@ -16,10 +18,11 @@
       "bartimaeusnek"
     ],
     "credits": "The creators of GTCE, GT5U and most importantly, GregoriusT.",
-    "logoFile": "assets/gregicality/logo.png",
+    "logoFile": "assets/gcy_science/logo.png",
     "screenshots": [],
     "dependencies": [
-      "gregtech"
+      "gregtech",
+      "gcy_multiblocks"
     ]
   }
 ]

@@ -1,17 +1,14 @@
 package gregicality.science.common.block;
 
 import gregicality.science.GregicalityScience;
-import gregicality.science.client.model.IReTexturedModel;
-import gregicality.science.common.block.components.*;
-import gregicality.science.common.block.fusion.GACryostatCasing;
-import gregicality.science.common.block.fusion.GADivertorCasing;
-import gregicality.science.common.block.fusion.GAFusionCasing;
-import gregicality.science.common.block.fusion.GAVacuumCasing;
 import gregicality.science.api.pipelike.opticalfiber.BlockOpticalFiber;
 import gregicality.science.api.pipelike.opticalfiber.OpticalFiberSize;
 import gregicality.science.api.pipelike.opticalfiber.tile.TileEntityOpticalFiber;
 import gregicality.science.api.pipelike.opticalfiber.tile.TileEntityOpticalFiberTickable;
+import gregicality.science.client.model.IReTexturedModel;
 import gregicality.science.client.renderer.OpticalFiberRenderer;
+import gregicality.science.common.block.components.*;
+import gregicality.science.common.block.fusion.*;
 import gregtech.api.unification.OreDictUnifier;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
@@ -27,7 +24,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class GCYSciMetaBlocks {

@@ -3,12 +3,12 @@ package gregicality.science.loaders.recipes.chain;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
+import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.BIO_REACTOR_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.unification.material.MarkerMaterials.Color.Magenta;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.craftingLens;
 import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.material.MarkerMaterials.Color.Magenta;
 
 public class FullereneChain {
     public static void init() {

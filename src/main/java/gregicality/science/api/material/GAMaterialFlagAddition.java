@@ -1,7 +1,10 @@
 package gregicality.science.api.material;
 
 import gregtech.api.unification.material.info.MaterialFlag;
-import gregtech.api.unification.material.properties.*;
+import gregtech.api.unification.material.properties.FluidProperty;
+import gregtech.api.unification.material.properties.OreProperty;
+import gregtech.api.unification.material.properties.PlasmaProperty;
+import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
 
 import static gregicality.science.api.GCYSciMaterials.*;

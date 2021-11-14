@@ -1,13 +1,13 @@
 package gregicality.science.loaders.recipes.categories;
 
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAMultiblockCasing2;
-import gregicality.science.common.item.metal.MetalCasing2;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.blocks.*;
+import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.blocks.VariantBlock;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import net.minecraft.init.Blocks;
@@ -17,22 +17,23 @@ import net.minecraft.util.IStringSerializable;
 import java.util.Arrays;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.CellCasing.CellType.*;
 import static gregicality.science.common.block.GAHeatingCoil.CoilType.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregicality.science.common.block.GAMultiblockCasing.CasingType.*;
 import static gregicality.science.common.block.GAMultiblockCasing2.CasingType.*;
 import static gregicality.science.common.block.GAQuantumCasing.CasingType.COMPUTER;
 import static gregicality.science.common.block.GAReactorCasing.CasingType.*;
+import static gregicality.science.common.block.GATransparentCasing.CasingType.*;
 import static gregicality.science.common.block.fusion.GAFusionCasing.CasingType.*;
+import static gregicality.science.common.item.CellCasing.CellType.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Tier.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregicality.science.common.block.GATransparentCasing.CasingType.*;
 import static gregtech.common.blocks.BlockFusionCoil.CoilType.FUSION_COIL;
-import static gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType.*;
+import static gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType.FUSION_CASING;
+import static gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType.FUSION_CASING_MK2;
 import static gregtech.common.items.MetaItems.*;
 
 public class CasingRecipes {

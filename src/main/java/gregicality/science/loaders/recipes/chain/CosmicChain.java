@@ -1,11 +1,12 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAExplosive;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 
 import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
+import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.ADV_FUSION_RECIPES;
+import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.STELLAR_FORGE_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;

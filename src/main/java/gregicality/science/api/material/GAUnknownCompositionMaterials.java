@@ -2,12 +2,12 @@ package gregicality.science.api.material;
 
 import gregtech.api.unification.material.Material;
 
-import static gregicality.science.api.material.GAMaterialFlags.*;
-import static gregtech.api.unification.material.Materials.*;
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.*;
-
+import static gregicality.science.api.material.GAMaterialFlags.DISABLE_REPLICATION;
+import static gregicality.science.api.material.GAMaterialFlags.GA_CORE_METAL;
+import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
 
 public class GAUnknownCompositionMaterials {
 

@@ -1,7 +1,7 @@
 package gregicality.science.common.machine.multi;
 
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAMultiblockCasing;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.item.metal.MetalCasing2;
 import gregicality.science.loaders.recipes.GCYSciRecipeMaps;
 import gregtech.api.GTValues;
@@ -18,14 +18,17 @@ import gregtech.api.recipes.machines.FuelRecipeMap;
 import gregtech.api.recipes.recipes.FuelRecipe;
 import gregtech.api.render.ICubeRenderer;
 import gregtech.api.unification.material.Materials;
-import gregtech.common.blocks.*;
+import gregtech.common.blocks.BlockBoilerCasing;
+import gregtech.common.blocks.BlockMultiblockCasing;
+import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.multi.electric.generator.FueledMultiblockController;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidStack;
 

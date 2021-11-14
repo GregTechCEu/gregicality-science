@@ -3,11 +3,11 @@ package gregicality.science.api.material;
 import gregicality.science.api.GCYSciMaterials;
 import gregtech.api.unification.material.Material;
 
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.api.material.GAMaterialFlags.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
 
 public class GASecondDegreeMaterials {
 

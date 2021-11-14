@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAExplosive;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.material.Material;
@@ -11,10 +11,10 @@ import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
 import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.unification.material.MarkerMaterials.Color.Magenta;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregtech.api.unification.material.MarkerMaterials.Color.Magenta;
 
 public class SuperconductorsSMDChain {
     public static void init() {

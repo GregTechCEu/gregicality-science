@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
 public class ExoticComponents{

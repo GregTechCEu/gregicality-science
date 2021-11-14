@@ -1,8 +1,8 @@
 package gregicality.science.integration.jei.multi;
 
 import com.google.common.collect.Lists;
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAQuantumCasing;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.machine.GCYSciTileEntities;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.metatileentities.MetaTileEntities;

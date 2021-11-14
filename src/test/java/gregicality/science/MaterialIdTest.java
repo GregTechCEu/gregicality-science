@@ -14,7 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 public class MaterialIdTest {
 
@@ -28,7 +28,6 @@ public class MaterialIdTest {
         // Bootstrap the GTCE Material System
         GTLog.init(LogManager.getLogger(GTValues.MODID)); // yes this was necessary
         Materials.register();
-        GAEnums.onConstruction();
         GCYSciMaterials.register();
         MetaFluids.init();
 

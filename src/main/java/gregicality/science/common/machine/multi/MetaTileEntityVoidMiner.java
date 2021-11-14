@@ -48,11 +48,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.categories.handlers.VoidMinerHandler.*;
+import static gregicality.science.api.GCYSciMaterials.DrillingMud;
+import static gregicality.science.api.GCYSciMaterials.UsedDrillingMud;
 import static gregicality.science.client.GCYSciTextures.*;
 import static gregicality.science.common.block.GCYSciMetaBlocks.METAL_CASING_1;
 import static gregicality.science.common.block.GCYSciMetaBlocks.METAL_CASING_2;
+import static gregicality.science.loaders.recipes.categories.handlers.VoidMinerHandler.*;
 import static gregtech.api.unification.material.Materials.*;
 
 public class MetaTileEntityVoidMiner extends MultiblockWithDisplayBase { //todo soft hammerable

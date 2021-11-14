@@ -1,8 +1,8 @@
 package gregicality.science.common.machine.multi;
 
 import gregicality.science.client.GCYSciTextures;
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAMultiblockCasing2;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.components.EmitterCasing;
 import gregicality.science.common.block.fusion.GAFusionCasing;
 import gregicality.science.loaders.recipes.GCYSciRecipeMaps;

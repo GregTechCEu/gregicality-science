@@ -1,15 +1,17 @@
 package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
+import gregicality.science.api.GCYSciLog;
 import gregicality.science.api.GCYSciMaterials;
 import gregicality.science.api.material.GAOrePrefix;
+import gregicality.science.api.pipelike.opticalfiber.ItemBlockOpticalFiber;
 import gregicality.science.common.block.GAHeatingCoil;
 import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.item.GCYSciMetaItems;
-import gregicality.science.api.pipelike.opticalfiber.ItemBlockOpticalFiber;
-import gregicality.science.loaders.recipes.*;
-import gregicality.science.loaders.recipes.categories.handlers.*;
-import gregicality.science.api.GCYSciLog;
+import gregicality.science.loaders.recipes.RecipeHandler;
+import gregicality.science.loaders.recipes.categories.handlers.FuelHandler;
+import gregicality.science.loaders.recipes.categories.handlers.VoidMinerHandler;
+import gregicality.science.loaders.recipes.categories.handlers.WireRecipeHandler;
 import gregicality.science.loaders.recipes.helper.GCYSciComponents;
 import gregtech.api.GregTechAPI;
 import gregtech.api.recipes.recipeproperties.BlastTemperatureProperty;

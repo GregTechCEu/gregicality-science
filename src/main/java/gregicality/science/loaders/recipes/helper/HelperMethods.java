@@ -1,7 +1,5 @@
 package gregicality.science.loaders.recipes.helper;
 
-import com.google.common.base.Preconditions;
-import forestry.core.fluids.Fluids;
 import gregicality.science.loaders.recipes.GCYSciRecipeMaps;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.recipes.FuelRecipe;
@@ -12,7 +10,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-import java.util.*;
+import java.util.Locale;
 
 /**
  * Some Helper Methods for Recipe Addition and Removal

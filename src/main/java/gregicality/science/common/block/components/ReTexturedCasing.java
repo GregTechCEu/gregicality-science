@@ -1,12 +1,12 @@
 package gregicality.science.common.block.components;
 
 import com.google.common.collect.ImmutableMap;
-import gregicality.science.common.GCYSciConfig;
+import gregicality.science.api.GCYSciLog;
 import gregicality.science.client.model.IReTexturedModel;
 import gregicality.science.client.model.ReTexturedModel;
 import gregicality.science.client.model.ReTexturedModelLoader;
+import gregicality.science.common.GCYSciConfig;
 import gregicality.science.utils.BlockPatternChecker;
-import gregicality.science.api.GCYSciLog;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.api.multiblock.PatternMatchContext;
@@ -20,7 +20,10 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.model.IModel;

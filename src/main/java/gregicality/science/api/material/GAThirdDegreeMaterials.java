@@ -5,12 +5,12 @@ import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 
-
-import static com.google.common.collect.ImmutableList.of;
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.api.material.GAMaterialFlags.*;
+import static gregicality.science.api.material.GAMaterialFlags.GA_CORE_METAL;
+import static gregicality.science.api.material.GAMaterialFlags.GA_EXT2_METAL;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.info.MaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
+import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
 
 public class GAThirdDegreeMaterials {
 

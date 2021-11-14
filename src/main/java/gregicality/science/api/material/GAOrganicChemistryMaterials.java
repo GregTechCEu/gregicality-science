@@ -3,11 +3,10 @@ package gregicality.science.api.material;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregicality.science.api.GCYSciMaterials.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.SHINY;
 
 // Organic Chemistry Materials
 // IDs: 6500-9499

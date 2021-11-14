@@ -7,7 +7,6 @@ import net.minecraft.util.IStringSerializable;
 
 public class GASimpleBlock extends VariantBlock<GASimpleBlock.BlockType> {
 
-
     public GASimpleBlock() {
         super(Material.IRON);
         setTranslationKey("ga_simple_block");
@@ -21,7 +20,6 @@ public class GASimpleBlock extends VariantBlock<GASimpleBlock.BlockType> {
     public enum BlockType implements IStringSerializable {
 
         SUPERHEAVY_BLOCK("superheavy_block");
-
 
         private final String name;
 

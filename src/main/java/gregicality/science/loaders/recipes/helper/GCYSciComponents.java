@@ -1,9 +1,9 @@
 package gregicality.science.loaders.recipes.helper;
 
 import com.google.common.collect.ImmutableMap;
+import gregicality.science.common.block.GATransparentCasing;
 import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.item.GCYSciMetaItems;
-import gregicality.science.common.block.GATransparentCasing;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;

@@ -5,10 +5,12 @@ import gregicality.science.loaders.recipes.categories.circuits.components.*;
 import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregtech.api.GTValues.L;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.items.MetaItems.NEURO_PROCESSOR;
+import static gregtech.common.items.MetaItems.STEM_CELLS;
 
 public class CircuitComponentRecipes {
 

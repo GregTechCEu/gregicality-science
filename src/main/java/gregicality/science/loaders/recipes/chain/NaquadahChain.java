@@ -6,7 +6,8 @@ import gregtech.api.unification.OreDictUnifier;
 import static gregicality.science.api.GCYSciMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.dustTiny;
 
 public class NaquadahChain {
 

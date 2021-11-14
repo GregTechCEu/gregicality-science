@@ -4,10 +4,10 @@ import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 
+import static gregicality.science.api.GCYSciMaterials.*;
 import static gregicality.science.api.material.GAMaterialFlags.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregicality.science.api.GCYSciMaterials.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 
 public class GAFirstDegreeMaterials {

@@ -1,9 +1,10 @@
 package gregicality.science.loaders.recipes.categories;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.CENTRIFUGE_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.dust;
 
 // TODO Rework all of this
 public class SuperconductorRecipes {

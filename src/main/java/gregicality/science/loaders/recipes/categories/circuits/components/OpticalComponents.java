@@ -5,8 +5,8 @@ import gregtech.api.unification.OreDictUnifier;
 import net.minecraft.item.ItemStack;
 
 import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregicality.science.api.material.GAOrePrefix.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;

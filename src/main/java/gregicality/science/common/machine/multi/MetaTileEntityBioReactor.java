@@ -1,9 +1,7 @@
 package gregicality.science.common.machine.multi;
 
 import gregicality.science.client.GCYSciTextures;
-import gregicality.science.common.block.GCYSciMetaBlocks;
-import gregicality.science.common.block.GAMultiblockCasing2;
-import gregicality.science.common.block.GATransparentCasing;
+import gregicality.science.common.block.*;
 import gregicality.science.common.block.components.EmitterCasing;
 import gregicality.science.common.block.components.FieldGenCasing;
 import gregicality.science.common.block.components.PumpCasing;

@@ -1,12 +1,12 @@
 package gregicality.science.integration.jei.multi;
 
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.GAMultiblockCasing2;
+import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.block.components.EmitterCasing;
 import gregicality.science.common.block.fusion.GAFusionCasing;
 import gregicality.science.common.item.metal.MetalCasing2;
-import gregicality.science.integration.jei.GAMultiblockShapeInfo;
 import gregicality.science.common.machine.GCYSciTileEntities;
+import gregicality.science.integration.jei.GAMultiblockShapeInfo;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.integration.jei.multiblock.MultiblockInfoPage;

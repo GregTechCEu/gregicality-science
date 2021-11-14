@@ -18,7 +18,7 @@ import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Color.Magenta;
-import static gregtech.api.unification.material.MarkerMaterials.Tier.*;
+import static gregtech.api.unification.material.MarkerMaterials.Tier.Ultimate;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;

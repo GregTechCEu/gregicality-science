@@ -5,14 +5,17 @@ import static gregicality.science.common.block.GAExplosive.ExplosiveType.LEPTONI
 import static gregicality.science.common.block.GAExplosive.ExplosiveType.QCD_CHARGE;
 import static gregicality.science.common.block.GCYSciMetaBlocks.EXPLOSIVE;
 import static gregicality.science.common.block.GCYSciMetaBlocks.FUSION_CASING;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
 import static gregicality.science.common.block.fusion.GAFusionCasing.CasingType.ADV_FUSION_COIL_1;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.*;
+import static gregicality.science.common.item.GCYSciMetaItems.*;
+import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.PLASMA_CONDENSER_RECIPES;
+import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.STELLAR_FORGE_RECIPES;
 import static gregtech.api.GTValues.L;
-import static gregtech.api.recipes.RecipeMaps.*;
-import static gregtech.common.items.MetaItems.*;
+import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.NEUTRON_REFLECTOR;
+import static gregtech.common.items.MetaItems.TOOL_DATA_ORB;
 
 public class SupracausalComponents {
 

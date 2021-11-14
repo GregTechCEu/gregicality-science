@@ -2,8 +2,8 @@ package gregicality.science.loaders.recipes.chain;
 
 import static gregicality.science.api.GCYSciMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.Materials.Dimethylbenzene;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.dustTiny;
 
 public class CombinedChains {
 

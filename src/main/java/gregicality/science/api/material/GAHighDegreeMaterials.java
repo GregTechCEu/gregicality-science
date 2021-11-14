@@ -3,12 +3,13 @@ package gregicality.science.api.material;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 
-import static gregicality.science.api.material.GAMaterialFlags.*;
+import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.material.GAMaterialFlags.GA_CORE_METAL;
+import static gregicality.science.api.material.GAMaterialFlags.GA_EXT2_METAL;
 import static gregtech.api.unification.material.Material.FluidType;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
-import static gregicality.science.api.GCYSciMaterials.*;
 
 /**
  * High Degree Materials, IDs 18500-19999
