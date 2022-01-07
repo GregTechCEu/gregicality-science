@@ -21,11 +21,11 @@ import java.io.IOException;
 @Mod(   modid        = GregicalityScience.MODID,
         name         = GregicalityScience.NAME,
         version      = GregicalityScience.VERSION,
-        dependencies = GTValues.MOD_VERSION_DEP + "required-after:gcy_multiblocks")
+        dependencies = GTValues.MOD_VERSION_DEP + "required-after:gcym")
 public class GregicalityScience {
 
-    public static final String MODID = "gcy_science";
-    public static final String NAME = "Gregicality: Science";
+    public static final String MODID = "gcys";
+    public static final String NAME = "Gregicality Science";
     public static final String VERSION = "@VERSION@";
 
     @SidedProxy(modId = MODID, clientSide = "gregicality.science.common.ClientProxy", serverSide = "gregicality.science.common.CommonProxy")
