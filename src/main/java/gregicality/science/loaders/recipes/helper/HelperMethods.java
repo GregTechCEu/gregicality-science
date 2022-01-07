@@ -1,13 +1,7 @@
 package gregicality.science.loaders.recipes.helper;
 
-import gregicality.science.loaders.recipes.GCYSciRecipeMaps;
-import gregtech.api.GTValues;
-import gregtech.api.recipes.recipes.FuelRecipe;
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.ore.OrePrefix;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.Locale;
@@ -22,7 +16,7 @@ public class HelperMethods {
      *
      * @param recipe The Recipe to check.
      * @return An int, being -1 if multiple input items, or [1, 9] if
-     *         only one unique input Item, meaning the number of input items in the recipe.
+     * only one unique input Item, meaning the number of input items in the recipe.
      */
     public static int getSingleInputCount(IRecipe recipe) {
 
@@ -53,9 +47,8 @@ public class HelperMethods {
      * Returns the ItemStack at the top-left corner of a Shaped Recipe.
      *
      * @param recipe The Crafting Table Recipe to check.
-     *
      * @return The ItemStack at the top left corner, null otherwise.
-     *         Behavior with shapeless recipes may be unexpected.
+     * Behavior with shapeless recipes may be unexpected.
      */
     public static ItemStack getTopLeft(IRecipe recipe) {
         return getRecipeInput(recipe, 0);
@@ -89,7 +82,6 @@ public class HelperMethods {
      * Sets the first character of the String to Uppercase.
      *
      * @param input The String to capitalize.
-     *
      * @return input, capitalized.
      */
     public static String titleCase(String input) {
@@ -101,23 +93,22 @@ public class HelperMethods {
      * An example of how to use it:
      *
      * <cr>
-     *     assertTrue(
-     *         hasPrefix(OreDictUnifier.get(OrePrefix.dust, Materials.Iron), "dust", "dustTiny")
-     *     );
-     *     assertNotTrue(
-     *         hasPrefix(OreDictUnifier.get(OrePrefix.dustTiny, Materials.Iron), "dust", "dustTiny")
-     *     );
+     * assertTrue(
+     * hasPrefix(OreDictUnifier.get(OrePrefix.dust, Materials.Iron), "dust", "dustTiny")
+     * );
+     * assertNotTrue(
+     * hasPrefix(OreDictUnifier.get(OrePrefix.dustTiny, Materials.Iron), "dust", "dustTiny")
+     * );
      * </cr>
      *
      * @param stack  The ItemStack to test.
      * @param prefix The String prefix to the OreDictionary name.
      * @param ignore Strings to ignore prefixes for. For example:
-     *
+     *               <p>
      *               If prefix == "dust", and
-     *                  ignore == "dustTiny",
+     *               ignore == "dustTiny",
      *               it will ignore OreDictionary entries with the prefix "dustTiny",
      *               but not "dust[something else]".
-     *
      * @return true if ItemStack has prefix, false otherwise.
      */
     public static boolean hasOrePrefix(ItemStack stack, String prefix, String... ignore) {
@@ -132,30 +123,5 @@ public class HelperMethods {
             }
         }
         return false;
-    }
-
-    // TODO These should (mostly) be in CEu
-    ///////////////////////////////////////////////////
-    //              Fuel Recipe Helpers              //
-    ///////////////////////////////////////////////////
-    public static void registerNaquadahReactorFuel(FluidStack fuelStack, int duration, int tier) {
-        GCYSciRecipeMaps.NAQUADAH_REACTOR_FUELS.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
-    }
-
-    public static void registerHyperReactorFuel(FluidStack fuelStack, int duration, int tier) {
-        GCYSciRecipeMaps.HYPER_REACTOR_FUELS.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
-    }
-
-    public static void registerRocketFuel(FluidStack fuelStack, int duration, int tier) {
-        GCYSciRecipeMaps.ROCKET_FUEL_RECIPES.addRecipe(new FuelRecipe(fuelStack, duration, GTValues.V[tier]));
-    }
-
-    public static void registerQubitGeneratorFuel(OrePrefix prefix, Material material, int duration, int tier) {
-        GCYSciRecipeMaps.SIMPLE_QUBIT_GENERATOR.recipeBuilder()
-                .qubit(1)
-                .input(prefix, material)
-                .duration(duration)
-                .EUt((int)GTValues.V[tier])
-                .buildAndRegister();
     }
 }

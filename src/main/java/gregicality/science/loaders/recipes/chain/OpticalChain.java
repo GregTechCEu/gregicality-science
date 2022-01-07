@@ -1,10 +1,11 @@
 package gregicality.science.loaders.recipes.chain;
 
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
+import gregtech.api.unification.material.Materials;
+import gregtech.common.items.MetaItems;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.WHITE_HALIDE_LAMP;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.WHITE_HALIDE_LAMP;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
@@ -117,7 +118,7 @@ public class OpticalChain {
 
         // 3Y2O3 + Lu2O3 + Tm2O3 + 30HCl -> [6YCl3 + 2LuCl3 + 2TmCl3 + 15H2O]
         LARGE_CHEMICAL_RECIPES.recipeBuilder().duration(280).EUt(15360)
-                .input(dust, YttriumOxide,15)
+                .input(dust, YttriumOxide, 15)
                 .input(dust, LutetiumOxide, 5)
                 .input(dust, ThuliumOxide, 5)
                 .fluidInputs(HydrochloricAcid.getFluid(30000))
@@ -143,7 +144,7 @@ public class OpticalChain {
                 .buildAndRegister();
 
         // LuTmYVO Precipitate + C2H6O -> LuTmYVO Nanoparticles + 3NaCl + (NH4)2CO3 + C3H6
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(200).EUt(7680)
+        LARGE_CHEMICAL_RECIPES.recipeBuilder().duration(200).EUt(7680)
                 .input(dust, LuTmYVOPrecipitate)
                 .fluidInputs(Ethanol100.getFluid(1000))
                 .output(dust, LuTmYVONanoparticles)
@@ -166,7 +167,7 @@ public class OpticalChain {
         // MgF2 + ZnS + Ta2O5 + TiO2 + C2H5OH -> Dielectric Mirror Formation Mix
         MIXER_RECIPES.recipeBuilder().duration(270).EUt(983040)
                 .input(dust, MagnesiumFluoride, 3)
-                .input(dust, ZincSulfide, 2)
+                .input(dust, Materials.ZincSulfide, 2)
                 .input(dust, TantalumOxide, 7)
                 .input(dust, Rutile, 3)
                 .fluidInputs(Ethanol.getFluid(1000))
@@ -213,7 +214,7 @@ public class OpticalChain {
                 .input(dust, Sodium)
                 .fluidInputs(Ammonia.getFluid(1000))
                 .fluidInputs(OxalicAcid.getFluid(5000))
-                .output(dust ,SodiumHydroxide, 3)
+                .output(dust, SodiumHydroxide, 3)
                 .fluidOutputs(Water.getFluid(9000))
                 .fluidOutputs(AmmoniumNiobiumOxalateSolution.getFluid(1000))
                 .buildAndRegister();
@@ -349,7 +350,7 @@ public class OpticalChain {
 
         // 3Y2O3 + Pr2O3 + Ho2O3 + 30HNO3 -> [6Y(NO3)3 + 2Pr(NO3)3 + 2Ho(NO3)3 + 15H2O]
         LARGE_CHEMICAL_RECIPES.recipeBuilder().duration(280).EUt(15360)
-                .input(dust, YttriumOxide,15)
+                .input(dust, YttriumOxide, 15)
                 .input(dust, PraseodymiumOxide, 5)
                 .input(dust, HolmiumOxide, 5)
                 .fluidInputs(NitricAcid.getFluid(30000))
@@ -443,8 +444,9 @@ public class OpticalChain {
                 .buildAndRegister();
 
         // NH4CNO -> CH4N2O
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(320).EUt(480)
+        FLUID_SOLIDFICATION_RECIPES.recipeBuilder().duration(320).EUt(480)
                 .fluidInputs(AmmoniumCyanate.getFluid(1000))
+                .notConsumable(MetaItems.SHAPE_MOLD_BALL.getStackForm())
                 .output(dust, Urea, 8)
                 .buildAndRegister();
 

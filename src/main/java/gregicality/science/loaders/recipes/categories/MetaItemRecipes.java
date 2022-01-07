@@ -1,11 +1,8 @@
 package gregicality.science.loaders.recipes.categories;
 
-import gregicality.science.common.block.GAExplosive;
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.init.Blocks;
@@ -13,8 +10,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Color.Magenta;
@@ -79,19 +76,19 @@ public class MetaItemRecipes {
                 .buildAndRegister();
 
         // Gravi Star
-        GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[]{new ItemStack(Items.NETHER_STAR)}, new FluidStack[]{Darmstadtium.getFluid(L * 2)});
-        AUTOCLAVE_RECIPES.recipeBuilder().duration(480).EUt(7680)
-                .inputs(new ItemStack(Items.NETHER_STAR))
-                .fluidInputs(Dubnium.getFluid(L * 2))
-                .outputs(GRAVI_STAR.getStackForm())
-                .buildAndRegister();
+//        GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[]{new ItemStack(Items.NETHER_STAR)}, new FluidStack[]{Neutronium.getFluid(L * 2)});
+//        AUTOCLAVE_RECIPES.recipeBuilder().duration(480).EUt(7680)
+//                .inputs(new ItemStack(Items.NETHER_STAR))
+//                .fluidInputs(Dubnium.getFluid(L * 2))
+//                .outputs(GRAVI_STAR.getStackForm())
+//                .buildAndRegister();
 
         // Unstable Star
-        AUTOCLAVE_RECIPES.recipeBuilder().duration(480).EUt(122880)
-                .inputs(GRAVI_STAR.getStackForm())
-                .fluidInputs(Adamantium.getFluid(L * 2))
-                .outputs(UNSTABLE_STAR.getStackForm())
-                .buildAndRegister();
+//        AUTOCLAVE_RECIPES.recipeBuilder().duration(480).EUt(122880)
+//                .inputs(GRAVI_STAR.getStackForm())
+//                .fluidInputs(Adamantium.getFluid(L * 2))
+//                .outputs(UNSTABLE_STAR.getStackForm())
+//                .buildAndRegister();
 
         // Plant Balls
         COMPRESSOR_RECIPES.recipeBuilder().duration(300).EUt(2)
@@ -188,18 +185,18 @@ public class MetaItemRecipes {
                 .buildAndRegister();
 
         // Explosives
-        CHEMICAL_RECIPES.recipeBuilder().duration(80).EUt(480)
-                .inputs(GELLED_TOLUENE.getStackForm(4))
-                .fluidInputs(NitrationMixture.getFluid(200))
-                .outputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.ITNT))
-                .fluidOutputs(DilutedSulfuricAcid.getFluid(150))
-                .buildAndRegister();
-
-        ModHandler.addShapedRecipe("powder_barrel", GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.POWDER_BARREL),
-                "PSP", "GGG", "PGP",
-                'P', new UnificationEntry(plate, Wood),
-                'S', "string",
-                'G', new UnificationEntry(dust, Gunpowder));
+//        CHEMICAL_RECIPES.recipeBuilder().duration(80).EUt(480)
+//                .inputs(GELLED_TOLUENE.getStackForm(4))
+//                .fluidInputs(NitrationMixture.getFluid(200))
+//                .outputs(GCYSMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.ITNT))
+//                .fluidOutputs(DilutedSulfuricAcid.getFluid(150))
+//                .buildAndRegister();
+//
+//        ModHandler.addShapedRecipe("powder_barrel", GCYSMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.POWDER_BARREL),
+//                "PSP", "GGG", "PGP",
+//                'P', new UnificationEntry(plate, Wood),
+//                'S', "string",
+//                'G', new UnificationEntry(dust, Gunpowder));
 
         // Glass Lens
         ModHandler.addShapedRecipe("glass_lens", OreDictUnifier.get(lens, Glass),

@@ -2,8 +2,8 @@ package gregicality.science.loaders.recipes.chain;
 
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.BIO_REACTOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.BIO_REACTOR_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Color.Magenta;
 import static gregtech.api.unification.material.Materials.*;
@@ -11,7 +11,7 @@ import static gregtech.api.unification.ore.OrePrefix.craftingLens;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
 public class FullereneChain {
-    public static void init() {
+    public static void init() { //todo
 
         // 2NaOCN + 2C10H8 -> 2NaOH + 2C10H7CN
         LARGE_CHEMICAL_RECIPES.recipeBuilder()
@@ -81,7 +81,7 @@ public class FullereneChain {
                 .buildAndRegister();
 
         // C60H30 + 15O -> C60 + 15H2O
-        LARGE_ENGRAVER_RECIPES.recipeBuilder()
+        CHEMICAL_RECIPES.recipeBuilder()
                 .notConsumable(craftingLens, Magenta)
                 .input(dust, UnfoldedFullerene)
                 .fluidInputs(Oxygen.getFluid(15000))
@@ -214,36 +214,36 @@ public class FullereneChain {
                 .duration(100)
                 .buildAndRegister();
 
-        LARGE_MIXER_RECIPES.recipeBuilder()
-                .input(dust, Palladium)
-                .input(dust, Iridium)
-                .input(dust, Rhenium)
-                .input(dust, Cerium)
-                .input(dust, Osmium)
-                .input(dust, Silicon)
-                .fluidInputs(Oxygen.getFluid(4000))
-                .output(dust, PdIrReOCeOS, 10)
-                .EUt(7680)
-                .duration(50)
-                .buildAndRegister();
+//        LARGE_MIXER_RECIPES.recipeBuilder()
+//                .input(dust, Palladium)
+//                .input(dust, Iridium)
+//                .input(dust, Rhenium)
+//                .input(dust, Cerium)
+//                .input(dust, Osmium)
+//                .input(dust, Silicon)
+//                .fluidInputs(Oxygen.getFluid(4000))
+//                .output(dust, PdIrReOCeOS, 10)
+//                .EUt(7680)
+//                .duration(50)
+//                .buildAndRegister();
 
         // 2C10H10Fe + 2C60 + C2H4 + 2C3H7NO2 + 4CO -> 2[C10H10Fe + C60 + C4H9N] + 4CO2
         // C2H4 + 2C3H7NO2 -> 2C4H9N + 4O
-        CHEMICAL_PLANT_RECIPES.recipeBuilder()
-                .input(dust, Fullerene, 2)
-                .input(dust, Sarcosine, 26)
-                .fluidInputs(Ferrocene.getFluid(2000))
-                .fluidInputs(Ethylene.getFluid(1000))
-                .fluidInputs(CarbonMonoxide.getFluid(4000))
-                .notConsumable(dust, SodiumEthoxide)
-                .notConsumable(dust, AluminiumChloride)
-                .notConsumable(Chloroform.getFluid(0))
-                .notConsumable(Toluene.getFluid(0))
-                .fluidOutputs(Ferrocenylfulleropyrrolidine.getFluid(2000))
-                .fluidOutputs(CarbonDioxide.getFluid(4000))
-                .EUt(500000)
-                .duration(750)
-                .buildAndRegister();
+//        CHEMICAL_PLANT_RECIPES.recipeBuilder()
+//                .input(dust, Fullerene, 2)
+//                .input(dust, Sarcosine, 26)
+//                .fluidInputs(Ferrocene.getFluid(2000))
+//                .fluidInputs(Ethylene.getFluid(1000))
+//                .fluidInputs(CarbonMonoxide.getFluid(4000))
+//                .notConsumable(dust, SodiumEthoxide)
+//                .notConsumable(dust, AluminiumChloride)
+//                .notConsumable(Chloroform.getFluid(0))
+//                .notConsumable(Toluene.getFluid(0))
+//                .fluidOutputs(Ferrocenylfulleropyrrolidine.getFluid(2000))
+//                .fluidOutputs(CarbonDioxide.getFluid(4000))
+//                .EUt(500000)
+//                .duration(750)
+//                .buildAndRegister();
 
         // NaOH + C2H5OH -> H2O + C2H5ONa
         CHEMICAL_RECIPES.recipeBuilder()

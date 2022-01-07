@@ -3,7 +3,7 @@ package gregicality.science.api.material;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 
-import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
@@ -1035,7 +1035,12 @@ public class GAOrganicChemistryMaterials {
                 .components(Carbon, 4, Hydrogen, 9, Lithium, 1)
                 .build();
 
-        // Free ID 6636
+        Polystyrene = new Material.Builder(6636, "polystyrene")
+                .ingot().fluid()
+                .colorAverage()
+                .flags(EXT2_METAL)
+                .components(Styrene, 1)
+                .build();
 
         Toluenesulfonate = new Material.Builder(6637, "toluenesulfonate")
                 .fluid()
@@ -1750,13 +1755,7 @@ public class GAOrganicChemistryMaterials {
                 .build()
                 .setFormula("C2(H2O)4C?", true);
 
-        BCEPellet = new Material.Builder(6740, "bce_pellet")
-                .dust(2, 1600)
-                .color(0x3C3020)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 3, Water, 4)
-                .build()
-                .setFormula("C2(H2O)4C", true);
+        // FREE ID 6740
 
         ActiniumOxalate = new Material.Builder(6741, "actinium_oxalate")
                 .dust()

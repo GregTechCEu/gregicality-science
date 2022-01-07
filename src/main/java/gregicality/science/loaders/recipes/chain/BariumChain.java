@@ -3,13 +3,13 @@ package gregicality.science.loaders.recipes.chain;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 
-import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
 public class BariumChain {
-    public static void init() {
+    public static void init() { // TODO
 
         // Ba + 2HCl -> BaCl2 + 2H
         CHEMICAL_RECIPES.recipeBuilder().duration(100).EUt(120)

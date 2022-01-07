@@ -3,17 +3,16 @@ package gregicality.science.loaders.recipes.chain;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.BIO_REACTOR_RECIPES;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.BIO_REACTOR_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.ELECTRIC_MOTOR_LUV;
 
 public class BrineChain {
-    public static void init() {
+    public static void init() {//todo
 
         // NH3 + C3H6 + 3O -> 3H2O + C3H3N
         CHEMICAL_RECIPES.recipeBuilder().duration(100).EUt(120)
@@ -136,7 +135,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         // ? -> UO2(NO3)2
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(120).EUt(30)
+        CHEMICAL_RECIPES.recipeBuilder().duration(120).EUt(30)
                 .fluidInputs(PureUranylNitrateSolution.getFluid(900))
                 .output(dust, UranylNitrate, 11)
                 .buildAndRegister();
@@ -155,23 +154,23 @@ public class BrineChain {
                 .fluidOutputs(NitricAcid.getFluid(1000))
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(200).EUt(480)
+        CHEMICAL_RECIPES.recipeBuilder().duration(200).EUt(480)
                 .fluidInputs(DebrominatedWater.getFluid(1000))
                 .fluidOutputs(Brine.getFluid(100))
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(200).EUt(480)
+        CHEMICAL_RECIPES.recipeBuilder().duration(200).EUt(480)
                 .notConsumable(new IntCircuitIngredient(1))
                 .fluidInputs(SaltWater.getFluid(1000))
                 .fluidOutputs(Brine.getFluid(100))
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(200).EUt(480)
+        CHEMICAL_RECIPES.recipeBuilder().duration(200).EUt(480)
                 .fluidInputs(SeaWater.getFluid(1000))
                 .fluidOutputs(Brine.getFluid(100))
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(160).EUt(480)
+        CHEMICAL_RECIPES.recipeBuilder().duration(160).EUt(480)
                 .fluidInputs(Brine.getFluid(1000))
                 .fluidOutputs(ConcentratedBrine.getFluid(800))
                 .buildAndRegister();
@@ -217,7 +216,7 @@ public class BrineChain {
 
         // Na2CO3, CaO
         MIXER_RECIPES.recipeBuilder().duration(80).EUt(1920)
-                .input(dust, SodaAsh ,6)
+                .input(dust, SodaAsh, 6)
                 .input(dust, Quicklime, 2)
                 .fluidInputs(BoronFreeSolution.getFluid(1000))
                 .output(dust, CalciumMagnesiumSalts, 16)
@@ -357,7 +356,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         // 2H3BO3 -> 3H2O + B2O3 (H2O lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(100).EUt(120)
+        CHEMICAL_RECIPES.recipeBuilder().duration(100).EUt(120)
                 .notConsumable(dust, Boron)
                 .fluidInputs(BoricAcid.getFluid(2000))
                 .output(dust, BoronOxide, 5)
@@ -395,7 +394,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         // B2H6 -> 2B + 6H (H lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(60).EUt(480)
+        CHEMICAL_RECIPES.recipeBuilder().duration(60).EUt(480)
                 .notConsumable(dust, Boron)
                 .fluidInputs(Diborane.getFluid(1000))
                 .output(dust, Boron, 2)
@@ -462,7 +461,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         // 12Na2MoO4 + H3PO4 -> Mo12Na3O40P + 21Na + H2O + H + 11O (H2O and H lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(180).EUt(1920)
+        CHEMICAL_RECIPES.recipeBuilder().duration(180).EUt(1920)
                 .input(dust, SodiumMolybdate, 84)
                 .fluidInputs(PhosphoricAcid.getFluid(1000))
                 .output(dust, SodiumPhosphomolybdate, 56)
@@ -471,7 +470,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         // 12Na2WO4 + H3PO4 -> Na3O40PW12 + 21Na + H2O + H + 11O (H2O and H lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(180).EUt(1920)
+        CHEMICAL_RECIPES.recipeBuilder().duration(180).EUt(1920)
                 .fluidInputs(SodiumTungstate.getFluid(12000))
                 .fluidInputs(PhosphoricAcid.getFluid(1000))
                 .output(dust, SodiumPhosphotungstate, 56)
@@ -594,7 +593,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         // CaCO3, CaSO4(H2O)2, NaCl, KCl
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(190).EUt(480)
+        CENTRIFUGE_RECIPES.recipeBuilder().duration(190).EUt(480)
                 .fluidInputs(ChilledBrine.getFluid(2000))
                 .fluidOutputs(MagnesiumContainingBrine.getFluid(1000))
                 .output(dust, Calcite, 5)
@@ -604,7 +603,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         // MgCl2, MgSO4
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(270).EUt(480)
+        CHEMICAL_RECIPES.recipeBuilder().duration(270).EUt(480)
                 .fluidInputs(MagnesiumContainingBrine.getFluid(1000))
                 .output(dust, MagnesiumChloride, 3)
                 .output(dust, MagnesiumSulfate, 6)

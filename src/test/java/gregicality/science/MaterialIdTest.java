@@ -1,8 +1,8 @@
 package gregicality.science;
 
-import gregicality.science.api.GCYSciMaterials;
-import gregicality.science.common.block.GCYSciMetaBlocks;
-import gregicality.science.common.machine.GCYSciTileEntities;
+import gregicality.science.api.GCYSMaterials;
+import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.common.machine.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTLog;
@@ -28,14 +28,14 @@ public class MaterialIdTest {
         // Bootstrap the GTCE Material System
         GTLog.init(LogManager.getLogger(GTValues.MODID)); // yes this was necessary
         Materials.register();
-        GCYSciMaterials.register();
+        GCYSMaterials.register();
         MetaFluids.init();
 
         // Bootstrap the GTCE MetaTileEntity System
         MetaBlocks.init();
-        GCYSciMetaBlocks.init();
+        GCYSMetaBlocks.init();
         MetaTileEntities.init();
-        GCYSciTileEntities.init();
+        GCYSMetaTileEntities.init();
     }
 
     /**
@@ -52,7 +52,7 @@ public class MaterialIdTest {
         );
         assertNotNull(
                 "OreDictUnifier failed to gather a Gregicality Material ItemStack",
-                GCYSciMaterials.Pikyonium
+                GCYSMaterials.Pikyonium
         );
     }
 
@@ -70,7 +70,7 @@ public class MaterialIdTest {
         );
         assertNotNull(
                 "Gregicality: Science MetaTileEntity is still null!",
-                GCYSciTileEntities.STELLAR_FORGE
+                GCYSMetaTileEntities.STELLAR_FORGE
         );
     }
 }

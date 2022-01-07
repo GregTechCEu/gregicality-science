@@ -1,46 +1,25 @@
 package gregicality.science.loaders.recipes.categories.circuits.components;
 
-import gregicality.science.common.GCYSciConfig;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
+import gregtech.api.GTValues;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
 public class ExoticComponents{
 
-    private static final List<FluidStack> SOLDER_FLUIDS = new ArrayList<>();
-
-    static {
-        for (String fluid : GCYSciConfig.Misc.solderingFluidList) {
-            String[] fluidSplit = fluid.split(":");
-            int rawAmount = Integer.parseInt(fluidSplit[1]);
-            int amount = rawAmount < 1 ? 1 : Math.min(rawAmount, 64000);
-
-            FluidStack fluidStack = FluidRegistry.getFluidStack(fluidSplit[0], amount);
-            if (fluidStack != null) SOLDER_FLUIDS.add(fluidStack);
-        }
-    }
-
     public static void init(){
 
-        for(FluidStack fluidStack : SOLDER_FLUIDS){
 
-            ASSEMBLER_RECIPES.recipeBuilder().duration(160).EUt(8000)
-                    .fluidInputs(fluidStack)
-                    .input(stick, Californium)
-                    .input(wireFine, Pikyonium, 4)
-                    .inputs(ALUMINO_SILICATE_GLASS_TUBE.getStackForm())
-                    .outputs(MICROFOCUS_X_RAY_TUBE.getStackForm())
-                    .buildAndRegister();
-
-        }
+        ASSEMBLER_RECIPES.recipeBuilder().duration(160).EUt(8000)
+                .fluidInputs(SolderingAlloy.getFluid(GTValues.L / 2))
+                .input(stick, Californium)
+                .input(wireFine, Pikyonium, 4)
+                .inputs(ALUMINO_SILICATE_GLASS_TUBE.getStackForm())
+                .outputs(MICROFOCUS_X_RAY_TUBE.getStackForm())
+                .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder().duration(160).EUt((int)1E+6).fluidInputs(Zylon.getFluid(72))
                 .input(foil, Cinobite)
@@ -55,7 +34,7 @@ public class ExoticComponents{
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder().duration(160).EUt((int)1E+6).fluidInputs(Zylon.getFluid(72))
-                .input(plate, Vibranium)
+//                .input(plate, Vibranium)
                 .input(plate, Quantum)
                 .outputs(SMD_DIODE_EXOTIC.getStackForm(32))
                 .buildAndRegister();

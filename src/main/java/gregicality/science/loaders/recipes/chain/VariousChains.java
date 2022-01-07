@@ -5,15 +5,14 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.SHAPE_MOLD_BLOCK;
 
-public class VariousChains {
+public class VariousChains { //todo
 
     public static void init() {
         memoryFoam();
@@ -27,12 +26,12 @@ public class VariousChains {
     private static void misc() {
 
         // UU-Matter ===================================================================================================
-        LARGE_MIXER_RECIPES.recipeBuilder().duration(100).EUt(7680)
-                .fluidInputs(BosonicUUMatter.getFluid(1000))
-                .fluidInputs(FermionicUUMatter.getFluid(1000))
-                .fluidInputs(FreeElectronGas.getFluid(2000))
-//                .fluidOutputs(UUMatter.getFluid(1000)) //todo UU-Matter
-                .buildAndRegister();
+//        CHEMICAL_RECIPES.recipeBuilder().duration(100).EUt(7680)
+//                .fluidInputs(BosonicUUMatter.getFluid(1000))
+//                .fluidInputs(FermionicUUMatter.getFluid(1000))
+//                .fluidInputs(FreeElectronGas.getFluid(2000))
+////                .fluidOutputs(UUMatter.getFluid(1000)) //todo UU-Matter
+//                .buildAndRegister();
 
         // Sodium Hypochlorite =========================================================================================
         // 2NaOH + 2Cl -> H2O + NaCl + NaClO
@@ -61,26 +60,6 @@ public class VariousChains {
                 .fluidOutputs(HypochlorousAcid.getFluid(1000))
                 .buildAndRegister();
 
-        // Lignite Processing ==========================================================================================
-        FLUID_HEATER_RECIPES.recipeBuilder().duration(120).EUt(120)
-                .circuitMeta(0)
-                .fluidInputs(Nitrogen.getFluid(1000))
-                .fluidOutputs(HotNitrogen.getFluid(1000))
-                .buildAndRegister();
-
-        // C2(H2O)4C + N(hot) -> N + 3C + 4H2O (H2O lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(190).EUt(120)
-                .input(dust, Lignite)
-                .fluidInputs(HotNitrogen.getFluid(1000))
-                .fluidOutputs(Nitrogen.getFluid(1000))
-                .output(dust, DehydratedLignite, 3)
-                .buildAndRegister();
-
-        COMPRESSOR_RECIPES.recipeBuilder().duration(40).EUt(30)
-                .input(dust, DehydratedLignite, 3)
-                .output(dust, BCEPellet)
-                .buildAndRegister();
-
         // Graphene ====================================================================================================
         // FeCl3 + C6H12O6 = [FeCl3 + C6H12O6]
         MIXER_RECIPES.recipeBuilder().duration(80).EUt(30)
@@ -90,7 +69,7 @@ public class VariousChains {
                 .buildAndRegister();
 
         // [FeCl3 + C6H12O6] -> [6CO + Fe] + 3Cl + 5H2O + H2 (H2O and H2 lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(40).EUt(120)
+        CHEMICAL_RECIPES.recipeBuilder().duration(40).EUt(120)
                 .notConsumable(stickLong, YttriumBariumCuprate)
                 .fluidInputs(GlucoseIronSolution.getFluid(1000))
                 .outputs(GRAPHENE_IRON_PLATE.getStackForm())
@@ -284,32 +263,6 @@ public class VariousChains {
                 .fluidOutputs(SodiumHexafluoroaluminate.getFluid(1000))
                 .buildAndRegister();
 
-        // Vanadium Products ===========================================================================================
-        // 2V + 3Na2CO3 = 2Na3VO4 + 3C + O
-        CHEMICAL_RECIPES.recipeBuilder().duration(150).EUt(120)
-                .input(dust, Vanadium, 2)
-                .input(dust, SodaAsh, 18)
-                .output(dust, SodiumVanadate, 16)
-                .output(dust, Carbon, 3)
-                .fluidOutputs(Oxygen.getFluid(1000))
-                .buildAndRegister();
-
-        // H2SO4 + NH4Cl + Na3VO4 = NH4VO3 + [Cl + 3Na + O + H2SO4]
-        CHEMICAL_RECIPES.recipeBuilder().duration(120).EUt(120)
-                .fluidInputs(SulfuricAcid.getFluid(1000))
-                .input(dust, SodiumVanadate, 8)
-                .fluidInputs(AmmoniumChloride.getFluid(1000))
-                .output(dust, AmmoniumVanadate, 9)
-                .buildAndRegister();
-
-
-        // 2NH4VO3 = V2O5 + 2NH3 + H2O (H2O lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(240).EUt(120)
-                .input(dust, AmmoniumVanadate, 18)
-                .output(dust, VanadiumOxide, 7)
-                .fluidOutputs(Ammonia.getFluid(2000))
-                .buildAndRegister();
-
         // Misc Reactions ==============================================================================================
         // 3Ca + 3PO4 + H + O -> [3Ca + 3PO4 + H + O]
         CHEMICAL_RECIPES.recipeBuilder().EUt(30).duration(100)
@@ -426,7 +379,7 @@ public class VariousChains {
                 .buildAndRegister();
 
         // [LiCl + H2O] = LiCl + H2O (H2O Voided - Dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(180).EUt(120)
+        ELECTROLYZER_RECIPES.recipeBuilder().duration(180).EUt(120)
                 .fluidInputs(LithiumChlorideSolution.getFluid(1000))
                 .fluidOutputs(Chlorine.getFluid(1000))
                 .output(dust, Lithium)
@@ -469,7 +422,7 @@ public class VariousChains {
                 .buildAndRegister();
 
         // C8H6O4 -> C8H4O3 + H2O (H2O voided - Dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(600).EUt(120)
+        CHEMICAL_RECIPES.recipeBuilder().duration(600).EUt(120)
                 .fluidInputs(PhthalicAcid.getFluid(1000))
                 .output(dust, PhthalicAnhydride, 15)
                 .buildAndRegister();
@@ -508,23 +461,6 @@ public class VariousChains {
                 .fluidInputs(Trimethylamine.getFluid(1000))
                 .output(dust, Salt, 2)
                 .fluidOutputs(Choline.getFluid(1000))
-                .buildAndRegister();
-
-        // C2(H2O)4C + C5H14NO -> ATL
-        CHEMICAL_RECIPES.recipeBuilder().duration(120).EUt(120)
-                .input(dust, Lignite)
-                .fluidInputs(Choline.getFluid(1000))
-                .fluidOutputs(ATL.getFluid(1000))
-                .buildAndRegister();
-
-        LARGE_MIXER_RECIPES.recipeBuilder().duration(120).EUt(480)
-                .fluidInputs(BariumSulfateSolution.getFluid(1000))
-                .fluidInputs(CalciumCarbonateSolution.getFluid(1000))
-                .fluidInputs(BentoniteClaySlurry.getFluid(1000))
-                .fluidInputs(Lubricant.getFluid(1000))
-                .fluidInputs(ATL.getFluid(1000))
-                .fluidInputs(EthyleneGlycol.getFluid(1000))
-                .fluidOutputs(DrillingMud.getFluid(6000))
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder().duration(120).EUt(30)
@@ -651,7 +587,7 @@ public class VariousChains {
                 .buildAndRegister();
 
         // C + 2H + N2H4 = CH3(NH)NH2
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(480).EUt(240)
+        CHEMICAL_RECIPES.recipeBuilder().duration(480).EUt(240)
                 .input(dust, Carbon)
                 .fluidInputs(Hydrogen.getFluid(2000))
                 .fluidInputs(Hydrazine.getFluid(1000))

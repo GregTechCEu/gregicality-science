@@ -4,8 +4,7 @@ import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.common.items.MetaItems;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -45,7 +44,7 @@ public class PlatinumSludgeGroupChain {
      * - ReRhodium: 2
      */
 
-    public static void init() {
+    public static void init() { //todo
         platinumInit();
         palladiumInit();
         rhodiumInit();
@@ -123,24 +122,6 @@ public class PlatinumSludgeGroupChain {
                 .output(dustTiny, PlatinumResidue, 5)
                 .EUt(30)
                 .duration(250)
-                .buildAndRegister();
-
-        // HNO3 + HCl -> [HNO3 + HCl]
-        MIXER_RECIPES.recipeBuilder()
-                .fluidInputs(NitricAcid.getFluid(1000))
-                .fluidInputs(HydrochloricAcid.getFluid(1000))
-                .fluidOutputs(AquaRegia.getFluid(2000))
-                .EUt(30)
-                .duration(30)
-                .buildAndRegister();
-
-        // [HNO3 + HCl] -> HNO3 + HCl
-        CENTRIFUGE_RECIPES.recipeBuilder()
-                .fluidInputs(AquaRegia.getFluid(2000))
-                .fluidOutputs(NitricAcid.getFluid(1000))
-                .fluidOutputs(HydrochloricAcid.getFluid(1000))
-                .EUt(30)
-                .duration(192) // copied duration from Nitration Mixture
                 .buildAndRegister();
 
         // 2K + 2S + 7O -> K2S2O7
@@ -304,7 +285,7 @@ public class PlatinumSludgeGroupChain {
                 .duration(400)
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
+        CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(RhodiumSulfateSolution.getFluid(1000))
                 .input(dust, Zinc)
                 .output(dust, ZincSulfate, 6)
@@ -373,7 +354,7 @@ public class PlatinumSludgeGroupChain {
                 .buildAndRegister();
 
         // Rh(NH3)2(H2O)2 -> Rh + 2NH3 + 2H2O (H2O lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
+        CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(RhodiumFilterCakeSolution.getFluid(1000))
                 .output(dust, Rhodium)
                 .fluidOutputs(Ammonia.getFluid(2000))

@@ -1,11 +1,11 @@
 package gregicality.science.api.material;
 
-import gregicality.science.api.GCYSciMaterials;
+import gregicality.science.api.GCYSMaterials;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 
-import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregicality.science.api.material.GAMaterialFlags.GA_CORE_METAL;
 import static gregicality.science.api.material.GAMaterialFlags.GA_EXT2_METAL;
 import static gregtech.api.unification.material.Materials.*;
@@ -22,16 +22,16 @@ public class GAThirdDegreeMaterials {
                 .components(RutheniumTetroxideSolution, 1, Water, 1)
                 .build();
 
-        AcidicOsmiumSolution = new Material.Builder(15501,"acidic_osmium_solution")
+        AcidicOsmiumSolution = new Material.Builder(15501, "acidic_osmium_solution")
                 .fluid()
-                .color(OsmiumTetroxideSolution.getMaterialRGB()-20)
+                .color(OsmiumTetroxideSolution.getMaterialRGB() - 20)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(OsmiumTetroxideSolution, 1, HydrochloricAcid, 1)
                 .build();
 
-        AcidicIridiumSolution = new Material.Builder(15502,"acidic_iridium_solution")
+        AcidicIridiumSolution = new Material.Builder(15502, "acidic_iridium_solution")
                 .fluid()
-                .color(IridiumDioxide.getMaterialRGB()-20)
+                .color(IridiumDioxide.getMaterialRGB() - 20)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(IridiumDioxide, 1, HydrochloricAcid, 1)
                 .build();
@@ -58,8 +58,8 @@ public class GAThirdDegreeMaterials {
                 .ingot(7).fluid()
                 .color(0xAA0D0D).iconSet(MaterialIconSet.SHINY)
                 .flags(GA_CORE_METAL, DISABLE_DECOMPOSITION)
-                .components(TungstenTitaniumCarbide, 3, Jasper, 3)
-                .cableProperties(GTValues.V[GTValues.UEV], 2 ,16)
+                .components(TungstenTitaniumCarbide, 3)
+                .cableProperties(GTValues.V[GTValues.UEV], 2, 16)
                 .blastTemp(9200)
                 .build();
 
@@ -81,7 +81,7 @@ public class GAThirdDegreeMaterials {
 
         MetalHydroxideMix = new Material.Builder(15509, "metal_hydroxide_mix")
                 .fluid()
-                .color(Zinc.getMaterialRGB()-30)
+                .color(Zinc.getMaterialRGB() - 30)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Zinc, 1, Oxygen, 1, Hydrogen, 1, RareEarth, 1)
                 .build();
@@ -111,7 +111,7 @@ public class GAThirdDegreeMaterials {
                 .ingot()
                 .colorAverage().iconSet(MaterialIconSet.SHINY)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(GCYSciMaterials.ZBLAN, 1 , ErbiumTrifluoride, 1)
+                .components(GCYSMaterials.ZBLAN, 1, ErbiumTrifluoride, 1)
                 .build();
 
         // Free ID 15514
@@ -127,16 +127,16 @@ public class GAThirdDegreeMaterials {
 
         LanthanumFullereneNanotubes = new Material.Builder(15517, "lanthanum_fullerene_nanotubes")
                 .dust()
-                .color(LanthanumFullereneMix.getMaterialRGB()*3/5).iconSet(MaterialIconSet.SHINY)
+                .color(LanthanumFullereneMix.getMaterialRGB() * 3 / 5).iconSet(MaterialIconSet.SHINY)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Lanthanum, 2, Fullerene, 2 , CarbonNanotubes, 1)
+                .components(Lanthanum, 2, Fullerene, 2, CarbonNanotubes, 1)
                 .build();
 
         StrontiumTaraniumTBCCO = new Material.Builder(15518, "strontium_taranium_tbcco")
                 .ingot().fluid()
                 .color(0x359FFC)
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)
-                .components(TBCCO, 4, StrontiumSuperconductor, 4, Taranium, 1)
+                .components(TBCCO, 4, StrontiumSuperconductor, 4)
                 .cableProperties(GTValues.V[GTValues.UHV], 24, 0, true)
                 .blastTemp(10600)
                 .build();
@@ -145,7 +145,7 @@ public class GAThirdDegreeMaterials {
                 .ingot().fluid()
                 .color(0x954FE0)
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)
-                .components(ActiniumSuperhydride, 1, BETSPerrhenate, 1, Vibranium, 1, Quantum, 1, TriniumTitanium, 1)
+                .components(ActiniumSuperhydride, 1, BETSPerrhenate, 1, Quantum, 1, TriniumTitanium, 1)
                 .cableProperties(GTValues.V[GTValues.UEV], 32, 0, true)
                 .blastTemp(11500)
                 .build();

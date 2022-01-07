@@ -1,9 +1,9 @@
 package gregicality.science.loaders.recipes.categories.circuits;
 
-import gregicality.science.api.GCYSciMaterials;
+import gregicality.science.api.GCYSMaterials;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES;
@@ -66,7 +66,7 @@ public class CircuitRecipes {
                 .inputs(SMD_DIODE_BIOWARE.getStackForm(32))
                 .inputs(SMD_RESISTOR_BIOWARE.getStackForm(32))
                 .inputs(NEURO_PROCESSOR.getStackForm())
-                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 2)
+                .input(wireGtSingle, GCYSMaterials.StrontiumTaraniumTBCCO, 2)
                 .inputs(UHPIC.getStackForm(16))
                 .inputs(ARAM.getStackForm(64))
                 .input(plate, Tritanium, 2)
@@ -87,10 +87,10 @@ public class CircuitRecipes {
                 .inputs(SMD_DIODE_BIOWARE.getStackForm(64))
                 .inputs(SMD_RESISTOR_BIOWARE.getStackForm(64))
                 .inputs(NEURO_PROCESSOR.getStackForm(2))
-                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 6)
+                .input(wireGtSingle, GCYSMaterials.StrontiumTaraniumTBCCO, 6)
                 .inputs(UHPIC.getStackForm(32))
-                .input(plate, Adamantium, 2)
-                .input(frameGt, Adamantium)
+//                .input(plate, Adamantium, 2)
+//                .input(frameGt, Adamantium)
                 .input(plate, Naquadria, 8)
                 .input(foil, Polybenzimidazole, 64)
                 .inputs(UNSTABLE_STAR.getStackForm())
@@ -143,7 +143,7 @@ public class CircuitRecipes {
                 .inputs(SMD_DIODE_OPTICAL.getStackForm(32))
                 .inputs(SMD_RESISTOR_OPTICAL.getStackForm(32))
                 .inputs(OPTICAL_SOC.getStackForm())
-                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 2)
+                .input(wireGtSingle, GCYSMaterials.StrontiumTaraniumTBCCO, 2)
                 .inputs(CLADDED_OPTICAL_FIBER_CORE.getStackForm(16))
                 .inputs(UHPIC.getStackForm(32))
                 .inputs(ARAM.getStackForm(64))
@@ -153,7 +153,7 @@ public class CircuitRecipes {
                 .inputs(GRAVI_STAR.getStackForm(4))
                 .fluidInputs(Tritanium.getFluid(L * 2))
                 .fluidInputs(Polyetheretherketone.getFluid(L * 9))
-                .fluidInputs(Adamantium.getFluid(L * 9))
+//                .fluidInputs(Adamantium.getFluid(L * 9))
                 .outputs(OPTICAL_COMPUTER.getStackForm())
                 .buildAndRegister();
 
@@ -174,7 +174,7 @@ public class CircuitRecipes {
                 .inputs(UNSTABLE_STAR.getStackForm(8))
                 .inputs(CLADDED_OPTICAL_FIBER_CORE.getStackForm(48))
                 .fluidInputs(Cinobite.getFluid(L * 2))
-                .fluidInputs(Vibranium.getFluid(L * 9))
+//                .fluidInputs(Vibranium.getFluid(L * 9))
                 .fluidInputs(Polyetheretherketone.getFluid(L * 18))
                 .fluidInputs(Naquadria.getFluid(L * 9))
                 .outputs(OPTICAL_MAINFRAME.getStackForm())
@@ -206,7 +206,7 @@ public class CircuitRecipes {
                 .inputs(QUBIT_CENTRAL_PROCESSING_UNIT.getStackForm(4))
                 .input(plate, EnrichedNaquadahAlloy, 2)
                 .inputs(ARAM.getStackForm(2))
-                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 2)
+                .input(wireGtSingle, GCYSMaterials.StrontiumTaraniumTBCCO, 2)
                 .fluidInputs(EnrichedNaquadahAlloy.getFluid(144))
                 .fluidInputs(TriniumTitanium.getFluid(144))
                 .fluidInputs(Quantum.getFluid(144))
@@ -227,7 +227,7 @@ public class CircuitRecipes {
                 .inputs(ARAM.getStackForm(8))
                 .input(wireGtSingle, ActiniumVibraniumBETSSuperhydride, 4)
                 .fluidInputs(Polyetheretherketone.getFluid(1000))
-                .fluidInputs(Vibranium.getFluid(144))
+//                .fluidInputs(Vibranium.getFluid(144))
                 .fluidInputs(EnrichedNaquadahAlloy.getFluid(144))
                 .fluidInputs(TriniumTitanium.getFluid(144))
                 .outputs(EXOTIC_COMPUTER.getStackForm())
@@ -240,7 +240,7 @@ public class CircuitRecipes {
                 .inputs(SMD_TRANSISTOR_EXOTIC.getStackForm(64))
                 .inputs(SMD_CAPACITOR_EXOTIC.getStackForm(64))
                 .inputs(EXOTIC_COMPUTER.getStackForm(2))
-                .input(wireFine, Vibranium, 4)
+//                .input(wireFine, Vibranium, 4)
                 .inputs(QUBIT_CENTRAL_PROCESSING_UNIT.getStackForm(4))
                 .inputs(UHASOC.getStackForm(4))
                 .input(frameGt, TriniumTitanium)
@@ -278,7 +278,7 @@ public class CircuitRecipes {
                 .inputs(SMD_RESISTOR_COSMIC.getStackForm(64))
                 .inputs(NEURO_PROCESSOR.getStackForm(4))
                 .inputs(OPTICAL_PROCESSING_CORE.getStackForm(2))
-                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 4)
+                .input(wireGtSingle, GCYSMaterials.StrontiumTaraniumTBCCO, 4)
                 .inputs(ARAM.getStackForm(64))
                 .inputs(ARAM.getStackForm(64))
                 .input(plate, Quantum, 2)
@@ -327,10 +327,10 @@ public class CircuitRecipes {
                 .input(plate, Quantum, 8)
                 .input(foil, FullerenePolymerMatrix, 64)
                 .inputs(UNSTABLE_STAR.getStackForm(4))
-                .fluidInputs(Taranium.getFluid(L * 6))
+//                .fluidInputs(Taranium.getFluid(L * 6))
                 .fluidInputs(TriniumTitanium.getFluid(L * 9))
                 .fluidInputs(Zylon.getFluid(L * 18))
-                .fluidInputs(Vibranium.getFluid(L * 9))
+//                .fluidInputs(Vibranium.getFluid(L * 9))
                 .outputs(COSMIC_MAINFRAME.getStackForm())
                 .buildAndRegister();
     }
@@ -345,7 +345,7 @@ public class CircuitRecipes {
                 .inputs(MICROWORMHOLE_GENERATOR.getStackForm())
                 .inputs(SUPRACAUSAL_PROCESSING_CORE.getStackForm())
                 .input(plate, SuperheavyHAlloy, 4)
-                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 8)
+                .input(wireGtSingle, GCYSMaterials.StrontiumTaraniumTBCCO, 8)
                 .outputs(SUPRACAUSAL_PROCESSOR.getStackForm())
                 .solderMultiplier(4)
                 .buildAndRegister();
@@ -362,7 +362,7 @@ public class CircuitRecipes {
                 .input(plate, TriniumTitanium, 16)
                 .input(foil, FullerenePolymerMatrix, 24)
                 .input(wireGtSingle, ActiniumVibraniumBETSSuperhydride, 8)
-                .fluidInputs(Taranium.getFluid(L * 9))
+//                .fluidInputs(Taranium.getFluid(L * 9))
                 .fluidInputs(TriniumTitanium.getFluid(L * 9))
                 .fluidInputs(ProtoAdamantium.getFluid(L * 9))
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 9))
@@ -384,7 +384,7 @@ public class CircuitRecipes {
                 .input(wireGtSingle, ProtoFullereneBorocarbide, 64)
                 .inputs(UHPIC.getStackForm(2))
                 .inputs(SUPRACAUSAL_PROCESSING_CORE.getStackForm())
-                .fluidInputs(Taranium.getFluid(L * 9))
+//                .fluidInputs(Taranium.getFluid(L * 9))
                 .fluidInputs(TriniumTitanium.getFluid(L * 9))
                 .fluidInputs(ProtoAdamantium.getFluid(L * 9))
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 9))
@@ -407,7 +407,7 @@ public class CircuitRecipes {
                 .input(wireGtSingle, SuperheavyChargedBlackTitanium, 16)
                 .input(plate, MetastableOganesson, 4)
                 .input(plate, QCDMatter, 8)
-                .fluidInputs(Taranium.getFluid(L * 9))
+//                .fluidInputs(Taranium.getFluid(L * 9))
                 .fluidInputs(TriniumTitanium.getFluid(L * 9))
                 .fluidInputs(ProtoAdamantium.getFluid(L * 9))
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 9))

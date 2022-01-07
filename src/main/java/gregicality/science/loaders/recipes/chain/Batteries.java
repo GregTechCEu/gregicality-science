@@ -1,18 +1,17 @@
 package gregicality.science.loaders.recipes.chain;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.BIO_REACTOR_RECIPES;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.BIO_REACTOR_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
 public class Batteries {
-    public static void init() {
+    public static void init() {//todo
 
         // BaO6S2C2F6 + Li2CO3(H2O) -> BaCO3 + 2LiCSO3F3 + H2O (H2O lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(220).EUt(480)
+        CHEMICAL_RECIPES.recipeBuilder().duration(220).EUt(480)
                 .input(dust, BariumTriflate, 17)
                 .fluidInputs(LithiumCarbonateSolution.getFluid(1000))
                 .output(dust, BariumCarbonate, 5)
@@ -60,7 +59,7 @@ public class Batteries {
                 .buildAndRegister();
 
         // C6H12O6 -> C6H8O6 + 4H (H lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(280).EUt(480)
+        CHEMICAL_RECIPES.recipeBuilder().duration(280).EUt(480)
                 .input(dust, Sorbose, 24)
                 .fluidOutputs(AscorbicAcid.getFluid(1000))
                 .notConsumable(dust, Platinum)
@@ -74,16 +73,16 @@ public class Batteries {
                 .notConsumable(dust, Nickel)
                 .buildAndRegister();
 
-        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(390).EUt(7680)
-                .input(dust, GrapheneOxide, 3)
-                .input(dust, SiliconNanoparticles)
-                .input(dust, CalciumAlginate)
-                .input(dust, CarbonNanotubes)
-                .fluidInputs(SodiumCarbonateSolution.getFluid(1000))
-                .fluidInputs(AscorbicAcid.getFluid(1000))
-                .outputs(NANOSILICON_CATHODE.getStackForm())
-                .fluidOutputs(DehydroascorbicAcid.getFluid(1000))
-                .buildAndRegister();
+//        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(390).EUt(7680)
+//                .input(dust, GrapheneOxide, 3)
+//                .input(dust, SiliconNanoparticles)
+//                .input(dust, CalciumAlginate)
+//                .input(dust, CarbonNanotubes)
+//                .fluidInputs(SodiumCarbonateSolution.getFluid(1000))
+//                .fluidInputs(AscorbicAcid.getFluid(1000))
+//                .outputs(NANOSILICON_CATHODE.getStackForm())
+//                .fluidOutputs(DehydroascorbicAcid.getFluid(1000))
+//                .buildAndRegister();
 
         // Ga + 3Cl -> GaCl3
         CHEMICAL_RECIPES.recipeBuilder().duration(100).EUt(120)
@@ -130,7 +129,7 @@ public class Batteries {
                 .buildAndRegister();
 
         // 7La2O3 + 7NiO + Ca + 2C10H16N2O8 -> 7La2NiO4 + CaO + 15CO + 5CH4 + 4NH3
-        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(420).EUt(30720)
+        LARGE_CHEMICAL_RECIPES.recipeBuilder().duration(420).EUt(30720)
                 .input(dust, LanthanumOxide, 35)
                 .input(dust, Garnierite, 14)
                 .input(dust, Calcium)

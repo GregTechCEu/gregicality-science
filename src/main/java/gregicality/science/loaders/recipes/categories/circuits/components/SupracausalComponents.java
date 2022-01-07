@@ -1,25 +1,19 @@
 package gregicality.science.loaders.recipes.categories.circuits.components;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.block.GAExplosive.ExplosiveType.LEPTONIC_CHARGE;
-import static gregicality.science.common.block.GAExplosive.ExplosiveType.QCD_CHARGE;
-import static gregicality.science.common.block.GCYSciMetaBlocks.EXPLOSIVE;
-import static gregicality.science.common.block.GCYSciMetaBlocks.FUSION_CASING;
-import static gregicality.science.common.block.fusion.GAFusionCasing.CasingType.ADV_FUSION_COIL_1;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.PLASMA_CONDENSER_RECIPES;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.STELLAR_FORGE_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.PLASMA_CONDENSER_RECIPES;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.NEUTRON_REFLECTOR;
-import static gregtech.common.items.MetaItems.TOOL_DATA_ORB;
+import static gregtech.common.items.MetaItems.FIELD_GENERATOR_UHV;
+import static gregtech.common.items.MetaItems.SENSOR_UIV;
 
 public class SupracausalComponents {
 
-    public static void init(){
+    public static void init() {
 
         // SMD Capacitor
         ASSEMBLER_RECIPES.recipeBuilder().duration(400).EUt(134217728)
@@ -30,12 +24,12 @@ public class SupracausalComponents {
                 .buildAndRegister();
 
         // SMD Diode
-        ASSEMBLER_RECIPES.recipeBuilder().duration(400).EUt(134217728)
-                .fluidInputs(FullerenePolymerMatrix.getFluid(L))
-                .input(plate, Vibranium)
-                .notConsumable(MICROWORMHOLE_GENERATOR.getStackForm())
-                .outputs(SMD_DIODE_SUPRACAUSAL.getStackForm(32))
-                .buildAndRegister();
+//        ASSEMBLER_RECIPES.recipeBuilder().duration(400).EUt(134217728)
+//                .fluidInputs(FullerenePolymerMatrix.getFluid(L))
+//                .input(plate, Vibranium)
+//                .notConsumable(MICROWORMHOLE_GENERATOR.getStackForm())
+//                .outputs(SMD_DIODE_SUPRACAUSAL.getStackForm(32))
+//                .buildAndRegister();
 
         // SMD Transistor
         ASSEMBLER_RECIPES.recipeBuilder().duration(400).EUt(134217728)
@@ -91,28 +85,28 @@ public class SupracausalComponents {
                 .buildAndRegister();
 
         // Relativistic Spinorial Memory System
-        ASSEMBLER_RECIPES.recipeBuilder().duration(800).EUt(33550000)
-                .inputs(FIELD_GENERATOR_UHV.getStackForm())
-                .inputs(SENSOR_UIV.getStackForm())
-                .inputs(NEUTRON_REFLECTOR.getStackForm(2))
-                .inputs(BATTERY_MEDIUM_LIS.getStackForm())
-                .input(wireGtSingle, SuperheavyChargedBlackTitanium, 2)
-                .inputs(FUSION_CASING.getItemVariant(ADV_FUSION_COIL_1))
-                .fluidInputs(Neutronium.getFluid(L * 9))
-                .outputs(RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM.getStackForm())
-                .buildAndRegister();
+//        ASSEMBLER_RECIPES.recipeBuilder().duration(800).EUt(33550000)
+//                .inputs(FIELD_GENERATOR_UHV.getStackForm())
+//                .inputs(SENSOR_UIV.getStackForm())
+//                .inputs(NEUTRON_REFLECTOR.getStackForm(2))
+//                .inputs(BATTERY_MEDIUM_LIS.getStackForm())
+//                .input(wireGtSingle, SuperheavyChargedBlackTitanium, 2)
+//                .inputs(FUSION_CASING.getItemVariant(ADV_FUSION_COIL_1))
+//                .fluidInputs(Neutronium.getFluid(L * 9))
+//                .outputs(RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM.getStackForm())
+//                .buildAndRegister();
 
         // CTC Guidance Unit
-        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(400).EUt(134217728)//.qubit(32)
-                .inputs(SUPRACAUSAL_PROCESSING_CORE.getStackForm())
-                .inputs(TOOL_DATA_ORB.getStackForm())
-                .inputs(NUCLEAR_CLOCK.getStackForm())
-                .inputs(BATTERY_LARGE_LIS.getStackForm())
-                .inputs(ARAM.getStackForm(16))
-                .fluidInputs(TriniumTitanium.getFluid(L * 9))
-                .fluidInputs(Vibranium.getFluid(L * 9))
-                .outputs(CTC_GUIDANCE_UNIT.getStackForm())
-                .buildAndRegister();
+//        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(400).EUt(134217728)//.qubit(32)
+//                .inputs(SUPRACAUSAL_PROCESSING_CORE.getStackForm())
+//                .inputs(TOOL_DATA_ORB.getStackForm())
+//                .inputs(NUCLEAR_CLOCK.getStackForm())
+//                .inputs(BATTERY_LARGE_LIS.getStackForm())
+//                .inputs(ARAM.getStackForm(16))
+//                .fluidInputs(TriniumTitanium.getFluid(L * 9))
+//                .fluidInputs(Vibranium.getFluid(L * 9))
+//                .outputs(CTC_GUIDANCE_UNIT.getStackForm())
+//                .buildAndRegister();
 
         // Nuclear Clock
         ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(1600).EUt(33550000)
@@ -126,30 +120,30 @@ public class SupracausalComponents {
                 .buildAndRegister();
 
         // Manifold Oscillatory Power Cell
-        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(1800).EUt(33550000)
-                .input(wireGtSingle, Pikyonium, 32)
-                .inputs(DEGENERATE_RHENIUM_PLATE.getStackForm(2))
-                .input(wireFine, Quantum, 8)
-                .input(stick, NeodymiumMagnetic, 32)
-                .input(plate, Vibranium, 16)
-                .fluidInputs(Taranium.getFluid(L / 2))
-                .fluidInputs(Naquadria.getFluid(L))
-                .fluidInputs(Trinium.getFluid(L * 2))
-                .outputs(MANIFOLD_OSCILLATORY_POWER_CELL.getStackForm())
-                .buildAndRegister();
+//        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(1800).EUt(33550000)
+//                .input(wireGtSingle, Pikyonium, 32)
+//                .inputs(DEGENERATE_RHENIUM_PLATE.getStackForm(2))
+//                .input(wireFine, Quantum, 8)
+//                .input(stick, NeodymiumMagnetic, 32)
+//                .input(plate, Vibranium, 16)
+//                .fluidInputs(Taranium.getFluid(L / 2))
+//                .fluidInputs(Naquadria.getFluid(L))
+//                .fluidInputs(Trinium.getFluid(L * 2))
+//                .outputs(MANIFOLD_OSCILLATORY_POWER_CELL.getStackForm())
+//                .buildAndRegister();
 
         // QCD Charge
-        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(800).EUt(33550000)
-                .input(plate, ProtoAdamantium, 3)
-                .inputs(TIME_DILATION_CONTAINMENT_UNIT.getStackForm())
-                .inputs(EXPLOSIVE.getItemVariant(LEPTONIC_CHARGE))
-                .input(plate, HeavyQuarkDegenerateMatter, 2)
-                .fluidInputs(Taranium.getFluid(L / 2))
-                .fluidInputs(Gluons.getFluid(L * 9))
-                .fluidInputs(SuperheavyHAlloy.getFluid(L))
-                .fluidInputs(SuperheavyLAlloy.getFluid(L))
-                .outputs(EXPLOSIVE.getItemVariant(QCD_CHARGE))
-                .buildAndRegister();
+//        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(800).EUt(33550000)
+//                .input(plate, ProtoAdamantium, 3)
+//                .inputs(TIME_DILATION_CONTAINMENT_UNIT.getStackForm())
+//                .inputs(EXPLOSIVE.getItemVariant(LEPTONIC_CHARGE))
+//                .input(plate, HeavyQuarkDegenerateMatter, 2)
+//                .fluidInputs(Taranium.getFluid(L / 2))
+//                .fluidInputs(Gluons.getFluid(L * 9))
+//                .fluidInputs(SuperheavyHAlloy.getFluid(L))
+//                .fluidInputs(SuperheavyLAlloy.getFluid(L))
+//                .outputs(EXPLOSIVE.getItemVariant(QCD_CHARGE))
+//                .buildAndRegister();
 
         // CTC Computational Unit Container
         ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(1000).EUt(33550000)
@@ -159,7 +153,7 @@ public class SupracausalComponents {
                 .input(plate, FullerenePolymerMatrix, 36)
                 .inputs(FIELD_GENERATOR_UHV.getStackForm(3))
                 .input(plateDense, Neutronium)
-                .input(plate, Taranium, 2)
+//                .input(plate, Taranium, 2)
                 .input(frameGt, Neutronium)
                 .input(plate, HeavyQuarkDegenerateMatter, 6)
                 .inputs(TIME_DILATION_CONTAINMENT_UNIT.getStackForm())
@@ -171,37 +165,37 @@ public class SupracausalComponents {
                 .outputs(CTC_COMPUTATIONAL_UNIT_CONTAINER.getStackForm())
                 .buildAndRegister();
 
-        STELLAR_FORGE_RECIPES.recipeBuilder().duration(200).EUt(134217728)
-                .input(ingot, HeavyQuarkDegenerateMatter)
-                .inputs(EXPLOSIVE.getItemVariant(QCD_CHARGE))
-                .fluidOutputs(HighEnergyQGP.getFluid(L))
-                .buildAndRegister();
-
-        STELLAR_FORGE_RECIPES.recipeBuilder().duration(2000).EUt(134217728)
-                .inputs(QCD_PROTECTIVE_PLATING.getStackForm(4))
-                .inputs(EXPLOSIVE.getItemVariant((QCD_CHARGE)))
-                .fluidOutputs(QCDMatter.getFluid(L * 9))
-                .buildAndRegister();
-
-        STELLAR_FORGE_RECIPES.recipeBuilder().duration(200).EUt(134217728)
-                .inputs(EXPLOSIVE.getItemVariant((QCD_CHARGE)))
-                .inputs(MACROWORMHOLE_GENERATOR.getStackForm(2))
-                .outputs(RECURSIVELY_FOLDED_NEGATIVE_SPACE.getStackForm())
-                .buildAndRegister();
-
-        STELLAR_FORGE_RECIPES.recipeBuilder().duration(400).EUt(134217728)
-                .inputs(STABILIZED_WORMHOLE_GENERATOR.getStackForm())
-                .inputs(RECURSIVELY_FOLDED_NEGATIVE_SPACE.getStackForm())
-                .inputs(EXPLOSIVE.getItemVariant((QCD_CHARGE)))
-                .outputs(EIGENFOLDED_KERR_MANIFOLD.getStackForm())
-                .buildAndRegister();
-
-        STELLAR_FORGE_RECIPES.recipeBuilder().duration(800).EUt(134217728)
-                .inputs(EIGENFOLDED_KERR_MANIFOLD.getStackForm())
-                .inputs(CTC_COMPUTATIONAL_UNIT_CONTAINER.getStackForm())
-                .inputs(EXPLOSIVE.getItemVariant((QCD_CHARGE)))
-                .outputs(CTC_COMPUTATIONAL_UNIT.getStackForm())
-                .buildAndRegister();
+//        STELLAR_FORGE_RECIPES.recipeBuilder().duration(200).EUt(134217728)
+//                .input(ingot, HeavyQuarkDegenerateMatter)
+//                .inputs(EXPLOSIVE.getItemVariant(QCD_CHARGE))
+//                .fluidOutputs(HighEnergyQGP.getFluid(L))
+//                .buildAndRegister();
+//
+//        STELLAR_FORGE_RECIPES.recipeBuilder().duration(2000).EUt(134217728)
+//                .inputs(QCD_PROTECTIVE_PLATING.getStackForm(4))
+//                .inputs(EXPLOSIVE.getItemVariant((QCD_CHARGE)))
+//                .fluidOutputs(QCDMatter.getFluid(L * 9))
+//                .buildAndRegister();
+//
+//        STELLAR_FORGE_RECIPES.recipeBuilder().duration(200).EUt(134217728)
+//                .inputs(EXPLOSIVE.getItemVariant((QCD_CHARGE)))
+//                .inputs(MACROWORMHOLE_GENERATOR.getStackForm(2))
+//                .outputs(RECURSIVELY_FOLDED_NEGATIVE_SPACE.getStackForm())
+//                .buildAndRegister();
+//
+//        STELLAR_FORGE_RECIPES.recipeBuilder().duration(400).EUt(134217728)
+//                .inputs(STABILIZED_WORMHOLE_GENERATOR.getStackForm())
+//                .inputs(RECURSIVELY_FOLDED_NEGATIVE_SPACE.getStackForm())
+//                .inputs(EXPLOSIVE.getItemVariant((QCD_CHARGE)))
+//                .outputs(EIGENFOLDED_KERR_MANIFOLD.getStackForm())
+//                .buildAndRegister();
+//
+//        STELLAR_FORGE_RECIPES.recipeBuilder().duration(800).EUt(134217728)
+//                .inputs(EIGENFOLDED_KERR_MANIFOLD.getStackForm())
+//                .inputs(CTC_COMPUTATIONAL_UNIT_CONTAINER.getStackForm())
+//                .inputs(EXPLOSIVE.getItemVariant((QCD_CHARGE)))
+//                .outputs(CTC_COMPUTATIONAL_UNIT.getStackForm())
+//                .buildAndRegister();
 
         PLASMA_CONDENSER_RECIPES.recipeBuilder().duration(200).EUt(134217728)
                 .fluidInputs(HighEnergyQGP.getFluid(L))

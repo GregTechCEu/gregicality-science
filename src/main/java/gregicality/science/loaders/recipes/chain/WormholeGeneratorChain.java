@@ -1,20 +1,18 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.api.GCYSciMaterials;
-import gregicality.science.common.block.GAExplosive;
-import gregicality.science.common.block.GCYSciMetaBlocks;
+import gregicality.science.api.GCYSMaterials;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.PLASMA_CONDENSER_RECIPES;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.STELLAR_FORGE_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.PLASMA_CONDENSER_RECIPES;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.STELLAR_FORGE_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 
-public class WormholeGeneratorChain {
-    public static void init(){
+public class WormholeGeneratorChain { //todo
+    public static void init() {
         PLASMA_CONDENSER_RECIPES.recipeBuilder().duration(500).EUt(400000)
                 .inputs(NEUTRON_PLASMA_CONTAINMENT_CELL.getStackForm())
                 .notConsumable(SPHERE_FIELD_SHAPE.getStackForm())
@@ -29,7 +27,7 @@ public class WormholeGeneratorChain {
                 .outputs(TRIPLET_NEUTRONIUM_SPHERE.getStackForm())
                 .buildAndRegister();
 
-        LARGE_CENTRIFUGE_RECIPES.recipeBuilder().duration(40).EUt(100000)
+        CENTRIFUGE_RECIPES.recipeBuilder().duration(40).EUt(100000)
                 .notConsumable(SEPARATION_ELECTROMAGNET.getStackForm())
                 .fluidInputs(Helium.getPlasma(1000))
                 .fluidOutputs(FreeAlphaGas.getFluid(1000))
@@ -54,18 +52,18 @@ public class WormholeGeneratorChain {
         ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(100).EUt(800000)
                 .fluidInputs(Tritanium.getFluid(144))
                 .input(stick, NaquadahAlloy, 4)
-                .input(wireGtSingle, GCYSciMaterials.StrontiumTaraniumTBCCO, 2)
+                .input(wireGtSingle, GCYSMaterials.StrontiumTaraniumTBCCO, 2)
                 .inputs(DEGENERATE_RHENIUM_PLATE.getStackForm(4))
                 .inputs(EMITTER_UHV.getStackForm(2))
                 .outputs(TIME_DILATION_CONTAINMENT_UNIT.getStackForm(4))
                 .buildAndRegister();
 
-        STELLAR_FORGE_RECIPES.recipeBuilder().duration(200).EUt(288566)
-                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.TARANIUM_CHARGE))
-                .inputs(TIME_DILATION_CONTAINMENT_UNIT.getStackForm(64))
-                .inputs(CHARGED_TRIPLET_NEUTRONIUM_SPHERE.getStackForm(64))
-                .outputs(CONTAINED_REISSNER_NORDSTROM_SINGULARITY.getStackForm(64))
-                .buildAndRegister();
+//        STELLAR_FORGE_RECIPES.recipeBuilder().duration(200).EUt(288566)
+//                .inputs(GCYSMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.TARANIUM_CHARGE))
+//                .inputs(TIME_DILATION_CONTAINMENT_UNIT.getStackForm(64))
+//                .inputs(CHARGED_TRIPLET_NEUTRONIUM_SPHERE.getStackForm(64))
+//                .outputs(CONTAINED_REISSNER_NORDSTROM_SINGULARITY.getStackForm(64))
+//                .buildAndRegister();
 
         STELLAR_FORGE_RECIPES.recipeBuilder().duration(6000).EUt(6000000)
                 .inputs(CONTAINED_REISSNER_NORDSTROM_SINGULARITY.getStackForm(64))
@@ -79,15 +77,15 @@ public class WormholeGeneratorChain {
                 .outputs(CONTAINED_KERR_SINGULARITY.getStackForm())
                 .buildAndRegister();
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(200).EUt(100000)
-                .fluidInputs(Trinium.getFluid(576))
-                .fluidInputs(FreeElectronGas.getFluid(1000))
-                .input(plate, MetastableOganesson, 1)
-                .input(plate, Vibranium, 1)
-                .input(dustSmall, Mendelevium, 1)
-                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.TARANIUM_CHARGE))
-                .outputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.LEPTONIC_CHARGE))
-                .buildAndRegister();
+//        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(200).EUt(100000)
+//                .fluidInputs(Trinium.getFluid(576))
+//                .fluidInputs(FreeElectronGas.getFluid(1000))
+//                .input(plate, MetastableOganesson, 1)
+//                .input(plate, Vibranium, 1)
+//                .input(dustSmall, Mendelevium, 1)
+//                .inputs(GCYSMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.TARANIUM_CHARGE))
+//                .outputs(GCYSMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.LEPTONIC_CHARGE))
+//                .buildAndRegister();
 
         ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(200).EUt(100000)
                 .fluidInputs(Tritanium.getFluid(576))
@@ -117,25 +115,25 @@ public class WormholeGeneratorChain {
                 .outputs(MACROWORMHOLE_GENERATOR.getStackForm())
                 .buildAndRegister();
 
-        STELLAR_FORGE_RECIPES.recipeBuilder().duration(600).EUt(5000000)
-                .inputs(DEGENERATE_RHENIUM_PLATE.getStackForm(4))
-                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.LEPTONIC_CHARGE))
-                .inputs(CONTAINED_HIGH_DENSITY_PROTONIC_MATTER.getStackForm())
-                .outputs(CONTAINED_EXOTIC_MATTER.getStackForm())
-                .buildAndRegister();
+//        STELLAR_FORGE_RECIPES.recipeBuilder().duration(600).EUt(5000000)
+//                .inputs(DEGENERATE_RHENIUM_PLATE.getStackForm(4))
+//                .inputs(GCYSMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.LEPTONIC_CHARGE))
+//                .inputs(CONTAINED_HIGH_DENSITY_PROTONIC_MATTER.getStackForm())
+//                .outputs(CONTAINED_EXOTIC_MATTER.getStackForm())
+//                .buildAndRegister();
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(800).EUt(6000000)
-                .fluidInputs(Naquadria.getFluid(288))
-                .fluidInputs(EnrichedNaquadahAlloy.getFluid(144))
-                .fluidInputs(Neutronium.getFluid(144))
-                .fluidInputs(Taranium.getFluid(72))
-                .inputs(EMITTER_UHV.getStackForm(2))
-                .inputs(FIELD_GENERATOR_UHV.getStackForm(2))
-                .inputs(SENSOR_UHV.getStackForm(2))
-                .inputs(BATTERY_SMALL_FLUORIDE.getStackForm())
-                .inputs(CONTAINED_EXOTIC_MATTER.getStackForm())
-                .inputs(MACROWORMHOLE_GENERATOR.getStackForm())
-                .outputs(STABILIZED_WORMHOLE_GENERATOR.getStackForm())
-                .buildAndRegister();
+//        ASSEMBLY_LINE_RECIPES.recipeBuilder().duration(800).EUt(6000000)
+//                .fluidInputs(Naquadria.getFluid(288))
+//                .fluidInputs(EnrichedNaquadahAlloy.getFluid(144))
+//                .fluidInputs(Neutronium.getFluid(144))
+//                .fluidInputs(Taranium.getFluid(72))
+//                .inputs(EMITTER_UHV.getStackForm(2))
+//                .inputs(FIELD_GENERATOR_UHV.getStackForm(2))
+//                .inputs(SENSOR_UHV.getStackForm(2))
+//                .inputs(BATTERY_SMALL_FLUORIDE.getStackForm())
+//                .inputs(CONTAINED_EXOTIC_MATTER.getStackForm())
+//                .inputs(MACROWORMHOLE_GENERATOR.getStackForm())
+//                .outputs(STABILIZED_WORMHOLE_GENERATOR.getStackForm())
+//                .buildAndRegister();
     }
 }

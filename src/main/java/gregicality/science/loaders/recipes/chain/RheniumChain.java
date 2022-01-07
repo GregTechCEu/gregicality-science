@@ -2,15 +2,15 @@ package gregicality.science.loaders.recipes.chain;
 
 import gregtech.api.unification.OreDictUnifier;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.UVA_HALIDE_LAMP;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.BIO_REACTOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.UVA_HALIDE_LAMP;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.BIO_REACTOR_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
 public class RheniumChain {
-    public static void init() {
+    public static void init() { //todo
         // Molybdenite MUST NOT be producible from it's components!
 
         /*
@@ -187,19 +187,19 @@ public class RheniumChain {
                 .buildAndRegister();
 
         // 2HCl + C3H9NO + O + CaCN2 -> C2H7N3 + CH3COOH + CaCl2
-        CHEMICAL_PLANT_RECIPES.recipeBuilder()
-                .fluidInputs(HydrochloricAcid.getFluid(2000))
-                .fluidInputs(Methylethanolamine.getFluid(1000))
-                .fluidInputs(Oxygen.getFluid(1000))
-                .input(dust, CalciumCyanamide, 4)
-                .fluidOutputs(Methylguanidine.getFluid(1000))
-                .fluidOutputs(AceticAcid.getFluid(1000))
-                .output(dust, CalciumChloride, 3)
-                .notConsumable(dust,Palladium)
-                .notConsumable(dust, MercuryAcetate)
-                .EUt(480)
-                .duration(240)
-                .buildAndRegister();
+//        CHEMICAL_PLANT_RECIPES.recipeBuilder()
+//                .fluidInputs(HydrochloricAcid.getFluid(2000))
+//                .fluidInputs(Methylethanolamine.getFluid(1000))
+//                .fluidInputs(Oxygen.getFluid(1000))
+//                .input(dust, CalciumCyanamide, 4)
+//                .fluidOutputs(Methylguanidine.getFluid(1000))
+//                .fluidOutputs(AceticAcid.getFluid(1000))
+//                .output(dust, CalciumChloride, 3)
+//                .notConsumable(dust,Palladium)
+//                .notConsumable(dust, MercuryAcetate)
+//                .EUt(480)
+//                .duration(240)
+//                .buildAndRegister();
 
         // C2H7N3 + HNO3 + H2SO4 + HCl + NaNO2 -> 2H2SO4(dil.) + C2H5N5O3 + NaCl
         // Not perfect, but was the best way to try and conserve acids
@@ -257,17 +257,17 @@ public class RheniumChain {
                 .buildAndRegister();
 
         // 2C12H26 + 0.5C24H51N + 0.25C8H18O + 0.5C6H12O + 0.375CH3COOH + 0.375C5H12O -> ~4C11H24
-        LARGE_MIXER_RECIPES.recipeBuilder()
-                .fluidInputs(Kerosene.getFluid(2000))
-                .fluidInputs(Trioctylamine.getFluid(500))
-                .fluidInputs(Octanol.getFluid(250))
-                .fluidInputs(MethylIsobutylKetone.getFluid(500))
-                .fluidInputs(AceticAcid.getFluid(375))
-                .fluidInputs(IsoamylAlcohol.getFluid(375))
-                .fluidOutputs(RheniumSeparationMixture.getFluid(4000))
-                .EUt(7680)
-                .duration(90)
-                .buildAndRegister();
+//        LARGE_MIXER_RECIPES.recipeBuilder()
+//                .fluidInputs(Kerosene.getFluid(2000))
+//                .fluidInputs(Trioctylamine.getFluid(500))
+//                .fluidInputs(Octanol.getFluid(250))
+//                .fluidInputs(MethylIsobutylKetone.getFluid(500))
+//                .fluidInputs(AceticAcid.getFluid(375))
+//                .fluidInputs(IsoamylAlcohol.getFluid(375))
+//                .fluidOutputs(RheniumSeparationMixture.getFluid(4000))
+//                .EUt(7680)
+//                .duration(90)
+//                .buildAndRegister();
 
         // ? + RSM -> ? + ?(20%) + Re
         CENTRIFUGE_RECIPES.recipeBuilder()

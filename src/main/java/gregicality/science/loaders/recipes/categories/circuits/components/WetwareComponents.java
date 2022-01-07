@@ -5,10 +5,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.BIO_REACTOR_RECIPES;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.BIO_REACTOR_RECIPES;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -75,7 +74,7 @@ public class WetwareComponents {
                 .output(dust, BrownAlgae)
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().EUt(30).duration(150)
+        ARC_FURNACE_RECIPES.recipeBuilder().EUt(30).duration(150)
                 .input(dust, RedAlgae)
                 .output(dust, DryRedAlgae)
                 .buildAndRegister();
@@ -102,8 +101,9 @@ public class WetwareComponents {
                 .fluidOutputs(WaterAgarMix.getFluid(1000))
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().EUt(30).duration(50)
+        FLUID_SOLIDFICATION_RECIPES.recipeBuilder().EUt(30).duration(50)
                 .fluidInputs(WaterAgarMix.getFluid(1000))
+                .notConsumable(MetaItems.SHAPE_MOLD_BALL.getStackForm())
                 .output(dust, Agar)
                 .buildAndRegister();
 

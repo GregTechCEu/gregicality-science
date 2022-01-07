@@ -1,14 +1,12 @@
 package gregicality.science.loaders.recipes.chain;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.PYROLYSE_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.stick;
 
-public class PolymerChain {
+public class PolymerChain { //todo
 
     public static void init() {
         polyimideInit();
@@ -61,7 +59,7 @@ public class PolymerChain {
         // Lose water
         // This should not gain water output ever, due to
         // the 1B -> 144mb recipe change with the above recipe.
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
+        CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(PolyamicAcid.getFluid(144))
                 .fluidOutputs(Polyimide.getFluid(144))
                 .EUt(30)

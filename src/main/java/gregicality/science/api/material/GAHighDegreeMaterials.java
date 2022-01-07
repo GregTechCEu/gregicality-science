@@ -3,7 +3,7 @@ package gregicality.science.api.material;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 
-import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregicality.science.api.material.GAMaterialFlags.GA_CORE_METAL;
 import static gregicality.science.api.material.GAMaterialFlags.GA_EXT2_METAL;
 import static gregtech.api.unification.material.Material.FluidType;

@@ -2,17 +2,17 @@ package gregicality.science.loaders.recipes.chain;
 
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregtech.api.recipes.RecipeMaps.CENTRIFUGE_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
-public class QuantumDotsChain{
-    public static void init(){
+public class QuantumDotsChain {
+    public static void init() { //todo
 
         FluidStack[] Oils = {SeedOil.getFluid(1000), FishOil.getFluid(1000)};
-        for (FluidStack Oil : Oils){
+        for (FluidStack Oil : Oils) {
             CHEMICAL_RECIPES.recipeBuilder().duration(160).EUt(2000)
                     .fluidInputs(Oil)
                     .fluidInputs(Steam.getFluid(200))
@@ -28,7 +28,7 @@ public class QuantumDotsChain{
                 .fluidOutputs(DeglyceratedSoap.getFluid(800))
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(160).EUt(2000)
+        CENTRIFUGE_RECIPES.recipeBuilder().duration(160).EUt(2000)
                 .fluidInputs(DeglyceratedSoap.getFluid(1000))
                 .output(dust, Salt, 1)
                 .fluidOutputs(StearicAcid.getFluid(800))

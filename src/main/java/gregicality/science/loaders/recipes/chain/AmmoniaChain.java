@@ -1,12 +1,12 @@
 package gregicality.science.loaders.recipes.chain;
 
-import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
 public class AmmoniaChain {
-    public static void init() {
+    public static void init() { // TODO
 
         // MAIN CHAIN
         // Step 1: Air or Nitrogen

@@ -2,15 +2,14 @@ package gregicality.science.loaders.recipes.chain;
 
 import gregtech.api.unification.OreDictUnifier;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.dustTiny;
 
 public class ZirconChain {
-    public static void init() {
+    public static void init() { //todo
 
         // Ba + H2O2 = Ba(OH)2
         CHEMICAL_RECIPES.recipeBuilder().duration(125).EUt(480)
@@ -60,7 +59,7 @@ public class ZirconChain {
                 .buildAndRegister();
 
         // SiCl4? = SiCl4 + Co + RareEarth
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(140).EUt(120)
+        CENTRIFUGE_RECIPES.recipeBuilder().duration(140).EUt(120)
                 .fluidInputs(ZirconChlorinatingResidue.getFluid(1000))
                 .output(dust, SiliconChloride, 5)
                 .chancedOutput(OreDictUnifier.get(dust, Cobalt), 7500, 450)

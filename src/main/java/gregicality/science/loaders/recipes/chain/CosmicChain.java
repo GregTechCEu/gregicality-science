@@ -1,12 +1,8 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.common.block.GAExplosive;
-import gregicality.science.common.block.GCYSciMetaBlocks;
-
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.ADV_FUSION_RECIPES;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.STELLAR_FORGE_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.ADV_FUSION_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -15,11 +11,11 @@ public class CosmicChain { // TODO
 
     public static void init() {
 
-        STELLAR_FORGE_RECIPES.recipeBuilder().duration(60).EUt(14000000)
-                .inputs(GCYSciMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.LEPTONIC_CHARGE))
-                .inputs(DEGENERATE_RHENIUM_PLATE.getStackForm())
-                .fluidOutputs(QuarkGluonPlasma.getFluid(2000))
-                .buildAndRegister();
+//        STELLAR_FORGE_RECIPES.recipeBuilder().duration(60).EUt(14000000)
+//                .inputs(GCYSMetaBlocks.EXPLOSIVE.getItemVariant(GAExplosive.ExplosiveType.LEPTONIC_CHARGE))
+//                .inputs(DEGENERATE_RHENIUM_PLATE.getStackForm())
+//                .fluidOutputs(QuarkGluonPlasma.getFluid(2000))
+//                .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder().duration(600).EUt(122880)
                 .input(wireFine, YttriumBariumCuprate, 64)
@@ -30,7 +26,7 @@ public class CosmicChain { // TODO
                 .outputs(SEPARATION_ELECTROMAGNET.getStackForm())
                 .buildAndRegister();
 
-        LARGE_CENTRIFUGE_RECIPES.recipeBuilder().duration(200).EUt(1200000)
+        CENTRIFUGE_RECIPES.recipeBuilder().duration(200).EUt(1200000)
                 .fluidInputs(QuarkGluonPlasma.getFluid(1000))
                 .notConsumable(SEPARATION_ELECTROMAGNET.getStackForm())
                 .fluidOutputs(HeavyQuarks.getFluid(200))
@@ -38,7 +34,7 @@ public class CosmicChain { // TODO
                 .fluidOutputs(LightQuarks.getFluid(600))
                 .buildAndRegister();
 
-        LARGE_MIXER_RECIPES.recipeBuilder().duration(100).EUt(2400000)
+        CHEMICAL_RECIPES.recipeBuilder().duration(100).EUt(2400000)
                 .fluidInputs(HeavyLeptonMix.getFluid(1000))
                 .fluidInputs(HeavyQuarks.getFluid(1000))
                 .fluidInputs(Gluons.getFluid(1000))
@@ -63,7 +59,7 @@ public class CosmicChain { // TODO
                 .fluidOutputs(RadonRadiumMix.getFluid(288))
                 .buildAndRegister();
 
-        LARGE_MIXER_RECIPES.recipeBuilder().duration(140).EUt(4500000)
+        LARGE_CHEMICAL_RECIPES.recipeBuilder().duration(140).EUt(4500000)
                 .fluidInputs(Deuterium.getFluid(2000))
                 .fluidInputs(MetastableHassium.getFluid(144))
                 .fluidInputs(MetastableFlerovium.getFluid(144))
@@ -71,7 +67,7 @@ public class CosmicChain { // TODO
                 .fluidOutputs(DeuteriumSuperheavyMix.getFluid(2592))
                 .buildAndRegister();
 
-        ADV_FUSION_RECIPES.recipeBuilder().duration(100).EUt(1100000).coilTier(3).euStart(5000000000L).euReturn(50)
+        ADV_FUSION_RECIPES.recipeBuilder().duration(100).EUt(1100000)
                 .fluidInputs(DeuteriumSuperheavyMix.getFluid(144))
                 .fluidInputs(HeavyQuarkEnrichedMix.getFluid(144))
                 .fluidOutputs(HeavyQuarkDegenerateMatter.getFluid(144))
@@ -123,20 +119,20 @@ public class CosmicChain { // TODO
                 .fluidOutputs(Water.getFluid(2000))
                 .buildAndRegister();
 
-        // 2H2O + AgBF4 + 8C6H5Na + 2C8H20NBr + AgClO4 + C5H5Cl3Ti + 8C10H7F2N -> 2AgCl + 2NaBr + 6H2ONaCl + ?
-        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(350).EUt(30720)
-                .fluidInputs(Water.getFluid(2000))
-                .fluidInputs(Silvertetrafluoroborate.getFluid(2000))
-                .fluidInputs(Phenylsodium.getFluid(8000))
-                .fluidInputs(TetraethylammoniumBromide.getFluid(2000))
-                .input(dust, SilverPerchlorate, 6)
-                .input(dust, TitaniumCyclopentadienyl, 14)
-                .fluidInputs(NDifluorophenylpyrrole.getFluid(8000))
-                .output(dust, SilverChloride, 4)
-                .output(dust, SodiumBromide, 4)
-                .fluidOutputs(SaltWater.getFluid(6000))
-                .fluidOutputs(PhotopolymerSolution.getFluid(6000))
-                .buildAndRegister();
+//        // 2H2O + AgBF4 + 8C6H5Na + 2C8H20NBr + AgClO4 + C5H5Cl3Ti + 8C10H7F2N -> 2AgCl + 2NaBr + 6H2ONaCl + ?
+//        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(350).EUt(30720)
+//                .fluidInputs(Water.getFluid(2000))
+//                .fluidInputs(Silvertetrafluoroborate.getFluid(2000))
+//                .fluidInputs(Phenylsodium.getFluid(8000))
+//                .fluidInputs(TetraethylammoniumBromide.getFluid(2000))
+//                .input(dust, SilverPerchlorate, 6)
+//                .input(dust, TitaniumCyclopentadienyl, 14)
+//                .fluidInputs(NDifluorophenylpyrrole.getFluid(8000))
+//                .output(dust, SilverChloride, 4)
+//                .output(dust, SodiumBromide, 4)
+//                .fluidOutputs(SaltWater.getFluid(6000))
+//                .fluidOutputs(PhotopolymerSolution.getFluid(6000))
+//                .buildAndRegister();
 
         // 3NaClO -> 2NaCl + NaClO3
         ELECTROLYZER_RECIPES.recipeBuilder().duration(210).EUt(120)

@@ -5,15 +5,13 @@ import gregtech.common.items.MetaItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.BIO_REACTOR_RECIPES;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.BIO_REACTOR_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.dustSmall;
-import static gregtech.common.items.MetaItems.RUBBER_DROP;
 import static net.minecraft.init.Items.APPLE;
 
 public class WetwareChain { // TODO
@@ -86,8 +84,9 @@ public class WetwareChain { // TODO
                 .buildAndRegister();
 
         // todo this may be a problem
-        EXTRACTOR_RECIPES.recipeBuilder()
-                .inputs(RUBBER_DROP.getStackForm())
+        ARC_FURNACE_RECIPES.recipeBuilder()
+                .inputs(MetaItems.STICKY_RESIN.getStackForm())
+                .output(dust, Ash)
                 .fluidOutputs(Resin.getFluid(100))
                 .EUt(24)
                 .duration(100)
@@ -241,7 +240,7 @@ public class WetwareChain { // TODO
                 .duration(50)
                 .buildAndRegister();
 
-        LARGE_MIXER_RECIPES.recipeBuilder()
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(B27Supplement.getFluid(1000))
                 .fluidInputs(AmmoniumNitrate.getFluid(1000))
                 .input(dust, Glutamine, 20)
@@ -273,7 +272,7 @@ public class WetwareChain { // TODO
                 .duration(120)
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
+        CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(SilicaGelBase.getFluid(1000))
                 .output(dust, SilicaGel, 3)
                 .output(dust, Salt, 2)
@@ -297,7 +296,7 @@ public class WetwareChain { // TODO
                 .duration(400)
                 .buildAndRegister();
 
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
+        EXTRACTOR_RECIPES.recipeBuilder()
                 .input(dust, WetZeoliteSievingPellets)
                 .output(dust, ZeoliteSievingPellets)
                 .EUt(120)

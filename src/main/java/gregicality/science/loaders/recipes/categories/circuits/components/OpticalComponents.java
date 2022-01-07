@@ -1,16 +1,16 @@
 package gregicality.science.loaders.recipes.categories.circuits.components;
 
-import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.GTValues;
 import net.minecraft.item.ItemStack;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.api.material.GAOrePrefix.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
+import static gregicality.machines.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.ELECTRIC_MOTOR_UHV;
 import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_WIRE;
 
 public class OpticalComponents {
@@ -21,7 +21,7 @@ public class OpticalComponents {
         ASSEMBLER_RECIPES.recipeBuilder().duration(250).EUt(1200000)
                 .input(wireFine, Pikyonium, 8)
                 .input(plate, LithiumNiobate, 4)
-                .input(plate, Vibranium, 4)
+//                .input(plate, Vibranium, 4)
                 .fluidInputs(Polybenzimidazole.getFluid(L * 9))
                 .outputs(SMD_DIODE_OPTICAL.getStackForm(32))
                 .buildAndRegister();
@@ -67,7 +67,7 @@ public class OpticalComponents {
                 .inputs(NON_LINEAR_OPTICAL_LENS.getStackForm(2))
                 .inputs(CLADDED_OPTICAL_FIBER_CORE.getStackForm(2))
                 .inputs(BOSE_EINSTEIN_COOLING_CONTAINER.getStackForm())
-                .input(plate,Graphene,4)
+                .input(plate, Graphene, 4)
                 .fluidInputs(Polytetrafluoroethylene.getFluid(L * 6))
                 .fluidInputs(EnrichedNaquadahAlloy.getFluid(L * 3))
                 .fluidInputs(SolderingAlloy.getFluid(L * 9))
@@ -130,13 +130,13 @@ public class OpticalComponents {
         }
 
         // ZBLAN
-        LARGE_MIXER_RECIPES.recipeBuilder().EUt(120).duration(3000)
+        ALLOY_BLAST_RECIPES.recipeBuilder().EUt(120).duration(3000)
                 .input(dust, ZirconiumTetrafluoride, 90)
                 .input(dust, BariumDifluoride, 21)
                 .input(dust, LanthanumTrifluoride, 8)
                 .input(dust, AluminiumTrifluoride, 4)
                 .input(dust, SodiumFluoride, 14)
-                .output(dust, ZBLAN, 35)
+                .fluidOutputs(ZBLAN.getFluid(GTValues.L * 35))
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder().EUt(120).duration(3000)
@@ -177,26 +177,27 @@ public class OpticalComponents {
                 .input(ingot, ErbiumDopedZBLAN)
                 .outputs(CLADDED_OPTICAL_FIBER_CORE.getStackForm())
                 .buildAndRegister();
-        CHEMICAL_BATH_RECIPES.recipeBuilder().EUt(30).duration(150)
-                .inputs(CLADDED_OPTICAL_FIBER_CORE.getStackForm())
-                .fluidInputs(Polytetrafluoroethylene.getFluid(144))
-                .outputs(OreDictUnifier.get(opticalFiberSingle.toString()))
-                .buildAndRegister();
 
-        ModHandler.addShapelessRecipe("ga_optical_double", OreDictUnifier.get(opticalFiberDouble.toString()),
-                OreDictUnifier.get(opticalFiberSingle.toString()),
-                OreDictUnifier.get(opticalFiberSingle.toString()));
-
-        ModHandler.addShapelessRecipe("ga_optical_quad", OreDictUnifier.get(opticalFiberQuadruple.toString()),
-                OreDictUnifier.get(opticalFiberDouble.toString()),
-                OreDictUnifier.get(opticalFiberDouble.toString()));
-
-        ModHandler.addShapelessRecipe("ga_optical_octal", OreDictUnifier.get(opticalFiberOctal.toString()),
-                OreDictUnifier.get(opticalFiberQuadruple.toString()),
-                OreDictUnifier.get(opticalFiberQuadruple.toString()));
-
-        ModHandler.addShapelessRecipe("ga_optical_hex", OreDictUnifier.get(opticalFiberHex.toString()),
-                OreDictUnifier.get(opticalFiberOctal.toString()),
-                OreDictUnifier.get(opticalFiberOctal.toString()));
+//        CHEMICAL_BATH_RECIPES.recipeBuilder().EUt(30).duration(150)
+//                .inputs(CLADDED_OPTICAL_FIBER_CORE.getStackForm())
+//                .fluidInputs(Polytetrafluoroethylene.getFluid(144))
+//                .outputs(OreDictUnifier.get(opticalFiberSingle.toString()))
+//                .buildAndRegister();
+//
+//        ModHandler.addShapelessRecipe("ga_optical_double", OreDictUnifier.get(opticalFiberDouble.toString()),
+//                OreDictUnifier.get(opticalFiberSingle.toString()),
+//                OreDictUnifier.get(opticalFiberSingle.toString()));
+//
+//        ModHandler.addShapelessRecipe("ga_optical_quad", OreDictUnifier.get(opticalFiberQuadruple.toString()),
+//                OreDictUnifier.get(opticalFiberDouble.toString()),
+//                OreDictUnifier.get(opticalFiberDouble.toString()));
+//
+//        ModHandler.addShapelessRecipe("ga_optical_octal", OreDictUnifier.get(opticalFiberOctal.toString()),
+//                OreDictUnifier.get(opticalFiberQuadruple.toString()),
+//                OreDictUnifier.get(opticalFiberQuadruple.toString()));
+//
+//        ModHandler.addShapelessRecipe("ga_optical_hex", OreDictUnifier.get(opticalFiberHex.toString()),
+//                OreDictUnifier.get(opticalFiberOctal.toString()),
+//                OreDictUnifier.get(opticalFiberOctal.toString()));
     }
 }

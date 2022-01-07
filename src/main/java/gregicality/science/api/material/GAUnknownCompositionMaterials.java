@@ -2,8 +2,7 @@ package gregicality.science.api.material;
 
 import gregtech.api.unification.material.Material;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.api.material.GAMaterialFlags.DISABLE_REPLICATION;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregicality.science.api.material.GAMaterialFlags.GA_CORE_METAL;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -63,7 +62,7 @@ public class GAUnknownCompositionMaterials {
         QCDMatter = new Material.Builder(9508, "qcd_confined_matter")
                 .ingot(7).fluid()
                 .color(0xeb9e3f).iconSet(SHINY)
-                .flags(GENERATE_PLATE, DISABLE_REPLICATION, NO_WORKING, NO_SMELTING, NO_SMASHING, GENERATE_FRAME, GENERATE_ROD)
+                .flags(GENERATE_PLATE, NO_WORKING, NO_SMELTING, NO_SMASHING, GENERATE_FRAME, GENERATE_ROD)
                 .blastTemp(13100)
                 .build();
 

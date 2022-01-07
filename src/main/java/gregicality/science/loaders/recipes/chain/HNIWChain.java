@@ -1,17 +1,16 @@
 package gregicality.science.loaders.recipes.chain;
 
-import gregicality.science.common.item.GCYSciMetaItems;
+import gregicality.science.common.item.GCYSMetaItems;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.BIO_REACTOR_RECIPES;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.loaders.recipes.GCYSRecipeMaps.BIO_REACTOR_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
 public class HNIWChain {
 
-    public static void init() {
+    public static void init() { //todo
         //K2CO3 + 2 SO2 + H2O -> 2 KHSO3 + CO2
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(SulfurDioxide.getFluid(2000))
@@ -99,19 +98,19 @@ public class HNIWChain {
                 .buildAndRegister();
 
         //C4H4O3 + H4NOCl + Na -> C4H5NO3 + H2O + NaCl + H
-        CHEMICAL_PLANT_RECIPES.recipeBuilder()
-                .input(dust, SuccinicAnhydride, 66)
-                .fluidInputs(HydroxylamineHydrochloride.getFluid(6000))
-                .fluidInputs(Toluene.getFluid(6000))
-                .input(dust, Sodium, 6)
-                .fluidInputs(Methanol.getFluid(40000))
-                .output(dust, Salt, 12)
-                .output(dust, NHydroxysuccinimide, 13)
-                .fluidOutputs(Water.getFluid(6000))
-                .fluidOutputs(Hydrogen.getFluid(6000))
-                .EUt(1920)
-                .duration(400)
-                .buildAndRegister();
+//        CHEMICAL_PLANT_RECIPES.recipeBuilder()
+//                .input(dust, SuccinicAnhydride, 66)
+//                .fluidInputs(HydroxylamineHydrochloride.getFluid(6000))
+//                .fluidInputs(Toluene.getFluid(6000))
+//                .input(dust, Sodium, 6)
+//                .fluidInputs(Methanol.getFluid(40000))
+//                .output(dust, Salt, 12)
+//                .output(dust, NHydroxysuccinimide, 13)
+//                .fluidOutputs(Water.getFluid(6000))
+//                .fluidOutputs(Hydrogen.getFluid(6000))
+//                .EUt(1920)
+//                .duration(400)
+//                .buildAndRegister();
 
         //NH3 + 3 C2H5OH -> (C2H5)3N + 3 H2O
         CHEMICAL_RECIPES.recipeBuilder()
@@ -167,7 +166,7 @@ public class HNIWChain {
                 .buildAndRegister();
 
         //CH3COONH4 -> CH3CONH2 + H2O (H2O lost in dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
+        CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, AmmoniumAcetate, 12)
                 .output(dust, Acetamide, 9)
                 .EUt(480)
@@ -175,7 +174,7 @@ public class HNIWChain {
                 .buildAndRegister();
 
         //CH3CONH2 -> CH3CN + H2O (H2O lost in dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
+        CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, Acetamide, 9)
                 .output(dust, Acetonitrile, 6)
                 .EUt(480)
@@ -186,7 +185,7 @@ public class HNIWChain {
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Toluene.getFluid(1000))
                 .fluidInputs(Chlorine.getFluid(1000))
-                .notConsumable(GCYSciMetaItems.UVA_HALIDE_LAMP.getStackForm())
+                .notConsumable(GCYSMetaItems.UVA_HALIDE_LAMP.getStackForm())
                 .fluidOutputs(BenzylChloride.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .EUt(480)
@@ -238,20 +237,20 @@ public class HNIWChain {
                 .buildAndRegister();
 
         //C48N6H48 + 4 C6H7NO4 + 4H -> 4 C7H8 + C28N6H32O4 + C4H5NO2
-        CHEMICAL_PLANT_RECIPES.recipeBuilder()
-                .fluidInputs(Hydrogen.getFluid(4000))
-                .notConsumable(dust, PdCCatalyst)
-                .notConsumable(Ethylbenzene.getFluid(1000))
-                .notConsumable(HydrobromicAcid.getFluid(1000))
-                .notConsumable(Dimethylformamide.getFluid(1000))
-                .input(dust, SuccinimidylAcetate, 72)
-                .input(dust, Hexabenzylhexaazaisowurtzitane)
-                .output(dust, DibenzylTetraacetylhexaazaisowurtzitane)
-                .output(dust, Succinimide, 48)
-                .fluidOutputs(Toluene.getFluid(4000))
-                .EUt(30720)
-                .duration(100)
-                .buildAndRegister();
+//        CHEMICAL_RECIPES.recipeBuilder()
+//                .fluidInputs(Hydrogen.getFluid(4000))
+//                .notConsumable(dust, PdCCatalyst)
+//                .notConsumable(Ethylbenzene.getFluid(1000))
+//                .notConsumable(HydrobromicAcid.getFluid(1000))
+//                .notConsumable(Dimethylformamide.getFluid(1000))
+//                .input(dust, SuccinimidylAcetate, 72)
+//                .input(dust, Hexabenzylhexaazaisowurtzitane)
+//                .output(dust, DibenzylTetraacetylhexaazaisowurtzitane)
+//                .output(dust, Succinimide, 48)
+//                .fluidOutputs(Toluene.getFluid(4000))
+//                .EUt(30720)
+//                .duration(100)
+//                .buildAndRegister();
 
         //BF3 + HF + HNO3 -> NO2BF4 + H2O
         CHEMICAL_RECIPES.recipeBuilder()

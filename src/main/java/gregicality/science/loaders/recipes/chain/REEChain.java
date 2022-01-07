@@ -2,14 +2,13 @@ package gregicality.science.loaders.recipes.chain;
 
 import gregtech.api.unification.OreDictUnifier;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.dustTiny;
 
-public class REEChain {
+public class REEChain { //todo
     public static void init() {
 
         /*
@@ -73,7 +72,7 @@ public class REEChain {
                 .buildAndRegister();
 
         // Br(H2O) -> Br
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
+        CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(DampBromine.getFluid(2000))
                 .fluidOutputs(Bromine.getFluid(1000))
                 .EUt(480)
@@ -137,9 +136,9 @@ public class REEChain {
                 .buildAndRegister();
 
         // H[REE]-Cl + C16H35O4P(cat.) -> [REE](sep.) + HCl
-        LARGE_CENTRIFUGE_RECIPES.recipeBuilder()
+        CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(RareEarthChloridesSolution.getFluid(1000))
-                .notConsumable(DiethylhexylPhosphoricAcid.getFluid(0))
+//                .notConsumable(DiethylhexylPhosphoricAcid.getFluid(0))
                 .fluidOutputs(LaNdOxidesSolution.getFluid(250))
                 .fluidOutputs(SmGdOxidesSolution.getFluid(250))
                 .fluidOutputs(TbHoOxidesSolution.getFluid(250))
@@ -198,7 +197,7 @@ public class REEChain {
                 .blastFurnaceTemp(2500)
                 .input(dust, Carbon, 3)
                 .input(dust, LanthanumOxide, 10)
-                .output(dust, Lanthanum,4)
+                .output(dust, Lanthanum, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -209,7 +208,7 @@ public class REEChain {
                 .blastFurnaceTemp(2500)
                 .input(dust, Carbon, 3)
                 .input(dust, PraseodymiumOxide, 10)
-                .output(dust, Praseodymium,4)
+                .output(dust, Praseodymium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -220,7 +219,7 @@ public class REEChain {
                 .blastFurnaceTemp(2500)
                 .input(dust, Carbon, 3)
                 .input(dust, NeodymiumOxide, 10)
-                .output(dust, Neodymium,4)
+                .output(dust, Neodymium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -231,7 +230,7 @@ public class REEChain {
                 .blastFurnaceTemp(2500)
                 .input(dust, Carbon, 3)
                 .input(dust, CeriumOxide, 10)
-                .output(dust, Cerium,4)
+                .output(dust, Cerium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -242,7 +241,7 @@ public class REEChain {
                 .blastFurnaceTemp(2500)
                 .input(dust, Carbon, 3)
                 .input(dust, ScandiumOxide, 10)
-                .output(dust, Scandium,4)
+                .output(dust, Scandium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -253,7 +252,7 @@ public class REEChain {
                 .blastFurnaceTemp(2500)
                 .input(dust, Carbon, 3)
                 .input(dust, EuropiumOxide, 10)
-                .output(dust, Europium,4)
+                .output(dust, Europium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -264,7 +263,7 @@ public class REEChain {
                 .blastFurnaceTemp(2500)
                 .input(dust, Carbon, 3)
                 .input(dust, GadoliniumOxide, 10)
-                .output(dust, Gadolinium,4)
+                .output(dust, Gadolinium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -275,7 +274,7 @@ public class REEChain {
                 .blastFurnaceTemp(2500)
                 .input(dust, Carbon, 3)
                 .input(dust, SamariumOxide, 10)
-                .output(dust, Samarium,4)
+                .output(dust, Samarium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -284,9 +283,9 @@ public class REEChain {
         // 3C + 2Y2O3 -> 4Y + 3CO2
         BLAST_RECIPES.recipeBuilder()
                 .blastFurnaceTemp(2500)
-                .input(dust, Carbon,3)
-                .input(dust, YttriumOxide,10)
-                .output(dust, Yttrium,4)
+                .input(dust, Carbon, 3)
+                .input(dust, YttriumOxide, 10)
+                .output(dust, Yttrium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -308,7 +307,7 @@ public class REEChain {
                 .blastFurnaceTemp(2500)
                 .input(dust, Carbon, 3)
                 .input(dust, DysprosiumOxide, 10)
-                .output(dust, Dysprosium,4)
+                .output(dust, Dysprosium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -317,9 +316,9 @@ public class REEChain {
         // 3C + 2Ho2O3 -> 4Ho + 3CO2
         BLAST_RECIPES.recipeBuilder()
                 .blastFurnaceTemp(2500)
-                .input(dust, Carbon,3)
+                .input(dust, Carbon, 3)
                 .input(dust, HolmiumOxide, 10)
-                .output(dust, Holmium,4)
+                .output(dust, Holmium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -328,9 +327,9 @@ public class REEChain {
         // 3C + 2Er2O3 -> 4Er + 3CO2
         BLAST_RECIPES.recipeBuilder()
                 .blastFurnaceTemp(2500)
-                .input(dust, Carbon,3)
+                .input(dust, Carbon, 3)
                 .input(dust, ErbiumOxide, 10)
-                .output(dust, Erbium,4)
+                .output(dust, Erbium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -339,9 +338,9 @@ public class REEChain {
         // 3C + 2Tm2O3 -> 4Tm + 3CO2
         BLAST_RECIPES.recipeBuilder()
                 .blastFurnaceTemp(2500)
-                .input(dust, Carbon,3)
+                .input(dust, Carbon, 3)
                 .input(dust, ThuliumOxide, 10)
-                .output(dust, Thulium,4)
+                .output(dust, Thulium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -350,9 +349,9 @@ public class REEChain {
         // 3C + Yt2O3 -> 4Yt + 3CO2
         BLAST_RECIPES.recipeBuilder()
                 .blastFurnaceTemp(2500)
-                .input(dust, Carbon,3)
+                .input(dust, Carbon, 3)
                 .input(dust, YtterbiumOxide, 10)
-                .output(dust, Ytterbium,4)
+                .output(dust, Ytterbium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)
@@ -361,9 +360,9 @@ public class REEChain {
         // 3C + 2Lu2O3 -> 4Lu + 3CO2
         BLAST_RECIPES.recipeBuilder()
                 .blastFurnaceTemp(2500)
-                .input(dust, Carbon,3)
+                .input(dust, Carbon, 3)
                 .input(dust, LutetiumOxide, 10)
-                .output(dust, Lutetium,4)
+                .output(dust, Lutetium, 4)
                 .fluidOutputs(CarbonDioxide.getFluid(3000))
                 .EUt(480)
                 .duration(100)

@@ -1,12 +1,12 @@
 package gregicality.science.loaders.recipes.chain;
 
-import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
 public class ZylonChain {
-    public static void init() {
+    public static void init() { //todo
 
         MIXER_RECIPES.recipeBuilder()
                 .fluidInputs(Dimethylbenzene.getFluid(1000))

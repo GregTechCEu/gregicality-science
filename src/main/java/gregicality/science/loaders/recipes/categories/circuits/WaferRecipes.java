@@ -1,14 +1,12 @@
 package gregicality.science.loaders.recipes.categories.circuits;
 
-import gregicality.science.api.GCYSciMaterials;
+import gregicality.science.api.GCYSMaterials;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
-import static gregtech.api.unification.material.MarkerMaterials.Color.Silver;
 import static gregtech.api.unification.material.MarkerMaterials.Color.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -160,7 +158,7 @@ public class WaferRecipes {
 
         LARGE_CHEMICAL_RECIPES.recipeBuilder().duration(390).EUt(983040)
                 .inputs(UHASOC_WAFER.getStackForm())
-                .fluidInputs(GCYSciMaterials.ZBLAN.getFluid(L))
+                .fluidInputs(GCYSMaterials.ZBLAN.getFluid(L))
                 .fluidInputs(CarbonNanotubes.getFluid(L))
                 .fluidInputs(SeaborgiumDopedNanotubes.getFluid(L))
                 .input(dust, IndiumPhospide)
@@ -174,7 +172,7 @@ public class WaferRecipes {
                 .buildAndRegister();
 
         // Optical Boules
-        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(210).EUt(30720)
+        CHEMICAL_RECIPES.recipeBuilder().duration(210).EUt(30720)
                 .notConsumable(stick, Sapphire)
                 .input(dust, PrHoYLFNanoparticles)
                 .fluidInputs(PrHoYLF.getFluid(L / 9))
@@ -197,7 +195,7 @@ public class WaferRecipes {
                 .fluidOutputs(PrHoYLF.getFluid(L / 9))
                 .buildAndRegister();
 
-        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(210).EUt(30000)
+        CHEMICAL_RECIPES.recipeBuilder().duration(210).EUt(30000)
                 .notConsumable(stick, Sapphire)
                 .input(dust, LuTmYVONanoparticles)
                 .fluidInputs(LuTmYVO.getFluid(L / 2))
@@ -238,7 +236,7 @@ public class WaferRecipes {
                 .buildAndRegister();
 
         // Unprocessed Nd:YAG -> Unprocessed Nd:YAG Dust + CH2Cl2
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(220).EUt(7680)
+        CHEMICAL_RECIPES.recipeBuilder().duration(220).EUt(7680)
                 .fluidInputs(UnprocessedNdYAGSolution.getFluid(1000))
                 .fluidOutputs(Dichloromethane.getFluid(1000))
                 .output(dust, UnprocessedNdYAG)
@@ -251,7 +249,7 @@ public class WaferRecipes {
                 .buildAndRegister();
 
         // Nd:YAG Nanoparticles + NdYAG -> Nd:YAG Boule
-        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(210).EUt(30720)
+        CHEMICAL_RECIPES.recipeBuilder().duration(210).EUt(30720)
                 .notConsumable(stick, Sapphire)
                 .input(dust, NdYAGNanoparticles)
                 .fluidInputs(NdYAG.getFluid(L / 9))

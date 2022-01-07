@@ -4,8 +4,7 @@ import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.LARGE_MIXER_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -23,17 +22,17 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         // Quantum Dust
-        LARGE_MIXER_RECIPES.recipeBuilder().duration(10500).EUt(30)
-                .input(dust, Stellite, 15)
-                .input(dust, Jasper, 5)
-                .input(dust, Gallium, 5)
-                .input(dust, Americium241, 5)
-                .input(dust, Palladium, 5)
-                .input(dust, Bismuth, 5)
-                .input(dust, Germanium, 5)
-                .input(dust, SiliconCarbide, 5)
-                .output(dust, Quantum, 50)
-                .buildAndRegister();
+//        LARGE_MIXER_RECIPES.recipeBuilder().duration(10500).EUt(30)
+//                .input(dust, Stellite, 15)
+//                .input(dust, Jasper, 5)
+//                .input(dust, Gallium, 5)
+//                .input(dust, Americium241, 5)
+//                .input(dust, Palladium, 5)
+//                .input(dust, Bismuth, 5)
+//                .input(dust, Germanium, 5)
+//                .input(dust, SiliconCarbide, 5)
+//                .output(dust, Quantum, 50)
+//                .buildAndRegister();
 
         // Eglin Steel
         MIXER_RECIPES.recipeBuilder().EUt(32).duration(100)
@@ -43,28 +42,28 @@ public class MiscRecipes {
                 .output(dust, EglinSteelBase, 10)
                 .buildAndRegister();
 
-        LARGE_MIXER_RECIPES.recipeBuilder().EUt(128).duration(100)
-                .input(dust, Iron, 4)
-                .input(dust, Kanthal)
-                .input(dust, Invar, 5)
-                .input(dust, Sulfur)
-                .input(dust, Silicon)
-                .input(dust, Carbon)
-                .notConsumable(new IntCircuitIngredient(6))
-                .output(dust, EglinSteel, 13)
-                .buildAndRegister();
+//        LARGE_MIXER_RECIPES.recipeBuilder().EUt(128).duration(100)
+//                .input(dust, Iron, 4)
+//                .input(dust, Kanthal)
+//                .input(dust, Invar, 5)
+//                .input(dust, Sulfur)
+//                .input(dust, Silicon)
+//                .input(dust, Carbon)
+//                .notConsumable(new IntCircuitIngredient(6))
+//                .output(dust, EglinSteel, 13)
+//                .buildAndRegister();
 
         // Incoloy MA956
-        LARGE_MIXER_RECIPES.recipeBuilder()
-                .notConsumable(new IntCircuitIngredient(4))
-                .input(dust, Iron, 16)
-                .input(dust, Aluminium, 3)
-                .input(dust, Chrome, 5)
-                .input(dust, Yttrium, 1)
-                .output(dust, IncoloyMA956, 25)
-                .EUt(500)
-                .duration(100)
-                .buildAndRegister();
+//        LARGE_MIXER_RECIPES.recipeBuilder()
+//                .notConsumable(new IntCircuitIngredient(4))
+//                .input(dust, Iron, 16)
+//                .input(dust, Aluminium, 3)
+//                .input(dust, Chrome, 5)
+//                .input(dust, Yttrium, 1)
+//                .output(dust, IncoloyMA956, 25)
+//                .EUt(500)
+//                .duration(100)
+//                .buildAndRegister();
 
         // Pyrolyse Oven Charcoal from Sugar
         PYROLYSE_RECIPES.recipeBuilder().duration(640).EUt(64)

@@ -1,13 +1,10 @@
 package gregicality.science;
 
-import gregicality.science.api.GCYSciLog;
-import gregicality.science.api.capability.GCYSciCapabilities;
+import gregicality.science.api.GCYSLog;
 import gregicality.science.common.CommonProxy;
 import gregicality.science.common.GCYSciConfig;
-import gregicality.science.common.block.GCYSciMetaBlocks;
-import gregicality.science.common.item.cover.CoverBehaviors;
-import gregicality.science.common.machine.GCYSciTileEntities;
-import gregicality.science.integration.theoneprobe.TheOneProbeCompatibility;
+import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.common.machine.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -39,21 +36,15 @@ public class GregicalityScience {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        GCYSciLog.init(event.getModLog());
+        GCYSLog.init(event.getModLog());
         proxy.preLoad();
-        GCYSciCapabilities.init();
 
-        GCYSciMetaBlocks.init();
-        GCYSciTileEntities.init();
+        GCYSMetaBlocks.init();
+        GCYSMetaTileEntities.init();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) throws IOException {
         proxy.onLoad();
-        if (GTValues.isModLoaded(GTValues.MODID_TOP)) {
-            GCYSciLog.logger.info("TheOneProbe found. Enabling integration...");
-            TheOneProbeCompatibility.registerCompatibility();
-        }
-        CoverBehaviors.init();
     }
 }

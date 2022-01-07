@@ -1,22 +1,15 @@
 package gregicality.science.loaders.recipes.categories;
 
-import gregicality.science.common.GCYSciConfig;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.oredict.OreDictionary;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.GTValues.L;
-import static gregtech.api.GTValues.W;
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -103,34 +96,34 @@ public class RecipeOverride {
     private static void chemistryOverride() {
 
         // Add Cyclopentadiene to Steam-Cracked Naphtha Distillation
-        GTRecipeHandler.removeRecipesByInputs(DISTILLATION_RECIPES, SteamCrackedNaphtha.getFluid(1000));
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(0).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(1).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(2).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(3).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(4).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(5).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(6).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(7).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(8).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(9).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
-        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(10).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLATION_RECIPES, SteamCrackedNaphtha.getFluid(1000));
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(0).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(1).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(2).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(3).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(4).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(5).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(6).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(7).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(8).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(9).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
+//        GTRecipeHandler.removeRecipesByInputs(DISTILLERY_RECIPES, new IntCircuitIngredient(10).getMatchingStacks(), new FluidStack[]{SteamCrackedNaphtha.getFluid(1000)});
 
-        DISTILLATION_RECIPES.recipeBuilder().duration(120).EUt(120)
-                .fluidInputs(SteamCrackedNaphtha.getFluid(1000))
-                .fluidOutputs(HeavyFuel.getFluid(25))
-                .fluidOutputs(LightFuel.getFluid(50))
-                .fluidOutputs(Toluene.getFluid(20))
-                .fluidOutputs(Benzene.getFluid(100))
-                .fluidOutputs(Butene.getFluid(50))
-                .fluidOutputs(Butadiene.getFluid(50))
-                .fluidOutputs(Propane.getFluid(15))
-                .fluidOutputs(Propene.getFluid(300))
-                .fluidOutputs(Ethane.getFluid(65))
-                .fluidOutputs(Ethylene.getFluid(500))
-                .fluidOutputs(Methane.getFluid(500))
-                .fluidOutputs(Cyclopentadiene.getFluid(75))
-                .buildAndRegister();
+//        DISTILLATION_RECIPES.recipeBuilder().duration(120).EUt(120)
+//                .fluidInputs(SteamCrackedNaphtha.getFluid(1000))
+//                .fluidOutputs(HeavyFuel.getFluid(25))
+//                .fluidOutputs(LightFuel.getFluid(50))
+//                .fluidOutputs(Toluene.getFluid(20))
+//                .fluidOutputs(Benzene.getFluid(100))
+//                .fluidOutputs(Butene.getFluid(50))
+//                .fluidOutputs(Butadiene.getFluid(50))
+//                .fluidOutputs(Propane.getFluid(15))
+//                .fluidOutputs(Propene.getFluid(300))
+//                .fluidOutputs(Ethane.getFluid(65))
+//                .fluidOutputs(Ethylene.getFluid(500))
+//                .fluidOutputs(Methane.getFluid(500))
+//                .fluidOutputs(Cyclopentadiene.getFluid(75))
+//                .buildAndRegister();
 
         // Add Butanol to Fermented Biomass
         GTRecipeHandler.removeRecipesByInputs(DISTILLATION_RECIPES, FermentedBiomass.getFluid(1000));
@@ -161,12 +154,12 @@ public class RecipeOverride {
         removeRecipesByInputs(CENTRIFUGE_RECIPES, Lava.getFluid(100));
         CENTRIFUGE_RECIPES.recipeBuilder().duration(80).EUt(80)
                 .fluidInputs(Lava.getFluid(100))
-                .chancedOutput(OreDictUnifier.get(dustSmall, SiliconDioxide),5000, 500)
-                .chancedOutput(OreDictUnifier.get(dustSmall, Magnesia),1000, 100)
-                .chancedOutput(OreDictUnifier.get(dustSmall, Quicklime),1000, 100)
-                .chancedOutput(OreDictUnifier.get(dustSmall, Gold),250, 90)
-                .chancedOutput(OreDictUnifier.get(dustSmall, Sapphire),1250, 150)
-                .chancedOutput(OreDictUnifier.get(dustSmall, Tantalite),500, 90)
+                .chancedOutput(OreDictUnifier.get(dustSmall, SiliconDioxide), 5000, 500)
+                .chancedOutput(OreDictUnifier.get(dustSmall, Magnesia), 1000, 100)
+                .chancedOutput(OreDictUnifier.get(dustSmall, Quicklime), 1000, 100)
+                .chancedOutput(OreDictUnifier.get(dustSmall, Gold), 250, 90)
+                .chancedOutput(OreDictUnifier.get(dustSmall, Sapphire), 1250, 150)
+                .chancedOutput(OreDictUnifier.get(dustSmall, Tantalite), 500, 90)
                 .buildAndRegister();
 
         // Seed Oil TODO This duplicates
@@ -223,21 +216,21 @@ public class RecipeOverride {
 
         // Log -> Charcoal Recipes
         // TODO Ignores Forestry wood, still needed?
-        if (GCYSciConfig.GT5U.DisableLogToCharcoalSmelting) {
-            List<ItemStack> allWoodLogs = OreDictionary.getOres("logWood")
-                                                       .stream()
-                                                       .flatMap(stack -> ModHandler.getAllSubItems(stack).stream())
-                                                       .collect(Collectors.toList());
-
-            for (ItemStack stack : allWoodLogs) {
-                ItemStack smeltingOutput = ModHandler.getSmeltingOutput(stack);
-                if (!smeltingOutput.isEmpty() && smeltingOutput.getItem() == Items.COAL && smeltingOutput.getMetadata() == 1) {
-                    ItemStack woodStack = stack.copy();
-                    woodStack.setItemDamage(W);
-                    ModHandler.removeFurnaceSmelting(woodStack);
-                }
-            }
-        }
+//        if (GCYSciConfig.machineTiers.DisableLogToCharcoalSmelting) {
+//            List<ItemStack> allWoodLogs = OreDictionary.getOres("logWood")
+//                                                       .stream()
+//                                                       .flatMap(stack -> ModHandler.getAllSubItems(stack).stream())
+//                                                       .collect(Collectors.toList());
+//
+//            for (ItemStack stack : allWoodLogs) {
+//                ItemStack smeltingOutput = ModHandler.getSmeltingOutput(stack);
+//                if (!smeltingOutput.isEmpty() && smeltingOutput.getItem() == Items.COAL && smeltingOutput.getMetadata() == 1) {
+//                    ItemStack woodStack = stack.copy();
+//                    woodStack.setItemDamage(W);
+//                    ModHandler.removeFurnaceSmelting(woodStack);
+//                }
+//            }
+//        }
     }
 
     private static void recipeRemoval() {
@@ -249,10 +242,10 @@ public class RecipeOverride {
         GTRecipeHandler.removeRecipesByInputs(CENTRIFUGE_RECIPES, OreDictUnifier.get(dust, RareEarth));
 
         // QCD Matter progression skipping
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES, new ItemStack[]{SHAPE_MOLD_INGOT.getStackForm()},  new FluidStack[]{QCDMatter.getFluid(L)});
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES, new ItemStack[]{SHAPE_MOLD_INGOT.getStackForm()}, new FluidStack[]{QCDMatter.getFluid(L)});
         GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES, new ItemStack[]{SHAPE_MOLD_NUGGET.getStackForm()}, new FluidStack[]{QCDMatter.getFluid(L)});
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES, new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},  new FluidStack[]{QCDMatter.getFluid(L)});
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES, new ItemStack[]{SHAPE_MOLD_BLOCK.getStackForm()},  new FluidStack[]{QCDMatter.getFluid(L * 9)});
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES, new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()}, new FluidStack[]{QCDMatter.getFluid(L)});
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES, new ItemStack[]{SHAPE_MOLD_BLOCK.getStackForm()}, new FluidStack[]{QCDMatter.getFluid(L * 9)});
 
         // Remove Yttrium Barium Cuprate Recipes
         GTRecipeHandler.removeRecipesByInputs(MIXER_RECIPES, new ItemStack[]{OreDictUnifier.get(dust, Copper, 3), OreDictUnifier.get(dust, Barium, 2), OreDictUnifier.get(dust, Yttrium)}, new FluidStack[]{Oxygen.getFluid(7000)});

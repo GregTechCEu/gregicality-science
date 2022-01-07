@@ -1,12 +1,13 @@
 package gregicality.science.loaders.recipes.chain;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import gregtech.common.items.MetaItems;
+
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
-public class IodineChain {
+public class IodineChain { //todo
     public static void init() {
 
         // NaNO3·KNO3·KCl·NaIO3 + H2O = [NaNO3·KNO3·KCl·NaIO3 + H2O]
@@ -50,10 +51,10 @@ public class IodineChain {
                 .buildAndRegister();
 
         // [NaNO3·KNO3·KCl·NaOH + H2O] = NaNO3 + KNO3 + KCl + NaOH + H2O (Water voided - Dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(120).EUt(30)
+        CENTRIFUGE_RECIPES.recipeBuilder().duration(120).EUt(30)
                 .fluidInputs(CalicheNitrateSolution.getFluid(1000))
                 .output(dust, SodiumNitrate, 5)
-                .output(dust, Niter, 5)
+                .output(dust, Saltpeter, 5)
                 .output(dust, RockSalt, 2)
                 .output(dust, SodiumHydroxide, 3)
                 .buildAndRegister();
@@ -80,8 +81,9 @@ public class IodineChain {
                 .buildAndRegister();
 
         // I? = I
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(200).EUt(7680)
+        FLUID_SOLIDFICATION_RECIPES.recipeBuilder().duration(200).EUt(7680)
                 .fluidInputs(IodineSlurry.getFluid(1000))
+                .notConsumable(MetaItems.SHAPE_MOLD_BALL.getStackForm())
                 .output(dust, Iodine)
                 .buildAndRegister();
     }

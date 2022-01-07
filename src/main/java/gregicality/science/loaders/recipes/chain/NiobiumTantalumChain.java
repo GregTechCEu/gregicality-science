@@ -2,13 +2,13 @@ package gregicality.science.loaders.recipes.chain;
 
 import gregtech.api.unification.OreDictUnifier;
 
-import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
 public class NiobiumTantalumChain {
-    public static void init() {
+    public static void init() { //todo
 
         // MnO2 + sugar(tiny) -> H2SO4 + CO2 + MnSO4
         // weird, but probably fine

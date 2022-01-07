@@ -2,10 +2,9 @@ package gregicality.science.loaders.recipes.chain;
 
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.NANOTOME;
-import static gregicality.science.common.item.GCYSciMetaItems.PIEZOELECTRIC_CRYSTAL;
-import static gregicality.science.loaders.recipes.GCYSciRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.NANOTOME;
+import static gregicality.science.common.item.GCYSMetaItems.PIEZOELECTRIC_CRYSTAL;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -14,7 +13,7 @@ import static gregtech.common.items.MetaItems.SENSOR_UV;
 
 
 public class NanotubeChain {
-    public static void init() {
+    public static void init() { //todo
 
         // C6H6 + C7H8 -> C12H10 + CH4
         CHEMICAL_RECIPES.recipeBuilder().duration(350).EUt(480)
@@ -139,7 +138,7 @@ public class NanotubeChain {
                 .buildAndRegister();
 
         // Pt + 4HNO3 + 6HCl -> H2PtCl6 + 4NO2 + 4H2O (H2O lost to dehydrator)
-        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder().duration(115).EUt(1920)
+        CHEMICAL_RECIPES.recipeBuilder().duration(115).EUt(1920)
                 .input(dust, Platinum)
                 .fluidInputs(NitricAcid.getFluid(4000))
                 .fluidInputs(HydrochloricAcid.getFluid(6000))
@@ -188,23 +187,23 @@ public class NanotubeChain {
                 .buildAndRegister();
 
         // 4C12H8I2 + 2C8H12Cl2Pt + 8C + 4AgBF4 + 4C3H9SnCl -> 10C6H4 + 4BF3 + 3C8H16 + 4HF + 2PtCl2 + 8I + 4AgCl + 4Sn
-        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(460).EUt(491520)
-                .notConsumable(dust, Bipyridine)
-                .notConsumable(dust, PalladiumBisDibenzylidieneacetone)
-                .input(dust, Diiodobiphenyl, 4)
-                .input(dust, Dichlorocycloctadieneplatinum, 23)
-                .input(dust, Carbon, 8)
-                .fluidInputs(Silvertetrafluoroborate.getFluid(4000))
-                .fluidInputs(TrimethyltinChloride.getFluid(4000))
-                .fluidOutputs(Cycloparaphenylene.getFluid(10000))
-                .fluidOutputs(BoronFluoride.getFluid(4000))
-                .fluidOutputs(Oct1ene.getFluid(3000))
-                .fluidOutputs(HydrofluoricAcid.getFluid(4000))
-                .output(dust, ReprecipitatedPlatinum, 6)
-                .output(dust, Iodine, 8)
-                .output(dust, SilverChloride, 8)
-                .output(dust, Tin, 4)
-                .buildAndRegister();
+//        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(460).EUt(491520)
+//                .notConsumable(dust, Bipyridine)
+//                .notConsumable(dust, PalladiumBisDibenzylidieneacetone)
+//                .input(dust, Diiodobiphenyl, 4)
+//                .input(dust, Dichlorocycloctadieneplatinum, 23)
+//                .input(dust, Carbon, 8)
+//                .fluidInputs(Silvertetrafluoroborate.getFluid(4000))
+//                .fluidInputs(TrimethyltinChloride.getFluid(4000))
+//                .fluidOutputs(Cycloparaphenylene.getFluid(10000))
+//                .fluidOutputs(BoronFluoride.getFluid(4000))
+//                .fluidOutputs(Oct1ene.getFluid(3000))
+//                .fluidOutputs(HydrofluoricAcid.getFluid(4000))
+//                .output(dust, ReprecipitatedPlatinum, 6)
+//                .output(dust, Iodine, 8)
+//                .output(dust, SilverChloride, 8)
+//                .output(dust, Tin, 4)
+//                .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder().duration(300).EUt(200000)
                 .inputs(ELECTRIC_MOTOR_UV.getStackForm())
@@ -224,7 +223,7 @@ public class NanotubeChain {
                 .notConsumable(new IntCircuitIngredient(0))
                 .output(ingot, CarbonNanotubes)
                 .buildAndRegister();
-        
+
         CHEMICAL_RECIPES.recipeBuilder().duration(290).EUt(320000)
                 .fluidInputs(Cycloparaphenylene.getFluid(200))
                 .fluidInputs(Methane.getFluid(800))

@@ -1,6 +1,6 @@
 package gregicality.science.loaders.recipes.categories;
 
-import static gregicality.science.api.GCYSciMaterials.*;
+import static gregicality.science.api.GCYSMaterials.*;
 import static gregtech.api.recipes.RecipeMaps.CENTRIFUGE_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
@@ -14,7 +14,7 @@ public class SuperconductorRecipes {
         MIXER_RECIPES.recipeBuilder().duration(2781).EUt(30)
                 .input(dust, TBCCO)
                 .input(dust, StrontiumSuperconductor, 4)
-                .input(dust, Taranium)
+//                .input(dust, Taranium)
                 .output(dust, StrontiumTaraniumTBCCO, 9)
                 .buildAndRegister();
 
@@ -22,14 +22,14 @@ public class SuperconductorRecipes {
                 .input(dust, StrontiumTaraniumTBCCO, 9)
                 .output(dust, TBCCO, 4)
                 .output(dust, StrontiumSuperconductor, 4)
-                .output(dust, Taranium)
+//                .output(dust, Taranium)
                 .buildAndRegister();
 
         // UEV Superconductor Base Dust
         MIXER_RECIPES.recipeBuilder().duration(11292).EUt(30)
                 .input(dust, ActiniumSuperhydride)
                 .input(dust, BETSPerrhenate)
-                .input(dust, Vibranium, 2)
+//                .input(dust, Vibranium, 2)
                 .input(dust, Quantum)
                 .input(dust, TriniumTitanium)
                 .output(dust, ActiniumVibraniumBETSSuperhydride, 6)
@@ -39,7 +39,7 @@ public class SuperconductorRecipes {
                 .input(dust, ActiniumVibraniumBETSSuperhydride, 6)
                 .output(dust, ActiniumSuperhydride)
                 .output(dust, StrontiumSuperconductor)
-                .output(dust, Vibranium, 2)
+//                .output(dust, Vibranium, 2)
                 .output(dust, Quantum)
                 .output(dust, TriniumTitanium)
                 .buildAndRegister();

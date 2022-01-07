@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipes.categories.circuits.components;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Color.White;
@@ -16,7 +16,7 @@ public class CosmicComponents {
         ASSEMBLER_RECIPES.recipeBuilder().duration(250).EUt(6000000)
                 .input(wireFine, Cinobite, 8)
                 .input(plate, SuperheavyHAlloy, 4)
-                .input(plate, Vibranium, 4)
+//                .input(plate, Vibranium, 4)
                 .fluidInputs(Polybenzimidazole.getFluid(L * 9))
                 .outputs(SMD_DIODE_COSMIC.getStackForm(32))
                 .buildAndRegister();
@@ -98,7 +98,7 @@ public class CosmicComponents {
                 .buildAndRegister();
 
         FORMING_PRESS_RECIPES.recipeBuilder().duration(280).EUt(1500000)
-                .input(plate, Vibranium, 2)
+//                .input(plate, Vibranium, 2)
                 .input(dust, TlTmCesiumIodide)
                 .input(dust, PolycyclicAromaticMix)
                 .input(dust, CadmiumTungstate)

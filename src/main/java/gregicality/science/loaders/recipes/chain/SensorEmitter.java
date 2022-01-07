@@ -1,13 +1,13 @@
 package gregicality.science.loaders.recipes.chain;
 
-import static gregicality.science.api.GCYSciMaterials.*;
-import static gregicality.science.common.item.GCYSciMetaItems.*;
+import static gregicality.science.api.GCYSMaterials.*;
+import static gregicality.science.common.item.GCYSMetaItems.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
 public class SensorEmitter {
-    public static void init() {
+    public static void init() { //todo
 
         // Sr + BaO + 2CH3COOH -> [C4H6BaSrO4 + H2O]
         MIXER_RECIPES.recipeBuilder().duration(420).EUt(120)
@@ -132,16 +132,16 @@ public class SensorEmitter {
                 .buildAndRegister();
 
         // 4Tb + 7Ds + 10Fe + 5Co + 2B + Si + C -> [4Tb + 7Ds + 10Fe + 5Co + 2B + Si + C]
-        LARGE_MIXER_RECIPES.recipeBuilder().duration(940).EUt(30)
-                .input(dust, Terbium, 4)
-                .input(dust, Dysprosium, 7)
-                .input(dust, Iron, 10)
-                .input(dust, Cobalt, 5)
-                .input(dust, Boron, 2)
-                .input(dust, Silicon)
-                .input(dust, Carbon)
-                .output(dust, MagnetorestrictiveAlloy, 30)
-                .buildAndRegister();
+//        LARGE_MIXER_RECIPES.recipeBuilder().duration(940).EUt(30)
+//                .input(dust, Terbium, 4)
+//                .input(dust, Dysprosium, 7)
+//                .input(dust, Iron, 10)
+//                .input(dust, Cobalt, 5)
+//                .input(dust, Boron, 2)
+//                .input(dust, Silicon)
+//                .input(dust, Carbon)
+//                .output(dust, MagnetorestrictiveAlloy, 30)
+//                .buildAndRegister();
 
         // Pb + Se -> PbSe
         CHEMICAL_RECIPES.recipeBuilder().duration(240).EUt(120)
@@ -328,19 +328,19 @@ public class SensorEmitter {
                 .buildAndRegister();
 
         // C8H4O3 + NaI + NaNO2 + [NaOH + H2O] + NH3 + HClO + 2Cl -> C7H5IO2 + N2O + CO2 + 3[H2O + NaCl]
-        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(350).EUt(122880)
-                .input(dust, PhthalicAnhydride, 15)
-                .input(dust, SodiumIodide, 2)
-                .input(dust, SodiumNitrite, 4)
-                .fluidInputs(SodiumHydroxideSolution.getFluid(1000))
-                .fluidInputs(Ammonia.getFluid(1000))
-                .fluidInputs(HypochlorousAcid.getFluid(1000))
-                .fluidInputs(Chlorine.getFluid(2000))
-                .fluidOutputs(IodobenzoicAcid.getFluid(1000))
-                .fluidOutputs(NitrousOxide.getFluid(1000))
-                .fluidOutputs(CarbonDioxide.getFluid(1000))
-                .fluidOutputs(SaltWater.getFluid(3000))
-                .buildAndRegister();
+//        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(350).EUt(122880)
+//                .input(dust, PhthalicAnhydride, 15)
+//                .input(dust, SodiumIodide, 2)
+//                .input(dust, SodiumNitrite, 4)
+//                .fluidInputs(SodiumHydroxideSolution.getFluid(1000))
+//                .fluidInputs(Ammonia.getFluid(1000))
+//                .fluidInputs(HypochlorousAcid.getFluid(1000))
+//                .fluidInputs(Chlorine.getFluid(2000))
+//                .fluidOutputs(IodobenzoicAcid.getFluid(1000))
+//                .fluidOutputs(NitrousOxide.getFluid(1000))
+//                .fluidOutputs(CarbonDioxide.getFluid(1000))
+//                .fluidOutputs(SaltWater.getFluid(3000))
+//                .buildAndRegister();
 
         // 3C7H5IO2 + H2SO4 + 2O -> H2S + 3C7H5IO4
         CHEMICAL_RECIPES.recipeBuilder().duration(200).EUt(1920)
@@ -437,21 +437,21 @@ public class SensorEmitter {
                 .buildAndRegister();
 
         // C12H12 + C9H12Si(MgBr)2 + ICl + 2HClO + C4H4BrNO2 + 2H -> 2MgClBr + H2C18H11I + (CH3)3SiCl + 2H2O + HBr + C4H5NO2
-        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(290).EUt(122880)
-                .fluidInputs(Dimethylnaphthalene.getFluid(1000))
-                .fluidInputs(AcetylatingReagent.getFluid(1000))
-                .fluidInputs(IodineMonochloride.getFluid(1000))
-                .fluidInputs(HypochlorousAcid.getFluid(2000))
-                .fluidInputs(Hydrogen.getFluid(2000))
-                .input(dust, Bromosuccinimide, 12)
-                .notConsumable(dust, RhReNqCatalyst)
-                .output(dust, MgClBromide, 6)
-                .output(dust, Succinimide, 12)
-                .fluidOutputs(Dihydroiodotetracene.getFluid(1000))
-                .fluidOutputs(Trimethylchlorosilane.getFluid(1000))
-                .fluidOutputs(Water.getFluid(2000))
-                .fluidOutputs(HydrobromicAcid.getFluid(1000))
-                .buildAndRegister();
+//        CHEMICAL_PLANT_RECIPES.recipeBuilder().duration(290).EUt(122880)
+//                .fluidInputs(Dimethylnaphthalene.getFluid(1000))
+//                .fluidInputs(AcetylatingReagent.getFluid(1000))
+//                .fluidInputs(IodineMonochloride.getFluid(1000))
+//                .fluidInputs(HypochlorousAcid.getFluid(2000))
+//                .fluidInputs(Hydrogen.getFluid(2000))
+//                .input(dust, Bromosuccinimide, 12)
+//                .notConsumable(dust, RhReNqCatalyst)
+//                .output(dust, MgClBromide, 6)
+//                .output(dust, Succinimide, 12)
+//                .fluidOutputs(Dihydroiodotetracene.getFluid(1000))
+//                .fluidOutputs(Trimethylchlorosilane.getFluid(1000))
+//                .fluidOutputs(Water.getFluid(2000))
+//                .fluidOutputs(HydrobromicAcid.getFluid(1000))
+//                .buildAndRegister();
 
         // C6H5OH + 10Cl + 2HCN + O -> 8HCl + C8Cl2N2O2
         LARGE_CHEMICAL_RECIPES.recipeBuilder().duration(250).EUt(30720)
@@ -499,7 +499,7 @@ public class SensorEmitter {
         
         CHEMICAL_RECIPES.recipeBuilder().duration(240).EUt(491520)
                 .inputs(LEPTON_TRAP_CRYSTAL.getStackForm())
-                .input(dustSmall, Vibranium, 2)
+//                .input(dustSmall, Vibranium, 2)
                 .fluidInputs(HeavyLeptonMix.getFluid(500))
                 .fluidInputs(FreeElectronGas.getFluid(500))
                 .outputs(CHARGED_LEPTON_TRAP_CRYSTAL.getStackForm())
