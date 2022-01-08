@@ -31,7 +31,7 @@ val config: Properties = file("build.properties").inputStream().let {
     return@let prop
 }
 
-val modVersion = config["gcy_science.version"] as String
+val modVersion = config["gcys.version"] as String
 val mcVersion = config["mc.version"] as String
 val forgeVersion = "$mcVersion-${config["forge.version"]}"
 val shortVersion = mcVersion.substring(0, mcVersion.lastIndexOf("."))
@@ -46,7 +46,7 @@ configure<JavaPluginConvention> {
 }
 
 configure<BasePluginConvention> {
-    archivesBaseName = "Gregicality"
+    archivesBaseName = "GregicalityScience"
 }
 
 configure<UserBaseExtension> {
@@ -65,10 +65,6 @@ repositories {
     maven {
         name = "CraftTweaker"
         setUrl("https://maven.blamejared.com/")
-    }
-    maven {
-        name = "Forestry"
-        setUrl("http://maven.ic2.player.to")
     }
     maven {
         name = "CurseForge"
@@ -95,14 +91,8 @@ dependencies {
     "deobfCompile"("CraftTweaker2:CraftTweaker2-MC$strippedVersion-Main:${config["crafttweaker.version"]}")
     "deobfCompile"("team.chisel.ctm:CTM:MC$mcVersion-${config["ctm.version"]}")
 
-    // Change to "deobfCompile" to add one of these to game
-    "deobfProvided"("net.sengir.forestry:forestry_$mcVersion:${config["forestry.version"]}")
-
-    "provided"(files("libs/gregtech-1.12.2-2.0.0.1429-alpha.jar"))
-    // Change to "compile" to add one of these to game
-    "provided"(files("extdeps/appliedenergistics2-rv6-stable-7.jar"))
-    "compileOnly"(files("extdeps/refinedstorage-1.6.15.jar"))
-    "compileOnly"(files("extdeps/multiblocktweaker-1.12.2-stable-1.4.0.jar"))
+    "provided"(files("libs/gregtech-$mcVersion-${config["gregtech.version"]}.jar"))
+    "provided"(files("libs/GregicalityMultiblocks-$mcVersion-${config["gcym.version"]}.jar"))
 
     // JUnit testing used for GitHub Actions
     "testImplementation"("junit:junit:${config["junit.version"]}")
@@ -126,14 +116,4 @@ processResources.apply {
 
     // Access Transformer jar manifest info
     rename("(.+_at.cfg)", "META-INF/$1")
-}
-
-// Jar manifest for CoreMod
-val jar: Jar by tasks
-jar.apply {
-    manifest {
-        attributes(mapOf("FMLAT" to "gcy_science_at.cfg",
-            "FMLCorePluginContainsFMLMod" to "true",
-            "FMLCorePlugin" to "gregicality.science.core.GCYSciLoadingPlugin"))
-    }
 }

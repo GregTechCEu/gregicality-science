@@ -1,28 +1,12 @@
-[
-  {
-    "modid": "gcy_science",
-    "name": "Gregicality: Science",
-    "description": "The big spook takes your lunch money.  Who reads these?",
-    "version": "${version}",
-    "mcversion": "${mcversion}",
-    "url": "",
-    "updateUrl": "",
-    "authorList": [
-      "dan",
-      "TechLord22",
-      "rhuneau",
-      "hjae78",
-      "Shadows_of_Fire",
-      "TheEmosewaPixel",
-      "Bartz24",
-      "bartimaeusnek"
-    ],
-    "credits": "The creators of GTCE, GT5U and most importantly, GregoriusT.",
-    "logoFile": "assets/gcy_science/logo.png",
-    "screenshots": [],
-    "dependencies": [
-      "gregtech",
-      "gcy_multiblocks"
-    ]
-  }
-]
+[{
+  "modid": "gcys",
+  "name": "Gregicality Science",
+  "description": "Scientific module of Gregicality.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "authorList": [
+      "TechLord22"
+  ],
+  "credits": "GregoriusT for making GregTech and textures, various GT community members and the Gregtech CEu Dev Team for help in development.",
+  "dependencies": ["codechickenlib", "gregtech", "gcym"]
+}]

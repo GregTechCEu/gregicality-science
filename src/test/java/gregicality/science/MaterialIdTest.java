@@ -1,7 +1,5 @@
 package gregicality.science;
 
-import gregicality.science.api.GCYSciMaterials;
-import gregicality.science.common.block.GCYSciMetaBlocks;
 import gregicality.science.common.machine.GCYSciTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Materials;
