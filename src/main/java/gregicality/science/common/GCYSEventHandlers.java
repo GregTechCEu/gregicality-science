@@ -1,8 +1,8 @@
 package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
+import gregicality.science.api.unification.materials.GCYSMaterials;
 import gregicality.science.api.unification.materials.properties.GCYSPropertyAddition;
-import gregicality.science.api.unification.materials.properties.GCYSMaterials;
 import gregtech.api.GregTechAPI;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;

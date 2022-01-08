@@ -1,0 +1,39 @@
+
+
+# materials
+
+# First Degree Materials
+material.lanthanum_oxide=Lanthanum Oxide
+material.praseodymium_oxide=Praseodymium Oxide
+material.neodymium_oxide=Neodymium Oxide
+material.cerium_oxide=Cerium Oxide
+material.scandium_oxide=Scandium Oxide
+material.europium_oxide=Europium Oxide
+material.gadolinium_oxide=Gadolinium Oxide
+material.samarium_oxide=Samarium Oxide
+material.yttrium_oxide=Yttrium Oxide
+material.terbium_oxide=Terbium Oxide
+material.dysprosium_oxide=Dysprosium Oxide
+material.holmium_oxide=Holmium Oxide
+material.erbium_oxide=Erbium Oxide
+material.thulium_oxide=Thulium Oxide
+material.ytterbium_oxide=Ytterbium Oxide
+material.lutetium_oxide=Lutetium Oxide
+
+
+# Second Degree Materials
+material.la_pr_nd_ce_oxides_solution=La-Pr-Nd-Ce Oxides Solution
+material.sc_eu_gd_sm_oxides_solution=Sc-Eu-Gd-Sm Oxides Solution
+material.y_tb_dy_ho_oxides_solution=Y-Tb-Dy-Ho Oxides Solution
+material.er_th_yt_lu_oxides_solution=Er-Th-Yt-Lu Oxides Solution
+
+
+# Organic Chemistry Materials
+material.butyraldehyde=Butyraldehyde
+material.ethylhexanol=2-Ethylhexnaol
+material.diethylhexyl_phosphoric_acid=Di-(2-ethylhexyl)phosphoric Acid
+material.butanol=Butanol
+
+
+# Unknown Composition Materials
+material.rare_earth_chlorides_solution=Rare Earth Chlorides Solution

@@ -1,8 +1,24 @@
 package gregicality.science.api.unification.materials.properties;
 
+
+import gregtech.api.unification.material.properties.DustProperty;
+import gregtech.api.unification.material.properties.PropertyKey;
+
+import static gregtech.api.unification.material.Materials.*;
+
 public class GCYSPropertyAddition {
 
     public static void init() {
 
+        // Dusts
+        Praseodymium.setProperty(PropertyKey.DUST, new DustProperty());
+        Scandium.setProperty(PropertyKey.DUST, new DustProperty());
+        Gadolinium.setProperty(PropertyKey.DUST, new DustProperty());
+        Terbium.setProperty(PropertyKey.DUST, new DustProperty());
+        Dysprosium.setProperty(PropertyKey.DUST, new DustProperty());
+        Holmium.setProperty(PropertyKey.DUST, new DustProperty());
+        Erbium.setProperty(PropertyKey.DUST, new DustProperty());
+        Thulium.setProperty(PropertyKey.DUST, new DustProperty());
+        Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
     }
 }
