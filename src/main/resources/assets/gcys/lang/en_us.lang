@@ -36,4 +36,5 @@ material.butanol=Butanol
 
 
 # Unknown Composition Materials
+material.rare_earth_hydroxides_solution=Rare Earth Hydroxides Solution
 material.rare_earth_chlorides_solution=Rare Earth Chlorides Solution

@@ -5,7 +5,6 @@ import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
 
 public class GCYSFirstDegreeMaterials {
 
@@ -52,7 +51,6 @@ public class GCYSFirstDegreeMaterials {
                 .dust()
                 .color(0x20AAAA)
                 .iconSet(MaterialIconSet.SHINY)
-                .flags(DISABLE_DECOMPOSITION)
                 .components(Europium, 2, Oxygen, 3)
                 .build();
 

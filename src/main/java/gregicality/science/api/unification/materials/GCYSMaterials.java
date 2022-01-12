@@ -41,6 +41,7 @@ public class GCYSMaterials {
 
 
     // Unknown Composition Materials
+    public static Material RareEarthHydroxidesSolution;
     public static Material RareEarthChloridesSolution;
 
 
