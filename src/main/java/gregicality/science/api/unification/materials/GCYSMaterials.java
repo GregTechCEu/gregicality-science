@@ -24,6 +24,10 @@ public class GCYSMaterials {
     public static Material ThuliumOxide;
     public static Material YtterbiumOxide;
     public static Material LutetiumOxide;
+    public static Material PlatinumMetallic;
+    public static Material PalladiumMetallic;
+    public static Material AmmoniumHexachloroplatinate;
+    public static Material ChloroplatinicAcid;
 
 
     // Second Degree Materials
@@ -31,6 +35,13 @@ public class GCYSMaterials {
     public static Material ScEuGdSmOxidesSolution;
     public static Material YTbDyHoOxidesSolution;
     public static Material ErThYtLuOxidesSolution;
+    public static Material PlatinumGroupResidue;
+    public static Material PalladiumRichAmmonia;
+
+
+    // Third Degree Materials
+    public static Material PlatinumPalladiumLeachate;
+    public static Material CrudePlatinumResidue;
 
 
     // Organic Chemistry Materials

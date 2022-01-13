@@ -5,6 +5,7 @@ import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
 
 public class GCYSFirstDegreeMaterials {
 
@@ -119,6 +120,38 @@ public class GCYSFirstDegreeMaterials {
                 .color(0x11BBFF)
                 .iconSet(MaterialIconSet.METALLIC)
                 .components(Lutetium, 2, Oxygen, 3)
+                .build();
+
+        PlatinumMetallic = new Material.Builder(3516, "platinum_metallic")
+                .dust()
+                .color(0xFFFBC5)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Platinum, 1, RareEarth, 1)
+                .build();
+
+        PalladiumMetallic = new Material.Builder(3517, "palladium_metallic")
+                .dust()
+                .color(0x808080)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Platinum, 1, RareEarth, 1)
+                .build();
+
+        AmmoniumHexachloroplatinate = new Material.Builder(3518, "ammonium_hexachloroplatinate")
+                .dust()
+                .color(0xFEF0C2)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Nitrogen, 2, Hydrogen, 8, Platinum, 1, Chlorine, 6)
+                .build()
+                .setFormula("(NH4)2PtCl6", true);
+
+        ChloroplatinicAcid = new Material.Builder(3519, "chloroplatinic_acid")
+                .fluid()
+                .color(0xFEF0C2)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 2, Platinum, 1, Chlorine, 6)
                 .build();
     }
 }

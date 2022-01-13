@@ -1,5 +1,6 @@
 package gregicality.science.loaders.recipe;
 
+import gregicality.science.loaders.recipe.chain.PlatinumGroupProcessing;
 import gregicality.science.loaders.recipe.chain.RareEarthProcessing;
 
 public class GCYSRecipeLoader {
@@ -10,5 +11,6 @@ public class GCYSRecipeLoader {
 
     private static void initChains() {
         RareEarthProcessing.init();
+        PlatinumGroupProcessing.init();
     }
 }

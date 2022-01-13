@@ -1,9 +1,12 @@
 package gregicality.science.api.unification.materials;
 
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
+import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
+import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
 
 public class GCYSSecondDegreeMaterials {
 
@@ -37,6 +40,29 @@ public class GCYSSecondDegreeMaterials {
                 .color(0xFFB3FF)
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)
                 .components(ErbiumOxide, 1, ThuliumOxide, 1, YtterbiumOxide, 1, LutetiumOxide, 1)
+                .build();
+
+        PlatinumGroupResidue = new Material.Builder(6004, "platinum_group_residue")
+                .dust()
+                .color(0x64632E)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Iridium, 1, Osmium, 1, Rhodium, 1, Ruthenium, 1, RareEarth, 1)
+                .build();
+
+        PalladiumRichAmmonia = new Material.Builder(6005, "palladium_rich_ammonia")
+                .fluid()
+                .color(0x808080)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Ammonia, 2, Palladium, 1, Chlorine, 2)
+                .build()
+                .setFormula("(NH3)2PtCl6", true);
+
+        CrudePlatinumResidue = new Material.Builder(6006, "crude_platinum_residue")
+                .dust()
+                .color(0xFFFBC5)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(PlatinumRaw, 1)
                 .build();
     }
 }

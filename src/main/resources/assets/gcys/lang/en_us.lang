@@ -19,6 +19,16 @@ material.erbium_oxide=Erbium Oxide
 material.thulium_oxide=Thulium Oxide
 material.ytterbium_oxide=Ytterbium Oxide
 material.lutetium_oxide=Lutetium Oxide
+material.platinum_metallic=Metallic Platinum
+item.platinum_metallic.dust=Metallic Platinum Powder
+item.platinum_metallic.dustSmall=Small Pile of Metallic Platinum Powder
+item.platinum_metallic.dustTiny=Tiny Pile of Metallic Platinum Powder
+material.palladium_metallic=Metallic Palladium
+item.palladium_metallic.dust=Metallic Palladium Powder
+item.palladium_metallic.dustSmall=Small Pile of Metallic Palladium Powder
+item.palladium_metallic.dustTiny=Tiny Pile of Metallic Palladium Powder
+material.ammonium_hexachloroplatinate=Ammonium Hexachloroplatinate
+material.chloroplatinic_acid=Chloroplatinic Acid
 
 
 # Second Degree Materials
@@ -26,6 +36,19 @@ material.la_pr_nd_ce_oxides_solution=La-Pr-Nd-Ce Oxides Solution
 material.sc_eu_gd_sm_oxides_solution=Sc-Eu-Gd-Sm Oxides Solution
 material.y_tb_dy_ho_oxides_solution=Y-Tb-Dy-Ho Oxides Solution
 material.er_th_yt_lu_oxides_solution=Er-Th-Yt-Lu Oxides Solution
+material.platinum_group_residue=Platinum Group Residue
+item.platinum_group_residue.dust=Platinum Group Residue
+item.platinum_group_residue.dustSmall=Small Pile of Platinum Group Residue
+item.platinum_group_residue.dustTiny=Tiny Pile of Platinum Group Residue
+material.palladium_rich_ammonia=Palladium Rich Ammonia
+material.crude_platinum_residue=Crude Platinum Residue
+item.crude_platinum_residue.dust=Crude Platinum Residue
+item.crude_platinum_residue.dustSmall=Small Pile of Crude Platinum Residue
+item.crude_platinum_residue.dustTiny=Tiny Pile of Crude Platinum Residue
+
+
+# Third Degree Materials
+material.platinum_palladium_leachate=Platinum-Palladium Leachate
 
 
 # Organic Chemistry Materials
