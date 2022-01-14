@@ -42,6 +42,7 @@ public class GCYSMaterials {
     // Third Degree Materials
     public static Material PlatinumPalladiumLeachate;
     public static Material CrudePlatinumResidue;
+    public static Material CrudePalladiumResidue;
 
 
     // Organic Chemistry Materials
@@ -49,6 +50,8 @@ public class GCYSMaterials {
     public static Material Ethylhexanol;
     public static Material DiethylhexylPhosphoricAcid;
     public static Material Butanol;
+    public static Material MethylFormate;
+    public static Material FormicAcid;
 
 
     // Unknown Composition Materials

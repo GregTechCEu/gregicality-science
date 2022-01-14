@@ -45,6 +45,10 @@ material.crude_platinum_residue=Crude Platinum Residue
 item.crude_platinum_residue.dust=Crude Platinum Residue
 item.crude_platinum_residue.dustSmall=Small Pile of Crude Platinum Residue
 item.crude_platinum_residue.dustTiny=Tiny Pile of Crude Platinum Residue
+material.crude_palladium_residue=Crude Palladium Residue
+item.crude_palladium_residue.dust=Crude Palladium Residue
+item.crude_palladium_residue.dustSmall=Small Pile of Crude Palladium Residue
+item.crude_palladium_residue.dustTiny=Tiny Pile of Crude Palladium Residue
 
 
 # Third Degree Materials
@@ -56,6 +60,8 @@ material.butyraldehyde=Butyraldehyde
 material.ethylhexanol=2-Ethylhexnaol
 material.diethylhexyl_phosphoric_acid=Di-(2-ethylhexyl)phosphoric Acid
 material.butanol=Butanol
+material.methyl_formate=Methyl Formate
+material.formic_acid=Formic Acid
 
 
 # Unknown Composition Materials

@@ -64,5 +64,13 @@ public class GCYSSecondDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(PlatinumRaw, 1)
                 .build();
+
+        CrudePalladiumResidue = new Material.Builder(6007, "crude_palladium_residue")
+                .dust()
+                .color(0x808080)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(PalladiumRaw, 1)
+                .build()
+                .setFormula("PdCl2", true);
     }
 }

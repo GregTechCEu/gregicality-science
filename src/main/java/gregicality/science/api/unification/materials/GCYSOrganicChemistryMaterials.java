@@ -40,5 +40,21 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 4, Hydrogen, 10, Oxygen, 1)
                 .build()
                 .setFormula("C4H9OH", true);
+
+        MethylFormate = new Material.Builder(15004, "methyl_formate")
+                .fluid()
+                .color(0xFFAAAA)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 4, Carbon, 2, Oxygen, 2)
+                .build()
+                .setFormula("HCO2CH3", true);
+
+        FormicAcid = new Material.Builder(15005, "formic_acid")
+                .fluid()
+                .color(0xFFAA77)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 2, Carbon, 1, Oxygen, 2)
+                .build()
+                .setFormula("HCOOH", true);
     }
 }
