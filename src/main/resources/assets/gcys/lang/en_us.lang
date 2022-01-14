@@ -29,6 +29,13 @@ item.palladium_metallic.dustSmall=Small Pile of Metallic Palladium Powder
 item.palladium_metallic.dustTiny=Tiny Pile of Metallic Palladium Powder
 material.ammonium_hexachloroplatinate=Ammonium Hexachloroplatinate
 material.chloroplatinic_acid=Chloroplatinic Acid
+material.potassium_bisulfate=Potassium Bisulfate
+material.potassium_pyrosulfate=Potassium Pyrosulfate
+material.potassium_sulfate=Potassium Sulfate
+material.zinc_sulfate=Zinc Sulfate
+material.rhodium_salt=Rhodium Salt
+material.sodium_nitrate=Sodium Nitrate
+material.rhodium_nitrate=Rhodium Nitrate
 
 
 # Second Degree Materials
@@ -49,6 +56,16 @@ material.crude_palladium_residue=Crude Palladium Residue
 item.crude_palladium_residue.dust=Crude Palladium Residue
 item.crude_palladium_residue.dustSmall=Small Pile of Crude Palladium Residue
 item.crude_palladium_residue.dustTiny=Tiny Pile of Crude Palladium Residue
+material.iridium_group_sludge=Iridium Group Sludge
+item.iridium_group_sludge.dust=Iridium Group Sludge
+item.iridium_group_sludge.dustSmall=Small Pile of Iridium Group Sludge
+item.iridium_group_sludge.dustTiny=Tiny Pile of Iridium Group Sludge
+material.rhodium_sulfate_solution=Rhodium Sulfate Solution
+material.crude_rhodium_residue=Crude Rhodium Residue
+item.crude_rhodium_residue.dust=Crude Rhodium Residue
+item.crude_rhodium_residue.dustSmall=Small Pile of Crude Rhodium Residue
+item.crude_rhodium_residue.dustTiny=Tiny Pile of Crude Rhodium Residue
+material.rhodium_salt_solution=Rhodium Salt Solution
 
 
 # Third Degree Materials

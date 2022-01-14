@@ -45,7 +45,7 @@ public class GCYSSecondDegreeMaterials {
         PlatinumGroupResidue = new Material.Builder(6004, "platinum_group_residue")
                 .dust()
                 .color(0x64632E)
-                .iconSet(MaterialIconSet.METALLIC)
+                .iconSet(MaterialIconSet.ROUGH)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Iridium, 1, Osmium, 1, Rhodium, 1, Ruthenium, 1, RareEarth, 1)
                 .build();
@@ -72,5 +72,35 @@ public class GCYSSecondDegreeMaterials {
                 .components(PalladiumRaw, 1)
                 .build()
                 .setFormula("PdCl2", true);
+
+        IridiumGroupSludge = new Material.Builder(6008, "iridium_group_sludge")
+                .dust()
+                .color(0x644629)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Iridium, 1, Osmium, 1, Ruthenium, 1)
+                .build();
+
+        RhodiumSulfateSolution = new Material.Builder(6009, "rhodium_sulfate_solution")
+                .fluid()
+                .color(0xFFBB66)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(RhodiumSulfate, 1, Water, 1)
+                .build()
+                .setFormula("RH2(SO4)3(H2O)", true);
+
+        CrudeRhodiumResidue = new Material.Builder(6010, "crude_rhodium_residue")
+                .dust()
+                .color(0x666666)
+                .iconSet(MaterialIconSet.DULL)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Rhodium, 2, Water, 1)
+                .build();
+
+        RhodiumSaltSolution = new Material.Builder(6011, "rhodium_salt_solution")
+                .fluid()
+                .color(0x667788)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(RhodiumSalt, 1, Water, 1)
+                .build();
     }
 }

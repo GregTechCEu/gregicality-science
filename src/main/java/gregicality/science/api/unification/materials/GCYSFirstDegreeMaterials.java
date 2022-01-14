@@ -153,5 +153,58 @@ public class GCYSFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Hydrogen, 2, Platinum, 1, Chlorine, 6)
                 .build();
+
+        PotassiumBisulfate = new Material.Builder(3520, "potassium_bisulfate")
+                .dust()
+                .color(0xFDBD68)
+                .components(Potassium, 1, Hydrogen, 1, Sulfur, 1, Oxygen, 4)
+                .build();
+
+        PotassiumPyrosulfate = new Material.Builder(3521, "potassium_pyrosulfate")
+                .dust()
+                .color(0xFBBB66)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Potassium, 2, Sulfur, 2, Oxygen, 7)
+                .build();
+
+        PotassiumSulfate = new Material.Builder(3522, "potassium_sulfate")
+                .dust()
+                .color(0xF0B064)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Potassium, 2, Sulfur, 1, Oxygen, 4)
+                .build();
+
+        ZincSulfate = new Material.Builder(3523, "zinc_sulfate")
+                .dust()
+                .color(0x846649)
+                .iconSet(MaterialIconSet.FINE)
+                .components(Zinc, 1, Sulfur, 1, Oxygen, 4)
+                .build();
+
+        RhodiumSalt = new Material.Builder(3524, "rhodium_salt")
+                .dust()
+                .color(0x848484)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Sodium, 2, Rhodium, 2, Chlorine, 6)
+                .build()
+                .setFormula("Na2(RhCl3)2", true);
+
+        SodiumNitrate = new Material.Builder(3525, "sodium_nitrate")
+                .dust()
+                .color(0x846684)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Sodium, 1, Nitrogen, 3, Oxygen, 9)
+                .build()
+                .setFormula("Na(NO3)3", true);
+
+        RhodiumNitrate = new Material.Builder(3526, "rhodium_nitrate")
+                .dust()
+                .color(0x776649)
+                .iconSet(MaterialIconSet.FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Sodium, 1, Nitrogen, 3, Oxygen, 9)
+                .build()
+                .setFormula("Na(NO3)3", true);
     }
 }

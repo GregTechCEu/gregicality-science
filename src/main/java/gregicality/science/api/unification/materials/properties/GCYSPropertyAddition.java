@@ -1,6 +1,7 @@
 package gregicality.science.api.unification.materials.properties;
 
 
+import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.DustProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 
@@ -20,5 +21,7 @@ public class GCYSPropertyAddition {
         Erbium.setProperty(PropertyKey.DUST, new DustProperty());
         Thulium.setProperty(PropertyKey.DUST, new DustProperty());
         Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
+        RhodiumSulfate.setProperty(PropertyKey.DUST, new DustProperty());
+        RhodiumSulfate.setMaterialIconSet(MaterialIconSet.ROUGH);
     }
 }

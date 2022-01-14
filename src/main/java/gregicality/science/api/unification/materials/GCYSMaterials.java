@@ -28,6 +28,13 @@ public class GCYSMaterials {
     public static Material PalladiumMetallic;
     public static Material AmmoniumHexachloroplatinate;
     public static Material ChloroplatinicAcid;
+    public static Material PotassiumBisulfate;
+    public static Material PotassiumPyrosulfate;
+    public static Material PotassiumSulfate;
+    public static Material ZincSulfate;
+    public static Material RhodiumSalt;
+    public static Material SodiumNitrate;
+    public static Material RhodiumNitrate;
 
 
     // Second Degree Materials
@@ -37,12 +44,16 @@ public class GCYSMaterials {
     public static Material ErThYtLuOxidesSolution;
     public static Material PlatinumGroupResidue;
     public static Material PalladiumRichAmmonia;
+    public static Material CrudePlatinumResidue;
+    public static Material CrudePalladiumResidue;
+    public static Material IridiumGroupSludge;
+    public static Material RhodiumSulfateSolution;
+    public static Material CrudeRhodiumResidue;
+    public static Material RhodiumSaltSolution;
 
 
     // Third Degree Materials
     public static Material PlatinumPalladiumLeachate;
-    public static Material CrudePlatinumResidue;
-    public static Material CrudePalladiumResidue;
 
 
     // Organic Chemistry Materials

@@ -19,6 +19,7 @@ public class PlatinumGroupProcessing {
         removeGTCERecipes();
         platinumProcess();
         palladiumProcess();
+        rhodiumProcess();
     }
 
     private static void removeGTCERecipes() {
@@ -32,6 +33,9 @@ public class PlatinumGroupProcessing {
         GTRecipeHandler.removeRecipesByInputs(RecipeMaps.LARGE_CHEMICAL_RECIPES,
                 new ItemStack[]{OreDictUnifier.get(dust, PalladiumRaw, 5)},
                 new FluidStack[]{HydrochloricAcid.getFluid(1000)});
+
+        // Remove Rhodium Sulfate -> Rhodium
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.ELECTROLYZER_RECIPES, RhodiumSulfate.getFluid(1000));
 
     }
 
@@ -157,6 +161,110 @@ public class PlatinumGroupProcessing {
                 .input(dust, CrudePalladiumResidue)
                 .chancedOutput(OreDictUnifier.get(dust, PalladiumMetallic), 9500, 0)
                 .duration(600).EUt(VA[LV]).buildAndRegister();
+
+    }
+
+    private static void rhodiumProcess() {
+
+        // KCl + H2SO4 -> KHSO4 + HCl
+        RecipeMaps.CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(dust, RockSalt, 2)
+                .fluidInputs(SulfuricAcid.getFluid(1000))
+                .output(dust, PotassiumBisulfate, 7)
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .duration(60).EUt(VA[LV]).buildAndRegister();
+
+        // KNO3 + H2SO4 -> KHSO4 + HNO3
+        RecipeMaps.CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(dust, Saltpeter, 5)
+                .fluidInputs(SulfuricAcid.getFluid(1000))
+                .output(dust, PotassiumBisulfate, 7)
+                .fluidOutputs(NitricAcid.getFluid(1000))
+                .duration(60).EUt(VA[LV]).buildAndRegister();
+
+        // 2KHSO4 -> K2S2O7 + H2O
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PotassiumBisulfate, 14)
+                .output(dust, PotassiumPyrosulfate, 11)
+                .fluidOutputs(Water.getFluid(1000))
+                .duration(30).EUt(64).buildAndRegister();
+
+        // K2SO4 + SO3 -> K2S2O7
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PotassiumSulfate, 7)
+                .fluidInputs(SulfurTrioxide.getFluid(1000))
+                .output(dust, PotassiumPyrosulfate, 11)
+                .duration(30).EUt(64).buildAndRegister();
+
+        // TODO high efficiency roaster recipe
+        // IrOsRuRh + 2K2S2O7 -> 1/3 Rh2(SO4)3 + 2K2SO4 + IrOsRu
+        RecipeMaps.BLAST_RECIPES.recipeBuilder()
+                .input(dust, PlatinumGroupResidue)
+                .input(dust, PotassiumPyrosulfate, 11)
+                .output(dust, RhodiumSulfate)
+                .output(dust, PotassiumSulfate, 14)
+                .output(dust, IridiumGroupSludge)
+                .blastFurnaceTemp(1048)
+                .duration(200).EUt(VA[MV]).buildAndRegister();
+
+        // 2Rh2(SO4)3 + 2H2O -> 2H2O(Rh2(SO4)3) + IrOsRu
+        RecipeMaps.CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(dust, RhodiumSulfate, 6)
+                .fluidInputs(Water.getFluid(2000))
+                .output(dust, IridiumGroupSludge)
+                .fluidOutputs(RhodiumSulfateSolution.getFluid(2000))
+                .duration(300).EUt(VA[LV]).buildAndRegister();
+
+        // H2O(Rh2(SO4)3) + 3Zn -> Rh2(H2O) + 3ZnSO4
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Zinc, 3)
+                .fluidInputs(RhodiumSulfateSolution.getFluid(1000))
+                .output(dust, ZincSulfate, 18)
+                .output(dust, CrudeRhodiumResidue)
+                .duration(300).EUt(VA[LV]).buildAndRegister();
+
+        // todo equal efficiency roaster recipe
+        // Rh2(H2O) + 2NaCl + 4Cl -> Na2(RhCl3)2 + H2O
+        RecipeMaps.BLAST_RECIPES.recipeBuilder()
+                .input(dust, CrudeRhodiumResidue)
+                .input(dust, Salt, 4)
+                .fluidInputs(Chlorine.getFluid(4000))
+                .output(dust, RhodiumSalt)
+                .fluidOutputs(Steam.getFluid(9600))
+                .blastFurnaceTemp(848)
+                .duration(300).EUt(VA[MV]).buildAndRegister();
+
+        // Na2(RhCl3)2 + H2O -> Na2(RhCl3)2(H2O)
+        RecipeMaps.MIXER_RECIPES.recipeBuilder()
+                .input(dust, RhodiumSalt)
+                .fluidInputs(Water.getFluid(1000))
+                .fluidOutputs(RhodiumSaltSolution.getFluid(1000))
+                .duration(30).EUt(VA[LV]).buildAndRegister();
+
+        // NaOH + HNO3 -> NaNO3 + H2O
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, SodiumHydroxide, 3)
+                .fluidInputs(NitricAcid.getFluid(1000))
+                .output(dust, SodiumNitrate, 5)
+                .fluidOutputs(Water.getFluid(1000))
+                .duration(5).EUt(60).buildAndRegister();
+
+        // 6NaNO3 + Na2(RhCl3)2(H2O) + 5H2O -> 2Rh(NO3)3 + 6NaCl(H2O) + 2Na
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, SodiumNitrate, 30)
+                .fluidInputs(RhodiumSaltSolution.getFluid(1000))
+                .output(dust, RhodiumNitrate, 26)
+                .output(dust, Sodium, 2)
+                .fluidOutputs(SaltWater.getFluid(6000))
+                .duration(300).EUt(VA[LV]).buildAndRegister();
+
+        // Rh(NO3)3 + KNa -> Rh + 3KNO3
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, RhodiumNitrate, 13)
+                .input(dust, Potassium, 3)
+                .output(dust, Rhodium)
+                .output(dust, Saltpeter, 15)
+                .duration(300).EUt(VA[LV]).buildAndRegister();
 
     }
 }
