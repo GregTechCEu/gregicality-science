@@ -1,9 +1,9 @@
 package gregicality.science.api.recipes;
 
 import crafttweaker.annotations.ZenRegister;
-import stanhebben.zenscript.annotations.ZenClass;
+import stanhebben.zenscript.annotations.ZenExpansion;
 
-@ZenClass("mods.gregtech.recipe.RecipeMaps")
+@ZenExpansion("mods.gregtech.recipe.RecipeMaps")
 @ZenRegister
 public class GCYSRecipeMaps {
 

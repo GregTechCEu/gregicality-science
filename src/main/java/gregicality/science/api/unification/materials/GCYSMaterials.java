@@ -32,9 +32,9 @@ public class GCYSMaterials {
     public static Material PotassiumPyrosulfate;
     public static Material PotassiumSulfate;
     public static Material ZincSulfate;
-    public static Material RhodiumSalt;
     public static Material SodiumNitrate;
     public static Material RhodiumNitrate;
+    public static Material SodiumRuthenate;
 
 
     // Second Degree Materials
@@ -49,11 +49,13 @@ public class GCYSMaterials {
     public static Material IridiumGroupSludge;
     public static Material RhodiumSulfateSolution;
     public static Material CrudeRhodiumResidue;
-    public static Material RhodiumSaltSolution;
+    public static Material RhodiumSalt;
+    public static Material SodiumRuthenateChlorineSolution;
 
 
     // Third Degree Materials
     public static Material PlatinumPalladiumLeachate;
+    public static Material RhodiumSaltSolution;
 
 
     // Organic Chemistry Materials

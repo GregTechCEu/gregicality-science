@@ -3,7 +3,6 @@ package gregicality.science.loaders.recipe.chain;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.Materials;
 import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -15,16 +14,26 @@ import static gregtech.api.unification.ore.OrePrefix.dust;
 
 public class PlatinumGroupProcessing {
 
+    /**
+     * Balancing this chain
+     *
+     * This chain is chemically balanced such that the material sludges and mixtures for the target outputs
+     * are not part of the chemical reaction. Therefore, to adjust balance one simply needs to adjust the output
+     * amount of each of the sludges/residues.
+     *
+     * This however excludes the Palladium byproduct produced from Platinum.
+     */
     public static void init() {
         removeGTCERecipes();
         platinumProcess();
         palladiumProcess();
         rhodiumProcess();
+        rutheniumProcess();
     }
 
     private static void removeGTCERecipes() {
         // Remove Raw Platinum -> Platinum
-        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.ELECTROLYZER_RECIPES, OreDictUnifier.get(dust, Materials.PlatinumRaw, 3));
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.ELECTROLYZER_RECIPES, OreDictUnifier.get(dust, PlatinumRaw, 3));
 
         // Remove Raw Palladium -> Palladium
         GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CHEMICAL_RECIPES,
@@ -34,8 +43,20 @@ public class PlatinumGroupProcessing {
                 new ItemStack[]{OreDictUnifier.get(dust, PalladiumRaw, 5)},
                 new FluidStack[]{HydrochloricAcid.getFluid(1000)});
 
+        // Remove Inert Metal Residue -> Ruthenium Tetroxide + Rhodium Sulfate + Hydrogen
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, InertMetalMixture, 6)},
+                new FluidStack[]{SulfuricAcid.getFluid(1500)});
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.LARGE_CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, InertMetalMixture, 6)},
+                new FluidStack[]{SulfuricAcid.getFluid(1500)});
+
         // Remove Rhodium Sulfate -> Rhodium
         GTRecipeHandler.removeRecipesByInputs(RecipeMaps.ELECTROLYZER_RECIPES, RhodiumSulfate.getFluid(1000));
+
+        // Remove Ruthenium Tetroxide -> Ruthenium
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CHEMICAL_RECIPES, OreDictUnifier.get(dust, RutheniumTetroxide, 5), OreDictUnifier.get(dust, Carbon, 2));
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.LARGE_CHEMICAL_RECIPES, OreDictUnifier.get(dust, RutheniumTetroxide, 5), OreDictUnifier.get(dust, Carbon, 2));
 
     }
 
@@ -224,17 +245,17 @@ public class PlatinumGroupProcessing {
                 .duration(300).EUt(VA[LV]).buildAndRegister();
 
         // todo equal efficiency roaster recipe
-        // Rh2(H2O) + 2NaCl + 4Cl -> Na2(RhCl3)2 + H2O
+        // Rh2(H2O) + 2NaCl + 6Cl -> (NaCl)2(RhCl3)2 + H2O
         RecipeMaps.BLAST_RECIPES.recipeBuilder()
                 .input(dust, CrudeRhodiumResidue)
                 .input(dust, Salt, 4)
-                .fluidInputs(Chlorine.getFluid(4000))
+                .fluidInputs(Chlorine.getFluid(6000))
                 .output(dust, RhodiumSalt)
                 .fluidOutputs(Steam.getFluid(9600))
                 .blastFurnaceTemp(848)
                 .duration(300).EUt(VA[MV]).buildAndRegister();
 
-        // Na2(RhCl3)2 + H2O -> Na2(RhCl3)2(H2O)
+        // (NaCl)2(RhCl3)2 + H2O -> (NaCl)2(RhCl3)2(H2O)
         RecipeMaps.MIXER_RECIPES.recipeBuilder()
                 .input(dust, RhodiumSalt)
                 .fluidInputs(Water.getFluid(1000))
@@ -249,16 +270,16 @@ public class PlatinumGroupProcessing {
                 .fluidOutputs(Water.getFluid(1000))
                 .duration(5).EUt(60).buildAndRegister();
 
-        // 6NaNO3 + Na2(RhCl3)2(H2O) + 5H2O -> 2Rh(NO3)3 + 6NaCl(H2O) + 2Na
+        // 6NaNO3 + (NaCl)2(RhCl3)2(H2O) -> 2Rh(NO3)3 + 8NaCl + H2O
         RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, SodiumNitrate, 30)
                 .fluidInputs(RhodiumSaltSolution.getFluid(1000))
                 .output(dust, RhodiumNitrate, 26)
-                .output(dust, Sodium, 2)
-                .fluidOutputs(SaltWater.getFluid(6000))
+                .output(dust, Salt, 16)
+                .fluidOutputs(Water.getFluid(1000))
                 .duration(300).EUt(VA[LV]).buildAndRegister();
 
-        // Rh(NO3)3 + KNa -> Rh + 3KNO3
+        // Rh(NO3)3 + 3K -> Rh + 3KNO3
         RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, RhodiumNitrate, 13)
                 .input(dust, Potassium, 3)
@@ -266,5 +287,42 @@ public class PlatinumGroupProcessing {
                 .output(dust, Saltpeter, 15)
                 .duration(300).EUt(VA[LV]).buildAndRegister();
 
+    }
+
+    public static void rutheniumProcess() {
+
+        // todo high efficiency roaster recipe
+        // IrOsRu + 1/7 Na2CO3 -> 1/7 Na2RuO4 + 1/7 C + IrOs
+        RecipeMaps.BLAST_RECIPES.recipeBuilder()
+                .input(dust, IridiumGroupSludge)
+                .input(dust, SodaAsh)
+                .output(dust, SodiumRuthenate)
+                .output(dust, Ash)
+                .output(dust, RarestMetalMixture)
+                .blastFurnaceTemp(1023)
+                .duration(200).EUt(VA[MV]).buildAndRegister();
+
+        // Na2RuO4 + 2Cl -> Na2RuO4(H2O)Cl2
+        RecipeMaps.MIXER_RECIPES.recipeBuilder()
+                .input(dust, SodiumRuthenate, 6)
+                .fluidInputs(Chlorine.getFluid(2000))
+                .fluidInputs(Water.getFluid(2000))
+                .fluidOutputs(SodiumRuthenateChlorineSolution.getFluid(4000))
+                .duration(300).EUt(VA[LV]).buildAndRegister();
+
+        // Na2RuO4(Cl2) -> 2NaCl(H2O) + RuO4
+        RecipeMaps.DISTILLATION_RECIPES.recipeBuilder()
+                .fluidInputs(SodiumRuthenateChlorineSolution.getFluid(4000))
+                .output(dust, RutheniumTetroxide, 5)
+                .fluidOutputs(SaltWater.getFluid(2000))
+                .duration(1500).EUt(VA[HV]).buildAndRegister();
+
+        // 2C + RuO4 -> Ru + 2CO2
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, RutheniumTetroxide, 5)
+                .input(dust, Carbon, 2)
+                .output(dust, Ruthenium)
+                .fluidOutputs(CarbonDioxide.getFluid(2000))
+                .duration(300).EUt(VA[LV]).buildAndRegister();
     }
 }

@@ -8,5 +8,6 @@ public class GCYSMaterialFlagAddition {
 
         // Formula Changes
         PalladiumRaw.setFormula("PdCl2", true);
+        RarestMetalMixture.setFormula("IrOs?", true);
     }
 }

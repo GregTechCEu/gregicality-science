@@ -77,7 +77,7 @@ public class GCYSSecondDegreeMaterials {
                 .dust()
                 .color(0x644629)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Iridium, 1, Osmium, 1, Ruthenium, 1)
+                .components(Iridium, 1, Osmium, 1, Ruthenium, 1, RareEarth, 1)
                 .build();
 
         RhodiumSulfateSolution = new Material.Builder(6009, "rhodium_sulfate_solution")
@@ -96,11 +96,20 @@ public class GCYSSecondDegreeMaterials {
                 .components(Rhodium, 2, Water, 1)
                 .build();
 
-        RhodiumSaltSolution = new Material.Builder(6011, "rhodium_salt_solution")
-                .fluid()
-                .color(0x667788)
+        RhodiumSalt = new Material.Builder(6011, "rhodium_salt")
+                .dust()
+                .color(0x848484)
+                .iconSet(MaterialIconSet.SHINY)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(RhodiumSalt, 1, Water, 1)
+                .components(Salt, 2, Rhodium, 2, Chlorine, 6)
+                .build()
+                .setFormula("(NaCl)2(RhCl3)2", true);
+
+        SodiumRuthenateChlorineSolution = new Material.Builder(6012, "sodium_ruthenate_chlorine_solution")
+                .fluid()
+                .color(0xC7C7C7)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(SodiumRuthenate, 1, Water, 2, Chlorine, 2)
                 .build();
     }
 }

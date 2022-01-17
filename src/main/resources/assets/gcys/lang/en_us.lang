@@ -33,9 +33,9 @@ material.potassium_bisulfate=Potassium Bisulfate
 material.potassium_pyrosulfate=Potassium Pyrosulfate
 material.potassium_sulfate=Potassium Sulfate
 material.zinc_sulfate=Zinc Sulfate
-material.rhodium_salt=Rhodium Salt
 material.sodium_nitrate=Sodium Nitrate
 material.rhodium_nitrate=Rhodium Nitrate
+material.sodium_ruthenate=Sodium Ruthenate
 
 
 # Second Degree Materials
@@ -65,11 +65,13 @@ material.crude_rhodium_residue=Crude Rhodium Residue
 item.crude_rhodium_residue.dust=Crude Rhodium Residue
 item.crude_rhodium_residue.dustSmall=Small Pile of Crude Rhodium Residue
 item.crude_rhodium_residue.dustTiny=Tiny Pile of Crude Rhodium Residue
-material.rhodium_salt_solution=Rhodium Salt Solution
+material.rhodium_salt=Rhodium Salt
+material.sodium_ruthenate_chlorine_solution=Sodium Ruthenate Chlorine Solution
 
 
 # Third Degree Materials
 material.platinum_palladium_leachate=Platinum-Palladium Leachate
+material.rhodium_salt_solution=Rhodium Salt Solution
 
 
 # Organic Chemistry Materials

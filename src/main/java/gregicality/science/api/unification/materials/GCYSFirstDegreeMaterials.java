@@ -181,16 +181,7 @@ public class GCYSFirstDegreeMaterials {
                 .components(Zinc, 1, Sulfur, 1, Oxygen, 4)
                 .build();
 
-        RhodiumSalt = new Material.Builder(3524, "rhodium_salt")
-                .dust()
-                .color(0x848484)
-                .iconSet(MaterialIconSet.SHINY)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Sodium, 2, Rhodium, 2, Chlorine, 6)
-                .build()
-                .setFormula("Na2(RhCl3)2", true);
-
-        SodiumNitrate = new Material.Builder(3525, "sodium_nitrate")
+        SodiumNitrate = new Material.Builder(3524, "sodium_nitrate")
                 .dust()
                 .color(0x846684)
                 .iconSet(MaterialIconSet.ROUGH)
@@ -198,7 +189,7 @@ public class GCYSFirstDegreeMaterials {
                 .build()
                 .setFormula("Na(NO3)3", true);
 
-        RhodiumNitrate = new Material.Builder(3526, "rhodium_nitrate")
+        RhodiumNitrate = new Material.Builder(3525, "rhodium_nitrate")
                 .dust()
                 .color(0x776649)
                 .iconSet(MaterialIconSet.FINE)
@@ -206,5 +197,13 @@ public class GCYSFirstDegreeMaterials {
                 .components(Sodium, 1, Nitrogen, 3, Oxygen, 9)
                 .build()
                 .setFormula("Na(NO3)3", true);
+
+        SodiumRuthenate = new Material.Builder(3526, "sodium_ruthenate")
+                .dust()
+                .color(0x3A40CB)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Sodium, 2, Ruthenium, 1, Oxygen, 4)
+                .build();
     }
 }
