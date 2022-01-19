@@ -1,5 +1,8 @@
 package gregicality.science.api.unification.materials;
 
+import gregicality.science.common.GCYSConfigHolder;
+import gregtech.api.unification.material.info.MaterialFlags;
+
 import static gregtech.api.unification.material.Materials.*;
 
 public class GCYSMaterialFlagAddition {
@@ -9,5 +12,13 @@ public class GCYSMaterialFlagAddition {
         // Formula Changes
         PalladiumRaw.setFormula("PdCl2", true);
         RarestMetalMixture.setFormula("IrOs?", true);
+        AcidicOsmiumSolution.setFormula("OsO4(HCl)", true);
+        IridiumMetalResidue.setFormula("Ir?", true);
+
+        // Disable Decomposition
+        if (GCYSConfigHolder.chainOverrides.disablePlatinumProcessing) {
+            SulfuricCopperSolution.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
+            SulfuricNickelSolution.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
+        }
     }
 }

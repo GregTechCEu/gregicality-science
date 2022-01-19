@@ -55,8 +55,7 @@ public class GCYSSecondDegreeMaterials {
                 .color(0x808080)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Ammonia, 2, Palladium, 1, Chlorine, 2)
-                .build()
-                .setFormula("(NH3)2PtCl6", true);
+                .build();
 
         CrudePlatinumResidue = new Material.Builder(6006, "crude_platinum_residue")
                 .dust()
@@ -105,11 +104,18 @@ public class GCYSSecondDegreeMaterials {
                 .build()
                 .setFormula("(NaCl)2(RhCl3)2", true);
 
-        SodiumRuthenateChlorineSolution = new Material.Builder(6012, "sodium_ruthenate_chlorine_solution")
+        AcidicSodiumRuthenateSolution = new Material.Builder(6012, "acidic_sodium_ruthenate_solution")
                 .fluid()
                 .color(0xC7C7C7)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(SodiumRuthenate, 1, Water, 2, Chlorine, 2)
+                .build();
+
+        AcidicIridiumDioxideSolution = new Material.Builder(6013, "acidic_iridium_dioxide_solution")
+                .fluid()
+                .color(0x27284E)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(IridiumDioxideResidue, 1, HydrochloricAcid, 4)
                 .build();
     }
 }

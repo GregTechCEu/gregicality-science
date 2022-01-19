@@ -35,6 +35,9 @@ public class GCYSMaterials {
     public static Material SodiumNitrate;
     public static Material RhodiumNitrate;
     public static Material SodiumRuthenate;
+    public static Material SodiumPeroxide;
+    public static Material IridiumDioxideResidue;
+    public static Material AmmoniumHexachloroIridiate;
 
 
     // Second Degree Materials
@@ -50,7 +53,8 @@ public class GCYSMaterials {
     public static Material RhodiumSulfateSolution;
     public static Material CrudeRhodiumResidue;
     public static Material RhodiumSalt;
-    public static Material SodiumRuthenateChlorineSolution;
+    public static Material AcidicSodiumRuthenateSolution;
+    public static Material AcidicIridiumDioxideSolution;
 
 
     // Third Degree Materials

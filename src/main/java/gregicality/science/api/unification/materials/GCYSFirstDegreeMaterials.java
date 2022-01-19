@@ -194,9 +194,9 @@ public class GCYSFirstDegreeMaterials {
                 .color(0x776649)
                 .iconSet(MaterialIconSet.FINE)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Sodium, 1, Nitrogen, 3, Oxygen, 9)
+                .components(Rhodium, 1, Nitrogen, 3, Oxygen, 9)
                 .build()
-                .setFormula("Na(NO3)3", true);
+                .setFormula("Rh(NO3)3", true);
 
         SodiumRuthenate = new Material.Builder(3526, "sodium_ruthenate")
                 .dust()
@@ -205,5 +205,29 @@ public class GCYSFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Sodium, 2, Ruthenium, 1, Oxygen, 4)
                 .build();
+
+        SodiumPeroxide = new Material.Builder(3527, "sodium_peroxide")
+                .dust()
+                .color(0xECFF80)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Sodium, 2, Oxygen, 2)
+                .build();
+
+        IridiumDioxideResidue = new Material.Builder(3528, "iridium_dioxide_residue")
+                .dust()
+                .color(0x17182E)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Iridium, 1, Oxygen, 2, RareEarth, 1)
+                .build();
+
+        AmmoniumHexachloroIridiate = new Material.Builder(3529, "ammonium_hexachloroiridiate")
+                .dust()
+                .color(0x644629)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 2, Hydrogen, 8, Iridium, 1, Chlorine, 6)
+                .build()
+                .setFormula("(NH4)2IrCl6", true);
     }
 }

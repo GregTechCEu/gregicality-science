@@ -36,6 +36,9 @@ material.zinc_sulfate=Zinc Sulfate
 material.sodium_nitrate=Sodium Nitrate
 material.rhodium_nitrate=Rhodium Nitrate
 material.sodium_ruthenate=Sodium Ruthenate
+material.sodium_peroxide=Sodium Peroxide
+material.iridium_dioxide_residue=Iridium Dioxide Residue
+material.ammonium_hexachloroiridiate=Ammonium Hexachloroiridiate
 
 
 # Second Degree Materials
@@ -66,7 +69,8 @@ item.crude_rhodium_residue.dust=Crude Rhodium Residue
 item.crude_rhodium_residue.dustSmall=Small Pile of Crude Rhodium Residue
 item.crude_rhodium_residue.dustTiny=Tiny Pile of Crude Rhodium Residue
 material.rhodium_salt=Rhodium Salt
-material.sodium_ruthenate_chlorine_solution=Sodium Ruthenate Chlorine Solution
+material.acidic_sodium_ruthenate_solution=Acidic Sodium Ruthenate Solution
+material.acidic_iridium_dioxide_solution=Acidic Iridium Dioxide Solution
 
 
 # Third Degree Materials
@@ -76,7 +80,7 @@ material.rhodium_salt_solution=Rhodium Salt Solution
 
 # Organic Chemistry Materials
 material.butyraldehyde=Butyraldehyde
-material.ethylhexanol=2-Ethylhexnaol
+material.ethylhexanol=2-Ethylhexanol
 material.diethylhexyl_phosphoric_acid=Di-(2-ethylhexyl)phosphoric Acid
 material.butanol=Butanol
 material.methyl_formate=Methyl Formate

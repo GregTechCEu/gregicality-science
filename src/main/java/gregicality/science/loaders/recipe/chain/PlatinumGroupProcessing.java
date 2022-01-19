@@ -1,7 +1,9 @@
 package gregicality.science.loaders.recipe.chain;
 
+import gregicality.science.common.GCYSConfigHolder;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
@@ -16,22 +18,32 @@ public class PlatinumGroupProcessing {
 
     /**
      * Balancing this chain
-     *
+     * <p>
      * This chain is chemically balanced such that the material sludges and mixtures for the target outputs
      * are not part of the chemical reaction. Therefore, to adjust balance one simply needs to adjust the output
      * amount of each of the sludges/residues.
-     *
-     * This however excludes the Palladium byproduct produced from Platinum.
+     * <p>
+     * This however excludes the Palladium byproduct produced from Platinum and Iridium byproduct from Osmium.
      */
     public static void init() {
-        removeGTCERecipes();
         platinumProcess();
         palladiumProcess();
         rhodiumProcess();
         rutheniumProcess();
+        osmiumProcess();
+        iridiumProcess();
+        wasteSolutions();
+
+        if (GCYSConfigHolder.chainOverrides.disablePlatinumProcessing)
+            removeGTCERecipes();
     }
 
     private static void removeGTCERecipes() {
+        // Remove Platinum Group Sludge -> Everything
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.ELECTROLYZER_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, PlatinumGroupSludge, 6)},
+                new FluidStack[]{AquaRegia.getFluid(1200)});
+
         // Remove Raw Platinum -> Platinum
         GTRecipeHandler.removeRecipesByInputs(RecipeMaps.ELECTROLYZER_RECIPES, OreDictUnifier.get(dust, PlatinumRaw, 3));
 
@@ -58,6 +70,38 @@ public class PlatinumGroupProcessing {
         GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CHEMICAL_RECIPES, OreDictUnifier.get(dust, RutheniumTetroxide, 5), OreDictUnifier.get(dust, Carbon, 2));
         GTRecipeHandler.removeRecipesByInputs(RecipeMaps.LARGE_CHEMICAL_RECIPES, OreDictUnifier.get(dust, RutheniumTetroxide, 5), OreDictUnifier.get(dust, Carbon, 2));
 
+        // Remove Acidic Osmium Solution -> Osmium Tetroxide
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.DISTILLATION_RECIPES, AcidicOsmiumSolution.getFluid(2000));
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.DISTILLERY_RECIPES,
+                new ItemStack[]{IntCircuitIngredient.getIntegratedCircuit(1)},
+                new FluidStack[]{AcidicOsmiumSolution.getFluid(400)});
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.DISTILLERY_RECIPES,
+                new ItemStack[]{IntCircuitIngredient.getIntegratedCircuit(2)},
+                new FluidStack[]{AcidicOsmiumSolution.getFluid(400)});
+
+        // Remove Osmium Tetroxide -> Osmium
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, OsmiumTetroxide, 5)},
+                new FluidStack[]{Hydrogen.getFluid(8000)});
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.LARGE_CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, OsmiumTetroxide, 5)},
+                new FluidStack[]{Hydrogen.getFluid(8000)});
+
+        // Remove Rarest Metal Mixture -> Iridium Residue and Osmium Solution
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.LARGE_CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, RarestMetalMixture, 7)},
+                new FluidStack[]{HydrochloricAcid.getFluid(4000)});
+
+        // Remove Iridium Metal Residue -> Iridium Chloride
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, OreDictUnifier.get(dust, IridiumMetalResidue, 5));
+
+        // Remove Iridium Chloride -> Iridium
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, IridiumChloride, 4)},
+                new FluidStack[]{Hydrogen.getFluid(3000)});
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.LARGE_CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, IridiumChloride, 4)},
+                new FluidStack[]{Hydrogen.getFluid(3000)});
     }
 
     private static void platinumProcess() {
@@ -289,7 +333,7 @@ public class PlatinumGroupProcessing {
 
     }
 
-    public static void rutheniumProcess() {
+    private static void rutheniumProcess() {
 
         // todo high efficiency roaster recipe
         // IrOsRu + 1/7 Na2CO3 -> 1/7 Na2RuO4 + 1/7 C + IrOs
@@ -307,22 +351,114 @@ public class PlatinumGroupProcessing {
                 .input(dust, SodiumRuthenate, 6)
                 .fluidInputs(Chlorine.getFluid(2000))
                 .fluidInputs(Water.getFluid(2000))
-                .fluidOutputs(SodiumRuthenateChlorineSolution.getFluid(4000))
+                .fluidOutputs(AcidicSodiumRuthenateSolution.getFluid(4000))
                 .duration(300).EUt(VA[LV]).buildAndRegister();
 
         // Na2RuO4(Cl2) -> 2NaCl(H2O) + RuO4
         RecipeMaps.DISTILLATION_RECIPES.recipeBuilder()
-                .fluidInputs(SodiumRuthenateChlorineSolution.getFluid(4000))
+                .fluidInputs(AcidicSodiumRuthenateSolution.getFluid(4000))
                 .output(dust, RutheniumTetroxide, 5)
                 .fluidOutputs(SaltWater.getFluid(2000))
                 .duration(1500).EUt(VA[HV]).buildAndRegister();
 
-        // 2C + RuO4 -> Ru + 2CO2
+        // 8H + RuO4 -> Ru + 4H2O
         RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, RutheniumTetroxide, 5)
-                .input(dust, Carbon, 2)
+                .fluidInputs(Hydrogen.getFluid(8000))
                 .output(dust, Ruthenium)
-                .fluidOutputs(CarbonDioxide.getFluid(2000))
+                .fluidOutputs(Water.getFluid(4000))
                 .duration(300).EUt(VA[LV]).buildAndRegister();
+    }
+
+    private static void osmiumProcess() {
+        // IrOs + HCl -> OsO4(H2O)(HCl) + Ir?
+        RecipeMaps.CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(dust, RarestMetalMixture)
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .output(dust, IridiumMetalResidue)
+                .fluidOutputs(AcidicOsmiumSolution.getFluid(1000))
+                .duration(100).EUt(VA[LV]).buildAndRegister();
+
+        // OsO4(H2O)(HCl) -> OsO4 + HCl
+        RecipeMaps.DISTILLATION_RECIPES.recipeBuilder()
+                .fluidInputs(AcidicOsmiumSolution.getFluid(1000))
+                .output(dust, OsmiumTetroxide, 5)
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .disableDistilleryRecipes()
+                .duration(150).EUt(VA[IV]).buildAndRegister();
+
+        // IV Tier Distillery Recipe
+        RecipeMaps.DISTILLERY_RECIPES.recipeBuilder()
+                .fluidInputs(AcidicOsmiumSolution.getFluid(200))
+                .notConsumable(new IntCircuitIngredient(1))
+                .output(dust, OsmiumTetroxide)
+                .fluidOutputs(HydrochloricAcid.getFluid(200))
+                .duration(30).EUt(VA[IV]).buildAndRegister();
+
+        // OsO4 + 8H -> Os + 4H2O
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, OsmiumTetroxide, 5)
+                .fluidInputs(Hydrogen.getFluid(8000))
+                .output(dust, Osmium)
+                .fluidOutputs(Water.getFluid(4000))
+                .duration(300).EUt(VA[LV]).buildAndRegister();
+    }
+
+    private static void iridiumProcess() {
+
+        // 2Na + 2O -> Na2O2
+        RecipeMaps.AUTOCLAVE_RECIPES.recipeBuilder()
+                .input(dust, Sodium, 2)
+                .fluidInputs(Oxygen.getFluid(2000))
+                .output(dust, SodiumPeroxide, 4)
+                .duration(100).EUt(VA[LV]).buildAndRegister();
+
+        // Na2O2 + Ir? -> 2Na + IrO2
+        RecipeMaps.BLAST_RECIPES.recipeBuilder()
+                .input(dust, SodiumPeroxide, 4)
+                .input(dust, IridiumMetalResidue)
+                .output(dust, IridiumDioxideResidue, 3)
+                .output(dust, Sodium, 2)
+                .blastFurnaceTemp(1048)
+                .duration(200).EUt(VA[MV]).buildAndRegister();
+
+        // IrO2 + 4HCl -> IrO2(HCl)4
+        RecipeMaps.MIXER_RECIPES.recipeBuilder()
+                .input(dust, IridiumDioxideResidue, 3)
+                .fluidInputs(HydrochloricAcid.getFluid(4000))
+                .fluidOutputs(AcidicIridiumDioxideSolution.getFluid(4000))
+                .duration(300).EUt(VA[LV]).buildAndRegister();
+
+        // 2NH4Cl + IrO2(HCl)4 -> (NH4)2IrCl6 + 2H2O
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, AmmoniumChloride, 4)
+                .fluidInputs(AcidicIridiumDioxideSolution.getFluid(4000))
+                .output(dust, AmmoniumHexachloroIridiate, 9)
+                .output(dust, PlatinumSludgeResidue)
+                .fluidOutputs(Water.getFluid(2000))
+                .duration(300).EUt(VA[LV]).buildAndRegister();
+
+        // (NH4)2IrCl6 + 4H -> Ir + 6HCl + 2NH3
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, AmmoniumHexachloroIridiate, 9)
+                .fluidInputs(Hydrogen.getFluid(4000))
+                .output(dust, Iridium)
+                .fluidOutputs(HydrochloricAcid.getFluid(6000))
+                .fluidOutputs(Ammonia.getFluid(2000))
+                .duration(150).EUt(VA[IV]).buildAndRegister();
+    }
+
+    private static void wasteSolutions() {
+        RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(SulfuricNickelSolution.getFluid(1000))
+                .output(dust, Garnierite)
+                .fluidOutputs(SulfuricAcid.getFluid(1000))
+                .duration(82).EUt(60).buildAndRegister();
+
+        RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(SulfuricCopperSolution.getFluid(1000))
+                .output(dust, CupricOxide)
+                .fluidOutputs(SulfuricAcid.getFluid(1000))
+                .duration(82).EUt(60).buildAndRegister();
     }
 }

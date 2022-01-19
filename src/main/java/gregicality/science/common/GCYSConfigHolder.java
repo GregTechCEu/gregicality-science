@@ -14,5 +14,8 @@ public class GCYSConfigHolder {
 
         @Config.Comment({"Disables centrifuging of Rare Earth, requiring Gregicality's process.", "Default: true"})
         public boolean disableRareEarthCentrifuging = true;
+
+        @Config.Comment({"Disables electrolyzing of Platinum Group Sludge, requiring Gregicality's process.", "Default: true"})
+        public boolean disablePlatinumProcessing = true;
     }
 }
