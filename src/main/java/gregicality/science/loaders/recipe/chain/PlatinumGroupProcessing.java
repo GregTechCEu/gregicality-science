@@ -40,7 +40,7 @@ public class PlatinumGroupProcessing {
 
     private static void removeGTCERecipes() {
         // Remove Platinum Group Sludge -> Everything
-        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.ELECTROLYZER_RECIPES,
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES,
                 new ItemStack[]{OreDictUnifier.get(dust, PlatinumGroupSludge, 6)},
                 new FluidStack[]{AquaRegia.getFluid(1200)});
 
