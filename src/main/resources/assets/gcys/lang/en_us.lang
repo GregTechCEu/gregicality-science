@@ -90,3 +90,17 @@ material.formic_acid=Formic Acid
 # Unknown Composition Materials
 material.rare_earth_hydroxides_solution=Rare Earth Hydroxides Solution
 material.rare_earth_chlorides_solution=Rare Earth Chlorides Solution
+
+# Machines
+gcys.machine.steam_ejector.name=Steam Ejector
+gcys.steam_ejector.tooltip=Creates a Low Vacuum with 41L of Steam per second
+
+
+# Vacuums
+gcys.vacuum_level.none=No Vacuum
+gcys.vacuum_level.low=Low Vacuum
+gcys.vacuum_level.medium=Medium Vacuum
+gcys.vacuum_level.high=High Vacuum
+gcys.vacuum_level.ultra_high=Ultra High Vacuum
+gcys.vacuum_level.extremely_high=Extremely High Vacuum
+gcys.vacuum_level.perfect=Perfect Vacuum
