@@ -38,6 +38,7 @@ public class GCYSMaterials {
     public static Material SodiumPeroxide;
     public static Material IridiumDioxideResidue;
     public static Material AmmoniumHexachloroIridiate;
+    public static Material TungstenTrioxide;
 
 
     // Second Degree Materials

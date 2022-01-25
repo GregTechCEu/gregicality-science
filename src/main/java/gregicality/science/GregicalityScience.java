@@ -9,6 +9,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+import javax.annotation.Nonnull;
+
 @Mod(   modid        = GregicalityScience.MODID,
         name         = GregicalityScience.NAME,
         version      = GregicalityScience.VERSION,
@@ -23,7 +25,7 @@ public class GregicalityScience {
     public static CommonProxy proxy;
 
     @Mod.EventHandler
-    public void onPreInit(FMLPreInitializationEvent event) {
+    public void onPreInit(@Nonnull FMLPreInitializationEvent event) {
         GCYSLog.init(event.getModLog());
 
         GCYSMetaBlocks.init();

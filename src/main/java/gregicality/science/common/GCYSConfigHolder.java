@@ -13,9 +13,12 @@ public class GCYSConfigHolder {
     public static class ChainOverrides {
 
         @Config.Comment({"Disables centrifuging of Rare Earth, requiring Gregicality's process.", "Default: true"})
-        public boolean disableRareEarthCentrifuging = true;
+        public boolean disableRareEarthProcessing = true;
 
         @Config.Comment({"Disables electrolyzing of Platinum Group Sludge, requiring Gregicality's process.", "Default: true"})
         public boolean disablePlatinumProcessing = true;
+
+        @Config.Comment({"Disables electrolyzing of Tungstic Acid, requiring Gregicality's process.", "Default: true"})
+        public boolean disableTungstenProcessing = true;
     }
 }

@@ -19,7 +19,7 @@ public class RareEarthProcessing {
 
     public static void init() {
         // Remove Rare Earth Centrifuging
-        if (GCYSConfigHolder.chainOverrides.disableRareEarthCentrifuging) {
+        if (GCYSConfigHolder.chainOverrides.disableRareEarthProcessing) {
             GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, OreDictUnifier.get(OrePrefix.dust, Materials.RareEarth));
         }
 

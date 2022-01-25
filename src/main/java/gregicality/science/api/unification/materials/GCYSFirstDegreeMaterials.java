@@ -229,5 +229,13 @@ public class GCYSFirstDegreeMaterials {
                 .components(Nitrogen, 2, Hydrogen, 8, Iridium, 1, Chlorine, 6)
                 .build()
                 .setFormula("(NH4)2IrCl6", true);
+
+        TungstenTrioxide = new Material.Builder(3530, "tungsten_trioxide")
+                .dust()
+                .color(0xC7D300)
+                .iconSet(MaterialIconSet.DULL)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Tungsten, 1, Oxygen, 3)
+                .build();
     }
 }
