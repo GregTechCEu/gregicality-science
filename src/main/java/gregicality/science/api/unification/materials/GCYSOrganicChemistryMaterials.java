@@ -56,5 +56,29 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Hydrogen, 2, Carbon, 1, Oxygen, 2)
                 .build()
                 .setFormula("HCOOH", true);
+
+        PhthalicAnhydride = new Material.Builder(15006, "phthalic_anhydride")
+                .dust()
+                .color(0xEEAAEE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 8, Hydrogen, 4, Oxygen, 3)
+                .build()
+                .setFormula("C6H4(CO)2O", true);
+
+        Ethylanthraquinone = new Material.Builder(15007, "ethylanthraquinone")
+                .fluid()
+                .color(0xCC865A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 16, Hydrogen, 12, Oxygen, 2)
+                .build()
+                .setFormula("C6H4(CO)2C6H3Et", true);
+
+        Ethylanthrahydroquinone = new Material.Builder(15008, "ethylanthrahydroquinone")
+                .fluid()
+                .color(0xAD531A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 16, Hydrogen, 18, Oxygen, 2)
+                .build()
+                .setFormula("C6H4(CH2OH)2C6H3Et", true);
     }
 }

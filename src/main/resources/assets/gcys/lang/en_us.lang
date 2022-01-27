@@ -40,6 +40,9 @@ material.sodium_peroxide=Sodium Peroxide
 material.iridium_dioxide_residue=Iridium Dioxide Residue
 material.ammonium_hexachloroiridiate=Ammonium Hexachloroiridiate
 material.tungsten_trioxide=Tungsten Trioxide
+material.hydrogen_peroxide=Hydrogen Peroxide
+material.hydrazine=Hydrazine
+material.beryllium_oxide=Beryllium Oxide
 
 
 # Second Degree Materials
@@ -72,6 +75,7 @@ item.crude_rhodium_residue.dustTiny=Tiny Pile of Crude Rhodium Residue
 material.rhodium_salt=Rhodium Salt
 material.acidic_sodium_ruthenate_solution=Acidic Sodium Ruthenate Solution
 material.acidic_iridium_dioxide_solution=Acidic Iridium Dioxide Solution
+material.graphene_oxide=Graphene Oxide
 
 
 # Third Degree Materials
@@ -86,6 +90,9 @@ material.diethylhexyl_phosphoric_acid=Di-(2-ethylhexyl)phosphoric Acid
 material.butanol=Butanol
 material.methyl_formate=Methyl Formate
 material.formic_acid=Formic Acid
+material.phthalic_anhydride=Phthalic Anhydride
+material.ethylanthraquinone=2-Ethylanthraquinone
+material.ethylanthrahydroquinone=2-Ethylanthrahydroquinone
 
 
 # Unknown Composition Materials
@@ -97,6 +104,25 @@ gcys.machine.steam_ejector.name=Steam Ejector
 gcys.steam_ejector.tooltip=Creates a Low Vacuum with 41L of Steam per second
 
 
+# Dryer
+gcys.machine.dryer.tooltip=Vaporizing liquids
+
+gcys.machine.dryer.lv.name=Basic Dryer
+gcys.machine.dryer.mv.name=Advanced Dryer
+gcys.machine.dryer.hv.name=Advanced Dryer II
+gcys.machine.dryer.ev.name=Advanced Dryer III
+gcys.machine.dryer.iv.name=Elite Dryer
+gcys.machine.dryer.luv.name=Elite Dryer II
+gcys.machine.dryer.zpm.name=Elite Dryer III
+gcys.machine.dryer.uv.name=Ultimate Dryer
+gcys.machine.dryer.uhv.name=Epic Dryer
+gcys.machine.dryer.uev.name=Epic Dryer II
+gcys.machine.dryer.uiv.name=Epic Dryer III
+gcys.machine.dryer.umv.name=Epic Dryer IV
+gcys.machine.dryer.uxv.name=Legendary Dryer
+gcys.machine.dryer.max.name=Maximum Dryer
+
+
 # Vacuums
 gcys.vacuum_level.none=No Vacuum
 gcys.vacuum_level.low=Low Vacuum
@@ -105,3 +131,6 @@ gcys.vacuum_level.high=High Vacuum
 gcys.vacuum_level.ultra_high=Ultra High Vacuum
 gcys.vacuum_level.extremely_high=Extremely High Vacuum
 gcys.vacuum_level.perfect=Perfect Vacuum
+
+# metaitems
+metaitem.magnetron.name=Magnetron

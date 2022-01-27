@@ -5,7 +5,7 @@ import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 public class GCYSFirstDegreeMaterials {
 
@@ -236,6 +236,27 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.DULL)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Tungsten, 1, Oxygen, 3)
+                .build();
+
+        HydrogenPeroxide = new Material.Builder(3531, "hydrogen_peroxide")
+                .fluid()
+                .color(0xD2FFFF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 2, Oxygen, 2)
+                .build();
+
+        Hydrazine = new Material.Builder(3532, "hydrazine")
+                .fluid()
+                .color(0xB50707)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 2, Hydrogen, 4)
+                .build();
+
+        BerylliumOxide = new Material.Builder(3533, "beryllium_oxide")
+                .ingot()
+                .color(0x54C757)
+                .flags(GENERATE_ROD, GENERATE_RING)
+                .components(Beryllium, 1, Oxygen, 1)
                 .build();
     }
 }

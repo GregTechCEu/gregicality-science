@@ -117,5 +117,13 @@ public class GCYSSecondDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(IridiumDioxideResidue, 1, HydrochloricAcid, 4)
                 .build();
+
+        GrapheneOxide = new Material.Builder(6014, "graphene_oxide")
+                .dust()
+                .color(0x777777)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Graphene, 1, Oxygen ,1)
+                .build();
     }
 }

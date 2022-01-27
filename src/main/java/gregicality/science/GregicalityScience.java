@@ -3,6 +3,7 @@ package gregicality.science;
 import gregicality.science.api.utils.GCYSLog;
 import gregicality.science.common.CommonProxy;
 import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.common.items.GCYSMetaItems;
 import gregicality.science.common.metatileentities.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
 import net.minecraftforge.fml.common.Mod;
@@ -29,6 +30,7 @@ public class GregicalityScience {
         GCYSLog.init(event.getModLog());
 
         GCYSMetaBlocks.init();
+        GCYSMetaItems.init();
         GCYSMetaTileEntities.init();
 
         proxy.preLoad();

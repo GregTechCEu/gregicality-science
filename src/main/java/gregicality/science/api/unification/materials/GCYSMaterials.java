@@ -39,6 +39,9 @@ public class GCYSMaterials {
     public static Material IridiumDioxideResidue;
     public static Material AmmoniumHexachloroIridiate;
     public static Material TungstenTrioxide;
+    public static Material Hydrazine;
+    public static Material HydrogenPeroxide;
+    public static Material BerylliumOxide;
 
 
     // Second Degree Materials
@@ -56,6 +59,7 @@ public class GCYSMaterials {
     public static Material RhodiumSalt;
     public static Material AcidicSodiumRuthenateSolution;
     public static Material AcidicIridiumDioxideSolution;
+    public static Material GrapheneOxide;
 
 
     // Third Degree Materials
@@ -70,6 +74,9 @@ public class GCYSMaterials {
     public static Material Butanol;
     public static Material MethylFormate;
     public static Material FormicAcid;
+    public static Material PhthalicAnhydride;
+    public static Material Ethylanthraquinone;
+    public static Material Ethylanthrahydroquinone;
 
 
     // Unknown Composition Materials
