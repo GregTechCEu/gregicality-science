@@ -20,5 +20,8 @@ public class GCYSConfigHolder {
 
         @Config.Comment({"Disables electrolyzing of Tungstic Acid, requiring Gregicality's process.", "Default: true"})
         public boolean disableTungstenProcessing = true;
+
+        @Config.Comment({"Disables mixing of Graphene, requiring Gregicality's process.", "Default: true"})
+        public boolean disableGrapheneProcessing = true;
     }
 }

@@ -1,7 +1,11 @@
 package gregicality.science.loaders.recipe.chain;
 
+import gregicality.science.common.GCYSConfigHolder;
 import gregicality.science.common.items.GCYSMetaItems;
+import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
+import gregtech.api.unification.OreDictUnifier;
 import gregtech.common.items.MetaItems;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.HSLASteel;
@@ -13,6 +17,15 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 public class GrapheneChain {
 
     public static void init() {
+        // Remove Graphene Mixing
+        if (GCYSConfigHolder.chainOverrides.disableGrapheneProcessing) {
+            GTRecipeHandler.removeRecipesByInputs(RecipeMaps.MIXER_RECIPES,
+                    OreDictUnifier.get(dust, Graphite),
+                    OreDictUnifier.get(dust, Carbon, 4),
+                    OreDictUnifier.get(dust, Silicon),
+                    IntCircuitIngredient.getIntegratedCircuit(1));
+        }
+
         // G -> GO
         RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, Graphite)

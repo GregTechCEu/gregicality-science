@@ -26,7 +26,7 @@ public class HydrogenPeroxideChain {
                 .fluidInputs(Ethylbenzene.getFluid(1000))
                 .fluidOutputs(Ethylanthraquinone.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
-                .duration(1200).EUt(VA[EV]).buildAndRegister();
+                .duration(1000).EUt(VA[EV]).buildAndRegister();
 
         // C6H4(CO)2C6H3Et + 6H -> C6H4(CH2OH)2C6H3Et
         RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()

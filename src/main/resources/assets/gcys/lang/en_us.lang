@@ -105,7 +105,7 @@ gcys.steam_ejector.tooltip=Creates a Low Vacuum with 41L of Steam per second
 
 
 # Dryer
-gcys.machine.dryer.tooltip=Vaporizing liquids
+gregtech.machine.dryer.tooltip=Vaporizing liquids
 
 gcys.machine.dryer.lv.name=Basic Dryer
 gcys.machine.dryer.mv.name=Advanced Dryer
