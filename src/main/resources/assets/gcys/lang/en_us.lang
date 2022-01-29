@@ -134,3 +134,54 @@ gcys.vacuum_level.perfect=Perfect Vacuum
 
 # metaitems
 metaitem.magnetron.name=Magnetron
+
+#Bioware
+metaitem.circuit.bioware_processor.name=Bioware Processor
+metaitem.circuit.bioware_processor.tooltip=It's alive!/n§2ZPM-tier
+metaitem.circuit.bioware_assembly.name=Bioware Assembly
+metaitem.circuit.bioware_assembly.tooltip=It's alive!/n§2UV-tier
+metaitem.circuit.bioware_computer.name=Bioware Computer
+metaitem.circuit.bioware_computer.tooltip=It's alive!/n§2UHV-tier
+metaitem.circuit.bioware_mainframe.name=Bioware Mainframe
+metaitem.circuit.bioware_mainframe.tooltip=It's alive!/n§2UEV-tier
+
+#Optical
+metaitem.circuit.optical_processor.name=Optical Processor
+metaitem.circuit.optical_processor.tooltip=Lightspeed computing/n§6UV-tier
+metaitem.circuit.optical_assembly.name=Optical Assembly
+metaitem.circuit.optical_assembly.tooltip=Lightspeed computing/n§6UHV-tier
+metaitem.circuit.optical_computer.name=Optical Computer
+metaitem.circuit.optical_computer.tooltip=Lightspeed computing/n§6UEV-tier
+metaitem.circuit.optical_mainframe.name=Optical Mainframe
+metaitem.circuit.optical_mainframe.tooltip=Lightspeed computing/n§6UIV-tier
+
+#Exotic
+metaitem.circuit.exotic_processor.name=Exotic Processor
+metaitem.circuit.exotic_processor.tooltip=Quite strange/n§5UHV-tier
+metaitem.circuit.exotic_assembly.name=Exotic Assembly
+metaitem.circuit.exotic_assembly.tooltip=Quite strange/n§5UEV-tier
+metaitem.circuit.exotic_computer.name=Exotic Computer
+metaitem.circuit.exotic_computer.tooltip=Quite strange/n§5UIV-tier
+metaitem.circuit.exotic_mainframe.name=Exotic Mainframe
+metaitem.circuit.exotic_mainframe.tooltip=Quite strange/n§5UMV-tier
+
+
+#Cosmic
+metaitem.circuit.cosmic_processor.name=Cosmic Processor
+metaitem.circuit.cosmic_processor.tooltip=Phenomenal cosmic powers!/n§8UEV-tier
+metaitem.circuit.cosmic_assembly.name=Cosmic Assembly
+metaitem.circuit.cosmic_assembly.tooltip=Phenomenal cosmic powers!/n§8UIV-tier
+metaitem.circuit.cosmic_computer.name=Cosmic Computer
+metaitem.circuit.cosmic_computer.tooltip=Phenomenal cosmic powers!/n§8UMV-tier
+metaitem.circuit.cosmic_mainframe.name=Cosmic Mainframe
+metaitem.circuit.cosmic_mainframe.tooltip=Phenomenal cosmic powers!/n§8UXV-tier
+
+#Supracausal
+metaitem.circuit.supracausal_processor.name=Supra-Causal Processor
+metaitem.circuit.supracausal_processor.tooltip=Answers before questions/n§fUIV-tier
+metaitem.circuit.supracausal_assembly.name=Supra-Causal Assembly
+metaitem.circuit.supracausal_assembly.tooltip=Answers before questions/n§fUMV-tier
+metaitem.circuit.supracausal_computer.name=Supra-Causal Computer
+metaitem.circuit.supracausal_computer.tooltip=Answers before questions/n§fUXV-tier
+metaitem.circuit.supracausal_mainframe.name=Supra-Causal Mainframe
+metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier
