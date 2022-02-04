@@ -153,13 +153,21 @@ material.evolutionary_medium=Sterilized Evolutionary Medium
 material.rich_nitrogen_mixture=Rich Nitrogen Mixture
 material.rich_ammonia_mixture=Rich Ammonia Mixture
 
-# Machines
+# Single Block Machines
 gcys.machine.steam_ejector.name=Steam Ejector
 gcys.steam_ejector.tooltip=Creates a Low Vacuum with 41L of Steam per second
 
-
 # Dryer
 gregtech.machine.dryer.tooltip=Vaporizing liquids
+
+# Multi Block Machines
+
+# Crystallizer
+gcys.machine.crystallizer.name=Crystallizer
+gregtech.multiblock.crystallizer.max_temperature=Max Temperature
+
+# Biological Vat
+gcys.machine.bio_vat.name=Biological Vat
 
 gcys.machine.dryer.lv.name=Basic Dryer
 gcys.machine.dryer.mv.name=Advanced Dryer
@@ -177,10 +185,6 @@ gcys.machine.dryer.uxv.name=Legendary Dryer
 gcys.machine.dryer.max.name=Maximum Dryer
 
 
-# Multiblocks
-gcys.machine.bio_vat.name=Biological Vat
-
-
 # Vacuums
 gcys.vacuum_level.none=No Vacuum
 gcys.vacuum_level.low=Low Vacuum
@@ -189,6 +193,9 @@ gcys.vacuum_level.high=High Vacuum
 gcys.vacuum_level.ultra_high=Ultra High Vacuum
 gcys.vacuum_level.extremely_high=Extremely High Vacuum
 gcys.vacuum_level.perfect=Perfect Vacuum
+
+# Ore Prefixes
+item.material.oreprefix.boule=%s Boule
 
 # Metaitems
 metaitem.magnetron.name=Magnetron

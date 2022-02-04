@@ -1,11 +1,13 @@
 package gregicality.science;
 
+import gregicality.science.api.unification.OrePrefixAdditions;
 import gregicality.science.api.utils.GCYSLog;
 import gregicality.science.common.CommonProxy;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.common.items.GCYSMetaItems;
 import gregicality.science.common.metatileentities.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
+import gregtech.api.util.GTLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

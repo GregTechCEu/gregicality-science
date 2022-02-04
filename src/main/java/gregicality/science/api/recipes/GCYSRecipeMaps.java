@@ -4,6 +4,7 @@ import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.builders.BlastRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.sound.GTSounds;
 import stanhebben.zenscript.annotations.ZenExpansion;
@@ -25,6 +26,10 @@ public class GCYSRecipeMaps {
             .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(true, false, false, GuiTextures.DUST_OVERLAY)
             .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
+            .setSound(GTSounds.FURNACE);
+
+    @ZenProperty
+    public static final RecipeMap<BlastRecipeBuilder> CRYSTALLIZER_RECIPES = new RecipeMap<>("crystallizer", 0, 9, 1, 1, 0, 9, 0, 0, new BlastRecipeBuilder(), false)
             .setSound(GTSounds.FURNACE);
 
     @ZenProperty
