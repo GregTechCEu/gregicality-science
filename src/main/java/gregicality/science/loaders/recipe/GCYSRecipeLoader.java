@@ -22,5 +22,6 @@ public class GCYSRecipeLoader {
         TungstenProcessing.init();
         GrapheneChain.init();
         HydrogenPeroxideChain.init();
+        NiobiumTantalumChain.init();
     }
 }

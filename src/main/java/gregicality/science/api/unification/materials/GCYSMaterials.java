@@ -42,6 +42,10 @@ public class GCYSMaterials {
     public static Material Hydrazine;
     public static Material HydrogenPeroxide;
     public static Material BerylliumOxide;
+    public static Material TantalumPentoxide;
+    public static Material NiobiumPentoxide;
+    public static Material CalciumDifluoride;
+    public static Material ManganeseDifluoride;
 
 
     // Second Degree Materials

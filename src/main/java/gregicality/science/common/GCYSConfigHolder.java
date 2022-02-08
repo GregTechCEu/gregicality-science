@@ -23,5 +23,8 @@ public class GCYSConfigHolder {
 
         @Config.Comment({"Disables mixing of Graphene, requiring Gregicality's process.", "Default: true"})
         public boolean disableGrapheneProcessing = true;
+
+        @Config.Comment({"Disables electrolysis of Tantalite and Pyrochlore, requiring Gregicality's processes for Niobium and Tantalum.", "Default: true"})
+        public boolean disableNiobiumTantalumProcessing = true;
     }
 }

@@ -258,5 +258,33 @@ public class GCYSFirstDegreeMaterials {
                 .flags(GENERATE_ROD, GENERATE_RING)
                 .components(Beryllium, 1, Oxygen, 1)
                 .build();
+
+        TantalumPentoxide = new Material.Builder(3534, "tantalum_pentoxide")
+                .dust()
+                .color(0x72728A)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Tantalum, 2, Oxygen, 5)
+                .build();
+
+        NiobiumPentoxide = new Material.Builder(3535, "niobium_pentoxide")
+                .dust()
+                .color(0xBAB0C3)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Niobium, 2, Oxygen, 5)
+                .build();
+
+        CalciumDifluoride = new Material.Builder(3536, "calcium_difluoride")
+                .dust()
+                .color(0xFFFC9E)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Calcium, 1, Fluorine, 2)
+                .build();
+
+        ManganeseDifluoride = new Material.Builder(3537, "manganese_difluoride")
+                .dust()
+                .color(0xEF4B3D)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Manganese, 1, Fluorine, 2)
+                .build();
     }
 }

@@ -20,5 +20,9 @@ public class GCYSMaterialFlagAddition {
             SulfuricCopperSolution.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
             SulfuricNickelSolution.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
         }
+        if (GCYSConfigHolder.chainOverrides.disableNiobiumTantalumProcessing) {
+            Pyrochlore.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
+            Tantalite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
+        }
     }
 }

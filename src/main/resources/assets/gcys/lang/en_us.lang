@@ -43,6 +43,10 @@ material.tungsten_trioxide=Tungsten Trioxide
 material.hydrogen_peroxide=Hydrogen Peroxide
 material.hydrazine=Hydrazine
 material.beryllium_oxide=Beryllium Oxide
+material.tantalum_pentoxide=Tantalum Pentoxide
+material.niobium_pentoxide=Niobium Pentoxide
+material.calcium_difluoride=Calcium Difluoride
+material.manganese_difluoride=Manganese Difluoride
 
 
 # Second Degree Materials
