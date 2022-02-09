@@ -164,7 +164,7 @@ gregtech.machine.dryer.tooltip=Vaporizing liquids
 
 # Crystallizer
 gcys.machine.crystallizer.name=Crystallizer
-gregtech.multiblock.crystallizer.max_temperature=Max Temperature
+gregtech.multiblock.crystallizer.max_temperature= %s
 
 # Biological Vat
 gcys.machine.bio_vat.name=Biological Vat
