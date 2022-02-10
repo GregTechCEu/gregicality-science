@@ -10,6 +10,7 @@ import gregtech.api.unification.material.properties.GemProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.MaterialStack;
+import gregtech.api.recipes.RecipeMaps;
 
 public class GCYSMaterialRecipeHandler {
     public static void register() {
@@ -32,10 +33,10 @@ public class GCYSMaterialRecipeHandler {
         for(MaterialStack material_stack : material.getMaterialComponents()){
             if(material_stack.material.isSolid() || material_stack.material.hasProperty(PropertyKey.DUST)){
                 n_item++;
-                builder.input(OrePrefix.dust, material_stack.material, (int) material_stack.amount);
+                builder.input(OrePrefix.dust, material_stack.material, (int) material_stack.amount * 16);
             }else if(material_stack.material.hasFluid()){
                 n_fluid++;
-                builder.fluidInputs(material_stack.material.getFluid((int) material_stack.amount * 1000));
+                builder.fluidInputs(material_stack.material.getFluid((int) material_stack.amount * 1000 * 16));
             }
             if(material_stack.material.hasProperty(PropertyKey.BLAST)){
                 temperature += material_stack.material.getBlastTemperature() * material_stack.amount;
@@ -62,5 +63,12 @@ public class GCYSMaterialRecipeHandler {
         if(n_fluid <= GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxFluidInputs() && n_item <= GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxInputs()){
             builder.buildAndRegister();
         }
+
+        RecipeMaps.CUTTER_RECIPES.recipeBuilder()
+                .input(GCYSOrePrefix.boule, material)
+                .output(OrePrefix.gemExquisite, material, 4)
+                .duration(20)
+                .EUt(16)
+                .buildAndRegister();
     }
 }
