@@ -30,6 +30,8 @@ public class GCYSMaterialRecipeHandler {
 
         BlastRecipeBuilder builder = GCYSRecipeMaps.CRYSTALLIZER_RECIPES.recipeBuilder();
 
+        builder.notConsumable(OrePrefix.gemExquisite, material);
+
         for(MaterialStack material_stack : material.getMaterialComponents()){
             if(material_stack.material.isSolid() || material_stack.material.hasProperty(PropertyKey.DUST)){
                 n_item++;
@@ -60,7 +62,7 @@ public class GCYSMaterialRecipeHandler {
 
         builder.output(GCYSOrePrefix.boule, material, output_amount);
 
-        if(n_fluid <= GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxFluidInputs() && n_item <= GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxInputs()){
+        if(n_fluid <= GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxFluidInputs() && (n_item + 1) <= GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxInputs()){
             builder.buildAndRegister();
         }
 
