@@ -80,5 +80,67 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 16, Hydrogen, 18, Oxygen, 2)
                 .build()
                 .setFormula("C6H4(CH2OH)2C6H3Et", true);
+
+        Formaldehyde = new Material.Builder(15009, "formaldehyde")
+                .fluid()
+                .color(0x95A13A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 1, Hydrogen, 2, Oxygen, 1)
+                .build();
+
+        Acetylene = new Material.Builder(15010, "acetylene")
+                .fluid()
+                .color(0x959C60)
+                .components(Carbon, 2, Hydrogen, 2)
+                .build();
+
+        PropargylAlcohol = new Material.Builder(15011, "propargyl_alcohol")
+                .fluid()
+                .color(0x714934)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 3, Hydrogen, 4, Oxygen, 1)
+                .build();
+
+        PropargylChloride = new Material.Builder(15012, "propargyl_chloride")
+                .fluid()
+                .color(0x613924)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 3, Hydrogen, 3, Chlorine, 1)
+                .build();
+
+        Turpentine = new Material.Builder(15013, "turpentine")
+                .fluid()
+                .color(0x93BD46)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 16)
+                .build();
+
+        BetaPinene = new Material.Builder(15014, "beta_pinene")
+                .fluid()
+                .color(0x61AB6B)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 16)
+                .build();
+
+        Citral = new Material.Builder(15015, "citral")
+                .fluid()
+                .color(0xF2E541)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 16, Oxygen, 1)
+                .build();
+
+        BetaIonone = new Material.Builder(15016, "beta_ionone")
+                .fluid()
+                .color(0x8D5C91)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 13, Hydrogen, 20, Oxygen, 1)
+                .build();
+
+        Retinol = new Material.Builder(15017, "retinol") // TODO Vitamin A Tooltip
+                .fluid()
+                .color(0xDC5CE6)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 20, Hydrogen, 30, Oxygen, 1)
+                .build();
     }
 }

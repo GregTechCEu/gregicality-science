@@ -46,6 +46,8 @@ public class GCYSMaterials {
     public static Material NiobiumPentoxide;
     public static Material CalciumDifluoride;
     public static Material ManganeseDifluoride;
+    public static Material CalciumCarbide;
+    public static Material CalciumHydroxide;
 
 
     // Second Degree Materials
@@ -81,11 +83,22 @@ public class GCYSMaterials {
     public static Material PhthalicAnhydride;
     public static Material Ethylanthraquinone;
     public static Material Ethylanthrahydroquinone;
+    public static Material Formaldehyde;
+    public static Material Acetylene;
+    public static Material PropargylAlcohol;
+    public static Material PropargylChloride;
+    public static Material Turpentine;
+    public static Material BetaPinene;
+    public static Material Citral;
+    public static Material BetaIonone;
+    public static Material Retinol;
 
 
     // Unknown Composition Materials
     public static Material RareEarthHydroxidesSolution;
     public static Material RareEarthChloridesSolution;
+    public static Material LeachedTurpentine;
+    public static Material SteamCrackedTurpentine;
 
 
     /**

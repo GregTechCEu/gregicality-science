@@ -23,5 +23,8 @@ public class GCYSRecipeLoader {
         GrapheneChain.init();
         HydrogenPeroxideChain.init();
         NiobiumTantalumChain.init();
+        AcetyleneChain.init();
+        TurpentineChain.init();
+        GrowthMediumChain.init();
     }
 }

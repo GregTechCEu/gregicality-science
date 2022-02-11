@@ -2,8 +2,7 @@ package gregicality.science.api.unification.materials;
 
 import gregtech.api.unification.material.Material;
 
-import static gregicality.science.api.unification.materials.GCYSMaterials.RareEarthChloridesSolution;
-import static gregicality.science.api.unification.materials.GCYSMaterials.RareEarthHydroxidesSolution;
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
 
@@ -28,5 +27,13 @@ public class GCYSUnknownCompositionMaterials {
                 .components(RareEarth, 1, Chlorine, 1, Water, 1)
                 .build();
 
+        LeachedTurpentine = new Material.Builder(18002, "leached_turpentine")
+                .fluid()
+                .color(0x330D16)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Turpentine, 1, RareEarth, 1)
+                .build();
+
+        SteamCrackedTurpentine = new Material.Builder(18003, "steamcracked_turpentine").fluid().color(0x634D56).build();
     }
 }

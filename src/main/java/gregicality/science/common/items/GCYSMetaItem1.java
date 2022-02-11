@@ -1,7 +1,6 @@
 package gregicality.science.common.items;
 
 import gregtech.api.items.metaitem.StandardMetaItem;
-import gregtech.api.unification.material.MarkerMaterial;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
 

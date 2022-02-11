@@ -47,6 +47,8 @@ material.tantalum_pentoxide=Tantalum Pentoxide
 material.niobium_pentoxide=Niobium Pentoxide
 material.calcium_difluoride=Calcium Difluoride
 material.manganese_difluoride=Manganese Difluoride
+material.calcium_carbide=Calcium Carbide
+material.calcium_hydroxide=Calcium Hydroxide
 
 
 # Second Degree Materials
@@ -97,11 +99,22 @@ material.formic_acid=Formic Acid
 material.phthalic_anhydride=Phthalic Anhydride
 material.ethylanthraquinone=2-Ethylanthraquinone
 material.ethylanthrahydroquinone=2-Ethylanthrahydroquinone
+material.formaldehyde=Formaldehyde
+material.acetylene=Acetylene
+material.propargyl_alcohol=Propargyl Alcohol
+material.propargyl_chloride=Propargyl Chloride
+material.turpentine=Turpentine
+material.beta_pinene=Beta-Pinene
+material.citral=Citral
+material.beta_ionone=Beta Ionone
+material.retinol=Retinol
 
 
 # Unknown Composition Materials
 material.rare_earth_hydroxides_solution=Rare Earth Hydroxides Solution
 material.rare_earth_chlorides_solution=Rare Earth Chlorides Solution
+material.leached_turpentine=Leached Turpentine
+material.steamcracked_turpentine=Steam-Cracked Turpentine
 
 # Machines
 gcys.machine.steam_ejector.name=Steam Ejector
