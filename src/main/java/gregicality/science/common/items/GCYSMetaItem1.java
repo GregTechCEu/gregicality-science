@@ -45,6 +45,7 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         STERILE_PETRI_DISH = addItem(22, "petri_dish.sterile");
         CUPRIAVIDUS_NECATOR = addItem(23, "culture.cupriavidus_necator");
         BREVIBACTERIUM_FLAVUM = addItem(24, "culture.brevibacterium_flavum");
-
+        RAPIDLY_REPLICATING_CELLS = addItem(25, "rapidly_replicating_cells");
+        SUPERINTELLGENT_ORGANISM = addItem(26, "superintelligent_organism");
     }
 }

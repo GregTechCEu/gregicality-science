@@ -32,10 +32,13 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_COMPUTER;
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_MAINFRAME;
 
+    // Bioware stuff
     public static MetaItem<?>.MetaValueItem ULTRASONIC_HOMOGENZIER;
     public static MetaItem<?>.MetaValueItem STERILE_PETRI_DISH;
     public static MetaItem<?>.MetaValueItem CUPRIAVIDUS_NECATOR;
     public static MetaItem<?>.MetaValueItem BREVIBACTERIUM_FLAVUM;
+    public static MetaItem<?>.MetaValueItem RAPIDLY_REPLICATING_CELLS;
+    public static MetaItem<?>.MetaValueItem SUPERINTELLGENT_ORGANISM;
 
 
     public static void init() {

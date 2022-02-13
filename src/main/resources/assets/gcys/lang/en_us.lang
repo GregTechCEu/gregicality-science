@@ -164,6 +164,10 @@ gcys.machine.dryer.uxv.name=Legendary Dryer
 gcys.machine.dryer.max.name=Maximum Dryer
 
 
+# Multiblocks
+gcys.machine.bio_vat.name=Biological Vat
+
+
 # Vacuums
 gcys.vacuum_level.none=No Vacuum
 gcys.vacuum_level.low=Low Vacuum
@@ -181,6 +185,8 @@ metaitem.petri_dish.sterile.name=Sterilized Petri Dish
 metaitem.petri_dish.sterile.tooltip=Ready for cultures
 metaitem.culture.cupriavidus_necator.name=Cupriavidus Necator Culture
 metaitem.culture.brevibacterium_flavum.name=Brevibacterium Flavum Culture
+metaitem.rapidly_replicating_cells.name=Rapidly Replicating Cells
+metaitem.superintelligent_organism.name=Superintelligent Organism
 
 
 # Circuits

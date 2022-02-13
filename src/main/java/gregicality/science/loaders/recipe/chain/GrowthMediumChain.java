@@ -15,22 +15,17 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.dustTiny;
 import static gregtech.common.items.MetaItems.PETRI_DISH;
+import static gregtech.common.items.MetaItems.STEM_CELLS;
 
 public class GrowthMediumChain {
 
     public static void init() {
-        removeGTCERecipes();
-        // CEu growth medium will be used for growing bacteria and stem cells
-        // gcy growth medium will be used for creating superintelligent organisms for bioware
         retinol();
         b27Supplement();
         bacteriaCultures();
         sulfanilamide();
         growthMedium();
-    }
-
-    private static void removeGTCERecipes() {
-
+        biocells();
     }
 
     private static void retinol() {
@@ -136,7 +131,7 @@ public class GrowthMediumChain {
                 .fluidInputs(LinoleicAcid.getFluid(1000))
                 .fluidInputs(Retinol.getFluid(1000))
                 .fluidInputs(Catalase.getFluid(1000))
-                .fluidOutputs(B27Supplement.getFluid(1000))
+                .fluidOutputs(B27Supplement.getFluid(4000))
                 .duration(200).EUt(VA[LuV]).buildAndRegister();
     }
 
@@ -159,7 +154,7 @@ public class GrowthMediumChain {
                 .notConsumable(CUPRIAVIDUS_NECATOR)
                 .fluidInputs(SterileGrowthMedium.getFluid(100))
                 .output(CUPRIAVIDUS_NECATOR)
-                .fluidOutputs(BacterialSludge.getFluid(10))
+                .fluidOutputs(BacterialSludge.getFluid(100))
                 .duration(100).EUt(VA[HV]).buildAndRegister();
 
         BIO_VAT_RECIPES.recipeBuilder()
@@ -174,7 +169,7 @@ public class GrowthMediumChain {
                 .notConsumable(BREVIBACTERIUM_FLAVUM)
                 .fluidInputs(SterileGrowthMedium.getFluid(100))
                 .output(BREVIBACTERIUM_FLAVUM)
-                .fluidOutputs(BacterialSludge.getFluid(10))
+                .fluidOutputs(BacterialSludge.getFluid(100))
                 .duration(100).EUt(VA[HV]).buildAndRegister();
 
         MACERATOR_RECIPES.recipeBuilder()
@@ -186,7 +181,7 @@ public class GrowthMediumChain {
                 .notConsumable(dust, Yeast)
                 .fluidInputs(SterileGrowthMedium.getFluid(100))
                 .output(dust, Yeast, 8)
-                .fluidOutputs(BacterialSludge.getFluid(10))
+                .fluidOutputs(BacterialSludge.getFluid(100))
                 .duration(100).EUt(VA[HV]).buildAndRegister();
     }
 
@@ -296,18 +291,54 @@ public class GrowthMediumChain {
         BIO_VAT_RECIPES.recipeBuilder()
                 .input(dust, AmmoniumNitrate, 2)
                 .input(dust, Glutamine)
-                .input(dust, Naquadria)
                 .fluidInputs(B27Supplement.getFluid(1000))
                 .fluidInputs(BasicFibroblastGrowthFactor.getFluid(1000))
                 .fluidInputs(EpidermalGrowthFactor.getFluid(1000))
                 .fluidInputs(Bacteria.getFluid(1000))
                 .fluidOutputs(RawEvolutionaryMedium.getFluid(4000))
-                .duration(150).EUt(VA[UV]).buildAndRegister();
+                .duration(1200).EUt(VA[UV]).buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
                 .fluidInputs(RawEvolutionaryMedium.getFluid(4000))
                 .fluidInputs(Sulfanilamide.getFluid(1000))
                 .fluidOutputs(EvolutionaryMedium.getFluid(5000))
                 .duration(400).EUt(VA[UV]).buildAndRegister();
+
+        BIO_VAT_RECIPES.recipeBuilder()
+                .notConsumable(STEM_CELLS)
+                .fluidInputs(SterileGrowthMedium.getFluid(500))
+                .output(STEM_CELLS, 64)
+                .fluidOutputs(BacterialSludge.getFluid(500))
+                .duration(100).EUt(VA[HV]).buildAndRegister();
+
+        BIO_VAT_RECIPES.recipeBuilder()
+                .input(dust, Salt, 4)
+                .input(dust, Calcium, 4)
+                .input(dust, Agar, 4)
+                .fluidInputs(Mutagen.getFluid(4000))
+                .fluidOutputs(RawGrowthMedium.getFluid(5000))
+                .duration(1200).EUt(VA[IV]).buildAndRegister();
+    }
+
+    private static void biocells() {
+        BIO_VAT_RECIPES.recipeBuilder()
+                .input(dust, Naquadria)
+                .fluidInputs(Bacteria.getFluid(1000))
+                .fluidOutputs(Mutagen.getFluid(1000))
+                .duration(100).EUt(VA[HV]).buildAndRegister();
+
+        BIO_VAT_RECIPES.recipeBuilder()
+                .input(dust, Naquadria, 16)
+                .input(STEM_CELLS, 64)
+                .fluidInputs(Mutagen.getFluid(1000))
+                .output(RAPIDLY_REPLICATING_CELLS, 64)
+                .duration(400).EUt(VA[IV]).buildAndRegister();
+
+        BIO_VAT_RECIPES.recipeBuilder()
+                .input(RAPIDLY_REPLICATING_CELLS)
+                .fluidInputs(EvolutionaryMedium.getFluid(500))
+                .output(SUPERINTELLGENT_ORGANISM)
+                .fluidOutputs(BacterialSludge.getFluid(500))
+                .duration(600).EUt(VA[ZPM]).buildAndRegister();
     }
 }

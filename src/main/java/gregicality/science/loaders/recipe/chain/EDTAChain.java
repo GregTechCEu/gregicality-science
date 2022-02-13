@@ -5,7 +5,6 @@ import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.LARGE_CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
@@ -38,7 +37,7 @@ public class EDTAChain {
 
         // CH4 + NH3 + 3O -> HCN + 3H2O
         // TODO This should use 1473K
-        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+        CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Methane.getFluid(1000))
                 .fluidInputs(Ammonia.getFluid(1000))
                 .fluidInputs(Oxygen.getFluid(1000))
