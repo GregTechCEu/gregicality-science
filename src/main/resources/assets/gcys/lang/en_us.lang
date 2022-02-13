@@ -50,6 +50,7 @@ material.manganese_difluoride=Manganese Difluoride
 material.calcium_carbide=Calcium Carbide
 material.calcium_hydroxide=Calcium Hydroxide
 material.sodium_cyanide=Sodium Cyanide
+material.chlorosulfuric_acid=Chlorosulfuric Acid
 
 
 # Second Degree Materials
@@ -118,6 +119,10 @@ material.ethylenediaminetetraacetic_acid=Ethylenediaminetetraacetic Acid
 material.biotin=Biotin
 material.linoleic_acid=Linoleic Acid
 material.glutamine=Glutamine
+material.aniline=Aniline
+material.acetic_anhydride=Acetic Anhydride
+material.acetylsulfanilyl_chloride=Acetylsulfanilyl Chloride
+material.sulfanilamide=Sulfanilamide
 
 
 # Unknown Composition Materials
@@ -176,6 +181,7 @@ metaitem.petri_dish.sterile.name=Sterilized Petri Dish
 metaitem.petri_dish.sterile.tooltip=Ready for cultures
 metaitem.culture.cupriavidus_necator.name=Cupriavidus Necator Culture
 metaitem.culture.brevibacterium_flavum.name=Brevibacterium Flavum Culture
+
 
 # Circuits
 # Bioware

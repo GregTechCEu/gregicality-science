@@ -203,5 +203,32 @@ public class GCYSOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 5, Hydrogen, 10, Nitrogen, 2, Oxygen, 3)
                 .build();
+
+        Aniline = new Material.Builder(15026, "aniline")
+                .fluid()
+                .color(0x4C911D)
+                .components(Carbon, 6, Hydrogen, 7, Nitrogen, 1)
+                .build()
+                .setFormula("C6H5NH2", true);
+
+        AceticAnhydride = new Material.Builder(15027, "acetic_anhydride")
+                .fluid()
+                .color(0xD5DDDF)
+                .components(Carbon, 4, Hydrogen, 6, Oxygen, 3)
+                .build()
+                .setFormula("(CH3CO)2O", true);
+
+        AcetylsulfanilylChloride = new Material.Builder(15028, "acetylsulfanilyl_chloride")
+                .fluid()
+                .color(0xACD6ED)
+                .components(Carbon, 8, Hydrogen, 8, Chlorine, 1, Nitrogen, 1, Oxygen, 3, Sulfur, 1)
+                .build();
+
+        Sulfanilamide = new Material.Builder(15029, "sulfanilamide")
+                .fluid()
+                .color(0x523B0A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 6, Hydrogen, 8, Nitrogen, 2, Oxygen, 2, Sulfur, 1)
+                .build();
     }
 }

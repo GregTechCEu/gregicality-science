@@ -1,5 +1,6 @@
 package gregicality.science.loaders.recipe.chain;
 
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.ore.OrePrefix;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -23,8 +24,9 @@ public class GrowthMediumChain {
         // gcy growth medium will be used for creating superintelligent organisms for bioware
         retinol();
         b27Supplement();
-        growthMedium();
         bacteriaCultures();
+        sulfanilamide();
+        growthMedium();
     }
 
     private static void removeGTCERecipes() {
@@ -138,33 +140,6 @@ public class GrowthMediumChain {
                 .duration(200).EUt(VA[LuV]).buildAndRegister();
     }
 
-    private static void growthMedium() {
-        // NH3 + HNO3 -> NH4NO3
-        CHEMICAL_RECIPES.recipeBuilder()
-                .fluidInputs(Ammonia.getFluid(1000))
-                .fluidInputs(NitricAcid.getFluid(1000))
-                .output(dust, AmmoniumNitrate, 2)
-                .duration(100).EUt(VA[LV]).buildAndRegister();
-
-        BIO_VAT_RECIPES.recipeBuilder()
-                .notConsumable(BREVIBACTERIUM_FLAVUM)
-                .fluidInputs(Ammonia.getFluid(1000))
-                .fluidInputs(DistilledWater.getFluid(1000))
-                .output(dust, Glutamine)
-                .duration(100).EUt(VA[HV]).buildAndRegister();
-
-        BIO_VAT_RECIPES.recipeBuilder()
-                .input(dust, AmmoniumNitrate, 2)
-                .input(dust, Glutamine)
-                .input(dust, Naquadria)
-                .fluidInputs(B27Supplement.getFluid(1000))
-                .fluidInputs(BasicFibroblastGrowthFactor.getFluid(1000))
-                .fluidInputs(EpidermalGrowthFactor.getFluid(1000))
-                .fluidInputs(Bacteria.getFluid(1000))
-                .fluidOutputs(RawEvolutionaryMedium.getFluid(4000))
-                .duration(150).EUt(VA[UV]).buildAndRegister();
-    }
-
     private static void bacteriaCultures() {
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .input(PETRI_DISH)
@@ -213,5 +188,126 @@ public class GrowthMediumChain {
                 .output(dust, Yeast, 8)
                 .fluidOutputs(BacterialSludge.getFluid(10))
                 .duration(100).EUt(VA[HV]).buildAndRegister();
+    }
+
+    private static void sulfanilamide() {
+        // C6H5NO2 + 6H -> C6H5NH2 + 2H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Nitrobenzene.getFluid(1000))
+                .fluidInputs(Hydrogen.getFluid(6000))
+                .notConsumable(dust, Platinum)
+                .fluidOutputs(Aniline.getFluid(1000))
+                .fluidOutputs(Water.getFluid(2000))
+                .duration(200).EUt(VA[HV]).buildAndRegister();
+
+        // C6H6O + NH3 -> C6H5NH2 + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Phenol.getFluid(1000))
+                .fluidInputs(Ammonia.getFluid(1000))
+                .notConsumable(dust, Platinum)
+                .fluidOutputs(Aniline.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .duration(200).EUt(VA[HV]).buildAndRegister();
+
+        // HCl + SO3 -> HClSO3
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .fluidInputs(SulfurTrioxide.getFluid(1000))
+                .fluidOutputs(ChlorosulfuricAcid.getFluid(1000))
+                .duration(80).EUt(VA[LV]).buildAndRegister();
+
+        // CH3CO2CH3 + CO -> (CH3CO)2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(MethylAcetate.getFluid(1000))
+                .fluidInputs(CarbonMonoxide.getFluid(1000))
+                .fluidOutputs(AceticAnhydride.getFluid(1000))
+                .duration(80).EUt(VA[LV]).buildAndRegister();
+
+        // C2H2O2 + CH3COOH -> (CH3CO)2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Ethenone.getFluid(1000))
+                .fluidInputs(AceticAcid.getFluid(1000))
+                .fluidOutputs(AceticAnhydride.getFluid(1000))
+                .duration(80).EUt(VA[LV]).buildAndRegister();
+
+        // (CH3CO)2O -> C2H2O2 + CH3COOH
+        CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(new IntCircuitIngredient(1))
+                .fluidInputs(AceticAnhydride.getFluid(1000))
+                .fluidOutputs(Ethenone.getFluid(1000))
+                .fluidOutputs(AceticAcid.getFluid(1000))
+                .duration(80).EUt(VA[LV]).buildAndRegister();
+
+        // C6H5NH2 + (CH3CO)2O + HSO3Cl -> C8H8ClNO3S + H2O + CH3COOH
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Aniline.getFluid(1000))
+                .fluidInputs(AceticAnhydride.getFluid(1000))
+                .fluidInputs(ChlorosulfuricAcid.getFluid(1000))
+                .fluidOutputs(AcetylsulfanilylChloride.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .fluidOutputs(AceticAcid.getFluid(1000))
+                .duration(200).EUt(VA[HV]).buildAndRegister();
+
+        // Na2CO3 + CO2 + H2O -> 2NaHCO3
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, SodaAsh, 6)
+                .fluidInputs(CarbonDioxide.getFluid(1000))
+                .fluidInputs(Water.getFluid(1000))
+                .output(dust, SodiumBicarbonate, 12)
+                .duration(80).EUt(VA[LV]).buildAndRegister();
+
+        // NaCl + CO2 + H2O + NH3 -> NaHCO3 + NH4Cl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Salt, 2)
+                .fluidInputs(CarbonDioxide.getFluid(1000))
+                .fluidInputs(Water.getFluid(1000))
+                .fluidInputs(Ammonia.getFluid(1000))
+                .output(dust, SodiumBicarbonate, 12)
+                .output(dust, AmmoniumChloride, 6)
+                .duration(80).EUt(VA[LV]).buildAndRegister();
+
+        // NaHCO3 + C8H8ClNO3S + NH3 -> NaCl + C6H8N2O2S + CO2 + CH3COOH
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, SodiumBicarbonate, 6)
+                .fluidInputs(AcetylsulfanilylChloride.getFluid(1000))
+                .fluidInputs(Ammonia.getFluid(1000))
+                .output(dust, Salt, 2)
+                .fluidOutputs(Sulfanilamide.getFluid(1000))
+                .fluidOutputs(CarbonDioxide.getFluid(1000))
+                .fluidOutputs(AceticAcid.getFluid(1000))
+                .duration(200).EUt(VA[IV]).buildAndRegister();
+    }
+
+    private static void growthMedium() {
+        // NH3 + HNO3 -> NH4NO3
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Ammonia.getFluid(1000))
+                .fluidInputs(NitricAcid.getFluid(1000))
+                .output(dust, AmmoniumNitrate, 2)
+                .duration(100).EUt(VA[LV]).buildAndRegister();
+
+        BIO_VAT_RECIPES.recipeBuilder()
+                .notConsumable(BREVIBACTERIUM_FLAVUM)
+                .fluidInputs(Ammonia.getFluid(1000))
+                .fluidInputs(DistilledWater.getFluid(1000))
+                .output(dust, Glutamine)
+                .duration(100).EUt(VA[HV]).buildAndRegister();
+
+        BIO_VAT_RECIPES.recipeBuilder()
+                .input(dust, AmmoniumNitrate, 2)
+                .input(dust, Glutamine)
+                .input(dust, Naquadria)
+                .fluidInputs(B27Supplement.getFluid(1000))
+                .fluidInputs(BasicFibroblastGrowthFactor.getFluid(1000))
+                .fluidInputs(EpidermalGrowthFactor.getFluid(1000))
+                .fluidInputs(Bacteria.getFluid(1000))
+                .fluidOutputs(RawEvolutionaryMedium.getFluid(4000))
+                .duration(150).EUt(VA[UV]).buildAndRegister();
+
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(RawEvolutionaryMedium.getFluid(4000))
+                .fluidInputs(Sulfanilamide.getFluid(1000))
+                .fluidOutputs(EvolutionaryMedium.getFluid(5000))
+                .duration(400).EUt(VA[UV]).buildAndRegister();
     }
 }

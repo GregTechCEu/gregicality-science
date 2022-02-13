@@ -310,5 +310,11 @@ public class GCYSFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Sodium, 1, Carbon, 1, Nitrogen, 1)
                 .build();
+
+        ChlorosulfuricAcid = new Material.Builder(3541, "chlorosulfuric_acid")
+                .fluid()
+                .color(0x916C1D)
+                .components(Hydrogen, 1, Chlorine, 1, Sulfur, 1, Oxygen, 3)
+                .build();
     }
 }

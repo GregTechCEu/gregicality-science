@@ -49,6 +49,7 @@ public class GCYSMaterials {
     public static Material CalciumCarbide;
     public static Material CalciumHydroxide;
     public static Material SodiumCyanide;
+    public static Material ChlorosulfuricAcid;
 
 
     // Second Degree Materials
@@ -102,6 +103,10 @@ public class GCYSMaterials {
     public static Material Biotin;
     public static Material LinoleicAcid;
     public static Material Glutamine;
+    public static Material Aniline;
+    public static Material AceticAnhydride;
+    public static Material AcetylsulfanilylChloride;
+    public static Material Sulfanilamide;
 
 
     // Unknown Composition Materials
