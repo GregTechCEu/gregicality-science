@@ -5,6 +5,7 @@ import gregtech.api.unification.material.Material;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialIconSet.FINE;
 
 public class GCYSUnknownCompositionMaterials {
 
@@ -35,5 +36,23 @@ public class GCYSUnknownCompositionMaterials {
                 .build();
 
         SteamCrackedTurpentine = new Material.Builder(18003, "steamcracked_turpentine").fluid().color(0x634D56).build();
+
+        Blood = new Material.Builder(18004, "blood").fluid().color(0xBB0A1E).build();
+
+        NonCoagulatingBlood = new Material.Builder(18005, "non_coagulating_blood").fluid().color(0xCC6A2F).build();
+
+        Catalase = new Material.Builder(18006, "catalase").fluid().color(0xDB6596).build();
+
+        BasicFibroblastGrowthFactor = new Material.Builder(18007, "basic_fibroblast_growth_factor").fluid().color(0xB365E0).build(); //TODO bFGF tooltip
+
+        EpidermalGrowthFactor = new Material.Builder(18008, "epidermal_growth_factor").fluid().color(0xCC6A2F).build(); //TODO EGF tooltip
+
+        Yeast = new Material.Builder(18009, "yeast").dust().color(0xF0E660).iconSet(FINE).build();
+
+        B27Supplement = new Material.Builder(18010, "b_27_supplement").fluid().color(0x386939).build();
+
+        RawEvolutionaryMedium = new Material.Builder(18011, "raw_evolutionary_medium").fluid().color(0x61932E).build();
+
+        EvolutionaryMedium = new Material.Builder(18012, "evolutionary_medium").fluid().color(0xA2FD35).build(); // TODO "Survival of the Fittest" Tooltip
     }
 }

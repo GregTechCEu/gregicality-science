@@ -302,5 +302,13 @@ public class GCYSFirstDegreeMaterials {
                 .components(Calcium, 1, Hydrogen, 2, Oxygen, 2)
                 .build()
                 .setFormula("Ca(OH)2", true);
+
+        SodiumCyanide = new Material.Builder(3540, "sodium_cyanide")
+                .dust()
+                .color(0x5F7C8C)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Sodium, 1, Carbon, 1, Nitrogen, 1)
+                .build();
     }
 }

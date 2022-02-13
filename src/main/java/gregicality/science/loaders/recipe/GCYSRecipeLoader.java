@@ -8,6 +8,7 @@ public class GCYSRecipeLoader {
     public static void init() {
         initHandlers();
         initChains();
+        RecipeConflicts.init();
         VacuumRecipes.init();
         GCYSMetaTileEntityLoader.init();
     }
@@ -25,6 +26,7 @@ public class GCYSRecipeLoader {
         NiobiumTantalumChain.init();
         AcetyleneChain.init();
         TurpentineChain.init();
+        EDTAChain.init();
         GrowthMediumChain.init();
     }
 }

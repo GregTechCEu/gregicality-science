@@ -125,5 +125,13 @@ public class GCYSSecondDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Graphene, 1, Oxygen ,1)
                 .build();
+
+        AmmoniumNitrate = new Material.Builder(6015, "ammonium_nitrate")
+                .dust()
+                .color(0xA59ED7)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Ammonia, 1, NitricAcid, 1)
+                .build()
+                .setFormula("NH4NO3", true);
     }
 }

@@ -48,6 +48,7 @@ public class GCYSMaterials {
     public static Material ManganeseDifluoride;
     public static Material CalciumCarbide;
     public static Material CalciumHydroxide;
+    public static Material SodiumCyanide;
 
 
     // Second Degree Materials
@@ -66,6 +67,7 @@ public class GCYSMaterials {
     public static Material AcidicSodiumRuthenateSolution;
     public static Material AcidicIridiumDioxideSolution;
     public static Material GrapheneOxide;
+    public static Material AmmoniumNitrate;
 
 
     // Third Degree Materials
@@ -92,6 +94,14 @@ public class GCYSMaterials {
     public static Material Citral;
     public static Material BetaIonone;
     public static Material Retinol;
+    public static Material Dichloroethane;
+    public static Material Ethylenediamine;
+    public static Material HydrogenCyanide;
+    public static Material TetrasodiumEDTA;
+    public static Material EthylenediaminetetraaceticAcid;
+    public static Material Biotin;
+    public static Material LinoleicAcid;
+    public static Material Glutamine;
 
 
     // Unknown Composition Materials
@@ -99,6 +109,15 @@ public class GCYSMaterials {
     public static Material RareEarthChloridesSolution;
     public static Material LeachedTurpentine;
     public static Material SteamCrackedTurpentine;
+    public static Material Blood;
+    public static Material NonCoagulatingBlood;
+    public static Material Catalase;
+    public static Material BasicFibroblastGrowthFactor;
+    public static Material EpidermalGrowthFactor;
+    public static Material Yeast;
+    public static Material B27Supplement;
+    public static Material RawEvolutionaryMedium;
+    public static Material EvolutionaryMedium;
 
 
     /**

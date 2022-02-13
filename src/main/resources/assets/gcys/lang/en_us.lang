@@ -49,6 +49,7 @@ material.calcium_difluoride=Calcium Difluoride
 material.manganese_difluoride=Manganese Difluoride
 material.calcium_carbide=Calcium Carbide
 material.calcium_hydroxide=Calcium Hydroxide
+material.sodium_cyanide=Sodium Cyanide
 
 
 # Second Degree Materials
@@ -82,6 +83,7 @@ material.rhodium_salt=Rhodium Salt
 material.acidic_sodium_ruthenate_solution=Acidic Sodium Ruthenate Solution
 material.acidic_iridium_dioxide_solution=Acidic Iridium Dioxide Solution
 material.graphene_oxide=Graphene Oxide
+material.ammonium_nitrate=Ammonium Nitrate
 
 
 # Third Degree Materials
@@ -108,6 +110,14 @@ material.beta_pinene=Beta-Pinene
 material.citral=Citral
 material.beta_ionone=Beta Ionone
 material.retinol=Retinol
+material.dichloroethane=1,2-Dichloroethane
+material.ethylenediamine=Ethylenediamine
+material.hydrogen_cyanide=Hydrogen Cyanide
+material.tetrasodium_edta=Tetrasodium EDTA
+material.ethylenediaminetetraacetic_acid=Ethylenediaminetetraacetic Acid
+material.biotin=Biotin
+material.linoleic_acid=Linoleic Acid
+material.glutamine=Glutamine
 
 
 # Unknown Composition Materials
@@ -115,6 +125,15 @@ material.rare_earth_hydroxides_solution=Rare Earth Hydroxides Solution
 material.rare_earth_chlorides_solution=Rare Earth Chlorides Solution
 material.leached_turpentine=Leached Turpentine
 material.steamcracked_turpentine=Steam-Cracked Turpentine
+material.blood=Blood
+material.non_coagulating_blood=Non-Coagulating Blood
+material.catalase=Catalase
+material.basic_fibroblast_growth_factor=Basic Fibroblast Growth Factor
+material.epidermal_growth_factor=Epidermal Growth Factor
+material.yeast=Yeast
+material.b_27_supplement=B27 Supplement
+material.raw_evolutionary_medium=Raw Evolutionary Medium
+material.evolutionary_medium=Sterilized Evolutionary Medium
 
 # Machines
 gcys.machine.steam_ejector.name=Steam Ejector
@@ -149,8 +168,14 @@ gcys.vacuum_level.ultra_high=Ultra High Vacuum
 gcys.vacuum_level.extremely_high=Extremely High Vacuum
 gcys.vacuum_level.perfect=Perfect Vacuum
 
-# metaitems
+# Metaitems
 metaitem.magnetron.name=Magnetron
+metaitem.ultrasonic_homogenizer.name=Ultrasonic Homogenizer
+metaitem.ultrasonic_homogenizer.tooltip=Extracts materials from nature with sound!
+metaitem.petri_dish.sterile.name=Sterilized Petri Dish
+metaitem.petri_dish.sterile.tooltip=Ready for cultures
+metaitem.culture.cupriavidus_necator.name=Cupriavidus Necator Culture
+metaitem.culture.brevibacterium_flavum.name=Brevibacterium Flavum Culture
 
 # Circuits
 # Bioware
@@ -206,3 +231,4 @@ metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-
 
 # RecipeMaps
 recipemap.dryer_recipes.name=Drying Machine
+recipemap.bio_vat_recipes.name=Biological Vat

@@ -40,5 +40,11 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         SUPRACAUSAL_ASSEMBLY = addItem(18, "circuit.supracausal_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Epic);
         SUPRACAUSAL_COMPUTER = addItem(19, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Legendary);
         SUPRACAUSAL_MAINFRAME = addItem(20, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Maximum);
+
+        ULTRASONIC_HOMOGENZIER = addItem(21, "ultrasonic_homogenizer");
+        STERILE_PETRI_DISH = addItem(22, "petri_dish.sterile");
+        CUPRIAVIDUS_NECATOR = addItem(23, "culture.cupriavidus_necator");
+        BREVIBACTERIUM_FLAVUM = addItem(24, "culture.brevibacterium_flavum");
+
     }
 }

@@ -1,6 +1,7 @@
 package gregicality.science.api.unification.materials;
 
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -141,6 +142,66 @@ public class GCYSOrganicChemistryMaterials {
                 .color(0xDC5CE6)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 20, Hydrogen, 30, Oxygen, 1)
+                .build();
+
+        Dichloroethane = new Material.Builder(15018, "dichloroethane")
+                .fluid()
+                .color(0xDAAED3)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 4, Chlorine, 2)
+                .build();
+
+        Ethylenediamine = new Material.Builder(15019, "ethylenediamine")
+                .fluid()
+                .color(0xD00ED0)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 8, Nitrogen, 2)
+                .build()
+                .setFormula("C2H4(NH2)2", true);
+
+        HydrogenCyanide = new Material.Builder(15020, "hydrogen_cyanide")
+                .fluid(Material.FluidType.GAS)
+                .color(0xB6D1AE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 1, Carbon, 1, Nitrogen, 1)
+                .build();
+
+        TetrasodiumEDTA = new Material.Builder(15021, "tetrasodium_edta")
+                .dust()
+                .color(0x8890E0)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 12, Sodium, 4, Nitrogen, 2, Oxygen, 8)
+                .build();
+
+        EthylenediaminetetraaceticAcid = new Material.Builder(15022, "ethylenediaminetetraacetic_acid") //TODO EDTA Tooltip
+                .dust()
+                .color(0x87E6D9)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 16, Nitrogen, 2, Oxygen, 8)
+                .build();
+
+        Biotin = new Material.Builder(15023, "biotin") //TODO Vitamin B7 Tooltip
+                .fluid()
+                .color(0x68CC6A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 16, Nitrogen, 2, Oxygen, 3, Sulfur, 1)
+                .build();
+
+        LinoleicAcid = new Material.Builder(15024, "linoleic_acid")
+                .fluid()
+                .color(0xD5D257)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 18, Hydrogen, 32, Oxygen, 2)
+                .build();
+
+        Glutamine = new Material.Builder(15025, "glutamine")
+                .dust()
+                .color(0xEDE9B4)
+                .iconSet(MaterialIconSet.FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 5, Hydrogen, 10, Nitrogen, 2, Oxygen, 3)
                 .build();
     }
 }
