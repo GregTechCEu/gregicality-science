@@ -32,7 +32,7 @@ public class GrapheneChain {
                 .fluidInputs(NitrationMixture.getFluid(2000))
                 .notConsumable(dust, SodiumHydroxide)
                 .output(dust, GrapheneOxide)
-                .fluidOutputs(SulfuricAcid.getFluid(1000))
+                .fluidOutputs(DilutedSulfuricAcid.getFluid(1000))
                 .fluidOutputs(NitricAcid.getFluid(1000))
                 .duration(100).EUt(VA[HV]).buildAndRegister();
 
@@ -42,7 +42,7 @@ public class GrapheneChain {
                 .fluidInputs(NitrationMixture.getFluid(2000))
                 .notConsumable(GCYSMetaItems.MAGNETRON.getStackForm())
                 .output(dust, Graphene)
-                .fluidOutputs(SulfuricAcid.getFluid(1000))
+                .fluidOutputs(DilutedSulfuricAcid.getFluid(1000))
                 .fluidOutputs(NitricAcid.getFluid(1000))
                 .duration(100).EUt(VA[HV]).buildAndRegister();
 
