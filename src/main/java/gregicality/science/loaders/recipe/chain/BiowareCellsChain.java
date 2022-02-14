@@ -17,7 +17,7 @@ import static gregtech.api.unification.ore.OrePrefix.dustTiny;
 import static gregtech.common.items.MetaItems.PETRI_DISH;
 import static gregtech.common.items.MetaItems.STEM_CELLS;
 
-public class GrowthMediumChain {
+public class BiowareCellsChain {
 
     public static void init() {
         retinol();
@@ -138,13 +138,19 @@ public class GrowthMediumChain {
     private static void bacteriaCultures() {
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .input(PETRI_DISH)
-                .fluidInputs(Ethanol.getFluid(100))
+                .fluidInputs(Ethanol.getFluid(500))
                 .output(STERILE_PETRI_DISH)
                 .duration(200).EUt(VA[IV]).buildAndRegister();
 
+        CANNER_RECIPES.recipeBuilder()
+                .input(dust, Agar, 2)
+                .input(STERILE_PETRI_DISH)
+                .output(CLEAN_CULTURE)
+                .duration(100).EUt(VA[HV]).buildAndRegister();
+
         BIO_VAT_RECIPES.recipeBuilder()
                 .inputs(new ItemStack(Blocks.DIRT, 1, 1))
-                .input(STERILE_PETRI_DISH)
+                .input(CLEAN_CULTURE)
                 .fluidInputs(SterileGrowthMedium.getFluid(1000))
                 .chancedOutput(CUPRIAVIDUS_NECATOR, 500, 100)
                 .fluidOutputs(BacterialSludge.getFluid(100))
@@ -159,7 +165,7 @@ public class GrowthMediumChain {
 
         BIO_VAT_RECIPES.recipeBuilder()
                 .inputs(new ItemStack(Blocks.DIRT, 1, 0))
-                .input(STERILE_PETRI_DISH)
+                .input(CLEAN_CULTURE)
                 .fluidInputs(SterileGrowthMedium.getFluid(1000))
                 .chancedOutput(BREVIBACTERIUM_FLAVUM, 500, 100)
                 .fluidOutputs(BacterialSludge.getFluid(100))
@@ -325,7 +331,7 @@ public class GrowthMediumChain {
                 .input(dust, Naquadria)
                 .fluidInputs(Bacteria.getFluid(1000))
                 .fluidOutputs(Mutagen.getFluid(1000))
-                .duration(100).EUt(VA[HV]).buildAndRegister();
+                .duration(100).EUt(VA[IV]).buildAndRegister();
 
         BIO_VAT_RECIPES.recipeBuilder()
                 .input(dust, Naquadria, 16)

@@ -1,6 +1,7 @@
 package gregicality.science.loaders.recipe;
 
 import gregicality.science.loaders.recipe.chain.*;
+import gregicality.science.loaders.recipe.circuits.BiowareCircuits;
 import gregicality.science.loaders.recipe.vacuum.VacuumRecipes;
 
 public class GCYSRecipeLoader {
@@ -8,6 +9,7 @@ public class GCYSRecipeLoader {
     public static void init() {
         initHandlers();
         initChains();
+        initCircuits();
         RecipeConflicts.init();
         VacuumRecipes.init();
         GCYSMetaTileEntityLoader.init();
@@ -27,6 +29,10 @@ public class GCYSRecipeLoader {
         AcetyleneChain.init();
         TurpentineChain.init();
         EDTAChain.init();
-        GrowthMediumChain.init();
+        BiowareCellsChain.init();
+    }
+
+    private static void initCircuits() {
+        BiowareCircuits.init();
     }
 }

@@ -43,9 +43,21 @@ public class GCYSMetaItem1 extends StandardMetaItem {
 
         ULTRASONIC_HOMOGENZIER = addItem(21, "ultrasonic_homogenizer");
         STERILE_PETRI_DISH = addItem(22, "petri_dish.sterile");
-        CUPRIAVIDUS_NECATOR = addItem(23, "culture.cupriavidus_necator");
-        BREVIBACTERIUM_FLAVUM = addItem(24, "culture.brevibacterium_flavum");
-        RAPIDLY_REPLICATING_CELLS = addItem(25, "rapidly_replicating_cells");
-        SUPERINTELLGENT_ORGANISM = addItem(26, "superintelligent_organism");
+        CLEAN_CULTURE = addItem(23, "culture.clean");
+        CUPRIAVIDUS_NECATOR = addItem(24, "culture.cupriavidus_necator");
+        BREVIBACTERIUM_FLAVUM = addItem(25, "culture.brevibacterium_flavum");
+        RAPIDLY_REPLICATING_CELLS = addItem(26, "rapidly_replicating_cells");
+        SUPERINTELLGENT_ORGANISM = addItem(27, "superintelligent_organism");
+
+        BIOWARE_BOARD = addItem(28, "board.bioware");
+        BIOWARE_CIRCUIT_BOARD = addItem(29, "circuit_board.bioware");
+
+        SENTIENT_PROCESSOR = addItem(30, "processor.sentient");
+
+        INSANE_SMD_CAPACITOR = addItem(31, "component.insane_smd.capacitor");
+        INSANE_SMD_DIODE = addItem(32, "component.insane_smd.diode");
+        INSANE_SMD_RESISTOR = addItem(33, "component.insane_smd.resistor");
+        INSANE_SMD_TRANSISTOR = addItem(34, "component.insane_smd.transistor");
+        INSANE_SMD_INDUCTOR = addItem(35, "component.insane_smd.inductor");
     }
 }

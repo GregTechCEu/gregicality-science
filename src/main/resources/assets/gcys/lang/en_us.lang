@@ -183,11 +183,27 @@ metaitem.ultrasonic_homogenizer.name=Ultrasonic Homogenizer
 metaitem.ultrasonic_homogenizer.tooltip=Extracts materials from nature with sound!
 metaitem.petri_dish.sterile.name=Sterilized Petri Dish
 metaitem.petri_dish.sterile.tooltip=Ready for cultures
+metaitem.culture.clean.name=Clean Culture
+metaitem.culrure.clean.tooltip=Ready for growth!
 metaitem.culture.cupriavidus_necator.name=Cupriavidus Necator Culture
 metaitem.culture.brevibacterium_flavum.name=Brevibacterium Flavum Culture
 metaitem.rapidly_replicating_cells.name=Rapidly Replicating Cells
 metaitem.superintelligent_organism.name=Superintelligent Organism
 
+
+# Circuit Boards
+metaitem.board.bioware.name=Bio Mutated Circuit Board
+metaitem.circuit_board.bioware.name=Ultimate Circuit Board
+
+# SMDs
+metaitem.component.insane_smd.capacitor.name=Insane SMD Capacitor
+metaitem.component.insane_smd.diode.name=Insane SMD Diode
+metaitem.component.insane_smd.resistor.name=Insane SMD Resistor
+metaitem.component.insane_smd.transistor.name=Insane SMD Transistor
+metaitem.component.insane_smd.inductor.name=Insane SMD Inductor
+
+# Processing Units
+metaitem.processor.sentient.name=Sentient Processing Unit
 
 # Circuits
 # Bioware

@@ -24,5 +24,11 @@ public class GCYSMaterialFlagAddition {
             Pyrochlore.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
             Tantalite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
         }
+
+        // Rods
+        Darmstadtium.addFlags(MaterialFlags.GENERATE_ROD);
+
+        // Frames
+        Darmstadtium.addFlags(MaterialFlags.GENERATE_FRAME);
     }
 }

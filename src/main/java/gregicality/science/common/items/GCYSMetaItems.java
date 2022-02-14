@@ -7,6 +7,7 @@ public class GCYSMetaItems {
 
     public static MetaItem<?>.MetaValueItem MAGNETRON;
 
+    // Circuits
     public static MetaItem<?>.MetaValueItem BIOWARE_PROCESSOR;
     public static MetaItem<?>.MetaValueItem BIOWARE_ASSEMBLY;
     public static MetaItem<?>.MetaValueItem BIOWARE_COMPUTER;
@@ -32,9 +33,24 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_COMPUTER;
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_MAINFRAME;
 
+    // Circuit Boards
+    public static MetaItem<?>.MetaValueItem BIOWARE_BOARD;
+    public static MetaItem<?>.MetaValueItem BIOWARE_CIRCUIT_BOARD;
+
+    // Processing Units
+    public static MetaItem<?>.MetaValueItem SENTIENT_PROCESSOR;
+
+    // SMDS
+    public static MetaItem<?>.MetaValueItem INSANE_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem INSANE_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem INSANE_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem INSANE_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem INSANE_SMD_INDUCTOR;
+
     // Bioware stuff
     public static MetaItem<?>.MetaValueItem ULTRASONIC_HOMOGENZIER;
     public static MetaItem<?>.MetaValueItem STERILE_PETRI_DISH;
+    public static MetaItem<?>.MetaValueItem CLEAN_CULTURE;
     public static MetaItem<?>.MetaValueItem CUPRIAVIDUS_NECATOR;
     public static MetaItem<?>.MetaValueItem BREVIBACTERIUM_FLAVUM;
     public static MetaItem<?>.MetaValueItem RAPIDLY_REPLICATING_CELLS;
