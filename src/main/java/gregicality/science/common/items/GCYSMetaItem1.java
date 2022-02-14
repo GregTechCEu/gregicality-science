@@ -56,6 +56,20 @@ public class GCYSMetaItem1 extends StandardMetaItem {
 
         SENTIENT_PROCESSOR = addItem(30, "processor.sentient");
 
+        EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(31, "boule.cubic_zirconia.eu_doped");
+        CR_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(32, "boule.cubic_zirconia.cr_doped");
+        EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(33, "wafer.cubic_zirconia.eu_doped");
+        CR_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(34, "wafer.cubic_zirconia.cr_doped");
+        CRYSTAL_INTERFACE_WAFER = addItem(35, "wafer.interface.crystal");
+        CRYSTAL_INTERFACE_CHIP = addItem(36, "chip.interface.crystal");
+        CRYSTAL_CHIP_WAFER = addItem(37, "wafer.chip.crystal");
+        ENGRAVED_RUBY_CRYSTAL = addItem(38, "crystal.engraved.ruby");
+        ENGRAVED_EMERALD_CRYSTAL = addItem(39, "crystal.engraved.ruby");
+        ENGRAVED_SAPPHIRE_CRYSTAL = addItem(40, "crystal.engraved.ruby");
+        RUBY_CHIP = addItem(41, "chip.ruby");
+        EMERALD_CHIP = addItem(42, "chip.emerald");
+        SAPPHIRE_CHIP = addItem(43, "chip.sapphire");
+
         INSANE_SMD_CAPACITOR = addItem(31, "component.insane_smd.capacitor");
         INSANE_SMD_DIODE = addItem(32, "component.insane_smd.diode");
         INSANE_SMD_RESISTOR = addItem(33, "component.insane_smd.resistor");

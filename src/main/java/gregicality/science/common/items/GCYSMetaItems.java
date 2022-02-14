@@ -47,6 +47,21 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem INSANE_SMD_TRANSISTOR;
     public static MetaItem<?>.MetaValueItem INSANE_SMD_INDUCTOR;
 
+    // Crystal Stuff
+    public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_BOULE;
+    public static MetaItem<?>.MetaValueItem CR_DOPED_CUBIC_ZIRCONIA_BOULE;
+    public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_WAFER;
+    public static MetaItem<?>.MetaValueItem CR_DOPED_CUBIC_ZIRCONIA_WAFER;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_WAFER;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_CHIP;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_CHIP_WAFER;
+    public static MetaItem<?>.MetaValueItem ENGRAVED_RUBY_CRYSTAL;
+    public static MetaItem<?>.MetaValueItem ENGRAVED_EMERALD_CRYSTAL;
+    public static MetaItem<?>.MetaValueItem ENGRAVED_SAPPHIRE_CRYSTAL;
+    public static MetaItem<?>.MetaValueItem RUBY_CHIP;
+    public static MetaItem<?>.MetaValueItem EMERALD_CHIP;
+    public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
+
     // Bioware stuff
     public static MetaItem<?>.MetaValueItem ULTRASONIC_HOMOGENZIER;
     public static MetaItem<?>.MetaValueItem STERILE_PETRI_DISH;
@@ -55,7 +70,6 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem BREVIBACTERIUM_FLAVUM;
     public static MetaItem<?>.MetaValueItem RAPIDLY_REPLICATING_CELLS;
     public static MetaItem<?>.MetaValueItem SUPERINTELLIGENT_ORGANISM;
-
 
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();

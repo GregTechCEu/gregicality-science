@@ -50,6 +50,7 @@ public class GCYSMaterials {
     public static Material CalciumHydroxide;
     public static Material SodiumCyanide;
     public static Material ChlorosulfuricAcid;
+    public static Material CubicZirconia;
 
 
     // Second Degree Materials

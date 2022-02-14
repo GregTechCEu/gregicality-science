@@ -21,6 +21,7 @@ public class GCYSRecipeLoader {
     }
 
     private static void initChains() {
+        CrystalCircuitsChain.init();
         RareEarthProcessing.init();
         PlatinumGroupProcessing.init();
         TungstenProcessing.init();
