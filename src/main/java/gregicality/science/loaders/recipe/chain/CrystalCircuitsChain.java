@@ -1,7 +1,13 @@
 package gregicality.science.loaders.recipe.chain;
 
+import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
+import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.MarkerMaterials;
+import gregtech.api.GTValues;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.common.items.MetaItems.*;
@@ -143,5 +149,63 @@ public class CrystalCircuitsChain {
                 .duration(100)
                 .EUt(40000)
                 .buildAndRegister();
+
+        removeGTCERecipes();
+    }
+
+    public static void removeGTCERecipes(){
+        GTRecipeHandler.removeRecipesByInputs(
+                RecipeMaps.AUTOCLAVE_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(gemExquisite, Emerald)},
+                new FluidStack[]{Europium.getFluid(GTValues.L/9)}
+        );
+
+        GTRecipeHandler.removeRecipesByInputs(
+                RecipeMaps.AUTOCLAVE_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(gemExquisite, Olivine)},
+                new FluidStack[]{Europium.getFluid(GTValues.L/9)}
+        );
+
+        GTRecipeHandler.removeRecipesByInputs(
+                RecipeMaps.AUTOCLAVE_RECIPES,
+                new ItemStack[]{RAW_CRYSTAL_CHIP_PART.getStackForm()},
+                new FluidStack[]{Europium.getFluid(GTValues.L/9)}
+        );
+
+        GTRecipeHandler.removeRecipesByInputs(
+                RecipeMaps.AUTOCLAVE_RECIPES,
+                new ItemStack[]{RAW_CRYSTAL_CHIP_PART.getStackForm()},
+                new FluidStack[]{Mutagen.getFluid(250)}
+        );
+
+        GTRecipeHandler.removeRecipesByInputs(
+                RecipeMaps.AUTOCLAVE_RECIPES,
+                new ItemStack[]{RAW_CRYSTAL_CHIP_PART.getStackForm()},
+                new FluidStack[]{BacterialSludge.getFluid(250)}
+        );
+
+        GTRecipeHandler.removeRecipesByInputs(
+                RecipeMaps.BLAST_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(plate, Emerald), RAW_CRYSTAL_CHIP.getStackForm()},
+                new FluidStack[]{Helium.getFluid(1000)}
+        );
+
+        GTRecipeHandler.removeRecipesByInputs(
+                RecipeMaps.BLAST_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(plate, Olivine), RAW_CRYSTAL_CHIP.getStackForm()},
+                new FluidStack[]{Helium.getFluid(1000)}
+        );
+
+        GTRecipeHandler.removeRecipesByInputs(
+                RecipeMaps.LASER_ENGRAVER_RECIPES,
+                ENGRAVED_CRYSTAL_CHIP.getStackForm(),
+                OreDictUnifier.get(craftingLens, MarkerMaterials.Color.Lime)
+        );
+
+        GTRecipeHandler.removeRecipesByInputs(
+                RecipeMaps.LASER_ENGRAVER_RECIPES,
+                CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(),
+                OreDictUnifier.get(craftingLens, MarkerMaterials.Color.Blue)
+        );
     }
 }
