@@ -19,6 +19,7 @@ import gregtech.api.pattern.MultiblockShapeInfo;
 import gregtech.api.pattern.PatternMatchContext;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.recipeproperties.TemperatureProperty;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
@@ -45,6 +46,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+
+import static gregtech.api.unification.material.Materials.StainlessSteel;
 
 public class MetaTileEntityCrystallizer extends RecipeMapMultiblockController implements IHeatingCoil{
 
@@ -96,16 +99,23 @@ public class MetaTileEntityCrystallizer extends RecipeMapMultiblockController im
         return GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.CasingType.CRYSTALLIZER_CASING);
     }
 
+    private IBlockState getFrameState(){
+        return MetaBlocks.FRAMES.get(StainlessSteel).getBlock(StainlessSteel);
+    }
+
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("XXX", "CCC", "CCC", "CCC", "XXX")
-                .aisle("XXX", "CAC", "CAC", "CAC", "XMX")
-                .aisle("XSX", "CCC", "CCC", "CCC", "XXX")
+                .aisle("XXXXX", "G###G", "G###G", "XXXXX")
+                .aisle("XXXXX", "#CCC#", "#CCC#", "XXXXX")
+                .aisle("XXXXX", "#CCC#", "#CCC#", "XXMXX")
+                .aisle("XXXXX", "#CCC#", "#CCC#", "XXXXX")
+                .aisle("XXSXX", "G###G", "G###G", "XXXXX")
                 .where('S', selfPredicate())
                 .where('X', states(getCasingState()).setMinGlobalLimited(9).or(autoAbilities(true, true, true, true, true, false, false)))
                 .where('C', heatingCoils())
                 .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
+                .where('G', states(getFrameState()))
                 .where('A', air())
                 .where('#', any())
                 .build();
@@ -115,9 +125,11 @@ public class MetaTileEntityCrystallizer extends RecipeMapMultiblockController im
     public List<MultiblockShapeInfo> getMatchingShapes() {
         ArrayList<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
         MultiblockShapeInfo.Builder builder = MultiblockShapeInfo.builder()
-                .aisle("XEX", "CCC", "CCC", "CCC", "XXX")
-                .aisle("FXH", "C#C", "C#C", "C#C", "XMX")
-                .aisle("ISO", "CCC", "CCC", "CCC", "XXX")
+                .aisle("XXEXX", "G###G", "G###G", "XXXXX")
+                .aisle("XXXXX", "#CCC#", "#CCC#", "XXXXX")
+                .aisle("FXXXH", "#CCC#", "#CCC#", "XXMXX")
+                .aisle("XXXXX", "#CCC#", "#CCC#", "XXXXX")
+                .aisle("XISOX", "G###G", "G###G", "XXXXX")
                 .where('S', GCYSMetaTileEntities.CRYSTALLIZER, EnumFacing.SOUTH)
                 .where('X', getCasingState())
                 .where('M', MetaTileEntities.MUFFLER_HATCH[GTValues.HV], EnumFacing.UP)
@@ -125,6 +137,7 @@ public class MetaTileEntityCrystallizer extends RecipeMapMultiblockController im
                 .where('F', MetaTileEntities.FLUID_IMPORT_HATCH[GTValues.HV], EnumFacing.WEST)
                 .where('O', MetaTileEntities.ITEM_EXPORT_BUS[GTValues.HV], EnumFacing.SOUTH)
                 .where('E', MetaTileEntities.ENERGY_INPUT_HATCH[GTValues.EV], EnumFacing.NORTH)
+                .where('G', getFrameState())
                 .where('H', () -> ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : getCasingState(), EnumFacing.EAST)
                 .where('#', Blocks.AIR.getDefaultState());
 
