@@ -13,6 +13,8 @@ public class HeldItemDestroyBehavior implements IItemBehaviour {
 
     private final MetaItem<?>.MetaValueItem replacementItem;
 
+    private int timer = 1;
+
     public HeldItemDestroyBehavior(MetaItem<?>.MetaValueItem replacementItem) {
         this.replacementItem = replacementItem;
     }
@@ -20,10 +22,14 @@ public class HeldItemDestroyBehavior implements IItemBehaviour {
     @Override
     public void onUpdate(@Nonnull ItemStack itemStack, Entity entity) {
         if (entity instanceof EntityPlayer && !entity.getEntityWorld().isRemote && !((EntityPlayer) entity).isCreative()) {
-            entity.sendMessage(new TextComponentTranslation("metaitem.behavior.held_item_destroy.message", itemStack.getItem().getItemStackDisplayName(itemStack)));
-            int amount = itemStack.getCount();
-            itemStack.setCount(0);
-            ((EntityPlayer) entity).addItemStackToInventory(replacementItem.getStackForm(amount));
+            if (timer % 100 == 0) {
+                timer = 0;
+                entity.sendMessage(new TextComponentTranslation("metaitem.behavior.held_item_destroy.message", itemStack.getItem().getItemStackDisplayName(itemStack)));
+                int amount = itemStack.getCount();
+                itemStack.setCount(0);
+                ((EntityPlayer) entity).addItemStackToInventory(replacementItem.getStackForm(amount));
+            }
+            timer++;
         }
     }
 }
