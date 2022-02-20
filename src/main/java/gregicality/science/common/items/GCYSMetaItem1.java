@@ -49,7 +49,7 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         CUPRIAVIDUS_NECATOR = addItem(24, "culture.cupriavidus_necator").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
         BREVIBACTERIUM_FLAVUM = addItem(25, "culture.brevibacterium_flavum").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
         RAPIDLY_REPLICATING_CELLS = addItem(26, "rapidly_replicating_cells").addComponents(new HeldItemDestroyBehavior(MetaItems.FERTILIZER));
-        SUPERINTELLGENT_ORGANISM = addItem(27, "superintelligent_organism").addComponents(new HeldItemDestroyBehavior(MetaItems.FERTILIZER));
+        SUPERINTELLIGENT_ORGANISM = addItem(27, "superintelligent_organism").addComponents(new HeldItemDestroyBehavior(MetaItems.FERTILIZER));
 
         BIOWARE_BOARD = addItem(28, "board.bioware");
         BIOWARE_CIRCUIT_BOARD = addItem(29, "circuit_board.bioware");

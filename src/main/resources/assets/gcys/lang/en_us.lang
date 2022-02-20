@@ -203,7 +203,7 @@ metaitem.superintelligent_organism.name=Superintelligent Organism
 
 
 # Item Behaviors
-metaitem.behavior.held_item_destroy.message=Holding the %s ruined it!
+metaitem.behavior.held_item_destroy.message=Holding the %s damaged it!
 
 # Circuit Boards
 metaitem.board.bioware.name=Bio Mutated Circuit Board

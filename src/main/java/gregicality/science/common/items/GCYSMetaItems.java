@@ -1,8 +1,6 @@
 package gregicality.science.common.items;
 
-import gregicality.science.common.items.behaviors.HeldItemDestroyBehavior;
 import gregtech.api.items.metaitem.MetaItem;
-import gregtech.common.items.MetaItems;
 
 public class GCYSMetaItems {
 
@@ -56,7 +54,7 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem CUPRIAVIDUS_NECATOR;
     public static MetaItem<?>.MetaValueItem BREVIBACTERIUM_FLAVUM;
     public static MetaItem<?>.MetaValueItem RAPIDLY_REPLICATING_CELLS;
-    public static MetaItem<?>.MetaValueItem SUPERINTELLGENT_ORGANISM;
+    public static MetaItem<?>.MetaValueItem SUPERINTELLIGENT_ORGANISM;
 
 
     public static void init() {

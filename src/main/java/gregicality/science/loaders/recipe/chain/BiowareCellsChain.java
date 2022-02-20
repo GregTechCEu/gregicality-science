@@ -345,7 +345,7 @@ public class BiowareCellsChain {
         BIO_VAT_RECIPES.recipeBuilder()
                 .input(RAPIDLY_REPLICATING_CELLS)
                 .fluidInputs(EvolutionaryMedium.getFluid(500))
-                .output(SUPERINTELLGENT_ORGANISM)
+                .output(SUPERINTELLIGENT_ORGANISM)
                 .fluidOutputs(BacterialSludge.getFluid(500))
                 .duration(600).EUt(VA[ZPM]).buildAndRegister();
     }

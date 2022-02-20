@@ -2,7 +2,6 @@ package gregicality.science.common.items.behaviors;
 
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
-import gregtech.api.util.LocalizationUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -21,12 +20,10 @@ public class HeldItemDestroyBehavior implements IItemBehaviour {
     @Override
     public void onUpdate(@Nonnull ItemStack itemStack, Entity entity) {
         if (entity instanceof EntityPlayer && !entity.getEntityWorld().isRemote && !((EntityPlayer) entity).isCreative()) {
-            MetaItem<?> metaItem = (MetaItem<?>) itemStack.getItem();
-            MetaItem<?>.MetaValueItem valueItem = metaItem.getItem(itemStack);
+            entity.sendMessage(new TextComponentTranslation("metaitem.behavior.held_item_destroy.message", itemStack.getItem().getItemStackDisplayName(itemStack)));
             int amount = itemStack.getCount();
             itemStack.setCount(0);
             ((EntityPlayer) entity).addItemStackToInventory(replacementItem.getStackForm(amount));
-            entity.sendMessage(new TextComponentTranslation("metaitem.behavior.held_item_destroy.message", LocalizationUtils.format(valueItem.unlocalizedName)));
         }
     }
 }

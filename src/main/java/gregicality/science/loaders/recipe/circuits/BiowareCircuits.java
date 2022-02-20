@@ -1,11 +1,9 @@
 package gregicality.science.loaders.recipe.circuits;
 
 import gregicality.science.common.GCYSConfigHolder;
-import gregicality.science.common.items.GCYSMetaItems;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
-import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -44,7 +42,7 @@ public class BiowareCircuits {
         // Processing Unit
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(BIOWARE_CIRCUIT_BOARD)
-                .input(SUPERINTELLGENT_ORGANISM, 16)
+                .input(SUPERINTELLIGENT_ORGANISM, 16)
                 .input(pipeSmallFluid, Polybenzimidazole, 8)
                 .input(plate, Ruridit, 8)
                 .input(foil, SiliconeRubber, 32)
