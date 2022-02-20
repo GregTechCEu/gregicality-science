@@ -138,7 +138,7 @@ public class BiowareCellsChain {
     private static void bacteriaCultures() {
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .input(PETRI_DISH)
-                .fluidInputs(Ethanol.getFluid(500))
+                .fluidInputs(Ethanol.getFluid(1000))
                 .output(STERILE_PETRI_DISH)
                 .duration(200).EUt(VA[IV]).buildAndRegister();
 

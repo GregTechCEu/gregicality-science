@@ -26,5 +26,15 @@ public class RecipeConflicts {
                 .fluidOutputs(VinylChloride.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .duration(160).EUt(VA[LV]).buildAndRegister();
+
+        // Conflict between 2-Ethylanthraquinone and Styrene
+        GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES, Ethylbenzene.getFluid(1000));
+        GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES, Ethylbenzene.getFluid(1000));
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Ethylbenzene.getFluid(1000))
+                .notConsumable(new IntCircuitIngredient(1))
+                .fluidOutputs(Styrene.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(1000))
+                .duration(30).EUt(VA[LV]).buildAndRegister();
     }
 }

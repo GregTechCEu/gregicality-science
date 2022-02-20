@@ -5,7 +5,7 @@ import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 public class GCYSOrganicChemistryMaterials {
 
@@ -230,5 +230,92 @@ public class GCYSOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 6, Hydrogen, 8, Nitrogen, 2, Oxygen, 2, Sulfur, 1)
                 .build();
+
+        ParaXylene = new Material.Builder(15030, "para_xylene")
+                .fluid()
+                .color(0x666040)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 8, Hydrogen, 10)
+                .build()
+                .setFormula("C6H4(CH3)2", true);
+
+        Durene = new Material.Builder(15031, "durene")
+                .dust()
+                .color(0x336040)
+                .iconSet(MaterialIconSet.FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 14)
+                .build()
+                .setFormula("C6H2(CH3)4", true);
+
+        PyrometalliticDianhydride = new Material.Builder(15032, "pyromellitic_dianhydride") //TODO PDMA Tooltip
+                .dust()
+                .color(0xF0EAD6)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 2, Oxygen, 6)
+                .build()
+                .setFormula("C6H2(C2O3)2", true);
+
+        Aminophenol = new Material.Builder(15033, "aminophenol")
+                .fluid()
+                .color(0xFF7F50)
+                .components(Carbon, 6, Hydrogen, 7, Nitrogen, 1, Oxygen, 1)
+                .build()
+                .setFormula("HOC6H4NH2", true);
+
+        Dimethylformamide = new Material.Builder(15034, "dimethylformamide") //TODO DMF Tooltip
+                .fluid()
+                .color(0x42BDFF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 3, Hydrogen, 7, Nitrogen, 1, Oxygen, 1)
+                .build()
+                .setFormula("(CH3)2NC(O)H", true);
+
+        Oxydianiline = new Material.Builder(15035, "oxydianiline") //TODO ODA Tooltip
+                .dust()
+                .color(0xF0E130)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
+                .build()
+                .setFormula("O(C6H4NH2)2", true);
+
+        KaptonK = new Material.Builder(15036, "kapton_k") //TODO Poly 4,4'-oxydiphenylene-pyromellitimide Tooltip
+                .ingot().fluid()
+                .color(0xFFCE52)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_FOIL)
+                .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
+                .build()
+                .setFormula("O(C6H4NH2)2", true);
+
+        BiphenylTetracarboxylicAcidDianhydride = new Material.Builder(15037, "biphenyl_tetracarboxylic_acid_dianhydride") //TODO BPDA Tooltip
+                .dust()
+                .color(0xFF7F50)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 16, Hydrogen, 6, Oxygen, 6)
+                .build()
+                .setFormula("O(C6H4NH2)2", true);
+
+        Nitroaniline = new Material.Builder(15038, "nitroaniline")
+                .fluid()
+                .color(0x2A6E68)
+                .components(Carbon, 6, Hydrogen, 6, Nitrogen, 6, Oxygen, 2)
+                .build()
+                .setFormula("H2NC6H4NO2", true);
+
+        ParaPhenylenediamine = new Material.Builder(15039, "para_phenylenediamine")
+                .dust()
+                .color(0x4A8E7B)
+                .components(Carbon, 6, Hydrogen, 8, Nitrogen, 2)
+                .build()
+                .setFormula("H2NC6H4NH2", true);
+
+        KaptonE = new Material.Builder(15040, "kapton_e")
+                .ingot().fluid()
+                .color(0xFFDF8C)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
+                .build()
+                .setFormula("O(C6H4NH2)2", true);
     }
 }

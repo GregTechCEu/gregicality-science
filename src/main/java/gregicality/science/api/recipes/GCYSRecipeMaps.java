@@ -31,4 +31,8 @@ public class GCYSRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> BIO_VAT_RECIPES = new RecipeMap<>("bio_vat_recipes", 0, 3, 0, 3, 0, 4, 0, 4, new SimpleRecipeBuilder(), false)
             .setSound(GTSounds.CHEMICAL_REACTOR);
 
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> CATALYTIC_REFORMER_RECIPES = new RecipeMap<>("catalytic_reformer_recipes", 1, 1, 0, 0, 1, 1, 1, 4, new SimpleRecipeBuilder(), false)
+            .setSound(GTSounds.FURNACE);
+
 }

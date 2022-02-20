@@ -123,6 +123,17 @@ material.aniline=Aniline
 material.acetic_anhydride=Acetic Anhydride
 material.acetylsulfanilyl_chloride=Acetylsulfanilyl Chloride
 material.sulfanilamide=Sulfanilamide
+material.para_xylene=Para-Xylene
+material.durene=Durene
+material.pyromellitic_dianhydride=Pyromellitic Dianhydride
+material.aminophenol=4-Aminophenol
+material.dimethylformamide=Dimethylformamide
+material.oxydianiline=4,4'-Oxydianiline
+material.kapton_k=Kapton K
+material.biphenyl_tetracarboxylic_acid_dianhydride=Biphenyl-Tetracarboxylic Acid Dianhydride
+material.nitroaniline=4-Nitroaniline
+material.para_phenylenediamine=Para-Phenylenediamine
+material.kapton_e=Kapton E
 
 
 # Unknown Composition Materials
@@ -260,3 +271,4 @@ metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-
 # RecipeMaps
 recipemap.dryer_recipes.name=Drying Machine
 recipemap.bio_vat_recipes.name=Biological Vat
+recipemap.catalytic_reformer_recipes.name=Catalytic Reformation

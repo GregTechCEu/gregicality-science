@@ -30,6 +30,9 @@ public class GCYSRecipeLoader {
         TurpentineChain.init();
         EDTAChain.init();
         BiowareCellsChain.init();
+        OilProcessing.init();
+        DimethylformamideChain.init();
+        KaptonChain.init();
     }
 
     private static void initCircuits() {

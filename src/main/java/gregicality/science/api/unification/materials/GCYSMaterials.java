@@ -107,6 +107,17 @@ public class GCYSMaterials {
     public static Material AceticAnhydride;
     public static Material AcetylsulfanilylChloride;
     public static Material Sulfanilamide;
+    public static Material ParaXylene;
+    public static Material Durene;
+    public static Material PyrometalliticDianhydride;
+    public static Material Aminophenol;
+    public static Material Dimethylformamide;
+    public static Material Oxydianiline;
+    public static Material KaptonK;
+    public static Material BiphenylTetracarboxylicAcidDianhydride;
+    public static Material Nitroaniline;
+    public static Material ParaPhenylenediamine;
+    public static Material KaptonE;
 
 
     // Unknown Composition Materials
