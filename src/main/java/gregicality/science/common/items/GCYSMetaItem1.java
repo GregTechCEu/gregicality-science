@@ -1,8 +1,10 @@
 package gregicality.science.common.items;
 
+import gregicality.science.common.items.behaviors.HeldItemDestroyBehavior;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.common.items.MetaItems;
 
 import static gregicality.science.common.items.GCYSMetaItems.*;
 
@@ -42,12 +44,12 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         SUPRACAUSAL_MAINFRAME = addItem(20, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.Maximum);
 
         ULTRASONIC_HOMOGENZIER = addItem(21, "ultrasonic_homogenizer");
-        STERILE_PETRI_DISH = addItem(22, "petri_dish.sterile");
-        CLEAN_CULTURE = addItem(23, "culture.clean");
-        CUPRIAVIDUS_NECATOR = addItem(24, "culture.cupriavidus_necator");
-        BREVIBACTERIUM_FLAVUM = addItem(25, "culture.brevibacterium_flavum");
-        RAPIDLY_REPLICATING_CELLS = addItem(26, "rapidly_replicating_cells");
-        SUPERINTELLGENT_ORGANISM = addItem(27, "superintelligent_organism");
+        STERILE_PETRI_DISH = addItem(22, "petri_dish.sterile").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
+        CLEAN_CULTURE = addItem(23, "culture.clean").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
+        CUPRIAVIDUS_NECATOR = addItem(24, "culture.cupriavidus_necator").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
+        BREVIBACTERIUM_FLAVUM = addItem(25, "culture.brevibacterium_flavum").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
+        RAPIDLY_REPLICATING_CELLS = addItem(26, "rapidly_replicating_cells").addComponents(new HeldItemDestroyBehavior(MetaItems.FERTILIZER));
+        SUPERINTELLGENT_ORGANISM = addItem(27, "superintelligent_organism").addComponents(new HeldItemDestroyBehavior(MetaItems.FERTILIZER));
 
         BIOWARE_BOARD = addItem(28, "board.bioware");
         BIOWARE_CIRCUIT_BOARD = addItem(29, "circuit_board.bioware");

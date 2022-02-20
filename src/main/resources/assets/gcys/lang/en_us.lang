@@ -202,6 +202,9 @@ metaitem.rapidly_replicating_cells.name=Rapidly Replicating Cells
 metaitem.superintelligent_organism.name=Superintelligent Organism
 
 
+# Item Behaviors
+metaitem.behavior.held_item_destroy.message=Holding the %s ruined it!
+
 # Circuit Boards
 metaitem.board.bioware.name=Bio Mutated Circuit Board
 metaitem.circuit_board.bioware.name=Ultimate Circuit Board

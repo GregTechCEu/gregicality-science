@@ -158,6 +158,7 @@ public class BiowareCellsChain {
 
         BIO_VAT_RECIPES.recipeBuilder()
                 .notConsumable(CUPRIAVIDUS_NECATOR)
+                .input(CLEAN_CULTURE)
                 .fluidInputs(SterileGrowthMedium.getFluid(100))
                 .output(CUPRIAVIDUS_NECATOR)
                 .fluidOutputs(BacterialSludge.getFluid(100))
@@ -175,6 +176,7 @@ public class BiowareCellsChain {
                 .notConsumable(BREVIBACTERIUM_FLAVUM)
                 .fluidInputs(SterileGrowthMedium.getFluid(100))
                 .output(BREVIBACTERIUM_FLAVUM)
+                .input(CLEAN_CULTURE)
                 .fluidOutputs(BacterialSludge.getFluid(100))
                 .duration(100).EUt(VA[HV]).buildAndRegister();
 

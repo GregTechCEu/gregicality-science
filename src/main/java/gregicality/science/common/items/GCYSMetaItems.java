@@ -1,6 +1,8 @@
 package gregicality.science.common.items;
 
+import gregicality.science.common.items.behaviors.HeldItemDestroyBehavior;
 import gregtech.api.items.metaitem.MetaItem;
+import gregtech.common.items.MetaItems;
 
 public class GCYSMetaItems {
 
@@ -60,5 +62,9 @@ public class GCYSMetaItems {
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();
         metaItem1.setRegistryName("meta_item_1");
+
+        // Modifying CEu MetaItems
+        // TODO
+//        MetaItems.STEM_CELLS.addComponents(new HeldItemDestroyBehavior(MetaItems.FERTILIZER));
     }
 }

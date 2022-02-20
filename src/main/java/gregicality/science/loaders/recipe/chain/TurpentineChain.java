@@ -1,8 +1,8 @@
 package gregicality.science.loaders.recipe.chain;
 
-import gregtech.api.GTValues;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import javax.annotation.Nonnull;
@@ -40,7 +40,7 @@ public class TurpentineChain {
     @Nonnull
     private static List<ItemStack> getWoodLogs() {
         List<ItemStack> list = new ArrayList<>();
-        if (GTValues.isModLoaded(MODID_FR)) {
+        if (Loader.isModLoaded(MODID_FR)) {
             // real woods
             ItemStack stack = GameRegistry.makeItemStack("forestry:pine_wood", 0, 4, null);
             if (!stack.isEmpty())
