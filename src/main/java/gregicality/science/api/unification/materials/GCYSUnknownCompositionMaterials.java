@@ -54,5 +54,9 @@ public class GCYSUnknownCompositionMaterials {
         RawEvolutionaryMedium = new Material.Builder(18011, "raw_evolutionary_medium").fluid().color(0x61932E).build();
 
         EvolutionaryMedium = new Material.Builder(18012, "evolutionary_medium").fluid().color(0xA2FD35).build(); // TODO "Survival of the Fittest" Tooltip
+
+        RichNitrogenMixture = new Material.Builder(18013, "rich_nitrogen_mixture").fluid(Material.FluidType.GAS).color(0x6891D8).build();
+
+        RichAmmoniaMixture = new Material.Builder(18014, "rich_ammonia_mixture").fluid().color(0x708ACD).build();
     }
 }

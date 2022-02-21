@@ -134,6 +134,8 @@ public class GCYSMaterials {
     public static Material B27Supplement;
     public static Material RawEvolutionaryMedium;
     public static Material EvolutionaryMedium;
+    public static Material RichNitrogenMixture;
+    public static Material RichAmmoniaMixture;
 
 
     /**

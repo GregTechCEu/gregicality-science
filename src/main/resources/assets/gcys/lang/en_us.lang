@@ -150,6 +150,8 @@ material.yeast=Yeast
 material.b_27_supplement=B27 Supplement
 material.raw_evolutionary_medium=Raw Evolutionary Medium
 material.evolutionary_medium=Sterilized Evolutionary Medium
+material.rich_nitrogen_mixture=Rich Nitrogen Mixture
+material.rich_ammonia_mixture=Rich Ammonia Mixture
 
 # Machines
 gcys.machine.steam_ejector.name=Steam Ejector
