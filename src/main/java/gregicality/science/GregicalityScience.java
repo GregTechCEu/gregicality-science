@@ -9,6 +9,7 @@ import gregicality.science.common.item.cover.CoverBehaviors;
 import gregicality.science.common.machine.GCYSciTileEntities;
 import gregicality.science.integration.theoneprobe.TheOneProbeCompatibility;
 import gregtech.api.GTValues;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -50,7 +51,7 @@ public class GregicalityScience {
     @EventHandler
     public void init(FMLInitializationEvent event) throws IOException {
         proxy.onLoad();
-        if (GTValues.isModLoaded(GTValues.MODID_TOP)) {
+        if (Loader.isModLoaded(GTValues.MODID_TOP)) {
             GCYSciLog.logger.info("TheOneProbe found. Enabling integration...");
             TheOneProbeCompatibility.registerCompatibility();
         }
