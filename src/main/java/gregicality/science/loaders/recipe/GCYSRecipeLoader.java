@@ -2,7 +2,7 @@ package gregicality.science.loaders.recipe;
 
 import gregicality.science.loaders.recipe.chain.*;
 import gregicality.science.loaders.recipe.circuits.BiowareCircuits;
-import gregicality.science.loaders.recipe.handlers.GCYSMaterialRecipeHandler;
+import gregicality.science.loaders.recipe.handlers.BouleRecipeHandler;
 import gregicality.science.loaders.recipe.vacuum.VacuumRecipes;
 
 public class GCYSRecipeLoader {
@@ -17,7 +17,7 @@ public class GCYSRecipeLoader {
     }
 
     private static void initHandlers() {
-        GCYSMaterialRecipeHandler.register();
+        BouleRecipeHandler.register();
     }
 
     private static void initChains() {

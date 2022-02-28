@@ -196,6 +196,7 @@ gcys.vacuum_level.extremely_high=Extremely High Vacuum
 gcys.vacuum_level.perfect=Perfect Vacuum
 
 # Ore Prefixes
+item.material.oreprefix.seedCrystal=%s Seed Crystal
 item.material.oreprefix.boule=%s Boule
 
 # Metaitems

@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gregtech:items/material_sets/emerald/boule",
-    "layer1": "gregtech:items/material_sets/emerald/boule_overlay"
+    "layer0": "gcys:items/material_sets/emerald/boule",
+    "layer1": "gcys:items/material_sets/emerald/boule_overlay"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gcys:items/material_sets/gem_horizontal/boule",
+    "layer1": "gcys:items/material_sets/gem_horizontal/boule_overlay"
+  }
+}
