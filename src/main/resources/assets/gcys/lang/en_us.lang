@@ -51,6 +51,7 @@ material.calcium_carbide=Calcium Carbide
 material.calcium_hydroxide=Calcium Hydroxide
 material.sodium_cyanide=Sodium Cyanide
 material.chlorosulfuric_acid=Chlorosulfuric Acid
+material.cubic_zirconia=Cubic Zirconia
 
 
 # Second Degree Materials
@@ -198,6 +199,32 @@ gcys.vacuum_level.perfect=Perfect Vacuum
 item.material.oreprefix.boule=%s Boule
 
 # Metaitems
+
+# Crystal Stuff
+metaitem.boule.cubic_zirconia.europium.name=Europium-doped Monocrystalline Cubic Zirconia Boule
+metaitem.boule.cubic_zirconia.europium.tooltip=Raw Crystal
+metaitem.wafer.cubic_zirconia.europium.name=Europium-doped Cubic Zirconia Wafer
+metaitem.wafer.cubic_zirconia.europium.tooltip=Raw Crystal
+metaitem.wafer.crystal.interface.name=Crystal Interface Wafer
+metaitem.wafer.crystal.interface.tooltip=Raw Crystal Interface
+metaitem.plate.crystal.interface.name=Crystal Interface Chip
+metaitem.plate.crystal.interface.tooltip=Crystal Interface
+metaitem.engraved.crystal_chip.ruby.name=Engraved Ruby Crystal Chip
+metaitem.engraved.crystal_chip.ruby.tooltip=Control Ruby
+metaitem.engraved.crystal_chip.sapphire.name=Engraved Sapphire Crystal Chip
+metaitem.engraved.crystal_chip.sapphire.tooltip=Conversion Sapphire
+metaitem.engraved.crystal_chip.diamond.name=Engraved Diamond Crystal Chip
+metaitem.engraved.crystal_chip.diamond.tooltip=Logic Diamond
+metaitem.crystal.modulator.ruby.name=Ruby Crystal Modulator
+metaitem.crystal.modulator.ruby.tooltip=Control Processing Circuit
+metaitem.crystal.modulator.sapphire.name=Sapphire Crystal Modulator
+metaitem.crystal.modulator.sapphire.tooltip=Conversion Processing Circuit
+metaitem.crystal.modulator.diamond.name=Diamond Crystal Modulator
+metaitem.crystal.modulator.diamond.tooltip=Logic Processing Circuit
+metaitem.crystal.system_on_chip.socket.name=Crystal SOC Socket
+metaitem.crystal.system_on_chip.socket.tooltip=Bridging Crystal and Circuit
+
+# Wetware and Bioware Stuff
 metaitem.magnetron.name=Magnetron
 metaitem.ultrasonic_homogenizer.name=Ultrasonic Homogenizer
 metaitem.ultrasonic_homogenizer.tooltip=Extracts materials from nature with sound!

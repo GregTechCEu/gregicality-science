@@ -49,18 +49,16 @@ public class GCYSMetaItems {
 
     // Crystal Stuff
     public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_BOULE;
-    public static MetaItem<?>.MetaValueItem CR_DOPED_CUBIC_ZIRCONIA_BOULE;
     public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_WAFER;
-    public static MetaItem<?>.MetaValueItem CR_DOPED_CUBIC_ZIRCONIA_WAFER;
     public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_WAFER;
     public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_CHIP;
-    public static MetaItem<?>.MetaValueItem CRYSTAL_CHIP_WAFER;
-    public static MetaItem<?>.MetaValueItem ENGRAVED_RUBY_CRYSTAL;
-    public static MetaItem<?>.MetaValueItem ENGRAVED_EMERALD_CRYSTAL;
-    public static MetaItem<?>.MetaValueItem ENGRAVED_SAPPHIRE_CRYSTAL;
-    public static MetaItem<?>.MetaValueItem RUBY_CHIP;
-    public static MetaItem<?>.MetaValueItem EMERALD_CHIP;
-    public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
+    public static MetaItem<?>.MetaValueItem ENGRAVED_RUBY_CRYSTAL_CHIP;
+    public static MetaItem<?>.MetaValueItem ENGRAVED_SAPPHIRE_CRYSTAL_CHIP;
+    public static MetaItem<?>.MetaValueItem ENGRAVED_DIAMOND_CRYSTAL_CHIP;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_MODULATOR_RUBY;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_MODULATOR_DIAMOND;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_MODULATOR_SAPPHIRE;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SYSTEM_ON_CHIP_SOCKET;
 
     // Bioware stuff
     public static MetaItem<?>.MetaValueItem ULTRASONIC_HOMOGENZIER;

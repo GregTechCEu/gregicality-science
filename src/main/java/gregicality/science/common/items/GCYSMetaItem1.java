@@ -56,24 +56,22 @@ public class GCYSMetaItem1 extends StandardMetaItem {
 
         SENTIENT_PROCESSOR = addItem(30, "processor.sentient");
 
-        EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(31, "boule.cubic_zirconia.eu_doped");
-        CR_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(32, "boule.cubic_zirconia.cr_doped");
-        EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(33, "wafer.cubic_zirconia.eu_doped");
-        CR_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(34, "wafer.cubic_zirconia.cr_doped");
-        CRYSTAL_INTERFACE_WAFER = addItem(35, "wafer.interface.crystal");
-        CRYSTAL_INTERFACE_CHIP = addItem(36, "chip.interface.crystal");
-        CRYSTAL_CHIP_WAFER = addItem(37, "wafer.chip.crystal");
-        ENGRAVED_RUBY_CRYSTAL = addItem(38, "crystal.engraved.ruby");
-        ENGRAVED_EMERALD_CRYSTAL = addItem(39, "crystal.engraved.ruby");
-        ENGRAVED_SAPPHIRE_CRYSTAL = addItem(40, "crystal.engraved.ruby");
-        RUBY_CHIP = addItem(41, "chip.ruby");
-        EMERALD_CHIP = addItem(42, "chip.emerald");
-        SAPPHIRE_CHIP = addItem(43, "chip.sapphire");
+        EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(31, "boule.cubic_zirconia.europium");
+        EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(33, "wafer.cubic_zirconia.europium");
+        CRYSTAL_INTERFACE_WAFER = addItem(35, "wafer.crystal.interface");
+        CRYSTAL_INTERFACE_CHIP = addItem(36, "plate.crystal.interface");
+        ENGRAVED_RUBY_CRYSTAL_CHIP = addItem(38, "engraved.crystal_chip.ruby");
+        ENGRAVED_SAPPHIRE_CRYSTAL_CHIP = addItem(39, "engraved.crystal_chip.sapphire");
+        ENGRAVED_DIAMOND_CRYSTAL_CHIP = addItem(40, "engraved.crystal_chip.diamond");
+        CRYSTAL_MODULATOR_RUBY = addItem(41, "crystal.modulator.ruby");
+        CRYSTAL_MODULATOR_SAPPHIRE = addItem(42, "crystal.modulator.sapphire");
+        CRYSTAL_MODULATOR_DIAMOND = addItem(43, "crystal.modulator.diamond");
+        CRYSTAL_SYSTEM_ON_CHIP_SOCKET = addItem(44, "crystal.system_on_chip.socket");
 
-        INSANE_SMD_CAPACITOR = addItem(31, "component.insane_smd.capacitor");
-        INSANE_SMD_DIODE = addItem(32, "component.insane_smd.diode");
-        INSANE_SMD_RESISTOR = addItem(33, "component.insane_smd.resistor");
-        INSANE_SMD_TRANSISTOR = addItem(34, "component.insane_smd.transistor");
-        INSANE_SMD_INDUCTOR = addItem(35, "component.insane_smd.inductor");
+        INSANE_SMD_CAPACITOR = addItem(45, "component.insane_smd.capacitor");
+        INSANE_SMD_DIODE = addItem(46, "component.insane_smd.diode");
+        INSANE_SMD_RESISTOR = addItem(47, "component.insane_smd.resistor");
+        INSANE_SMD_TRANSISTOR = addItem(48, "component.insane_smd.transistor");
+        INSANE_SMD_INDUCTOR = addItem(49, "component.insane_smd.inductor");
     }
 }

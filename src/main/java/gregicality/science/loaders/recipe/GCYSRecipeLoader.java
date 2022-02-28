@@ -1,8 +1,8 @@
 package gregicality.science.loaders.recipe;
 
 import gregicality.science.loaders.recipe.chain.*;
-import gregicality.science.loaders.recipe.handlers.GCYSMaterialRecipeHandler;
 import gregicality.science.loaders.recipe.circuits.BiowareCircuits;
+import gregicality.science.loaders.recipe.handlers.GCYSMaterialRecipeHandler;
 import gregicality.science.loaders.recipe.vacuum.VacuumRecipes;
 
 public class GCYSRecipeLoader {
@@ -21,7 +21,7 @@ public class GCYSRecipeLoader {
     }
 
     private static void initChains() {
-        CrystalCircuitsChain.init();
+        CrystalCircuitChain.init();
         RareEarthProcessing.init();
         PlatinumGroupProcessing.init();
         TungstenProcessing.init();

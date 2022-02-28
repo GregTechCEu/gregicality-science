@@ -319,7 +319,7 @@ public class GCYSFirstDegreeMaterials {
 
         CubicZirconia = new Material.Builder(3542, "cubic_zirconia")
                 .gem()
-                .color(0xFFFFFF)
+                .color(0xFFDFE2)
                 .iconSet(MaterialIconSet.DIAMOND)
                 .flags(CRYSTALLIZABLE, DISABLE_DECOMPOSITION)
                 .components(Zirconium, 1, Oxygen, 2)
