@@ -316,5 +316,13 @@ public class GCYSFirstDegreeMaterials {
                 .color(0x916C1D)
                 .components(Hydrogen, 1, Chlorine, 1, Sulfur, 1, Oxygen, 3)
                 .build();
+
+        CubicZirconia = new Material.Builder(3542, "cubic_zirconia")
+                .gem()
+                .color(0xFFDFE2)
+                .iconSet(MaterialIconSet.DIAMOND)
+                .flags(CRYSTALLIZABLE, DISABLE_DECOMPOSITION)
+                .components(Zirconium, 1, Oxygen, 2)
+                .build();
     }
 }

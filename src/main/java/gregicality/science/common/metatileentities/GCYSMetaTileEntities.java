@@ -4,6 +4,7 @@ import gregicality.science.GregicalityScience;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.client.render.GCYSTextures;
 import gregicality.science.common.metatileentities.multiblock.MetaTileEntityBioVat;
+import gregicality.science.common.metatileentities.multiblock.MetaTileEntityCrystallizationCrucible;
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntitySteamEjector;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
@@ -19,7 +20,9 @@ public class GCYSMetaTileEntities {
 
     public static SimpleMachineMetaTileEntity[] DRYER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
     public static MetaTileEntitySteamEjector STEAM_EJECTOR;
+    public static MetaTileEntitySteamEjector HP_STEAM_EJECTOR;
     public static MetaTileEntityBioVat BIO_VAT;
+    public static MetaTileEntityCrystallizationCrucible CRYSTALLIZATION_CRUCIBLE;
 
     public static void init() {
         registerSimpleMetaTileEntity(DRYER, 2100, "dryer", GCYSRecipeMaps.DRYER_RECIPES, GCYSTextures.DRYER_OVERLAY, true, GCYSMetaTileEntities::gcysId, (tier) -> 16000);
@@ -28,7 +31,9 @@ public class GCYSMetaTileEntities {
 
 
         BIO_VAT = registerMetaTileEntity(4100, new MetaTileEntityBioVat(gcysId("bio_vat")));
-        STEAM_EJECTOR = registerMetaTileEntity(4101, new MetaTileEntitySteamEjector(gcysId("steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
+        CRYSTALLIZATION_CRUCIBLE = registerMetaTileEntity(4101, new MetaTileEntityCrystallizationCrucible(gcysId("crystallization_crucible")));
+        STEAM_EJECTOR = registerMetaTileEntity(4102, new MetaTileEntitySteamEjector(gcysId("steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
+        HP_STEAM_EJECTOR = registerMetaTileEntity(4103, new MetaTileEntitySteamEjector(gcysId("hp_steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
     }
 
     @Nonnull

@@ -3,7 +3,9 @@ package gregicality.science.api.unification.materials;
 import gregicality.science.common.GCYSConfigHolder;
 import gregtech.api.unification.material.info.MaterialFlags;
 
+import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.DISABLE_CRYSTALLIZATION;
 import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.CRYSTALLIZABLE;
 
 public class GCYSMaterialFlagAddition {
 
@@ -24,6 +26,17 @@ public class GCYSMaterialFlagAddition {
             Pyrochlore.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
             Tantalite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
         }
+
+        // Disable Crystallization
+        Monazite.addFlags(DISABLE_CRYSTALLIZATION);
+
+        // Crystallizable
+        Sapphire.addFlags(CRYSTALLIZABLE);
+        Ruby.addFlags(CRYSTALLIZABLE);
+        Emerald.addFlags(CRYSTALLIZABLE);
+        Olivine.addFlags(CRYSTALLIZABLE);
+        Amethyst.addFlags(CRYSTALLIZABLE);
+        Opal.addFlags(CRYSTALLIZABLE);
 
         // Rods
         Darmstadtium.addFlags(MaterialFlags.GENERATE_ROD);

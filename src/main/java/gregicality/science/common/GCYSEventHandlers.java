@@ -1,6 +1,7 @@
 package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
+import gregicality.science.api.unification.OrePrefixAdditions;
 import gregicality.science.api.unification.materials.GCYSMaterials;
 import gregicality.science.api.unification.materials.properties.GCYSPropertyAddition;
 import gregtech.api.GregTechAPI;
@@ -15,5 +16,6 @@ public class GCYSEventHandlers {
     public static void registerMaterials(GregTechAPI.MaterialEvent event) {
         GCYSMaterials.init();
         GCYSPropertyAddition.init();
+        OrePrefixAdditions.init();
     }
 }

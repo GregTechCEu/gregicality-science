@@ -63,8 +63,13 @@ public class MetaTileEntitySteamEjector extends SteamMetaTileEntity implements I
     @Override
     public EnumVacuumLevel getProductionLevel() {
         // only produce a vacuum when working
-        if (workableHandler.isWorking())
-            return EnumVacuumLevel.LOW_VACUUM;
+        if (workableHandler.isWorking()) {
+            if(isHighPressure){
+                return EnumVacuumLevel.MEDIUM_VACUUM;
+            }else {
+                return EnumVacuumLevel.LOW_VACUUM;
+            }
+        }
         return EnumVacuumLevel.NONE; //todo this doesn't get set to none when there progress depletes to 0
     }
 

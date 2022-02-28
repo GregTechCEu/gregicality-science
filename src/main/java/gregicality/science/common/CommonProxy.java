@@ -12,10 +12,10 @@ import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import javax.annotation.Nonnull;
 import java.util.Objects;
 import java.util.function.Function;
 
@@ -27,33 +27,34 @@ public class CommonProxy {
     }
 
     @SubscribeEvent
-    public static void syncConfigValues(ConfigChangedEvent.OnConfigChangedEvent event) {
+    public static void syncConfigValues(@Nonnull ConfigChangedEvent.OnConfigChangedEvent event) {
         if (event.getModID().equals(GregicalityScience.MODID)) {
             ConfigManager.sync(GregicalityScience.MODID, Config.Type.INSTANCE);
         }
     }
 
     @SubscribeEvent
-    public static void registerBlocks(RegistryEvent.Register<Block> event) {
+    public static void registerBlocks(@Nonnull RegistryEvent.Register<Block> event) {
         GCYSLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
     }
 
     @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
+    public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
         GCYSLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
     }
 
-    private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {
+    @Nonnull
+    private static <T extends Block> ItemBlock createItemBlock(@Nonnull T block, @Nonnull Function<T, ItemBlock> producer) {
         ItemBlock itemBlock = producer.apply(block);
         itemBlock.setRegistryName(Objects.requireNonNull(block.getRegistryName()));
         return itemBlock;
     }
 
-    @SubscribeEvent(priority = EventPriority.LOWEST)
+    @SubscribeEvent()
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
-        GCYSLog.logger.info("Registering recipe low...");
+        GCYSLog.logger.info("Registering recipes");
 
         // Main recipe registration
         // This is called AFTER GregTech registers recipes, so

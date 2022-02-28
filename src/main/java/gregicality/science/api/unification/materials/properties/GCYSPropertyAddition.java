@@ -23,5 +23,6 @@ public class GCYSPropertyAddition {
         Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
         RhodiumSulfate.setProperty(PropertyKey.DUST, new DustProperty());
         RhodiumSulfate.setMaterialIconSet(MaterialIconSet.ROUGH);
+        Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
     }
 }

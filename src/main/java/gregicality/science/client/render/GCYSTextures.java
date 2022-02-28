@@ -11,8 +11,6 @@ import static gregtech.client.renderer.texture.cube.OrientedOverlayRenderer.Over
 public class GCYSTextures {
 
     public static OrientedOverlayRenderer DRYER_OVERLAY = new OrientedOverlayRenderer("machines/dryer", FRONT, TOP, SIDE);
+    public static OrientedOverlayRenderer CRYSTALLIZATION_CRUCIBLE_OVERLAY = new OrientedOverlayRenderer("multiblock/crystallization_crucible", FRONT);
 
-    public static void preInit() {
-//        DRYER_OVERLAY = new OrientedOverlayRenderer("machines/dryer", FRONT, TOP, SIDE);
-    }
 }
