@@ -164,8 +164,7 @@ gregtech.machine.dryer.tooltip=Vaporizing liquids
 # Multi Block Machines
 
 # Crystallizer
-gcys.machine.crystallizer.name=Crystallizer
-gregtech.multiblock.crystallizer.max_temperature= %s
+gcys.machine.crystallization_crucible.name=Crystallization Crucible
 
 # Biological Vat
 gcys.machine.bio_vat.name=Biological Vat
@@ -312,3 +311,4 @@ metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-
 recipemap.dryer_recipes.name=Drying Machine
 recipemap.bio_vat_recipes.name=Biological Vat
 recipemap.catalytic_reformer_recipes.name=Catalytic Reformation
+recipemap.crystallization_recipes.name=Crystallization
