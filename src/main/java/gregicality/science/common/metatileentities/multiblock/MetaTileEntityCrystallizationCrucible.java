@@ -49,18 +49,18 @@ import java.util.List;
 
 import static gregtech.api.unification.material.Materials.Titanium;
 
-public class MetaTileEntityCrystallizer extends RecipeMapMultiblockController implements IHeatingCoil {
+public class MetaTileEntityCrystallizationCrucible extends RecipeMapMultiblockController implements IHeatingCoil {
 
     private int temperature;
 
-    public MetaTileEntityCrystallizer(ResourceLocation metaTileEntityId) {
+    public MetaTileEntityCrystallizationCrucible(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GCYSRecipeMaps.CRYSTALLIZER_RECIPES);
         this.recipeMapWorkable = new HeatingCoilRecipeLogic(this);
     }
 
     @Override
     public MetaTileEntity createMetaTileEntity(MetaTileEntityHolder holder) {
-        return new MetaTileEntityCrystallizer(metaTileEntityId);
+        return new MetaTileEntityCrystallizationCrucible(metaTileEntityId);
     }
 
     @Override
