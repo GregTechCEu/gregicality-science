@@ -118,7 +118,7 @@ public class RareEarthProcessing {
                 .fluidOutputs(LaPrNdCeOxidesSolution.getFluid(250))
                 .fluidOutputs(ScEuGdSmOxidesSolution.getFluid(250))
                 .fluidOutputs(YTbDyHoOxidesSolution.getFluid(250))
-                .fluidOutputs(ErThYtLuOxidesSolution.getFluid(250))
+                .fluidOutputs(ErTmYbLuOxidesSolution.getFluid(250))
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .disableDistilleryRecipes()
                 .duration(200).EUt(VA[UV]).buildAndRegister();

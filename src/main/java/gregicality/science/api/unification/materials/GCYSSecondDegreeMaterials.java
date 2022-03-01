@@ -35,7 +35,7 @@ public class GCYSSecondDegreeMaterials {
                 .components(YttriumOxide, 1, TerbiumOxide, 1, DysprosiumOxide, 1, HolmiumOxide, 1)
                 .build();
 
-        ErThYtLuOxidesSolution = new Material.Builder(6003, "er_th_yt_lu_oxides_solution")
+        ErTmYbLuOxidesSolution = new Material.Builder(6003, "er_tm_yb_lu_oxides_solution")
                 .fluid()
                 .color(0xFFB3FF)
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)

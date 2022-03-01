@@ -57,7 +57,7 @@ public class GCYSMaterials {
     public static Material LaPrNdCeOxidesSolution;
     public static Material ScEuGdSmOxidesSolution;
     public static Material YTbDyHoOxidesSolution;
-    public static Material ErThYtLuOxidesSolution;
+    public static Material ErTmYbLuOxidesSolution;
     public static Material PlatinumGroupResidue;
     public static Material PalladiumRichAmmonia;
     public static Material CrudePlatinumResidue;
