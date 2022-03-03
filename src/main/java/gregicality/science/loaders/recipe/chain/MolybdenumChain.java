@@ -14,15 +14,15 @@ import static gregtech.api.unification.ore.OrePrefix.dust;
 public class MolybdenumChain {
 
     public static void init(){
-        //2MoS2 + 7O2 -> 2MoO3 + 4SO2
+        // MoS2 + 7O -> MoO3 + 2SO2
         RecipeMaps.BLAST_RECIPES.recipeBuilder()
-                .input(dust, Molybdenite, 6)
+                .input(dust, Molybdenite, 3)
                 .fluidInputs(Oxygen.getFluid(7000))
-                .output(dust, MolybdenumTrioxide, 8)
-                .fluidOutputs(SulfurDioxide.getFluid(4000))
-                .blastFurnaceTemp(1000)
+                .output(dust, MolybdenumTrioxide, 4)
+                .fluidOutputs(SulfurDioxide.getFluid(2000))
+                .blastFurnaceTemp(1400)
                 .duration(2000)
-                .EUt(VA[EV])
+                .EUt(VA[MV])
                 .buildAndRegister();
 
         //MoO3 + 3H2 -> Mo + 3H2O
