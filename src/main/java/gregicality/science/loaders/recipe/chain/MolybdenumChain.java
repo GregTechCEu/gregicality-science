@@ -25,15 +25,14 @@ public class MolybdenumChain {
                 .EUt(VA[MV])
                 .buildAndRegister();
 
-        //MoO3 + 3H2 -> Mo + 3H2O
-        RecipeMaps.BLAST_RECIPES.recipeBuilder()
+        // MoO3 + 6H -> Mo + 3H2O
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, MolybdenumTrioxide, 4)
                 .fluidInputs(Hydrogen.getFluid(6000))
                 .output(dust, Molybdenum)
-                .fluidOutputs(Water.getFluid(9000))
-                .blastFurnaceTemp(1400)
-                .duration(2000)
-                .EUt(VA[EV])
+                .fluidOutputs(Water.getFluid(3000))
+                .duration(200)
+                .EUt(VA[HV])
                 .buildAndRegister();
 
         //CaMoO4 + 2HCl -> MoO3 + H2O + CaCl2
