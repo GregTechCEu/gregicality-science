@@ -1,12 +1,10 @@
 package gregicality.science.loaders.recipe.chain;
 
-import gregicality.science.common.GCYSConfigHolder;
-import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.unification.OreDictUnifier;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
-import static gregtech.api.GTValues.EV;
+import static gregtech.api.GTValues.MV;
+import static gregtech.api.GTValues.HV;
 import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
