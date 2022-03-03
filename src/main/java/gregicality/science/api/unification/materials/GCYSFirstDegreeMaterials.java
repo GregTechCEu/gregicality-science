@@ -324,5 +324,20 @@ public class GCYSFirstDegreeMaterials {
                 .flags(CRYSTALLIZABLE, DISABLE_DECOMPOSITION)
                 .components(Zirconium, 1, Oxygen, 2)
                 .build();
+
+        MolybdenumTrioxide = new Material.Builder(3543, "molybdenum_trioxide")
+                .dust()
+                .color(0xCBCFDA)
+                .iconSet(MaterialIconSet.DULL)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Molybdenum, 1, Oxygen, 3)
+                .build();
+
+        LeadChloride = new Material.Builder(3544, "lead_chloride")
+                .dust()
+                .color(0xF3F3F3)
+                .iconSet(MaterialIconSet.DULL)
+                .components(Lead, 1, Chlorine, 2)
+                .build();
     }
 }

@@ -36,6 +36,7 @@ public class GCYSRecipeLoader {
         DimethylformamideChain.init();
         KaptonChain.init();
         AmmoniaChain.init();
+        MolybdenumChain.init();
     }
 
     private static void initCircuits() {
