@@ -46,15 +46,15 @@ public class MolybdenumChain {
                 .EUt(VA[HV])
                 .buildAndRegister();
 
-        //PbMoO4 + 2HCl -> MoO3 + H2O + PbCl2
-        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+        // PbMoO4 + 2HCl -> MoO3 + H2O + PbCl2
+        RecipeMaps.CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .input(dust, Wulfenite, 6)
                 .fluidInputs(HydrochloricAcid.getFluid(2000))
                 .output(dust, MolybdenumTrioxide, 4)
                 .output(dust, LeadChloride, 3)
                 .fluidOutputs(Water.getFluid(1000))
                 .duration(200)
-                .EUt(200)
+                .EUt(VA[HV])
                 .buildAndRegister();
     }
 }
