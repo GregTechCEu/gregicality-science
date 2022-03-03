@@ -26,7 +26,7 @@ public class GCYSMaterialFlagAddition {
             Pyrochlore.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
             Tantalite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
         }
-        if(GCYSConfigHolder.chainOverrides.disableMolybdenumExtraction){
+        if (GCYSConfigHolder.chainOverrides.disableMolybdenumExtraction) {
             Molybdenite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
             Powellite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
             Wulfenite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
