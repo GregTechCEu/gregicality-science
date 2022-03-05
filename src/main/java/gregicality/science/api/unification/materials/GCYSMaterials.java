@@ -51,6 +51,8 @@ public class GCYSMaterials {
     public static Material SodiumCyanide;
     public static Material ChlorosulfuricAcid;
     public static Material CubicZirconia;
+    public static Material MolybdenumTrioxide;
+    public static Material LeadChloride;
 
 
     // Second Degree Materials
