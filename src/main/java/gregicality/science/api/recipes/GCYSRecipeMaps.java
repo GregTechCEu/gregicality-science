@@ -42,4 +42,14 @@ public class GCYSRecipeMaps {
             .setProgressBar(GuiTextures.PROGRESS_BAR_CRACKING, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSounds.FURNACE);
 
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> GREENHOUSE_RECIPES = new RecipeMap<>("greenhouse_recipes", 0, 3, 0, 3, 0, 3, 0, 3, new SimpleRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.BATH);
+
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> BUTCHERY_RECIPES = new RecipeMap<>("butchery_recipes", 0, 1, 0, 3, 0, 0, 0, 1, new SimpleRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.CUTTER_OVERLAY, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.CUT);
+
 }
