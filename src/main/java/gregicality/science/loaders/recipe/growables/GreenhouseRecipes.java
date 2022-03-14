@@ -7,6 +7,7 @@ import gregicality.science.api.utils.GCYSLog;
 import gregtech.api.recipes.CountableIngredient;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -38,7 +39,7 @@ public class GreenhouseRecipes {
             builder.fluidOutputs(waste);
         }
         if(boosted){
-            builder.input(OrePrefix.dust, GCYSMaterials.AmmoniumNitrate, 1);
+            builder.inputs(MetaItems.FERTILIZER.getStackForm(1));
         }
         builder.duration(duration);
         builder.EUt(EUt);
