@@ -4,8 +4,6 @@ import gregicality.science.api.recipes.growable.AtmosphereType;
 import static gregtech.api.unification.material.Materials.*;
 import net.minecraftforge.fluids.FluidStack;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class AtmosphereTypes {
