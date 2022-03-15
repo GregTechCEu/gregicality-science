@@ -2,11 +2,8 @@ package gregicality.science.loaders.recipe.growables;
 
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.api.recipes.growable.GCYSGrowable;
-import gregicality.science.api.unification.materials.GCYSMaterials;
-import gregicality.science.api.utils.GCYSLog;
 import gregtech.api.recipes.CountableIngredient;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
-import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;

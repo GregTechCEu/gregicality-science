@@ -19,4 +19,16 @@ public class AtmosphereTypes {
     public static AtmosphereType Overworld = new AtmosphereType("overworld", new HashMap<FluidStack, Integer>(){{
         put(Air.getFluid(10), 4);
     }});
+
+    public static AtmosphereType Nether = new AtmosphereType("nether", new HashMap<FluidStack, Integer>(){{
+        put(NetherAir.getFluid(10), 4);
+    }});
+
+    public static AtmosphereType End = new AtmosphereType("end", new HashMap<FluidStack, Integer>(){{
+        put(EnderAir.getFluid(10), 4);
+    }});
+
+    public static AtmosphereType Sea = new AtmosphereType("sea", new HashMap<FluidStack, Integer>(){{
+        put(SaltWater.getFluid(10), 4);
+    }});
 }
