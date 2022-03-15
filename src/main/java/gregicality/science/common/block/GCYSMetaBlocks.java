@@ -1,11 +1,17 @@
 package gregicality.science.common.block;
 
+import gregicality.multiblocks.api.GCYMValues;
+import gregicality.science.common.pipelike.particlepipe.BlockParticlePipe;
+import gregicality.science.common.pipelike.particlepipe.ParticlePipeType;
+import gregicality.science.common.pipelike.particlepipe.tile.TileEntityParticlePipe;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -18,10 +24,17 @@ import java.util.stream.Collectors;
 public class GCYSMetaBlocks {
 
     private GCYSMetaBlocks() {
-
     }
 
+    public static final BlockParticlePipe[] PARTICLE_PIPE = new BlockParticlePipe[1];
+
     public static void init() {
+        for (ParticlePipeType type : ParticlePipeType.values()) {
+            PARTICLE_PIPE[type.ordinal()] = new BlockParticlePipe();
+            PARTICLE_PIPE[type.ordinal()].setRegistryName(String.format("particle_pipe_%s", type.name));
+        }
+
+        GameRegistry.registerTileEntity(TileEntityParticlePipe.class, new ResourceLocation(GCYMValues.GCYS_MODID));
     }
 
     @SideOnly(Side.CLIENT)

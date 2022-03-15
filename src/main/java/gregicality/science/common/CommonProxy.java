@@ -2,6 +2,9 @@ package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
 import gregicality.science.api.utils.GCYSLog;
+import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.common.pipelike.particlepipe.BlockParticlePipe;
+import gregicality.science.common.pipelike.particlepipe.ItemBlockParticlePipe;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -37,12 +40,14 @@ public class CommonProxy {
     public static void registerBlocks(@Nonnull RegistryEvent.Register<Block> event) {
         GCYSLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
+        for (BlockParticlePipe pipe: GCYSMetaBlocks.PARTICLE_PIPE) registry.register(pipe);
     }
 
     @SubscribeEvent
     public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
         GCYSLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
+        for (BlockParticlePipe pipe: GCYSMetaBlocks.PARTICLE_PIPE) registry.register(createItemBlock(pipe, ItemBlockParticlePipe::new));
     }
 
     @Nonnull
