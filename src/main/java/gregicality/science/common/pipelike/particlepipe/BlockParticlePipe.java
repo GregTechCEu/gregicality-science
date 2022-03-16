@@ -1,5 +1,6 @@
 package gregicality.science.common.pipelike.particlepipe;
 
+import gregicality.science.client.render.pipe.ParticlePipeRender;
 import gregicality.science.common.pipelike.particlepipe.net.ParticleNodeData;
 import gregicality.science.common.pipelike.particlepipe.net.ParticlePipeNet;
 import gregicality.science.common.pipelike.particlepipe.net.WorldPartclePipeNet;
@@ -14,10 +15,13 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.tuple.Pair;
 
 import javax.annotation.Nonnull;
@@ -95,7 +99,14 @@ public class BlockParticlePipe extends BlockSimplePipe<ParticlePipeType, Particl
 
     @Override
     protected Pair<TextureAtlasSprite, Integer> getParticleTexture(World world, BlockPos blockPos) {
-        return null; // TODO rendering
+        return ParticlePipeRender.INSTANCE.getParticleTexture((TileEntityParticlePipe) world.getTileEntity(blockPos));
     }
 
+    @Override
+    @SideOnly(Side.CLIENT)
+    @SuppressWarnings("deprecation")
+    @Nonnull
+    public EnumBlockRenderType getRenderType(@Nonnull IBlockState state) {
+        return ParticlePipeRender.INSTANCE.getBlockRenderType();
+    }
 }

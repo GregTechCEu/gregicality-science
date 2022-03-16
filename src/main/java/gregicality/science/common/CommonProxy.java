@@ -40,14 +40,14 @@ public class CommonProxy {
     public static void registerBlocks(@Nonnull RegistryEvent.Register<Block> event) {
         GCYSLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
-        for (BlockParticlePipe pipe: GCYSMetaBlocks.PARTICLE_PIPE) registry.register(pipe);
+        for (BlockParticlePipe pipe: GCYSMetaBlocks.PARTICLE_PIPES) registry.register(pipe);
     }
 
     @SubscribeEvent
     public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
         GCYSLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
-        for (BlockParticlePipe pipe: GCYSMetaBlocks.PARTICLE_PIPE) registry.register(createItemBlock(pipe, ItemBlockParticlePipe::new));
+        for (BlockParticlePipe pipe: GCYSMetaBlocks.PARTICLE_PIPES) registry.register(createItemBlock(pipe, ItemBlockParticlePipe::new));
     }
 
     @Nonnull

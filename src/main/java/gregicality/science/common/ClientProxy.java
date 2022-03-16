@@ -1,5 +1,6 @@
 package gregicality.science.common;
 
+import gregicality.science.client.render.pipe.ParticlePipeRender;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -12,6 +13,8 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preLoad() {
         super.preLoad();
+
+        ParticlePipeRender.INSTANCE.preInit();
     }
 
 

@@ -1,6 +1,7 @@
 package gregicality.science.common.block;
 
 import gregicality.multiblocks.api.GCYMValues;
+import gregicality.science.client.render.pipe.ParticlePipeRender;
 import gregicality.science.common.pipelike.particlepipe.BlockParticlePipe;
 import gregicality.science.common.pipelike.particlepipe.ParticlePipeType;
 import gregicality.science.common.pipelike.particlepipe.tile.TileEntityParticlePipe;
@@ -26,12 +27,12 @@ public class GCYSMetaBlocks {
     private GCYSMetaBlocks() {
     }
 
-    public static final BlockParticlePipe[] PARTICLE_PIPE = new BlockParticlePipe[1];
+    public static final BlockParticlePipe[] PARTICLE_PIPES = new BlockParticlePipe[1];
 
     public static void init() {
         for (ParticlePipeType type : ParticlePipeType.values()) {
-            PARTICLE_PIPE[type.ordinal()] = new BlockParticlePipe();
-            PARTICLE_PIPE[type.ordinal()].setRegistryName(String.format("particle_pipe_%s", type.name));
+            PARTICLE_PIPES[type.ordinal()] = new BlockParticlePipe();
+            PARTICLE_PIPES[type.ordinal()].setRegistryName(String.format("particle_pipe_%s", type.name));
         }
 
         GameRegistry.registerTileEntity(TileEntityParticlePipe.class, new ResourceLocation(GCYMValues.GCYS_MODID));
@@ -39,6 +40,9 @@ public class GCYSMetaBlocks {
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
+        for (BlockParticlePipe pipe: PARTICLE_PIPES) {
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe), stack -> ParticlePipeRender.INSTANCE.getModelLocation());
+        }
     }
 
     @SideOnly(Side.CLIENT)

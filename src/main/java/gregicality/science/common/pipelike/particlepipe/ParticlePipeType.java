@@ -3,8 +3,10 @@ package gregicality.science.common.pipelike.particlepipe;
 import gregicality.science.common.pipelike.particlepipe.net.ParticleNodeData;
 import gregtech.api.pipenet.block.IPipeType;
 
+import javax.annotation.Nonnull;
+
 public enum ParticlePipeType implements IPipeType<ParticleNodeData> {
-    NORMAL("normal", 0.8F);
+    NORMAL("normal", 0.5F);
 
     public final String name;
     private final float thickness;
@@ -30,6 +32,7 @@ public enum ParticlePipeType implements IPipeType<ParticleNodeData> {
     }
 
     @Override
+    @Nonnull
     public String getName() {
         return name;
     }
