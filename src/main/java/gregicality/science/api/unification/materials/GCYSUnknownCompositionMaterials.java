@@ -1,5 +1,6 @@
 package gregicality.science.api.unification.materials;
 
+import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
@@ -55,7 +56,7 @@ public class GCYSUnknownCompositionMaterials {
 
         EvolutionaryMedium = new Material.Builder(18012, "evolutionary_medium").fluid().color(0xA2FD35).build(); // TODO "Survival of the Fittest" Tooltip
 
-        RichNitrogenMixture = new Material.Builder(18013, "rich_nitrogen_mixture").fluid(Material.FluidType.GAS).color(0x6891D8).build();
+        RichNitrogenMixture = new Material.Builder(18013, "rich_nitrogen_mixture").fluid(FluidTypes.GAS).color(0x6891D8).build();
 
         RichAmmoniaMixture = new Material.Builder(18014, "rich_ammonia_mixture").fluid().color(0x708ACD).build();
     }

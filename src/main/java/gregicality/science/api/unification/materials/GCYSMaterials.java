@@ -80,7 +80,6 @@ public class GCYSMaterials {
 
 
     // Organic Chemistry Materials
-    public static Material Butyraldehyde;
     public static Material Ethylhexanol;
     public static Material DiethylhexylPhosphoricAcid;
     public static Material Butanol;

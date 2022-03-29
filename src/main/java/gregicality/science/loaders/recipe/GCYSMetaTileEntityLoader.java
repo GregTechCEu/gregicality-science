@@ -21,7 +21,7 @@ public class GCYSMetaTileEntityLoader {
         // Multiblock Machines
         ModHandler.addShapedRecipe("crystallization_crucible", GCYSMetaTileEntities.CRYSTALLIZATION_CRUCIBLE.getStackForm(),
                 "CMC", "LHL", "PCP",
-                'C', new UnificationEntry(OrePrefix.circuit, MarkerMaterials.Tier.Elite),
+                'C', new UnificationEntry(OrePrefix.circuit, MarkerMaterials.Tier.IV),
                 'M', new UnificationEntry(OrePrefix.plateDouble, GCYMMaterials.MolybdenumDisilicide),
                 'L', new UnificationEntry(OrePrefix.pipeNormalFluid, Materials.Titanium),
                 'H', MetaTileEntities.HULL[GTValues.EV].getStackForm(),

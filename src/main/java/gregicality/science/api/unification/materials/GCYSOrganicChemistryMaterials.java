@@ -1,5 +1,6 @@
 package gregicality.science.api.unification.materials;
 
+import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 
@@ -14,12 +15,7 @@ public class GCYSOrganicChemistryMaterials {
      */
     public static void init() {
 
-        Butyraldehyde = new Material.Builder(15000, "butyraldehyde")
-                .fluid()
-                .color(0xE7CF6E)
-                .components(Carbon, 8, Hydrogen, 18, Oxygen, 1)
-                .build()
-                .setFormula("CH3(CH2)3CH(CH2CH3)CH2OH", true);
+        // FREE ID: 15000
 
         Ethylhexanol = new Material.Builder(15001,"ethylhexanol")
                 .fluid()
@@ -160,7 +156,7 @@ public class GCYSOrganicChemistryMaterials {
                 .setFormula("C2H4(NH2)2", true);
 
         HydrogenCyanide = new Material.Builder(15020, "hydrogen_cyanide")
-                .fluid(Material.FluidType.GAS)
+                .fluid(FluidTypes.GAS)
                 .color(0xB6D1AE)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Hydrogen, 1, Carbon, 1, Nitrogen, 1)

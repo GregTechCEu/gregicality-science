@@ -34,6 +34,11 @@ public class GCYSRecipeMaps {
             .setSound(GTSounds.FURNACE);
 
     @ZenProperty
+    public static final RecipeMap<BlastRecipeBuilder> ROASTER_RECIPES = new RecipeMap<>("roaster_recipes", 0, 3, 0, 3, 0, 3, 0, 3, new BlastRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.FURNACE);
+
+    @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> BIO_VAT_RECIPES = new RecipeMap<>("bio_vat_recipes", 0, 3, 0, 3, 0, 4, 0, 4, new SimpleRecipeBuilder(), false)
             .setSound(GTSounds.CHEMICAL_REACTOR);
 

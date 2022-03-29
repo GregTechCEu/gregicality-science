@@ -23,8 +23,8 @@ public class BiowareCircuits {
                 .input(plate, KaptonE, 32)
                 .input(STERILE_PETRI_DISH, 8)
                 .input(ELECTRIC_PUMP_ZPM)
-                .input(SENSOR_LUV)
-                .input(circuit, MarkerMaterials.Tier.Master)
+                .input(SENSOR_LuV)
+                .input(circuit, MarkerMaterials.Tier.LuV)
                 .input(foil, YttriumBariumCuprate, 32)
                 .fluidInputs(EvolutionaryMedium.getFluid(4000))
                 .output(BIOWARE_BOARD, 32)
@@ -109,9 +109,9 @@ public class BiowareCircuits {
             GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
                     MULTILAYER_FIBER_BOARD.getStackForm(16),
                     PETRI_DISH.getStackForm(),
-                    ELECTRIC_PUMP_LUV.getStackForm(),
+                    ELECTRIC_PUMP_LuV.getStackForm(),
                     SENSOR_IV.getStackForm(),
-                    OreDictUnifier.get(circuit, MarkerMaterials.Tier.Elite),
+                    OreDictUnifier.get(circuit, MarkerMaterials.Tier.IV),
                     OreDictUnifier.get(foil, NiobiumTitanium, 16)},
                     new FluidStack[]{SterileGrowthMedium.getFluid(4000)});
         }
@@ -119,9 +119,9 @@ public class BiowareCircuits {
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(plate, KaptonK, 16)
                 .input(STERILE_PETRI_DISH)
-                .input(ELECTRIC_PUMP_LUV)
+                .input(ELECTRIC_PUMP_LuV)
                 .input(SENSOR_IV)
-                .input(circuit, MarkerMaterials.Tier.Elite)
+                .input(circuit, MarkerMaterials.Tier.IV)
                 .input(foil, NiobiumTitanium, 16)
                 .fluidInputs(SterileGrowthMedium.getFluid(4000))
                 .output(WETWARE_BOARD, 16)
