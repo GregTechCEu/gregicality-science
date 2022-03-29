@@ -1,6 +1,6 @@
 package gregicality.science.api.particle;
 
-public class Nucleus extends ParticleComposite{
+public class Nucleus extends Particle{
     public Nucleus(String name, float mass, double electricCharge, float spin, int parity){
         super(name, mass, electricCharge, false, true, spin, parity);
     }

@@ -1,6 +1,6 @@
 package gregicality.science.api.particle;
 
-public class Hadron extends ParticleComposite{
+public class Hadron extends Particle{
     public Hadron(String name, float mass, double electricCharge, float spin, int parity){
         super(name, mass, electricCharge, false, true, spin, parity);
     }

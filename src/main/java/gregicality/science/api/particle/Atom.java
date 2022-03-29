@@ -1,6 +1,6 @@
 package gregicality.science.api.particle;
 
-public class Atom extends ParticleComposite{
+public class Atom extends Particle{
     public Atom(String name, float mass, float spin, int parity){
         super(name, mass, 0, false, true, spin, parity);
     }
