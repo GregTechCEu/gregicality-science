@@ -1,6 +1,6 @@
 
 
-# materials
+# Materials
 
 # First Degree Materials
 material.lanthanum_oxide=Lanthanum Oxide
@@ -54,6 +54,7 @@ material.chlorosulfuric_acid=Chlorosulfuric Acid
 material.cubic_zirconia=Cubic Zirconia
 material.molybdenum_trioxide=Molybdenum Trioxide
 material.lead_chloride=Lead Chloride
+material.hexagonal_boron_nitride=Hexagonal Boron Nitride
 
 
 # Second Degree Materials
@@ -171,6 +172,15 @@ gcys.machine.crystallization_crucible.name=Crystallization Crucible
 # Biological Vat
 gcys.machine.bio_vat.name=Biological Vat
 
+# Roaster
+gcys.machine.roaster.name=Roaster
+
+# Nanoscale Fabricator
+gcys.machine.nanoscale_fabricator.name=Nanoscale Fabricator
+gcys.multiblock.nanoscale_fabricator.tooltip.1=Average Crucible heat cannot exceed the target by more than §c250K§7.
+
+# Single Block Machines
+
 gcys.machine.dryer.lv.name=Basic Dryer
 gcys.machine.dryer.mv.name=Advanced Dryer
 gcys.machine.dryer.hv.name=Advanced Dryer II
@@ -185,6 +195,13 @@ gcys.machine.dryer.uiv.name=Epic Dryer III
 gcys.machine.dryer.umv.name=Epic Dryer IV
 gcys.machine.dryer.uxv.name=Legendary Dryer
 gcys.machine.dryer.max.name=Maximum Dryer
+
+
+# Blocks
+tile.crucible.quartz.name=Quartz Crucible
+tile.crucible.tungsten.name=Tungsten Crucible
+tile.crucible.graphite.name=Graphite Crucible
+tile.crucible.boron_nitride.name=Boron Nitride Crucible
 
 
 # Vacuums
@@ -310,7 +327,9 @@ metaitem.circuit.supracausal_mainframe.name=Supra-Causal Mainframe
 metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier
 
 # RecipeMaps
-recipemap.dryer_recipes.name=Drying Machine
+recipemap.dryer_recipes.name=Drying
 recipemap.bio_vat_recipes.name=Biological Vat
 recipemap.catalytic_reformer_recipes.name=Catalytic Reformation
 recipemap.crystallization_recipes.name=Crystallization
+recipemap.roaster_recipes.name=Roasting
+recipemap.molecular_beam_recipes.name=Molecular Beam Epitaxy

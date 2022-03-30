@@ -1,8 +1,10 @@
 package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
-import gregicality.science.api.utils.GCYSLog;
+import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.loaders.recipe.GCYSMaterialInfoLoader;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
+import gregtech.common.blocks.VariantItemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -35,14 +37,14 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerBlocks(@Nonnull RegistryEvent.Register<Block> event) {
-        GCYSLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
+        registry.register(GCYSMetaBlocks.CRUCIBLE);
     }
 
     @SubscribeEvent
     public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
-        GCYSLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
+        registry.register(createItemBlock(GCYSMetaBlocks.CRUCIBLE, VariantItemBlock::new));
     }
 
     @Nonnull
@@ -54,11 +56,10 @@ public class CommonProxy {
 
     @SubscribeEvent()
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
-        GCYSLog.logger.info("Registering recipes");
-
         // Main recipe registration
         // This is called AFTER GregTech registers recipes, so
         // anything here is safe to call removals in
         GCYSRecipeLoader.init();
+        GCYSMaterialInfoLoader.init();
     }
 }

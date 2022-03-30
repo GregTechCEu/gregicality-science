@@ -73,5 +73,10 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         INSANE_SMD_RESISTOR = addItem(47, "component.insane_smd.resistor");
         INSANE_SMD_TRANSISTOR = addItem(48, "component.insane_smd.transistor");
         INSANE_SMD_INDUCTOR = addItem(49, "component.insane_smd.inductor");
+
+//        QUARTZ_CRUCIBLE = addItem(50, "crucible.quartz").addComponents(new CrucibleItemBehavior(2482));
+//        TUNGSTEN_CRUCIBLE = addItem(51, "crucible.tungsten").addComponents(new CrucibleItemBehavior(3695));
+//        GRAPHITE_CRUCIBLE = addItem(52, "crucible.graphite").addComponents(new CrucibleItemBehavior(4750));
+//        BORON_NITRIDE_CRUCIBLE = addItem(53, "crucible.boron_nitride").addComponents(new CrucibleItemBehavior(5328));
     }
 }

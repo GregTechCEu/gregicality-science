@@ -53,6 +53,7 @@ public class GCYSMaterials {
     public static Material CubicZirconia;
     public static Material MolybdenumTrioxide;
     public static Material LeadChloride;
+    public static Material HexagonalBoronNitride;
 
 
     // Second Degree Materials

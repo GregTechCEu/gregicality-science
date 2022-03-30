@@ -339,5 +339,13 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.ROUGH)
                 .components(Lead, 1, Chlorine, 2)
                 .build();
+
+        HexagonalBoronNitride = new Material.Builder(3545, "hexagonal_boron_nitride")
+                .gem()
+                .color(0x6A6A72)
+                .iconSet(MaterialIconSet.DIAMOND)
+                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION)
+                .components(Boron, 1, Nitrogen, 1)
+                .build();
     }
 }
