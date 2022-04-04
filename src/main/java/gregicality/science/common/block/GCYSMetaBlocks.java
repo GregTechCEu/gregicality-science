@@ -1,11 +1,19 @@
 package gregicality.science.common.block;
 
+import gregicality.science.client.render.pipe.PressurePipeRenderer;
 import gregicality.science.common.block.blocks.BlockCrucible;
 import gregicality.science.common.block.blocks.BlockMultiblockCasing;
+import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
+import gregicality.science.common.pipelike.pressure.PressurePipeType;
+import gregtech.client.model.SimpleStateMapper;
+import gregtech.client.renderer.pipe.ItemPipeRenderer;
+import gregtech.common.pipelike.itempipe.BlockItemPipe;
+import gregtech.common.pipelike.itempipe.ItemPipeType;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.IStateMapper;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -19,6 +27,7 @@ import java.util.stream.Collectors;
 
 public class GCYSMetaBlocks {
 
+    public static final BlockPressurePipe[] PRESSURE_PIPES = new BlockPressurePipe[1];
     public static BlockCrucible CRUCIBLE;
     public static BlockMultiblockCasing MULTIBLOCK_CASING;
 
@@ -31,12 +40,22 @@ public class GCYSMetaBlocks {
         CRUCIBLE.setRegistryName("crucible");
         MULTIBLOCK_CASING = new BlockMultiblockCasing();
         MULTIBLOCK_CASING.setRegistryName("multiblock_casing");
+        for (PressurePipeType type : PressurePipeType.values()) {
+            PRESSURE_PIPES[type.ordinal()] = new BlockPressurePipe();
+            PRESSURE_PIPES[type.ordinal()].setRegistryName(String.format("pressure_pipe_%s", type.name));
+        }
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
         registerItemModel(CRUCIBLE);
         registerItemModel(MULTIBLOCK_CASING);
+
+        IStateMapper normalStateMapper = new SimpleStateMapper(PressurePipeRenderer.INSTANCE.getModelLocation());
+        for (BlockPressurePipe pipe : PRESSURE_PIPES) {
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe), stack -> PressurePipeRenderer.INSTANCE.getModelLocation());
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
     }
 
     @SideOnly(Side.CLIENT)

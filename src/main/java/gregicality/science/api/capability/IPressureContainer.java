@@ -14,6 +14,14 @@ public interface IPressureContainer {
         return 1 / getMaxPressure();
     }
 
+    default boolean isVacuum() {
+        return getPressure() < ATMOSPHERIC_PRESSURE - 50;
+    }
+
+    default boolean isNormalPressure() {
+        return getPressure() < ATMOSPHERIC_PRESSURE + 50 && getPressure() > ATMOSPHERIC_PRESSURE - 50;
+    }
+
     static final IPressureContainer EMPTY = new IPressureContainer() {
         @Override
         public double getPressure() {
