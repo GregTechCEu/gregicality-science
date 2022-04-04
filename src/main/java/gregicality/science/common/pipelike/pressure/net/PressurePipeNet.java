@@ -51,6 +51,11 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
         return netPressure;
     }
 
+    public void onLeak() {
+        netTank.setFluid(null);
+        netPressure = ATMOSPHERIC_PRESSURE;
+    }
+
     @Override
     public void applyPressure(double amount) {
 

@@ -5,7 +5,9 @@ import java.text.StringCharacterIterator;
 
 public class NumberFormat {
 
+    // kilo, Mega, Giga, Tera, Peta, Exa, Zetta, Yotta
     private static final CharacterIterator ABOVE_1_PREFIX = new StringCharacterIterator("kMGTPEZY");
+    // millie, micro, nano, pico, femto, atto, zepto, yocto
     private static final CharacterIterator BELOW_1_PREFIX = new StringCharacterIterator("munpfazy");
 
     public static String format(double num) {
