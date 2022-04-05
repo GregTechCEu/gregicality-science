@@ -1,16 +1,19 @@
 package gregicality.science.common.pipelike.pressure;
 
 import gregicality.science.api.capability.GCYSTileCapabilities;
+import gregicality.science.client.render.pipe.PressurePipeRenderer;
 import gregicality.science.common.pipelike.pressure.net.WorldPressureNet;
 import gregicality.science.common.pipelike.pressure.tile.TileEntityPressurePipe;
 import gregtech.api.pipenet.block.simple.BlockSimplePipe;
 import gregtech.api.pipenet.tile.IPipeTile;
 import gregtech.api.pipenet.tile.TileEntityPipeBase;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -21,6 +24,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class BlockPressurePipe extends BlockSimplePipe<PressurePipeType, PressurePipeData, WorldPressureNet> {
+
+    private static final String TRANSLATION_KEY = "gcys.pipe.pressure_pipe_normal";
+
+    public BlockPressurePipe() {
+        setHarvestLevel("pickaxe", 1);
+    }
 
     @Override
     protected PressurePipeData createProperties(PressurePipeType pressurePipeType) {
@@ -48,8 +57,10 @@ public class BlockPressurePipe extends BlockSimplePipe<PressurePipeType, Pressur
     }
 
     @Override
-    public void getSubBlocks(@Nonnull CreativeTabs creativeTabs, @Nonnull NonNullList<ItemStack> nonNullList) {
-
+    public void getSubBlocks(@Nonnull CreativeTabs creativeTabs, @Nonnull NonNullList<ItemStack> items) {
+        for (PressurePipeType type : PressurePipeType.values()) {
+            items.add(new ItemStack(this, 1, type.ordinal()));
+        }
     }
 
     @Override
@@ -63,12 +74,28 @@ public class BlockPressurePipe extends BlockSimplePipe<PressurePipeType, Pressur
     }
 
     @Override
-    public boolean isHoldingPipe(EntityPlayer entityPlayer) {
-        return false;
+    public boolean isHoldingPipe(EntityPlayer player) {
+        if (player == null) {
+            return false;
+        }
+        ItemStack stack = player.getHeldItemMainhand();
+        return stack != ItemStack.EMPTY && stack.getItem() instanceof ItemBlockPressurePipe;
     }
 
     @Override
     protected Pair<TextureAtlasSprite, Integer> getParticleTexture(World world, BlockPos blockPos) {
-        return null;
+        return PressurePipeRenderer.INSTANCE.getParticleTexture(getPipeTileEntity(world, blockPos));
+    }
+
+    @Nonnull
+    @Override
+    public EnumBlockRenderType getRenderType(@Nonnull IBlockState state) {
+        return PressurePipeRenderer.INSTANCE.getBlockRenderType();
+    }
+
+    @Nonnull
+    @Override
+    public String getTranslationKey() {
+        return TRANSLATION_KEY;
     }
 }

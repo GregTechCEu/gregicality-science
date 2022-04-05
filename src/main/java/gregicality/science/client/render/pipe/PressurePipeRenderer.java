@@ -1,6 +1,8 @@
 package gregicality.science.client.render.pipe;
 
+import codechicken.lib.vec.uv.IconTransformation;
 import gregicality.science.GregicalityScience;
+import gregicality.science.client.render.GCYSTextures;
 import gregtech.api.pipenet.block.BlockPipe;
 import gregtech.api.pipenet.block.IPipeType;
 import gregtech.api.pipenet.tile.IPipeTile;
@@ -22,16 +24,16 @@ public class PressurePipeRenderer extends PipeRenderer {
 
     @Override
     public void registerIcons(TextureMap textureMap) {
-
     }
 
     @Override
     public void buildRenderer(PipeRenderContext pipeRenderContext, BlockPipe<?, ?, ?> blockPipe, @Nullable IPipeTile<?, ?> iPipeTile, IPipeType<?> iPipeType, @Nullable Material material) {
-
+        pipeRenderContext.addOpenFaceRender(new IconTransformation(GCYSTextures.PRESSURE_PIPE_OPEN))
+                .addSideRender(new IconTransformation(GCYSTextures.PRESSURE_PIPE_SIDE));
     }
 
     @Override
     public TextureAtlasSprite getParticleTexture(IPipeType<?> iPipeType, @Nullable Material material) {
-        return null;
+        return GCYSTextures.PRESSURE_PIPE_SIDE;
     }
 }
