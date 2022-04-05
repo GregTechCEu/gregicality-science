@@ -1,8 +1,8 @@
 package gregicality.science.common.metatileentities.singleblock;
 
 import gregicality.science.api.capability.GCYSTileCapabilities;
+import gregicality.science.api.capability.IPressureContainer;
 import gregicality.science.api.metatileentity.EnumVacuumLevel;
-import gregicality.science.api.metatileentity.IVacuumProducer;
 import gregtech.api.capability.IMultipleTankHandler;
 import gregtech.api.capability.impl.FluidTankList;
 import gregtech.api.capability.impl.RecipeLogicSteam;
@@ -29,9 +29,10 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class MetaTileEntitySteamEjector extends SteamMetaTileEntity implements IVacuumProducer {
+public class MetaTileEntitySteamEjector extends SteamMetaTileEntity {
 
     private FluidTank inputTank;
+    private IPressureContainer pressureContainer;
 
     public MetaTileEntitySteamEjector(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap, ICubeRenderer renderer, boolean isHighPressure) {
         super(metaTileEntityId, recipeMap, renderer, isHighPressure);
@@ -53,24 +54,11 @@ public class MetaTileEntitySteamEjector extends SteamMetaTileEntity implements I
     protected ModularUI createUI(@Nonnull EntityPlayer entityPlayer) {
         return ModularUI.builder(GuiTextures.BACKGROUND_STEAM.get(isHighPressure), 176, 166)
                 .widget(new LabelWidget(5, 5, getMetaFullName()))
-                .widget(new LabelWidget(5, 15, getProductionLevel().getName()))
+                //.widget(new LabelWidget(5, 15, getProductionLevel().getName()))
                 .progressBar(workableHandler::getProgressPercent, 79, 25, 20, 18,
                         GuiTextures.PROGRESS_BAR_EXTRACT_STEAM.get(isHighPressure), ProgressWidget.MoveType.HORIZONTAL, workableHandler.getRecipeMap())
                 .bindPlayerInventory(entityPlayer.inventory, GuiTextures.SLOT_STEAM.get(isHighPressure), 0)
                 .build(getHolder(), entityPlayer);
-    }
-
-    @Override
-    public EnumVacuumLevel getProductionLevel() {
-        // only produce a vacuum when working
-        if (workableHandler.isWorking()) {
-            if(isHighPressure){
-                return EnumVacuumLevel.MEDIUM_VACUUM;
-            }else {
-                return EnumVacuumLevel.LOW_VACUUM;
-            }
-        }
-        return EnumVacuumLevel.NONE; //todo this doesn't get set to none when there progress depletes to 0
     }
 
     @Override
@@ -82,8 +70,8 @@ public class MetaTileEntitySteamEjector extends SteamMetaTileEntity implements I
     @Override
     @Nonnull
     public <T> T getCapability(@Nonnull Capability<T> capability, EnumFacing side) {
-        if (capability.equals(GCYSTileCapabilities.CAPABILITY_VACUUM_PRODUCER))
-            return GCYSTileCapabilities.CAPABILITY_VACUUM_PRODUCER.cast(this);
+        if (capability.equals(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER))
+            return GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER.cast(pressureContainer);
         return super.getCapability(capability, side);
     }
 

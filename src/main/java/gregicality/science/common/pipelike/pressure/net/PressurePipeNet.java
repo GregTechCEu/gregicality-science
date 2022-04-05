@@ -1,7 +1,9 @@
 package gregicality.science.common.pipelike.pressure.net;
 
 import gregicality.science.api.capability.IPressureContainer;
+import gregicality.science.api.capability.impl.PressureMedium;
 import gregicality.science.common.pipelike.pressure.PressurePipeData;
+import gregtech.api.capability.impl.FilteredFluidHandler;
 import gregtech.api.pipenet.PipeNet;
 import gregtech.api.pipenet.WorldPipeNet;
 import net.minecraft.nbt.NBTTagCompound;
@@ -11,7 +13,8 @@ import net.minecraftforge.fluids.FluidTank;
 public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPressureContainer {
 
     private double netPressure = IPressureContainer.ATMOSPHERIC_PRESSURE;
-    private final FluidTank netTank = new FluidTank(0);
+    private final FilteredFluidHandler netTank = new FilteredFluidHandler(0)
+            .setFillPredicate(PressureMedium::isValidMedium);
 
     public PressurePipeNet(WorldPipeNet<PressurePipeData, ? extends PipeNet> world) {
         super(world);
@@ -43,7 +46,7 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     }
 
     private void updateVolume() {
-        this.netTank.setCapacity(getAllNodes().size() * 4000);
+        this.netTank.setCapacity(getAllNodes().size() * 1000);
     }
 
     @Override
@@ -51,15 +54,16 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
         return netPressure;
     }
 
+    @Override
+    public double changePressure(double amount) {
+
+        PressureNetWalker.checkPressure(getWorldData(), getAllNodes().keySet().iterator().next(), getPressure());
+        return 0;
+    }
+
     public void onLeak() {
         netTank.setFluid(null);
         netPressure = ATMOSPHERIC_PRESSURE;
-    }
-
-    @Override
-    public void applyPressure(double amount) {
-
-        PressureNetWalker.checkPressure(getWorldData(), getAllNodes().keySet().iterator().next(), getPressure());
     }
 
     @Override
