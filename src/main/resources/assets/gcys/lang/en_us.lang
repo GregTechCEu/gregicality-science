@@ -382,6 +382,8 @@ gcys.machine.dryer.umv.tooltip=Moisture Remover
 gcys.machine.dryer.uxv.name=Legendary Dryer
 gcys.machine.dryer.uxv.tooltip=Moisture Remover
 
+# Pipes
+gcys.pipe.pressure_pipe_normal.name=Pressure Pipe
 
 # Blocks
 tile.crucible.quartz.name=Quartz Crucible
