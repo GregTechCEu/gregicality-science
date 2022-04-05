@@ -229,6 +229,8 @@ gcys.machine.dryer.umv.name=Epic Dryer IV
 gcys.machine.dryer.uxv.name=Legendary Dryer
 gcys.machine.dryer.max.name=Maximum Dryer
 
+# Pipes
+gcys.pipe.pressure_pipe_normal.name=Pressure Pipe
 
 # Blocks
 tile.crucible.quartz.name=Quartz Crucible

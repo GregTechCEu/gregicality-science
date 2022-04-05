@@ -2,8 +2,12 @@ package gregicality.science.client.render;
 
 import gregicality.science.GregicalityScience;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.renderer.texture.TextureMap;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import static gregtech.client.renderer.texture.cube.OrientedOverlayRenderer.OverlayFace.*;
 
@@ -17,5 +21,14 @@ public class GCYSTextures {
     public static OrientedOverlayRenderer CVD_UNIT_OVERLAY = new OrientedOverlayRenderer("multiblock/cvd_unit", FRONT);
     public static OrientedOverlayRenderer BURNER_REACTOR_OVERLAY = new OrientedOverlayRenderer("multiblock/burner_reactor", FRONT);
     public static OrientedOverlayRenderer CRYOGENIC_REACTOR_OVERLAY = new OrientedOverlayRenderer("multiblock/cryogenic_reactor", FRONT);
+
+    public static TextureAtlasSprite PRESSURE_PIPE_SIDE;
+    public static TextureAtlasSprite PRESSURE_PIPE_OPEN;
+
+    @SideOnly(Side.CLIENT)
+    public static void register(TextureMap textureMap) {
+        PRESSURE_PIPE_SIDE = textureMap.registerSprite(new ResourceLocation(GregicalityScience.MODID, "blocks/pipe/pressure_pipe_side"));
+        PRESSURE_PIPE_OPEN = textureMap.registerSprite(new ResourceLocation(GregicalityScience.MODID, "blocks/pipe/pressure_pipe_open"));
+    }
 
 }

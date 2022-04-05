@@ -4,6 +4,7 @@ import gregicality.science.GregicalityScience;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
 import gregicality.science.common.pipelike.pressure.ItemBlockPressurePipe;
+import gregicality.science.common.pipelike.pressure.tile.TileEntityPressurePipe;
 import gregicality.science.loaders.recipe.GCYSMaterialInfoLoader;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
 import gregtech.api.block.VariantItemBlock;
@@ -11,12 +12,14 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import javax.annotation.Nonnull;
@@ -68,6 +71,6 @@ public class CommonProxy {
     }
 
     public void preLoad() {
-
+        GameRegistry.registerTileEntity(TileEntityPressurePipe.class, new ResourceLocation(GregicalityScience.MODID, "pressure_pipe"));
     }
 }
