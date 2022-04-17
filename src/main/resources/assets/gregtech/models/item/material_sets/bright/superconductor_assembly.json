@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gcys:items/material_sets/bright/superconductor_assembly",
+    "layer1": "gcys:items/material_sets/bright/superconductor_assembly_overlay"
+  }
+}

@@ -347,5 +347,14 @@ public class GCYSFirstDegreeMaterials {
                 .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION)
                 .components(Boron, 1, Nitrogen, 1)
                 .build();
+
+        LiquidHelium = new Material.Builder(3546, "liquid_helium")
+                .fluid()
+                .color(0xDDDD00)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Helium, 1)
+                .fluidTemp(4)
+                .build();
+
     }
 }

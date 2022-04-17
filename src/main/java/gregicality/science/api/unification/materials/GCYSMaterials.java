@@ -54,6 +54,7 @@ public class GCYSMaterials {
     public static Material MolybdenumTrioxide;
     public static Material LeadChloride;
     public static Material HexagonalBoronNitride;
+    public static Material LiquidHelium;
 
 
     // Second Degree Materials
