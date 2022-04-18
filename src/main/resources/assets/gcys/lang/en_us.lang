@@ -214,6 +214,8 @@ gcys.vacuum_level.extremely_high=Extremely High Vacuum
 gcys.vacuum_level.perfect=Perfect Vacuum
 
 # Ore Prefixes
+item.material.oreprefix.superconductorWireBase=%s Superconductive Wire Base
+item.material.oreprefix.cannedSuperconductorMix=Canned %s Superconductor Preparation Mix
 item.material.oreprefix.superconductorAssembly=%s Superconductive Wire Assembly
 item.material.oreprefix.seedCrystal=%s Seed Crystal
 item.material.oreprefix.boule=%s Boule

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gcys:items/material_sets/bright/superconductor_wire_base",
+    "layer1": "gcys:items/material_sets/bright/superconductor_wire_base_overlay"
+  }
+}
