@@ -4,6 +4,7 @@ import gregicality.science.api.unification.ore.GCYSOrePrefix;
 import gregicality.science.api.utils.GCYSLog;
 import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
+import gregtech.api.recipes.CountableIngredient;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
@@ -23,9 +24,10 @@ public class SuperconductorRecipeHandler {
     public static void processSuperconductor(OrePrefix superconductor, @Nonnull Material material, IngotProperty property) {
         if(!material.getProperty(PropertyKey.WIRE).isSuperconductor()) return;
 
-        RecipeMaps.CANNER_RECIPES.recipeBuilder()
+        RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
                 .input(OrePrefix.dust, material, 1)
-                .input(OrePrefix.pipeTinyItem, Materials.Silver, 1)
+                .input(OrePrefix.plate, Materials.Silver, 1)
+                .input(OrePrefix.foil, Materials.Silver, 2)
                 .output(GCYSOrePrefix.cannedSuperconductorMix, material, 1)
                 .duration(20)
                 .EUt(GTValues.LV)
