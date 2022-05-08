@@ -25,14 +25,6 @@ public class RareEarthProcessing {
 
         // Separating Agent Production: Di-(2-ethylhexyl)phosphoric Acid
 
-        // CO + C3H6 + 2H -> C4H8O
-        CHEMICAL_RECIPES.recipeBuilder()
-                .fluidInputs(CarbonMonoxide.getFluid(1000))
-                .fluidInputs(Propene.getFluid(1000))
-                .fluidInputs(Hydrogen.getFluid(2000))
-                .fluidOutputs(Butyraldehyde.getFluid(1000))
-                .duration(160).EUt(VA[LV]).buildAndRegister();
-
         // 2C4H8O + 4H -> C8H18O + H2O
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Butyraldehyde.getFluid(2000))

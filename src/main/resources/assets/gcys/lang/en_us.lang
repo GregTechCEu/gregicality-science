@@ -97,7 +97,6 @@ material.rhodium_salt_solution=Rhodium Salt Solution
 
 
 # Organic Chemistry Materials
-material.butyraldehyde=Butyraldehyde
 material.ethylhexanol=2-Ethylhexanol
 material.diethylhexyl_phosphoric_acid=Di-(2-ethylhexyl)phosphoric Acid
 material.butanol=Butanol
@@ -156,6 +155,8 @@ material.raw_evolutionary_medium=Raw Evolutionary Medium
 material.evolutionary_medium=Sterilized Evolutionary Medium
 material.rich_nitrogen_mixture=Rich Nitrogen Mixture
 material.rich_ammonia_mixture=Rich Ammonia Mixture
+material.brine=Brine
+material.chlorinated_brine=Chlorinated Brine
 
 # Single Block Machines
 gcys.machine.steam_ejector.name=Steam Ejector

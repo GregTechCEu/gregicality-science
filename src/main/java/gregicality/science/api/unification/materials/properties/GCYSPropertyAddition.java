@@ -3,6 +3,7 @@ package gregicality.science.api.unification.materials.properties;
 
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.DustProperty;
+import gregtech.api.unification.material.properties.FluidProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 
 import static gregtech.api.unification.material.Materials.*;
@@ -24,5 +25,9 @@ public class GCYSPropertyAddition {
         RhodiumSulfate.setProperty(PropertyKey.DUST, new DustProperty());
         RhodiumSulfate.setMaterialIconSet(MaterialIconSet.ROUGH);
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
+
+        // Fluids
+        Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Bromine.setMaterialIconSet(MaterialIconSet.FLUID);
     }
 }

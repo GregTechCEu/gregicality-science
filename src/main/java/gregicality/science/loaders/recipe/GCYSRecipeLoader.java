@@ -37,6 +37,7 @@ public class GCYSRecipeLoader {
         KaptonChain.init();
         AmmoniaChain.init();
         MolybdenumChain.init();
+        BrineChain.init();
     }
 
     private static void initCircuits() {
