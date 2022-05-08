@@ -54,11 +54,25 @@ material.chlorosulfuric_acid=Chlorosulfuric Acid
 material.cubic_zirconia=Cubic Zirconia
 material.molybdenum_trioxide=Molybdenum Trioxide
 material.lead_chloride=Lead Chloride
-material.hexagonal_boron_nitride=Hexagonal Boron Nitride
 material.sodium_tellurite=Sodium Tellurite
 material.tellurium_dioxide=Tellurium Dioxide
 material.selenium_dioxide=Selenium Dioxide
 material.selenous_acid=Selenous Acid
+material.boric_acid=Boric Acid
+material.metaboric_acid=Metaboric Acid
+material.boron_trioxide=Boron Trioxide
+material.boron_trifluoride=Boron Trifluoride
+material.lithium_tetrafluoroborate=Lithium Tetrafluoroborate
+material.diborane=Diborane
+material.borazine=Borazine
+material.boron_trichloride=Boron Trichloride
+material.trichloroborazine=Trichloroborazine
+material.hexagonal_boron_nitride=Hexagonal Boron Nitride
+material.cubic_boron_nitride=Cubic Boron Nitride
+material.amorphous_boron_nitride=Amorphous Boron Nitride
+material.heterodiamond=Heterodiamond
+material.cubic_heterodiamond=Cubic Heterodiamond
+material.lithium_hydride=Lithium Hydride
 
 
 # Second Degree Materials
@@ -350,4 +364,5 @@ recipemap.bio_vat_recipes.name=Biological Vat
 recipemap.catalytic_reformer_recipes.name=Catalytic Reformation
 recipemap.crystallization_recipes.name=Crystallization
 recipemap.roaster_recipes.name=Roasting
+recipemap.cvd_recipes.name=Chemical Vapor Deposition
 recipemap.molecular_beam_recipes.name=Molecular Beam Epitaxy

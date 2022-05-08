@@ -53,11 +53,25 @@ public class GCYSMaterials {
     public static Material CubicZirconia;
     public static Material MolybdenumTrioxide;
     public static Material LeadChloride;
-    public static Material HexagonalBoronNitride;
     public static Material SodiumTellurite;
     public static Material TelluriumDioxide;
     public static Material SeleniumDioxide;
     public static Material SelenousAcid;
+    public static Material BoricAcid;
+    public static Material MetaboricAcid;
+    public static Material BoronTrioxide;
+    public static Material BoronTrifluoride;
+    public static Material LithiumTetrafluoroborate;
+    public static Material Diborane;
+    public static Material Borazine;
+    public static Material BoronTrichloride;
+    public static Material Trichloroborazine;
+    public static Material HexagonalBoronNitride;
+    public static Material CubicBoronNitride;
+    public static Material AmorphousBoronNitride;
+    public static Material Heterodiamond;
+    public static Material CubicHeterodiamond;
+    public static Material LithiumHydride;
 
 
     // Second Degree Materials
