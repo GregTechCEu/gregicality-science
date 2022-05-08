@@ -48,5 +48,8 @@ public class GCYSMaterialFlagAddition {
 
         // Frames
         Darmstadtium.addFlags(MaterialFlags.GENERATE_FRAME);
+
+        // Foils
+        Titanium.addFlags(MaterialFlags.GENERATE_FOIL);
     }
 }

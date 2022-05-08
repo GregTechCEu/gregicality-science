@@ -141,6 +141,16 @@ material.biphenyl_tetracarboxylic_acid_dianhydride=Biphenyl-Tetracarboxylic Acid
 material.nitroaniline=4-Nitroaniline
 material.para_phenylenediamine=Para-Phenylenediamine
 material.kapton_e=Kapton E
+material.methylamine=Methylamine
+material.trimethylamine=Trimethylamine
+material.bistrichloromethylbenzene=1,4-Bis(trichloromethyl) Benzene
+material.tetrabromoethane=Tetrabromoethane
+material.terephthalic_acid=Terephthalic Acid
+material.terephthaloyl_chloride=Terephthaloyl Chloride
+material.butanediol=Butanediol
+material.gamma_butyrolactone=Gamma-Butyrolactone
+material.n_methyl_pyrrolidone=N-Methyl-2-Pyrrolidone
+material.kevlar=Kevlar
 
 
 # Unknown Composition Materials
@@ -162,6 +172,8 @@ material.rich_ammonia_mixture=Rich Ammonia Mixture
 material.brine=Brine
 material.chlorinated_brine=Chlorinated Brine
 material.chalcogen_anode_mud=Chalcogen Anode Mud
+material.methylamine_mixture=Methylamine Mixture
+
 
 # Single Block Machines
 gcys.machine.steam_ejector.name=Steam Ejector

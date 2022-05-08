@@ -302,6 +302,7 @@ public class GCYSOrganicChemistryMaterials {
         ParaPhenylenediamine = new Material.Builder(15039, "para_phenylenediamine")
                 .dust()
                 .color(0x4A8E7B)
+                .iconSet(MaterialIconSet.ROUGH)
                 .components(Carbon, 6, Hydrogen, 8, Nitrogen, 2)
                 .build()
                 .setFormula("H2NC6H4NH2", true);
@@ -313,5 +314,74 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
                 .build()
                 .setFormula("O(C6H4NH2)2", true);
+
+        Methylamine = new Material.Builder(15041, "methylamine")
+                .fluid(FluidTypes.GAS)
+                .color(0xAA6600)
+                .components(Carbon, 1, Hydrogen, 5, Nitrogen, 1)
+                .build()
+                .setFormula("(CH3)NH2", true);
+
+        Trimethylamine = new Material.Builder(15042, "trimethylamine")
+                .fluid(FluidTypes.GAS)
+                .color(0xBB7700)
+                .components(Carbon, 3, Hydrogen, 11, Nitrogen, 1)
+                .build()
+                .setFormula("(CH3)3NH2");
+
+        Bistrichloromethylbenzene = new Material.Builder(15043, "bistrichloromethylbenzene")
+                .fluid()
+                .color(0xCF8498)
+                .components(Carbon, 8, Hydrogen, 4, Chlorine, 6)
+                .build()
+                .setFormula("C6H4(CCl3)2", true);
+
+        Tetrabromoethane = new Material.Builder(15044, "tetrabromoethane")
+                .fluid()
+                .color(0x5AAADA)
+                .components(Carbon, 2, Hydrogen, 2, Bromine, 4)
+                .build();
+
+        TerephthalicAcid = new Material.Builder(15045, "terephthalic_acid")
+                .dust()
+                .color(0x5ACCDA)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Carbon, 8, Hydrogen, 6, Oxygen, 4)
+                .build()
+                .setFormula("C6H4(CO2H)2", true);
+
+        TerephthaloylChloride = new Material.Builder(15046, "terephthaloyl_chloride")
+                .dust()
+                .color(0xFAC4DA)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Carbon, 8, Hydrogen, 4, Oxygen, 2, Chlorine, 2)
+                .build()
+                .setFormula("C6H4(COCl)2", true);
+
+        Butanediol = new Material.Builder(15047, "butanediol")
+                .fluid()
+                .color(0xAAC4DA)
+                .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
+                .build();
+
+        GammaButyrolactone = new Material.Builder(15048, "gamma_butyrolactone") //TODO "GBL" tooltip
+                .fluid()
+                .color(0xAF04D6)
+                .components(Carbon, 4, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        NMethylPyrrolidone = new Material.Builder(15049, "n_methyl_pyrrolidone")
+                .fluid()
+                .color(0xA504D6)
+                .components(Carbon, 5, Hydrogen, 9, Nitrogen, 1, Oxygen, 1)
+                .build();
+
+        Kevlar = new Material.Builder(15050, "kevlar")
+                .ingot().fluid()
+                .color(0xF0F078)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, GENERATE_PLATE)
+                .components(Carbon, 14, Hydrogen, 10, Nitrogen, 2, Oxygen, 2)
+                .build()
+                .setFormula("(C6H4)2(CO)2(NH)2", true);
     }
 }

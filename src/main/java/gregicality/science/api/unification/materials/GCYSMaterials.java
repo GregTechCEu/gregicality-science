@@ -125,6 +125,16 @@ public class GCYSMaterials {
     public static Material Nitroaniline;
     public static Material ParaPhenylenediamine;
     public static Material KaptonE;
+    public static Material Methylamine;
+    public static Material Trimethylamine;
+    public static Material Bistrichloromethylbenzene;
+    public static Material Tetrabromoethane;
+    public static Material TerephthalicAcid;
+    public static Material TerephthaloylChloride;
+    public static Material Butanediol;
+    public static Material GammaButyrolactone;
+    public static Material NMethylPyrrolidone;
+    public static Material Kevlar;
 
 
     // Unknown Composition Materials
@@ -146,6 +156,7 @@ public class GCYSMaterials {
     public static Material Brine;
     public static Material ChlorinatedBrine;
     public static Material ChalcogenAnodeMud;
+    public static Material MethylamineMixture;
 
 
     /**
