@@ -32,6 +32,18 @@ public class GCYSMaterialFlagAddition {
             Wulfenite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
         }
 
+        if(GCYSConfigHolder.chainOverrides.disableSuperconductor) {
+            ManganesePhosphide.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING);
+            EnrichedNaquadahTriniumEuropiumDuranide.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING);
+            IndiumTinBariumTitaniumCuprate.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING);
+            MagnesiumDiboride.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING);
+            MercuryBariumCalciumCuprate.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING);
+            RutheniumTriniumAmericiumNeutronate.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING);
+            SamariumIronArsenicOxide.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING);
+            UraniumRhodiumDinaquadide.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING);
+            UraniumTriplatinum.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING);
+        }
+
         // Disable Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
 

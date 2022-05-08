@@ -36,6 +36,9 @@ public class GCYSConfigHolder {
 
         @Config.Comment({"Disables direct production of Molybdenum from Molybdenite, Powellite and Wulfenite, requiring Gregicality's processes.", "Default: true"})
         public boolean disableMolybdenumExtraction = true;
+
+        @Config.Comment({"Disables normal superconductor crafting, requiring a more complex chain.", "Default: true"})
+        public boolean disableSuperconductor = true;
     }
 
     public static class CircuitOverrides {

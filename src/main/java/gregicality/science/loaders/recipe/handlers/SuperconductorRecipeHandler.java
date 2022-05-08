@@ -1,11 +1,12 @@
 package gregicality.science.loaders.recipe.handlers;
 
 import gregicality.science.api.unification.ore.GCYSOrePrefix;
-import gregicality.science.api.utils.GCYSLog;
+import gregicality.science.common.GCYSConfigHolder;
 import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
-import gregtech.api.recipes.CountableIngredient;
+import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.properties.IngotProperty;
@@ -15,6 +16,9 @@ import gregtech.common.items.MetaItems;
 
 import javax.annotation.Nonnull;
 
+import static gregtech.api.unification.ore.OrePrefix.ingot;
+import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_WIRE;
+
 public class SuperconductorRecipeHandler {
 
     public static void register(){
@@ -23,6 +27,18 @@ public class SuperconductorRecipeHandler {
 
     public static void processSuperconductor(OrePrefix superconductor, @Nonnull Material material, IngotProperty property) {
         if(!material.getProperty(PropertyKey.WIRE).isSuperconductor()) return;
+
+        if(GCYSConfigHolder.chainOverrides.disableSuperconductor){
+            GTRecipeHandler.removeRecipesByInputs(
+                    RecipeMaps.EXTRUDER_RECIPES,
+                    OreDictUnifier.get(ingot, material, 1),
+                    SHAPE_EXTRUDER_WIRE.getStackForm(1)
+            );
+            GTRecipeHandler.removeRecipesByInputs(
+                    RecipeMaps.WIREMILL_RECIPES,
+                    OreDictUnifier.get(ingot, material, 1)
+            );
+        }
 
         RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
                 .input(OrePrefix.dust, material, 1)
