@@ -55,6 +55,10 @@ material.cubic_zirconia=Cubic Zirconia
 material.molybdenum_trioxide=Molybdenum Trioxide
 material.lead_chloride=Lead Chloride
 material.hexagonal_boron_nitride=Hexagonal Boron Nitride
+material.sodium_tellurite=Sodium Tellurite
+material.tellurium_dioxide=Tellurium Dioxide
+material.selenium_dioxide=Selenium Dioxide
+material.selenous_acid=Selenous Acid
 
 
 # Second Degree Materials
@@ -157,6 +161,7 @@ material.rich_nitrogen_mixture=Rich Nitrogen Mixture
 material.rich_ammonia_mixture=Rich Ammonia Mixture
 material.brine=Brine
 material.chlorinated_brine=Chlorinated Brine
+material.chalcogen_anode_mud=Chalcogen Anode Mud
 
 # Single Block Machines
 gcys.machine.steam_ejector.name=Steam Ejector

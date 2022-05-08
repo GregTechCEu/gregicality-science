@@ -25,6 +25,8 @@ public class GCYSPropertyAddition {
         RhodiumSulfate.setProperty(PropertyKey.DUST, new DustProperty());
         RhodiumSulfate.setMaterialIconSet(MaterialIconSet.ROUGH);
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
+        Tellurium.setProperty(PropertyKey.DUST, new DustProperty());
+        Selenium.setProperty(PropertyKey.DUST, new DustProperty());
 
         // Fluids
         Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());

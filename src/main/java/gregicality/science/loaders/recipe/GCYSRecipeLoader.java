@@ -38,6 +38,7 @@ public class GCYSRecipeLoader {
         AmmoniaChain.init();
         MolybdenumChain.init();
         BrineChain.init();
+        SeleniumTelluriumChain.init();
     }
 
     private static void initCircuits() {

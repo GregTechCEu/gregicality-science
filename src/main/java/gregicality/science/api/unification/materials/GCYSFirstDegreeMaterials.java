@@ -347,5 +347,37 @@ public class GCYSFirstDegreeMaterials {
                 .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION)
                 .components(Boron, 1, Nitrogen, 1)
                 .build();
+
+        SodiumTellurite = new Material.Builder(3546, "sodium_tellurite")
+                .dust()
+                .color(0xC6C9BE)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Sodium, 2, Tellurium, 1, Oxygen, 3)
+                .build();
+
+        TelluriumDioxide = new Material.Builder(3547, "tellurium_dioxide")
+                .dust()
+                .color(0xE3DDB8)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Tellurium, 1, Oxygen, 2)
+                .build();
+
+        SeleniumDioxide = new Material.Builder(3548, "selenium_dioxide")
+                .dust()
+                .color(0xE0DDD8)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Selenium, 1, Oxygen, 2)
+                .build();
+
+        SelenousAcid = new Material.Builder(3549, "selenous_acid")
+                .dust()
+                .color(0xE0E083)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 2, Selenium, 1, Oxygen, 3)
+                .build();
     }
 }

@@ -54,6 +54,10 @@ public class GCYSMaterials {
     public static Material MolybdenumTrioxide;
     public static Material LeadChloride;
     public static Material HexagonalBoronNitride;
+    public static Material SodiumTellurite;
+    public static Material TelluriumDioxide;
+    public static Material SeleniumDioxide;
+    public static Material SelenousAcid;
 
 
     // Second Degree Materials
@@ -141,6 +145,7 @@ public class GCYSMaterials {
     public static Material RichAmmoniaMixture;
     public static Material Brine;
     public static Material ChlorinatedBrine;
+    public static Material ChalcogenAnodeMud;
 
 
     /**
