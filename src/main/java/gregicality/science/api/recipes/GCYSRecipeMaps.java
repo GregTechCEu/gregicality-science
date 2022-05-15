@@ -1,6 +1,8 @@
 package gregicality.science.api.recipes;
 
 import crafttweaker.annotations.ZenRegister;
+import gregicality.science.api.recipes.builders.NoCoilTemperatureRecipeBuilder;
+import gregicality.science.api.recipes.builders.TemperaturePressureRecipeBuilder;
 import gregicality.science.client.render.GCYSGuiTextures;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
@@ -35,7 +37,7 @@ public class GCYSRecipeMaps {
             .setSound(GTSounds.FURNACE);
 
     @ZenProperty
-    public static final RecipeMap<BlastRecipeBuilder> ROASTER_RECIPES = new RecipeMap<>("roaster_recipes", 0, 3, 0, 3, 0, 3, 0, 3, new BlastRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> ROASTER_RECIPES = new RecipeMap<>("roaster_recipes", 0, 3, 0, 3, 0, 3, 0, 3, new NoCoilTemperatureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSounds.FURNACE);
 
@@ -49,7 +51,7 @@ public class GCYSRecipeMaps {
             .setSound(GTSounds.FURNACE);
 
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> CVD_RECIPES = new RecipeMap<>("cvd_recipes", 0, 2, 0, 2, 0, 3, 0, 3, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<TemperaturePressureRecipeBuilder> CVD_RECIPES = new RecipeMap<>("cvd_recipes", 0, 2, 0, 2, 0, 3, 0, 3, new TemperaturePressureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSounds.FURNACE);
 

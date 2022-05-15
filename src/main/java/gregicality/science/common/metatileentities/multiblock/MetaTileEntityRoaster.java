@@ -1,6 +1,7 @@
 package gregicality.science.common.metatileentities.multiblock;
 
 import gregicality.science.api.recipes.GCYSRecipeMaps;
+import gregicality.science.api.recipes.recipeproperties.NoCoilTemperatureProperty;
 import gregicality.science.client.render.GCYSTextures;
 import gregicality.science.common.metatileentities.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
@@ -12,7 +13,6 @@ import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.*;
 import gregtech.api.recipes.Recipe;
-import gregtech.api.recipes.recipeproperties.TemperatureProperty;
 import gregtech.api.util.BlockInfo;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
@@ -95,7 +95,7 @@ public class MetaTileEntityRoaster extends RecipeMapMultiblockController impleme
 
     @Override
     public boolean checkRecipe(@Nonnull Recipe recipe, boolean consumeIfSuccess) {
-        return this.temperature >= recipe.getProperty(TemperatureProperty.getInstance(), 0);
+        return this.temperature >= recipe.getProperty(NoCoilTemperatureProperty.getInstance(), 0);
     }
 
     @Override
@@ -103,7 +103,7 @@ public class MetaTileEntityRoaster extends RecipeMapMultiblockController impleme
         return FactoryBlockPattern.start()
                 .aisle("FFF", "XXX", "XXX", "XXX", "XXX", "XXX", " X ")
                 .aisle("FFF", "X#X", "X#X", "X#X", "X#X", "X#X", "XMX")
-                .aisle("FSF", "XXX", "XXX", "XXX", "XXX", "XXX", " X ")
+                .aisle("FFF", "XSX", "XXX", "XXX", "XXX", "XXX", " X ")
                 .where('S', selfPredicate())
                 .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID)).setMinGlobalLimited(35)
                         .or(autoAbilities(true, true, true, true, true, true, false)))
@@ -189,7 +189,7 @@ public class MetaTileEntityRoaster extends RecipeMapMultiblockController impleme
         MultiblockShapeInfo.Builder builder = MultiblockShapeInfo.builder()
                 .aisle("FFF", "XEM", "XXX", "XXX", "XXX", "XXX", " X ")
                 .aisle("FFF", "X X", "X X", "X X", "X X", "X X", "XHX")
-                .aisle("FSF", "IDO", "XLX", "XXX", "XXX", "XXX", " X ")
+                .aisle("FFF", "ISO", "DXL", "XXX", "XXX", "XXX", " X ")
                 .where('S', GCYSMetaTileEntities.ROASTER, EnumFacing.SOUTH)
                 .where('X', MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID))
                 .where(' ', Blocks.AIR.getDefaultState())

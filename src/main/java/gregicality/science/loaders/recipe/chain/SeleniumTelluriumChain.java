@@ -56,6 +56,7 @@ public class SeleniumTelluriumChain {
                 .output(ingot, Silver, 2)
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .duration(600)
+                .temperature(1900)
                 .EUt(VA[HV])
                 .buildAndRegister();
 

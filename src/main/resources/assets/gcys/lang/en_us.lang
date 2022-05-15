@@ -186,6 +186,9 @@ material.rich_ammonia_mixture=Rich Ammonia Mixture
 material.brine=Brine
 material.chlorinated_brine=Chlorinated Brine
 material.chalcogen_anode_mud=Chalcogen Anode Mud
+item.chalcogen_anode_mud.dust=Chalcogen Anode Mud
+item.chalcogen_anode_mud.dustSmall=Small Pile of Chalcogen Anode Mud
+item.chalcogen_anode_mud.dustTiny=Tiny Pile of Chalcogen Anode Mud
 material.methylamine_mixture=Methylamine Mixture
 
 
@@ -366,3 +369,9 @@ recipemap.crystallization_recipes.name=Crystallization
 recipemap.roaster_recipes.name=Roasting
 recipemap.cvd_recipes.name=Chemical Vapor Deposition
 recipemap.molecular_beam_recipes.name=Molecular Beam Epitaxy
+
+# Recipe Properties
+gcys.recipe.temperature=Temperature: %,dK
+gcys.recipe.pressure=Pressure: %sPa
+gcys.recipe.vacuum=Vacuum: %sPa
+

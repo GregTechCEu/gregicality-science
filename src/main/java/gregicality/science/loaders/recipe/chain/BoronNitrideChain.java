@@ -50,12 +50,11 @@ public class BoronNitrideChain {
 
     private static void borazine() {
         // B2O3 + 6HF -> 2BF3 + 3H2O
-        CHEMICAL_BATH_RECIPES.recipeBuilder()
+        CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, BoricAcid, 5)
                 .fluidInputs(HydrofluoricAcid.getFluid(6000))
                 .fluidOutputs(BoronTrifluoride.getFluid(2000))
-                .output(dust, Ice, 3) // TODO remove bath minimum item outputs
-//                .fluidOutputs(Water.getFluid(3000)) //TODO more fluid slots in bath
+                .fluidOutputs(Water.getFluid(3000))
                 .duration(160)
                 .EUt(VA[HV])
                 .buildAndRegister();
@@ -129,8 +128,10 @@ public class BoronNitrideChain {
                 .fluidInputs(Oxygen.getFluid(3000))
                 .output(gem, HexagonalBoronNitride, 6)
                 .fluidOutputs(Water.getFluid(3000))
-                .duration(400) //TODO Ultra High Vacuum
+                .duration(400)
                 .EUt(VA[UV])
+                .pressure(0.0000125D)
+                .temperature(1300)
                 .buildAndRegister();
 
         // B + N -> BN
@@ -148,8 +149,10 @@ public class BoronNitrideChain {
         CVD_RECIPES.recipeBuilder()
                 .input(dust, HexagonalBoronNitride)
                 .output(gem, CubicBoronNitride)
-                .duration(100) //TODO 18GPa, 3501K
+                .duration(100)
                 .EUt(VA[UV])
+                .pressure(18_000_000_000D)
+                .temperature(3501)
                 .buildAndRegister();
 
         // B3Cl3H3N3 -> 3 a-BN + 3HCl
@@ -187,8 +190,10 @@ public class BoronNitrideChain {
                 .input(dust, Heterodiamond)
                 .input(dust, Carbon)
                 .output(gem, CubicHeterodiamond)
-                .duration(400) //TODO 18GPa, 2200K
+                .duration(400)
                 .EUt(VA[UHV])
+                .pressure(18_000_000_000D)
+                .temperature(2200)
                 .buildAndRegister();
     }
 }
