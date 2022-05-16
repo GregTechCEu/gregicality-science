@@ -7,6 +7,7 @@ import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.client.render.GCYSTextures;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.common.block.blocks.BlockCrucible;
+import gregicality.science.common.block.blocks.BlockMultiblockCasing;
 import gregicality.science.common.metatileentities.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
@@ -63,7 +64,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
                 .aisle("  XXXXX  ", "  XX#XX  ", "  XXXXX  ", "  XXXXX  ")
                 .aisle(" XXXXXXX ", " X#####X ", " X#####X ", " XXGGGXX ")
                 .aisle("TXXTTTXXT", "TX#####XT", "TX#####XT", " XGGGGGX ")
-                .aisle("TXXTITXXT", "I###T###I", "CX#####XC", " XGGGGGX ")
+                .aisle("TXXTITXXT", "I###A###I", "CX#####XC", " XGGGGGX ")
                 .aisle("TXXTTTXXT", "TX#####XT", "TX#####XT", " XGGGGGX ")
                 .aisle(" XXXXXXX ", " X#####X ", " X#####X ", " XXGGGXX ")
                 .aisle("  XXXXX  ", "  XX#XX  ", "  XXXXX  ", "  XXSXX  ")
@@ -75,6 +76,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
                 .where('G', states(MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.LAMINATED_GLASS)))
                 .where('I', metaTileEntities(MetaTileEntities.ITEM_IMPORT_BUS[GTValues.ULV]).or(states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.NONCONDUCTING_CASING))))
                 .where('C', cruciblePredicate().or(states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.NONCONDUCTING_CASING))))
+                .where('A', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.CasingType.ADVANCED_SUBSTRATE)))
                 .where('#', air())
                 .where(' ', any())
                 .build();
@@ -149,7 +151,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
                 .aisle("  XXXXX  ", "  XX#XX  ", "  XXXXX  ", "  XXXXX  ")
                 .aisle(" XXXXXXX ", " X     X ", " X     X ", " XXGGGXX ")
                 .aisle("TXXTTTXXT", "TX     XT", "TX     XT", " XGGGGGX ")
-                .aisle("TXXTATXXT", "N   T   U", "CX     XC", " XGGGGGX ")
+                .aisle("TXXTATXXT", "N   J   U", "CX     XC", " XGGGGGX ")
                 .aisle("TXXTTTXXT", "TX     XT", "TX     XT", " XGGGGGX ")
                 .aisle(" XXXXXXX ", " X     X ", " X     X ", " XXGGGXX ")
                 .aisle("  XXXXX  ", "  FX XO  ", "  LXXXX  ", "  XMSEX  ")
@@ -158,6 +160,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
                 .where('X', GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.ENGRAVER_CASING))
                 .where('T', GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.NONCONDUCTING_CASING))
                 .where('G', MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.LAMINATED_GLASS))
+                .where('J', GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.CasingType.ADVANCED_SUBSTRATE))
                 .where('I', MetaTileEntities.ITEM_IMPORT_BUS[GTValues.ULV], EnumFacing.SOUTH)
                 .where('N', MetaTileEntities.ITEM_IMPORT_BUS[GTValues.ULV], EnumFacing.WEST)
                 .where('P', MetaTileEntities.ITEM_IMPORT_BUS[GTValues.ULV], EnumFacing.NORTH)

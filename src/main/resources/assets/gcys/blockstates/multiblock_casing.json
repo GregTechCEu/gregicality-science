@@ -1,0 +1,29 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "block/cube_all",
+    "textures": {
+      "all": "gregtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "variant": {
+      "substrate": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gregtech:blocks/casings/solid/substrate_top",
+          "side": "gregtech:blocks/casings/solid/substrate_side",
+          "bottom": "#side"
+        }
+      },
+      "advanced_substrate": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gregtech:blocks/casings/solid/advanced_substrate_top",
+          "side": "gregtech:blocks/casings/solid/substrate_side",
+          "bottom": "#side"
+        }
+      }
+    }
+  }
+}

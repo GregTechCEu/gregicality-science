@@ -50,7 +50,7 @@ public class SeleniumTelluriumChain {
         ROASTER_RECIPES.recipeBuilder()
                 .input(dust, ChalcogenAnodeMud)
                 .input(dust, SodaAsh, 6)
-                .fluidInputs(Oxygen.getFluid(6000))
+                .fluidInputs(Oxygen.getFluid(4000))
                 .output(dust, SodiumTellurite, 6)
                 .output(dust, SeleniumDioxide, 3)
                 .output(ingot, Silver, 2)

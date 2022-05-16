@@ -214,6 +214,9 @@ gcys.machine.roaster.name=Roaster
 gcys.machine.nanoscale_fabricator.name=Nanoscale Fabricator
 gcys.multiblock.nanoscale_fabricator.tooltip.1=Average Crucible heat cannot exceed the target by more than §c250K§7.
 
+# CVD Unit
+gcys.machine.cvd_unit.name=CVD Unit
+
 # Single Block Machines
 
 gcys.machine.dryer.lv.name=Basic Dryer
@@ -237,6 +240,9 @@ tile.crucible.quartz.name=Quartz Crucible
 tile.crucible.tungsten.name=Tungsten Crucible
 tile.crucible.graphite.name=Graphite Crucible
 tile.crucible.boron_nitride.name=Boron Nitride Crucible
+
+tile.multiblock_casing.substrate.name=Substrate Casing
+tile.multiblock_casing.advanced_substrate.name=Advanced Substrate Casing
 
 
 # Vacuums
@@ -367,8 +373,9 @@ recipemap.bio_vat_recipes.name=Biological Vat
 recipemap.catalytic_reformer_recipes.name=Catalytic Reformation
 recipemap.crystallization_recipes.name=Crystallization
 recipemap.roaster_recipes.name=Roasting
-recipemap.cvd_recipes.name=Chemical Vapor Deposition
 recipemap.molecular_beam_recipes.name=Molecular Beam Epitaxy
+recipemap.cvd_recipes.name=Chemical Vapor Deposition
+recipemap.plasma_cvd_recipes.name=Plasma Enhanced CVD
 
 # Recipe Properties
 gcys.recipe.temperature=Temperature: %,dK

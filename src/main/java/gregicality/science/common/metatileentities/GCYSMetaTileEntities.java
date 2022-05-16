@@ -3,10 +3,7 @@ package gregicality.science.common.metatileentities;
 import gregicality.science.GregicalityScience;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.client.render.GCYSTextures;
-import gregicality.science.common.metatileentities.multiblock.MetaTileEntityBioVat;
-import gregicality.science.common.metatileentities.multiblock.MetaTileEntityCrystallizationCrucible;
-import gregicality.science.common.metatileentities.multiblock.MetaTileEntityNanoscaleFabricator;
-import gregicality.science.common.metatileentities.multiblock.MetaTileEntityRoaster;
+import gregicality.science.common.metatileentities.multiblock.*;
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntitySteamEjector;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
@@ -28,6 +25,7 @@ public class GCYSMetaTileEntities {
     public static MetaTileEntityCrystallizationCrucible CRYSTALLIZATION_CRUCIBLE;
     public static MetaTileEntityRoaster ROASTER;
     public static MetaTileEntityNanoscaleFabricator NANOSCALE_FABRICATOR;
+    public static MetaTileEntityCVDUnit CVD_UNIT;
 
     public static void init() {
         registerSimpleMetaTileEntity(DRYER, 2100, "dryer", GCYSRecipeMaps.DRYER_RECIPES, GCYSTextures.DRYER_OVERLAY, true, GCYSMetaTileEntities::gcysId, GTUtility.hvCappedTankSizeFunction);
@@ -38,8 +36,9 @@ public class GCYSMetaTileEntities {
         ROASTER = registerMetaTileEntity(4099, new MetaTileEntityRoaster(gcysId("roaster")));
         BIO_VAT = registerMetaTileEntity(4100, new MetaTileEntityBioVat(gcysId("bio_vat")));
         CRYSTALLIZATION_CRUCIBLE = registerMetaTileEntity(4101, new MetaTileEntityCrystallizationCrucible(gcysId("crystallization_crucible")));
-        STEAM_EJECTOR = registerMetaTileEntity(4102, new MetaTileEntitySteamEjector(gcysId("steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
-        HP_STEAM_EJECTOR = registerMetaTileEntity(4103, new MetaTileEntitySteamEjector(gcysId("hp_steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
+        CVD_UNIT = registerMetaTileEntity(4102, new MetaTileEntityCVDUnit(gcysId("cvd_unit")));
+        STEAM_EJECTOR = registerMetaTileEntity(4104, new MetaTileEntitySteamEjector(gcysId("steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
+        HP_STEAM_EJECTOR = registerMetaTileEntity(4105, new MetaTileEntitySteamEjector(gcysId("hp_steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
     }
 
     @Nonnull
