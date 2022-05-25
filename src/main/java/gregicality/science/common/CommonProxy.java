@@ -2,6 +2,12 @@ package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
 import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.common.pipelike.axle.BlockAxlePipe;
+import gregicality.science.common.pipelike.axle.ItemBlockAxlePipe;
+import gregicality.science.common.pipelike.axle.tile.TileEntityAxlePipe;
+import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
+import gregicality.science.common.pipelike.pressure.ItemBlockPressurePipe;
+import gregicality.science.common.pipelike.pressure.tile.TileEntityPressurePipe;
 import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
 import gregicality.science.common.pipelike.pressure.ItemBlockPressurePipe;
 import gregicality.science.common.pipelike.pressure.tile.TileEntityPressurePipe;
@@ -29,6 +35,11 @@ import java.util.function.Function;
 @Mod.EventBusSubscriber(modid = GregicalityScience.MODID)
 public class CommonProxy {
 
+    public void preLoad() {
+        GameRegistry.registerTileEntity(TileEntityPressurePipe.class, new ResourceLocation(GregicalityScience.MODID, "pressure_pipe"));
+        GameRegistry.registerTileEntity(TileEntityAxlePipe.class, new ResourceLocation(GregicalityScience.MODID, "axle_pipe"));
+    }
+
     @SubscribeEvent
     public static void syncConfigValues(@Nonnull ConfigChangedEvent.OnConfigChangedEvent event) {
         if (event.getModID().equals(GregicalityScience.MODID)) {
@@ -43,6 +54,7 @@ public class CommonProxy {
         registry.register(GCYSMetaBlocks.MULTIBLOCK_CASING);
 
         for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(pipe);
+        for (BlockAxlePipe pipe : GCYSMetaBlocks.AXLE_PIPES) registry.register(pipe);
     }
 
     @SubscribeEvent
@@ -52,6 +64,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GCYSMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));
 
         for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(createItemBlock(pipe, ItemBlockPressurePipe::new));
+        for (BlockAxlePipe pipe : GCYSMetaBlocks.AXLE_PIPES) registry.register(createItemBlock(pipe, ItemBlockAxlePipe::new));
     }
 
     @Nonnull
@@ -68,9 +81,5 @@ public class CommonProxy {
         // anything here is safe to call removals in
         GCYSRecipeLoader.init();
         GCYSMaterialInfoLoader.init();
-    }
-
-    public void preLoad() {
-        GameRegistry.registerTileEntity(TileEntityPressurePipe.class, new ResourceLocation(GregicalityScience.MODID, "pressure_pipe"));
     }
 }
