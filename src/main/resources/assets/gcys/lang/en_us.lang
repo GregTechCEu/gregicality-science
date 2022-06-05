@@ -210,6 +210,12 @@ gcys.machine.bio_vat.name=Biological Vat
 # Roaster
 gcys.machine.roaster.name=Roaster
 
+# Burner Reactor
+gcys.machine.burner_reactor.name=Burner Reactor
+
+# Cryogenic Reactor
+gcys.machine.cryogenic_reactor.name=Cryogenic Reaction Chamber
+
 # Nanoscale Fabricator
 gcys.machine.nanoscale_fabricator.name=Nanoscale Fabricator
 gcys.multiblock.nanoscale_fabricator.tooltip.1=Average Crucible heat cannot exceed the target by more than §c250K§7.
@@ -373,6 +379,8 @@ recipemap.bio_vat_recipes.name=Biological Vat
 recipemap.catalytic_reformer_recipes.name=Catalytic Reformation
 recipemap.crystallization_recipes.name=Crystallization
 recipemap.roaster_recipes.name=Roasting
+recipemap.burner_reactor_recipes.name=High Temperature Reactions
+recipemap.cryogenic_reactor_recipes.name=Cryogenic Reactions
 recipemap.molecular_beam_recipes.name=Molecular Beam Epitaxy
 recipemap.cvd_recipes.name=Chemical Vapor Deposition
 recipemap.plasma_cvd_recipes.name=Plasma Enhanced CVD
