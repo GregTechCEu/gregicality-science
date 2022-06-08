@@ -1,1 +1,76 @@
 
+
+# First Degree Materials
+material.lanthanum_oxide=Оксид лантана
+material.praseodymium_oxide=Оксид празеодима
+material.cerium_oxide=Оксид церия
+material.scandium_oxide=Оксид скандия
+material.europium_oxide=Оксид европия
+metaitem.circuit.supracausal_assembly.tooltip=§b§oUMV Микросхема
+metaitem.circuit.supracausal_computer.name=Надпричинный компьютер
+metaitem.circuit.supracausal_computer.tooltip=§b§oUXV Микросхема
+metaitem.circuit.supracausal_mainframe.name=Надпричинный мейнфрейм
+metaitem.circuit.supracausal_mainframe.tooltip=§b§oMAX Микросхема
+material.yttrium_oxide=Оксид иттрия
+material.zinc_sulfate=Сульфат цинка
+material.sodium_nitrate=Нитрат натрия
+material.rhodium_nitrate=Нитрат родия
+material.sodium_ruthenate=Рутенат натрия
+material.tungsten_trioxide=Триоксид вольфрама
+material.hydrogen_peroxide=Пероксид водорода
+material.hydrazine=Гидразин
+material.cubic_zirconia=Фианит
+material.rhodium_sulfate_solution=Раствор сульфата родия
+material.rhodium_salt=Родиевая соль
+material.rhodium_salt_solution=Раствор родиевой соли
+material.formic_acid=Муравьиная кислота
+material.ethylanthraquinone=Этилантрахинон
+material.ethylanthrahydroquinone=Этилантрагидрохинон
+
+# Circuits
+# Bioware
+metaitem.circuit.bioware_processor.name=Биологический процессор
+metaitem.circuit.bioware_processor.tooltip=§b§oZPM микросхема
+metaitem.circuit.bioware_assembly.name=Биологический вычислительный блок
+metaitem.circuit.bioware_assembly.tooltip=§b§oUV микросхема
+metaitem.circuit.bioware_computer.name=Биологический компьютер
+metaitem.circuit.bioware_computer.tooltip=§b§oUHV миркосхема
+metaitem.circuit.bioware_mainframe.name=Биологический мейнфрейм
+metaitem.circuit.bioware_mainframe.tooltip=§b§oUEV микросхема
+
+# Optical
+metaitem.circuit.optical_processor.name=Оптический процессор
+metaitem.circuit.optical_processor.tooltip=§b§oUV микросхема
+metaitem.circuit.optical_assembly.name=Оптический вычислительный блок
+metaitem.circuit.optical_assembly.tooltip=§b§oUHV микросхема
+metaitem.circuit.optical_computer.name=Оптический компьютер
+metaitem.circuit.optical_computer.tooltip=§b§oUEV микросхема
+metaitem.circuit.optical_mainframe.name=Оптический мейнфрейм
+metaitem.circuit.optical_mainframe.tooltip=§b§oUIV микросхема
+
+# Exotic
+metaitem.circuit.exotic_processor.name=Экзотический процессор
+metaitem.circuit.exotic_processor.tooltip=§b§oUHV микросхема
+metaitem.circuit.exotic_assembly.name=Экзотический вычислительный блок
+metaitem.circuit.exotic_assembly.tooltip=§b§oUEV микросхема
+metaitem.circuit.exotic_computer.name=Экзотический компьютер
+metaitem.circuit.exotic_computer.tooltip=§b§oUIV микросхема
+metaitem.circuit.exotic_mainframe.name=Экзотический мейнфрейм
+metaitem.circuit.exotic_mainframe.tooltip=§b§oUMV микросхема
+
+
+# Cosmic
+metaitem.circuit.cosmic_processor.name=Космический процессор
+metaitem.circuit.cosmic_processor.tooltip=§b§oUEV микросхема
+metaitem.circuit.cosmic_assembly.name=Космический вычислительный блок
+metaitem.circuit.cosmic_assembly.tooltip=§b§oUIV микросхема
+metaitem.circuit.cosmic_computer.name=Космический компьютер
+metaitem.circuit.cosmic_computer.tooltip=§b§oUMV микросхема
+metaitem.circuit.cosmic_mainframe.name=ККосмический мейнфрейм
+metaitem.circuit.cosmic_mainframe.tooltip=§b§oUXV микросхема
+
+# Supracausal
+metaitem.circuit.supracausal_processor.name=Надпричинный процессор
+metaitem.circuit.supracausal_processor.tooltip=§b§oUIV Микросхема
+metaitem.circuit.supracausal_assembly.name=Надпричинный вычислительный блок
+material.neodymium_oxide=Оксид неодима
