@@ -108,3 +108,66 @@ material.calcium_hydroxide=Гидроксид кальция
 material.sodium_cyanide=Цианид натрия
 material.chlorosulfuric_acid=Хлорсерная кислота
 item.palladium_metallic.dustSmall=Маленькая кучка порошка металлического палладия
+material.molybdenum_trioxide=Триоксид молибдена
+material.lead_chloride=Хлорид свинца
+material.sodium_tellurite=Теллурит натрия
+material.tellurium_dioxide=Диоксид теллура
+material.selenous_acid=Селенистая кислота
+material.boric_acid=Борная кислота
+material.boron_trioxide=Триоксид бора
+material.boron_trifluoride=Трифторид бора
+material.lithium_tetrafluoroborate=Тетрафтороборат лития
+material.diborane=Диборан
+material.boron_trichloride=Трихлорид бора
+material.trichloroborazine=Трихлорборазин
+material.cubic_boron_nitride=Кубический нитрид бора
+material.amorphous_boron_nitride=Аморфный нитрид бора
+material.heterodiamond=Гипералмаз
+material.cubic_heterodiamond=Кубический гипералмаз
+material.lithium_hydride=Гидрид лития
+material.sc_eu_gd_sm_oxides_solution=Раствор оксидов Sc-Eu-Gd-Sm
+material.y_tb_dy_ho_oxides_solution=Раствор оксидов Y-Tb-Dy-Ho
+material.er_tm_yb_lu_oxides_solution=Раствор оксидов Er-Tm-Yb-Lu
+material.platinum_group_residue=Остаток платиновой группы
+item.platinum_group_residue.dustSmall=Маленькая кучка остатка платиновой группы
+material.palladium_rich_ammonia=Аммиак, богатый палладием
+material.crude_platinum_residue=Неочищенный платиновый остаток
+item.crude_platinum_residue.dust=Пыль неочищенного платинового остатка
+item.crude_platinum_residue.dustTiny=Крошечная кучка пыли неочищенного платинового остатка
+item.crude_palladium_residue.dust=Пыль неочищенного палладиевого остатка
+item.crude_palladium_residue.dustSmall=Маленькая кучка пыли неочищенного палладиевого остатка
+material.iridium_group_sludge=Шлам иридиевой группы
+item.iridium_group_sludge.dust=Пыль шлама иридиевой группы
+item.iridium_group_sludge.dustSmall=Маленькая кучка пыли шлама иридиевой группы
+material.crude_rhodium_residue=Неочищенный остаток родия
+item.crude_rhodium_residue.dust=Пыль неочищенного остатка родия
+item.crude_rhodium_residue.dustSmall=Маленькая кучка пыли неочищенного остатка родия
+material.acidic_sodium_ruthenate_solution=Кислотный раствор рутената натрия
+material.acidic_iridium_dioxide_solution=Кислотный раствор диоксида иридия
+material.graphene_oxide=Оксид графена
+material.ammonium_nitrate=Нитрат аммония
+
+
+# Third Degree Materials
+material.platinum_palladium_leachate=Платино-палладиевый фильтрат
+
+
+# Organic Chemistry Materials
+material.ethylhexanol=2-Этилгексанол
+material.diethylhexyl_phosphoric_acid=Ди-(2-Этилгексил) фосфорная кислота
+material.butanol=Бутанол
+material.selenium_dioxide=Диоксид селена
+material.metaboric_acid=Метаборная кислота
+material.borazine=Боразол
+material.hexagonal_boron_nitride=Шестиугольный нитрид бора
+
+
+# Second Degree Materials
+material.la_pr_nd_ce_oxides_solution=Раствор оксидов La-Pr-Nd-Ce
+item.platinum_group_residue.dust=Пыль остатка платиновой группы
+item.platinum_group_residue.dustTiny=Крошечная кучка остатка платиновой группы
+item.crude_platinum_residue.dustSmall=Маленькая кучка пыли неочищенного платинового остатка
+material.crude_palladium_residue=Неочищенный палладиевый остаток
+item.crude_palladium_residue.dustTiny=Крошечная кучка пыли неочищенного палладиевого остатка
+item.iridium_group_sludge.dustTiny=Крошечная кучка пыли шлама иридиевой группы
+item.crude_rhodium_residue.dustTiny=Крошечная кучка пыли неочищенного остатка родия
