@@ -25,7 +25,7 @@ material.rhodium_salt=Родиевая соль
 material.rhodium_salt_solution=Раствор родиевой соли
 material.formic_acid=Муравьиная кислота
 material.ethylanthraquinone=Этилантрахинон
-material.ethylanthrahydroquinone=Этилантрагидрохинон
+material.ethylanthrahydroquinone=2-Этилантрагидрохинон
 
 # Circuits
 # Bioware
@@ -171,3 +171,8 @@ material.crude_palladium_residue=Неочищенный палладиевый �
 item.crude_palladium_residue.dustTiny=Крошечная кучка пыли неочищенного палладиевого остатка
 item.iridium_group_sludge.dustTiny=Крошечная кучка пыли шлама иридиевой группы
 item.crude_rhodium_residue.dustTiny=Крошечная кучка пыли неочищенного остатка родия
+material.methyl_formate=Метилформиат
+material.phthalic_anhydride=Фталевый ангидрид
+material.formaldehyde=Формальдегид
+material.acetylene=Ацетилен
+material.propargyl_alcohol=Пропаргиловый спирт
