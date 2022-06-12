@@ -40,7 +40,7 @@ public class AxleNetWalker extends PipeNetWalker {
     private EnumRotation rotation = EnumRotation.NONE;
 
     @Override
-    protected PipeNetWalker createSubWalker(World world, BlockPos blockPos, int i) {
+    protected PipeNetWalker createSubWalker(World world, EnumFacing facing, BlockPos blockPos, int i) {
         AxleNetWalker walker = new AxleNetWalker(world, blockPos, i);
         walker.speed = speed;
         walker.power = power;

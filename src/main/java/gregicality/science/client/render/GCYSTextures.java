@@ -10,7 +10,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import static gregtech.client.renderer.texture.cube.OrientedOverlayRenderer.OverlayFace.*;
 
@@ -28,14 +27,6 @@ public class GCYSTextures {
     public static TextureAtlasSprite PRESSURE_PIPE_SIDE;
     public static TextureAtlasSprite PRESSURE_PIPE_OPEN;
 
-    @SideOnly(Side.CLIENT)
-    public static void register(TextureMap textureMap) {
-        PRESSURE_PIPE_SIDE = textureMap.registerSprite(new ResourceLocation(GregicalityScience.MODID, "blocks/pipe/pressure_pipe_side"));
-        PRESSURE_PIPE_OPEN = textureMap.registerSprite(new ResourceLocation(GregicalityScience.MODID, "blocks/pipe/pressure_pipe_open"));
-    }
-
-    public static TextureAtlasSprite PRESSURE_PIPE_SIDE;
-    public static TextureAtlasSprite PRESSURE_PIPE_OPEN;
     public static TextureAtlasSprite AXLE_OPEN_CLOCKWISE;
     public static TextureAtlasSprite AXLE_OPEN_COUNTERCLOCKWISE;
     public static TextureAtlasSprite AXLE_OPEN;

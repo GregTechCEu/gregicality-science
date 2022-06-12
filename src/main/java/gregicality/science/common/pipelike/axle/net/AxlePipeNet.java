@@ -38,7 +38,7 @@ public class AxlePipeNet extends PipeNet<AxlePipeData> implements IRotationConta
     }
 
     @Override
-    protected void onPipeConnectionsUpdate() {
+    public void onPipeConnectionsUpdate() {
         Stream<EnumRotation> stream = getAllNodes().values().stream().map(axlePipeDataNode -> axlePipeDataNode.data.getRotation());
         if (stream.anyMatch(r -> r == EnumRotation.CW) && stream.anyMatch(r -> r == EnumRotation.CCW)) {
             this.netRotation = EnumRotation.NONE;
