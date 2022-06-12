@@ -10,7 +10,7 @@ metaitem.circuit.supracausal_assembly.tooltip=§b§oUMV Микросхема
 metaitem.circuit.supracausal_computer.name=Надпричинный компьютер
 metaitem.circuit.supracausal_computer.tooltip=§b§oUXV Микросхема
 metaitem.circuit.supracausal_mainframe.name=Надпричинный мейнфрейм
-metaitem.circuit.supracausal_mainframe.tooltip=§b§oMAX Микросхема
+metaitem.circuit.supracausal_mainframe.tooltip=Ответы вперед вопросов/n§b§oMAX Микросхема
 material.yttrium_oxide=Оксид иттрия
 material.zinc_sulfate=Сульфат цинка
 material.sodium_nitrate=Нитрат натрия
@@ -40,9 +40,9 @@ metaitem.circuit.bioware_mainframe.tooltip=§b§oUEV микросхема
 
 # Optical
 metaitem.circuit.optical_processor.name=Оптический процессор
-metaitem.circuit.optical_processor.tooltip=§b§oUV микросхема
+metaitem.circuit.optical_processor.tooltip=Вычисления со скоростью света/n§6UV уровень
 metaitem.circuit.optical_assembly.name=Оптический вычислительный блок
-metaitem.circuit.optical_assembly.tooltip=§b§oUHV микросхема
+metaitem.circuit.optical_assembly.tooltip=Теперь с силой лазеров!/n§6UHV уровень
 metaitem.circuit.optical_computer.name=Оптический компьютер
 metaitem.circuit.optical_computer.tooltip=§b§oUEV микросхема
 metaitem.circuit.optical_mainframe.name=Оптический мейнфрейм
@@ -315,3 +315,25 @@ gcys.vacuum_level.perfect=Идеальный Вакуум
 # Crystal Stuff
 metaitem.boule.cubic_zirconia.europium.name=Буль из монокристаллического кубического циркония, легированного европием
 metaitem.boule.cubic_zirconia.europium.tooltip=Необработанный Кристалл
+metaitem.board.gooware.tooltip=Безупречный подложка
+metaitem.nonlinear_chemical_oscillator.tooltip=Неравновесная термодинамика!
+
+# Circuits
+# Gooware
+metaitem.circuit.gooware_processor.name=Слизневый процессор
+metaitem.circuit.gooware_assembly.name=Слизневый вычислительный блок
+metaitem.circuit.gooware_assembly.tooltip=Цикличные концетрации/n§2UV уровень
+metaitem.circuit.gooware_computer.name=Слизневый суперкомпьютер
+metaitem.circuit.gooware_computer.tooltip=Сложные волновые явления!/n§2UHV уровень
+metaitem.circuit.gooware_mainframe.name=Слизневый мейнфрейм
+
+# Circuit Boards
+metaitem.board.gooware.name=Каптоновая подложка
+
+# Processing Units
+metaitem.reaction_chamber.bz.name=Реакционная камера Белоусова-Жаботинского
+metaitem.nonlinear_chemical_oscillator.name=Нелинейный химический осциллятор
+metaitem.circuit.gooware_processor.tooltip=Реакционно-диффузные вычисления/n§2ZPM уровень
+metaitem.circuit.gooware_mainframe.tooltip=Спиралевидные цветные волны/n§2UEV уровень
+metaitem.wafer.cubic_zirconia.europium.name=Пластина кубического циркония легированная европием
+metaitem.wafer.cubic_zirconia.europium.tooltip=Необработанный кристалл
