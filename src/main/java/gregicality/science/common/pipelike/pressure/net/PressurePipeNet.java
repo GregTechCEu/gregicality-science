@@ -36,7 +36,7 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     }
 
     @Override
-    protected void onPipeConnectionsUpdate() {
+    public void onPipeConnectionsUpdate() {
         updateVolume();
     }
 
