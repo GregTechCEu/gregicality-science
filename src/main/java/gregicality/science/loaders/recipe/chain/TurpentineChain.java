@@ -28,7 +28,7 @@ public class TurpentineChain {
                 .fluidInputs(Steam.getFluid(1000))
                 .fluidInputs(LeachedTurpentine.getFluid(1000))
                 .fluidOutputs(SteamCrackedTurpentine.getFluid(1000))
-                .duration(40).EUt(240).buildAndRegister();
+                .duration(80).EUt(240).buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
                 .fluidInputs(SteamCrackedTurpentine.getFluid(1000))

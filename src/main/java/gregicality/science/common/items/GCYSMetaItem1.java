@@ -1,10 +1,8 @@
 package gregicality.science.common.items;
 
-import gregicality.science.common.items.behaviors.HeldItemDestroyBehavior;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
-import gregtech.common.items.MetaItems;
 
 import static gregicality.science.common.items.GCYSMetaItems.*;
 
@@ -18,10 +16,10 @@ public class GCYSMetaItem1 extends StandardMetaItem {
     public void registerSubItems() {
         MAGNETRON = addItem(0, "magnetron");
 
-        BIOWARE_PROCESSOR = addItem(1, "circuit.bioware_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM);
-        BIOWARE_ASSEMBLY = addItem(2, "circuit.bioware_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
-        BIOWARE_COMPUTER = addItem(3, "circuit.bioware_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        BIOWARE_MAINFRAME = addItem(4, "circuit.bioware_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
+        GOOWARE_PROCESSOR = addItem(1, "circuit.gooware_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM);
+        GOOWARE_ASSEMBLY = addItem(2, "circuit.gooware_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
+        GOOWARE_COMPUTER = addItem(3, "circuit.gooware_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
+        GOOWARE_MAINFRAME = addItem(4, "circuit.gooware_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
 
         OPTICAL_PROCESSOR = addItem(5,"circuit.optical_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
         OPTICAL_ASSEMBLY = addItem(6,"circuit.optical_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
@@ -43,36 +41,30 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         SUPRACAUSAL_COMPUTER = addItem(19, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
         SUPRACAUSAL_MAINFRAME = addItem(20, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
 
-        ULTRASONIC_HOMOGENZIER = addItem(21, "ultrasonic_homogenizer");
-        STERILE_PETRI_DISH = addItem(22, "petri_dish.sterile").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
-        CLEAN_CULTURE = addItem(23, "culture.clean").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
-        CUPRIAVIDUS_NECATOR = addItem(24, "culture.cupriavidus_necator").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
-        BREVIBACTERIUM_FLAVUM = addItem(25, "culture.brevibacterium_flavum").addComponents(new HeldItemDestroyBehavior(MetaItems.PETRI_DISH));
-        RAPIDLY_REPLICATING_CELLS = addItem(26, "rapidly_replicating_cells").addComponents(new HeldItemDestroyBehavior(MetaItems.FERTILIZER));
-        SUPERINTELLIGENT_ORGANISM = addItem(27, "superintelligent_organism").addComponents(new HeldItemDestroyBehavior(MetaItems.FERTILIZER));
+        GOOWARE_BOARD = addItem(28, "board.gooware");
+        GOOWARE_CIRCUIT_BOARD = addItem(29, "circuit_board.gooware");
 
-        BIOWARE_BOARD = addItem(28, "board.bioware");
-        BIOWARE_CIRCUIT_BOARD = addItem(29, "circuit_board.bioware");
+        BZ_REACTION_CHAMBER = addItem(30, "reaction_chamber.bz");
+        NONLINEAR_CHEMICAL_OSCILLATOR = addItem(31, "nonlinear_chemical_oscillator");
 
-        SENTIENT_PROCESSOR = addItem(30, "processor.sentient");
 
-        EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(31, "boule.cubic_zirconia.europium");
-        EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(33, "wafer.cubic_zirconia.europium");
-        CRYSTAL_INTERFACE_WAFER = addItem(35, "wafer.crystal.interface");
-        CRYSTAL_INTERFACE_CHIP = addItem(36, "plate.crystal.interface");
-        ENGRAVED_RUBY_CRYSTAL_CHIP = addItem(38, "engraved.crystal_chip.ruby");
-        ENGRAVED_SAPPHIRE_CRYSTAL_CHIP = addItem(39, "engraved.crystal_chip.sapphire");
-        ENGRAVED_DIAMOND_CRYSTAL_CHIP = addItem(40, "engraved.crystal_chip.diamond");
-        CRYSTAL_MODULATOR_RUBY = addItem(41, "crystal.modulator.ruby");
-        CRYSTAL_MODULATOR_SAPPHIRE = addItem(42, "crystal.modulator.sapphire");
-        CRYSTAL_MODULATOR_DIAMOND = addItem(43, "crystal.modulator.diamond");
-        CRYSTAL_SYSTEM_ON_CHIP_SOCKET = addItem(44, "crystal.system_on_chip.socket");
+        EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(35, "boule.cubic_zirconia.europium");
+        EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(36, "wafer.cubic_zirconia.europium");
+        CRYSTAL_INTERFACE_WAFER = addItem(37, "wafer.crystal.interface");
+        CRYSTAL_INTERFACE_CHIP = addItem(38, "plate.crystal.interface");
+        ENGRAVED_RUBY_CRYSTAL_CHIP = addItem(39, "engraved.crystal_chip.ruby");
+        ENGRAVED_SAPPHIRE_CRYSTAL_CHIP = addItem(40, "engraved.crystal_chip.sapphire");
+        ENGRAVED_DIAMOND_CRYSTAL_CHIP = addItem(41, "engraved.crystal_chip.diamond");
+        CRYSTAL_MODULATOR_RUBY = addItem(42, "crystal.modulator.ruby");
+        CRYSTAL_MODULATOR_SAPPHIRE = addItem(43, "crystal.modulator.sapphire");
+        CRYSTAL_MODULATOR_DIAMOND = addItem(44, "crystal.modulator.diamond");
+        CRYSTAL_SYSTEM_ON_CHIP_SOCKET = addItem(45, "crystal.system_on_chip.socket");
 
-        INSANE_SMD_CAPACITOR = addItem(45, "component.insane_smd.capacitor");
-        INSANE_SMD_DIODE = addItem(46, "component.insane_smd.diode");
-        INSANE_SMD_RESISTOR = addItem(47, "component.insane_smd.resistor");
-        INSANE_SMD_TRANSISTOR = addItem(48, "component.insane_smd.transistor");
-        INSANE_SMD_INDUCTOR = addItem(49, "component.insane_smd.inductor");
+        INSANE_SMD_CAPACITOR = addItem(46, "component.insane_smd.capacitor");
+        INSANE_SMD_DIODE = addItem(47, "component.insane_smd.diode");
+        INSANE_SMD_RESISTOR = addItem(48, "component.insane_smd.resistor");
+        INSANE_SMD_TRANSISTOR = addItem(49, "component.insane_smd.transistor");
+        INSANE_SMD_INDUCTOR = addItem(50, "component.insane_smd.inductor");
 
 //        QUARTZ_CRUCIBLE = addItem(50, "crucible.quartz").addComponents(new CrucibleItemBehavior(2482));
 //        TUNGSTEN_CRUCIBLE = addItem(51, "crucible.tungsten").addComponents(new CrucibleItemBehavior(3695));

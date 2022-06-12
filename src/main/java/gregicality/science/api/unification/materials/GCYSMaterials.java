@@ -27,8 +27,8 @@ public class GCYSMaterials {
     public static Material PlatinumMetallic;
     public static Material PalladiumMetallic;
     public static Material AmmoniumHexachloroplatinate;
-    public static Material ChloroplatinicAcid;
-    public static Material PotassiumBisulfate;
+    public static Material PotassiumHydroxide;
+    public static Material PotassiumBromate;
     public static Material PotassiumPyrosulfate;
     public static Material PotassiumSulfate;
     public static Material ZincSulfate;
@@ -72,6 +72,7 @@ public class GCYSMaterials {
     public static Material Heterodiamond;
     public static Material CubicHeterodiamond;
     public static Material LithiumHydride;
+    public static Material HydrobromicAcid;
 
 
     // Second Degree Materials
@@ -109,25 +110,17 @@ public class GCYSMaterials {
     public static Material Ethylanthrahydroquinone;
     public static Material Formaldehyde;
     public static Material Acetylene;
-    public static Material PropargylAlcohol;
-    public static Material PropargylChloride;
     public static Material Turpentine;
-    public static Material BetaPinene;
-    public static Material Citral;
-    public static Material BetaIonone;
-    public static Material Retinol;
+    public static Material ChloroaceticAcid;
+    public static Material MalonicAcid;
+    public static Material Trichloroethylene;
     public static Material Dichloroethane;
     public static Material Ethylenediamine;
     public static Material HydrogenCyanide;
     public static Material TetrasodiumEDTA;
     public static Material EthylenediaminetetraaceticAcid;
-    public static Material Biotin;
-    public static Material LinoleicAcid;
-    public static Material Glutamine;
     public static Material Aniline;
     public static Material AceticAnhydride;
-    public static Material AcetylsulfanilylChloride;
-    public static Material Sulfanilamide;
     public static Material ParaXylene;
     public static Material Durene;
     public static Material PyrometalliticDianhydride;
@@ -149,6 +142,9 @@ public class GCYSMaterials {
     public static Material GammaButyrolactone;
     public static Material NMethylPyrrolidone;
     public static Material Kevlar;
+    public static Material TetramethylammoniumChloride;
+    public static Material TetramethylammoniumHydroxide;
+    public static Material Pyrocatechol;
 
 
     // Unknown Composition Materials
@@ -156,21 +152,14 @@ public class GCYSMaterials {
     public static Material RareEarthChloridesSolution;
     public static Material LeachedTurpentine;
     public static Material SteamCrackedTurpentine;
-    public static Material Blood;
-    public static Material NonCoagulatingBlood;
-    public static Material Catalase;
-    public static Material BasicFibroblastGrowthFactor;
-    public static Material EpidermalGrowthFactor;
-    public static Material Yeast;
-    public static Material B27Supplement;
-    public static Material RawEvolutionaryMedium;
-    public static Material EvolutionaryMedium;
+    public static Material BZMedium;
     public static Material RichNitrogenMixture;
     public static Material RichAmmoniaMixture;
     public static Material Brine;
     public static Material ChlorinatedBrine;
     public static Material ChalcogenAnodeMud;
     public static Material MethylamineMixture;
+    public static Material EPD;
 
 
     /**

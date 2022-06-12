@@ -8,10 +8,10 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem MAGNETRON;
 
     // Circuits
-    public static MetaItem<?>.MetaValueItem BIOWARE_PROCESSOR;
-    public static MetaItem<?>.MetaValueItem BIOWARE_ASSEMBLY;
-    public static MetaItem<?>.MetaValueItem BIOWARE_COMPUTER;
-    public static MetaItem<?>.MetaValueItem BIOWARE_MAINFRAME;
+    public static MetaItem<?>.MetaValueItem GOOWARE_PROCESSOR;
+    public static MetaItem<?>.MetaValueItem GOOWARE_ASSEMBLY;
+    public static MetaItem<?>.MetaValueItem GOOWARE_COMPUTER;
+    public static MetaItem<?>.MetaValueItem GOOWARE_MAINFRAME;
 
     public static MetaItem<?>.MetaValueItem OPTICAL_PROCESSOR;
     public static MetaItem<?>.MetaValueItem OPTICAL_ASSEMBLY;
@@ -34,11 +34,12 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_MAINFRAME;
 
     // Circuit Boards
-    public static MetaItem<?>.MetaValueItem BIOWARE_BOARD;
-    public static MetaItem<?>.MetaValueItem BIOWARE_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem GOOWARE_BOARD;
+    public static MetaItem<?>.MetaValueItem GOOWARE_CIRCUIT_BOARD;
 
     // Processing Units
-    public static MetaItem<?>.MetaValueItem SENTIENT_PROCESSOR;
+    public static MetaItem<?>.MetaValueItem BZ_REACTION_CHAMBER;
+    public static MetaItem<?>.MetaValueItem NONLINEAR_CHEMICAL_OSCILLATOR;
 
     // SMDS
     public static MetaItem<?>.MetaValueItem INSANE_SMD_CAPACITOR;
@@ -60,14 +61,7 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem CRYSTAL_MODULATOR_SAPPHIRE;
     public static MetaItem<?>.MetaValueItem CRYSTAL_SYSTEM_ON_CHIP_SOCKET;
 
-    // Bioware stuff
-    public static MetaItem<?>.MetaValueItem ULTRASONIC_HOMOGENZIER;
-    public static MetaItem<?>.MetaValueItem STERILE_PETRI_DISH;
-    public static MetaItem<?>.MetaValueItem CLEAN_CULTURE;
-    public static MetaItem<?>.MetaValueItem CUPRIAVIDUS_NECATOR;
-    public static MetaItem<?>.MetaValueItem BREVIBACTERIUM_FLAVUM;
-    public static MetaItem<?>.MetaValueItem RAPIDLY_REPLICATING_CELLS;
-    public static MetaItem<?>.MetaValueItem SUPERINTELLIGENT_ORGANISM;
+    // Gooware Stuff
 
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();

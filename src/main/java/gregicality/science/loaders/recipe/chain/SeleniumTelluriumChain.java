@@ -7,8 +7,7 @@ import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.ingot;
+import static gregtech.api.unification.ore.OrePrefix.*;
 
 public class SeleniumTelluriumChain {
 
@@ -20,19 +19,17 @@ public class SeleniumTelluriumChain {
 
     private static void mud() {
         // CuSO4 + H2O -> H2SO4 + Cu + O
-        //TODO 2 Slot electrolyzer
-        // uses circuit 2 so it is optional
-//        ELECTROLYZER_RECIPES.recipeBuilder()
-//                .fluidInputs(BlueVitriol.getFluid(1000))
-//                .fluidInputs(Water.getFluid(1000))
-//                .circuit(2)
-//                .output(dust, Copper)
-//                .output(dustSmall, ChalcogenAnodeMud)
-//                .fluidOutputs(SulfuricAcid.getFluid(1000))
-//                .fluidOutputs(Oxygen.getFluid(1000))
-//                .duration(TBD)
-//                .EUt(TBD)
-//                .buildAndRegister();
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .fluidInputs(BlueVitriol.getFluid(1000))
+                .fluidInputs(Water.getFluid(1000))
+                .notConsumable(new IntCircuitIngredient(3))
+                .output(dust, Copper)
+                .output(dustSmall, ChalcogenAnodeMud)
+                .fluidOutputs(SulfuricAcid.getFluid(1000))
+                .fluidOutputs(Oxygen.getFluid(1000))
+                .duration(200)
+                .EUt(60)
+                .buildAndRegister();
 
         // optional recovery of metals to provide some nice bonus
         CENTRIFUGE_RECIPES.recipeBuilder()
@@ -86,7 +83,7 @@ public class SeleniumTelluriumChain {
 
     private static void selenium() {
         // SeO2 + H2O -> H2SeO3
-        CHEMICAL_RECIPES.recipeBuilder()
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .input(dust, SeleniumDioxide, 3)
                 .fluidInputs(Water.getFluid(1000))
                 .output(dust, SelenousAcid, 6)

@@ -99,13 +99,14 @@ public class BoronNitrideChain {
                 .buildAndRegister();
 
         // B2O3 + 3C + 6Cl -> 2BCl3 + 3CO
-        CHEMICAL_RECIPES.recipeBuilder()
+        BURNER_REACTOR_RECIPES.recipeBuilder()
                 .input(dust, BoronTrioxide, 5)
                 .input(dust, Carbon, 3)
                 .fluidInputs(Chlorine.getFluid(6000))
                 .fluidOutputs(BoronTrichloride.getFluid(2000))
                 .fluidOutputs(CarbonMonoxide.getFluid(3000))
-                .duration(90) //TODO 774K
+                .temperature(774)
+                .duration(90)
                 .EUt(VA[HV])
                 .buildAndRegister();
 
