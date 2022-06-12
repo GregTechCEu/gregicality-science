@@ -236,3 +236,49 @@ material.potassium_bromate=Бромат калия
 material.chloroacetic_acid=Монохлоруксусная кислота
 material.malonic_acid=Малоновая кислота
 material.tetramethylammonium_chloride=Хлорид тетраметиламмония
+material.pyrocatechol=Пирокатехин
+gcys.machine.dryer.mv.name=Улучшенная сушилка
+gcys.machine.dryer.hv.name=Улучшенная сушилка II
+gcys.multiblock.nanoscale_fabricator.tooltip.1=Средняя температура тигля не может превышать заданную более чем на §c250K§7.
+
+# Single Block Machines
+
+gcys.machine.dryer.lv.name=Обычная сушилка
+gcys.machine.dryer.ev.name=Улучшенная сушилка III
+material.rich_nitrogen_mixture=Богатая азотная смесь
+material.rich_ammonia_mixture=Богатая аммиачная смесь
+material.brine=Рассол
+material.chlorinated_brine=Хлорированный рассол
+material.chalcogen_anode_mud=Халькогенный анодный шлам
+item.chalcogen_anode_mud.dustSmall=Небольшая кучка халькогенового анодного шлама
+item.chalcogen_anode_mud.dust=Пыль халькогенового анодного шлама
+item.chalcogen_anode_mud.dustTiny=Крошечная кучка халькогенового анодного шлама
+material.methylamine_mixture=Смесь метиламина
+
+
+# Single Block Machines
+gcys.machine.steam_ejector.name=Паровой эжектор
+gcys.steam_ejector.tooltip=Создает низкий вакуум с 41mb пара в секунду
+
+# Dryer
+gregtech.machine.dryer.tooltip=Испаряющиеся жидкости
+
+# Multi Block Machines
+
+# Crystallizer
+gcys.machine.crystallization_crucible.name=Кристаллизационный тигель
+
+# Biological Vat
+gcys.machine.bio_vat.name=Биологический Чан
+
+# Roaster
+gcys.machine.roaster.name=Жаровня
+
+# Cryogenic Reactor
+gcys.machine.cryogenic_reactor.name=Криогенная реакционная камера
+
+# Nanoscale Fabricator
+gcys.machine.nanoscale_fabricator.name=Нано фабрикатор
+gcys.machine.dryer.iv.name=Превосходная сушилка
+gcys.machine.dryer.luv.name=Превосходная сушилка II
+gcys.machine.dryer.zpm.name=Превосходная сушилка III
