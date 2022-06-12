@@ -26,7 +26,7 @@ public class PressureNetWalker extends PipeNetWalker {
     private int count;
 
     @Override
-    protected PipeNetWalker createSubWalker(World world, BlockPos blockPos, int i) {
+    protected PipeNetWalker createSubWalker(World world, EnumFacing enumFacing, BlockPos blockPos, int i) {
         PressureNetWalker walker = new PressureNetWalker(world, blockPos, i);
         walker.pressure = pressure;
         return walker;
