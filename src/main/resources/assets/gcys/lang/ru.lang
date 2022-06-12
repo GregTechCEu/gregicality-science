@@ -289,3 +289,29 @@ gcys.machine.dryer.uev.name=Идеальная сушилка II
 gcys.machine.dryer.uiv.name=Идеальная сушилка III
 gcys.machine.dryer.umv.name=Идеальная сушилка IV
 material.epd=Раствор для травления EPD
+tile.crucible.boron_nitride.name=Тигель из нитрида бора
+tile.multiblock_casing.substrate.name=Оболочка подложки
+tile.multiblock_casing.advanced_substrate.name=Усовершенствованный корпус подложки
+
+
+# Vacuums
+gcys.vacuum_level.none=Отсутствие Вакуума
+
+
+# Blocks
+tile.crucible.quartz.name=Кварцевый тигель
+tile.crucible.tungsten.name=Вольфрамовый тигель
+gcys.machine.dryer.max.name=Безграничная сушилка
+tile.crucible.graphite.name=Графитовый тигель
+gcys.vacuum_level.low=Низкий Вакуум
+gcys.vacuum_level.medium=Средний Вакуум
+gcys.vacuum_level.high=Высокий Вакуум
+gcys.vacuum_level.ultra_high=Сверхвысокий Вакуум
+gcys.vacuum_level.extremely_high=Чрезвычайно Высокий Вакуум
+gcys.vacuum_level.perfect=Идеальный Вакуум
+
+# Metaitems
+
+# Crystal Stuff
+metaitem.boule.cubic_zirconia.europium.name=Буль из монокристаллического кубического циркония, легированного европием
+metaitem.boule.cubic_zirconia.europium.tooltip=Необработанный Кристалл
