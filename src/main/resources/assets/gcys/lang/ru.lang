@@ -247,10 +247,10 @@ gcys.machine.dryer.lv.name=Обычная сушилка
 gcys.machine.dryer.ev.name=Улучшенная сушилка III
 material.rich_nitrogen_mixture=Богатая азотная смесь
 material.rich_ammonia_mixture=Богатая аммиачная смесь
-material.brine=Рассол
-material.chlorinated_brine=Хлорированный рассол
+material.brine=Соляной раствор
+material.chlorinated_brine=Хлорированный соляной раствор
 material.chalcogen_anode_mud=Халькогенный анодный шлам
-item.chalcogen_anode_mud.dustSmall=Небольшая кучка халькогенового анодного шлама
+item.chalcogen_anode_mud.dustSmall=Маленькая кучка халькогенового анодного шлама
 item.chalcogen_anode_mud.dust=Пыль халькогенового анодного шлама
 item.chalcogen_anode_mud.dustTiny=Крошечная кучка халькогенового анодного шлама
 material.methylamine_mixture=Смесь метиламина
@@ -269,7 +269,7 @@ gregtech.machine.dryer.tooltip=Испаряющиеся жидкости
 gcys.machine.crystallization_crucible.name=Кристаллизационный тигель
 
 # Biological Vat
-gcys.machine.bio_vat.name=Биологический Чан
+gcys.machine.bio_vat.name=Биологический котел
 
 # Roaster
 gcys.machine.roaster.name=Жаровня
@@ -288,3 +288,4 @@ gcys.machine.dryer.uhv.name=Идеальная сушилка
 gcys.machine.dryer.uev.name=Идеальная сушилка II
 gcys.machine.dryer.uiv.name=Идеальная сушилка III
 gcys.machine.dryer.umv.name=Идеальная сушилка IV
+material.epd=Раствор для травления EPD
