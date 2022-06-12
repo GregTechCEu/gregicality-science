@@ -91,20 +91,6 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 2, Hydrogen, 2)
                 .build();
 
-        PropargylAlcohol = new Material.Builder(15011, "propargyl_alcohol")
-                .fluid()
-                .color(0x714934)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 3, Hydrogen, 4, Oxygen, 1)
-                .build();
-
-        PropargylChloride = new Material.Builder(15012, "propargyl_chloride")
-                .fluid()
-                .color(0x613924)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 3, Hydrogen, 3, Chlorine, 1)
-                .build();
-
         Turpentine = new Material.Builder(15013, "turpentine")
                 .fluid()
                 .color(0x93BD46)
@@ -112,40 +98,44 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 10, Hydrogen, 16)
                 .build();
 
-        BetaPinene = new Material.Builder(15014, "beta_pinene")
-                .fluid()
-                .color(0x61AB6B)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 10, Hydrogen, 16)
-                .build();
-
-        Citral = new Material.Builder(15015, "citral")
-                .fluid()
-                .color(0xF2E541)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 10, Hydrogen, 16, Oxygen, 1)
-                .build();
-
-        BetaIonone = new Material.Builder(15016, "beta_ionone")
-                .fluid()
-                .color(0x8D5C91)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 13, Hydrogen, 20, Oxygen, 1)
-                .build();
-
-        Retinol = new Material.Builder(15017, "retinol") // TODO Vitamin A Tooltip
-                .fluid()
-                .color(0xDC5CE6)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 20, Hydrogen, 30, Oxygen, 1)
-                .build();
-
-        Dichloroethane = new Material.Builder(15018, "dichloroethane")
+        Dichloroethane = new Material.Builder(15014, "dichloroethane")
                 .fluid()
                 .color(0xDAAED3)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 2, Hydrogen, 4, Chlorine, 2)
                 .build();
+
+        Trichloroethylene = new Material.Builder(15015, "trichloroethylene")
+                .fluid()
+                .color(0xB685B1)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 1, Chlorine, 3)
+                .build();
+
+        ChloroaceticAcid = new Material.Builder(15016, "chloroacetic_acid")
+                .dust()
+                .color(0x38541A)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Carbon, 2, Hydrogen, 3, Chlorine, 1, Oxygen, 2)
+                .build();
+
+        MalonicAcid = new Material.Builder(15017, "malonic_acid")
+                .dust()
+                .color(0x61932E)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Carbon, 3, Hydrogen, 4, Oxygen, 4)
+                .build();
+
+        TetramethylammoniumChloride = new Material.Builder(15018, "tetramethylammonium_chloride")
+                .dust()
+                .color(0x27FF81)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Carbon, 4, Hydrogen, 12, Nitrogen, 1, Chlorine, 1)
+                .build()
+                .setFormula("N(CH3)4Cl", true);
 
         Ethylenediamine = new Material.Builder(15019, "ethylenediamine")
                 .fluid()
@@ -178,28 +168,6 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 10, Hydrogen, 16, Nitrogen, 2, Oxygen, 8)
                 .build();
 
-        Biotin = new Material.Builder(15023, "biotin") //TODO Vitamin B7 Tooltip
-                .fluid()
-                .color(0x68CC6A)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 10, Hydrogen, 16, Nitrogen, 2, Oxygen, 3, Sulfur, 1)
-                .build();
-
-        LinoleicAcid = new Material.Builder(15024, "linoleic_acid")
-                .fluid()
-                .color(0xD5D257)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 18, Hydrogen, 32, Oxygen, 2)
-                .build();
-
-        Glutamine = new Material.Builder(15025, "glutamine")
-                .dust()
-                .color(0xEDE9B4)
-                .iconSet(MaterialIconSet.FINE)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 5, Hydrogen, 10, Nitrogen, 2, Oxygen, 3)
-                .build();
-
         Aniline = new Material.Builder(15026, "aniline")
                 .fluid()
                 .color(0x4C911D)
@@ -213,19 +181,6 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 4, Hydrogen, 6, Oxygen, 3)
                 .build()
                 .setFormula("(CH3CO)2O", true);
-
-        AcetylsulfanilylChloride = new Material.Builder(15028, "acetylsulfanilyl_chloride")
-                .fluid()
-                .color(0xACD6ED)
-                .components(Carbon, 8, Hydrogen, 8, Chlorine, 1, Nitrogen, 1, Oxygen, 3, Sulfur, 1)
-                .build();
-
-        Sulfanilamide = new Material.Builder(15029, "sulfanilamide")
-                .fluid()
-                .color(0x523B0A)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 6, Hydrogen, 8, Nitrogen, 2, Oxygen, 2, Sulfur, 1)
-                .build();
 
         ParaXylene = new Material.Builder(15030, "para_xylene")
                 .fluid()
@@ -327,7 +282,7 @@ public class GCYSOrganicChemistryMaterials {
                 .color(0xBB7700)
                 .components(Carbon, 3, Hydrogen, 11, Nitrogen, 1)
                 .build()
-                .setFormula("(CH3)3NH2");
+                .setFormula("(CH3)3NH2", true);
 
         Bistrichloromethylbenzene = new Material.Builder(15043, "bistrichloromethylbenzene")
                 .fluid()
@@ -383,5 +338,21 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 14, Hydrogen, 10, Nitrogen, 2, Oxygen, 2)
                 .build()
                 .setFormula("(C6H4)2(CO)2(NH)2", true);
+
+        TetramethylammoniumHydroxide = new Material.Builder(15051, "tetramethylammonium_hydroxide") //TODO "TMAH" tooltip
+                .fluid() //this should be a solid, however it will be liquid for circuit etching purposes
+                .color(0x40FFD6)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 12, Oxygen, 1, Hydrogen, 1)
+                .build()
+                .setFormula("(CH3)4OH", true);
+
+        Pyrocatechol = new Material.Builder(15052, "pyrocatechol")
+                .dust()
+                .color(0x784421)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(MaterialIconSet.DULL)
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
+                .build();
     }
 }

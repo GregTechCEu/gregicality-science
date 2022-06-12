@@ -13,8 +13,8 @@ import javax.annotation.Nonnull;
 
 public class TemperaturePressureRecipeBuilder extends RecipeBuilder<TemperaturePressureRecipeBuilder> {
 
-    private int temperature;
-    private double pressure;
+    private int temperature = 298;
+    private double pressure = 101_325;
 
     public TemperaturePressureRecipeBuilder() {
 

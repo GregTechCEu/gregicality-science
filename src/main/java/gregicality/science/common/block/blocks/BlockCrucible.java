@@ -1,7 +1,7 @@
 package gregicality.science.common.block.blocks;
 
+import gregtech.api.block.VariantBlock;
 import gregtech.api.util.GTUtility;
-import gregtech.common.blocks.VariantBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;

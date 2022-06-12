@@ -51,7 +51,7 @@ public class GCYSRecipeMaps {
             .setSound(GTSounds.FURNACE);
 
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> BURNER_REACTOR_RECIPES = new RecipeMap<>("burner_reactor_recipes", 0, 3, 0, 2, 0, 2, 0, 2, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<TemperaturePressureRecipeBuilder> BURNER_REACTOR_RECIPES = new RecipeMap<>("burner_reactor_recipes", 0, 3, 0, 2, 0, 3, 0, 2, new TemperaturePressureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSounds.ARC);
 

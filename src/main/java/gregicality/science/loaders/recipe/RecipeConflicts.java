@@ -5,9 +5,9 @@ import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 
 import static gregtech.api.GTValues.LV;
 import static gregtech.api.GTValues.VA;
-import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.LARGE_CHEMICAL_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.ore.OrePrefix.dust;
 
 public class RecipeConflicts {
 
@@ -36,5 +36,13 @@ public class RecipeConflicts {
                 .fluidOutputs(Styrene.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .duration(30).EUt(VA[LV]).buildAndRegister();
+
+        // Conflict between Potassium Hydroxide and Rock Salt Electrolysis
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .input(dust, RockSalt, 2)
+                .notConsumable(new IntCircuitIngredient(1))
+                .output(dust, Potassium)
+                .fluidOutputs(Chlorine.getFluid(1000))
+                .duration(72).EUt(VA[LV]).buildAndRegister();
     }
 }

@@ -148,17 +148,20 @@ public class GCYSFirstDegreeMaterials {
                 .build()
                 .setFormula("(NH4)2PtCl6", true);
 
-        ChloroplatinicAcid = new Material.Builder(3519, "chloroplatinic_acid")
-                .fluid()
-                .color(0xFEF0C2)
+        PotassiumHydroxide = new Material.Builder(3519, "potassium_hydroxide")
+                .dust().fluid()
+                .color(0xFA9849)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Hydrogen, 2, Platinum, 1, Chlorine, 6)
+                .components(Potassium, 1, Oxygen, 1, Hydrogen, 1)
+                .fluidTemp(633)
                 .build();
 
-        PotassiumBisulfate = new Material.Builder(3520, "potassium_bisulfate")
+        PotassiumBromate = new Material.Builder(3520, "potassium_bromate")
                 .dust()
-                .color(0xFDBD68)
-                .components(Potassium, 1, Hydrogen, 1, Sulfur, 1, Oxygen, 4)
+                .color(0x782828)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Potassium, 1, Bromine, 1, Oxygen, 3)
                 .build();
 
         PotassiumPyrosulfate = new Material.Builder(3521, "potassium_pyrosulfate")
@@ -486,6 +489,12 @@ public class GCYSFirstDegreeMaterials {
                 .color(0x9BAFDB)
                 .iconSet(MaterialIconSet.METALLIC)
                 .components(Lithium, 1, Hydrogen, 1)
+                .build();
+
+        HydrobromicAcid = new Material.Builder(3564, "hydrobromic_acid")
+                .fluid(FluidTypes.ACID)
+                .color(0x8D1212)
+                .components(Hydrogen, 1, Bromine, 1)
                 .build();
     }
 }

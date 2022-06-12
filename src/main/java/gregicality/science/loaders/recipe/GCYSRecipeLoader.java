@@ -31,7 +31,7 @@ public class GCYSRecipeLoader {
         AcetyleneChain.init();
         TurpentineChain.init();
         EDTAChain.init();
-        BiowareCellsChain.init();
+        EtchingMaterialsChain.init();
         OilProcessing.init();
         DimethylformamideChain.init();
         KaptonChain.init();
@@ -42,6 +42,7 @@ public class GCYSRecipeLoader {
         MethylamineChain.init();
         KevlarChain.init();
         BoronNitrideChain.init();
+        BZChain.init();
     }
 
     private static void initCircuits() {

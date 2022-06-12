@@ -20,11 +20,11 @@ public class MethylamineChain {
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
-//                .input(dust, Alumina) //TODO Alumina when added to CEu
+                .input(dust, Alumina)
                 .input(dust, SiliconDioxide)
-                .fluidInputs(Methanol.getFluid(1000))
+                .fluidInputs(Methanol.getFluid(2000))
                 .fluidInputs(Ammonia.getFluid(1000))
-                .fluidOutputs(MethylamineMixture.getFluid(1000))
+                .fluidOutputs(MethylamineMixture.getFluid(3000))
                 .duration(1000)
                 .EUt(VA[HV])
                 .buildAndRegister();

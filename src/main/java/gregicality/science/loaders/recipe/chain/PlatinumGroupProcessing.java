@@ -457,8 +457,9 @@ public class PlatinumGroupProcessing {
 
         RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(SulfuricCopperSolution.getFluid(1000))
-                .output(dust, CupricOxide)
+                .output(dust, Copper)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
+                .fluidOutputs(Oxygen.getFluid(500))
                 .duration(82).EUt(60).buildAndRegister();
     }
 }
