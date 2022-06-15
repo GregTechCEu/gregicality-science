@@ -6,9 +6,9 @@ material.praseodymium_oxide=Оксид празеодима
 material.cerium_oxide=Оксид церия
 material.scandium_oxide=Оксид скандия
 material.europium_oxide=Оксид европия
-metaitem.circuit.supracausal_assembly.tooltip=§b§oUMV Микросхема
+metaitem.circuit.supracausal_assembly.tooltip=Сингулярность космических масштабов/n§fUXV уровень
 metaitem.circuit.supracausal_computer.name=Надпричинный компьютер
-metaitem.circuit.supracausal_computer.tooltip=§b§oUXV Микросхема
+metaitem.circuit.supracausal_computer.tooltip=Использование червоточин в наших интересах/n§fOpV уровень
 metaitem.circuit.supracausal_mainframe.name=Надпричинный мейнфрейм
 metaitem.circuit.supracausal_mainframe.tooltip=Ответы вперед вопросов/n§b§oMAX Микросхема
 material.yttrium_oxide=Оксид иттрия
@@ -44,34 +44,34 @@ metaitem.circuit.optical_processor.tooltip=Вычисления со скоро�
 metaitem.circuit.optical_assembly.name=Оптический вычислительный блок
 metaitem.circuit.optical_assembly.tooltip=Теперь с силой лазеров!/n§6UHV уровень
 metaitem.circuit.optical_computer.name=Оптический компьютер
-metaitem.circuit.optical_computer.tooltip=§b§oUEV микросхема
+metaitem.circuit.optical_computer.tooltip=В мгновение ока/n§6UEV уровень
 metaitem.circuit.optical_mainframe.name=Оптический мейнфрейм
-metaitem.circuit.optical_mainframe.tooltip=§b§oUIV микросхема
+metaitem.circuit.optical_mainframe.tooltip=Что может быть быстрее?/n§6UIV уровень
 
 # Exotic
 metaitem.circuit.exotic_processor.name=Экзотический процессор
-metaitem.circuit.exotic_processor.tooltip=§b§oUHV микросхема
+metaitem.circuit.exotic_processor.tooltip=Довольно странный/n§5UHV уровень
 metaitem.circuit.exotic_assembly.name=Экзотический вычислительный блок
-metaitem.circuit.exotic_assembly.tooltip=§b§oUEV микросхема
+metaitem.circuit.exotic_assembly.tooltip=Обычный с необычными свойствами/n§5UEV уровень
 metaitem.circuit.exotic_computer.name=Экзотический компьютер
-metaitem.circuit.exotic_computer.tooltip=§b§oUIV микросхема
+metaitem.circuit.exotic_computer.tooltip=Кто вообще использует нанометры?/n§5UIV уровень
 metaitem.circuit.exotic_mainframe.name=Экзотический мейнфрейм
-metaitem.circuit.exotic_mainframe.tooltip=§b§oUMV микросхема
+metaitem.circuit.exotic_mainframe.tooltip=Самый маленький среди мельчайших!/n§5UXV уровень
 
 
 # Cosmic
 metaitem.circuit.cosmic_processor.name=Космический процессор
-metaitem.circuit.cosmic_processor.tooltip=§b§oUEV микросхема
+metaitem.circuit.cosmic_processor.tooltip=Феноменальные космические силы!/n§8UEV уровень
 metaitem.circuit.cosmic_assembly.name=Космический вычислительный блок
-metaitem.circuit.cosmic_assembly.tooltip=§b§oUIV микросхема
+metaitem.circuit.cosmic_assembly.tooltip=Феноменальные космические силы!/n§8UIV уровень
 metaitem.circuit.cosmic_computer.name=Космический компьютер
-metaitem.circuit.cosmic_computer.tooltip=§b§oUMV микросхема
-metaitem.circuit.cosmic_mainframe.name=ККосмический мейнфрейм
-metaitem.circuit.cosmic_mainframe.tooltip=§b§oUXV микросхема
+metaitem.circuit.cosmic_computer.tooltip=Феноменальные космические силы!/n§8UXV уровень
+metaitem.circuit.cosmic_mainframe.name=Космический мейнфрейм
+metaitem.circuit.cosmic_mainframe.tooltip=Феноменальные космические силы!!/n§8OpV уровень
 
 # Supracausal
 metaitem.circuit.supracausal_processor.name=Надпричинный процессор
-metaitem.circuit.supracausal_processor.tooltip=§b§oUIV Микросхема
+metaitem.circuit.supracausal_processor.tooltip=С силой черных дыр/n§fUIV уровень
 metaitem.circuit.supracausal_assembly.name=Надпричинный вычислительный блок
 material.neodymium_oxide=Оксид неодима
 material.gadolinium_oxide=Оксид гадолиния
@@ -295,7 +295,7 @@ tile.multiblock_casing.advanced_substrate.name=Усовершенствован�
 
 
 # Vacuums
-gcys.vacuum_level.none=Отсутствие Вакуума
+gcys.vacuum_level.none=Отсутствие вакуума
 
 
 # Blocks
@@ -303,12 +303,12 @@ tile.crucible.quartz.name=Кварцевый тигель
 tile.crucible.tungsten.name=Вольфрамовый тигель
 gcys.machine.dryer.max.name=Безграничная сушилка
 tile.crucible.graphite.name=Графитовый тигель
-gcys.vacuum_level.low=Низкий Вакуум
-gcys.vacuum_level.medium=Средний Вакуум
-gcys.vacuum_level.high=Высокий Вакуум
-gcys.vacuum_level.ultra_high=Сверхвысокий Вакуум
-gcys.vacuum_level.extremely_high=Чрезвычайно Высокий Вакуум
-gcys.vacuum_level.perfect=Идеальный Вакуум
+gcys.vacuum_level.low=Низкий вакуум
+gcys.vacuum_level.medium=Средний вакуум
+gcys.vacuum_level.high=Высокий вакуум
+gcys.vacuum_level.ultra_high=Сверхвысокий вакуум
+gcys.vacuum_level.extremely_high=Экстремальный вакуум
+gcys.vacuum_level.perfect=Абсолютный вакуум
 
 # Metaitems
 
@@ -323,7 +323,7 @@ metaitem.nonlinear_chemical_oscillator.tooltip=Неравновесная тер
 metaitem.circuit.gooware_processor.name=Слизневый процессор
 metaitem.circuit.gooware_assembly.name=Слизневый вычислительный блок
 metaitem.circuit.gooware_assembly.tooltip=Цикличные концетрации/n§2UV уровень
-metaitem.circuit.gooware_computer.name=Слизневый суперкомпьютер
+metaitem.circuit.gooware_computer.name=Слизневый компьютер
 metaitem.circuit.gooware_computer.tooltip=Сложные волновые явления!/n§2UHV уровень
 metaitem.circuit.gooware_mainframe.name=Слизневый мейнфрейм
 
@@ -345,3 +345,19 @@ metaitem.engraved.crystal_chip.diamond.tooltip=Логический алмаз
 metaitem.crystal.modulator.ruby.name=Рубиновый кристальный модулятор
 gcys.recipe.pressure=Давление: %sPa
 metaitem.engraved.crystal_chip.sapphire.tooltip=Преобразующий сапфир
+
+# Recipe Properties
+gcys.recipe.temperature=Температура: %,dK
+gcys.recipe.vacuum=Вакуум: %sPa
+metaitem.crystal.modulator.sapphire.name=Сапфировый кристальный модулятор
+metaitem.crystal.modulator.diamond.name=Алмазный кристальный модулятор
+
+# Wetware Stuff
+metaitem.magnetron.name=Магнетрон
+
+# SMDs
+metaitem.component.insane_smd.capacitor.name=Совершенный SMD конденсатор
+metaitem.component.insane_smd.diode.name=Совершенный SMD диод
+metaitem.component.insane_smd.resistor.name=Совершенный SMD резистор
+metaitem.component.insane_smd.transistor.name=Совершенный SMD транзистор
+metaitem.component.insane_smd.inductor.name=Совершенный SMD индуктор
