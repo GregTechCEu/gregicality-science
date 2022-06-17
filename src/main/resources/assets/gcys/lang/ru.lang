@@ -361,3 +361,4 @@ metaitem.component.insane_smd.diode.name=Совершенный SMD диод
 metaitem.component.insane_smd.resistor.name=Совершенный SMD резистор
 metaitem.component.insane_smd.transistor.name=Совершенный SMD транзистор
 metaitem.component.insane_smd.inductor.name=Совершенный SMD индуктор
+material.bz_medium=БЖ среда (Название временное)
