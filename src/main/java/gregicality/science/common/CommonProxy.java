@@ -4,6 +4,7 @@ import gregicality.science.GregicalityScience;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.loaders.recipe.GCYSMaterialInfoLoader;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
+import gregtech.common.MetaEntities;
 import gregtech.common.blocks.VariantItemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
