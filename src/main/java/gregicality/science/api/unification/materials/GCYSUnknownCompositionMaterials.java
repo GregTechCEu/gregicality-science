@@ -53,5 +53,7 @@ public class GCYSUnknownCompositionMaterials {
         MethylamineMixture = new Material.Builder(18018, "methylamine_mixture").fluid().color(0xAA4400).build();
 
         EPD = new Material.Builder(18019, "epd").fluid().color(0xFBFF17).build();
+
+        PhosphoreneSolution = new Material.Builder(18020, "phosphorene_solution").fluid().color(0x465966).build();
     }
 }

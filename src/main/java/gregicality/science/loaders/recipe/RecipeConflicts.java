@@ -32,7 +32,7 @@ public class RecipeConflicts {
         GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES, Ethylbenzene.getFluid(1000));
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Ethylbenzene.getFluid(1000))
-                .notConsumable(new IntCircuitIngredient(1))
+                .notConsumable(dust, Hematite)
                 .fluidOutputs(Styrene.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .duration(30).EUt(VA[LV]).buildAndRegister();
