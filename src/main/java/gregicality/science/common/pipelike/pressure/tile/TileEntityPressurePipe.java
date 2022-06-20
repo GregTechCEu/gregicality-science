@@ -6,20 +6,26 @@ import gregicality.science.common.pipelike.pressure.PressurePipeData;
 import gregicality.science.common.pipelike.pressure.PressurePipeType;
 import gregicality.science.common.pipelike.pressure.net.PressurePipeNet;
 import gregicality.science.common.pipelike.pressure.net.WorldPressureNet;
+import gregtech.api.metatileentity.IDataInfoProvider;
 import gregtech.api.pipenet.tile.IPipeTile;
 import gregtech.api.pipenet.tile.TileEntityPipeBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.lang.ref.WeakReference;
+import java.util.Collections;
+import java.util.List;
 
-public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType, PressurePipeData> {
+public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType, PressurePipeData> implements IDataInfoProvider {
 
     private final IFluidHandler defaultTank = new FluidTank(0);
     private WeakReference<PressurePipeNet> currentPipeNet = new WeakReference<>(null);
@@ -101,5 +107,11 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
             this.currentPipeNet = new WeakReference<>(currentPipeNet);
         }
         return currentPipeNet;
+    }
+
+    @Nonnull
+    @Override
+    public List<ITextComponent> getDataInfo() {
+        return Collections.singletonList(new TextComponentTranslation("Pressure: " + getPipeNet().getPressure() + " Max Pressure: " + getPipeNet().getMaxPressure()));
     }
 }

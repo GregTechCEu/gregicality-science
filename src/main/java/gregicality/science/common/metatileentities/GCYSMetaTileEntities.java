@@ -4,6 +4,7 @@ import gregicality.science.GregicalityScience;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.client.render.GCYSTextures;
 import gregicality.science.common.metatileentities.multiblock.*;
+import gregicality.science.common.metatileentities.singleblock.MetaTileEntityCreativePressurePump;
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntitySteamEjector;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
@@ -32,6 +33,7 @@ public class GCYSMetaTileEntities {
     public static MetaTileEntitySonicator SONICATOR;
     public static MetaTileEntityCatalyticReformer CATALYTIC_REFORMER;
     public static MetaTileEntityIndustrialDrill INDUSTRIAL_DRILL;
+    public static MetaTileEntityCreativePressurePump CREATIVE_PRESSURE;
 
     public static void init() {
         registerSimpleMetaTileEntity(DRYER, 2100, "dryer", GCYSRecipeMaps.DRYER_RECIPES, GCYSTextures.DRYER_OVERLAY, true, GCYSMetaTileEntities::gcysId, GTUtility.hvCappedTankSizeFunction);
@@ -49,6 +51,7 @@ public class GCYSMetaTileEntities {
         CRYOGENIC_REACTOR = registerMetaTileEntity(4104, new MetaTileEntityCryoReactor(gcysId("cryogenic_reactor")));
         STEAM_EJECTOR = registerMetaTileEntity(4105, new MetaTileEntitySteamEjector(gcysId("steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
         HP_STEAM_EJECTOR = registerMetaTileEntity(4106, new MetaTileEntitySteamEjector(gcysId("hp_steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
+        CREATIVE_PRESSURE = registerMetaTileEntity(4107, new MetaTileEntityCreativePressurePump(gcysId("creative_pressure_pump")));
     }
 
     @Nonnull
