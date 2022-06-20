@@ -1,5 +1,6 @@
 package gregicality.science.common.entities;
 
+import gregicality.science.api.sound.GCYSSounds;
 import gregicality.science.api.utils.GCYSLog;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -98,9 +99,10 @@ public class RocketEntity extends Entity {
         this.dataManager.set(START_POS, startPos);
     }
 
-    public void startCountdown(int time){
+    public void startCountdown(){
         this.setCountdownStarted(true);
-        this.setLaunchTime(this.getAge() + time);
+        this.setLaunchTime(this.getAge() + 200);
+        this.playSound(GCYSSounds.ROCKET_LAUNCH, 0.7F, 1.F);
     }
 
     public void Launch(){
@@ -134,6 +136,10 @@ public class RocketEntity extends Entity {
 
     @Override
     public void onUpdate() {
+
+        if(this.firstUpdate){
+            this.startCountdown();
+        }
 
         super.onUpdate();
 
