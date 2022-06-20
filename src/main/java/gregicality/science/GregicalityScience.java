@@ -1,6 +1,7 @@
 package gregicality.science;
 
 import gregicality.science.api.GCYSValues;
+import gregicality.science.api.sound.GCYSSounds;
 import gregicality.science.api.utils.GCYSLog;
 import gregicality.science.common.CommonProxy;
 import gregicality.science.common.GCYSMetaEntities;
@@ -8,6 +9,7 @@ import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.common.items.GCYSMetaItems;
 import gregicality.science.common.metatileentities.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
+import gregtech.api.sound.GTSounds;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -36,6 +38,9 @@ public class GregicalityScience {
 
         GCYSMetaBlocks.init();
         GCYSMetaItems.init();
+
+        GCYSSounds.registerSounds();
+
         GCYSMetaTileEntities.init();
 
         GCYSMetaEntities.init();
