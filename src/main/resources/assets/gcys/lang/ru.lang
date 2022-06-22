@@ -314,7 +314,7 @@ gcys.vacuum_level.perfect=Абсолютный вакуум
 
 # Crystal Stuff
 metaitem.boule.cubic_zirconia.europium.name=Буль из монокристаллического кубического циркония, легированного европием
-metaitem.boule.cubic_zirconia.europium.tooltip=Необработанный Кристалл
+metaitem.boule.cubic_zirconia.europium.tooltip=Необработанный кристалл
 metaitem.board.gooware.tooltip=Безупречный подложка
 metaitem.nonlinear_chemical_oscillator.tooltip=Неравновесная термодинамика!
 
@@ -362,3 +362,12 @@ metaitem.component.insane_smd.resistor.name=Совершенный SMD рези�
 metaitem.component.insane_smd.transistor.name=Совершенный SMD транзистор
 metaitem.component.insane_smd.inductor.name=Совершенный SMD индуктор
 material.bz_medium=БЖ среда (Название временное)
+recipemap.bio_vat_recipes.name=Биологический котел
+recipemap.roaster_recipes.name=Обжарка
+recipemap.burner_reactor_recipes.name=Высокотемпературные реакции
+recipemap.cryogenic_reactor_recipes.name=Криогенные реакции
+recipemap.molecular_beam_recipes.name=Молекулярно-лучевая эпитаксия
+recipemap.cvd_recipes.name=Химическое осаждение
+
+# RecipeMaps
+recipemap.dryer_recipes.name=Сушка
