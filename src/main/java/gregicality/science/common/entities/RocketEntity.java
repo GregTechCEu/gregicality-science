@@ -102,7 +102,7 @@ public class RocketEntity extends Entity {
     public void startCountdown(){
         this.setCountdownStarted(true);
         this.setLaunchTime(this.getAge() + 200);
-        this.playSound(GCYSSounds.ROCKET_LAUNCH, 0.7F, 1.F);
+        this.playSound(GCYSSounds.ROCKET_LAUNCH, 0.9F, 1.F);
     }
 
     public void Launch(){

@@ -1,0 +1,11 @@
+{
+  "entity.rocket_launch": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "gcys:rocket_launch",
+        "stream": false
+      }
+    ]
+  }
+}
