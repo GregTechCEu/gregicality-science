@@ -1,6 +1,7 @@
 package gregicality.science.api.sound;
 
 import gregicality.science.api.GCYSValues;
+import gregicality.science.api.utils.GCYSLog;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
