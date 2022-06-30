@@ -371,3 +371,10 @@ recipemap.cvd_recipes.name=Химическое осаждение
 
 # RecipeMaps
 recipemap.dryer_recipes.name=Сушка
+material.white_phosphorus=Белый фосфор
+material.red_phosphorus=Красный фосфор
+material.violet_phosphorus=Фиолетовый фосфор
+material.blue_phosphorus=Синий фосфор
+material.phosphorene=Фосфорен
+material.black_phosphorus=Чёрный фосфор
+material.wollastonite=Волластонит
