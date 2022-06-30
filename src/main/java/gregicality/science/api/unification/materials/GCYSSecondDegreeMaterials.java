@@ -133,5 +133,13 @@ public class GCYSSecondDegreeMaterials {
                 .components(Ammonia, 1, NitricAcid, 1)
                 .build()
                 .setFormula("NH4NO3", true);
+
+        Wollastonite = new Material.Builder(6016, "wollastonite")
+                .dust()
+                .color(0xF0F0F0)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Quicklime, 2, SiliconDioxide, 3)
+                .build()
+                .setFormula("CaSiO3", true);
     }
 }

@@ -73,6 +73,12 @@ public class GCYSMaterials {
     public static Material CubicHeterodiamond;
     public static Material LithiumHydride;
     public static Material HydrobromicAcid;
+    public static Material WhitePhosphorus;
+    public static Material RedPhosphorus;
+    public static Material VioletPhosphorus;
+    public static Material BlackPhosphorus;
+    public static Material BluePhosphorus;
+    public static Material Phosphorene;
 
 
     // Second Degree Materials
@@ -92,6 +98,7 @@ public class GCYSMaterials {
     public static Material AcidicIridiumDioxideSolution;
     public static Material GrapheneOxide;
     public static Material AmmoniumNitrate;
+    public static Material Wollastonite;
 
 
     // Third Degree Materials
@@ -160,6 +167,7 @@ public class GCYSMaterials {
     public static Material ChalcogenAnodeMud;
     public static Material MethylamineMixture;
     public static Material EPD;
+    public static Material PhosphoreneSolution;
 
 
     /**

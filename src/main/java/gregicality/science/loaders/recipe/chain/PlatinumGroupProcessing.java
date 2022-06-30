@@ -1,5 +1,6 @@
 package gregicality.science.loaders.recipe.chain;
 
+import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.common.GCYSConfigHolder;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.RecipeMaps;
@@ -205,11 +206,12 @@ public class PlatinumGroupProcessing {
                 .duration(16).EUt(VA[LV]).buildAndRegister();
 
         // H2CO2CH3 + H2O -> HCOOH + CH3OH
-        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+        GCYSRecipeMaps.BURNER_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(MethylFormate.getFluid(1000))
                 .fluidInputs(Water.getFluid(1000))
                 .fluidOutputs(FormicAcid.getFluid(1000))
                 .fluidOutputs(Methanol.getFluid(1000))
+                .pressure(4.053E+6).temperature(353)
                 .duration(16).EUt(VA[LV]).buildAndRegister();
 
         // PdCl2 + HCOOH -> Pd + 2HCl + CO2

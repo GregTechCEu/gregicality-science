@@ -459,7 +459,7 @@ public class GCYSFirstDegreeMaterials {
                 .setFormula("c-BN", true);
 
         AmorphousBoronNitride = new Material.Builder(3560, "amorphous_boron_nitride")
-                .ingot().fluid()
+                .ingot()
                 .color(0x9193C5)
                 .iconSet(MaterialIconSet.SHINY)
                 .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING)
@@ -495,6 +495,54 @@ public class GCYSFirstDegreeMaterials {
                 .fluid(FluidTypes.ACID)
                 .color(0x8D1212)
                 .components(Hydrogen, 1, Bromine, 1)
+                .build();
+
+        WhitePhosphorus = new Material.Builder(3565, "white_phosphorus")
+                .gem()
+                .color(0xECEADD)
+                .iconSet(MaterialIconSet.FLINT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Phosphorus, 4)
+                .build();
+
+        RedPhosphorus = new Material.Builder(3566, "red_phosphorus")
+                .gem()
+                .color(0x77040E)
+                .iconSet(MaterialIconSet.FLINT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Phosphorus, 4)
+                .build();
+
+        VioletPhosphorus = new Material.Builder(3567, "violet_phosphorus")
+                .gem()
+                .color(0x8000FF)
+                .iconSet(MaterialIconSet.FLINT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Phosphorus, 4)
+                .build();
+
+        BlackPhosphorus = new Material.Builder(3568, "black_phosphorus")
+                .gem()
+                .color(0x36454F)
+                .iconSet(MaterialIconSet.FLINT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Phosphorus, 4)
+                .build();
+
+        BluePhosphorus = new Material.Builder(3569, "blue_phosphorus")
+                .gem()
+                .color(0x9BE3E4)
+                .iconSet(MaterialIconSet.FLINT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Phosphorus, 4)
+                .build();
+
+        Phosphorene = new Material.Builder(3570, "phosphorene")
+                .ingot()
+                .color(0x273239)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_FOIL)
+                .components(Phosphorus, 4)
                 .build();
     }
 }

@@ -43,6 +43,7 @@ public class GCYSRecipeLoader {
         KevlarChain.init();
         BoronNitrideChain.init();
         BZChain.init();
+        PhosphorusChain.init();
     }
 
     private static void initCircuits() {

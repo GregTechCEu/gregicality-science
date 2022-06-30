@@ -74,6 +74,12 @@ material.heterodiamond=Heterodiamond
 material.cubic_heterodiamond=Cubic Heterodiamond
 material.lithium_hydride=Lithium Hydride
 material.hydrobromic_acid=Hydrobromic Acid
+material.white_phosphorus=White Phosphorus
+material.red_phosphorus=Red Phosphorus
+material.violet_phosphorus=Violet Phosphorus
+material.black_phosphorus=Black Phosphorus
+material.blue_phosphorus=Blue Phosphorus
+material.phosphorene=Phosphorene
 
 
 # Second Degree Materials
@@ -108,6 +114,7 @@ material.acidic_sodium_ruthenate_solution=Acidic Sodium Ruthenate Solution
 material.acidic_iridium_dioxide_solution=Acidic Iridium Dioxide Solution
 material.graphene_oxide=Graphene Oxide
 material.ammonium_nitrate=Ammonium Nitrate
+material.wollastonite=Wollastonite
 
 
 # Third Degree Materials
@@ -179,6 +186,7 @@ item.chalcogen_anode_mud.dustSmall=Small Pile of Chalcogen Anode Mud
 item.chalcogen_anode_mud.dustTiny=Tiny Pile of Chalcogen Anode Mud
 material.methylamine_mixture=Methylamine Mixture
 material.epd=EPD Etching Solution
+material.phosphorene_solution=Phosphorene Exfoliation Solution
 
 
 # Single Block Machines
@@ -367,6 +375,7 @@ recipemap.cryogenic_reactor_recipes.name=Cryogenic Reactions
 recipemap.molecular_beam_recipes.name=Molecular Beam Epitaxy
 recipemap.cvd_recipes.name=Chemical Vapor Deposition
 recipemap.plasma_cvd_recipes.name=Plasma Enhanced CVD
+recipemap.sonication_recipes.name=Sonication
 
 # Recipe Properties
 gcys.recipe.temperature=Temperature: %,dK
