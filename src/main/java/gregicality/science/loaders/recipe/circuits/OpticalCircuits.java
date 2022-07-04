@@ -22,6 +22,7 @@ public class OpticalCircuits {
         dielectricMirror();
         lasers();
         board();
+        smd();
     }
 
     private static void pram() {
@@ -83,18 +84,6 @@ public class OpticalCircuits {
                 .output(ingot, PraseodymiumDopedZBLANGlass, 2)
                 .duration(200).EUt(VA[HV]).buildAndRegister();
 
-        EXTRUDER_RECIPES.recipeBuilder()
-                .input(ingot, ErbiumDopedZBLANGlass)
-                .notConsumable(MetaItems.SHAPE_EXTRUDER_WIRE)
-                .output(OPTICAL_FIBER)
-                .duration(400).EUt(VA[HV]).buildAndRegister();
-
-        EXTRUDER_RECIPES.recipeBuilder()
-                .input(ingot, PraseodymiumDopedZBLANGlass)
-                .notConsumable(MetaItems.SHAPE_EXTRUDER_WIRE)
-                .output(OPTICAL_FIBER)
-                .duration(400).EUt(VA[HV]).buildAndRegister();
-
         //TODO Implement Optical Fiber Cables
 //        CHEMICAL_BATH_RECIPES.recipeBuilder()
 //                .input(OPTICAL_FIBER, 4)
@@ -144,6 +133,7 @@ public class OpticalCircuits {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(DIELECTRIC_MIRROR)
                 .input(plate, SterlingSilver, 2)
+                .input(ring, Tungsten, 2)
                 .input(cableGtSingle, Platinum, 2)
                 .fluidInputs(BorosilicateGlass.getFluid(L * 2))
                 .output(EMPTY_LASER_ASSEMBLY)
@@ -175,7 +165,7 @@ public class OpticalCircuits {
                     .input(foil, Americium, 64)
                     .fluidInputs(stack)
                     .output(OPTICAL_CIRCUIT_BOARD)
-                    .duration(2100).EUt(VA[IV]).buildAndRegister();
+                    .duration(210).EUt(VA[IV]).buildAndRegister();
         }
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
@@ -187,5 +177,41 @@ public class OpticalCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(OPTICAL_LASER_CONTROL_UNIT)
                 .duration(600).EUt(UHV).buildAndRegister();
+    }
+
+    private static void smd() {
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(wireFine, Naquadah, 4)
+                .input(dust, CadmiumSelenide)
+                .output(PHOTORESISTOR, 16)
+                .fluidInputs(KaptonE.getFluid(L * 2))
+                .duration(160).EUt(VA[UV]).buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(wireFine, Iridium, 8)
+                .input(foil, Germanium)
+                .fluidInputs(KaptonE.getFluid(L))
+                .output(MOSFET, 16)
+                .duration(160).EUt(VA[UV]).buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(OPTICAL_FIBER, 2)
+                .input(plate, ErbiumDopedZBLANGlass)
+                .fluidInputs(KaptonE.getFluid(L / 4))
+                .output(OPTICAL_INTEGRATOR, 16)
+                .duration(160).EUt(VA[UV]).buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(dust, Terbium)
+                .input(wireFine, BorosilicateGlass, 4)
+                .fluidInputs(KaptonE.getFluid(L / 2))
+                .output(OPTICAL_ISOLATOR, 16)
+                .duration(160).EUt(VA[UV]).buildAndRegister();
+
+        ION_IMPLANTATOR_RECIPES.recipeBuilder()
+                .input(dust, Silver)
+                .input(plate, Polymethylmethacrylate)
+                .output(OPTICAL_POLARIZER, 16)
+                .duration(160).EUt(VA[UV]).buildAndRegister();
     }
 }

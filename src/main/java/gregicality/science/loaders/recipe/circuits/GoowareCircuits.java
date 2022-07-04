@@ -32,7 +32,7 @@ public class GoowareCircuits {
                     .input(foil, YttriumBariumCuprate, 48)
                     .fluidInputs(stack)
                     .output(GOOWARE_CIRCUIT_BOARD)
-                    .duration(2100).EUt(VA[EV]).buildAndRegister();
+                    .duration(210).EUt(VA[EV]).buildAndRegister();
         }
 
         // Processing Unit

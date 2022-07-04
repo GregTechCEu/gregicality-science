@@ -1,6 +1,7 @@
 package gregicality.science.loaders.recipe;
 
 import gregicality.science.loaders.recipe.chain.*;
+import gregicality.science.loaders.recipe.circuits.CrystalCircuits;
 import gregicality.science.loaders.recipe.circuits.GoowareCircuits;
 import gregicality.science.loaders.recipe.circuits.OpticalCircuits;
 import gregicality.science.loaders.recipe.handlers.BouleRecipeHandler;
@@ -27,7 +28,6 @@ public class GCYSRecipeLoader {
     }
 
     private static void initChains() {
-        CrystalCircuitChain.init();
         RareEarthProcessing.init();
         TungstenProcessing.init();
         GrapheneChain.init();
@@ -52,6 +52,7 @@ public class GCYSRecipeLoader {
         PolyethyleneTerephthalateChain.init();
         PMMAChain.init();
         GalliumNitrideChain.init();
+        PhotoresistivesChain.init();
     }
 
     private static void initOreProcessing() {
@@ -60,6 +61,7 @@ public class GCYSRecipeLoader {
     }
 
     private static void initCircuits() {
+        CrystalCircuits.init();
         GoowareCircuits.init();
         OpticalCircuits.init();
     }

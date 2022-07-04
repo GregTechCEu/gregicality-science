@@ -55,5 +55,6 @@ public class GCYSMaterialFlagAddition {
         // Foils
         Nickel.addFlags(MaterialFlags.GENERATE_FOIL);
         Titanium.addFlags(MaterialFlags.GENERATE_FOIL);
+        Germanium.addFlags(MaterialFlags.GENERATE_FOIL);
     }
 }

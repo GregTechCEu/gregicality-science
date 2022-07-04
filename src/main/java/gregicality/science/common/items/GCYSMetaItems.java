@@ -45,11 +45,11 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem OPTICAL_LASER_CONTROL_UNIT;
 
     // SMDS
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_CAPACITOR;
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_DIODE;
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_RESISTOR;
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_TRANSISTOR;
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_INTEGRATOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_ISOLATOR;
+    public static MetaItem<?>.MetaValueItem PHOTORESISTOR;
+    public static MetaItem<?>.MetaValueItem MOSFET;
+    public static MetaItem<?>.MetaValueItem OPTICAL_POLARIZER;
 
     // Crystal Stuff
     public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_BOULE;

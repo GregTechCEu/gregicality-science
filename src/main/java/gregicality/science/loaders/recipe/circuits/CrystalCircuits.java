@@ -1,4 +1,4 @@
-package gregicality.science.loaders.recipe.chain;
+package gregicality.science.loaders.recipe.circuits;
 
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.common.GCYSConfigHolder;
@@ -15,7 +15,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 
-public class CrystalCircuitChain {
+public class CrystalCircuits {
 
     public static void init() {
         crystalInterface();

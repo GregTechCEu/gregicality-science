@@ -93,6 +93,10 @@ public class GCYSMaterials {
     public static Material GalliumTrichloride;
     public static Material GalliumTrioxide;
     public static Material GalliumNitride;
+    public static Material CadmiumBromide;
+    public static Material MagnesiumBromide;
+    public static Material CadmiumSulfide;
+    public static Material CadmiumSelenide;
 
 
     // Second Degree Materials
@@ -181,6 +185,10 @@ public class GCYSMaterials {
     public static Material Polymethylmethacrylate;
     public static Material Trimethylaluminium;
     public static Material Trimethylgallium;
+    public static Material EthyleneDibromide;
+    public static Material GrignardReagent;
+    public static Material Dimethylcadmium;
+    public static Material DiethylSuflide;
 
 
     // Unknown Composition Materials

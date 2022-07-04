@@ -648,5 +648,35 @@ public class GCYSFirstDegreeMaterials {
                 .flags(GENERATE_PLATE)
                 .components(Gallium, 1, Nitrogen, 1)
                 .build();
+
+        CadmiumBromide = new Material.Builder(3585, "cadmium_bromide")
+                .dust()
+                .color(0xFF1774)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Cadmium, 1, Bromine, 2)
+                .build();
+
+        MagnesiumBromide = new Material.Builder(3586, "magnesium_bromide")
+                .dust()
+                .color(0x5F4C32)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Magnesium, 1, Bromine, 2)
+                .build();
+
+        CadmiumSulfide = new Material.Builder(3587, "cadmium_sulfide")
+                .dust()
+                .color(0xC8C43C)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Cadmium, 1, Sulfur, 1)
+                .build();
+
+        CadmiumSelenide = new Material.Builder(3588, "cadmium_selenide")
+                .dust()
+                .color(0x983034)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Cadmium, 1, Selenium, 1)
+                .build();
     }
 }

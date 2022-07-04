@@ -180,7 +180,7 @@ public class GCYSSecondDegreeMaterials {
                 .ingot()
                 .color(0x505444)
                 .iconSet(MaterialIconSet.BRIGHT)
-                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION, GENERATE_PLATE)
                 .components(ZBLANGlass, 1, Erbium, 1)
                 .build()
                 .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Er", true);
@@ -189,7 +189,7 @@ public class GCYSSecondDegreeMaterials {
                 .ingot()
                 .color(0xC5C88D)
                 .iconSet(MaterialIconSet.BRIGHT)
-                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION, GENERATE_PLATE)
                 .components(ZBLANGlass, 1, Praseodymium, 1)
                 .build()
                 .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Pr", true);
@@ -198,7 +198,7 @@ public class GCYSSecondDegreeMaterials {
                 .gem()
                 .color(0xD99DE4)
                 .iconSet(MaterialIconSet.GEM_VERTICAL)
-                .flags(CRYSTALLIZABLE)
+                .flags(CRYSTALLIZABLE, DECOMPOSITION_BY_CENTRIFUGING)
                 .components(YttriumOxide, 2, NeodymiumOxide, 1, Alumina, 5)
                 .build()
                 .setFormula("NdY2Al5O12", true);

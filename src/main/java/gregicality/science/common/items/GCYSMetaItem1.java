@@ -69,11 +69,11 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         CRYSTAL_MODULATOR_DIAMOND = addItem(64, "crystal.modulator.diamond");
         CRYSTAL_SYSTEM_ON_CHIP_SOCKET = addItem(65, "crystal.system_on_chip.socket");
 
-        INSANE_SMD_CAPACITOR = addItem(66, "component.insane_smd.capacitor");
-        INSANE_SMD_DIODE = addItem(67, "component.insane_smd.diode");
-        INSANE_SMD_RESISTOR = addItem(68, "component.insane_smd.resistor");
-        INSANE_SMD_TRANSISTOR = addItem(69, "component.insane_smd.transistor");
-        INSANE_SMD_INDUCTOR = addItem(70, "component.insane_smd.inductor");
+        OPTICAL_INTEGRATOR = addItem(66, "component.optical_smd.capacitor");
+        OPTICAL_ISOLATOR = addItem(67, "component.optical_smd.diode");
+        PHOTORESISTOR = addItem(68, "component.optical_smd.resistor");
+        MOSFET = addItem(69, "component.optical_smd.transistor");
+        OPTICAL_POLARIZER = addItem(70, "component.optical_smd.inductor");
 
 //        QUARTZ_CRUCIBLE = addItem(50, "crucible.quartz").addComponents(new CrucibleItemBehavior(2482));
 //        TUNGSTEN_CRUCIBLE = addItem(51, "crucible.tungsten").addComponents(new CrucibleItemBehavior(3695));

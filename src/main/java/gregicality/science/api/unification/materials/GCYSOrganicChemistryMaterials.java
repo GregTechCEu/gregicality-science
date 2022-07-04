@@ -17,7 +17,7 @@ public class GCYSOrganicChemistryMaterials {
 
         // FREE ID: 15000
 
-        Ethylhexanol = new Material.Builder(15001,"ethylhexanol")
+        Ethylhexanol = new Material.Builder(15001, "ethylhexanol")
                 .fluid()
                 .color(0xFEEA9A)
                 .components(Carbon, 8, Hydrogen, 10, Oxygen, 1)
@@ -403,5 +403,35 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Gallium, 1, Carbon, 3, Hydrogen, 9)
                 .build()
                 .setFormula("Ga(CH3)3", true);
+
+        EthyleneDibromide = new Material.Builder(1560, "ethylene_dibromide") //TODO "EDB" tooltip
+                .fluid()
+                .color(0x4F1743)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 4, Bromine, 2)
+                .build();
+
+        GrignardReagent = new Material.Builder(1561, "grignard_reagent")
+                .fluid()
+                .color(0xA12AA1)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 1, Hydrogen, 3, Magnesium, 1, Bromine, 1)
+                .build();
+
+        Dimethylcadmium = new Material.Builder(1562, "dimethylcadmium")
+                .fluid()
+                .color(0x5C037F)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 6, Cadmium, 1)
+                .build()
+                .setFormula("(CH3)2Cd", true);
+
+        DiethylSuflide = new Material.Builder(1563, "diethyl_sulfide")
+                .fluid()
+                .color(0xFF7E4B)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Ethylene, 2, Sulfur, 1)
+                .build()
+                .setFormula("(CH3)2S", true);
     }
 }

@@ -94,6 +94,10 @@ material.aluminium_trichloride=Aluminium Trichloride
 material.gallium_trichloride=Gallium Trichloride
 material.gallium_trioxide=Gallium Trioxide
 material.gallium_nitride=Gallium Nitride
+material.cadmium_bromide=Cadmium Bromide
+material.magnesium_bromide=Magnesium Bromide
+material.cadmium_sulfide=Cadmium Sulfide
+material.cadmium_selenide=Cadmium Selenide
 
 
 # Second Degree Materials
@@ -203,6 +207,10 @@ material.acetone_cyanohydrin=Acetone Cyanohydrin
 material.polymethylmethacrylate=Polymethylmethacrylate
 material.trimethylaluminium=Trimethylaluminium
 material.trimethylgallium=Trimethylgallium
+material.ethylene_dibromide=Ethylene Dibromide
+material.dimethylcadmium=Dimethylcadmium
+material.grignard_reagent=Grignard Reagent
+material.diethyl_sulfide=Diethyl Sulfide
 
 
 # Unknown Composition Materials
@@ -355,11 +363,11 @@ metaitem.circuit_board.optical.name=Ultimate Circuit Board
 metaitem.circuit_board.optical.tooltip=The Board that transmits Lasers
 
 # SMDs
-metaitem.component.insane_smd.capacitor.name=Insane SMD Capacitor
-metaitem.component.insane_smd.diode.name=Insane SMD Diode
-metaitem.component.insane_smd.resistor.name=Insane SMD Resistor
-metaitem.component.insane_smd.transistor.name=Insane SMD Transistor
-metaitem.component.insane_smd.inductor.name=Insane SMD Inductor
+metaitem.component.optical_smd.capacitor.name=Optical Integrator
+metaitem.component.optical_smd.diode.name=Optical Isolator
+metaitem.component.optical_smd.resistor.name=Photoresistor
+metaitem.component.optical_smd.transistor.name=MOSFET
+metaitem.component.optical_smd.inductor.name=Optical Polarizer
 
 # Processing Units
 metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
@@ -432,6 +440,7 @@ recipemap.molecular_beam_recipes.name=Molecular Beam Epitaxy
 recipemap.cvd_recipes.name=Chemical Vapor Deposition
 recipemap.plasma_cvd_recipes.name=Plasma Enhanced CVD
 recipemap.sonication_recipes.name=Sonication
+recipemap.ion_implanter_recipes.name=Ion Implantation
 
 # Recipe Properties
 gcys.recipe.temperature=Temperature: %,dK
