@@ -64,6 +64,7 @@ public class GCYSMetaItems {
     // Optical Stuff
     public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
     public static MetaItem<?>.MetaValueItem OPTICAL_FIBER;
+    public static MetaItem<?>.MetaValueItem DIELECTRIC_MIRROR;
 
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();

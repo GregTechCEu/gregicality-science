@@ -86,6 +86,7 @@ public class GCYSMaterials {
     public static Material GermaniumDioxide;
     public static Material SiliconTetrachloride;
     public static Material GSTGlass;
+    public static Material ZBLANGlass;
 
 
     // Second Degree Materials
@@ -110,6 +111,8 @@ public class GCYSMaterials {
     public static Material WaelzOxide;
     public static Material WaelzSlag;
     public static Material ImpureGermaniumDioxide;
+    public static Material ErbiumDopedZBLANGlass;
+    public static Material PraseodymiumDopedZBLANGlass;
 
 
     // Third Degree Materials
@@ -164,6 +167,9 @@ public class GCYSMaterials {
     public static Material TetramethylammoniumChloride;
     public static Material TetramethylammoniumHydroxide;
     public static Material Pyrocatechol;
+    public static Material EthyleneOxide;
+    public static Material EthyleneGlycol;
+    public static Material PolyethyleneTerephthalate;
 
 
     // Unknown Composition Materials

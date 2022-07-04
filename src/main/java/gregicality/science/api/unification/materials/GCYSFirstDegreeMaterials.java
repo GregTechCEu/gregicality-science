@@ -594,5 +594,14 @@ public class GCYSFirstDegreeMaterials {
                 .components(Germanium, 2, Tellurium, 2, Antimony, 5)
                 .blastTemp(873, BlastProperty.GasTier.MID)
                 .build();
+
+        ZBLANGlass = new Material.Builder(3578, "zblan_glass")
+                .ingot().fluid()
+                .color(0xACB4BC)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION)
+                .components(Zirconium, 5, Barium, 2, Lanthanum, 1, Aluminium, 1, Sodium, 2, Fluorine, 6)
+                .build()
+                .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2", true);
     }
 }

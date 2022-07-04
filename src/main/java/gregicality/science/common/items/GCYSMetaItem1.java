@@ -49,6 +49,7 @@ public class GCYSMetaItem1 extends StandardMetaItem {
 
         PHASE_CHANGE_MEMORY = addItem(32, "plate.phase_change_memory");
         OPTICAL_FIBER = addItem(33, "optical_fiber");
+        DIELECTRIC_MIRROR = addItem(34, "dielectric_mirror");
 
         EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(35, "boule.cubic_zirconia.europium");
         EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(36, "wafer.cubic_zirconia.europium");

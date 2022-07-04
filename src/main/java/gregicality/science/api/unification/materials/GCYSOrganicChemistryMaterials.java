@@ -297,7 +297,7 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 2, Hydrogen, 2, Bromine, 4)
                 .build();
 
-        TerephthalicAcid = new Material.Builder(15045, "terephthalic_acid")
+        TerephthalicAcid = new Material.Builder(15045, "terephthalic_acid") //TODO "PTA" Tooltip
                 .dust()
                 .color(0x5ACCDA)
                 .iconSet(MaterialIconSet.ROUGH)
@@ -353,6 +353,25 @@ public class GCYSOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .iconSet(MaterialIconSet.DULL)
                 .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        EthyleneOxide = new Material.Builder(15053, "ethylene_oxide")
+                .fluid(FluidTypes.GAS)
+                .color(0xDCBFE1)
+                .components(Carbon, 2, Hydrogen, 4, Oxygen, 1)
+                .build();
+
+        EthyleneGlycol = new Material.Builder(15054, "ethylene_glycol")
+                .fluid()
+                .color(0x286632)
+                .components(Carbon, 2, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        PolyethyleneTerephthalate = new Material.Builder(15055, "polyethylene_terephthalate") //TODO "PET" tooltip
+                .ingot().fluid()
+                .color(0xFFD2D3)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, GENERATE_PLATE)
+                .components(Carbon, 10, Hydrogen, 8, Oxygen, 4)
                 .build();
     }
 }

@@ -1,15 +1,15 @@
 package gregicality.science.loaders.recipe.circuits;
 
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
+import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.items.MetaItems;
 
-import static gregicality.science.api.recipes.GCYSRecipeMaps.BURNER_REACTOR_RECIPES;
-import static gregicality.science.api.recipes.GCYSRecipeMaps.CVD_RECIPES;
+import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
+import static gregicality.science.api.recipes.GCYSRecipeMaps.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
-import static gregicality.science.common.items.GCYSMetaItems.OPTICAL_FIBER;
-import static gregicality.science.common.items.GCYSMetaItems.PHASE_CHANGE_MEMORY;
+import static gregicality.science.common.items.GCYSMetaItems.*;
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
@@ -18,6 +18,7 @@ public class OpticalCircuits {
     public static void init() {
         pram();
         opticalFiber();
+        dielectricMirror();
     }
 
     private static void pram() {
@@ -54,6 +55,45 @@ public class OpticalCircuits {
                 .temperature(1800)
                 .duration(400).EUt(VA[IV]).buildAndRegister();
 
+        //TODO Low Gravity
+        ALLOY_BLAST_RECIPES.recipeBuilder()
+                .input(dust, Zirconium, 5)
+                .input(dust, Barium, 2)
+                .input(dust, Lanthanum)
+                .input(dust, Aluminium)
+                .input(dust, Sodium, 2)
+                .fluidInputs(Fluorine.getFluid(6200))
+                .notConsumable(new IntCircuitIngredient(5))
+                .fluidOutputs(ZBLANGlass.getFluid(L * 11))
+                .blastFurnaceTemp(1073)
+                .duration(1800).EUt(VA[HV]).buildAndRegister();
+
+        for (OrePrefix orePrefix : new OrePrefix[]{dust, ingot}) {
+            ALLOY_SMELTER_RECIPES.recipeBuilder()
+                    .input(ingot, ZBLANGlass)
+                    .input(orePrefix, Erbium)
+                    .output(ingot, ErbiumDopedZBLANGlass, 2)
+                    .duration(200).EUt(VA[HV]).buildAndRegister();
+
+            ALLOY_SMELTER_RECIPES.recipeBuilder()
+                    .input(ingot, ZBLANGlass)
+                    .input(orePrefix, Praseodymium)
+                    .output(ingot, PraseodymiumDopedZBLANGlass, 2)
+                    .duration(200).EUt(VA[HV]).buildAndRegister();
+        }
+
+        EXTRUDER_RECIPES.recipeBuilder()
+                .input(ingot, ErbiumDopedZBLANGlass)
+                .notConsumable(MetaItems.SHAPE_EXTRUDER_WIRE)
+                .output(OPTICAL_FIBER)
+                .duration(400).EUt(VA[HV]).buildAndRegister();
+
+        EXTRUDER_RECIPES.recipeBuilder()
+                .input(ingot, PraseodymiumDopedZBLANGlass)
+                .notConsumable(MetaItems.SHAPE_EXTRUDER_WIRE)
+                .output(OPTICAL_FIBER)
+                .duration(400).EUt(VA[HV]).buildAndRegister();
+
         //TODO Implement Optical Fiber Cables
 //        CHEMICAL_BATH_RECIPES.recipeBuilder()
 //                .input(OPTICAL_FIBER, 4)
@@ -66,5 +106,23 @@ public class OpticalCircuits {
 //                .fluidInputs(Kevlar.getFluid(L / 9))
 //                .output(OPTICAL_FIBER_CABLE)
 //                .duration(100).EUt(VA[HV]).buildAndRegister();
+    }
+
+    private static void dielectricMirror() {
+        // 2Ta + 5O -> Ta2O5
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Tantalum, 2)
+                .fluidInputs(Oxygen.getFluid(5000))
+                .output(dust, TantalumPentoxide, 7)
+                .duration(110).EUt(VA[LV]).buildAndRegister();
+
+        MOLECULAR_BEAM_RECIPES.recipeBuilder()
+                .input(dust, ErbiumDopedZBLANGlass, 2)
+                .input(dust, PraseodymiumDopedZBLANGlass, 2)
+                .input(dust, TantalumPentoxide, 2)
+                .input(plate, PolyethyleneTerephthalate)
+                .output(DIELECTRIC_MIRROR)
+                .temperature(2520)
+                .duration(250).EUt(VA[IV]).buildAndRegister();
     }
 }

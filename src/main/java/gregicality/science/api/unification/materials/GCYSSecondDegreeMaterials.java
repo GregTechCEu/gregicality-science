@@ -5,8 +5,7 @@ import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
-import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 public class GCYSSecondDegreeMaterials {
 
@@ -176,5 +175,23 @@ public class GCYSSecondDegreeMaterials {
                 .components(GermaniumDioxide, 1)
                 .build()
                 .setFormula("GeO2?", true);
+
+        ErbiumDopedZBLANGlass = new Material.Builder(6021, "erbium_doped_zblan_glass")
+                .ingot()
+                .color(0x505444)
+                .iconSet(MaterialIconSet.BRIGHT)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION)
+                .components(ZBLANGlass, 1, Erbium, 1)
+                .build()
+                .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Er", true);
+
+        PraseodymiumDopedZBLANGlass = new Material.Builder(6022, "praseodymium_doped_zblan_glass")
+                .ingot()
+                .color(0xC5C88D)
+                .iconSet(MaterialIconSet.BRIGHT)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION)
+                .components(ZBLANGlass, 1, Praseodymium, 1)
+                .build()
+                .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Pr", true);
     }
 }

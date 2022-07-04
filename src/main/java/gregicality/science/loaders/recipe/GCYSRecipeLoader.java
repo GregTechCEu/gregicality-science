@@ -49,6 +49,7 @@ public class GCYSRecipeLoader {
         BoronNitrideChain.init();
         BZChain.init();
         PhosphorusChain.init();
+        PolyethyleneTerephthalateChain.init();
     }
 
     private static void initOreProcessing() {
