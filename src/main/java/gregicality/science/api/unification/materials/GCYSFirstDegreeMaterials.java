@@ -603,5 +603,12 @@ public class GCYSFirstDegreeMaterials {
                 .components(Zirconium, 5, Barium, 2, Lanthanum, 1, Aluminium, 1, Sodium, 2, Fluorine, 6)
                 .build()
                 .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2", true);
+
+        HeliumNeon = new Material.Builder(3579, "helium_neon")
+                .fluid(FluidTypes.GAS)
+                .color(0xFF0080)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Helium, 9, Neon, 1)
+                .build();
     }
 }

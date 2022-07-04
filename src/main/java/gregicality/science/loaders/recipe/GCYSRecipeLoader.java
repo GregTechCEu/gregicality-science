@@ -50,6 +50,7 @@ public class GCYSRecipeLoader {
         BZChain.init();
         PhosphorusChain.init();
         PolyethyleneTerephthalateChain.init();
+        PMMAChain.init();
     }
 
     private static void initOreProcessing() {

@@ -87,6 +87,7 @@ public class GCYSMaterials {
     public static Material SiliconTetrachloride;
     public static Material GSTGlass;
     public static Material ZBLANGlass;
+    public static Material HeliumNeon;
 
 
     // Second Degree Materials
@@ -113,6 +114,7 @@ public class GCYSMaterials {
     public static Material ImpureGermaniumDioxide;
     public static Material ErbiumDopedZBLANGlass;
     public static Material PraseodymiumDopedZBLANGlass;
+    public static Material NdYAG;
 
 
     // Third Degree Materials
@@ -170,6 +172,8 @@ public class GCYSMaterials {
     public static Material EthyleneOxide;
     public static Material EthyleneGlycol;
     public static Material PolyethyleneTerephthalate;
+    public static Material AcetoneCyanohydrin;
+    public static Material Polymethylmethacrylate;
 
 
     // Unknown Composition Materials

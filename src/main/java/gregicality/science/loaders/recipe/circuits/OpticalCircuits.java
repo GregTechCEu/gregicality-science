@@ -1,7 +1,7 @@
 package gregicality.science.loaders.recipe.circuits;
 
+import gregicality.science.api.unification.ore.GCYSOrePrefix;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
-import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.items.MetaItems;
 
 import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
@@ -19,6 +19,7 @@ public class OpticalCircuits {
         pram();
         opticalFiber();
         dielectricMirror();
+        lasers();
     }
 
     private static void pram() {
@@ -68,19 +69,17 @@ public class OpticalCircuits {
                 .blastFurnaceTemp(1073)
                 .duration(1800).EUt(VA[HV]).buildAndRegister();
 
-        for (OrePrefix orePrefix : new OrePrefix[]{dust, ingot}) {
-            ALLOY_SMELTER_RECIPES.recipeBuilder()
-                    .input(ingot, ZBLANGlass)
-                    .input(orePrefix, Erbium)
-                    .output(ingot, ErbiumDopedZBLANGlass, 2)
-                    .duration(200).EUt(VA[HV]).buildAndRegister();
+        ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .input(ingot, ZBLANGlass)
+                .input(dust, Erbium)
+                .output(ingot, ErbiumDopedZBLANGlass, 2)
+                .duration(200).EUt(VA[HV]).buildAndRegister();
 
-            ALLOY_SMELTER_RECIPES.recipeBuilder()
-                    .input(ingot, ZBLANGlass)
-                    .input(orePrefix, Praseodymium)
-                    .output(ingot, PraseodymiumDopedZBLANGlass, 2)
-                    .duration(200).EUt(VA[HV]).buildAndRegister();
-        }
+        ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .input(ingot, ZBLANGlass)
+                .input(dust, Praseodymium)
+                .output(ingot, PraseodymiumDopedZBLANGlass, 2)
+                .duration(200).EUt(VA[HV]).buildAndRegister();
 
         EXTRUDER_RECIPES.recipeBuilder()
                 .input(ingot, ErbiumDopedZBLANGlass)
@@ -124,5 +123,40 @@ public class OpticalCircuits {
                 .output(DIELECTRIC_MIRROR)
                 .temperature(2520)
                 .duration(250).EUt(VA[IV]).buildAndRegister();
+    }
+
+    private static void lasers() {
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(Helium.getFluid(900))
+                .fluidInputs(Neon.getFluid(100))
+                .fluidOutputs(HeliumNeon.getFluid(1000))
+                .duration(300).EUt(16).buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .input(dust, YttriumOxide, 3)
+                .input(dust, Alumina, 5)
+                .fluidInputs(DistilledWater.getFluid(8000))
+                .output(GCYSOrePrefix.seedCrystal, NdYAG)
+                .duration(288).EUt(VA[IV]).buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(DIELECTRIC_MIRROR)
+                .input(plate, SterlingSilver, 2)
+                .input(cableGtSingle, Platinum, 2)
+                .fluidInputs(BorosilicateGlass.getFluid(L * 2))
+                .output(EMPTY_LASER_ASSEMBLY)
+                .duration(100).EUt(VA[IV]).buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .input(EMPTY_LASER_ASSEMBLY)
+                .fluidInputs(HeliumNeon.getFluid(1000))
+                .output(HELIUM_NEON_LASER)
+                .duration(120).EUt(16).buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .input(EMPTY_LASER_ASSEMBLY)
+                .input(gem, NdYAG)
+                .output(ND_YAG_LASER)
+                .duration(120).EUt(16).buildAndRegister();
     }
 }

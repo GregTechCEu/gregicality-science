@@ -88,6 +88,7 @@ material.germanium_dioxide=Germanium Dioxide
 material.silicon_tetrachloride=Silicon Tetrachloride
 material.gst_glass=GST Glass
 material.zblan_glass=ZBLAN Glass
+material.helium_neon=Helium-Neon
 
 
 # Second Degree Materials
@@ -135,6 +136,7 @@ item.waelz_slag.dustTiny=Tiny Pile of Waelz Slag
 material.impure_germanium_dioxide=Impure Germanium Dioxide
 material.erbium_doped_zblan_glass=Erbium-Doped ZBLAN Glass
 material.praseodymium_doped_zblan_glass=Praseodymium-Doped ZBLAN Glass
+material.nd_yag=Nd:YAG
 
 
 # Third Degree Materials
@@ -192,6 +194,8 @@ material.pyrocatechol=Pyrocatechol
 material.ethylene_oxide=Ethylene Oxide
 material.ethylene_glycol=Ethylene Glycol
 material.polyethylene_terephthalate=Polyethylene Terephthalate
+material.acetone_cyanohydrin=Acetone Cyanohydrin
+material.polymethylmethacrylate=Polymethylmethacrylate
 
 
 # Unknown Composition Materials
@@ -315,6 +319,21 @@ metaitem.crystal.system_on_chip.socket.tooltip=Bridging Crystal and Circuit
 metaitem.magnetron.name=Magnetron
 
 
+# Optical Stuff
+metaitem.plate.phase_change_memory.name=PRAM
+metaitem.plate.phase_change_memory.tooltip=Phase-change Memory
+metaitem.optical_fiber.name=Optical Fiber
+metaitem.optical_fiber.tooltip=Light-transmitting Glass
+metaitem.dielectric_mirror.name=Dielectric Mirror
+metaitem.dielectric_mirror.tooltip=Bragg Mirror
+metaitem.laser.assembly.empty.name=Empty Laser Assembly
+metaitem.laser.assembly.empty.tooltip=Fill this with some Laser Medium
+metaitem.laser.helium_neon.name=Helium-Neon Laser
+metaitem.laser.helium_neon.tooltip=Purpose: Weak Optical Appliances
+metaitem.laser.nd_yag.name=Nd:YAG Laser
+metaitem.laser.nd_yag.tooltip=Purpose: Strong Optical Appliances
+
+
 # Item Behaviors
 metaitem.behavior.held_item_destroy.message=Holding the %s damaged it!
 
@@ -335,14 +354,6 @@ metaitem.component.insane_smd.inductor.name=Insane SMD Inductor
 metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
 metaitem.nonlinear_chemical_oscillator.name=Nonlinear Chemical Oscillator
 metaitem.nonlinear_chemical_oscillator.tooltip=Non-equilibrium Thermodynamics!
-
-# Optical Stuff
-metaitem.plate.phase_change_memory.name=PRAM
-metaitem.plate.phase_change_memory.tooltip=Phase-change Memory
-metaitem.optical_fiber.name=Optical Fiber
-metaitem.optical_fiber.tooltip=Light-transmitting Glass
-metaitem.dielectric_mirror.name=Dielectric Mirror
-metaitem.dielectric_mirror.tooltip=Bragg Mirror
 
 # Circuits
 # Gooware

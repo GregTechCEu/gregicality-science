@@ -50,24 +50,27 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         PHASE_CHANGE_MEMORY = addItem(32, "plate.phase_change_memory");
         OPTICAL_FIBER = addItem(33, "optical_fiber");
         DIELECTRIC_MIRROR = addItem(34, "dielectric_mirror");
+        EMPTY_LASER_ASSEMBLY = addItem(36, "laser.assembly.empty");
+        HELIUM_NEON_LASER = addItem(37, "laser.helium_neon");
+        ND_YAG_LASER = addItem(38, "laser.nd_yag");
 
-        EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(35, "boule.cubic_zirconia.europium");
-        EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(36, "wafer.cubic_zirconia.europium");
-        CRYSTAL_INTERFACE_WAFER = addItem(37, "wafer.crystal.interface");
-        CRYSTAL_INTERFACE_CHIP = addItem(38, "plate.crystal.interface");
-        ENGRAVED_RUBY_CRYSTAL_CHIP = addItem(39, "engraved.crystal_chip.ruby");
-        ENGRAVED_SAPPHIRE_CRYSTAL_CHIP = addItem(40, "engraved.crystal_chip.sapphire");
-        ENGRAVED_DIAMOND_CRYSTAL_CHIP = addItem(41, "engraved.crystal_chip.diamond");
-        CRYSTAL_MODULATOR_RUBY = addItem(42, "crystal.modulator.ruby");
-        CRYSTAL_MODULATOR_SAPPHIRE = addItem(43, "crystal.modulator.sapphire");
-        CRYSTAL_MODULATOR_DIAMOND = addItem(44, "crystal.modulator.diamond");
-        CRYSTAL_SYSTEM_ON_CHIP_SOCKET = addItem(45, "crystal.system_on_chip.socket");
+        EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(55, "boule.cubic_zirconia.europium");
+        EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(56, "wafer.cubic_zirconia.europium");
+        CRYSTAL_INTERFACE_WAFER = addItem(57, "wafer.crystal.interface");
+        CRYSTAL_INTERFACE_CHIP = addItem(58, "plate.crystal.interface");
+        ENGRAVED_RUBY_CRYSTAL_CHIP = addItem(59, "engraved.crystal_chip.ruby");
+        ENGRAVED_SAPPHIRE_CRYSTAL_CHIP = addItem(60, "engraved.crystal_chip.sapphire");
+        ENGRAVED_DIAMOND_CRYSTAL_CHIP = addItem(61, "engraved.crystal_chip.diamond");
+        CRYSTAL_MODULATOR_RUBY = addItem(62, "crystal.modulator.ruby");
+        CRYSTAL_MODULATOR_SAPPHIRE = addItem(63, "crystal.modulator.sapphire");
+        CRYSTAL_MODULATOR_DIAMOND = addItem(64, "crystal.modulator.diamond");
+        CRYSTAL_SYSTEM_ON_CHIP_SOCKET = addItem(65, "crystal.system_on_chip.socket");
 
-        INSANE_SMD_CAPACITOR = addItem(46, "component.insane_smd.capacitor");
-        INSANE_SMD_DIODE = addItem(47, "component.insane_smd.diode");
-        INSANE_SMD_RESISTOR = addItem(48, "component.insane_smd.resistor");
-        INSANE_SMD_TRANSISTOR = addItem(49, "component.insane_smd.transistor");
-        INSANE_SMD_INDUCTOR = addItem(50, "component.insane_smd.inductor");
+        INSANE_SMD_CAPACITOR = addItem(66, "component.insane_smd.capacitor");
+        INSANE_SMD_DIODE = addItem(67, "component.insane_smd.diode");
+        INSANE_SMD_RESISTOR = addItem(68, "component.insane_smd.resistor");
+        INSANE_SMD_TRANSISTOR = addItem(69, "component.insane_smd.transistor");
+        INSANE_SMD_INDUCTOR = addItem(70, "component.insane_smd.inductor");
 
 //        QUARTZ_CRUCIBLE = addItem(50, "crucible.quartz").addComponents(new CrucibleItemBehavior(2482));
 //        TUNGSTEN_CRUCIBLE = addItem(51, "crucible.tungsten").addComponents(new CrucibleItemBehavior(3695));

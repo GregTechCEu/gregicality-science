@@ -65,6 +65,9 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
     public static MetaItem<?>.MetaValueItem OPTICAL_FIBER;
     public static MetaItem<?>.MetaValueItem DIELECTRIC_MIRROR;
+    public static MetaItem<?>.MetaValueItem EMPTY_LASER_ASSEMBLY;
+    public static MetaItem<?>.MetaValueItem HELIUM_NEON_LASER;
+    public static MetaItem<?>.MetaValueItem ND_YAG_LASER;
 
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();

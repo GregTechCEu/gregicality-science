@@ -373,5 +373,19 @@ public class GCYSOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION, NO_SMASHING, GENERATE_PLATE)
                 .components(Carbon, 10, Hydrogen, 8, Oxygen, 4)
                 .build();
+
+        AcetoneCyanohydrin = new Material.Builder(15056, "acetone_cyanohydrin")
+                .fluid()
+                .color(0xA1FFD0)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 7, Nitrogen, 1, Oxygen, 1)
+                .build();
+
+        Polymethylmethacrylate = new Material.Builder(15057, "polymethylmethacrylate")
+                .ingot().fluid()
+                .color(0x95E5A5)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, GENERATE_PLATE)
+                .components(Carbon, 5, Hydrogen, 8, Oxygen, 2)
+                .build();
     }
 }
