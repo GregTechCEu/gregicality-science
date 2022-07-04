@@ -1,4 +1,4 @@
-package gregicality.science.loaders.recipe.chain;
+package gregicality.science.loaders.recipe.oreprocessing;
 
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.common.GCYSConfigHolder;

@@ -123,7 +123,7 @@ public class GCYSSecondDegreeMaterials {
                 .color(0x777777)
                 .iconSet(MaterialIconSet.ROUGH)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Graphene, 1, Oxygen ,1)
+                .components(Graphene, 1, Oxygen, 1)
                 .build();
 
         AmmoniumNitrate = new Material.Builder(6015, "ammonium_nitrate")
@@ -141,5 +141,40 @@ public class GCYSSecondDegreeMaterials {
                 .components(Quicklime, 2, SiliconDioxide, 3)
                 .build()
                 .setFormula("CaSiO3", true);
+
+        RoastedSphalerite = new Material.Builder(6017, "roasted_sphalerite")
+                .dust()
+                .color(0xAC8B5C)
+                .iconSet(MaterialIconSet.FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(GermaniumDioxide, 1)
+                .build()
+                .setFormula("GaGeO2", true);
+
+        WaelzOxide = new Material.Builder(6018, "waelz_oxide")
+                .dust()
+                .color(0xB8B8B8)
+                .iconSet(MaterialIconSet.FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Zinc, 1, GermaniumDioxide, 1)
+                .build();
+
+        WaelzSlag = new Material.Builder(6019, "waelz_slag")
+                .dust()
+                .color(0xAC8B5C)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(ZincSulfate, 1)
+                .build()
+                .setFormula("GaZnSO4", true);
+
+        ImpureGermaniumDioxide = new Material.Builder(6020, "impure_germanium_dioxide")
+                .dust()
+                .color(0x666666)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(GermaniumDioxide, 1)
+                .build()
+                .setFormula("GeO2?", true);
     }
 }

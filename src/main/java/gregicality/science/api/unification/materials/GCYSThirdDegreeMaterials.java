@@ -1,6 +1,7 @@
 package gregicality.science.api.unification.materials;
 
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -23,5 +24,14 @@ public class GCYSThirdDegreeMaterials {
                 .components(RhodiumSalt, 1, Water, 1)
                 .build()
                 .setFormula("(NaCl)2(RhCl3)2(H2O)", true);
+
+        ZincRichSphalerite = new Material.Builder(9002, "zinc_rich_sphalerite")
+                .dust()
+                .color(0xC3AC8F)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(RoastedSphalerite, 3, Zinc, 2)
+                .build()
+                .setFormula("Zn2(GeO2)", true);
     }
 }

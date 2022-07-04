@@ -79,6 +79,13 @@ public class GCYSMaterials {
     public static Material BlackPhosphorus;
     public static Material BluePhosphorus;
     public static Material Phosphorene;
+    public static Material PhosphorusTrichloride;
+    public static Material PhosphorylChloride;
+    public static Material ZincOxide;
+    public static Material GermaniumTetrachloride;
+    public static Material GermaniumDioxide;
+    public static Material SiliconTetrachloride;
+    public static Material GSTGlass;
 
 
     // Second Degree Materials
@@ -99,11 +106,16 @@ public class GCYSMaterials {
     public static Material GrapheneOxide;
     public static Material AmmoniumNitrate;
     public static Material Wollastonite;
+    public static Material RoastedSphalerite;
+    public static Material WaelzOxide;
+    public static Material WaelzSlag;
+    public static Material ImpureGermaniumDioxide;
 
 
     // Third Degree Materials
     public static Material PlatinumPalladiumLeachate;
     public static Material RhodiumSaltSolution;
+    public static Material ZincRichSphalerite;
 
 
     // Organic Chemistry Materials

@@ -61,7 +61,9 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem CRYSTAL_MODULATOR_SAPPHIRE;
     public static MetaItem<?>.MetaValueItem CRYSTAL_SYSTEM_ON_CHIP_SOCKET;
 
-    // Gooware Stuff
+    // Optical Stuff
+    public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
+    public static MetaItem<?>.MetaValueItem OPTICAL_FIBER;
 
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();

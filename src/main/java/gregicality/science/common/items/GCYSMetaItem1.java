@@ -47,6 +47,8 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         BZ_REACTION_CHAMBER = addItem(30, "reaction_chamber.bz");
         NONLINEAR_CHEMICAL_OSCILLATOR = addItem(31, "nonlinear_chemical_oscillator");
 
+        PHASE_CHANGE_MEMORY = addItem(32, "plate.phase_change_memory");
+        OPTICAL_FIBER = addItem(33, "optical_fiber");
 
         EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(35, "boule.cubic_zirconia.europium");
         EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(36, "wafer.cubic_zirconia.europium");

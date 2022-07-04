@@ -80,6 +80,13 @@ material.violet_phosphorus=Violet Phosphorus
 material.black_phosphorus=Black Phosphorus
 material.blue_phosphorus=Blue Phosphorus
 material.phosphorene=Phosphorene
+material.phosphorus_trichloride=Phosphorus Trichloride
+material.phosphoryl_chloride=Phosphoryl Chloride
+material.zinc_oxide=Zinc Oxide
+material.germanium_tetrachloride=Germanium Tetrachloride
+material.germanium_dioxide=Germanium Dioxide
+material.silicon_tetrachloride=Silicon Tetrachloride
+material.gst_glass=GST Glass
 
 
 # Second Degree Materials
@@ -115,11 +122,22 @@ material.acidic_iridium_dioxide_solution=Acidic Iridium Dioxide Solution
 material.graphene_oxide=Graphene Oxide
 material.ammonium_nitrate=Ammonium Nitrate
 material.wollastonite=Wollastonite
+material.roasted_sphalerite=Roasted Sphalerite
+material.waelz_oxide=Waelz Oxide
+item.waelz_oxide.dust=Waelz Oxide
+item.waelz_oxide.dustSmall=Small Pile of Waelz Oxide
+item.waelz_oxide.dustTiny=Tiny Pile of Waelz Oxide
+material.waelz_slag=Waelz Slag
+item.waelz_slag.dust=Waelz Slag
+item.waelz_slag.dustSmall=Small Pile of Waelz Slag
+item.waelz_slag.dustTiny=Tiny Pile of Waelz Slag
+material.impure_germanium_dioxide=Impure Germanium Dioxide
 
 
 # Third Degree Materials
 material.platinum_palladium_leachate=Platinum-Palladium Leachate
 material.rhodium_salt_solution=Rhodium Salt Solution
+material.zinc_rich_sphalerite=Zinc-Rich Sphalerite
 
 
 # Organic Chemistry Materials
@@ -311,6 +329,12 @@ metaitem.component.insane_smd.inductor.name=Insane SMD Inductor
 metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
 metaitem.nonlinear_chemical_oscillator.name=Nonlinear Chemical Oscillator
 metaitem.nonlinear_chemical_oscillator.tooltip=Non-equilibrium Thermodynamics!
+
+# Optical Stuff
+metaitem.plate.phase_change_memory.name=PRAM
+metaitem.plate.phase_change_memory.tooltip=Phase-change Memory
+metaitem.optical_fiber.name=Optical Fiber
+metaitem.optical_fiber.tooltip=Light-transmitting Glass
 
 # Circuits
 # Gooware

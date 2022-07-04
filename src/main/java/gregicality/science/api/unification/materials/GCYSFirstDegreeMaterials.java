@@ -3,6 +3,7 @@ package gregicality.science.api.unification.materials;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
+import gregtech.api.unification.material.properties.BlastProperty;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -543,6 +544,55 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .flags(DISABLE_DECOMPOSITION, GENERATE_FOIL)
                 .components(Phosphorus, 4)
+                .build();
+
+        PhosphorusTrichloride = new Material.Builder(3571, "phosphorus_trichloride")
+                .fluid()
+                .color(0xE8C474)
+                .components(Phosphorus, 1, Chlorine, 3)
+                .build();
+
+        PhosphorylChloride = new Material.Builder(3572, "phosphoryl_chloride")
+                .fluid()
+                .color(0xE8BB5B)
+                .components(Phosphorus, 1, Oxygen, 1, Chlorine, 3)
+                .build();
+
+        ZincOxide = new Material.Builder(3573, "zinc_oxide")
+                .dust()
+                .color(0xB85C34)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .components(Zinc, 1, Oxygen, 1)
+                .build();
+
+        GermaniumTetrachloride = new Material.Builder(3574, "germanium_tetrachloride")
+                .fluid()
+                .color(0x787878)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Germanium, 1, Chlorine, 4)
+                .build();
+
+        GermaniumDioxide = new Material.Builder(3575, "germanium_dioxide")
+                .dust()
+                .color(0x666666)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Germanium, 1, Oxygen, 2)
+                .build();
+
+        SiliconTetrachloride = new Material.Builder(3576, "silicon_tetrachloride")
+                .fluid()
+                .color(0x5B5B7A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Silicon, 1, Chlorine, 4)
+                .build();
+
+        GSTGlass = new Material.Builder(3577, "gst_glass")
+                .ingot().fluid()
+                .color(0xCFFFFF)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(GENERATE_PLATE, NO_SMASHING, NO_WORKING, DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Germanium, 2, Tellurium, 2, Antimony, 5)
+                .blastTemp(873, BlastProperty.GasTier.MID)
                 .build();
     }
 }

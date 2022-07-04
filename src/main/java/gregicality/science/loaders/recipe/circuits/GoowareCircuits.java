@@ -16,7 +16,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 
-public class BiowareCircuits {
+public class GoowareCircuits {
 
     public static void init() {
         // Regular Circuit Board
