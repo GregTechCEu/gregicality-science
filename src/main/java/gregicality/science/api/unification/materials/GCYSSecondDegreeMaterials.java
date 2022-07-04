@@ -194,7 +194,7 @@ public class GCYSSecondDegreeMaterials {
                 .build()
                 .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Pr", true);
 
-        NdYAG = new Material.Builder(3580, "nd_yag") //TODO "Yttrium-Aluminium-Garnet" Tooltip
+        NdYAG = new Material.Builder(6023, "nd_yag") //TODO "Yttrium-Aluminium-Garnet" Tooltip
                 .gem()
                 .color(0xD99DE4)
                 .iconSet(MaterialIconSet.GEM_VERTICAL)

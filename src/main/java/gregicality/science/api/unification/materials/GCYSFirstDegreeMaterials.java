@@ -610,5 +610,43 @@ public class GCYSFirstDegreeMaterials {
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)
                 .components(Helium, 9, Neon, 1)
                 .build();
+
+        AluminiumHydroxide = new Material.Builder(3580, "aluminium_hydroxide")
+                .dust()
+                .color(0xBEBEC8)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 1, Oxygen, 3, Hydrogen, 3)
+                .build()
+                .setFormula("Al(OH)3", true);
+
+        AluminiumTrichloride = new Material.Builder(3581, "aluminium_trichloride")
+                .dust()
+                .color(0x78C3EB)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 1, Chlorine, 3)
+                .build();
+
+        GalliumTrichloride = new Material.Builder(3582, "gallium_trichloride")
+                .dust()
+                .color(0x6EB4FF)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Gallium, 1, Chlorine, 3)
+                .build();
+
+        GalliumTrioxide = new Material.Builder(3583, "gallium_trioxide")
+                .dust().fluid().fluidTemp(2170)
+                .color(0xE4CDFF)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Gallium, 1, Oxygen, 3)
+                .build();
+
+        GalliumNitride = new Material.Builder(3584, "gallium_nitride")
+                .ingot()
+                .color(0xFFF458)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(GENERATE_PLATE)
+                .components(Gallium, 1, Nitrogen, 1)
+                .build();
     }
 }

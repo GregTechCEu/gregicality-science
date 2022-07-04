@@ -42,17 +42,20 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         SUPRACAUSAL_MAINFRAME = addItem(20, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
 
         GOOWARE_BOARD = addItem(28, "board.gooware");
-        GOOWARE_CIRCUIT_BOARD = addItem(29, "circuit_board.gooware");
+        OPTICAL_BOARD = addItem(29, "board.optical");
+        GOOWARE_CIRCUIT_BOARD = addItem(35, "circuit_board.gooware");
+        OPTICAL_CIRCUIT_BOARD = addItem(36, "circuit_board.optical");
 
-        BZ_REACTION_CHAMBER = addItem(30, "reaction_chamber.bz");
-        NONLINEAR_CHEMICAL_OSCILLATOR = addItem(31, "nonlinear_chemical_oscillator");
+        BZ_REACTION_CHAMBER = addItem(40, "reaction_chamber.bz");
+        NONLINEAR_CHEMICAL_OSCILLATOR = addItem(41, "nonlinear_chemical_oscillator");
+        OPTICAL_LASER_CONTROL_UNIT = addItem(42, "optical_laser_control_unit");
 
-        PHASE_CHANGE_MEMORY = addItem(32, "plate.phase_change_memory");
-        OPTICAL_FIBER = addItem(33, "optical_fiber");
-        DIELECTRIC_MIRROR = addItem(34, "dielectric_mirror");
-        EMPTY_LASER_ASSEMBLY = addItem(36, "laser.assembly.empty");
-        HELIUM_NEON_LASER = addItem(37, "laser.helium_neon");
-        ND_YAG_LASER = addItem(38, "laser.nd_yag");
+        PHASE_CHANGE_MEMORY = addItem(43, "plate.phase_change_memory");
+        OPTICAL_FIBER = addItem(44, "optical_fiber");
+        DIELECTRIC_MIRROR = addItem(45, "dielectric_mirror");
+        EMPTY_LASER_ASSEMBLY = addItem(46, "laser.assembly.empty");
+        HELIUM_NEON_LASER = addItem(47, "laser.helium_neon");
+        ND_YAG_LASER = addItem(48, "laser.nd_yag");
 
         EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(55, "boule.cubic_zirconia.europium");
         EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(56, "wafer.cubic_zirconia.europium");

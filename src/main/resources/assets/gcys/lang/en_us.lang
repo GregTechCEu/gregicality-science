@@ -89,6 +89,11 @@ material.silicon_tetrachloride=Silicon Tetrachloride
 material.gst_glass=GST Glass
 material.zblan_glass=ZBLAN Glass
 material.helium_neon=Helium-Neon
+material.aluminium_hydroxide=Aluminium Hydroxide
+material.aluminium_trichloride=Aluminium Trichloride
+material.gallium_trichloride=Gallium Trichloride
+material.gallium_trioxide=Gallium Trioxide
+material.gallium_nitride=Gallium Nitride
 
 
 # Second Degree Materials
@@ -196,6 +201,8 @@ material.ethylene_glycol=Ethylene Glycol
 material.polyethylene_terephthalate=Polyethylene Terephthalate
 material.acetone_cyanohydrin=Acetone Cyanohydrin
 material.polymethylmethacrylate=Polymethylmethacrylate
+material.trimethylaluminium=Trimethylaluminium
+material.trimethylgallium=Trimethylgallium
 
 
 # Unknown Composition Materials
@@ -339,9 +346,13 @@ metaitem.behavior.held_item_destroy.message=Holding the %s damaged it!
 
 # Circuit Boards
 metaitem.board.gooware.name=Kapton Circuit Board
-metaitem.board.gooware.tooltip=Ultimate Board
-metaitem.circuit_board.gooware.name=An Ultimate Circuit Board
+metaitem.board.gooware.tooltip=A Super Board
+metaitem.board.optical.name=Gallium Nitride Circuit Board
+metaitem.board.optical.tooltip=An Ultimate Board
+metaitem.circuit_board.gooware.name=Super Circuit Board
 metaitem.circuit_board.gooware.tooltip=The Board that performs Reactions
+metaitem.circuit_board.optical.name=Ultimate Circuit Board
+metaitem.circuit_board.optical.tooltip=The Board that transmits Lasers
 
 # SMDs
 metaitem.component.insane_smd.capacitor.name=Insane SMD Capacitor
@@ -354,6 +365,8 @@ metaitem.component.insane_smd.inductor.name=Insane SMD Inductor
 metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
 metaitem.nonlinear_chemical_oscillator.name=Nonlinear Chemical Oscillator
 metaitem.nonlinear_chemical_oscillator.tooltip=Non-equilibrium Thermodynamics!
+metaitem.optical_laser_control_unit.name=Optical Laser Control Unit
+metaitem.optical_laser_control_unit.tooltip=Laser Information Transmission
 
 # Circuits
 # Gooware
@@ -374,7 +387,7 @@ metaitem.circuit.optical_assembly.tooltip=With the Power of Lasers!/n§6UHV-tier
 metaitem.circuit.optical_computer.name=Optical Computer
 metaitem.circuit.optical_computer.tooltip=In the Blink of an Eye/n§6UEV-tier
 metaitem.circuit.optical_mainframe.name=Optical Mainframe
-metaitem.circuit.optical_mainframe.tooltip=Can Anything be faster?/n§6UIV-tier
+metaitem.circuit.optical_mainframe.tooltip=Could Anything be faster?/n§6UIV-tier
 
 # Exotic
 metaitem.circuit.exotic_processor.name=Exotic Processor

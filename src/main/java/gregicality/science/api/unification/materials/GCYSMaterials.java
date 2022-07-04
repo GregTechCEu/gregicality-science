@@ -88,6 +88,11 @@ public class GCYSMaterials {
     public static Material GSTGlass;
     public static Material ZBLANGlass;
     public static Material HeliumNeon;
+    public static Material AluminiumTrichloride;
+    public static Material AluminiumHydroxide;
+    public static Material GalliumTrichloride;
+    public static Material GalliumTrioxide;
+    public static Material GalliumNitride;
 
 
     // Second Degree Materials
@@ -174,6 +179,8 @@ public class GCYSMaterials {
     public static Material PolyethyleneTerephthalate;
     public static Material AcetoneCyanohydrin;
     public static Material Polymethylmethacrylate;
+    public static Material Trimethylaluminium;
+    public static Material Trimethylgallium;
 
 
     // Unknown Composition Materials

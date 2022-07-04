@@ -3,6 +3,7 @@ package gregicality.science.loaders.recipe.circuits;
 import gregicality.science.api.unification.ore.GCYSOrePrefix;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.common.items.MetaItems;
+import net.minecraftforge.fluids.FluidStack;
 
 import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.*;
@@ -20,6 +21,7 @@ public class OpticalCircuits {
         opticalFiber();
         dielectricMirror();
         lasers();
+        board();
     }
 
     private static void pram() {
@@ -158,5 +160,32 @@ public class OpticalCircuits {
                 .input(gem, NdYAG)
                 .output(ND_YAG_LASER)
                 .duration(120).EUt(16).buildAndRegister();
+    }
+
+    private static void board() {
+        CVD_RECIPES.recipeBuilder()
+                .input(plate, GalliumNitride)
+                .input(foil, Americium, 4)
+                .output(OPTICAL_BOARD)
+                .duration(40).EUt(VA[UHV]).buildAndRegister();
+
+        for (FluidStack stack : new FluidStack[]{TetramethylammoniumHydroxide.getFluid(4000), EPD.getFluid(1000)}) {
+            CHEMICAL_RECIPES.recipeBuilder()
+                    .input(OPTICAL_BOARD)
+                    .input(foil, Americium, 64)
+                    .fluidInputs(stack)
+                    .output(OPTICAL_CIRCUIT_BOARD)
+                    .duration(2100).EUt(VA[IV]).buildAndRegister();
+        }
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(OPTICAL_CIRCUIT_BOARD)
+                .input(HELIUM_NEON_LASER)
+                .input(ND_YAG_LASER)
+//                .input(OPTICAL_FIBER_CABLE, 2) //TODO optical fiber cables
+                .input(lens, Diamond, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .output(OPTICAL_LASER_CONTROL_UNIT)
+                .duration(600).EUt(UHV).buildAndRegister();
     }
 }

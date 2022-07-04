@@ -35,11 +35,14 @@ public class GCYSMetaItems {
 
     // Circuit Boards
     public static MetaItem<?>.MetaValueItem GOOWARE_BOARD;
+    public static MetaItem<?>.MetaValueItem OPTICAL_BOARD;
     public static MetaItem<?>.MetaValueItem GOOWARE_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem OPTICAL_CIRCUIT_BOARD;
 
     // Processing Units
     public static MetaItem<?>.MetaValueItem BZ_REACTION_CHAMBER;
     public static MetaItem<?>.MetaValueItem NONLINEAR_CHEMICAL_OSCILLATOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_LASER_CONTROL_UNIT;
 
     // SMDS
     public static MetaItem<?>.MetaValueItem INSANE_SMD_CAPACITOR;

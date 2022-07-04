@@ -387,5 +387,21 @@ public class GCYSOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION, NO_SMASHING, GENERATE_PLATE)
                 .components(Carbon, 5, Hydrogen, 8, Oxygen, 2)
                 .build();
+
+        Trimethylaluminium = new Material.Builder(15058, "trimethylaluminium")
+                .fluid()
+                .color(0x6ECCFF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 2, Carbon, 6, Hydrogen, 18)
+                .build()
+                .setFormula("Al2(CH3)6", true);
+
+        Trimethylgallium = new Material.Builder(15059, "trimethylgallium")
+                .fluid()
+                .color(0x4F92FF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Gallium, 1, Carbon, 3, Hydrogen, 9)
+                .build()
+                .setFormula("Ga(CH3)3", true);
     }
 }
