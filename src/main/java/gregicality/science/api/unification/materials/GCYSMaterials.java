@@ -180,7 +180,6 @@ public class GCYSMaterials {
     public static Material Pyrocatechol;
     public static Material EthyleneOxide;
     public static Material EthyleneGlycol;
-    public static Material PolyethyleneTerephthalate;
     public static Material AcetoneCyanohydrin;
     public static Material Polymethylmethacrylate;
     public static Material Trimethylaluminium;

@@ -234,7 +234,7 @@ public class GCYSOrganicChemistryMaterials {
         KaptonK = new Material.Builder(15036, "kapton_k") //TODO Poly 4,4'-oxydiphenylene-pyromellitimide Tooltip
                 .ingot().fluid()
                 .color(0xFFCE52)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_FOIL)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL)
                 .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
                 .build()
                 .setFormula("O(C6H4NH2)2", true);
@@ -265,7 +265,7 @@ public class GCYSOrganicChemistryMaterials {
         KaptonE = new Material.Builder(15040, "kapton_e")
                 .ingot().fluid()
                 .color(0xFFDF8C)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, NO_SMASHING, NO_SMELTING, GENERATE_FOIL)
                 .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
                 .build()
                 .setFormula("O(C6H4NH2)2", true);
@@ -334,7 +334,7 @@ public class GCYSOrganicChemistryMaterials {
         Kevlar = new Material.Builder(15050, "kevlar")
                 .ingot().fluid()
                 .color(0xF0F078)
-                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, GENERATE_PLATE)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
                 .components(Carbon, 14, Hydrogen, 10, Nitrogen, 2, Oxygen, 2)
                 .build()
                 .setFormula("(C6H4)2(CO)2(NH)2", true);
@@ -367,12 +367,7 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 2, Hydrogen, 6, Oxygen, 2)
                 .build();
 
-        PolyethyleneTerephthalate = new Material.Builder(15055, "polyethylene_terephthalate") //TODO "PET" tooltip
-                .ingot().fluid()
-                .color(0xFFD2D3)
-                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, GENERATE_PLATE)
-                .components(Carbon, 10, Hydrogen, 8, Oxygen, 4)
-                .build();
+        // FREE ID: 15055
 
         AcetoneCyanohydrin = new Material.Builder(15056, "acetone_cyanohydrin")
                 .fluid()
@@ -384,7 +379,7 @@ public class GCYSOrganicChemistryMaterials {
         Polymethylmethacrylate = new Material.Builder(15057, "polymethylmethacrylate")
                 .ingot().fluid()
                 .color(0x95E5A5)
-                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, GENERATE_PLATE)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
                 .components(Carbon, 5, Hydrogen, 8, Oxygen, 2)
                 .build();
 

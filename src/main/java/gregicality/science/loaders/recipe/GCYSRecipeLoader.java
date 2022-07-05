@@ -49,7 +49,7 @@ public class GCYSRecipeLoader {
         BoronNitrideChain.init();
         BZChain.init();
         PhosphorusChain.init();
-        PolyethyleneTerephthalateChain.init();
+        EthyleneGlycolChain.init();
         PMMAChain.init();
         GalliumNitrideChain.init();
         PhotoresistivesChain.init();

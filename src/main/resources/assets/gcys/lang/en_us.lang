@@ -364,10 +364,15 @@ metaitem.circuit_board.optical.tooltip=The Board that transmits Lasers
 
 # SMDs
 metaitem.component.optical_smd.capacitor.name=Optical Integrator
+metaitem.component.optical_smd.capacitor.tooltip=Optoelectronic Capacitor
 metaitem.component.optical_smd.diode.name=Optical Isolator
+metaitem.component.optical_smd.diode.tooltip=Optoelectronic Diode
 metaitem.component.optical_smd.resistor.name=Photoresistor
+metaitem.component.optical_smd.resistor.tooltip=Optoelectronic Resistor
 metaitem.component.optical_smd.transistor.name=MOSFET
+metaitem.component.optical_smd.transistor.tooltip=Optoelectronic Transistor
 metaitem.component.optical_smd.inductor.name=Optical Polarizer
+metaitem.component.optical_smd.inductor.tooltip=Optoelectronic Inductor
 
 # Processing Units
 metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
@@ -379,54 +384,54 @@ metaitem.optical_laser_control_unit.tooltip=Laser Information Transmission
 # Circuits
 # Gooware
 metaitem.circuit.gooware_processor.name=Gooware Processor
-metaitem.circuit.gooware_processor.tooltip=Reaction-Diffusion Computation/n§2ZPM-tier
+metaitem.circuit.gooware_processor.tooltip=Reaction-Diffusion Computation/n§2ZPM-tier Circuit
 metaitem.circuit.gooware_assembly.name=Gooware Assembly
-metaitem.circuit.gooware_assembly.tooltip=Cyclic Concentration/n§2UV-tier
+metaitem.circuit.gooware_assembly.tooltip=Cyclic Concentration/n§2UV-tier Circuit
 metaitem.circuit.gooware_computer.name=Gooware Computer
-metaitem.circuit.gooware_computer.tooltip=Complex Wave Phenomena!/n§2UHV-tier
+metaitem.circuit.gooware_computer.tooltip=Complex Wave Phenomena!/n§2UHV-tier Circuit
 metaitem.circuit.gooware_mainframe.name=Gooware Mainframe
-metaitem.circuit.gooware_mainframe.tooltip=Spiraling Colored Waves!/n§2UEV-tier
+metaitem.circuit.gooware_mainframe.tooltip=Spiraling Colored Waves!/n§2UEV-tier Circuit
 
 # Optical
 metaitem.circuit.optical_processor.name=Optical Processor
-metaitem.circuit.optical_processor.tooltip=Lightspeed computing/n§6UV-tier
+metaitem.circuit.optical_processor.tooltip=Lightspeed computing/n§6UV-tier Circuit
 metaitem.circuit.optical_assembly.name=Optical Assembly
-metaitem.circuit.optical_assembly.tooltip=With the Power of Lasers!/n§6UHV-tier
+metaitem.circuit.optical_assembly.tooltip=With the Power of Lasers!/n§6UHV-tierv
 metaitem.circuit.optical_computer.name=Optical Computer
-metaitem.circuit.optical_computer.tooltip=In the Blink of an Eye/n§6UEV-tier
+metaitem.circuit.optical_computer.tooltip=In the Blink of an Eye/n§6UEV-tier Circuit
 metaitem.circuit.optical_mainframe.name=Optical Mainframe
-metaitem.circuit.optical_mainframe.tooltip=Could Anything be faster?/n§6UIV-tier
+metaitem.circuit.optical_mainframe.tooltip=Could Anything be faster?/n§6UIV-tier Circuit
 
 # Exotic
 metaitem.circuit.exotic_processor.name=Exotic Processor
-metaitem.circuit.exotic_processor.tooltip=Quite Strange/n§5UHV-tier
+metaitem.circuit.exotic_processor.tooltip=Quite Strange/n§5UHV-tier Circuit
 metaitem.circuit.exotic_assembly.name=Exotic Assembly
-metaitem.circuit.exotic_assembly.tooltip=States with unusual Properties/n§5UEV-tier
+metaitem.circuit.exotic_assembly.tooltip=States with unusual Properties/n§5UEV-tier Circuit
 metaitem.circuit.exotic_computer.name=Exotic Computer
-metaitem.circuit.exotic_computer.tooltip=Who uses Nanometers anyways?/n§5UIV-tier
+metaitem.circuit.exotic_computer.tooltip=Who uses Nanometers anyways?/n§5UIV-tier Circuit
 metaitem.circuit.exotic_mainframe.name=Exotic Mainframe
-metaitem.circuit.exotic_mainframe.tooltip=The smallest Scale ever!/n§5UXV-tier
+metaitem.circuit.exotic_mainframe.tooltip=The smallest Scale ever!/n§5UXV-tier Circuit
 
 
 # Cosmic
 metaitem.circuit.cosmic_processor.name=Cosmic Processor
-metaitem.circuit.cosmic_processor.tooltip=Phenomenal cosmic powers!/n§8UEV-tier
+metaitem.circuit.cosmic_processor.tooltip=Phenomenal cosmic powers!/n§8UEV-tier Circuit
 metaitem.circuit.cosmic_assembly.name=Cosmic Assembly
-metaitem.circuit.cosmic_assembly.tooltip=Phenomenal cosmic powers!/n§8UIV-tier
+metaitem.circuit.cosmic_assembly.tooltip=Phenomenal cosmic powers!/n§8UIV-tier Circuit
 metaitem.circuit.cosmic_computer.name=Cosmic Computer
-metaitem.circuit.cosmic_computer.tooltip=Phenomenal cosmic powers!/n§8UXV-tier
+metaitem.circuit.cosmic_computer.tooltip=Phenomenal cosmic powers!/n§8UXV-tier Circuit
 metaitem.circuit.cosmic_mainframe.name=Cosmic Mainframe
-metaitem.circuit.cosmic_mainframe.tooltip=Phenomenal cosmic powers!/n§8OpV-tier
+metaitem.circuit.cosmic_mainframe.tooltip=Phenomenal cosmic powers!/n§8OpV-tier Circuit
 
 # Supracausal
 metaitem.circuit.supracausal_processor.name=Supra-Causal Processor
-metaitem.circuit.supracausal_processor.tooltip=With the Power of Black Holes/n§fUIV-tier
+metaitem.circuit.supracausal_processor.tooltip=With the Power of Black Holes/n§fUIV-tier Circuit
 metaitem.circuit.supracausal_assembly.name=Supra-Causal Assembly
-metaitem.circuit.supracausal_assembly.tooltip=Singularities on an Epic scale/n§fUXV-tier
+metaitem.circuit.supracausal_assembly.tooltip=Singularities on an Epic scale/n§fUXV-tier Circuit
 metaitem.circuit.supracausal_computer.name=Supra-Causal Computer
-metaitem.circuit.supracausal_computer.tooltip=Using Wormholes to our Advantage/n§fOpV-tier
+metaitem.circuit.supracausal_computer.tooltip=Using Wormholes to our Advantage/n§fOpV-tier Circuit
 metaitem.circuit.supracausal_mainframe.name=Supra-Causal Mainframe
-metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier
+metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier Circuit
 
 # RecipeMaps
 recipemap.dryer_recipes.name=Drying

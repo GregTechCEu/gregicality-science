@@ -13,6 +13,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.*;
 
 public class OpticalCircuits {
 
@@ -23,6 +24,7 @@ public class OpticalCircuits {
         lasers();
         board();
         smd();
+        circuits();
     }
 
     private static void pram() {
@@ -110,7 +112,7 @@ public class OpticalCircuits {
                 .input(dust, ErbiumDopedZBLANGlass, 2)
                 .input(dust, PraseodymiumDopedZBLANGlass, 2)
                 .input(dust, TantalumPentoxide, 2)
-                .input(plate, PolyethyleneTerephthalate)
+                .input(plate, Polybenzimidazole)
                 .output(DIELECTRIC_MIRROR)
                 .temperature(2520)
                 .duration(250).EUt(VA[IV]).buildAndRegister();
@@ -123,8 +125,22 @@ public class OpticalCircuits {
                 .fluidOutputs(HeliumNeon.getFluid(1000))
                 .duration(300).EUt(16).buildAndRegister();
 
+        // 2Y + 3O -> Y2O3
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Yttrium, 2)
+                .fluidInputs(Oxygen.getFluid(3000))
+                .output(dust, YttriumOxide, 5)
+                .duration(100).EUt(16).buildAndRegister();
+
+        // 2Nd + 3O -> Bd2O3
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Neodymium, 2)
+                .fluidInputs(Oxygen.getFluid(3000))
+                .output(dust, NeodymiumOxide, 5)
+                .duration(100).EUt(16).buildAndRegister();
+
         AUTOCLAVE_RECIPES.recipeBuilder()
-                .input(dust, YttriumOxide, 3)
+                .input(dust, YttriumOxide, 5)
                 .input(dust, Alumina, 5)
                 .fluidInputs(DistilledWater.getFluid(8000))
                 .output(GCYSOrePrefix.seedCrystal, NdYAG)
@@ -133,7 +149,7 @@ public class OpticalCircuits {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(DIELECTRIC_MIRROR)
                 .input(plate, SterlingSilver, 2)
-                .input(ring, Tungsten, 2)
+                .input(ring, TungstenSteel, 2)
                 .input(cableGtSingle, Platinum, 2)
                 .fluidInputs(BorosilicateGlass.getFluid(L * 2))
                 .output(EMPTY_LASER_ASSEMBLY)
@@ -168,12 +184,12 @@ public class OpticalCircuits {
                     .duration(210).EUt(VA[IV]).buildAndRegister();
         }
 
-        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+        ASSEMBLER_RECIPES.recipeBuilder()
                 .input(OPTICAL_CIRCUIT_BOARD)
                 .input(HELIUM_NEON_LASER)
                 .input(ND_YAG_LASER)
 //                .input(OPTICAL_FIBER_CABLE, 2) //TODO optical fiber cables
-                .input(lens, Diamond, 4)
+                .input(lens, Diamond, 2)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(OPTICAL_LASER_CONTROL_UNIT)
                 .duration(600).EUt(UHV).buildAndRegister();
@@ -209,9 +225,63 @@ public class OpticalCircuits {
                 .duration(160).EUt(VA[UV]).buildAndRegister();
 
         ION_IMPLANTATOR_RECIPES.recipeBuilder()
-                .input(dust, Silver)
+                .input(dust, Silver, 4)
                 .input(plate, Polymethylmethacrylate)
                 .output(OPTICAL_POLARIZER, 16)
                 .duration(160).EUt(VA[UV]).buildAndRegister();
+    }
+
+    private static void circuits() {
+        //TODO SoC Recipe
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(OPTICAL_LASER_CONTROL_UNIT)
+                .input(CRYSTAL_CENTRAL_PROCESSING_UNIT) //TODO new CPU
+                .input(PHOTORESISTOR, 8)
+                .input(OPTICAL_INTEGRATOR, 8)
+                .input(MOSFET, 8)
+                .input(OPTICAL_FIBER, 8)
+                .output(OPTICAL_PROCESSOR, 2)
+                .duration(200).EUt(VA[UHV]).buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(OPTICAL_CIRCUIT_BOARD)
+                .input(OPTICAL_PROCESSOR, 2)
+                .input(OPTICAL_POLARIZER, 6)
+                .input(OPTICAL_INTEGRATOR, 12)
+                .input(PHASE_CHANGE_MEMORY, 24)
+                .input(OPTICAL_FIBER, 16)
+                .output(OPTICAL_ASSEMBLY, 2)
+                .solderMultiplier(2)
+                .duration(400).EUt(VA[UHV]).buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(OPTICAL_CIRCUIT_BOARD)
+                .input(OPTICAL_ASSEMBLY, 2)
+                .input(OPTICAL_ISOLATOR, 8)
+                .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
+                .input(PHASE_CHANGE_MEMORY, 32)
+                .input(OPTICAL_FIBER, 24)
+                .input(foil, KaptonE, 32)
+                .input(plate, Tritanium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 12))
+                .output(OPTICAL_COMPUTER)
+                .duration(400).EUt(614400).buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Tritanium, 2)
+                .input(OPTICAL_COMPUTER, 2)
+                .input(OPTICAL_ISOLATOR, 8)
+                .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
+                .input(PHASE_CHANGE_MEMORY, 32)
+                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2) //TODO new PIC
+//                .input(OPTICAL_FIBER_CABLE, 8) //TODO Optical Fiber Cable
+                .input(OPTICAL_POLARIZER, 8)
+                .input(OPTICAL_INTEGRATOR, 16)
+                .input(OPTICAL_ISOLATOR, 8)
+                .input(plate, Tritanium, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 20))
+                .fluidInputs(Kevlar.getFluid(L * 9))
+                .output(OPTICAL_MAINFRAME)
+                .duration(1200).EUt(4_800_000).buildAndRegister();
     }
 }
