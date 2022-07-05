@@ -5,8 +5,7 @@ import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
-import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 public class GCYSSecondDegreeMaterials {
 
@@ -123,7 +122,7 @@ public class GCYSSecondDegreeMaterials {
                 .color(0x777777)
                 .iconSet(MaterialIconSet.ROUGH)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Graphene, 1, Oxygen ,1)
+                .components(Graphene, 1, Oxygen, 1)
                 .build();
 
         AmmoniumNitrate = new Material.Builder(6015, "ammonium_nitrate")
@@ -141,5 +140,67 @@ public class GCYSSecondDegreeMaterials {
                 .components(Quicklime, 2, SiliconDioxide, 3)
                 .build()
                 .setFormula("CaSiO3", true);
+
+        RoastedSphalerite = new Material.Builder(6017, "roasted_sphalerite")
+                .dust()
+                .color(0xAC8B5C)
+                .iconSet(MaterialIconSet.FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(GermaniumDioxide, 1)
+                .build()
+                .setFormula("GaGeO2", true);
+
+        WaelzOxide = new Material.Builder(6018, "waelz_oxide")
+                .dust()
+                .color(0xB8B8B8)
+                .iconSet(MaterialIconSet.FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Zinc, 1, GermaniumDioxide, 1)
+                .build();
+
+        WaelzSlag = new Material.Builder(6019, "waelz_slag")
+                .dust()
+                .color(0xAC8B5C)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(ZincSulfate, 1)
+                .build()
+                .setFormula("GaZnSO4", true);
+
+        ImpureGermaniumDioxide = new Material.Builder(6020, "impure_germanium_dioxide")
+                .dust()
+                .color(0x666666)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(GermaniumDioxide, 1)
+                .build()
+                .setFormula("GeO2?", true);
+
+        ErbiumDopedZBLANGlass = new Material.Builder(6021, "erbium_doped_zblan_glass")
+                .ingot()
+                .color(0x505444)
+                .iconSet(MaterialIconSet.BRIGHT)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .components(ZBLANGlass, 1, Erbium, 1)
+                .build()
+                .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Er", true);
+
+        PraseodymiumDopedZBLANGlass = new Material.Builder(6022, "praseodymium_doped_zblan_glass")
+                .ingot()
+                .color(0xC5C88D)
+                .iconSet(MaterialIconSet.BRIGHT)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .components(ZBLANGlass, 1, Praseodymium, 1)
+                .build()
+                .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Pr", true);
+
+        NdYAG = new Material.Builder(6023, "nd_yag") //TODO "Yttrium-Aluminium-Garnet" Tooltip
+                .gem()
+                .color(0xD99DE4)
+                .iconSet(MaterialIconSet.GEM_VERTICAL)
+                .flags(CRYSTALLIZABLE, DECOMPOSITION_BY_CENTRIFUGING)
+                .components(YttriumOxide, 2, NeodymiumOxide, 1, Alumina, 5)
+                .build()
+                .setFormula("NdY2Al5O12", true);
     }
 }

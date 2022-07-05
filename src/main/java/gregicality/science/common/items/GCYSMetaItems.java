@@ -35,18 +35,21 @@ public class GCYSMetaItems {
 
     // Circuit Boards
     public static MetaItem<?>.MetaValueItem GOOWARE_BOARD;
+    public static MetaItem<?>.MetaValueItem OPTICAL_BOARD;
     public static MetaItem<?>.MetaValueItem GOOWARE_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem OPTICAL_CIRCUIT_BOARD;
 
     // Processing Units
     public static MetaItem<?>.MetaValueItem BZ_REACTION_CHAMBER;
     public static MetaItem<?>.MetaValueItem NONLINEAR_CHEMICAL_OSCILLATOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_LASER_CONTROL_UNIT;
 
     // SMDS
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_CAPACITOR;
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_DIODE;
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_RESISTOR;
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_TRANSISTOR;
-    public static MetaItem<?>.MetaValueItem INSANE_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_INTEGRATOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_ISOLATOR;
+    public static MetaItem<?>.MetaValueItem PHOTORESISTOR;
+    public static MetaItem<?>.MetaValueItem MOSFET;
+    public static MetaItem<?>.MetaValueItem OPTICAL_POLARIZER;
 
     // Crystal Stuff
     public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_BOULE;
@@ -61,7 +64,13 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem CRYSTAL_MODULATOR_SAPPHIRE;
     public static MetaItem<?>.MetaValueItem CRYSTAL_SYSTEM_ON_CHIP_SOCKET;
 
-    // Gooware Stuff
+    // Optical Stuff
+    public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
+    public static MetaItem<?>.MetaValueItem OPTICAL_FIBER;
+    public static MetaItem<?>.MetaValueItem DIELECTRIC_MIRROR;
+    public static MetaItem<?>.MetaValueItem EMPTY_LASER_ASSEMBLY;
+    public static MetaItem<?>.MetaValueItem HELIUM_NEON_LASER;
+    public static MetaItem<?>.MetaValueItem ND_YAG_LASER;
 
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();

@@ -14,6 +14,7 @@ public class PhosphorusChain {
     public static void init() {
         phosphorus();
         phosphorene();
+        phosphorylChloride();
     }
 
     private static void phosphorus() {
@@ -71,5 +72,21 @@ public class PhosphorusChain {
                 .output(foil, Phosphorene, 4)
                 .fluidOutputs(NMethylPyrrolidone.getFluid(100))
                 .duration(100).EUt(VA[LuV]).buildAndRegister();
+    }
+
+    private static void phosphorylChloride() {
+        // P4 + 12Cl -> 4PCl3
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, WhitePhosphorus)
+                .fluidInputs(Chlorine.getFluid(12000))
+                .fluidOutputs(PhosphorusTrichloride.getFluid(4000))
+                .duration(120).EUt(VA[MV]).buildAndRegister();
+
+        // PCl3 + O -> POCl3
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(PhosphorusTrichloride.getFluid(1000))
+                .fluidInputs(Oxygen.getFluid(1000))
+                .fluidOutputs(PhosphorylChloride.getFluid(1000))
+                .duration(120).EUt(VA[HV]).buildAndRegister();
     }
 }

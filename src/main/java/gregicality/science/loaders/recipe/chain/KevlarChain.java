@@ -38,7 +38,7 @@ public class KevlarChain {
                 .notConsumable(dust, Manganese)
                 .notConsumable(dust, Cobalt)
                 .notConsumable(Acetone.getFluid())
-                .fluidInputs(ParaXylene.getFluid(10000))
+                .fluidInputs(ParaXylene.getFluid(1000))
                 .fluidInputs(Tetrabromoethane.getFluid(50))
                 .fluidInputs(Air.getFluid(12000)) // TODO compressed air
                 .output(dust, TerephthalicAcid, 3)

@@ -3,6 +3,7 @@ package gregicality.science.api.unification.materials;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
+import gregtech.api.unification.material.properties.BlastProperty;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -543,6 +544,139 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .flags(DISABLE_DECOMPOSITION, GENERATE_FOIL)
                 .components(Phosphorus, 4)
+                .build();
+
+        PhosphorusTrichloride = new Material.Builder(3571, "phosphorus_trichloride")
+                .fluid()
+                .color(0xE8C474)
+                .components(Phosphorus, 1, Chlorine, 3)
+                .build();
+
+        PhosphorylChloride = new Material.Builder(3572, "phosphoryl_chloride")
+                .fluid()
+                .color(0xE8BB5B)
+                .components(Phosphorus, 1, Oxygen, 1, Chlorine, 3)
+                .build();
+
+        ZincOxide = new Material.Builder(3573, "zinc_oxide")
+                .dust()
+                .color(0xB85C34)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .components(Zinc, 1, Oxygen, 1)
+                .build();
+
+        GermaniumTetrachloride = new Material.Builder(3574, "germanium_tetrachloride")
+                .fluid()
+                .color(0x787878)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Germanium, 1, Chlorine, 4)
+                .build();
+
+        GermaniumDioxide = new Material.Builder(3575, "germanium_dioxide")
+                .dust()
+                .color(0x666666)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Germanium, 1, Oxygen, 2)
+                .build();
+
+        SiliconTetrachloride = new Material.Builder(3576, "silicon_tetrachloride")
+                .fluid()
+                .color(0x5B5B7A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Silicon, 1, Chlorine, 4)
+                .build();
+
+        GSTGlass = new Material.Builder(3577, "gst_glass")
+                .ingot().fluid()
+                .color(0xCFFFFF)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(GENERATE_PLATE, NO_SMASHING, NO_WORKING, DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Germanium, 2, Tellurium, 2, Antimony, 5)
+                .blastTemp(873, BlastProperty.GasTier.MID)
+                .build();
+
+        ZBLANGlass = new Material.Builder(3578, "zblan_glass")
+                .ingot().fluid()
+                .color(0xACB4BC)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION)
+                .components(Zirconium, 5, Barium, 2, Lanthanum, 1, Aluminium, 1, Sodium, 2, Fluorine, 6)
+                .build()
+                .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2", true);
+
+        HeliumNeon = new Material.Builder(3579, "helium_neon")
+                .fluid(FluidTypes.GAS)
+                .color(0xFF0080)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Helium, 9, Neon, 1)
+                .build();
+
+        AluminiumHydroxide = new Material.Builder(3580, "aluminium_hydroxide")
+                .dust()
+                .color(0xBEBEC8)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 1, Oxygen, 3, Hydrogen, 3)
+                .build()
+                .setFormula("Al(OH)3", true);
+
+        AluminiumTrichloride = new Material.Builder(3581, "aluminium_trichloride")
+                .dust()
+                .color(0x78C3EB)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 1, Chlorine, 3)
+                .build();
+
+        GalliumTrichloride = new Material.Builder(3582, "gallium_trichloride")
+                .dust()
+                .color(0x6EB4FF)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Gallium, 1, Chlorine, 3)
+                .build();
+
+        GalliumTrioxide = new Material.Builder(3583, "gallium_trioxide")
+                .dust().fluid().fluidTemp(2170)
+                .color(0xE4CDFF)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Gallium, 1, Oxygen, 3)
+                .build();
+
+        GalliumNitride = new Material.Builder(3584, "gallium_nitride")
+                .ingot()
+                .color(0xFFF458)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(GENERATE_PLATE)
+                .components(Gallium, 1, Nitrogen, 1)
+                .build();
+
+        CadmiumBromide = new Material.Builder(3585, "cadmium_bromide")
+                .dust()
+                .color(0xFF1774)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Cadmium, 1, Bromine, 2)
+                .build();
+
+        MagnesiumBromide = new Material.Builder(3586, "magnesium_bromide")
+                .dust()
+                .color(0x5F4C32)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Magnesium, 1, Bromine, 2)
+                .build();
+
+        CadmiumSulfide = new Material.Builder(3587, "cadmium_sulfide")
+                .dust()
+                .color(0xC8C43C)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Cadmium, 1, Sulfur, 1)
+                .build();
+
+        CadmiumSelenide = new Material.Builder(3588, "cadmium_selenide")
+                .dust()
+                .color(0x983034)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Cadmium, 1, Selenium, 1)
                 .build();
     }
 }

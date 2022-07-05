@@ -80,6 +80,24 @@ material.violet_phosphorus=Violet Phosphorus
 material.black_phosphorus=Black Phosphorus
 material.blue_phosphorus=Blue Phosphorus
 material.phosphorene=Phosphorene
+material.phosphorus_trichloride=Phosphorus Trichloride
+material.phosphoryl_chloride=Phosphoryl Chloride
+material.zinc_oxide=Zinc Oxide
+material.germanium_tetrachloride=Germanium Tetrachloride
+material.germanium_dioxide=Germanium Dioxide
+material.silicon_tetrachloride=Silicon Tetrachloride
+material.gst_glass=GST Glass
+material.zblan_glass=ZBLAN Glass
+material.helium_neon=Helium-Neon
+material.aluminium_hydroxide=Aluminium Hydroxide
+material.aluminium_trichloride=Aluminium Trichloride
+material.gallium_trichloride=Gallium Trichloride
+material.gallium_trioxide=Gallium Trioxide
+material.gallium_nitride=Gallium Nitride
+material.cadmium_bromide=Cadmium Bromide
+material.magnesium_bromide=Magnesium Bromide
+material.cadmium_sulfide=Cadmium Sulfide
+material.cadmium_selenide=Cadmium Selenide
 
 
 # Second Degree Materials
@@ -115,11 +133,25 @@ material.acidic_iridium_dioxide_solution=Acidic Iridium Dioxide Solution
 material.graphene_oxide=Graphene Oxide
 material.ammonium_nitrate=Ammonium Nitrate
 material.wollastonite=Wollastonite
+material.roasted_sphalerite=Roasted Sphalerite
+material.waelz_oxide=Waelz Oxide
+item.waelz_oxide.dust=Waelz Oxide
+item.waelz_oxide.dustSmall=Small Pile of Waelz Oxide
+item.waelz_oxide.dustTiny=Tiny Pile of Waelz Oxide
+material.waelz_slag=Waelz Slag
+item.waelz_slag.dust=Waelz Slag
+item.waelz_slag.dustSmall=Small Pile of Waelz Slag
+item.waelz_slag.dustTiny=Tiny Pile of Waelz Slag
+material.impure_germanium_dioxide=Impure Germanium Dioxide
+material.erbium_doped_zblan_glass=Erbium-Doped ZBLAN Glass
+material.praseodymium_doped_zblan_glass=Praseodymium-Doped ZBLAN Glass
+material.nd_yag=Nd:YAG
 
 
 # Third Degree Materials
 material.platinum_palladium_leachate=Platinum-Palladium Leachate
 material.rhodium_salt_solution=Rhodium Salt Solution
+material.zinc_rich_sphalerite=Zinc-Rich Sphalerite
 
 
 # Organic Chemistry Materials
@@ -168,6 +200,17 @@ material.malonic_acid=Malonic Acid
 material.tetramethylammonium_chloride=Tetraemthylammonium Chloride
 material.tetramethylammonium_hydroxide=Tetramethylammonium Hydroxide
 material.pyrocatechol=Pyrocatechol
+material.ethylene_oxide=Ethylene Oxide
+material.ethylene_glycol=Ethylene Glycol
+material.polyethylene_terephthalate=Polyethylene Terephthalate
+material.acetone_cyanohydrin=Acetone Cyanohydrin
+material.polymethylmethacrylate=Polymethylmethacrylate
+material.trimethylaluminium=Trimethylaluminium
+material.trimethylgallium=Trimethylgallium
+material.ethylene_dibromide=Ethylene Dibromide
+material.dimethylcadmium=Dimethylcadmium
+material.grignard_reagent=Grignard Reagent
+material.diethyl_sulfide=Diethyl Sulfide
 
 
 # Unknown Composition Materials
@@ -291,78 +334,104 @@ metaitem.crystal.system_on_chip.socket.tooltip=Bridging Crystal and Circuit
 metaitem.magnetron.name=Magnetron
 
 
+# Optical Stuff
+metaitem.plate.phase_change_memory.name=PRAM
+metaitem.plate.phase_change_memory.tooltip=Phase-change Memory
+metaitem.optical_fiber.name=Optical Fiber
+metaitem.optical_fiber.tooltip=Light-transmitting Glass
+metaitem.dielectric_mirror.name=Dielectric Mirror
+metaitem.dielectric_mirror.tooltip=Bragg Mirror
+metaitem.laser.assembly.empty.name=Empty Laser Assembly
+metaitem.laser.assembly.empty.tooltip=Fill this with some Laser Medium
+metaitem.laser.helium_neon.name=Helium-Neon Laser
+metaitem.laser.helium_neon.tooltip=Purpose: Weak Optical Appliances
+metaitem.laser.nd_yag.name=Nd:YAG Laser
+metaitem.laser.nd_yag.tooltip=Purpose: Strong Optical Appliances
+
+
 # Item Behaviors
 metaitem.behavior.held_item_destroy.message=Holding the %s damaged it!
 
 # Circuit Boards
 metaitem.board.gooware.name=Kapton Circuit Board
-metaitem.board.gooware.tooltip=Ultimate Board
-metaitem.circuit_board.gooware.name=An Ultimate Circuit Board
+metaitem.board.gooware.tooltip=A Super Board
+metaitem.board.optical.name=Gallium Nitride Circuit Board
+metaitem.board.optical.tooltip=An Ultimate Board
+metaitem.circuit_board.gooware.name=Super Circuit Board
 metaitem.circuit_board.gooware.tooltip=The Board that performs Reactions
+metaitem.circuit_board.optical.name=Ultimate Circuit Board
+metaitem.circuit_board.optical.tooltip=The Board that transmits Lasers
 
 # SMDs
-metaitem.component.insane_smd.capacitor.name=Insane SMD Capacitor
-metaitem.component.insane_smd.diode.name=Insane SMD Diode
-metaitem.component.insane_smd.resistor.name=Insane SMD Resistor
-metaitem.component.insane_smd.transistor.name=Insane SMD Transistor
-metaitem.component.insane_smd.inductor.name=Insane SMD Inductor
+metaitem.component.optical_smd.capacitor.name=Optical Integrator
+metaitem.component.optical_smd.capacitor.tooltip=Optoelectronic Capacitor
+metaitem.component.optical_smd.diode.name=Optical Isolator
+metaitem.component.optical_smd.diode.tooltip=Optoelectronic Diode
+metaitem.component.optical_smd.resistor.name=Photoresistor
+metaitem.component.optical_smd.resistor.tooltip=Optoelectronic Resistor
+metaitem.component.optical_smd.transistor.name=MOSFET
+metaitem.component.optical_smd.transistor.tooltip=Optoelectronic Transistor
+metaitem.component.optical_smd.inductor.name=Optical Polarizer
+metaitem.component.optical_smd.inductor.tooltip=Optoelectronic Inductor
 
 # Processing Units
 metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
 metaitem.nonlinear_chemical_oscillator.name=Nonlinear Chemical Oscillator
 metaitem.nonlinear_chemical_oscillator.tooltip=Non-equilibrium Thermodynamics!
+metaitem.optical_laser_control_unit.name=Optical Laser Control Unit
+metaitem.optical_laser_control_unit.tooltip=Laser Information Transmission
 
 # Circuits
 # Gooware
 metaitem.circuit.gooware_processor.name=Gooware Processor
-metaitem.circuit.gooware_processor.tooltip=Reaction-Diffusion Computation/n§2ZPM-tier
+metaitem.circuit.gooware_processor.tooltip=Reaction-Diffusion Computation/n§2ZPM-tier Circuit
 metaitem.circuit.gooware_assembly.name=Gooware Assembly
-metaitem.circuit.gooware_assembly.tooltip=Cyclic Concentration/n§2UV-tier
+metaitem.circuit.gooware_assembly.tooltip=Cyclic Concentration/n§2UV-tier Circuit
 metaitem.circuit.gooware_computer.name=Gooware Computer
-metaitem.circuit.gooware_computer.tooltip=Complex Wave Phenomena!/n§2UHV-tier
+metaitem.circuit.gooware_computer.tooltip=Complex Wave Phenomena!/n§2UHV-tier Circuit
 metaitem.circuit.gooware_mainframe.name=Gooware Mainframe
-metaitem.circuit.gooware_mainframe.tooltip=Spiraling Colored Waves!/n§2UEV-tier
+metaitem.circuit.gooware_mainframe.tooltip=Spiraling Colored Waves!/n§2UEV-tier Circuit
 
 # Optical
 metaitem.circuit.optical_processor.name=Optical Processor
-metaitem.circuit.optical_processor.tooltip=Lightspeed computing/n§6UV-tier
+metaitem.circuit.optical_processor.tooltip=Lightspeed computing/n§6UV-tier Circuit
 metaitem.circuit.optical_assembly.name=Optical Assembly
-metaitem.circuit.optical_assembly.tooltip=With the Power of Lasers!/n§6UHV-tier
+metaitem.circuit.optical_assembly.tooltip=With the Power of Lasers!/n§6UHV-tierv
 metaitem.circuit.optical_computer.name=Optical Computer
-metaitem.circuit.optical_computer.tooltip=In the Blink of an Eye/n§6UEV-tier
+metaitem.circuit.optical_computer.tooltip=In the Blink of an Eye/n§6UEV-tier Circuit
 metaitem.circuit.optical_mainframe.name=Optical Mainframe
-metaitem.circuit.optical_mainframe.tooltip=Can Anything be faster?/n§6UIV-tier
+metaitem.circuit.optical_mainframe.tooltip=Could Anything be faster?/n§6UIV-tier Circuit
 
 # Exotic
 metaitem.circuit.exotic_processor.name=Exotic Processor
-metaitem.circuit.exotic_processor.tooltip=Quite Strange/n§5UHV-tier
+metaitem.circuit.exotic_processor.tooltip=Quite Strange/n§5UHV-tier Circuit
 metaitem.circuit.exotic_assembly.name=Exotic Assembly
-metaitem.circuit.exotic_assembly.tooltip=States with unusual Properties/n§5UEV-tier
+metaitem.circuit.exotic_assembly.tooltip=States with unusual Properties/n§5UEV-tier Circuit
 metaitem.circuit.exotic_computer.name=Exotic Computer
-metaitem.circuit.exotic_computer.tooltip=Who uses Nanometers anyways?/n§5UIV-tier
+metaitem.circuit.exotic_computer.tooltip=Who uses Nanometers anyways?/n§5UIV-tier Circuit
 metaitem.circuit.exotic_mainframe.name=Exotic Mainframe
-metaitem.circuit.exotic_mainframe.tooltip=The smallest Scale ever!/n§5UXV-tier
+metaitem.circuit.exotic_mainframe.tooltip=The smallest Scale ever!/n§5UXV-tier Circuit
 
 
 # Cosmic
 metaitem.circuit.cosmic_processor.name=Cosmic Processor
-metaitem.circuit.cosmic_processor.tooltip=Phenomenal cosmic powers!/n§8UEV-tier
+metaitem.circuit.cosmic_processor.tooltip=Phenomenal cosmic powers!/n§8UEV-tier Circuit
 metaitem.circuit.cosmic_assembly.name=Cosmic Assembly
-metaitem.circuit.cosmic_assembly.tooltip=Phenomenal cosmic powers!/n§8UIV-tier
+metaitem.circuit.cosmic_assembly.tooltip=Phenomenal cosmic powers!/n§8UIV-tier Circuit
 metaitem.circuit.cosmic_computer.name=Cosmic Computer
-metaitem.circuit.cosmic_computer.tooltip=Phenomenal cosmic powers!/n§8UXV-tier
+metaitem.circuit.cosmic_computer.tooltip=Phenomenal cosmic powers!/n§8UXV-tier Circuit
 metaitem.circuit.cosmic_mainframe.name=Cosmic Mainframe
-metaitem.circuit.cosmic_mainframe.tooltip=Phenomenal cosmic powers!/n§8OpV-tier
+metaitem.circuit.cosmic_mainframe.tooltip=Phenomenal cosmic powers!/n§8OpV-tier Circuit
 
 # Supracausal
 metaitem.circuit.supracausal_processor.name=Supra-Causal Processor
-metaitem.circuit.supracausal_processor.tooltip=With the Power of Black Holes/n§fUIV-tier
+metaitem.circuit.supracausal_processor.tooltip=With the Power of Black Holes/n§fUIV-tier Circuit
 metaitem.circuit.supracausal_assembly.name=Supra-Causal Assembly
-metaitem.circuit.supracausal_assembly.tooltip=Singularities on an Epic scale/n§fUXV-tier
+metaitem.circuit.supracausal_assembly.tooltip=Singularities on an Epic scale/n§fUXV-tier Circuit
 metaitem.circuit.supracausal_computer.name=Supra-Causal Computer
-metaitem.circuit.supracausal_computer.tooltip=Using Wormholes to our Advantage/n§fOpV-tier
+metaitem.circuit.supracausal_computer.tooltip=Using Wormholes to our Advantage/n§fOpV-tier Circuit
 metaitem.circuit.supracausal_mainframe.name=Supra-Causal Mainframe
-metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier
+metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier Circuit
 
 # RecipeMaps
 recipemap.dryer_recipes.name=Drying
@@ -376,6 +445,7 @@ recipemap.molecular_beam_recipes.name=Molecular Beam Epitaxy
 recipemap.cvd_recipes.name=Chemical Vapor Deposition
 recipemap.plasma_cvd_recipes.name=Plasma Enhanced CVD
 recipemap.sonication_recipes.name=Sonication
+recipemap.ion_implanter_recipes.name=Ion Implantation
 
 # Recipe Properties
 gcys.recipe.temperature=Temperature: %,dK

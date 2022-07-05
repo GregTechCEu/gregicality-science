@@ -16,7 +16,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 
-public class BiowareCircuits {
+public class GoowareCircuits {
 
     public static void init() {
         // Regular Circuit Board
@@ -32,7 +32,7 @@ public class BiowareCircuits {
                     .input(foil, YttriumBariumCuprate, 48)
                     .fluidInputs(stack)
                     .output(GOOWARE_CIRCUIT_BOARD)
-                    .duration(2100).EUt(VA[EV]).buildAndRegister();
+                    .duration(210).EUt(VA[EV]).buildAndRegister();
         }
 
         // Processing Unit

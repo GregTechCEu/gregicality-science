@@ -78,7 +78,7 @@ public class BZChain {
                 .duration(100).EUt(VA[EV]).buildAndRegister();
 
         // C2H3ClO2 + Na2CO3 + 2H2O -> C3H4O4 + 2NaOH + HClO
-        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+        CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, SodaAsh, 6)
                 .input(dust, ChloroaceticAcid, 8)
                 .fluidInputs(Water.getFluid(2000))

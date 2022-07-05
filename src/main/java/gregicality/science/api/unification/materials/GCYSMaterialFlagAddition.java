@@ -5,7 +5,6 @@ import gregtech.api.unification.material.info.MaterialFlags;
 
 import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.DISABLE_CRYSTALLIZATION;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.CRYSTALLIZABLE;
 
 public class GCYSMaterialFlagAddition {
 
@@ -37,12 +36,15 @@ public class GCYSMaterialFlagAddition {
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
 
         // Crystallizable
-        Sapphire.addFlags(CRYSTALLIZABLE);
-        Ruby.addFlags(CRYSTALLIZABLE);
-        Emerald.addFlags(CRYSTALLIZABLE);
-        Olivine.addFlags(CRYSTALLIZABLE);
-        Amethyst.addFlags(CRYSTALLIZABLE);
-        Opal.addFlags(CRYSTALLIZABLE);
+        Sapphire.addFlags(MaterialFlags.CRYSTALLIZABLE);
+        Ruby.addFlags(MaterialFlags.CRYSTALLIZABLE);
+        Emerald.addFlags(MaterialFlags.CRYSTALLIZABLE);
+        Olivine.addFlags(MaterialFlags.CRYSTALLIZABLE);
+        Amethyst.addFlags(MaterialFlags.CRYSTALLIZABLE);
+        Opal.addFlags(MaterialFlags.CRYSTALLIZABLE);
+
+        // Plates
+        Germanium.addFlags(MaterialFlags.GENERATE_PLATE);
 
         // Rods
         Darmstadtium.addFlags(MaterialFlags.GENERATE_ROD);
@@ -51,6 +53,8 @@ public class GCYSMaterialFlagAddition {
         Darmstadtium.addFlags(MaterialFlags.GENERATE_FRAME);
 
         // Foils
+        Nickel.addFlags(MaterialFlags.GENERATE_FOIL);
         Titanium.addFlags(MaterialFlags.GENERATE_FOIL);
+        Germanium.addFlags(MaterialFlags.GENERATE_FOIL);
     }
 }

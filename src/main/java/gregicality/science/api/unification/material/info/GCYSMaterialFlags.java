@@ -10,4 +10,8 @@ public class GCYSMaterialFlags {
             .requireFlags(MaterialFlags.CRYSTALLIZABLE)
             .requireProps(PropertyKey.GEM)
             .build();
+
+    public static final MaterialFlag GENERATE_BOULE = new MaterialFlag.Builder("generate_boule")
+            .requireProps(PropertyKey.GEM)
+            .build();
 }

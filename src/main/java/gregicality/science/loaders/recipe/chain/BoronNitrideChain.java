@@ -141,7 +141,7 @@ public class BoronNitrideChain {
                 .input(dust, Boron)
                 .fluidInputs(Nitrogen.getFluid(1000))
                 .output(gem, HexagonalBoronNitride, 2)
-                .blastFurnaceTemp(2900)
+                .temperature(2900)
                 .duration(80)
                 .EUt(VA[UEV])
                 .buildAndRegister();

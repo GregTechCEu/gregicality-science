@@ -17,7 +17,7 @@ public class GCYSOrganicChemistryMaterials {
 
         // FREE ID: 15000
 
-        Ethylhexanol = new Material.Builder(15001,"ethylhexanol")
+        Ethylhexanol = new Material.Builder(15001, "ethylhexanol")
                 .fluid()
                 .color(0xFEEA9A)
                 .components(Carbon, 8, Hydrogen, 10, Oxygen, 1)
@@ -234,7 +234,7 @@ public class GCYSOrganicChemistryMaterials {
         KaptonK = new Material.Builder(15036, "kapton_k") //TODO Poly 4,4'-oxydiphenylene-pyromellitimide Tooltip
                 .ingot().fluid()
                 .color(0xFFCE52)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_FOIL)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL)
                 .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
                 .build()
                 .setFormula("O(C6H4NH2)2", true);
@@ -265,7 +265,7 @@ public class GCYSOrganicChemistryMaterials {
         KaptonE = new Material.Builder(15040, "kapton_e")
                 .ingot().fluid()
                 .color(0xFFDF8C)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, NO_SMASHING, NO_SMELTING, GENERATE_FOIL)
                 .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
                 .build()
                 .setFormula("O(C6H4NH2)2", true);
@@ -297,7 +297,7 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 2, Hydrogen, 2, Bromine, 4)
                 .build();
 
-        TerephthalicAcid = new Material.Builder(15045, "terephthalic_acid")
+        TerephthalicAcid = new Material.Builder(15045, "terephthalic_acid") //TODO "PTA" Tooltip
                 .dust()
                 .color(0x5ACCDA)
                 .iconSet(MaterialIconSet.ROUGH)
@@ -334,7 +334,7 @@ public class GCYSOrganicChemistryMaterials {
         Kevlar = new Material.Builder(15050, "kevlar")
                 .ingot().fluid()
                 .color(0xF0F078)
-                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, GENERATE_PLATE)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
                 .components(Carbon, 14, Hydrogen, 10, Nitrogen, 2, Oxygen, 2)
                 .build()
                 .setFormula("(C6H4)2(CO)2(NH)2", true);
@@ -354,5 +354,79 @@ public class GCYSOrganicChemistryMaterials {
                 .iconSet(MaterialIconSet.DULL)
                 .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
                 .build();
+
+        EthyleneOxide = new Material.Builder(15053, "ethylene_oxide")
+                .fluid(FluidTypes.GAS)
+                .color(0xDCBFE1)
+                .components(Carbon, 2, Hydrogen, 4, Oxygen, 1)
+                .build();
+
+        EthyleneGlycol = new Material.Builder(15054, "ethylene_glycol")
+                .fluid()
+                .color(0x286632)
+                .components(Carbon, 2, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        // FREE ID: 15055
+
+        AcetoneCyanohydrin = new Material.Builder(15056, "acetone_cyanohydrin")
+                .fluid()
+                .color(0xA1FFD0)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 7, Nitrogen, 1, Oxygen, 1)
+                .build();
+
+        Polymethylmethacrylate = new Material.Builder(15057, "polymethylmethacrylate")
+                .ingot().fluid()
+                .color(0x95E5A5)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
+                .components(Carbon, 5, Hydrogen, 8, Oxygen, 2)
+                .build();
+
+        Trimethylaluminium = new Material.Builder(15058, "trimethylaluminium")
+                .fluid()
+                .color(0x6ECCFF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 2, Carbon, 6, Hydrogen, 18)
+                .build()
+                .setFormula("Al2(CH3)6", true);
+
+        Trimethylgallium = new Material.Builder(15059, "trimethylgallium")
+                .fluid()
+                .color(0x4F92FF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Gallium, 1, Carbon, 3, Hydrogen, 9)
+                .build()
+                .setFormula("Ga(CH3)3", true);
+
+        EthyleneDibromide = new Material.Builder(1560, "ethylene_dibromide") //TODO "EDB" tooltip
+                .fluid()
+                .color(0x4F1743)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 4, Bromine, 2)
+                .build();
+
+        GrignardReagent = new Material.Builder(1561, "grignard_reagent")
+                .fluid()
+                .color(0xA12AA1)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 1, Hydrogen, 3, Magnesium, 1, Bromine, 1)
+                .build();
+
+        Dimethylcadmium = new Material.Builder(1562, "dimethylcadmium")
+                .fluid()
+                .color(0x5C037F)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 6, Cadmium, 1)
+                .build()
+                .setFormula("(CH3)2Cd", true);
+
+        DiethylSuflide = new Material.Builder(1563, "diethyl_sulfide")
+                .fluid()
+                .color(0xFF7E4B)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Ethylene, 2, Sulfur, 1)
+                .build()
+                .setFormula("(CH3)2S", true);
     }
 }

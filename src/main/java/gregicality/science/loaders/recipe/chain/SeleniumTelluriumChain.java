@@ -7,7 +7,8 @@ import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.ingot;
 
 public class SeleniumTelluriumChain {
 
@@ -24,7 +25,7 @@ public class SeleniumTelluriumChain {
                 .fluidInputs(Water.getFluid(1000))
                 .notConsumable(new IntCircuitIngredient(3))
                 .output(dust, Copper)
-                .output(dustSmall, ChalcogenAnodeMud)
+                .chancedOutput(dust, ChalcogenAnodeMud, 2500, 0)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(Oxygen.getFluid(1000))
                 .duration(200)

@@ -1,10 +1,9 @@
 package gregicality.science.api.unification.materials.properties;
 
 
+import gregtech.api.GTValues;
 import gregtech.api.unification.material.info.MaterialIconSet;
-import gregtech.api.unification.material.properties.DustProperty;
-import gregtech.api.unification.material.properties.FluidProperty;
-import gregtech.api.unification.material.properties.PropertyKey;
+import gregtech.api.unification.material.properties.*;
 
 import static gregtech.api.unification.material.Materials.*;
 
@@ -28,8 +27,15 @@ public class GCYSPropertyAddition {
         Tellurium.setProperty(PropertyKey.DUST, new DustProperty());
         Selenium.setProperty(PropertyKey.DUST, new DustProperty());
 
+        // Ingots
+        Germanium.setProperty(PropertyKey.INGOT, new IngotProperty());
+
+        // Blast
+        Germanium.setProperty(PropertyKey.BLAST, new BlastProperty(1211, BlastProperty.GasTier.HIGH, GTValues.VA[GTValues.EV], 1200));
+
         // Fluids
         Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
         Bromine.setMaterialIconSet(MaterialIconSet.FLUID);
+        Germanium.setProperty(PropertyKey.FLUID, new FluidProperty());
     }
 }

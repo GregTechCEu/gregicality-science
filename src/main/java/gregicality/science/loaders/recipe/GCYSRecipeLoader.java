@@ -1,8 +1,14 @@
 package gregicality.science.loaders.recipe;
 
 import gregicality.science.loaders.recipe.chain.*;
-import gregicality.science.loaders.recipe.circuits.BiowareCircuits;
+import gregicality.science.loaders.recipe.circuits.CrystalCircuits;
+import gregicality.science.loaders.recipe.circuits.GoowareCircuits;
+import gregicality.science.loaders.recipe.circuits.OpticalCircuits;
 import gregicality.science.loaders.recipe.handlers.BouleRecipeHandler;
+import gregicality.science.loaders.recipe.oreprocessing.GermaniumProcessing;
+import gregicality.science.loaders.recipe.oreprocessing.PlatinumGroupProcessing;
+import gregicality.science.loaders.recipe.oreprocessing.RareEarthProcessing;
+import gregicality.science.loaders.recipe.oreprocessing.TungstenProcessing;
 import gregicality.science.loaders.recipe.vacuum.VacuumRecipes;
 
 public class GCYSRecipeLoader {
@@ -10,6 +16,7 @@ public class GCYSRecipeLoader {
     public static void init() {
         initHandlers();
         initChains();
+        initOreProcessing();
         initCircuits();
         RecipeConflicts.init();
         VacuumRecipes.init();
@@ -21,9 +28,7 @@ public class GCYSRecipeLoader {
     }
 
     private static void initChains() {
-        CrystalCircuitChain.init();
         RareEarthProcessing.init();
-        PlatinumGroupProcessing.init();
         TungstenProcessing.init();
         GrapheneChain.init();
         HydrogenPeroxideChain.init();
@@ -44,9 +49,20 @@ public class GCYSRecipeLoader {
         BoronNitrideChain.init();
         BZChain.init();
         PhosphorusChain.init();
+        EthyleneGlycolChain.init();
+        PMMAChain.init();
+        GalliumNitrideChain.init();
+        PhotoresistivesChain.init();
+    }
+
+    private static void initOreProcessing() {
+        PlatinumGroupProcessing.init();
+        GermaniumProcessing.init();
     }
 
     private static void initCircuits() {
-        BiowareCircuits.init();
+        CrystalCircuits.init();
+        GoowareCircuits.init();
+        OpticalCircuits.init();
     }
 }

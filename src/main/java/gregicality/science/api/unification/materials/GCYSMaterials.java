@@ -79,6 +79,24 @@ public class GCYSMaterials {
     public static Material BlackPhosphorus;
     public static Material BluePhosphorus;
     public static Material Phosphorene;
+    public static Material PhosphorusTrichloride;
+    public static Material PhosphorylChloride;
+    public static Material ZincOxide;
+    public static Material GermaniumTetrachloride;
+    public static Material GermaniumDioxide;
+    public static Material SiliconTetrachloride;
+    public static Material GSTGlass;
+    public static Material ZBLANGlass;
+    public static Material HeliumNeon;
+    public static Material AluminiumTrichloride;
+    public static Material AluminiumHydroxide;
+    public static Material GalliumTrichloride;
+    public static Material GalliumTrioxide;
+    public static Material GalliumNitride;
+    public static Material CadmiumBromide;
+    public static Material MagnesiumBromide;
+    public static Material CadmiumSulfide;
+    public static Material CadmiumSelenide;
 
 
     // Second Degree Materials
@@ -99,11 +117,19 @@ public class GCYSMaterials {
     public static Material GrapheneOxide;
     public static Material AmmoniumNitrate;
     public static Material Wollastonite;
+    public static Material RoastedSphalerite;
+    public static Material WaelzOxide;
+    public static Material WaelzSlag;
+    public static Material ImpureGermaniumDioxide;
+    public static Material ErbiumDopedZBLANGlass;
+    public static Material PraseodymiumDopedZBLANGlass;
+    public static Material NdYAG;
 
 
     // Third Degree Materials
     public static Material PlatinumPalladiumLeachate;
     public static Material RhodiumSaltSolution;
+    public static Material ZincRichSphalerite;
 
 
     // Organic Chemistry Materials
@@ -152,6 +178,16 @@ public class GCYSMaterials {
     public static Material TetramethylammoniumChloride;
     public static Material TetramethylammoniumHydroxide;
     public static Material Pyrocatechol;
+    public static Material EthyleneOxide;
+    public static Material EthyleneGlycol;
+    public static Material AcetoneCyanohydrin;
+    public static Material Polymethylmethacrylate;
+    public static Material Trimethylaluminium;
+    public static Material Trimethylgallium;
+    public static Material EthyleneDibromide;
+    public static Material GrignardReagent;
+    public static Material Dimethylcadmium;
+    public static Material DiethylSuflide;
 
 
     // Unknown Composition Materials
