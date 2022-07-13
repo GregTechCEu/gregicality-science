@@ -4,6 +4,7 @@
   "description": "Scientific module of Gregicality.",
   "version": "${version}",
   "mcversion": "${mcversion}",
+  "logoFile": "assets/gcys/textures/gcys_logo.png",
   "authorList": [
       "TechLord22"
   ],

@@ -18,10 +18,10 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem OPTICAL_COMPUTER;
     public static MetaItem<?>.MetaValueItem OPTICAL_MAINFRAME;
 
-    public static MetaItem<?>.MetaValueItem EXOTIC_PROCESSOR;
-    public static MetaItem<?>.MetaValueItem EXOTIC_ASSEMBLY;
-    public static MetaItem<?>.MetaValueItem EXOTIC_COMPUTER;
-    public static MetaItem<?>.MetaValueItem EXOTIC_MAINFRAME;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_PROCESSOR;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_ASSEMBLY;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_COMPUTER;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_MAINFRAME;
 
     public static MetaItem<?>.MetaValueItem COSMIC_PROCESSOR;
     public static MetaItem<?>.MetaValueItem COSMIC_ASSEMBLY;
@@ -48,7 +48,7 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem OPTICAL_INTEGRATOR;
     public static MetaItem<?>.MetaValueItem OPTICAL_ISOLATOR;
     public static MetaItem<?>.MetaValueItem PHOTORESISTOR;
-    public static MetaItem<?>.MetaValueItem MOSFET;
+    public static MetaItem<?>.MetaValueItem OPTICAL_TRANSISTOR;
     public static MetaItem<?>.MetaValueItem OPTICAL_POLARIZER;
 
     // Crystal Stuff
@@ -71,6 +71,9 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem EMPTY_LASER_ASSEMBLY;
     public static MetaItem<?>.MetaValueItem HELIUM_NEON_LASER;
     public static MetaItem<?>.MetaValueItem ND_YAG_LASER;
+
+    // Spintronic Stuff
+    public static MetaItem<?>.MetaValueItem MAGNETORESTRICTIVE_MEMORY;
 
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();

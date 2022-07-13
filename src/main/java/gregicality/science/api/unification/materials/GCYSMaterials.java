@@ -97,6 +97,9 @@ public class GCYSMaterials {
     public static Material MagnesiumBromide;
     public static Material CadmiumSulfide;
     public static Material CadmiumSelenide;
+    public static Material Phosphine;
+    public static Material PlutoniumTrihydride;
+    public static Material PlutoniumPhosphide;
 
 
     // Second Degree Materials

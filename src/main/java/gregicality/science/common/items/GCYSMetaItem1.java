@@ -26,10 +26,10 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         OPTICAL_COMPUTER = addItem(7,"circuit.optical_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
         OPTICAL_MAINFRAME = addItem(8,"circuit.optical_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
 
-        EXOTIC_PROCESSOR = addItem(9, "circuit.exotic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        EXOTIC_ASSEMBLY = addItem(10, "circuit.exotic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        EXOTIC_COMPUTER = addItem(11, "circuit.exotic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        EXOTIC_MAINFRAME = addItem(12, "circuit.exotic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
+        SPINTRONIC_PROCESSOR = addItem(9, "circuit.spintronic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
+        SPINTRONIC_ASSEMBLY = addItem(10, "circuit.spintronic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
+        SPINTRONIC_COMPUTER = addItem(11, "circuit.spintronic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
+        SPINTRONIC_MAINFRAME = addItem(12, "circuit.spintronic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
 
         COSMIC_PROCESSOR = addItem(13, "circuit.cosmic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
         COSMIC_ASSEMBLY = addItem(14, "circuit.cosmic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
@@ -57,6 +57,8 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         HELIUM_NEON_LASER = addItem(47, "laser.helium_neon");
         ND_YAG_LASER = addItem(48, "laser.nd_yag");
 
+        MAGNETORESTRICTIVE_MEMORY = addItem(49, "plate.magnetorestrictive_memory");
+
         EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(55, "boule.cubic_zirconia.europium");
         EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(56, "wafer.cubic_zirconia.europium");
         CRYSTAL_INTERFACE_WAFER = addItem(57, "wafer.crystal.interface");
@@ -72,7 +74,7 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         OPTICAL_INTEGRATOR = addItem(66, "component.optical_smd.capacitor");
         OPTICAL_ISOLATOR = addItem(67, "component.optical_smd.diode");
         PHOTORESISTOR = addItem(68, "component.optical_smd.resistor");
-        MOSFET = addItem(69, "component.optical_smd.transistor");
+        OPTICAL_TRANSISTOR = addItem(69, "component.optical_smd.transistor");
         OPTICAL_POLARIZER = addItem(70, "component.optical_smd.inductor");
 
 //        QUARTZ_CRUCIBLE = addItem(50, "crucible.quartz").addComponents(new CrucibleItemBehavior(2482));
