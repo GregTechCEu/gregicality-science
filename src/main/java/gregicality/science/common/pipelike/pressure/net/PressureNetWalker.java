@@ -12,6 +12,8 @@ import javax.annotation.Nullable;
 
 public class PressureNetWalker extends PipeNetWalker {
 
+    private double pressure = -1;
+
     public static void checkPressure(World world, BlockPos start, double pressure) {
         PressureNetWalker walker = new PressureNetWalker(world, start, 0);
         walker.pressure = pressure;
@@ -21,9 +23,6 @@ public class PressureNetWalker extends PipeNetWalker {
     protected PressureNetWalker(World world, BlockPos sourcePipe, int walkedBlocks) {
         super(world, sourcePipe, walkedBlocks);
     }
-
-    private double pressure = -1;
-    private int count;
 
     @Override
     protected PipeNetWalker createSubWalker(World world, EnumFacing enumFacing, BlockPos blockPos, int i) {

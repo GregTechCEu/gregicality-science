@@ -22,9 +22,19 @@ public interface IPressureContainer {
      * Changes the pressure by the given amount
      *
      * @param amount amount to change. + for add - for subtract
-     * @return actually changed amount
+     * @return the new pressure
      */
-    double changePressure(double amount);
+    default double changePressure(double amount) {
+        return setPressure(getPressure() + amount);
+    }
+
+    /**
+     * Set the pressure to the given amount
+     *
+     * @param amount amount to set.
+     * @return the new pressure
+     */
+    double setPressure(double amount);
 
     /**
      * @return the maximum pressure this container can handle
@@ -34,9 +44,7 @@ public interface IPressureContainer {
     /**
      * @return the minimum pressure this container can handle
      */
-    default double getMinPressure() {
-        return ATMOSPHERIC_PRESSURE / getMaxPressure();
-    }
+    double getMinPressure();
 
     /**
      * @return if the container currently holds a vacuum
@@ -80,13 +88,18 @@ public interface IPressureContainer {
         }
 
         @Override
-        public double changePressure(double amount) {
+        public double setPressure(double amount) {
             return 0;
         }
 
         @Override
         public double getMaxPressure() {
             return ATMOSPHERIC_PRESSURE * 2;
+        }
+
+        @Override
+        public double getMinPressure() {
+            return ATMOSPHERIC_PRESSURE / 2;
         }
     };
 }

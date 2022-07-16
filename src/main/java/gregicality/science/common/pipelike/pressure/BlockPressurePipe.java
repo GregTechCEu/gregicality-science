@@ -32,7 +32,7 @@ public class BlockPressurePipe extends BlockSimplePipe<PressurePipeType, Pressur
     }
 
     @Override
-    protected PressurePipeData createProperties(PressurePipeType pressurePipeType) {
+    protected PressurePipeData createProperties(@Nonnull PressurePipeType pressurePipeType) {
         return pressurePipeType.modifyProperties(PressurePipeData.EMPTY);
     }
 
@@ -87,6 +87,7 @@ public class BlockPressurePipe extends BlockSimplePipe<PressurePipeType, Pressur
         return PressurePipeRenderer.INSTANCE.getParticleTexture(getPipeTileEntity(world, blockPos));
     }
 
+    @SuppressWarnings("deprecation")
     @Nonnull
     @Override
     public EnumBlockRenderType getRenderType(@Nonnull IBlockState state) {

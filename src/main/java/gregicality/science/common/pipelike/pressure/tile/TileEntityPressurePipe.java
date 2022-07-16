@@ -15,9 +15,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.fluids.FluidTank;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
-import net.minecraftforge.fluids.capability.IFluidHandler;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -27,11 +24,9 @@ import java.util.List;
 
 public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType, PressurePipeData> implements IDataInfoProvider {
 
-    private final IFluidHandler defaultTank = new FluidTank(0);
     private WeakReference<PressurePipeNet> currentPipeNet = new WeakReference<>(null);
 
-    public TileEntityPressurePipe() {
-    }
+    public TileEntityPressurePipe() {/**/}
 
     @Override
     public <T> T getCapabilityInternal(Capability<T> capability, @Nullable EnumFacing facing) {
@@ -40,11 +35,6 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
                 return GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER.cast(IPressureContainer.EMPTY);
             }
             return GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER.cast(getPipeNet());
-        } else if (capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY) {
-            if (world == null || world.isRemote) {
-                return CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY.cast(defaultTank);
-            }
-            return CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY.cast(getPipeNet().getNetTank());
         }
         return super.getCapabilityInternal(capability, facing);
     }
@@ -52,18 +42,13 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
     public void checkPressure(double pressure) {
         if (pressure > getNodeData().getMaxPressure()) {
             causePressureExplosion(false);
-        } else if (pressure < 1 / getNodeData().getMaxPressure()) {
+        } else if (pressure < getNodeData().getMinPressure()) {
             causePressureExplosion(true);
         }
     }
 
-    public void causePressureExplosion(boolean vacuum) {
-        if (vacuum) {
-            //TODO implosion
-            world.createExplosion(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 5, true);
-        } else {
-            world.createExplosion(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 5, true);
-        }
+    public void causePressureExplosion(boolean isVacuum) {
+        IPressureContainer.causePressureExplosion(isVacuum, getWorld(), getPos());
     }
 
     @Override
@@ -94,9 +79,9 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
         return PressurePipeType.class;
     }
 
+    @Nullable
     public PressurePipeNet getPipeNet() {
-        if (world == null || world.isRemote)
-            return null;
+        if (world == null || world.isRemote) return null;
         PressurePipeNet currentPipeNet = this.currentPipeNet.get();
         if (currentPipeNet != null && currentPipeNet.isValid() &&
                 currentPipeNet.containsNode(getPipePos()))
@@ -112,6 +97,7 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
     @Nonnull
     @Override
     public List<ITextComponent> getDataInfo() {
-        return Collections.singletonList(new TextComponentTranslation("Pressure: " + getPipeNet().getPressure() + " Max Pressure: " + getPipeNet().getMaxPressure()));
+        //TODO Localize
+        return Collections.singletonList(new TextComponentTranslation("Pressure: " + getPipeNet().getPressure() + " Min Pressure: " + getPipeNet().getMinPressure() + " Max Pressure: " + getPipeNet().getMaxPressure()));
     }
 }
