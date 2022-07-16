@@ -7,6 +7,7 @@ import codechicken.lib.vec.Cuboid6;
 import codechicken.lib.vec.Matrix4;
 import gregicality.science.api.capability.GCYSTileCapabilities;
 import gregicality.science.api.capability.IPressureContainer;
+import gregtech.api.GTValues;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
 import gregtech.api.gui.widgets.CycleButtonWidget;
@@ -16,6 +17,7 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.texture.Textures;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -23,6 +25,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.capabilities.Capability;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.tuple.Pair;
 
 import javax.annotation.Nonnull;
 import java.util.function.Function;
@@ -49,10 +52,15 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity implement
     @Override
     public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
         IVertexOperation[] renderPipeline = ArrayUtils.add(pipeline, new ColourMultiplier(GTUtility.convertRGBtoOpaqueRGBA_CL(getPaintingColorForRendering())));
-        Textures.VOLTAGE_CASINGS[14].render(renderState, translation, renderPipeline, Cuboid6.full);
+        Textures.VOLTAGE_CASINGS[GTValues.MAX].render(renderState, translation, renderPipeline, Cuboid6.full);
         for (EnumFacing face : EnumFacing.VALUES) {
             Textures.INFINITE_EMITTER_FACE.renderSided(face, renderState, translation, pipeline);
         }
+    }
+
+    @Override
+    public Pair<TextureAtlasSprite, Integer> getParticleTexture() {
+        return Pair.of(Textures.VOLTAGE_CASINGS[GTValues.MAX].getParticleSprite(), getPaintingColorForRendering());
     }
 
     @Override
@@ -65,13 +73,13 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity implement
     @Override
     protected ModularUI createUI(EntityPlayer entityPlayer) {
         ModularUI.Builder builder = ModularUI.defaultBuilder();
-        builder.label(7, 32, "gregtech.creative.energy.voltage");
+        builder.label(7, 32, "Pressure"); //TODO Localize
         builder.widget(new ImageWidget(7, 44, 156, 20, GuiTextures.DISPLAY));
         builder.widget(new TextFieldWidget2(9, 50, 152, 16, () -> String.valueOf(pressure), value -> {
             if (!value.isEmpty()) pressure = Double.parseDouble(value);
         }).setAllowedChars(TextFieldWidget2.NATURAL_NUMS).setMaxLength(19).setValidator(getTextFieldValidator()));
 
-        builder.label(7, 74, "gregtech.creative.energy.amperage");
+        builder.label(7, 74, "Max Pressure"); //TODO Localize
         builder.widget(new ImageWidget(29, 87, 118, 20, GuiTextures.DISPLAY));
         builder.widget(new TextFieldWidget2(31, 93, 114, 16, () -> String.valueOf(pressureLimit), value -> {
             if (!value.isEmpty()) {
@@ -80,14 +88,7 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity implement
         }).setMaxLength(10).setNumbersOnly(1, Integer.MAX_VALUE));
 
         builder.widget(new CycleButtonWidget(7, 139, 77, 20, () -> active, value -> active = value, "gregtech.creative.activity.off", "gregtech.creative.activity.on"));
-        builder.widget(new CycleButtonWidget(85, 139, 77, 20, () -> source, value -> {
-            source = value;
-            if (source) {
-                pressure = 0;
-            } else {
-                pressure = Double.MAX_VALUE;
-            }
-        }, "Sink", "Source")); //TODO: localization
+        builder.widget(new CycleButtonWidget(85, 139, 77, 20, () -> source, value -> source = value, "Sink", "Source")); //TODO: localization
 
         return builder.build(getHolder(), entityPlayer);
     }
@@ -102,14 +103,14 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity implement
                 doExplosion = false;
             }
         }
-        if (getWorld().isRemote || !active || !source || pressure <= 0) return;
+        if (getWorld().isRemote || !active || pressure <= 0) return;
         for (EnumFacing facing : EnumFacing.values()) {
             EnumFacing opposite = facing.getOpposite();
             TileEntity tile = getWorld().getTileEntity(getPos().offset(facing));
             if (tile != null) {
                 IPressureContainer container = tile.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, opposite);
                 if (container == null) continue;
-                container.changePressure(pressure);
+                container.changePressure(source ? pressure : -pressure);
             }
         }
     }
@@ -138,6 +139,11 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity implement
 
     @Override
     public double changePressure(double amount) {
+        return amount;
+    }
+
+    @Override
+    public double setPressure(double amount) {
         if (source || !active) {
             return 0;
         }
@@ -150,17 +156,15 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity implement
         return pressureLimit;
     }
 
+    @Override
+    public double getMinPressure() {
+        return 0;
+    }
+
     @Nonnull
     public static Function<String, String> getTextFieldValidator() {
         return val -> {
             if (val.isEmpty()) return "0";
-            long num;
-            try {
-                num = Long.parseLong(val);
-            } catch (NumberFormatException ignored) {
-                return "0";
-            }
-            if (num < 0) return "0";
             return val;
         };
     }

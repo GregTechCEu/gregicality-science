@@ -1,52 +1,54 @@
 package gregicality.science.common.pipelike.pressure.net;
 
 import gregicality.science.api.capability.IPressureContainer;
-import gregicality.science.api.capability.impl.PressureMedium;
 import gregicality.science.common.pipelike.pressure.PressurePipeData;
-import gregtech.api.capability.impl.FilteredFluidHandler;
 import gregtech.api.pipenet.PipeNet;
 import gregtech.api.pipenet.WorldPipeNet;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fluids.FluidTank;
+
+import javax.annotation.Nonnull;
 
 public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPressureContainer {
 
     private double netPressure = IPressureContainer.ATMOSPHERIC_PRESSURE;
-    private final FilteredFluidHandler netTank = new FilteredFluidHandler(0)
-            .setFillPredicate(PressureMedium::isValidMedium);
+    private double minNetPressure = Double.MAX_VALUE;
+    private double maxNetPressure = Double.MIN_VALUE;
 
     public PressurePipeNet(WorldPipeNet<PressurePipeData, ? extends PipeNet> world) {
         super(world);
     }
 
     @Override
-    protected void writeNodeData(PressurePipeData pressurePipeData, NBTTagCompound nbt) {
+    protected void writeNodeData(@Nonnull PressurePipeData pressurePipeData, @Nonnull NBTTagCompound nbt) {
+        nbt.setDouble("MinP", pressurePipeData.getMinPressure());
         nbt.setDouble("MaxP", pressurePipeData.getMaxPressure());
     }
 
     @Override
-    protected PressurePipeData readNodeData(NBTTagCompound nbt) {
-        return new PressurePipeData(nbt.getDouble("MaxP"));
+    public NBTTagCompound serializeNBT() {
+        NBTTagCompound compound = super.serializeNBT();
+        compound.setDouble("minNetP", minNetPressure);
+        compound.setDouble("maxNetP", maxNetPressure);
+        return compound;
+    }
+
+    @Override
+    protected PressurePipeData readNodeData(@Nonnull NBTTagCompound nbt) {
+        return new PressurePipeData(nbt.getDouble("MinP"), nbt.getDouble("MaxP"));
+    }
+
+    @Override
+    public void deserializeNBT(NBTTagCompound nbt) {
+        super.deserializeNBT(nbt);
+        this.minNetPressure = nbt.getDouble("minNetP");
+        this.maxNetPressure = nbt.getDouble("maxNetP");
     }
 
     @Override
     protected void onNodeConnectionsUpdate() {
         super.onNodeConnectionsUpdate();
-    }
-
-    @Override
-    public void onPipeConnectionsUpdate() {
-        updateVolume();
-    }
-
-    @Override
-    public void onNeighbourUpdate(BlockPos fromPos) {
-        updateVolume();
-    }
-
-    private void updateVolume() {
-        this.netTank.setCapacity(getAllNodes().size() * 1000);
+        this.minNetPressure = getAllNodes().values().stream().distinct().map(node -> node.data.getMinPressure()).max(Double::compare).orElse(Double.MAX_VALUE);
+        this.maxNetPressure = getAllNodes().values().stream().distinct().map(node -> node.data.getMaxPressure()).min(Double::compare).orElse(Double.MIN_VALUE);
     }
 
     @Override
@@ -55,23 +57,25 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     }
 
     @Override
-    public double changePressure(double amount) {
-
+    public double setPressure(double amount) {
+        // P = (P1 + P2) / (V1 + V2)
+        this.netPressure = (this.netPressure + amount) / 2;
         PressureNetWalker.checkPressure(getWorldData(), getAllNodes().keySet().iterator().next(), getPressure());
-        return 0;
+        return amount;
     }
 
     public void onLeak() {
-        netTank.setFluid(null);
-        netPressure = ATMOSPHERIC_PRESSURE;
+        if (getPressure() < IPressureContainer.ATMOSPHERIC_PRESSURE) changePressure(+10);
+        else if (getPressure() > IPressureContainer.ATMOSPHERIC_PRESSURE) changePressure(-10);
+    }
+
+    @Override
+    public double getMinPressure() {
+        return minNetPressure;
     }
 
     @Override
     public double getMaxPressure() {
-        return 0;
-    }
-
-    public FluidTank getNetTank() {
-        return netTank;
+        return maxNetPressure;
     }
 }
