@@ -261,7 +261,7 @@ gcys.machine.steam_ejector.name=Паровой эжектор
 gcys.steam_ejector.tooltip=Создает низкий вакуум с 41mb пара в секунду
 
 # Dryer
-gregtech.machine.dryer.tooltip=Испаряющиеся жидкости
+gregtech.machine.dryer.tooltip=Испаряет жидкости
 
 # Multi Block Machines
 
@@ -313,7 +313,7 @@ gcys.vacuum_level.perfect=Абсолютный вакуум
 # Metaitems
 
 # Crystal Stuff
-metaitem.boule.cubic_zirconia.europium.name=Буль из монокристаллического кубического циркония, легированного европием
+metaitem.boule.cubic_zirconia.europium.name=Монокристаллический кубический цирконий, легированный европием
 metaitem.boule.cubic_zirconia.europium.tooltip=Необработанный кристалл
 metaitem.board.gooware.tooltip=Безупречный подложка
 metaitem.nonlinear_chemical_oscillator.tooltip=Неравновесная термодинамика!
@@ -414,3 +414,4 @@ material.ethylene_glycol=Этиленгликоль
 material.trimethylaluminium=Триметилалюминий
 material.phosphorene_solution=Фосфореновый отшелушивающий раствор
 metaitem.board.optical.name=Нитрид галлиевая подложка
+metaitem.plate.phase_change_memory.tooltip=PCM память
