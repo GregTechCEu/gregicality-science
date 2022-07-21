@@ -306,9 +306,20 @@ material.medium_hyper_fuel=Medium Hyper Fuel
 material.heavy_hyper_fuel=Heavy Hyper Fuel
 
 
+# Tricorder Info
+behavior.tricorder.current_pressure=Current Pressure: %s Pa
+behavior.tricorder.min_pressure=Minimum Pressure: %s Pa
+behavior.tricorder.max_pressure=Maximum Pressure: %s Pa
+
+
+# Generic Pressure Info
+gcys.universal.tooltip.pressure.minimum=Minimum Pressure Capacity: §a%sPa (§r%s§a)
+gcys.universal.tooltip.pressure.maximum=Maximum Pressure Capacity: §a%sPa (§r%s§a)
+
 # Single Block Machines
 gcys.machine.steam_ejector.name=Steam Ejector
-gcys.steam_ejector.tooltip=Creates a Low Vacuum with 41L of Steam per second
+gcys.steam_ejector.tooltip.1=Decreases pressure by §b%,dPa§7 per second.
+gcys.steam_ejector.tooltip.2=Consumes %sL of Steam per second.
 
 # Dryer
 gregtech.machine.dryer.tooltip=Vaporizing liquids

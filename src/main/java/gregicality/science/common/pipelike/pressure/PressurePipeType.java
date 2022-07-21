@@ -1,12 +1,12 @@
 package gregicality.science.common.pipelike.pressure;
 
-import gregicality.science.api.capability.IPressureContainer;
+import gregicality.science.api.GCYSValues;
 import gregtech.api.pipenet.block.IPipeType;
 
 import javax.annotation.Nonnull;
 
 public enum PressurePipeType implements IPipeType<PressurePipeData> {
-    NORMAL("normal", 0.5f, IPressureContainer.ATMOSPHERIC_PRESSURE / 10, IPressureContainer.ATMOSPHERIC_PRESSURE * 10, 1000);
+    NORMAL("normal", 0.5f, 10E-6, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE * 10, 1000);
 
     public final float thickness;
     public final String name;

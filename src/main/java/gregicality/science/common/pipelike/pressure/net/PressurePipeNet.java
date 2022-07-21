@@ -1,5 +1,6 @@
 package gregicality.science.common.pipelike.pressure.net;
 
+import gregicality.science.api.GCYSValues;
 import gregicality.science.api.capability.IPressureContainer;
 import gregicality.science.api.capability.impl.PressureMedium;
 import gregicality.science.common.pipelike.pressure.PressurePipeData;
@@ -16,7 +17,7 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     private final FilteredFluidHandler netTank = new FilteredFluidHandler(0)
             .setFillPredicate(PressureMedium::isValidMedium);
 
-    private double netPressure = IPressureContainer.ATMOSPHERIC_PRESSURE;
+    private double netPressure = GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
     private double minNetPressure = Double.MAX_VALUE;
     private double maxNetPressure = Double.MIN_VALUE;
 
@@ -67,16 +68,32 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     }
 
     @Override
-    public double setPressure(double amount) {
+    public double changePressure(double amount) {
+        if (amount == 0) return 0;
+        amount = calculatePressure(amount);
+        if (amount == 0) return 0;
+        final double oldPressure = getPressure();
+        setPressure(amount);
+        return oldPressure - amount;
+    }
+
+    protected final double calculatePressure(double amount) {
         // Roughly: P = (P1 + P2) / (V1 + V2)
-        this.netPressure = (this.netPressure + amount) / ((netTank.getFluidAmount() / Math.max(1.0F, (float) netTank.getCapacity())) + 1.0F);
+        if (netTank.getFluidAmount() == 0) amount = (this.netPressure + amount) / 2.0D;
+        else amount = (this.netPressure + amount) / (netTank.getFluidAmount() / Math.max(1.0F, (float) netTank.getCapacity()) + 1.0F);
+        return amount;
+    }
+
+    @Override
+    public double setPressure(double amount) {
+        this.netPressure = amount;
         PressureNetWalker.checkPressure(getWorldData(), getAllNodes().keySet().iterator().next(), getPressure());
         return amount;
     }
 
     public void onLeak() {
-        if (getPressure() < IPressureContainer.ATMOSPHERIC_PRESSURE) changePressure(+10);
-        else if (getPressure() > IPressureContainer.ATMOSPHERIC_PRESSURE) changePressure(-10);
+        if (getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changePressure(+10);
+        else if (getPressure() > GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changePressure(-10);
     }
 
     @Override
@@ -101,6 +118,12 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     public double getMaxTankPressure() {
         final double pressure = PressureMedium.getMaxPressure(netTank.getFluid());
         if (pressure < 0) return getMaxPressure();
+        return pressure;
+    }
+
+    public double getMinTankPressure() {
+        final double pressure = PressureMedium.getMaxPressure(netTank.getFluid());
+        if (pressure < 0) return getMinPressure();
         return pressure;
     }
 }

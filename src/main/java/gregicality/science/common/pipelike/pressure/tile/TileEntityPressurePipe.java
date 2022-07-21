@@ -9,11 +9,12 @@ import gregicality.science.common.pipelike.pressure.net.WorldPressureNet;
 import gregtech.api.metatileentity.IDataInfoProvider;
 import gregtech.api.pipenet.tile.IPipeTile;
 import gregtech.api.pipenet.tile.TileEntityPipeBase;
+import gregtech.api.util.GTUtility;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.*;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
@@ -44,7 +45,9 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
             if (world == null || world.isRemote) {
                 return CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY.cast(defaultTank);
             }
-            return CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY.cast(getPipeNet().getNetTank());
+            if (getPipeNet() != null) {
+                return CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY.cast(getPipeNet().getNetTank());
+            }
         }
         return super.getCapabilityInternal(capability, facing);
     }
@@ -52,11 +55,11 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
     public void checkPressure(double pressure) {
         if (pressure > getNodeData().getMaxPressure()) {
             causePressureExplosion(false);
-        } else if (!world.isRemote && getPipeNet() != null && pressure > getPipeNet().getMaxTankPressure()) {
+        } else if (!world.isRemote && getPipeNet() != null && getPipeNet().hasFluid() && pressure > getPipeNet().getMaxTankPressure()) {
             causePressureExplosion(false);
         } else if (pressure < getNodeData().getMinPressure()) {
             causePressureExplosion(true);
-        } else if (getPipeNet() != null && getPipeNet().isVacuum() && getPipeNet().hasFluid()) {
+        } else if (!world.isRemote && getPipeNet() != null && getPipeNet().hasFluid() && pressure < getPipeNet().getMinTankPressure()) {
             causePressureExplosion(true);
         }
     }
@@ -117,7 +120,11 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
     @Nonnull
     @Override
     public List<ITextComponent> getDataInfo() {
-        //TODO Localize
-        return Collections.singletonList(new TextComponentTranslation("Pressure: " + getPipeNet().getPressure() + " Min Pressure: " + getPipeNet().getMinPressure() + " Max Pressure: " + getPipeNet().getMaxPressure()));
+        if (getPipeNet() == null) return Collections.emptyList();
+        List<ITextComponent> list = new ObjectArrayList<>();
+        list.add(new TextComponentTranslation("behavior.tricorder.current_pressure", new TextComponentString(GTUtility.formatNumbers(getPipeNet().getPressure())).setStyle(new Style().setColor(TextFormatting.AQUA))));
+        list.add(new TextComponentTranslation("behavior.tricorder.min_pressure", new TextComponentString(String.valueOf(getPipeNet().getMinPressure())).setStyle(new Style().setColor(TextFormatting.GREEN))));
+        list.add(new TextComponentTranslation("behavior.tricorder.max_pressure", new TextComponentString(GTUtility.formatNumbers(getPipeNet().getMaxPressure())).setStyle(new Style().setColor(TextFormatting.GREEN))));
+        return list;
     }
 }

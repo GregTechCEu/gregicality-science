@@ -9,7 +9,6 @@ import gregicality.science.common.metatileentities.singleblock.MetaTileEntitySte
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
 import gregtech.api.util.GTUtility;
-import gregtech.client.renderer.texture.Textures;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nonnull;
@@ -21,7 +20,6 @@ public class GCYSMetaTileEntities {
 
     public static SimpleMachineMetaTileEntity[] DRYER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
     public static MetaTileEntitySteamEjector STEAM_EJECTOR;
-    public static MetaTileEntitySteamEjector HP_STEAM_EJECTOR;
     public static MetaTileEntityBioVat BIO_VAT;
     public static MetaTileEntityCrystallizationCrucible CRYSTALLIZATION_CRUCIBLE;
     public static MetaTileEntityRoaster ROASTER;
@@ -49,8 +47,7 @@ public class GCYSMetaTileEntities {
         CVD_UNIT = registerMetaTileEntity(4102, new MetaTileEntityCVDUnit(gcysId("cvd_unit")));
         BURNER_REACTOR = registerMetaTileEntity(4103, new MetaTileEntityBurnerReactor(gcysId("burner_reactor")));
         CRYOGENIC_REACTOR = registerMetaTileEntity(4104, new MetaTileEntityCryoReactor(gcysId("cryogenic_reactor")));
-        STEAM_EJECTOR = registerMetaTileEntity(4105, new MetaTileEntitySteamEjector(gcysId("steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
-        HP_STEAM_EJECTOR = registerMetaTileEntity(4106, new MetaTileEntitySteamEjector(gcysId("hp_steam_ejector"), GCYSRecipeMaps.STEAM_EJECTOR_RECIPES, Textures.AIR_VENT_OVERLAY, true));
+        STEAM_EJECTOR = registerMetaTileEntity(4106, new MetaTileEntitySteamEjector(gcysId("steam_ejector")));
         CREATIVE_PRESSURE = registerMetaTileEntity(4107, new MetaTileEntityCreativePressurePump(gcysId("creative_pressure_pump")));
     }
 

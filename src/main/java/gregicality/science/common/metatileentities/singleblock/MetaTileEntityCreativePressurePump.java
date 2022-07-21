@@ -5,6 +5,7 @@ import codechicken.lib.render.pipeline.ColourMultiplier;
 import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Cuboid6;
 import codechicken.lib.vec.Matrix4;
+import gregicality.science.api.GCYSValues;
 import gregicality.science.api.capability.GCYSTileCapabilities;
 import gregicality.science.api.capability.IPressureContainer;
 import gregtech.api.GTValues;
@@ -33,7 +34,7 @@ import java.util.function.Function;
 public class MetaTileEntityCreativePressurePump extends MetaTileEntity implements IPressureContainer {
 
     private double pressure;
-    private double pressureLimit = IPressureContainer.ATMOSPHERIC_PRESSURE * 10;
+    private double pressureLimit = GCYSValues.EARTH_ATMOSPHERIC_PRESSURE * 10;
 
     private boolean active = false;
     private boolean source = true;
@@ -105,10 +106,9 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity implement
         }
         if (getWorld().isRemote || !active || pressure <= 0) return;
         for (EnumFacing facing : EnumFacing.values()) {
-            EnumFacing opposite = facing.getOpposite();
             TileEntity tile = getWorld().getTileEntity(getPos().offset(facing));
             if (tile != null) {
-                IPressureContainer container = tile.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, opposite);
+                IPressureContainer container = tile.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, facing.getOpposite());
                 if (container == null) continue;
                 container.changePressure(source ? pressure : -pressure);
             }
