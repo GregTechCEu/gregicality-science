@@ -1,5 +1,6 @@
 package gregicality.science.api.capability;
 
+import gregicality.science.api.GCYSValues;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -7,11 +8,6 @@ import net.minecraft.world.World;
  * A container which can handle pressures. All values units are in Pa
  */
 public interface IPressureContainer {
-
-    /**
-     * Default pressure. Anything below this counts a vacuum
-     */
-    double ATMOSPHERIC_PRESSURE = 101325;
 
     /**
      * @return the current pressure hold by this container
@@ -50,14 +46,14 @@ public interface IPressureContainer {
      * @return if the container currently holds a vacuum
      */
     default boolean isVacuum() {
-        return getPressure() < ATMOSPHERIC_PRESSURE - 1000;
+        return getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE - 1000;
     }
 
     /**
      * @return if the pressure is around atmospheric levels
      */
     default boolean isNormalPressure() {
-        return getPressure() < ATMOSPHERIC_PRESSURE + 1000 && getPressure() > ATMOSPHERIC_PRESSURE - 1000;
+        return getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE + 1000 && getPressure() > GCYSValues.EARTH_ATMOSPHERIC_PRESSURE - 1000;
     }
 
     /**
@@ -68,6 +64,10 @@ public interface IPressureContainer {
      */
     default boolean canHandlePressure(double pressure) {
         return pressure >= getMinPressure() && pressure <= getMaxPressure();
+    }
+
+    default boolean canHandlePressureChange(double pressure) {
+        return canHandlePressure(getPressure() + pressure);
     }
 
     static void causePressureExplosion(boolean vacuum, World world, BlockPos pos) {
@@ -84,7 +84,7 @@ public interface IPressureContainer {
     IPressureContainer EMPTY = new IPressureContainer() {
         @Override
         public double getPressure() {
-            return ATMOSPHERIC_PRESSURE;
+            return GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
         }
 
         @Override
@@ -94,12 +94,12 @@ public interface IPressureContainer {
 
         @Override
         public double getMaxPressure() {
-            return ATMOSPHERIC_PRESSURE * 2;
+            return GCYSValues.EARTH_ATMOSPHERIC_PRESSURE * 2;
         }
 
         @Override
         public double getMinPressure() {
-            return ATMOSPHERIC_PRESSURE / 2;
+            return GCYSValues.EARTH_ATMOSPHERIC_PRESSURE / 2;
         }
     };
 }

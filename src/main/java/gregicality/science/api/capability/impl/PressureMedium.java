@@ -1,5 +1,6 @@
 package gregicality.science.api.capability.impl;
 
+import gregicality.science.api.GCYSValues;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import net.minecraftforge.fluids.Fluid;
@@ -14,23 +15,25 @@ public class PressureMedium {
 
     private static final Map<Fluid, PressureMedium> REGISTRY = new HashMap<>();
 
+    private final double minPressure;
     private final double maxPressure;
 
-    public PressureMedium(double maxPressure) {
+    public PressureMedium(double minPressure, double maxPressure) {
+        this.minPressure = minPressure;
         this.maxPressure = maxPressure;
     }
 
     public static void init() {
-        register(Materials.Air, 142_000.0D);
-        register(Materials.Mercury, 28_500_100_000.0D);
+        register(Materials.Air, 10E-6, 142_000.0D);
+        register(Materials.Mercury, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, 28_500_100_000.0D);
     }
 
-    public static void register(@Nonnull Fluid fluid, double maxPressure) {
-        REGISTRY.put(fluid, new PressureMedium(maxPressure));
+    public static void register(@Nonnull Fluid fluid, double minPressure, double maxPressure) {
+        REGISTRY.put(fluid, new PressureMedium(minPressure, maxPressure));
     }
 
-    public static void register(@Nonnull Material material, double maxPressure) {
-        register(material.getFluid(), maxPressure);
+    public static void register(@Nonnull Material material, double minPressure, double maxPressure) {
+        register(material.getFluid(), minPressure, maxPressure);
     }
 
     public static boolean isValidMedium(@Nonnull FluidStack stack) {
@@ -49,5 +52,15 @@ public class PressureMedium {
     public static double getMaxPressure(@Nullable Fluid fluid) {
         if (isValidMedium(fluid)) return REGISTRY.get(fluid).maxPressure;
         return Double.MIN_VALUE;
+    }
+
+    public static double getMinPressure(@Nullable FluidStack stack) {
+        if (stack == null) return Double.MAX_VALUE;
+        return getMinPressure(stack.getFluid());
+    }
+
+    public static double getMinPressure(@Nullable Fluid fluid) {
+        if (isValidMedium(fluid)) return REGISTRY.get(fluid).minPressure;
+        return Double.MAX_VALUE;
     }
 }

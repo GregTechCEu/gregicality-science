@@ -1,10 +1,10 @@
 package gregicality.science.common.pipelike.pressure;
 
-import gregicality.science.api.capability.IPressureContainer;
+import gregicality.science.api.GCYSValues;
 
 public class PressurePipeData {
 
-    public static final PressurePipeData EMPTY = new PressurePipeData(IPressureContainer.ATMOSPHERIC_PRESSURE, IPressureContainer.ATMOSPHERIC_PRESSURE, 1000);
+    public static final PressurePipeData EMPTY = new PressurePipeData(GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, 1000);
 
     private final double minPressure;
     private final double maxPressure;
