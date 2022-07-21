@@ -2,6 +2,7 @@ package gregicality.science.common.pipelike.pressure.tile;
 
 import gregicality.science.api.capability.GCYSTileCapabilities;
 import gregicality.science.api.capability.IPressureContainer;
+import gregicality.science.api.utils.NumberFormattingUtil;
 import gregicality.science.common.pipelike.pressure.PressurePipeData;
 import gregicality.science.common.pipelike.pressure.PressurePipeType;
 import gregicality.science.common.pipelike.pressure.net.PressurePipeNet;
@@ -9,11 +10,12 @@ import gregicality.science.common.pipelike.pressure.net.WorldPressureNet;
 import gregtech.api.metatileentity.IDataInfoProvider;
 import gregtech.api.pipenet.tile.IPipeTile;
 import gregtech.api.pipenet.tile.TileEntityPipeBase;
-import gregtech.api.util.GTUtility;
+import gregtech.api.util.TaskScheduler;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.*;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidTank;
@@ -70,23 +72,21 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
 
     @Override
     public void setConnection(EnumFacing side, boolean connected, boolean fromNeighbor) {
-        int oldConnections = getConnections();
         super.setConnection(side, connected, fromNeighbor);
-        if (!world.isRemote && oldConnections != getConnections() && connected) {
-            IBlockState neighbour = world.getBlockState(pos.offset(side));
-            if (neighbour.isFullBlock() && neighbour.isOpaqueCube()) {
+        if (!world.isRemote) {
+            BlockPos blockPos = pos.offset(side);
+            IBlockState neighbour = world.getBlockState(blockPos);
+            if (!neighbour.isFullBlock() || !neighbour.isOpaqueCube()) {
+                // check the pipes for unconnected things
+                TaskScheduler.scheduleTask(getWorld(), this::update);
                 return;
             }
-            TileEntity te = world.getTileEntity(pos.offset(side));
-            if (te instanceof IPipeTile && ((IPipeTile<?, ?>) te).getPipeType().getThickness() >= getPipeType().getThickness() && ((IPipeTile<?, ?>) te).isConnected(side.getOpposite())) {
-                return;
-            }
-            PressurePipeNet net = getPipeNet();
-            if (net != null) {
-                net.onLeak(); //TODO constantly call when there is an open pipe
-                if (!net.isNormalPressure()) {
-                    causePressureExplosion(net.isVacuum());
-                }
+            TileEntity te = world.getTileEntity(blockPos);
+            if (te instanceof IPipeTile && ((IPipeTile<?, ?>) te).getPipeBlock().getPipeTypeClass() == this.getPipeTypeClass() &&
+                    ((IPipeTile<?, ?>) te).getPipeType().getThickness() != getPipeType().getThickness() &&
+                    ((IPipeTile<?, ?>) te).isConnected(side.getOpposite())) {
+                // mismatched connected pipe sizes leak
+                TaskScheduler.scheduleTask(getWorld(), this::update);
             }
         }
     }
@@ -111,6 +111,16 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
         return currentPipeNet;
     }
 
+    public boolean update() {
+        PressurePipeNet net = getPipeNet();
+        if (net != null) {
+            net.onLeak();
+            if (!net.isNormalPressure()) causePressureExplosion(net.isVacuum());
+            return !net.isNearAtmosphericPressure();
+        }
+        return true;
+    }
+
     @Override
     public boolean supportsTicking() {
         //return true so adding pump covers doesn't log an exception
@@ -122,9 +132,9 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
     public List<ITextComponent> getDataInfo() {
         if (getPipeNet() == null) return Collections.emptyList();
         List<ITextComponent> list = new ObjectArrayList<>();
-        list.add(new TextComponentTranslation("behavior.tricorder.current_pressure", new TextComponentString(GTUtility.formatNumbers(getPipeNet().getPressure())).setStyle(new Style().setColor(TextFormatting.AQUA))));
-        list.add(new TextComponentTranslation("behavior.tricorder.min_pressure", new TextComponentString(String.valueOf(getPipeNet().getMinPressure())).setStyle(new Style().setColor(TextFormatting.GREEN))));
-        list.add(new TextComponentTranslation("behavior.tricorder.max_pressure", new TextComponentString(GTUtility.formatNumbers(getPipeNet().getMaxPressure())).setStyle(new Style().setColor(TextFormatting.GREEN))));
+        list.add(new TextComponentTranslation("behavior.tricorder.current_pressure", new TextComponentString(NumberFormattingUtil.formatDoubleToCompactString(getPipeNet().getPressure())).setStyle(new Style().setColor(TextFormatting.AQUA))));
+        list.add(new TextComponentTranslation("behavior.tricorder.min_pressure", new TextComponentString(NumberFormattingUtil.formatDoubleToCompactString(getPipeNet().getMinPressure())).setStyle(new Style().setColor(TextFormatting.GREEN))));
+        list.add(new TextComponentTranslation("behavior.tricorder.max_pressure", new TextComponentString(NumberFormattingUtil.formatDoubleToCompactString(getPipeNet().getMaxPressure())).setStyle(new Style().setColor(TextFormatting.GREEN))));
         return list;
     }
 }

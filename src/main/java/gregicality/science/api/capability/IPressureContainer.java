@@ -43,6 +43,14 @@ public interface IPressureContainer {
     double getMinPressure();
 
     /**
+     *
+     * @return the amount of pressure leaked when unsealed
+     */
+    default double getLeakRate() {
+        return 0;
+    }
+
+    /**
      * @return if the container currently holds a vacuum
      */
     default boolean isVacuum() {
@@ -53,7 +61,11 @@ public interface IPressureContainer {
      * @return if the pressure is around atmospheric levels
      */
     default boolean isNormalPressure() {
-        return getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE + 1000 && getPressure() > GCYSValues.EARTH_ATMOSPHERIC_PRESSURE - 1000;
+        return Math.abs(getPressure() - GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) < 1000;
+    }
+
+    default boolean isNearAtmosphericPressure() {
+        return Math.abs(getPressure() - GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) < getLeakRate();
     }
 
     /**

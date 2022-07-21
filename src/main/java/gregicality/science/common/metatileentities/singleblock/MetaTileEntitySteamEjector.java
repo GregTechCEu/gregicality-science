@@ -91,7 +91,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
 
     protected double getPressurePercent() {
         if (this.pressureContainer.getPressure() == 0) return 0;
-        return this.pressureContainer.getMinPressure() / this.pressureContainer.getPressure();
+        return this.pressureContainer.getMinPressure() / Math.log(this.pressureContainer.getPressure());
     }
 
     @Override

@@ -63,6 +63,12 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     }
 
     @Override
+    public void onPipeConnectionsUpdate() {
+        super.onPipeConnectionsUpdate();
+        PressureNetWalker.checkPressure(getWorldData(), getAllNodes().keySet().iterator().next(), getPressure());
+    }
+
+    @Override
     public double getPressure() {
         return netPressure;
     }
@@ -79,9 +85,8 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
 
     protected final double calculatePressure(double amount) {
         // Roughly: P = (P1 + P2) / (V1 + V2)
-        if (netTank.getFluidAmount() == 0) amount = (this.netPressure + amount) / 2.0D;
-        else amount = (this.netPressure + amount) / (netTank.getFluidAmount() / Math.max(1.0F, (float) netTank.getCapacity()) + 1.0F);
-        return amount;
+        if (netTank.getFluidAmount() == 0) return (this.netPressure + amount) / 2.0D;
+        return (this.netPressure + amount) / (netTank.getFluidAmount() / Math.max(1.0F, (float) netTank.getCapacity()) + 1.0F);
     }
 
     @Override
@@ -92,8 +97,13 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     }
 
     public void onLeak() {
-        if (getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changePressure(+10);
-        else if (getPressure() > GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changePressure(-10);
+        if (getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changePressure(getLeakRate());
+        else if (getPressure() > GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changePressure(-getLeakRate());
+    }
+
+    @Override
+    public double getLeakRate() {
+        return 1000.0D;
     }
 
     @Override
