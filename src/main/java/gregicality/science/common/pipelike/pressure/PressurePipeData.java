@@ -4,16 +4,16 @@ import gregicality.science.api.GCYSValues;
 
 public class PressurePipeData {
 
-    public static final PressurePipeData EMPTY = new PressurePipeData(GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, 1000);
+    public static final PressurePipeData EMPTY = new PressurePipeData(GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, 1.0);
 
     private final double minPressure;
     private final double maxPressure;
-    private final int maxVolume;
+    private final double volume;
 
-    public PressurePipeData(double minPressure, double maxPressure, int maxVolume) {
+    public PressurePipeData(double minPressure, double maxPressure, double volume) {
         this.minPressure = minPressure;
         this.maxPressure = maxPressure;
-        this.maxVolume = maxVolume;
+        this.volume = volume;
     }
 
     public double getMinPressure() {
@@ -24,7 +24,7 @@ public class PressurePipeData {
         return maxPressure;
     }
 
-    public int getMaxVolume() {
-        return maxVolume;
+    public double getVolume() {
+        return volume;
     }
 }

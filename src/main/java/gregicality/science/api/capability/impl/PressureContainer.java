@@ -15,30 +15,42 @@ public class PressureContainer extends MTETrait implements IPressureContainer {
 
     private final double minPressure;
     private final double maxPressure;
+    private final double volume;
 
-    private double pressure;
+    private double particles;
 
-    public PressureContainer(MetaTileEntity metaTileEntity, double minPressure, double maxPressure) {
+    /**
+     * Default pressure container
+     * {@link IPressureContainer}
+     *
+     * @param volume the volume of the container, must be nonzero
+     */
+    public PressureContainer(MetaTileEntity metaTileEntity, double minPressure, double maxPressure, double volume) {
         super(metaTileEntity);
         this.minPressure = minPressure;
         this.maxPressure = maxPressure;
-        this.pressure = GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
-    }
-
-    @Override
-    public double getPressure() {
-        return this.pressure;
-    }
-
-    @Override
-    public double setPressure(double amount) {
-        this.pressure = amount;
-        return amount;
+        this.volume = volume;
+        this.particles = volume * GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
     }
 
     @Override
     public double getMaxPressure() {
         return this.maxPressure;
+    }
+
+    @Override
+    public double getParticles() {
+        return this.particles;
+    }
+
+    @Override
+    public double getVolume() {
+        return this.volume;
+    }
+
+    @Override
+    public void setParticles(double amount) {
+        this.particles = amount;
     }
 
     @Override
@@ -49,13 +61,13 @@ public class PressureContainer extends MTETrait implements IPressureContainer {
     @Override
     public NBTTagCompound serializeNBT() {
         NBTTagCompound compound = new NBTTagCompound();
-        compound.setDouble("pressure", this.pressure);
+        compound.setDouble("particles", this.particles);
         return compound;
     }
 
     @Override
     public void deserializeNBT(@Nonnull NBTTagCompound compound) {
-        this.pressure = compound.getDouble("pressure");
+        this.particles = compound.getDouble("particles");
     }
 
     @Override

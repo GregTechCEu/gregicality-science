@@ -318,8 +318,9 @@ gcys.universal.tooltip.pressure.maximum=Maximum Pressure Capacity: §a%sPa (§r%
 
 # Single Block Machines
 gcys.machine.steam_ejector.name=Steam Ejector
-gcys.steam_ejector.tooltip.1=Decreases pressure by §b%,dPa§7 per second.
-gcys.steam_ejector.tooltip.2=Consumes %sL of Steam per second.
+gcys.steam_ejector.tooltip.1=Creating your first Vacuum.
+gcys.steam_ejector.tooltip.2=Decreases pressure by §b%sPa§7 per second.
+gcys.steam_ejector.tooltip.3=Consumes %sL of Steam per second.
 
 # Dryer
 gregtech.machine.dryer.tooltip=Vaporizing liquids

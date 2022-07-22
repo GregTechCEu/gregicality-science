@@ -110,7 +110,7 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity implement
             if (tile != null) {
                 IPressureContainer container = tile.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, facing.getOpposite());
                 if (container == null) continue;
-                container.changePressure(source ? pressure : -pressure);
+                container.changeParticles(source ? pressure : -pressure, false);
             }
         }
     }
@@ -133,23 +133,22 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity implement
     }
 
     @Override
+    public double getParticles() {
+        return 0;
+    }
+
+    @Override
+    public double getVolume() {
+        return 0;
+    }
+
+    @Override
     public double getPressure() {
         return this.pressure;
     }
 
     @Override
-    public double changePressure(double amount) {
-        return amount;
-    }
-
-    @Override
-    public double setPressure(double amount) {
-        if (source || !active) {
-            return 0;
-        }
-
-        return amount;
-    }
+    public void setParticles(double amount) {/**/}
 
     @Override
     public double getMaxPressure() {

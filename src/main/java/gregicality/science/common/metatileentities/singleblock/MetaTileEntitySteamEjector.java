@@ -1,5 +1,6 @@
 package gregicality.science.common.metatileentities.singleblock;
 
+import codechicken.lib.raytracer.CuboidRayTraceResult;
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Matrix4;
@@ -9,6 +10,8 @@ import gregicality.science.api.capability.IPressureContainer;
 import gregicality.science.api.capability.impl.PressureContainer;
 import gregicality.science.api.utils.GCYSUtility;
 import gregicality.science.api.utils.NumberFormattingUtil;
+import gregtech.api.GTValues;
+import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.capability.impl.FilteredFluidHandler;
 import gregtech.api.capability.impl.FluidTankList;
 import gregtech.api.gui.GuiTextures;
@@ -20,16 +23,21 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.unification.material.Materials;
 import gregtech.client.renderer.texture.Textures;
+import gregtech.common.ConfigHolder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.*;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
@@ -40,18 +48,24 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
+import static gregtech.api.capability.GregtechDataCodes.UPDATE_OUTPUT_FACING;
+
 public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataInfoProvider {
 
-    private static final int PRESSURE_DECREASE = -2200;
+    private static final int PRESSURE_DECREASE = -1000;
     private static final int STEAM_CONSUMPTION = 160;
 
     private PressureContainer pressureContainer;
     private FluidTank fuelFluidTank;
+    @SuppressWarnings("FieldMayBeFinal")
     private boolean isHighPressure;
+
+    protected EnumFacing outputFacing;
 
     public MetaTileEntitySteamEjector(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId);
         this.isHighPressure = true;
+        setOutputFacing(getFrontFacing().getOpposite());
     }
 
     @Override
@@ -62,7 +76,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     @Override
     protected void initializeInventory() {
         super.initializeInventory();
-        this.pressureContainer = new PressureContainer(this, 10E-6, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE);
+        this.pressureContainer = new PressureContainer(this, 10E-6, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, 1.0);
         this.mteTraits.add(pressureContainer);
     }
 
@@ -72,6 +86,21 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
         this.fuelFluidTank = new FilteredFluidHandler(16000)
                 .setFillPredicate(fs -> fs.getFluid() == Materials.Steam.getFluid());
         return new FluidTankList(false, superHandler, fuelFluidTank);
+    }
+
+    @Override
+    public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
+        super.renderMetaTileEntity(renderState, translation, pipeline);
+        for (EnumFacing facing : EnumFacing.VALUES) {
+            Textures.STEAM_CASING_STEEL.renderSided(facing, renderState, translation, pipeline);
+        }
+        Textures.AIR_VENT_OVERLAY.renderSided(getFrontFacing(), renderState, translation, pipeline);
+        Textures.PIPE_OUT_OVERLAY.renderSided(outputFacing, renderState, translation, pipeline);
+    }
+
+    @Override
+    public Pair<TextureAtlasSprite, Integer> getParticleTexture() {
+        return Pair.of(Textures.STEAM_CASING_STEEL.getParticleSprite(), getPaintingColorForRendering());
     }
 
     @Override
@@ -91,53 +120,130 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
 
     protected double getPressurePercent() {
         if (this.pressureContainer.getPressure() == 0) return 0;
-        return this.pressureContainer.getMinPressure() / Math.log(this.pressureContainer.getPressure());
+        double min = Math.abs(Math.log(pressureContainer.getMinPressure()));
+        double current = Math.log(pressureContainer.getPressure());
+        return (min - current) / (min * 2);
+    }
+
+    @Override
+    public boolean onWrenchClick(@Nonnull EntityPlayer playerIn, EnumHand hand, @Nonnull EnumFacing wrenchSide, CuboidRayTraceResult hitResult) {
+        if (!playerIn.isSneaking()) {
+            EnumFacing currentOutputSide = this.outputFacing;
+            if (currentOutputSide == wrenchSide || getFrontFacing() == wrenchSide) {
+                return false;
+            }
+            if (!getWorld().isRemote) {
+                setOutputFacing(wrenchSide);
+            }
+            return true;
+        }
+        return super.onWrenchClick(playerIn, hand, wrenchSide, hitResult);
     }
 
     @Override
     public void update() {
         super.update();
-        if (getWorld().isRemote) return;
-        if (getOffsetTimer() % 20 == 0) {
+        if (!getWorld().isRemote && getOffsetTimer() % 20 == 0) {
             if (pressureContainer.getPressure() > pressureContainer.getMinPressure()) {
                 FluidStack drained = fuelFluidTank.drain(STEAM_CONSUMPTION, false);
                 if (drained != null && drained.amount == STEAM_CONSUMPTION) {
                     fuelFluidTank.drain(STEAM_CONSUMPTION, true);
-                    if (pressureContainer.canHandlePressureChange(PRESSURE_DECREASE)) {
-                        pressureContainer.changePressure(PRESSURE_DECREASE);
+
+                    if (pressureContainer.changeParticles(PRESSURE_DECREASE, true)) {
+                        pressureContainer.changeParticles(PRESSURE_DECREASE, false);
+                    } else if (pressureContainer.changeParticles(-pressureContainer.getParticles() / 2, true)) {
+                        // divide pressure by 2 if the regular decrease is too much
+                        pressureContainer.changeParticles(-pressureContainer.getParticles() / 2, false);
                     } else {
                         // do not allow less than min pressure to prevent explosions and not require redstone control
-                        pressureContainer.setPressure(Math.max(pressureContainer.getMinPressure(), pressureContainer.getPressure() / 2.0D));
+                        pressureContainer.setParticles(pressureContainer.getMinPressure() * pressureContainer.getVolume());
                     }
+
+                    ventSteam();
                 }
             }
-            for (EnumFacing facing : EnumFacing.VALUES) {
-                if (facing == getFrontFacing()) continue;
-                TileEntity tile = getWorld().getTileEntity(getPos().offset(facing));
-                if (tile != null) {
-                    IPressureContainer container = tile.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, facing.getOpposite());
-                    if (container == null) continue;
-                    if (container.getPressure() == container.getMinPressure()) continue;
-                    if (container.canHandlePressureChange((container.getPressure() - pressureContainer.getPressure()) / 2.0D)) {
-                        container.changePressure(-pressureContainer.getPressure());
-                    } else {
-                        container.setPressure(Math.max(container.getMinPressure(), container.getPressure() / 2.0D));
-                    }
-                }
+
+            TileEntity te = getWorld().getTileEntity(getPos().offset(this.outputFacing));
+            if (te != null) {
+                IPressureContainer container = te.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, this.outputFacing.getOpposite());
+                if (container == null || container.getPressure() == container.getMinPressure()) return;
+                container.mergeContainers(false, pressureContainer);
             }
+        }
+    }
+
+    private void ventSteam() {
+        final BlockPos pos = getPos();
+        final EnumFacing facing = getFrontFacing();
+        double posX = pos.getX() + 0.5 + facing.getXOffset() * 0.6;
+        double posY = pos.getY() + 0.5 + facing.getYOffset() * 0.6;
+        double posZ = pos.getZ() + 0.5 + facing.getZOffset() * 0.6;
+
+        ((WorldServer) getWorld()).spawnParticle(EnumParticleTypes.CLOUD, posX, posY, posZ,
+                7 + GTValues.RNG.nextInt(3),
+                facing.getXOffset() / 2.0,
+                facing.getYOffset() / 2.0,
+                facing.getZOffset() / 2.0, 0.1);
+        if (ConfigHolder.machines.machineSounds && !isMuffled()) {
+            getWorld().playSound(null, posX, posY, posZ, SoundEvents.BLOCK_LAVA_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, 1.0F);
         }
     }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("gcys.steam_ejector.tooltip.1", PRESSURE_DECREASE));
-        tooltip.add(I18n.format("gcys.steam_ejector.tooltip.2", Math.abs(STEAM_CONSUMPTION)));
+        tooltip.add(I18n.format("gcys.steam_ejector.tooltip.1"));
+        tooltip.add(I18n.format("gcys.steam_ejector.tooltip.2", NumberFormattingUtil.formatDoubleToCompactString(Math.abs(PRESSURE_DECREASE))));
+        tooltip.add(I18n.format("gcys.steam_ejector.tooltip.3", STEAM_CONSUMPTION));
         if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
             tooltip.add(I18n.format("gcys.universal.tooltip.pressure.minimum", NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getMinPressure()), GCYSValues.PNF[GCYSUtility.getTierByPressure(pressureContainer.getMinPressure())]));
             tooltip.add(I18n.format("gcys.universal.tooltip.pressure.maximum", NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getMaxPressure()), GCYSValues.PNF[GCYSUtility.getTierByPressure(pressureContainer.getMaxPressure())]));
         } else {
             tooltip.add(I18n.format("gregtech.tooltip.hold_shift"));
+        }
+    }
+
+    @Nonnull
+    @Override
+    public NBTTagCompound writeToNBT(@Nonnull NBTTagCompound data) {
+        super.writeToNBT(data);
+        data.setInteger("outputFacing", outputFacing.getIndex());
+        return data;
+    }
+
+    @Override
+    public void readFromNBT(@Nonnull NBTTagCompound data) {
+        super.readFromNBT(data);
+        this.outputFacing = EnumFacing.VALUES[data.getInteger("outputFacing")];
+    }
+
+    @Override
+    public void writeInitialSyncData(@Nonnull PacketBuffer buf) {
+        super.writeInitialSyncData(buf);
+        buf.writeInt(outputFacing.getIndex());
+    }
+
+    @Override
+    public void receiveInitialSyncData(@Nonnull PacketBuffer buf) {
+        super.receiveInitialSyncData(buf);
+        this.outputFacing = EnumFacing.VALUES[buf.readInt()];
+    }
+
+    @Override
+    public void receiveCustomData(int dataId, @Nonnull PacketBuffer buf) {
+        super.receiveCustomData(dataId, buf);
+        if (dataId == GregtechDataCodes.UPDATE_OUTPUT_FACING) {
+            this.outputFacing = EnumFacing.VALUES[buf.readInt()];
+            scheduleRenderUpdate();
+        }
+    }
+
+    public void setOutputFacing(@Nonnull EnumFacing outputFacing) {
+        this.outputFacing = outputFacing;
+        if (!getWorld().isRemote) {
+            notifyBlockUpdate();
+            writeCustomData(UPDATE_OUTPUT_FACING, buf -> buf.writeInt(this.outputFacing.getIndex()));
+            markDirty();
         }
     }
 
@@ -148,20 +254,6 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
             return GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER.cast(pressureContainer);
         }
         return super.getCapability(capability, side);
-    }
-
-    @Override
-    public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
-        super.renderMetaTileEntity(renderState, translation, pipeline);
-        for (EnumFacing facing : EnumFacing.VALUES) {
-            Textures.STEAM_CASING_STEEL.renderSided(facing, renderState, translation, pipeline);
-        }
-        Textures.AIR_VENT_OVERLAY.renderSided(getFrontFacing(), renderState, translation, pipeline);
-    }
-
-    @Override
-    public Pair<TextureAtlasSprite, Integer> getParticleTexture() {
-        return Pair.of(Textures.STEAM_CASING_STEEL.getParticleSprite(), getPaintingColorForRendering());
     }
 
     @Override
