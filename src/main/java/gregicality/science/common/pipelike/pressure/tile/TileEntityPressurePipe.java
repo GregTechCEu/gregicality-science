@@ -18,9 +18,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.*;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.fluids.FluidTank;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
-import net.minecraftforge.fluids.capability.IFluidHandler;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -29,8 +26,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType, PressurePipeData> implements IDataInfoProvider {
-
-    private final IFluidHandler defaultTank = new FluidTank(0);
 
     private WeakReference<PressurePipeNet> currentPipeNet = new WeakReference<>(null);
 
@@ -43,31 +38,21 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
                 return GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER.cast(IPressureContainer.EMPTY);
             }
             return GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER.cast(getPipeNet());
-        } else if (capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY) {
-            if (world == null || world.isRemote) {
-                return CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY.cast(defaultTank);
-            }
-            if (getPipeNet() != null) {
-                return CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY.cast(getPipeNet().getNetTank());
-            }
         }
         return super.getCapabilityInternal(capability, facing);
     }
 
     public void checkPressure(double pressure) {
         if (pressure > getNodeData().getMaxPressure()) {
-            causePressureExplosion(false);
-        } else if (!world.isRemote && getPipeNet() != null && getPipeNet().hasFluid() && pressure > getPipeNet().getMaxTankPressure()) {
-            causePressureExplosion(false);
+            causePressureExplosion();
         } else if (pressure < getNodeData().getMinPressure()) {
-            causePressureExplosion(true);
-        } else if (!world.isRemote && getPipeNet() != null && getPipeNet().hasFluid() && pressure < getPipeNet().getMinTankPressure()) {
-            causePressureExplosion(true);
+            causePressureExplosion();
         }
     }
 
-    public void causePressureExplosion(boolean isVacuum) {
-        IPressureContainer.causePressureExplosion(isVacuum, getWorld(), getPos());
+    public void causePressureExplosion() {
+        PressurePipeNet net = getPipeNet();
+        if (net != null) net.causePressureExplosion(getWorld(), getPos());
     }
 
     @Override
@@ -115,8 +100,8 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
         PressurePipeNet net = getPipeNet();
         if (net != null) {
             net.onLeak();
-            if (!net.isNormalPressure()) causePressureExplosion(net.isVacuum());
-            return !net.isNearAtmosphericPressure();
+            if (!net.isNormalPressure()) causePressureExplosion();
+            return !net.isNormalPressure();
         }
         return true;
     }

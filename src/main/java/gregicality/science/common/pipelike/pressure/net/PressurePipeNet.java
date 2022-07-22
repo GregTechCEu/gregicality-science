@@ -2,22 +2,17 @@ package gregicality.science.common.pipelike.pressure.net;
 
 import gregicality.science.api.GCYSValues;
 import gregicality.science.api.capability.IPressureContainer;
-import gregicality.science.api.capability.impl.PressureMedium;
 import gregicality.science.common.pipelike.pressure.PressurePipeData;
-import gregtech.api.capability.impl.FilteredFluidHandler;
 import gregtech.api.pipenet.PipeNet;
 import gregtech.api.pipenet.WorldPipeNet;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fluids.FluidTank;
 
 import javax.annotation.Nonnull;
 
 public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPressureContainer {
 
-    private final FilteredFluidHandler netTank = new FilteredFluidHandler(0)
-            .setFillPredicate(PressureMedium::isValidMedium);
-
-    private double netPressure = GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
+    private double netParticles = GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
+    private double volume = 1.0;
     private double minNetPressure = Double.MAX_VALUE;
     private double maxNetPressure = Double.MIN_VALUE;
 
@@ -29,7 +24,7 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     protected void writeNodeData(@Nonnull PressurePipeData pressurePipeData, @Nonnull NBTTagCompound nbt) {
         nbt.setDouble("MinP", pressurePipeData.getMinPressure());
         nbt.setDouble("MaxP", pressurePipeData.getMaxPressure());
-        nbt.setInteger("MaxV", pressurePipeData.getMaxVolume());
+        nbt.setDouble("Volume", pressurePipeData.getVolume());
     }
 
     @Override
@@ -37,13 +32,12 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
         NBTTagCompound compound = super.serializeNBT();
         compound.setDouble("minNetP", minNetPressure);
         compound.setDouble("maxNetP", maxNetPressure);
-        compound.setTag("netTank", netTank.writeToNBT(new NBTTagCompound()));
         return compound;
     }
 
     @Override
     protected PressurePipeData readNodeData(@Nonnull NBTTagCompound nbt) {
-        return new PressurePipeData(nbt.getDouble("MinP"), nbt.getDouble("MaxP"), nbt.getInteger("MaxV"));
+        return new PressurePipeData(nbt.getDouble("MinP"), nbt.getDouble("MaxP"), nbt.getDouble("Volume"));
     }
 
     @Override
@@ -51,7 +45,6 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
         super.deserializeNBT(nbt);
         this.minNetPressure = nbt.getDouble("minNetP");
         this.maxNetPressure = nbt.getDouble("maxNetP");
-        this.netTank.readFromNBT(nbt.getCompoundTag("netTank"));
     }
 
     @Override
@@ -59,7 +52,9 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
         super.onNodeConnectionsUpdate();
         this.minNetPressure = getAllNodes().values().stream().mapToDouble(node -> node.data.getMinPressure()).max().orElse(Double.MAX_VALUE);
         this.maxNetPressure = getAllNodes().values().stream().mapToDouble(node -> node.data.getMaxPressure()).min().orElse(Double.MIN_VALUE);
-        this.netTank.setCapacity(getAllNodes().values().stream().mapToInt(node -> node.data.getMaxVolume()).sum());
+        final double oldVolume = getVolume();
+        this.volume = Math.max(1, getAllNodes().values().stream().mapToDouble(node -> node.data.getVolume()).sum());
+        this.netParticles *= getVolume() / oldVolume;
     }
 
     @Override
@@ -69,39 +64,33 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     }
 
     @Override
-    public double getPressure() {
-        return netPressure;
+    public double getParticles() {
+        return netParticles;
     }
 
     @Override
-    public double changePressure(double amount) {
-        if (amount == 0) return 0;
-        amount = calculatePressure(amount);
-        if (amount == 0) return 0;
-        final double oldPressure = getPressure();
-        setPressure(amount);
-        return oldPressure - amount;
-    }
-
-    protected final double calculatePressure(double amount) {
-        // Roughly: P = (P1 + P2) / (V1 + V2)
-        if (netTank.getFluidAmount() == 0) return (this.netPressure + amount) / 2.0D;
-        return (this.netPressure + amount) / (netTank.getFluidAmount() / Math.max(1.0F, (float) netTank.getCapacity()) + 1.0F);
+    public double getVolume() {
+        return volume;
     }
 
     @Override
-    public double setPressure(double amount) {
-        this.netPressure = amount;
+    public void setParticles(double amount) {
+        this.netParticles = amount;
+    }
+
+    @Override
+    public boolean changeParticles(double amount, boolean simulate) {
+        if (simulate) return isPressureSafe(getPressureForParticles(getParticles() + amount));
+        setParticles(getParticles() + amount);
         PressureNetWalker.checkPressure(getWorldData(), getAllNodes().keySet().iterator().next(), getPressure());
-        return amount;
+        return isPressureSafe();
     }
 
     public void onLeak() {
-        if (getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changePressure(getLeakRate());
-        else if (getPressure() > GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changePressure(-getLeakRate());
+        if (getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changeParticles(getLeakRate(), false);
+        else if (getPressure() > GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changeParticles(-getLeakRate(), false);
     }
 
-    @Override
     public double getLeakRate() {
         return 1000.0D;
     }
@@ -114,26 +103,5 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     @Override
     public double getMaxPressure() {
         return maxNetPressure;
-    }
-
-    @Nonnull
-    public FluidTank getNetTank() {
-        return netTank;
-    }
-
-    public boolean hasFluid() {
-        return netTank.getFluid() != null;
-    }
-
-    public double getMaxTankPressure() {
-        final double pressure = PressureMedium.getMaxPressure(netTank.getFluid());
-        if (pressure < 0) return getMaxPressure();
-        return pressure;
-    }
-
-    public double getMinTankPressure() {
-        final double pressure = PressureMedium.getMaxPressure(netTank.getFluid());
-        if (pressure < 0) return getMinPressure();
-        return pressure;
     }
 }
