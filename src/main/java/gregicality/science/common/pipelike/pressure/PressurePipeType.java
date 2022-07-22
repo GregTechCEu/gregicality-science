@@ -12,33 +12,37 @@ public enum PressurePipeType implements IPipeType<PressurePipeData> {
     public final String name;
     public final double maxPressure;
     private final double minPressure;
-    private final int maxVolume;
+    private final double volume;
 
-    PressurePipeType(String name, float thickness, double minPressure, double maxPressure, int maxVolume) {
+    PressurePipeType(String name, float thickness, double minPressure, double maxPressure, double volume) {
         this.thickness = thickness;
         this.name = name;
         this.minPressure = minPressure;
         this.maxPressure = maxPressure;
-        this.maxVolume = maxVolume;
+        this.volume = volume;
     }
 
     @Override
     public float getThickness() {
-        return thickness;
+        return this.thickness;
     }
 
     public double getMinPressure() {
-        return minPressure;
+        return this.minPressure;
     }
 
     public double getMaxPressure() {
-        return maxPressure;
+        return this.maxPressure;
+    }
+
+    public double getVolume() {
+        return this.volume;
     }
 
     @Nonnull
     @Override
     public PressurePipeData modifyProperties(PressurePipeData pipeData) {
-        return new PressurePipeData(minPressure, maxPressure, maxVolume);
+        return new PressurePipeData(minPressure, maxPressure, volume);
     }
 
     @Override
@@ -46,6 +50,7 @@ public enum PressurePipeType implements IPipeType<PressurePipeData> {
         return true;
     }
 
+    @Nonnull
     @Override
     public String getName() {
         return name;

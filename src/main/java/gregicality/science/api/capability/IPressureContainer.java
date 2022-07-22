@@ -122,37 +122,34 @@ public interface IPressureContainer {
     }
 
     /**
-     * Equalizes the pressure between containers
+     * Equalizes the pressure between containers. This does not modify volume.
      *
-     * @param containers the containers other than this container
+     * @param containers the containers to merge
      */
-    default void mergeContainers(@Nonnull IPressureContainer... containers) {
+    static void mergeContainers(@Nonnull IPressureContainer... containers) {
         mergeContainers(true, containers);
     }
 
     /**
-     * Equalizes the pressure between containers
+     * Equalizes the pressure between containers. This does not modify volume.
      *
-     * @param checkSafety whether to check if changing pressure is safe before changing contaiers
-     * @param containers  the containers other than this container
+     * @param checkSafety whether to check if changing pressure is safe before modifying container values
+     * @param containers  the containers to merge
      */
-    default void mergeContainers(boolean checkSafety, @Nonnull IPressureContainer... containers) {
+    static void mergeContainers(boolean checkSafety, @Nonnull IPressureContainer... containers) {
         // P = (n1 + n2) / (v1 + v2)
-        double numerator = getParticles();
-        double denominator = getVolume();
+        double particles = 0;
+        double volume = 0;
         for (IPressureContainer container : containers) {
-            numerator += container.getParticles();
-            denominator += container.getVolume();
+            particles += container.getParticles();
+            volume += container.getVolume();
         }
+        if (volume == 0) return;
 
         // P = vN * [(n1 + n2 + ...) / (v1 + v2 + ...)] / vN
-        final double particles = numerator / denominator;
-        double amount = this.getVolume() * particles - this.getParticles();
-        if (!checkSafety || changeParticles(amount, true)) {
-            changeParticles(amount, false);
-        }
+        final double newParticles = particles / volume;
         for (IPressureContainer container : containers) {
-            amount = container.getVolume() * particles - container.getParticles();
+            double amount = container.getVolume() * newParticles - container.getParticles();
             if (!checkSafety || container.changeParticles(amount, true)) {
                 container.changeParticles(amount, false);
             }
