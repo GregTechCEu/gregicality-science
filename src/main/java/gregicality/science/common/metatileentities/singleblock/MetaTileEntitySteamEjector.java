@@ -167,7 +167,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
             if (te != null) {
                 IPressureContainer container = te.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, this.outputFacing.getOpposite());
                 if (container == null || container.getPressure() == container.getMinPressure()) return;
-                container.mergeContainers(false, pressureContainer);
+                IPressureContainer.mergeContainers(false, container, pressureContainer);
             }
         }
     }
