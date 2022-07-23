@@ -98,6 +98,9 @@ material.cadmium_bromide=Cadmium Bromide
 material.magnesium_bromide=Magnesium Bromide
 material.cadmium_sulfide=Cadmium Sulfide
 material.cadmium_selenide=Cadmium Selenide
+material.phosphine=Phosphine
+material.plutonium_trihydride=Plutonium Trihydride
+material.plutonium_phosphide=Plutonium Phosphide
 
 
 # Second Degree Materials
@@ -349,6 +352,11 @@ metaitem.laser.nd_yag.name=Nd:YAG Laser
 metaitem.laser.nd_yag.tooltip=Purpose: Strong Optical Appliances
 
 
+# Spintronic Stuff
+metaitem.plate.magnetorestrictive_memory.name=MRAM
+metaitem.plate.magnetorestrictive_memory.tooltip=Magnetorestrictive Memory
+
+
 # Item Behaviors
 metaitem.behavior.held_item_destroy.message=Holding the %s damaged it!
 
@@ -369,7 +377,7 @@ metaitem.component.optical_smd.diode.name=Optical Isolator
 metaitem.component.optical_smd.diode.tooltip=Optoelectronic Diode
 metaitem.component.optical_smd.resistor.name=Photoresistor
 metaitem.component.optical_smd.resistor.tooltip=Optoelectronic Resistor
-metaitem.component.optical_smd.transistor.name=MOSFET
+metaitem.component.optical_smd.transistor.name=Optical Transistor
 metaitem.component.optical_smd.transistor.tooltip=Optoelectronic Transistor
 metaitem.component.optical_smd.inductor.name=Optical Polarizer
 metaitem.component.optical_smd.inductor.tooltip=Optoelectronic Inductor
@@ -402,15 +410,15 @@ metaitem.circuit.optical_computer.tooltip=In the Blink of an Eye/n§6UEV-tier Ci
 metaitem.circuit.optical_mainframe.name=Optical Mainframe
 metaitem.circuit.optical_mainframe.tooltip=Could Anything be faster?/n§6UIV-tier Circuit
 
-# Exotic
-metaitem.circuit.exotic_processor.name=Exotic Processor
-metaitem.circuit.exotic_processor.tooltip=Quite Strange/n§5UHV-tier Circuit
-metaitem.circuit.exotic_assembly.name=Exotic Assembly
-metaitem.circuit.exotic_assembly.tooltip=States with unusual Properties/n§5UEV-tier Circuit
-metaitem.circuit.exotic_computer.name=Exotic Computer
-metaitem.circuit.exotic_computer.tooltip=Who uses Nanometers anyways?/n§5UIV-tier Circuit
-metaitem.circuit.exotic_mainframe.name=Exotic Mainframe
-metaitem.circuit.exotic_mainframe.tooltip=The smallest Scale ever!/n§5UXV-tier Circuit
+# Spintronic
+metaitem.circuit.spintronic_processor.name=Spintronic Processor
+metaitem.circuit.spintronic_processor.tooltip=Quite Strange/n§5UHV-tier Circuit
+metaitem.circuit.spintronic_assembly.name=Spintronic Assembly
+metaitem.circuit.spintronic_assembly.tooltip=States with unusual Properties/n§5UEV-tier Circuit
+metaitem.circuit.spintronic_computer.name=Spintronic Computer
+metaitem.circuit.spintronic_computer.tooltip=Who uses Nanometers anyways?/n§5UIV-tier Circuit
+metaitem.circuit.spintronic_mainframe.name=Spintronic Mainframe
+metaitem.circuit.spintronic_mainframe.tooltip=The smallest Scale ever!/n§5UXV-tier Circuit
 
 
 # Cosmic

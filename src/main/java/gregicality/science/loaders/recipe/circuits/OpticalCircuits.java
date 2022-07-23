@@ -28,11 +28,11 @@ public class OpticalCircuits {
     }
 
     private static void pram() {
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, GSTGlass)
-                .input(wireFine, Americium, 32)
-                .output(PHASE_CHANGE_MEMORY, 8)
-                .duration(800).EUt(VA[UHV]).buildAndRegister();
+        FORMING_PRESS_RECIPES.recipeBuilder()
+                .input(plate, GSTGlass, 2)
+                .input(foil, Americium, 8)
+                .output(PHASE_CHANGE_MEMORY, 4)
+                .duration(200).EUt(VA[UHV]).buildAndRegister();
     }
 
     private static void opticalFiber() {
@@ -198,7 +198,7 @@ public class OpticalCircuits {
     private static void smd() {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(wireFine, Naquadah, 4)
-                .input(dust, CadmiumSelenide)
+                .input(dust, CadmiumSulfide)
                 .output(PHOTORESISTOR, 16)
                 .fluidInputs(KaptonE.getFluid(L * 2))
                 .duration(160).EUt(VA[UV]).buildAndRegister();
@@ -207,7 +207,7 @@ public class OpticalCircuits {
                 .input(wireFine, Iridium, 8)
                 .input(foil, Germanium)
                 .fluidInputs(KaptonE.getFluid(L))
-                .output(MOSFET, 16)
+                .output(OPTICAL_TRANSISTOR, 16)
                 .duration(160).EUt(VA[UV]).buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -238,7 +238,7 @@ public class OpticalCircuits {
                 .input(CRYSTAL_CENTRAL_PROCESSING_UNIT) //TODO new CPU
                 .input(PHOTORESISTOR, 8)
                 .input(OPTICAL_INTEGRATOR, 8)
-                .input(MOSFET, 8)
+                .input(OPTICAL_TRANSISTOR, 8)
                 .input(OPTICAL_FIBER, 8)
                 .output(OPTICAL_PROCESSOR, 2)
                 .duration(200).EUt(VA[UHV]).buildAndRegister();

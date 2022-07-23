@@ -4,6 +4,7 @@ import gregicality.science.loaders.recipe.chain.*;
 import gregicality.science.loaders.recipe.circuits.CrystalCircuits;
 import gregicality.science.loaders.recipe.circuits.GoowareCircuits;
 import gregicality.science.loaders.recipe.circuits.OpticalCircuits;
+import gregicality.science.loaders.recipe.circuits.SpintronicCircuits;
 import gregicality.science.loaders.recipe.handlers.BouleRecipeHandler;
 import gregicality.science.loaders.recipe.oreprocessing.GermaniumProcessing;
 import gregicality.science.loaders.recipe.oreprocessing.PlatinumGroupProcessing;
@@ -53,6 +54,7 @@ public class GCYSRecipeLoader {
         PMMAChain.init();
         GalliumNitrideChain.init();
         PhotoresistivesChain.init();
+        MagneticsChain.init();
     }
 
     private static void initOreProcessing() {
@@ -64,5 +66,6 @@ public class GCYSRecipeLoader {
         CrystalCircuits.init();
         GoowareCircuits.init();
         OpticalCircuits.init();
+        SpintronicCircuits.init();
     }
 }

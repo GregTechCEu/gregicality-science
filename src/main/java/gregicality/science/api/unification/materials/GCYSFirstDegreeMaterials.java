@@ -678,5 +678,30 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.METALLIC)
                 .components(Cadmium, 1, Selenium, 1)
                 .build();
+
+        Phosphine = new Material.Builder(3589, "phosphine")
+                .fluid(FluidTypes.GAS)
+                .color(0xACB330)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING, FLAMMABLE)
+                .components(Phosphorus, 1, Hydrogen, 3)
+                .build();
+
+        PlutoniumTrihydride = new Material.Builder(3590, "plutonium_trihydride")
+                .dust()
+                .color(0x140002)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Plutonium239, 1, Hydrogen, 3)
+                .build()
+                .setFormula("PuH3", true);
+
+        PlutoniumPhosphide = new Material.Builder(3591, "plutonium_phosphide")
+                .ingot()
+                .color(0x1F0104)
+                .iconSet(MaterialIconSet.MAGNETIC)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD)
+                .components(Plutonium239, 1, Phosphorus, 1)
+                .build()
+                .setFormula("PuP", true);
     }
 }

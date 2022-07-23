@@ -15,6 +15,7 @@ public class PhosphorusChain {
         phosphorus();
         phosphorene();
         phosphorylChloride();
+        phosphine();
     }
 
     private static void phosphorus() {
@@ -88,5 +89,15 @@ public class PhosphorusChain {
                 .fluidInputs(Oxygen.getFluid(1000))
                 .fluidOutputs(PhosphorylChloride.getFluid(1000))
                 .duration(120).EUt(VA[HV]).buildAndRegister();
+    }
+
+    private static void phosphine() {
+        // P4 + 6H2O -> 4PH3 + 6O (lost)
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, WhitePhosphorus)
+                .fluidInputs(Water.getFluid(6000))
+                .fluidOutputs(Phosphine.getFluid(4000))
+                .duration(200).EUt(16).buildAndRegister();
+
     }
 }
