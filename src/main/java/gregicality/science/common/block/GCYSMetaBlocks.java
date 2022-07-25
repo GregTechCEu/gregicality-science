@@ -6,9 +6,6 @@ import gregicality.science.common.block.blocks.BlockMultiblockCasing;
 import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
 import gregicality.science.common.pipelike.pressure.PressurePipeType;
 import gregtech.client.model.SimpleStateMapper;
-import gregtech.client.renderer.pipe.ItemPipeRenderer;
-import gregtech.common.pipelike.itempipe.BlockItemPipe;
-import gregtech.common.pipelike.itempipe.ItemPipeType;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
@@ -27,7 +24,7 @@ import java.util.stream.Collectors;
 
 public class GCYSMetaBlocks {
 
-    public static final BlockPressurePipe[] PRESSURE_PIPES = new BlockPressurePipe[1];
+    public static final BlockPressurePipe[] PRESSURE_PIPES = new BlockPressurePipe[PressurePipeType.values().length];
     public static BlockCrucible CRUCIBLE;
     public static BlockMultiblockCasing MULTIBLOCK_CASING;
 

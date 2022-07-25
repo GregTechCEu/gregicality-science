@@ -8,7 +8,6 @@ import gregtech.api.pipenet.block.simple.BlockSimplePipe;
 import gregtech.api.pipenet.tile.IPipeTile;
 import gregtech.api.pipenet.tile.TileEntityPipeBase;
 import gregtech.api.util.TaskScheduler;
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.creativetab.CreativeTabs;
@@ -103,19 +102,10 @@ public class BlockPressurePipe extends BlockSimplePipe<PressurePipeType, Pressur
     }
 
     @Override
-    public void observedNeighborChange(@Nonnull IBlockState observerState, @Nonnull World world, @Nonnull BlockPos observerPos, @Nonnull Block changedBlock, @Nonnull BlockPos changedBlockPos) {
-        super.observedNeighborChange(observerState, world, observerPos, changedBlock, changedBlockPos);
-        TileEntity te = world.getTileEntity(observerPos);
-        if (te instanceof TileEntityPressurePipe) {
-            TaskScheduler.scheduleTask(world, () -> ((TileEntityPressurePipe) te).update());
-        }
-    }
-
-    @Override
     public void breakBlock(@Nonnull World worldIn, @Nonnull BlockPos pos, @Nonnull IBlockState state) {
         TileEntity te = worldIn.getTileEntity(pos);
         if (te instanceof TileEntityPressurePipe) {
-            TaskScheduler.scheduleTask(worldIn, () -> ((TileEntityPressurePipe) te).update());
+            TaskScheduler.scheduleTask(worldIn, ((TileEntityPressurePipe) te)::updateLeakage);
         }
         super.breakBlock(worldIn, pos, state);
     }

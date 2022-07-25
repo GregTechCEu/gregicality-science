@@ -8,7 +8,7 @@ import javax.annotation.Nonnull;
 
 public interface IPressureContainer {
 
-    int PRESSURE_TOLERANCE = 1000;
+    int PRESSURE_TOLERANCE = 5000;
 
     /**
      * @return the amount of particles in the container
@@ -103,6 +103,10 @@ public interface IPressureContainer {
         return Math.abs(getPressure() - GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) < PRESSURE_TOLERANCE;
     }
 
+    /**
+     *
+     * @return if the pressure is a vacuum
+     */
     default boolean isVacuum() {
         return getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE - PRESSURE_TOLERANCE;
     }

@@ -240,7 +240,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
 
     public void setOutputFacing(@Nonnull EnumFacing outputFacing) {
         this.outputFacing = outputFacing;
-        if (!getWorld().isRemote) {
+        if (getWorld() != null && !getWorld().isRemote) {
             notifyBlockUpdate();
             writeCustomData(UPDATE_OUTPUT_FACING, buf -> buf.writeInt(this.outputFacing.getIndex()));
             markDirty();
