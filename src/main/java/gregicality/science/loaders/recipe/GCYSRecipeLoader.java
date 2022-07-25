@@ -7,6 +7,10 @@ import gregicality.science.loaders.recipe.circuits.OpticalCircuits;
 import gregicality.science.loaders.recipe.circuits.SpintronicCircuits;
 import gregicality.science.loaders.recipe.component.GCYSComponentRecipes;
 import gregicality.science.loaders.recipe.handlers.BouleRecipeHandler;
+import gregicality.science.loaders.recipe.oreprocessing.GermaniumProcessing;
+import gregicality.science.loaders.recipe.oreprocessing.PlatinumGroupProcessing;
+import gregicality.science.loaders.recipe.oreprocessing.RareEarthProcessing;
+import gregicality.science.loaders.recipe.oreprocessing.TungstenProcessing;
 import gregicality.science.loaders.recipe.oreprocessing.*;
 import gregicality.science.loaders.recipe.vacuum.VacuumRecipes;
 
