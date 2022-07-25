@@ -1,6 +1,7 @@
 package gregicality.science.api.capability;
 
 import gregicality.science.api.GCYSValues;
+import gregtech.common.ConfigHolder;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -119,9 +120,16 @@ public interface IPressureContainer {
      */
     default void causePressureExplosion(World world, BlockPos pos) {
         if (world != null && !world.isRemote) {
-            //TODO implosion
-            if (isVacuum()) world.createExplosion(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 5, true);
-            else world.createExplosion(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 5, true);
+            final float explosionPower = (float) Math.abs(Math.log(getPressure()));
+            world.setBlockToAir(pos);
+
+            if (isVacuum()) {
+                world.createExplosion(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                        explosionPower, false);
+            } else {
+                world.createExplosion(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                        explosionPower, ConfigHolder.machines.doesExplosionDamagesTerrain);
+            }
         }
     }
 
