@@ -1,7 +1,6 @@
 package gregicality.science;
 
 import gregicality.science.api.capability.GCYSTileCapabilities;
-import gregicality.science.api.capability.impl.PressureMedium;
 import gregicality.science.api.utils.GCYSLog;
 import gregicality.science.common.CommonProxy;
 import gregicality.science.common.block.GCYSMetaBlocks;
@@ -42,8 +41,6 @@ public class GregicalityScience {
         GCYSMetaItems.initMetaItems();
         GCYSMetaBlocks.init();
         GCYSMetaTileEntities.init();
-
-        PressureMedium.init();
 
         proxy.preLoad();
     }
