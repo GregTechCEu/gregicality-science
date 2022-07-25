@@ -63,7 +63,7 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
             IBlockState neighbour = world.getBlockState(blockPos);
             if (!neighbour.isFullBlock() || !neighbour.isOpaqueCube()) {
                 // check the pipes for unconnected things
-                TaskScheduler.scheduleTask(getWorld(), this::update);
+                TaskScheduler.scheduleTask(getWorld(), this::updateLeakage);
                 return;
             }
             TileEntity te = world.getTileEntity(blockPos);
@@ -71,7 +71,7 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
                     ((IPipeTile<?, ?>) te).getPipeType().getThickness() != getPipeType().getThickness() &&
                     ((IPipeTile<?, ?>) te).isConnected(side.getOpposite())) {
                 // mismatched connected pipe sizes leak
-                TaskScheduler.scheduleTask(getWorld(), this::update);
+                TaskScheduler.scheduleTask(getWorld(), this::updateLeakage);
             }
         }
     }
@@ -96,7 +96,7 @@ public class TileEntityPressurePipe extends TileEntityPipeBase<PressurePipeType,
         return currentPipeNet;
     }
 
-    public boolean update() {
+    public boolean updateLeakage() {
         PressurePipeNet net = getPipeNet();
         if (net != null) {
             net.onLeak();

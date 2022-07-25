@@ -48,7 +48,7 @@ public class GCYSMetaTileEntities {
         BURNER_REACTOR = registerMetaTileEntity(4103, new MetaTileEntityBurnerReactor(gcysId("burner_reactor")));
         CRYOGENIC_REACTOR = registerMetaTileEntity(4104, new MetaTileEntityCryoReactor(gcysId("cryogenic_reactor")));
         STEAM_EJECTOR = registerMetaTileEntity(4106, new MetaTileEntitySteamEjector(gcysId("steam_ejector")));
-        CREATIVE_PRESSURE = registerMetaTileEntity(4107, new MetaTileEntityCreativePressurePump(gcysId("creative_pressure_pump")));
+        CREATIVE_PRESSURE = registerMetaTileEntity(4107, new MetaTileEntityCreativePressurePump(gcysId("infinite_pressure_pump")));
     }
 
     @Nonnull

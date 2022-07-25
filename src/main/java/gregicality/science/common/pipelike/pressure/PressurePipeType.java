@@ -6,7 +6,7 @@ import gregtech.api.pipenet.block.IPipeType;
 import javax.annotation.Nonnull;
 
 public enum PressurePipeType implements IPipeType<PressurePipeData> {
-    NORMAL("normal", 0.5f, 10E-6, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE * 10, 1000);
+    NORMAL("normal", 0.5f, 10E-6, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE * 10, 1.0D);
 
     public final float thickness;
     public final String name;

@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 
 public class GCYSMetaBlocks {
 
-    public static final BlockPressurePipe[] PRESSURE_PIPES = new BlockPressurePipe[1];
+    public static final BlockPressurePipe[] PRESSURE_PIPES = new BlockPressurePipe[PressurePipeType.values().length];
     public static BlockCrucible CRUCIBLE;
     public static BlockMultiblockCasing MULTIBLOCK_CASING;
     public static BlockTransparentCasing TRANSPARENT_CASING;

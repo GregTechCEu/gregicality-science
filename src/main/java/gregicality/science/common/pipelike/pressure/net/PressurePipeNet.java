@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
 public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPressureContainer {
 
     private double netParticles = GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
-    private double volume = 1.0;
+    private double volume = 1.0D;
     private double minNetPressure = Double.MAX_VALUE;
     private double maxNetPressure = Double.MIN_VALUE;
 
