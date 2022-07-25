@@ -104,7 +104,7 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity {
                 IPressureContainer container = tile.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, facing.getOpposite());
                 if (container == null || container.getPressure() == container.getMinPressure() || container.getPressure() == container.getMaxPressure())
                     continue;
-                IPressureContainer.mergeContainers(true, this.pressureContainer, container);
+                IPressureContainer.mergeContainers(this.pressureContainer, container);
             }
         }
     }
