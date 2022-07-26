@@ -41,6 +41,9 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         SUPRACAUSAL_COMPUTER = addItem(19, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
         SUPRACAUSAL_MAINFRAME = addItem(20, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
 
+        CARBON_ALLOTROPE_MIXTURE = addItem(21, "mixture.carbon_allotrope");
+        GRAPHENE_ALIGNED_CNT = addItem(22, "cnt.graphene_aligned");
+
         GOOWARE_BOARD = addItem(28, "board.gooware");
         OPTICAL_BOARD = addItem(29, "board.optical");
         GOOWARE_CIRCUIT_BOARD = addItem(35, "circuit_board.gooware");

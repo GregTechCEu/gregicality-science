@@ -1,5 +1,6 @@
 package gregicality.science.api.unification.materials;
 
+import gregtech.api.GTValues;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
@@ -703,5 +704,15 @@ public class GCYSFirstDegreeMaterials {
                 .components(Plutonium239, 1, Phosphorus, 1)
                 .build()
                 .setFormula("PuP", true);
+
+        CarbonNanotube = new Material.Builder(3592, "carbon_nanotube")
+                .ingot()
+                .color(0x05090C)
+                .iconSet(MaterialIconSet.BRIGHT)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FINE_WIRE)
+                .cableProperties(GTValues.V[GTValues.UEV], 8, 6, false)
+                .components(Carbon, 48)
+                .build()
+                .setFormula("CNT", false);
     }
 }

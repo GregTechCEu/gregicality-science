@@ -45,6 +45,7 @@ public class GCYSMaterialFlagAddition {
 
         // Plates
         Germanium.addFlags(MaterialFlags.GENERATE_PLATE);
+        Rhenium.addFlags(MaterialFlags.GENERATE_PLATE);
 
         // Rods
         Darmstadtium.addFlags(MaterialFlags.GENERATE_ROD);

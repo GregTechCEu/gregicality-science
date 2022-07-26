@@ -101,6 +101,9 @@ material.cadmium_selenide=Cadmium Selenide
 material.phosphine=Phosphine
 material.plutonium_trihydride=Plutonium Trihydride
 material.plutonium_phosphide=Plutonium Phosphide
+material.carbon_nanotube=Carbon Nanotube
+item.carbon_nanotube.dustSmall=Small Pile of Carbon Nanotubes
+item.carbon_nanotube.dustTiny=Tiny Pile of Carbon Nanotubes
 
 
 # Second Degree Materials
@@ -214,6 +217,7 @@ material.ethylene_dibromide=Ethylene Dibromide
 material.dimethylcadmium=Dimethylcadmium
 material.grignard_reagent=Grignard Reagent
 material.diethyl_sulfide=Diethyl Sulfide
+material.cycloparaphenylene=Cycloparaphenylene
 
 
 # Unknown Composition Materials
@@ -359,6 +363,11 @@ metaitem.plate.magnetorestrictive_memory.tooltip=Magnetorestrictive Memory
 
 # Item Behaviors
 metaitem.behavior.held_item_destroy.message=Holding the %s damaged it!
+
+
+# Nanotube Stuff
+metaitem.mixture.carbon_allotrope.name=Carbon Allotrope Mixture
+metaitem.cnt.graphene_aligned.name=Graphene-Aligned Carbon Nanotube
 
 # Circuit Boards
 metaitem.board.gooware.name=Kapton Circuit Board

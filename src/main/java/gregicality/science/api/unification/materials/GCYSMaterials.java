@@ -100,6 +100,7 @@ public class GCYSMaterials {
     public static Material Phosphine;
     public static Material PlutoniumTrihydride;
     public static Material PlutoniumPhosphide;
+    public static Material CarbonNanotube;
 
 
     // Second Degree Materials
@@ -191,6 +192,7 @@ public class GCYSMaterials {
     public static Material GrignardReagent;
     public static Material Dimethylcadmium;
     public static Material DiethylSuflide;
+    public static Material Cycloparaphenylene;
 
 
     // Unknown Composition Materials

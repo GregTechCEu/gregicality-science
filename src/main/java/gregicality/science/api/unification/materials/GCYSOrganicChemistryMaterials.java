@@ -428,5 +428,13 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Ethylene, 2, Sulfur, 1)
                 .build()
                 .setFormula("(CH3)2S", true);
+
+        Cycloparaphenylene = new Material.Builder(1564, "cycloparaphenylene") //TODO "CPP" tooltip
+                .fluid()
+                .color(0x60545A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 6, Hydrogen, 4)
+                .build()
+                .setFormula("C6H4", true);
     }
 }

@@ -26,6 +26,7 @@ public class MagneticsChain {
                 .input(dust, PlutoniumTrihydride, 4)
                 .fluidInputs(Phosphine.getFluid(1000))
                 .output(ingot, PlutoniumPhosphide, 2)
+                .fluidOutputs(Hydrogen.getFluid(6000))
                 .duration(60).EUt(VA[IV]).buildAndRegister();
     }
 }

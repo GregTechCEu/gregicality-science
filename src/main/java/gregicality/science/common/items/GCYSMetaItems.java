@@ -33,6 +33,10 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_COMPUTER;
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_MAINFRAME;
 
+    // Nanotube Stuff
+    public static MetaItem<?>.MetaValueItem CARBON_ALLOTROPE_MIXTURE;
+    public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
+
     // Circuit Boards
     public static MetaItem<?>.MetaValueItem GOOWARE_BOARD;
     public static MetaItem<?>.MetaValueItem OPTICAL_BOARD;
