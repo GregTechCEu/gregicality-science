@@ -35,10 +35,6 @@ public class BouleRecipeHandler {
         if (!material.hasFlag(MaterialFlags.CRYSTALLIZABLE) || material.hasFlag(GCYSMaterialFlags.DISABLE_CRYSTALLIZATION))
             return;
 
-        BlastRecipeBuilder builder = GCYSRecipeMaps.CRYSTALLIZER_RECIPES.recipeBuilder();
-
-        builder.input(GCYSOrePrefix.seedCrystal, material);
-
         // if there are too many components to fit in the crystallizer, do not make a recipe
         // -1 for the not consumable input
         if (material.getMaterialComponents().size() > GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxInputs() - 1 + GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxFluidInputs())
@@ -75,27 +71,29 @@ public class BouleRecipeHandler {
         }
 
         // just in case, prevent division by zero
-        if (componentAmount == 0)
-            return;
+        if (componentAmount == 0) return;
 
         // Average Temperature for the recipe
         temperature /= componentAmount;
 
-        builder.blastFurnaceTemp(temperature);
+        BlastRecipeBuilder builder = GCYSRecipeMaps.CRYSTALLIZER_RECIPES.recipeBuilder()
+                .blastFurnaceTemp(temperature);
 
         // use temperature to determine the EUt
         builder.EUt(VA[temperature <= 2800 ? HV : GTValues.EV]);
 
         boolean shouldMultiply = false;
-
         if (componentAmount % 4 == 0) {
             // since boules are equivalent to 4 items, output doesn't need multiplication
-            builder.output(GCYSOrePrefix.boule, material, componentAmount / 4);
+            componentAmount /= 4;
         } else {
-            // Multiplying the entire recipe by 4 for even amounts of boules
-            builder.output(GCYSOrePrefix.boule, material, componentAmount);
+            // Multiply the entire recipe by 4 for even amounts of boules
             shouldMultiply = true;
         }
+
+        builder.input(GCYSOrePrefix.seedCrystal, material, componentAmount)
+                .output(GCYSOrePrefix.boule, material, componentAmount);
+
 
         if (shouldMultiply) {
             for (ItemStack stack : inputs) {

@@ -78,6 +78,7 @@ public class GCYSMetaItems {
 
     // Spintronic Stuff
     public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
+    public static MetaItem<?>.MetaValueItem TOPOLOGICAL_INSULATOR_TUBE;
 
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();

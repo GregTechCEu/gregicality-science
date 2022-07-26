@@ -202,5 +202,14 @@ public class GCYSSecondDegreeMaterials {
                 .components(YttriumOxide, 2, NeodymiumOxide, 1, Alumina, 5)
                 .build()
                 .setFormula("NdY2Al5O12", true);
+
+        BismuthFerrite = new Material.Builder(6024, "bismuth_ferrite") //TODO "Multiferroic!" tooltip
+                .gem()
+                .color(0x43634B)
+                .iconSet(MaterialIconSet.MAGNETIC)
+                .flags(CRYSTALLIZABLE, GENERATE_PLATE)
+                .components(BismuthTrioxide, 2, FerricOxide, 2)
+                .build()
+                .setFormula("BiFeO3", true);
     }
 }

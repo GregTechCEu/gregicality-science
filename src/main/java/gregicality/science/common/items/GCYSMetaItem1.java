@@ -61,6 +61,7 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         ND_YAG_LASER = addItem(48, "laser.nd_yag");
 
         SPIN_TRANSFER_TORQUE_MEMORY = addItem(49, "plate.spin_transfer_torque_memory");
+        TOPOLOGICAL_INSULATOR_TUBE = addItem(50, "tube.topological_insulator");
 
         EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(55, "boule.cubic_zirconia.europium");
         EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(56, "wafer.cubic_zirconia.europium");

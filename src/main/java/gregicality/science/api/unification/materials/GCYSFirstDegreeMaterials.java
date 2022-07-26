@@ -709,7 +709,8 @@ public class GCYSFirstDegreeMaterials {
                 .ingot()
                 .color(0x05090C)
                 .iconSet(MaterialIconSet.BRIGHT)
-                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FINE_WIRE)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD,
+                        GENERATE_FINE_WIRE, GENERATE_SPRING)
                 .cableProperties(GTValues.V[GTValues.UEV], 8, 6, false)
                 .components(Carbon, 48)
                 .build()
@@ -736,5 +737,43 @@ public class GCYSFirstDegreeMaterials {
                 .components(Lithium7, 1, Oxygen, 1, Hydrogen, 1)
                 .build()
                 .setFormula("LiOH", true);
+
+        NeptuniumAluminide = new Material.Builder(3596, "neptunium_aluminide")
+                .ingot().fluid()
+                .color(0x5E228F)
+                .iconSet(MaterialIconSet.MAGNETIC)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD)
+                .components(Neptunium, 1, Aluminium, 3)
+                .blastTemp(1568, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.ZPM])
+                .build()
+                .setFormula("NpAl3", true);
+
+        BismuthTrioxide = new Material.Builder(3597, "bismuth_trioxide")
+                .dust()
+                .color(0xF5EF42).iconSet(MaterialIconSet.FINE)
+                .components(Bismuth, 2, Oxygen, 3)
+                .build();
+
+        FerricOxide = new Material.Builder(3598, "ferric_oxide")
+                .dust()
+                .color(0x915A5A).iconSet(MaterialIconSet.ROUGH)
+                .components(Iron, 2, Oxygen, 3)
+                .build();
+
+        BismuthChalcogenide = new Material.Builder(3599, "bismuth_chalcogenide") //TODO "3D Topological Isolator" tooltip
+                .ingot()
+                .color(0x91994D).iconSet(MaterialIconSet.SHINY)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, DECOMPOSITION_BY_ELECTROLYZING)
+                .components(Bismuth, 1, Antimony, 1, Tellurium, 2, Sulfur, 1)
+                .build();
+
+        MercuryCadmiumTelluride = new Material.Builder(3600, "mercury_cadmium_telluride")
+                .ingot().fluid()
+                .color(0x823C80).iconSet(MaterialIconSet.BRIGHT)
+                .flags(GENERATE_FINE_WIRE)
+                .components(Mercury, 2, Cadmium, 1, Tellurium, 2)
+                .cableProperties(GTValues.V[GTValues.UHV], 3, 10)
+                .blastTemp(2170, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.UHV])
+                .build();
     }
 }

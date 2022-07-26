@@ -106,6 +106,11 @@ public class GCYSMaterials {
     public static Material LithiumHydroxide;
     public static Material LithiumAmalgam;
     public static Material Lithium7Hydroxide;
+    public static Material NeptuniumAluminide;
+    public static Material BismuthTrioxide;
+    public static Material FerricOxide;
+    public static Material BismuthChalcogenide;
+    public static Material MercuryCadmiumTelluride;
 
 
     // Second Degree Materials
@@ -133,6 +138,7 @@ public class GCYSMaterials {
     public static Material ErbiumDopedZBLANGlass;
     public static Material PraseodymiumDopedZBLANGlass;
     public static Material NdYAG;
+    public static Material BismuthFerrite;
 
 
     // Third Degree Materials
