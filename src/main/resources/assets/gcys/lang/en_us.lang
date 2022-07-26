@@ -2,6 +2,11 @@
 
 # Materials
 
+# Element Materials
+material.lithium_6=Lithium-6
+material.lithium_7=Lithium-7
+
+
 # First Degree Materials
 material.lanthanum_oxide=Lanthanum Oxide
 material.praseodymium_oxide=Praseodymium Oxide
@@ -104,6 +109,9 @@ material.plutonium_phosphide=Plutonium Phosphide
 material.carbon_nanotube=Carbon Nanotube
 item.carbon_nanotube.dustSmall=Small Pile of Carbon Nanotubes
 item.carbon_nanotube.dustTiny=Tiny Pile of Carbon Nanotubes
+material.lithium_amalgam=Lithium Amalgam
+material.lithium_hydroxide=Lithium Hydroxide
+material.lithium_7_hydroxide=Lithium-7 Hydroxide
 
 
 # Second Degree Materials
@@ -357,8 +365,8 @@ metaitem.laser.nd_yag.tooltip=Purpose: Strong Optical Appliances
 
 
 # Spintronic Stuff
-metaitem.plate.magnetorestrictive_memory.name=MRAM
-metaitem.plate.magnetorestrictive_memory.tooltip=Magnetorestrictive Memory
+metaitem.plate.spin_transfer_torque_memory.name=STTRAM
+metaitem.plate.spin_transfer_torque_memory.tooltip=Spin-Transfer Torque Memory
 
 
 # Item Behaviors

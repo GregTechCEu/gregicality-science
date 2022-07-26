@@ -714,5 +714,27 @@ public class GCYSFirstDegreeMaterials {
                 .components(Carbon, 48)
                 .build()
                 .setFormula("CNT", false);
+
+        LithiumHydroxide = new Material.Builder(3593, "lithium_hydroxide")
+                .dust()
+                .color(0xDECAFA)
+                .iconSet(MaterialIconSet.FINE)
+                .components(Lithium, 1, Oxygen, 1, Hydrogen, 1)
+                .build();
+
+        LithiumAmalgam = new Material.Builder(3594, "lithium_amalgam")
+                .fluid()
+                .color(0xAEA7D4).iconSet(MaterialIconSet.FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Mercury, 1, Lithium, 1)
+                .build();
+
+        Lithium7Hydroxide = new Material.Builder(3595, "lithium_7_hydroxide")
+                .dust()
+                .color(0xAEAACA).iconSet(MaterialIconSet.FINE)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .components(Lithium7, 1, Oxygen, 1, Hydrogen, 1)
+                .build()
+                .setFormula("LiOH", true);
     }
 }

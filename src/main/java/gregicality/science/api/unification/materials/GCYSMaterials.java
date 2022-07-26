@@ -5,6 +5,8 @@ import gregtech.api.unification.material.Material;
 public class GCYSMaterials {
 
     // Element Materials
+    public static Material Lithium6;
+    public static Material Lithium7;
 
 
     // First Degree Materials
@@ -101,6 +103,9 @@ public class GCYSMaterials {
     public static Material PlutoniumTrihydride;
     public static Material PlutoniumPhosphide;
     public static Material CarbonNanotube;
+    public static Material LithiumHydroxide;
+    public static Material LithiumAmalgam;
+    public static Material Lithium7Hydroxide;
 
 
     // Second Degree Materials

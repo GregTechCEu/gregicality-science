@@ -60,11 +60,11 @@ public class BoronNitrideChain {
                 .buildAndRegister();
 
         // Li + H -> LiH
-        BLAST_RECIPES.recipeBuilder()
+        BURNER_REACTOR_RECIPES.recipeBuilder()
                 .input(dust, Lithium)
                 .fluidInputs(Hydrogen.getFluid(1000))
                 .output(ingot, LithiumHydride)
-                .blastFurnaceTemp(873)
+                .temperature(873)
                 .duration(300)
                 .EUt(VA[HV])
                 .buildAndRegister();

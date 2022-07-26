@@ -77,7 +77,7 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem ND_YAG_LASER;
 
     // Spintronic Stuff
-    public static MetaItem<?>.MetaValueItem MAGNETORESTRICTIVE_MEMORY;
+    public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
 
     public static void init() {
         GCYSMetaItem1 metaItem1 = new GCYSMetaItem1();
