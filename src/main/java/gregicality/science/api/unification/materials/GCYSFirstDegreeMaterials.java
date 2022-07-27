@@ -1,5 +1,6 @@
 package gregicality.science.api.unification.materials;
 
+import gregtech.api.GTValues;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
@@ -671,7 +672,7 @@ public class GCYSFirstDegreeMaterials {
                 .components(Cadmium, 1, Sulfur, 1)
                 .build();
 
-        CadmiumSelenide = new Material.Builder(3588, "cadmium_selenide")
+        CadmiumSelenide = new Material.Builder(3588, "cadmium_selenide") //TODO "Quantum Dots" tooltip
                 .dust()
                 .color(0x983034)
                 .flags(DECOMPOSITION_BY_ELECTROLYZING)
@@ -703,5 +704,112 @@ public class GCYSFirstDegreeMaterials {
                 .components(Plutonium239, 1, Phosphorus, 1)
                 .build()
                 .setFormula("PuP", true);
+
+        CarbonNanotube = new Material.Builder(3592, "carbon_nanotube")
+                .ingot().fluid()
+                .color(0x05090C)
+                .iconSet(MaterialIconSet.BRIGHT)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD,
+                        GENERATE_FINE_WIRE, GENERATE_SPRING)
+                .cableProperties(GTValues.V[GTValues.UEV], 8, 6, false)
+                .components(Carbon, 48)
+                .build()
+                .setFormula("CNT", false);
+
+        LithiumHydroxide = new Material.Builder(3593, "lithium_hydroxide")
+                .dust()
+                .color(0xDECAFA)
+                .iconSet(MaterialIconSet.FINE)
+                .components(Lithium, 1, Oxygen, 1, Hydrogen, 1)
+                .build();
+
+        LithiumAmalgam = new Material.Builder(3594, "lithium_amalgam")
+                .fluid()
+                .color(0xAEA7D4).iconSet(MaterialIconSet.FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Mercury, 1, Lithium, 1)
+                .build();
+
+        Lithium7Hydroxide = new Material.Builder(3595, "lithium_7_hydroxide")
+                .dust()
+                .color(0xAEAACA).iconSet(MaterialIconSet.FINE)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .components(Lithium7, 1, Oxygen, 1, Hydrogen, 1)
+                .build()
+                .setFormula("LiOH", true);
+
+        NeptuniumAluminide = new Material.Builder(3596, "neptunium_aluminide")
+                .ingot().fluid()
+                .color(0x5E228F)
+                .iconSet(MaterialIconSet.MAGNETIC)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD)
+                .components(Neptunium, 1, Aluminium, 3)
+                .blastTemp(1568, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.ZPM])
+                .build()
+                .setFormula("NpAl3", true);
+
+        BismuthTrioxide = new Material.Builder(3597, "bismuth_trioxide")
+                .dust()
+                .color(0xF5EF42).iconSet(MaterialIconSet.FINE)
+                .components(Bismuth, 2, Oxygen, 3)
+                .build();
+
+        FerricOxide = new Material.Builder(3598, "ferric_oxide")
+                .dust()
+                .color(0x915A5A).iconSet(MaterialIconSet.ROUGH)
+                .components(Iron, 2, Oxygen, 3)
+                .build();
+
+        BismuthChalcogenide = new Material.Builder(3599, "bismuth_chalcogenide") //TODO "3D Topological Isolator" tooltip
+                .ingot()
+                .color(0x91994D).iconSet(MaterialIconSet.SHINY)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, DECOMPOSITION_BY_ELECTROLYZING)
+                .components(Bismuth, 1, Antimony, 1, Tellurium, 2, Sulfur, 1)
+                .build();
+
+        MercuryCadmiumTelluride = new Material.Builder(3600, "mercury_cadmium_telluride")
+                .ingot().fluid()
+                .color(0x823C80).iconSet(MaterialIconSet.BRIGHT)
+                .flags(GENERATE_FINE_WIRE)
+                .components(Mercury, 2, Cadmium, 1, Tellurium, 2)
+                .cableProperties(GTValues.V[GTValues.UHV], 3, 10)
+                .blastTemp(2170, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.UHV])
+                .build();
+
+        AluminiumSelenide = new Material.Builder(3601, "aluminium_selenide")
+                .ingot()
+                .color(0x969651)
+                .components(Aluminium, 2, Selenium, 3)
+                .build();
+
+        HydrogenSelenide = new Material.Builder(3602, "hydrogen_selenide")
+                .fluid(FluidTypes.GAS)
+                .color(0x42f554)
+                .components(Hydrogen, 2, Selenium, 1)
+                .build();
+
+        PalladiumNitrite = new Material.Builder(3603, "palladium_nitrate")
+                .dust()
+                .color(0x82312A).iconSet(MaterialIconSet.METALLIC)
+                .components(Palladium, 1, Nitrogen, 2, Oxygen, 6)
+                .build()
+                .setFormula("Pd(NO3)2", true);
+
+        Fullerene = new Material.Builder(3604, "fullerene")
+                .ingot()
+                .color(0x72556A)
+                .iconSet(MaterialIconSet.BRIGHT)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_RING,
+                        GENERATE_FRAME)
+                .components(Carbon, 60)
+                .build();
+
+        ThalliumCopperChloride = new Material.Builder(3605, "thallium_copper_chloride") //TODO "Antiferromagnetic" Tooltip
+                .ingot().fluid()
+                .color(0x3C5CB5)
+                .iconSet(MaterialIconSet.MAGNETIC)
+                .flags(GENERATE_FINE_WIRE)
+                .components(Thallium, 1, Copper, 1, Chlorine, 3)
+                .build();
     }
 }

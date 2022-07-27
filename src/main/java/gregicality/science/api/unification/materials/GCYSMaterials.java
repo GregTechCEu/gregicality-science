@@ -5,6 +5,8 @@ import gregtech.api.unification.material.Material;
 public class GCYSMaterials {
 
     // Element Materials
+    public static Material Lithium6;
+    public static Material Lithium7;
 
 
     // First Degree Materials
@@ -100,6 +102,20 @@ public class GCYSMaterials {
     public static Material Phosphine;
     public static Material PlutoniumTrihydride;
     public static Material PlutoniumPhosphide;
+    public static Material CarbonNanotube;
+    public static Material LithiumHydroxide;
+    public static Material LithiumAmalgam;
+    public static Material Lithium7Hydroxide;
+    public static Material NeptuniumAluminide;
+    public static Material BismuthTrioxide;
+    public static Material FerricOxide;
+    public static Material BismuthChalcogenide;
+    public static Material MercuryCadmiumTelluride;
+    public static Material AluminiumSelenide;
+    public static Material HydrogenSelenide;
+    public static Material PalladiumNitrite;
+    public static Material Fullerene;
+    public static Material ThalliumCopperChloride;
 
 
     // Second Degree Materials
@@ -127,6 +143,7 @@ public class GCYSMaterials {
     public static Material ErbiumDopedZBLANGlass;
     public static Material PraseodymiumDopedZBLANGlass;
     public static Material NdYAG;
+    public static Material BismuthFerrite;
 
 
     // Third Degree Materials
@@ -191,6 +208,16 @@ public class GCYSMaterials {
     public static Material GrignardReagent;
     public static Material Dimethylcadmium;
     public static Material DiethylSuflide;
+    public static Material Cycloparaphenylene;
+    public static Material Indene;
+    public static Material Indanone;
+    public static Material Truxene;
+    public static Material Bromomethane;
+    public static Material BromoBromomethylNaphthalene;
+    public static Material Bromobutane;
+    public static Material Butyllithium;
+    public static Material PalladiumAcetate;
+    public static Material GeodesicPolyarene;
 
 
     // Unknown Composition Materials
@@ -207,6 +234,8 @@ public class GCYSMaterials {
     public static Material MethylamineMixture;
     public static Material EPD;
     public static Material PhosphoreneSolution;
+    public static Material SodioIndene;
+    public static Material SteamCrackedSodioIndene;
 
 
     /**

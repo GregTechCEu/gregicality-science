@@ -14,8 +14,8 @@ public class GCYSMaterialInfoLoader {
 
     public static void init() {
         OreDictUnifier.registerOre(GCYSMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.QUARTZ_CRUCIBLE), new ItemMaterialInfo(new MaterialStack(Materials.Quartzite, M * 7))); // single plate
-        OreDictUnifier.registerOre(GCYSMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.TUNGSTEN_CRUCIBLE), new ItemMaterialInfo(new MaterialStack(Materials.Tungsten, M * 7 * 5))); // quintuple plate
-        OreDictUnifier.registerOre(GCYSMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.GRAPHITE_CRUCIBLE), new ItemMaterialInfo(new MaterialStack(Materials.Graphene, M * 7 *9))); // dense plate
-        OreDictUnifier.registerOre(GCYSMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.BORON_NITRIDE_CRUCIBLE), new ItemMaterialInfo(new MaterialStack(GCYSMaterials.HexagonalBoronNitride, M * 7 * 2))); // double plate
+        OreDictUnifier.registerOre(GCYSMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.TUNGSTEN_CRUCIBLE), new ItemMaterialInfo(new MaterialStack(Materials.Tungsten, M * 7 * 9))); // dense plate
+        OreDictUnifier.registerOre(GCYSMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.GRAPHITE_CRUCIBLE), new ItemMaterialInfo(new MaterialStack(Materials.Graphene, M * 7 * 9))); // dense plate
+        OreDictUnifier.registerOre(GCYSMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.BORON_NITRIDE_CRUCIBLE), new ItemMaterialInfo(new MaterialStack(GCYSMaterials.HexagonalBoronNitride, M * 7))); // single plate
     }
 }

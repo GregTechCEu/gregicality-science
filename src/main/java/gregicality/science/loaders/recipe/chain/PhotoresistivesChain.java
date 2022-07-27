@@ -6,6 +6,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.ingot;
 
 public class PhotoresistivesChain {
 
@@ -72,11 +73,31 @@ public class PhotoresistivesChain {
                 .output(dust, CadmiumSulfide, 2)
                 .fluidOutputs(Ethane.getFluid(1000))
                 .fluidOutputs(Butane.getFluid(1000))
-                .duration(100).EUt(VA[LuV]).buildAndRegister();
+                .duration(80).EUt(VA[LuV]).buildAndRegister();
     }
 
-    //TODO implement
     private static void cadmiumSelenide() {
+        // 2Al + 3Se -> Al2Se3
+        ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .input(dust, Aluminium, 2)
+                .input(dust, Selenium, 3)
+                .output(ingot, AluminiumSelenide, 5)
+                .duration(400).EUt(VA[LV]).buildAndRegister();
 
+        // Al2Se3 + 6H2O -> 2Al(OH)3 + 3H2Se
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(dust, AluminiumSelenide, 5)
+                .fluidInputs(Water.getFluid(6000))
+                .output(dust, AluminiumHydroxide, 14)
+                .fluidOutputs(HydrogenSelenide.getFluid(3000))
+                .duration(200).EUt(VA[HV]).buildAndRegister();
+
+        // (CH3)2Cd + H2Se -> CdSe + 2CH4
+        CVD_RECIPES.recipeBuilder()
+                .fluidInputs(Dimethylcadmium.getFluid(1000))
+                .fluidInputs(HydrogenSelenide.getFluid(1000))
+                .output(dust, CadmiumSelenide, 2)
+                .fluidOutputs(Methane.getFluid(2000))
+                .duration(80).EUt(VA[ZPM]).buildAndRegister();
     }
 }

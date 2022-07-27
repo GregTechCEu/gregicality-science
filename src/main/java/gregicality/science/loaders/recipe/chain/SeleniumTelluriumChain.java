@@ -28,7 +28,7 @@ public class SeleniumTelluriumChain {
                 .chancedOutput(dust, ChalcogenAnodeMud, 2500, 0)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(Oxygen.getFluid(1000))
-                .duration(200)
+                .duration(100)
                 .EUt(60)
                 .buildAndRegister();
 

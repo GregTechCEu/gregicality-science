@@ -2,6 +2,11 @@
 
 # Materials
 
+# Element Materials
+material.lithium_6=Lithium-6
+material.lithium_7=Lithium-7
+
+
 # First Degree Materials
 material.lanthanum_oxide=Lanthanum Oxide
 material.praseodymium_oxide=Praseodymium Oxide
@@ -101,6 +106,26 @@ material.cadmium_selenide=Cadmium Selenide
 material.phosphine=Phosphine
 material.plutonium_trihydride=Plutonium Trihydride
 material.plutonium_phosphide=Plutonium Phosphide
+material.carbon_nanotube=Carbon Nanotube
+item.carbon_nanotube.dustSmall=Small Pile of Carbon Nanotubes
+item.carbon_nanotube.dustTiny=Tiny Pile of Carbon Nanotubes
+material.lithium_amalgam=Lithium Amalgam
+material.lithium_hydroxide=Lithium Hydroxide
+material.lithium_7_hydroxide=Lithium-7 Hydroxide
+material.neptunium_aluminide=Neptunium Aluminide
+material.bismuth_trioxide=Bismuth Trioxide
+material.ferric_oxide=Ferric Oxide
+material.bismuth_chalcogenide=Bismuth Chalcogenide
+material.mercury_cadmium_telluride=Mercury Cadmium Telluride
+material.aluminium_selenide=Aluminium Selenide
+material.hydrogen_selenide=Hydrogen Selenide
+material.palladium_nitrate=Palladium Nitrate
+material.fullerene=Fullerene
+item.fullerene.ingot=Fullerite
+item.fullerene.dust=Buckminsterfullerene
+item.fullerene.dustSmall=Small Buckminsterfullerene
+item.fullerene.dustTiny=Tiny Buckminsterfullerene
+material.thallium_copper_chloride=Thallium Copper Chloride
 
 
 # Second Degree Materials
@@ -149,6 +174,7 @@ material.impure_germanium_dioxide=Impure Germanium Dioxide
 material.erbium_doped_zblan_glass=Erbium-Doped ZBLAN Glass
 material.praseodymium_doped_zblan_glass=Praseodymium-Doped ZBLAN Glass
 material.nd_yag=Nd:YAG
+material.bismuth_ferrite=Bismuth Ferrite
 
 
 # Third Degree Materials
@@ -214,6 +240,16 @@ material.ethylene_dibromide=Ethylene Dibromide
 material.dimethylcadmium=Dimethylcadmium
 material.grignard_reagent=Grignard Reagent
 material.diethyl_sulfide=Diethyl Sulfide
+material.cycloparaphenylene=Cycloparaphenylene
+material.indene=Indene
+material.indanone=1-Indanone
+material.truxene=Truxene
+material.bromomethane=Bromomethane
+material.bromo_bromomethyl_naphthalene=1-Bromo-2-Bromomethyl Naphthalene
+material.bromobutane=1-Bromobutane
+material.butyllithium=n-Butyllithium
+material.palladium_acetate=Palladium Acetate
+material.geodesic_polyarene=Geodesic Polyarene
 
 
 # Unknown Composition Materials
@@ -233,6 +269,8 @@ item.chalcogen_anode_mud.dustTiny=Tiny Pile of Chalcogen Anode Mud
 material.methylamine_mixture=Methylamine Mixture
 material.epd=EPD Etching Solution
 material.phosphorene_solution=Phosphorene Exfoliation Solution
+material.sodio_indene=Sodio-Indene
+material.steam_cracked_sodio_indene=Steam-Cracked Sodio-Indene
 
 
 # Single Block Machines
@@ -353,22 +391,37 @@ metaitem.laser.nd_yag.tooltip=Purpose: Strong Optical Appliances
 
 
 # Spintronic Stuff
-metaitem.plate.magnetorestrictive_memory.name=MRAM
-metaitem.plate.magnetorestrictive_memory.tooltip=Magnetorestrictive Memory
+metaitem.plate.spin_transfer_torque_memory.name=STTRAM
+metaitem.plate.spin_transfer_torque_memory.tooltip=Spin-Transfer Torque Memory
+metaitem.tube.topological_insulator.name=Topological Insulator Tube
+metaitem.tube.topological_insulator.tooltip=Conductive Surface States
+metaitem.containment_unit.bose_einstein_condensate.name=Bose-Einstein Condensate Containment Unit
+metaitem.containment_unit.bose_einstein_condensate.tooltip=Magnetic Evaporative Cooling
+metaitem.bose_einstein_condensate.name=Bose-Einstein Condensate
+metaitem.bose_einstein_condensate.tooltip=2,000 §cRb-87§7 Atoms at §b170nK§7!
 
 
 # Item Behaviors
 metaitem.behavior.held_item_destroy.message=Holding the %s damaged it!
+
+
+# Nanotube Stuff
+metaitem.mixture.carbon_allotrope.name=Carbon Allotrope Mixture
+metaitem.cnt.graphene_aligned.name=Graphene-Aligned Carbon Nanotube
 
 # Circuit Boards
 metaitem.board.gooware.name=Kapton Circuit Board
 metaitem.board.gooware.tooltip=A Super Board
 metaitem.board.optical.name=Gallium Nitride Circuit Board
 metaitem.board.optical.tooltip=An Ultimate Board
+metaitem.board.spintronic.name=Carbon Nanotube Circuit Board
+metaitem.board.spintronic.tooltip=An Infinite Board
 metaitem.circuit_board.gooware.name=Super Circuit Board
 metaitem.circuit_board.gooware.tooltip=The Board that performs Reactions
 metaitem.circuit_board.optical.name=Ultimate Circuit Board
 metaitem.circuit_board.optical.tooltip=The Board that transmits Lasers
+metaitem.circuit_board.spintronic.name=Infinite Circuit Board
+metaitem.circuit_board.spintronic.tooltip=The Board that directs Spin
 
 # SMDs
 metaitem.component.optical_smd.capacitor.name=Optical Integrator
@@ -381,6 +434,16 @@ metaitem.component.optical_smd.transistor.name=Optical Transistor
 metaitem.component.optical_smd.transistor.tooltip=Optoelectronic Transistor
 metaitem.component.optical_smd.inductor.name=Optical Polarizer
 metaitem.component.optical_smd.inductor.tooltip=Optoelectronic Inductor
+metaitem.component.spintronic_smd.capacitor.name=Supercapacitor
+metaitem.component.spintronic_smd.capacitor.tooltip=Spin-Electronic Capacitor
+metaitem.component.spintronic_smd.diode.name=Schottky Diode
+metaitem.component.spintronic_smd.diode.tooltip=Spin-Electronic Diode
+metaitem.component.spintronic_smd.resistor.name=Magnetorestrictor
+metaitem.component.spintronic_smd.resistor.tooltip=Spin-Electronic Resistor
+metaitem.component.spintronic_smd.transistor.name=Spin MOSFET
+metaitem.component.spintronic_smd.transistor.tooltip=Spin-Electronic Transistor
+metaitem.component.spintronic_smd.inductor.name=Spin Polarizer
+metaitem.component.spintronic_smd.inductor.tooltip=Spin-Electronic Inductor
 
 # Processing Units
 metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
@@ -388,6 +451,8 @@ metaitem.nonlinear_chemical_oscillator.name=Nonlinear Chemical Oscillator
 metaitem.nonlinear_chemical_oscillator.tooltip=Non-equilibrium Thermodynamics!
 metaitem.optical_laser_control_unit.name=Optical Laser Control Unit
 metaitem.optical_laser_control_unit.tooltip=Laser Information Transmission
+metaitem.esr_computation_unit.name=ESR Computation Unit
+metaitem.esr_computation_unit.tooltip=Electron Spin Resonance Quantum Computation!
 
 # Circuits
 # Gooware
@@ -402,7 +467,7 @@ metaitem.circuit.gooware_mainframe.tooltip=Spiraling Colored Waves!/n§2UEV-tier
 
 # Optical
 metaitem.circuit.optical_processor.name=Optical Processor
-metaitem.circuit.optical_processor.tooltip=Lightspeed computing/n§6UV-tier Circuit
+metaitem.circuit.optical_processor.tooltip=Lightspeed Computing/n§6UV-tier Circuit
 metaitem.circuit.optical_assembly.name=Optical Assembly
 metaitem.circuit.optical_assembly.tooltip=With the Power of Lasers!/n§6UHV-tierv
 metaitem.circuit.optical_computer.name=Optical Computer
@@ -412,9 +477,9 @@ metaitem.circuit.optical_mainframe.tooltip=Could Anything be faster?/n§6UIV-tie
 
 # Spintronic
 metaitem.circuit.spintronic_processor.name=Spintronic Processor
-metaitem.circuit.spintronic_processor.tooltip=Quite Strange/n§5UHV-tier Circuit
+metaitem.circuit.spintronic_processor.tooltip=Spinning Electroncs/n§5UHV-tier Circuit
 metaitem.circuit.spintronic_assembly.name=Spintronic Assembly
-metaitem.circuit.spintronic_assembly.tooltip=States with unusual Properties/n§5UEV-tier Circuit
+metaitem.circuit.spintronic_assembly.tooltip=Discrete Quantum Walks/n§5UEV-tier Circuit
 metaitem.circuit.spintronic_computer.name=Spintronic Computer
 metaitem.circuit.spintronic_computer.tooltip=Who uses Nanometers anyways?/n§5UIV-tier Circuit
 metaitem.circuit.spintronic_mainframe.name=Spintronic Mainframe

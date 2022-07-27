@@ -41,45 +41,55 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         SUPRACAUSAL_COMPUTER = addItem(19, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
         SUPRACAUSAL_MAINFRAME = addItem(20, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
 
+        CARBON_ALLOTROPE_MIXTURE = addItem(21, "mixture.carbon_allotrope");
+        GRAPHENE_ALIGNED_CNT = addItem(22, "cnt.graphene_aligned");
+
         GOOWARE_BOARD = addItem(28, "board.gooware");
         OPTICAL_BOARD = addItem(29, "board.optical");
+        SPINTRONIC_BOARD = addItem(30, "board.spintronic");
         GOOWARE_CIRCUIT_BOARD = addItem(35, "circuit_board.gooware");
         OPTICAL_CIRCUIT_BOARD = addItem(36, "circuit_board.optical");
+        SPINTRONIC_CIRCUIT_BOARD = addItem(37, "circuit_board.spintronic");
 
         BZ_REACTION_CHAMBER = addItem(40, "reaction_chamber.bz");
         NONLINEAR_CHEMICAL_OSCILLATOR = addItem(41, "nonlinear_chemical_oscillator");
         OPTICAL_LASER_CONTROL_UNIT = addItem(42, "optical_laser_control_unit");
+        ESR_COMPUTATION_UNIT = addItem(43, "esr_computation_unit");
 
-        PHASE_CHANGE_MEMORY = addItem(43, "plate.phase_change_memory");
-        OPTICAL_FIBER = addItem(44, "optical_fiber");
-        DIELECTRIC_MIRROR = addItem(45, "dielectric_mirror");
-        EMPTY_LASER_ASSEMBLY = addItem(46, "laser.assembly.empty");
-        HELIUM_NEON_LASER = addItem(47, "laser.helium_neon");
-        ND_YAG_LASER = addItem(48, "laser.nd_yag");
+        PHASE_CHANGE_MEMORY = addItem(46, "plate.phase_change_memory");
+        OPTICAL_FIBER = addItem(47, "optical_fiber");
+        DIELECTRIC_MIRROR = addItem(48, "dielectric_mirror");
+        EMPTY_LASER_ASSEMBLY = addItem(49, "laser.assembly.empty");
+        HELIUM_NEON_LASER = addItem(50, "laser.helium_neon");
+        ND_YAG_LASER = addItem(51, "laser.nd_yag");
 
-        MAGNETORESTRICTIVE_MEMORY = addItem(49, "plate.magnetorestrictive_memory");
+        SPIN_TRANSFER_TORQUE_MEMORY = addItem(52, "plate.spin_transfer_torque_memory");
+        TOPOLOGICAL_INSULATOR_TUBE = addItem(53, "tube.topological_insulator");
+        BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT = addItem(54, "containment_unit.bose_einstein_condensate");
+        BOSE_EINSTEIN_CONDENSATE = addItem(55, "bose_einstein_condensate");
 
-        EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(55, "boule.cubic_zirconia.europium");
-        EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(56, "wafer.cubic_zirconia.europium");
-        CRYSTAL_INTERFACE_WAFER = addItem(57, "wafer.crystal.interface");
-        CRYSTAL_INTERFACE_CHIP = addItem(58, "plate.crystal.interface");
-        ENGRAVED_RUBY_CRYSTAL_CHIP = addItem(59, "engraved.crystal_chip.ruby");
-        ENGRAVED_SAPPHIRE_CRYSTAL_CHIP = addItem(60, "engraved.crystal_chip.sapphire");
-        ENGRAVED_DIAMOND_CRYSTAL_CHIP = addItem(61, "engraved.crystal_chip.diamond");
-        CRYSTAL_MODULATOR_RUBY = addItem(62, "crystal.modulator.ruby");
-        CRYSTAL_MODULATOR_SAPPHIRE = addItem(63, "crystal.modulator.sapphire");
-        CRYSTAL_MODULATOR_DIAMOND = addItem(64, "crystal.modulator.diamond");
-        CRYSTAL_SYSTEM_ON_CHIP_SOCKET = addItem(65, "crystal.system_on_chip.socket");
+        EU_DOPED_CUBIC_ZIRCONIA_BOULE = addItem(58, "boule.cubic_zirconia.europium");
+        EU_DOPED_CUBIC_ZIRCONIA_WAFER = addItem(59, "wafer.cubic_zirconia.europium");
+        CRYSTAL_INTERFACE_WAFER = addItem(60, "wafer.crystal.interface");
+        CRYSTAL_INTERFACE_CHIP = addItem(61, "plate.crystal.interface");
+        ENGRAVED_RUBY_CRYSTAL_CHIP = addItem(62, "engraved.crystal_chip.ruby");
+        ENGRAVED_SAPPHIRE_CRYSTAL_CHIP = addItem(63, "engraved.crystal_chip.sapphire");
+        ENGRAVED_DIAMOND_CRYSTAL_CHIP = addItem(64, "engraved.crystal_chip.diamond");
+        CRYSTAL_MODULATOR_RUBY = addItem(65, "crystal.modulator.ruby");
+        CRYSTAL_MODULATOR_SAPPHIRE = addItem(66, "crystal.modulator.sapphire");
+        CRYSTAL_MODULATOR_DIAMOND = addItem(67, "crystal.modulator.diamond");
+        CRYSTAL_SYSTEM_ON_CHIP_SOCKET = addItem(68, "crystal.system_on_chip.socket");
 
-        OPTICAL_INTEGRATOR = addItem(66, "component.optical_smd.capacitor");
-        OPTICAL_ISOLATOR = addItem(67, "component.optical_smd.diode");
-        PHOTORESISTOR = addItem(68, "component.optical_smd.resistor");
-        OPTICAL_TRANSISTOR = addItem(69, "component.optical_smd.transistor");
-        OPTICAL_POLARIZER = addItem(70, "component.optical_smd.inductor");
+        OPTICAL_CAPACITOR = addItem(69, "component.optical_smd.capacitor");
+        OPTICAL_DIODE = addItem(70, "component.optical_smd.diode");
+        OPTICAL_RESISTOR = addItem(71, "component.optical_smd.resistor");
+        OPTICAL_TRANSISTOR = addItem(72, "component.optical_smd.transistor");
+        OPTICAL_INDUCTOR = addItem(73, "component.optical_smd.inductor");
 
-//        QUARTZ_CRUCIBLE = addItem(50, "crucible.quartz").addComponents(new CrucibleItemBehavior(2482));
-//        TUNGSTEN_CRUCIBLE = addItem(51, "crucible.tungsten").addComponents(new CrucibleItemBehavior(3695));
-//        GRAPHITE_CRUCIBLE = addItem(52, "crucible.graphite").addComponents(new CrucibleItemBehavior(4750));
-//        BORON_NITRIDE_CRUCIBLE = addItem(53, "crucible.boron_nitride").addComponents(new CrucibleItemBehavior(5328));
+        SPINTRONIC_CAPACITOR = addItem(74, "component.spintronic_smd.capacitor");
+        SPINTRONIC_DIODE = addItem(75, "component.spintronic_smd.diode");
+        SPINTRONIC_RESISTOR = addItem(76, "component.spintronic_smd.resistor");
+        SPINTRONIC_TRANSISTOR = addItem(77, "component.spintronic_smd.transistor");
+        SPINTRONIC_INDUCTOR = addItem(78, "component.spintronic_smd.inductor");
     }
 }
