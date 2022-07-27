@@ -55,5 +55,9 @@ public class GCYSUnknownCompositionMaterials {
         EPD = new Material.Builder(18019, "epd").fluid().color(0xFBFF17).build();
 
         PhosphoreneSolution = new Material.Builder(18020, "phosphorene_solution").fluid().color(0x465966).build();
+
+        SodioIndene = new Material.Builder(18021, "sodio_indene").fluid().color(0x1D1C24).build();
+
+        SteamCrackedSodioIndene = new Material.Builder(18022, "steam_cracked_sodio_indene").fluid().color(0x1C1A29).build();
     }
 }

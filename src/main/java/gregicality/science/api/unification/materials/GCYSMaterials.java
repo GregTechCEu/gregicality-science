@@ -111,6 +111,10 @@ public class GCYSMaterials {
     public static Material FerricOxide;
     public static Material BismuthChalcogenide;
     public static Material MercuryCadmiumTelluride;
+    public static Material AluminiumSelenide;
+    public static Material HydrogenSelenide;
+    public static Material PalladiumNitrite;
+    public static Material Fullerene;
 
 
     // Second Degree Materials
@@ -204,6 +208,15 @@ public class GCYSMaterials {
     public static Material Dimethylcadmium;
     public static Material DiethylSuflide;
     public static Material Cycloparaphenylene;
+    public static Material Indene;
+    public static Material Indanone;
+    public static Material Truxene;
+    public static Material Bromomethane;
+    public static Material BromoBromomethylNaphthalene;
+    public static Material Bromobutane;
+    public static Material Butyllithium;
+    public static Material PalladiumAcetate;
+    public static Material GeodesicPolyarene;
 
 
     // Unknown Composition Materials
@@ -220,6 +233,8 @@ public class GCYSMaterials {
     public static Material MethylamineMixture;
     public static Material EPD;
     public static Material PhosphoreneSolution;
+    public static Material SodioIndene;
+    public static Material SteamCrackedSodioIndene;
 
 
     /**

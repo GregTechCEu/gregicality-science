@@ -672,7 +672,7 @@ public class GCYSFirstDegreeMaterials {
                 .components(Cadmium, 1, Sulfur, 1)
                 .build();
 
-        CadmiumSelenide = new Material.Builder(3588, "cadmium_selenide")
+        CadmiumSelenide = new Material.Builder(3588, "cadmium_selenide") //TODO "Quantum Dots" tooltip
                 .dust()
                 .color(0x983034)
                 .flags(DECOMPOSITION_BY_ELECTROLYZING)
@@ -774,6 +774,33 @@ public class GCYSFirstDegreeMaterials {
                 .components(Mercury, 2, Cadmium, 1, Tellurium, 2)
                 .cableProperties(GTValues.V[GTValues.UHV], 3, 10)
                 .blastTemp(2170, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.UHV])
+                .build();
+
+        AluminiumSelenide = new Material.Builder(3601, "aluminium_selenide")
+                .ingot()
+                .color(0x969651)
+                .components(Aluminium, 2, Selenium, 3)
+                .build();
+
+        HydrogenSelenide = new Material.Builder(3602, "hydrogen_selenide")
+                .fluid(FluidTypes.GAS)
+                .color(0x42f554)
+                .components(Hydrogen, 2, Selenium, 1)
+                .build();
+
+        PalladiumNitrite = new Material.Builder(3603, "palladium_nitrate")
+                .dust()
+                .color(0x82312A).iconSet(MaterialIconSet.METALLIC)
+                .components(Palladium, 1, Nitrogen, 2, Oxygen, 6)
+                .build()
+                .setFormula("Pd(NO3)2", true);
+
+        Fullerene = new Material.Builder(3604, "fullerene")
+                .ingot()
+                .color(0x72556A)
+                .iconSet(MaterialIconSet.BRIGHT)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE)
+                .components(Carbon, 60)
                 .build();
     }
 }

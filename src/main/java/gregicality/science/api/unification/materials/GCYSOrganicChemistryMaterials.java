@@ -434,7 +434,67 @@ public class GCYSOrganicChemistryMaterials {
                 .color(0x60545A)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 6, Hydrogen, 4)
+                .build();
+
+        Indene = new Material.Builder(1565, "indene")
+                .fluid()
+                .color(0x171429)
+                .components(Carbon, 9, Hydrogen, 8)
+                .build();
+
+        Indanone = new Material.Builder(1566, "indanone")
+                .dust()
+                .color(0x2E1616).iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 9, Hydrogen, 8, Oxygen, 1)
+                .build();
+
+        Truxene = new Material.Builder(1567, "truxene")
+                .fluid()
+                .color(0x1A3336)
+                .components(Carbon, 27, Hydrogen, 18)
+                .build();
+
+        Bromomethane = new Material.Builder(1568, "bromomethane")
+                .fluid(FluidTypes.GAS)
+                .color(0xC82C31)
+                .components(Carbon, 1, Hydrogen, 3, Bromine, 1)
+                .build();
+
+        BromoBromomethylNaphthalene = new Material.Builder(1569, "bromo_bromomethyl_naphthalene")
+                .fluid()
+                .color(0x52122E)
+                .components(Carbon, 11, Hydrogen, 8, Bromine, 2)
+                .build();
+
+        Bromobutane = new Material.Builder(1570, "bromobutane")
+                .fluid(FluidTypes.GAS)
+                .color(0xE6E8A2)
+                .components(Butene, 1, HydrobromicAcid, 1)
                 .build()
-                .setFormula("C6H4", true);
+                .setFormula("C4H9Br", true);
+
+        Butyllithium = new Material.Builder(1571, "butyllithium")
+                .fluid()
+                .color(0xE683B6B)
+                .components(Butene, 1, Hydrogen, 1, Lithium, 1)
+                .build()
+                .setFormula("C4H9Li", true);
+
+        PalladiumAcetate = new Material.Builder(1572, "palladium_acetate")
+                .dust()
+                .color(0x693C2D).iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Palladium, 1, AceticAcid, 2)
+                .build()
+                .setFormula("Pd(CH3COOH)2", true);
+
+        GeodesicPolyarene = new Material.Builder(1573, "geodesic_polyarene")
+                .dust()
+                .color(0x9E81A8).iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 60, Hydrogen, 30)
+                .build();
+
     }
 }

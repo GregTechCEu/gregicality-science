@@ -57,6 +57,7 @@ public class GCYSRecipeLoader {
         MagneticsChain.init();
         NanotubesChain.init();
         IsotopesChain.init();
+        FullereneChain.init();
     }
 
     private static void initOreProcessing() {

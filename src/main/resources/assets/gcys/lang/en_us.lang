@@ -117,6 +117,14 @@ material.bismuth_trioxide=Bismuth Trioxide
 material.ferric_oxide=Ferric Oxide
 material.bismuth_chalcogenide=Bismuth Chalcogenide
 material.mercury_cadmium_telluride=Mercury Cadmium Telluride
+material.aluminium_selenide=Aluminium Selenide
+material.hydrogen_selenide=Hydrogen Selenide
+material.palladium_nitrate=Palladium Nitrate
+material.fullerene=Fullerene
+item.fullerene.ingot=Fullerite
+item.fullerene.dust=Buckminsterfullerene
+item.fullerene.dustSmall=Small Buckminsterfullerene
+item.fullerene.dustTiny=Tiny Buckminsterfullerene
 
 
 # Second Degree Materials
@@ -232,6 +240,15 @@ material.dimethylcadmium=Dimethylcadmium
 material.grignard_reagent=Grignard Reagent
 material.diethyl_sulfide=Diethyl Sulfide
 material.cycloparaphenylene=Cycloparaphenylene
+material.indene=Indene
+material.indanone=1-Indanone
+material.truxene=Truxene
+material.bromomethane=Bromomethane
+material.bromo_bromomethyl_naphthalene=1-Bromo-2-Bromomethyl Naphthalene
+material.bromobutane=1-Bromobutane
+material.butyllithium=n-Butyllithium
+material.palladium_acetate=Palladium Acetate
+material.geodesic_polyarene=Geodesic Polyarene
 
 
 # Unknown Composition Materials
@@ -251,6 +268,8 @@ item.chalcogen_anode_mud.dustTiny=Tiny Pile of Chalcogen Anode Mud
 material.methylamine_mixture=Methylamine Mixture
 material.epd=EPD Etching Solution
 material.phosphorene_solution=Phosphorene Exfoliation Solution
+material.sodio_indene=Sodio-Indene
+material.steam_cracked_sodio_indene=Steam-Cracked Sodio-Indene
 
 
 # Single Block Machines
@@ -375,6 +394,10 @@ metaitem.plate.spin_transfer_torque_memory.name=STTRAM
 metaitem.plate.spin_transfer_torque_memory.tooltip=Spin-Transfer Torque Memory
 metaitem.tube.topological_insulator.name=Topological Insulator Tube
 metaitem.tube.topological_insulator.tooltip=Conductive Surface States
+metaitem.containment_unit.bose_einstein_condensate.name=Bose-Einstein Condensate Containment Unit
+metaitem.containment_unit.bose_einstein_condensate.tooltip=Magnetic Evaporative Cooling
+metaitem.bose_einstein_condensate.name=Bose-Einstein Condensate
+metaitem.bose_einstein_condensate.tooltip=2,000 §cRb-87§7 Atoms at §b170nK§7!
 
 
 # Item Behaviors

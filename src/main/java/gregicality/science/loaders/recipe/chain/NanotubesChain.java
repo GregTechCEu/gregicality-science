@@ -10,6 +10,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_INGOT;
 
 public class NanotubesChain {
 
@@ -69,11 +70,10 @@ public class NanotubesChain {
                 .duration((int) Carbon.getMass() * 48).EUt(64)
                 .buildAndRegister();
 
-        // Dust -> Plate
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .input(dust, CarbonNanotube)
-                .output(plate, CarbonNanotube)
-                .duration(400).EUt(2)
-                .buildAndRegister();
+        EXTRUDER_RECIPES.recipeBuilder()
+                .input(dust, Fullerene)
+                .notConsumable(SHAPE_EXTRUDER_INGOT)
+                .output(ingot, Fullerene)
+                .duration(400).EUt(240).buildAndRegister();
     }
 }

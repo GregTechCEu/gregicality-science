@@ -1,9 +1,11 @@
 package gregicality.science.loaders.recipe.chain;
 
+import static gregicality.science.api.recipes.GCYSRecipeMaps.DRYER_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
-import static gregtech.api.GTValues.UV;
+import static gregtech.api.GTValues.IV;
 import static gregtech.api.GTValues.VA;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
@@ -30,13 +32,13 @@ public class IsotopesChain {
                 .fluidOutputs(LithiumAmalgam.getFluid(1000))
                 .duration(80).EUt(240).buildAndRegister();
 
-        // ... except we don't have room in a tower so we use the centrifuge :(
+        // ... except we don't have room in a tower so we use the dryer :(
         // this uses a lot of power to prevent energy exploits via fusion
-        CENTRIFUGE_RECIPES.recipeBuilder()
+        DRYER_RECIPES.recipeBuilder()
                 .fluidInputs(LithiumAmalgam.getFluid(10000))
                 .output(dust, Lithium6)
                 .output(dust, Lithium7Hydroxide, 27)
                 .fluidOutputs(Mercury.getFluid(10000))
-                .duration(800).EUt(VA[UV] / 2).buildAndRegister();
+                .duration(800).EUt(VA[IV] / 2).buildAndRegister();
     }
 }
