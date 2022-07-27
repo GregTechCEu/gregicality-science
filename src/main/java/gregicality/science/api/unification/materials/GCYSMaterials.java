@@ -115,6 +115,7 @@ public class GCYSMaterials {
     public static Material HydrogenSelenide;
     public static Material PalladiumNitrite;
     public static Material Fullerene;
+    public static Material ThalliumCopperChloride;
 
 
     // Second Degree Materials

@@ -125,6 +125,7 @@ item.fullerene.ingot=Fullerite
 item.fullerene.dust=Buckminsterfullerene
 item.fullerene.dustSmall=Small Buckminsterfullerene
 item.fullerene.dustTiny=Tiny Buckminsterfullerene
+material.thallium_copper_chloride=Thallium Copper Chloride
 
 
 # Second Degree Materials
@@ -413,10 +414,14 @@ metaitem.board.gooware.name=Kapton Circuit Board
 metaitem.board.gooware.tooltip=A Super Board
 metaitem.board.optical.name=Gallium Nitride Circuit Board
 metaitem.board.optical.tooltip=An Ultimate Board
+metaitem.board.spintronic.name=Carbon Nanotube Circuit Board
+metaitem.board.spintronic.tooltip=An Infinite Board
 metaitem.circuit_board.gooware.name=Super Circuit Board
 metaitem.circuit_board.gooware.tooltip=The Board that performs Reactions
 metaitem.circuit_board.optical.name=Ultimate Circuit Board
 metaitem.circuit_board.optical.tooltip=The Board that transmits Lasers
+metaitem.circuit_board.spintronic.name=Infinite Circuit Board
+metaitem.circuit_board.spintronic.tooltip=The Board that directs Spin
 
 # SMDs
 metaitem.component.optical_smd.capacitor.name=Optical Integrator
@@ -429,6 +434,16 @@ metaitem.component.optical_smd.transistor.name=Optical Transistor
 metaitem.component.optical_smd.transistor.tooltip=Optoelectronic Transistor
 metaitem.component.optical_smd.inductor.name=Optical Polarizer
 metaitem.component.optical_smd.inductor.tooltip=Optoelectronic Inductor
+metaitem.component.spintronic_smd.capacitor.name=Supercapacitor
+metaitem.component.spintronic_smd.capacitor.tooltip=Spin-Electronic Capacitor
+metaitem.component.spintronic_smd.diode.name=Schottky Diode
+metaitem.component.spintronic_smd.diode.tooltip=Spin-Electronic Diode
+metaitem.component.spintronic_smd.resistor.name=Magnetorestrictor
+metaitem.component.spintronic_smd.resistor.tooltip=Spin-Electronic Resistor
+metaitem.component.spintronic_smd.transistor.name=Spin MOSFET
+metaitem.component.spintronic_smd.transistor.tooltip=Spin-Electronic Transistor
+metaitem.component.spintronic_smd.inductor.name=Spin Polarizer
+metaitem.component.spintronic_smd.inductor.tooltip=Spin-Electronic Inductor
 
 # Processing Units
 metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
@@ -436,6 +451,8 @@ metaitem.nonlinear_chemical_oscillator.name=Nonlinear Chemical Oscillator
 metaitem.nonlinear_chemical_oscillator.tooltip=Non-equilibrium Thermodynamics!
 metaitem.optical_laser_control_unit.name=Optical Laser Control Unit
 metaitem.optical_laser_control_unit.tooltip=Laser Information Transmission
+metaitem.esr_computation_unit.name=ESR Computation Unit
+metaitem.esr_computation_unit.tooltip=Electron Spin Resonance Quantum Computation!
 
 # Circuits
 # Gooware

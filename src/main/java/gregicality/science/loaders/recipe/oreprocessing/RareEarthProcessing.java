@@ -29,16 +29,16 @@ public class RareEarthProcessing {
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Butyraldehyde.getFluid(2000))
                 .fluidInputs(Hydrogen.getFluid(4000))
-                .fluidOutputs(Ethylhexanol.getFluid(3000))
+                .fluidOutputs(Ethylhexanol.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .duration(80).EUt(VA[MV]).buildAndRegister();
 
-        // 5C8H18O + 0.5P4O10 -> 2C16H35O4P + 2C4H10O
+        // 5C8H18O + 0.5P4O10 -> 2C16H35O4P + 2C4H10 + 2O (lost)
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Ethylhexanol.getFluid(5000))
                 .input(dust, PhosphorusPentoxide, 7)
                 .fluidOutputs(DiethylhexylPhosphoricAcid.getFluid(2000))
-                .fluidOutputs(Butanol.getFluid(2000))
+                .fluidOutputs(Butane.getFluid(2000))
                 .duration(600).EUt(16).buildAndRegister();
 
         // Rare Earth Element Production

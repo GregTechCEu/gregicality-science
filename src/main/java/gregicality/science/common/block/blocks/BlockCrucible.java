@@ -8,6 +8,9 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
@@ -29,7 +32,7 @@ public class BlockCrucible extends VariantBlock<BlockCrucible.CrucibleType> {
     @Override
     public void addInformation(@Nonnull ItemStack stack, @Nullable World world, List<String> tooltip, @Nonnull ITooltipFlag advanced) {
         super.addInformation(stack, world, tooltip, advanced);
-        tooltip.add(I18n.format("gregtech.multiblock.blast_furnace.max_temperature", String.format("§c%s K", GTUtility.formatNumbers(getState(stack).getTemperature()))));
+        tooltip.add(I18n.format("gregtech.multiblock.blast_furnace.max_temperature", new TextComponentString(GTUtility.formatNumbers(getState(stack).getTemperature()) + "K").setStyle(new Style().setColor(TextFormatting.RED))));
     }
 
     public enum CrucibleType implements IStringSerializable {

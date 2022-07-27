@@ -1,5 +1,8 @@
 package gregicality.science.loaders.recipe.chain;
 
+import gregtech.api.GTValues;
+
+import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.BURNER_REACTOR_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregicality.science.api.unification.ore.GCYSOrePrefix.seedCrystal;
@@ -12,7 +15,9 @@ public class MagneticsChain {
 
     public static void init() {
         plutoniumPhosphide();
+        neptuniumAluminide();
         bismuthFerrite();
+        thalliumCopperChloride();
     }
 
     private static void plutoniumPhosphide() {
@@ -31,6 +36,14 @@ public class MagneticsChain {
                 .output(ingot, PlutoniumPhosphide, 2)
                 .fluidOutputs(Hydrogen.getFluid(6000))
                 .duration(60).EUt(VA[IV]).buildAndRegister();
+    }
+
+    private static void neptuniumAluminide() {
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Neptunium)
+                .input(dust, Aluminium, 3)
+                .output(dust, NeptuniumAluminide, 4)
+                .duration(400).EUt(VA[IV]).buildAndRegister();
     }
 
     private static void bismuthFerrite() {
@@ -66,5 +79,16 @@ public class MagneticsChain {
                 .input(dust, BismuthFerrite)
                 .output(plate, BismuthFerrite)
                 .duration(400).EUt(2).buildAndRegister();
+    }
+
+    private static void thalliumCopperChloride() {
+        // Tl + Cu + 3Cl -> TlCuCl3
+        ALLOY_BLAST_RECIPES.recipeBuilder()
+                .input(dust, Thallium)
+                .input(dust, Copper)
+                .fluidInputs(Chlorine.getFluid(3000))
+                .fluidOutputs(ThalliumCopperChloride.getFluid(GTValues.L * 5))
+                .blastFurnaceTemp(1570)
+                .duration(700).EUt(VA[EV]).buildAndRegister();
     }
 }

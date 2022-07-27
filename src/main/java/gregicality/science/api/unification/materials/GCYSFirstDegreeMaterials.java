@@ -706,7 +706,7 @@ public class GCYSFirstDegreeMaterials {
                 .setFormula("PuP", true);
 
         CarbonNanotube = new Material.Builder(3592, "carbon_nanotube")
-                .ingot()
+                .ingot().fluid()
                 .color(0x05090C)
                 .iconSet(MaterialIconSet.BRIGHT)
                 .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD,
@@ -799,8 +799,17 @@ public class GCYSFirstDegreeMaterials {
                 .ingot()
                 .color(0x72556A)
                 .iconSet(MaterialIconSet.BRIGHT)
-                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_RING,
+                        GENERATE_FRAME)
                 .components(Carbon, 60)
+                .build();
+
+        ThalliumCopperChloride = new Material.Builder(3605, "thallium_copper_chloride") //TODO "Antiferromagnetic" Tooltip
+                .ingot().fluid()
+                .color(0x3C5CB5)
+                .iconSet(MaterialIconSet.MAGNETIC)
+                .flags(GENERATE_FINE_WIRE)
+                .components(Thallium, 1, Copper, 1, Chlorine, 3)
                 .build();
     }
 }

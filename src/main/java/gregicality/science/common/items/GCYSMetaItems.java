@@ -40,20 +40,28 @@ public class GCYSMetaItems {
     // Circuit Boards
     public static MetaItem<?>.MetaValueItem GOOWARE_BOARD;
     public static MetaItem<?>.MetaValueItem OPTICAL_BOARD;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_BOARD;
     public static MetaItem<?>.MetaValueItem GOOWARE_CIRCUIT_BOARD;
     public static MetaItem<?>.MetaValueItem OPTICAL_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_CIRCUIT_BOARD;
 
     // Processing Units
     public static MetaItem<?>.MetaValueItem BZ_REACTION_CHAMBER;
     public static MetaItem<?>.MetaValueItem NONLINEAR_CHEMICAL_OSCILLATOR;
     public static MetaItem<?>.MetaValueItem OPTICAL_LASER_CONTROL_UNIT;
+    public static MetaItem<?>.MetaValueItem ESR_COMPUTATION_UNIT;
 
     // SMDS
-    public static MetaItem<?>.MetaValueItem OPTICAL_INTEGRATOR;
-    public static MetaItem<?>.MetaValueItem OPTICAL_ISOLATOR;
-    public static MetaItem<?>.MetaValueItem PHOTORESISTOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_DIODE;
+    public static MetaItem<?>.MetaValueItem OPTICAL_RESISTOR;
     public static MetaItem<?>.MetaValueItem OPTICAL_TRANSISTOR;
-    public static MetaItem<?>.MetaValueItem OPTICAL_POLARIZER;
+    public static MetaItem<?>.MetaValueItem OPTICAL_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_DIODE;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_RESISTOR;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_INDUCTOR;
 
     // Crystal Stuff
     public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_BOULE;

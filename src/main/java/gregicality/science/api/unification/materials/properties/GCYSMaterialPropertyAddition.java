@@ -27,6 +27,7 @@ public class GCYSMaterialPropertyAddition {
         Tellurium.setProperty(PropertyKey.DUST, new DustProperty());
         Selenium.setProperty(PropertyKey.DUST, new DustProperty());
         Rubidium.setProperty(PropertyKey.DUST, new DustProperty());
+        Thallium.setProperty(PropertyKey.DUST, new DustProperty());
 
         // Ingots
         Germanium.setProperty(PropertyKey.INGOT, new IngotProperty());

@@ -199,7 +199,7 @@ public class OpticalCircuits {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(wireFine, Naquadah, 4)
                 .input(dust, CadmiumSulfide)
-                .output(PHOTORESISTOR, 16)
+                .output(OPTICAL_RESISTOR, 16)
                 .fluidInputs(KaptonE.getFluid(L * 2))
                 .duration(160).EUt(VA[UV]).buildAndRegister();
 
@@ -214,20 +214,20 @@ public class OpticalCircuits {
                 .input(OPTICAL_FIBER, 2)
                 .input(plate, ErbiumDopedZBLANGlass)
                 .fluidInputs(KaptonE.getFluid(L / 4))
-                .output(OPTICAL_INTEGRATOR, 16)
+                .output(OPTICAL_CAPACITOR, 16)
                 .duration(160).EUt(VA[UV]).buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(dust, Terbium)
                 .input(wireFine, BorosilicateGlass, 4)
                 .fluidInputs(KaptonE.getFluid(L / 2))
-                .output(OPTICAL_ISOLATOR, 16)
+                .output(OPTICAL_DIODE, 16)
                 .duration(160).EUt(VA[UV]).buildAndRegister();
 
         ION_IMPLANTATOR_RECIPES.recipeBuilder()
                 .input(dust, Silver, 4)
                 .input(plate, Polymethylmethacrylate)
-                .output(OPTICAL_POLARIZER, 16)
+                .output(OPTICAL_INDUCTOR, 16)
                 .duration(160).EUt(VA[UV]).buildAndRegister();
     }
 
@@ -236,8 +236,8 @@ public class OpticalCircuits {
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(OPTICAL_LASER_CONTROL_UNIT)
                 .input(CRYSTAL_CENTRAL_PROCESSING_UNIT) //TODO new CPU
-                .input(PHOTORESISTOR, 8)
-                .input(OPTICAL_INTEGRATOR, 8)
+                .input(OPTICAL_RESISTOR, 8)
+                .input(OPTICAL_CAPACITOR, 8)
                 .input(OPTICAL_TRANSISTOR, 8)
                 .input(OPTICAL_FIBER, 8)
                 .output(OPTICAL_PROCESSOR, 2)
@@ -246,8 +246,8 @@ public class OpticalCircuits {
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(OPTICAL_CIRCUIT_BOARD)
                 .input(OPTICAL_PROCESSOR, 2)
-                .input(OPTICAL_POLARIZER, 6)
-                .input(OPTICAL_INTEGRATOR, 12)
+                .input(OPTICAL_INDUCTOR, 6)
+                .input(OPTICAL_CAPACITOR, 12)
                 .input(PHASE_CHANGE_MEMORY, 24)
                 .input(OPTICAL_FIBER, 16)
                 .output(OPTICAL_ASSEMBLY, 2)
@@ -257,7 +257,7 @@ public class OpticalCircuits {
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(OPTICAL_CIRCUIT_BOARD)
                 .input(OPTICAL_ASSEMBLY, 2)
-                .input(OPTICAL_ISOLATOR, 8)
+                .input(OPTICAL_DIODE, 8)
                 .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
                 .input(PHASE_CHANGE_MEMORY, 32)
                 .input(OPTICAL_FIBER, 24)
@@ -270,14 +270,14 @@ public class OpticalCircuits {
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Tritanium, 2)
                 .input(OPTICAL_COMPUTER, 2)
-                .input(OPTICAL_ISOLATOR, 8)
+                .input(OPTICAL_DIODE, 8)
                 .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
                 .input(PHASE_CHANGE_MEMORY, 32)
                 .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2) //TODO new PIC
 //                .input(OPTICAL_FIBER_CABLE, 8) //TODO Optical Fiber Cable
-                .input(OPTICAL_POLARIZER, 8)
-                .input(OPTICAL_INTEGRATOR, 16)
-                .input(OPTICAL_ISOLATOR, 8)
+                .input(OPTICAL_INDUCTOR, 8)
+                .input(OPTICAL_CAPACITOR, 16)
+                .input(OPTICAL_RESISTOR, 8)
                 .input(plate, Tritanium, 8)
                 .fluidInputs(SolderingAlloy.getFluid(L * 20))
                 .fluidInputs(Kevlar.getFluid(L * 9))
