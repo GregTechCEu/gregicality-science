@@ -46,7 +46,7 @@ metaitem.circuit.optical_assembly.tooltip=Теперь с силой лазер�
 metaitem.circuit.optical_computer.name=Оптический компьютер
 metaitem.circuit.optical_computer.tooltip=В мгновение ока/n§6UEV уровень
 metaitem.circuit.optical_mainframe.name=Оптический мейнфрейм
-metaitem.circuit.optical_mainframe.tooltip=Что может быть быстрее?/n§6UIV уровень
+metaitem.circuit.optical_mainframe.tooltip=Может ли что-нибудь быть быстрее?/n§6UIV уровень
 
 # Exotic
 metaitem.circuit.exotic_processor.name=Экзотический процессор
@@ -422,3 +422,47 @@ metaitem.dielectric_mirror.name=Диэлектрическое зеркало
 metaitem.dielectric_mirror.tooltip=Брэгговское зеркало
 metaitem.optical_fiber.tooltip=Светопропускающее стекло
 metaitem.optical_fiber.name=Оптоволокно
+# Element Materials
+material.lithium_6=Литий-6
+material.lithium_7=Литий-7
+material.carbon_nanotube=Углеродные нанотрубки
+item.carbon_nanotube.dustSmall=Маленькая кучка углеродных нанотрубок
+item.carbon_nanotube.dustTiny=Крошечная кучка углеродных нанотрубок
+material.lithium_amalgam=Амальгама лития
+material.lithium_hydroxide=Гидроксид лития
+material.lithium_7_hydroxide=Гидроксид лития-7
+material.bismuth_trioxide=Триоксид висмута
+material.ferric_oxide=Оксид железа (III)
+material.bismuth_chalcogenide=Халькогенид висмута
+material.mercury_cadmium_telluride=Теллурид кадмия-ртути
+material.aluminium_selenide=Селенид алюминия
+material.hydrogen_selenide=Cеленоводород
+material.palladium_nitrate=Нитрат палладия (II)
+material.fullerene=Фуллерен
+item.fullerene.ingot=Фуллерит
+item.fullerene.dust=Бакминстерфуллерен
+item.fullerene.dustSmall=Малый бакминстерфуллерен
+item.fullerene.dustTiny=Крошечный бакминстерфуллерен
+material.thallium_copper_chloride=Хлорид таллия-меди
+material.bismuth_ferrite=Феррит висмута
+material.cycloparaphenylene=Циклопарафенилен
+material.indene=Инден
+material.indanone=1-Инданон
+material.truxene=Труксен
+material.bromomethane=Бромметан
+material.bromobutane=1-Бромобутан
+material.butyllithium=н-Бутиллитий
+material.palladium_acetate=Ацетат палладия (II)
+material.geodesic_polyarene=Геодезический полиарен
+metaitem.component.spintronic_smd.diode.name=Диод Шоттки
+
+# Spintronic
+metaitem.circuit.spintronic_processor.name=Спинтронный процессор
+metaitem.circuit.spintronic_processor.tooltip=Вращающаяся электроника/n§5UHV уровень
+metaitem.circuit.spintronic_assembly.tooltip=Дискретные квантовые прогулки/n§5UEV уровень
+metaitem.circuit.spintronic_computer.name=Спинтронный компьютер
+metaitem.circuit.spintronic_mainframe.name=Спинтронный мейнфрейм
+metaitem.circuit.spintronic_mainframe.tooltip=Самый маленький из возможных/n§5UXV уровень
+material.bromo_bromomethyl_naphthalene=1-Бром-2-(бромметил)нафталин
+metaitem.circuit.spintronic_assembly.name=Спинтронный вычислительный блок
+metaitem.circuit.spintronic_computer.tooltip=Кто вообще пользуется нанометрами?/n§5UIV уровень
