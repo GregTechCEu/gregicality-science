@@ -37,8 +37,9 @@ public class BouleRecipeHandler {
 
         // if there are too many components to fit in the crystallizer, do not make a recipe
         // -1 for the not consumable input
-        if (material.getMaterialComponents().size() > GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxInputs() - 1 + GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxFluidInputs())
+        if (material.getMaterialComponents().size() > GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxInputs() - 1 + GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxFluidInputs()) {
             return;
+        }
 
         int componentAmount = 0;
         int temperature = 0;
@@ -54,13 +55,15 @@ public class BouleRecipeHandler {
                 temperature += componentMaterial.getBlastTemperature() * amount;
 
                 // if there are too many item inputs, do not make a recipe
-                if (inputs.size() > GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxInputs() - 1)
+                if (inputs.size() > GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxInputs() - 1) {
                     return;
+                }
                 inputs.add(OreDictUnifier.get(OrePrefix.dust, componentMaterial, amount));
             } else if (componentMaterial.hasProperty(PropertyKey.FLUID)) {
                 componentAmount += amount;
-                if (fluidInputs.size() > GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxFluidInputs())
+                if (fluidInputs.size() > GCYSRecipeMaps.CRYSTALLIZER_RECIPES.getMaxFluidInputs()) {
                     return;
+                }
                 fluidInputs.add(componentMaterial.getFluid(amount * 1000));
             }
 
@@ -77,25 +80,21 @@ public class BouleRecipeHandler {
         temperature /= componentAmount;
 
         BlastRecipeBuilder builder = GCYSRecipeMaps.CRYSTALLIZER_RECIPES.recipeBuilder()
-                .blastFurnaceTemp(temperature);
+                .blastFurnaceTemp(temperature)
+                .EUt(VA[temperature <= 2800 ? HV : GTValues.EV]);
 
-        // use temperature to determine the EUt
-        builder.EUt(VA[temperature <= 2800 ? HV : GTValues.EV]);
+        if (componentAmount == 2) {
+            for (ItemStack stack : inputs) {
+                stack.setCount(stack.getCount() * 2);
+            }
+            for (FluidStack stack : fluidInputs) {
+                stack.amount *= 2;
+            }
 
-        boolean shouldMultiply = false;
-        if (componentAmount % 4 == 0) {
-            // since boules are equivalent to 4 items, output doesn't need multiplication
-            componentAmount /= 4;
-        } else {
-            // Multiply the entire recipe by 4 for even amounts of boules
-            shouldMultiply = true;
-        }
+            componentAmount = 1;
 
-        builder.input(GCYSOrePrefix.seedCrystal, material, componentAmount)
-                .output(GCYSOrePrefix.boule, material, componentAmount);
-
-
-        if (shouldMultiply) {
+            builder.duration((int) (material.getMass() * 4 * 2));
+        } else if (componentAmount % 4 != 0) {
             for (ItemStack stack : inputs) {
                 stack.setCount(stack.getCount() * 4);
             }
@@ -105,19 +104,22 @@ public class BouleRecipeHandler {
 
             builder.duration((int) (material.getMass() * 4 * 4));
         } else {
+            componentAmount /= 4;
+
             builder.duration((int) (material.getMass() * 4));
         }
 
+        builder.input(GCYSOrePrefix.seedCrystal, material, componentAmount)
+                .output(GCYSOrePrefix.boule, material, componentAmount);
+
         // Add the fluid and item inputs, then build the recipe
-        if (!inputs.isEmpty())
-            builder.inputs(inputs);
-        if (!fluidInputs.isEmpty())
-            builder.fluidInputs(fluidInputs);
+        if (!inputs.isEmpty()) builder.inputs(inputs);
+        if (!fluidInputs.isEmpty()) builder.fluidInputs(fluidInputs);
         builder.buildAndRegister();
 
         // Cut boules into one exquisite gem
-        RecipeMaps.CUTTER_RECIPES.recipeBuilder()
-                .input(GCYSOrePrefix.boule, material)
+        RecipeMaps.CUTTER_RECIPES.recipeBuilder().
+                input(GCYSOrePrefix.boule, material)
                 .output(OrePrefix.gemExquisite, material)
                 .output(GCYSOrePrefix.seedCrystal, material)
                 .duration((int) (material.getMass() * 4))
@@ -125,8 +127,8 @@ public class BouleRecipeHandler {
                 .buildAndRegister();
 
         // Create Seed Crystals in an autoclave
-        RecipeMaps.AUTOCLAVE_RECIPES.recipeBuilder()
-                .input(OrePrefix.gemExquisite, material)
+        RecipeMaps.AUTOCLAVE_RECIPES.recipeBuilder().
+                input(OrePrefix.gemExquisite, material)
                 .fluidInputs(Materials.DistilledWater.getFluid(8000))
                 .output(GCYSOrePrefix.seedCrystal, material)
                 .duration((int) (material.getMass() * 9))

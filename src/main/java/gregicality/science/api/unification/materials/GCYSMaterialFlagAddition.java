@@ -25,11 +25,6 @@ public class GCYSMaterialFlagAddition {
             Pyrochlore.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
             Tantalite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
         }
-        if (GCYSConfigHolder.chainOverrides.disableMolybdenumExtraction) {
-            Molybdenite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
-            Powellite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
-            Wulfenite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
-        }
         RockSalt.addFlags(MaterialFlags.DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis
 
         // Disable Crystallization

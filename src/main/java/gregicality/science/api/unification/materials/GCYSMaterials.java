@@ -116,6 +116,8 @@ public class GCYSMaterials {
     public static Material PalladiumNitrite;
     public static Material Fullerene;
     public static Material ThalliumCopperChloride;
+    public static Material PerrhenicAcid;
+    public static Material AmmoniumPerrhenate;
 
 
     // Second Degree Materials
@@ -236,6 +238,8 @@ public class GCYSMaterials {
     public static Material PhosphoreneSolution;
     public static Material SodioIndene;
     public static Material SteamCrackedSodioIndene;
+    public static Material MolybdenumFlue;
+    public static Material TraceRheniumFlue;
 
 
     /**
