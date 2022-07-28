@@ -6,9 +6,9 @@
 
 ----
 
-Join us on [Discord](https://discord.gg/y5dkPtF)
+Join us on [Discord](https://discord.gg/E4muHvz5)
 
-A work in progress wiki can be found [here](https://gregicality.miraheze.org/wiki/Gregicality_Wiki)
+A work in progress wiki can be found [here](https://gregicality.miraheze.org/wiki/Gregicality_Wiki) [CURRENTLY UNAVAILABLE]
 
 thanks to magcicada and ChromaPIE  for Chinese translation.
 
