@@ -6,6 +6,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty;
 
+import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.DISABLE_CRYSTALLIZATION;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -455,7 +456,7 @@ public class GCYSFirstDegreeMaterials {
                 .gem()
                 .color(0x545572)
                 .iconSet(MaterialIconSet.DIAMOND)
-                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, CRYSTALLIZABLE, FLAMMABLE, EXPLOSIVE) // to disable implosion recipes
+                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, CRYSTALLIZABLE, FLAMMABLE, EXPLOSIVE, DISABLE_CRYSTALLIZATION) // to disable implosion recipes
                 .components(Boron, 1, Nitrogen, 1)
                 .build()
                 .setFormula("c-BN", true);
@@ -810,6 +811,22 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.MAGNETIC)
                 .flags(GENERATE_FINE_WIRE)
                 .components(Thallium, 1, Copper, 1, Chlorine, 3)
+                .build();
+
+        PerrhenicAcid = new Material.Builder(3606, "perrhenic_acid")
+                .dust()
+                .color(0xE6DC70)
+                .iconSet(MaterialIconSet.SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 1, Rhenium, 1, Oxygen, 4)
+                .build();
+
+        AmmoniumPerrhenate = new Material.Builder(3607, "ammonium_perrhenate")
+                .dust()
+                .color(0xA69970)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 1, Hydrogen, 4, Rhenium, 1, Oxygen, 4)
                 .build();
     }
 }

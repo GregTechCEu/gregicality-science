@@ -126,6 +126,8 @@ item.fullerene.dust=Buckminsterfullerene
 item.fullerene.dustSmall=Small Buckminsterfullerene
 item.fullerene.dustTiny=Tiny Buckminsterfullerene
 material.thallium_copper_chloride=Thallium Copper Chloride
+material.perrhenic_acid=Perrhenic Acid
+material.ammonium_perrhenate=Ammonium Perrhenate
 
 
 # Second Degree Materials
@@ -271,6 +273,8 @@ material.epd=EPD Etching Solution
 material.phosphorene_solution=Phosphorene Exfoliation Solution
 material.sodio_indene=Sodio-Indene
 material.steam_cracked_sodio_indene=Steam-Cracked Sodio-Indene
+material.molybdenum_flue=Molybdenum Flue Gas
+material.trace_rhenium_flue=Trace Rhenium Flue Gas
 
 
 # Single Block Machines

@@ -33,14 +33,11 @@ public class GCYSConfigHolder {
 
         @Config.Comment({"Disables production of Ammonia from Oxygen and Hydrogen, requiring Gregicality's process.", "Default: false"})
         public boolean disableAmmoniaProcessing = false;
-
-        @Config.Comment({"Disables direct production of Molybdenum from Molybdenite, Powellite and Wulfenite, requiring Gregicality's processes.", "Default: true"})
-        public boolean disableMolybdenumExtraction = true;
     }
 
     public static class CircuitOverrides {
 
-        @Config.Comment({"Requires Cubic Zirconia and more components in order to produce Crystal SOCs, instead of Crystal CPUs.", "Default: true"})
+        @Config.Comment({"Requires Cubic Zirconia and more components in order to produce Crystal SOCs, instead of just Crystal CPUs.", "Default: true"})
         public boolean harderCrystalCircuits = true;
 
         @Config.Comment({"Requires Kapton K in order to produce Wetware Circuit Boards, instead of Multi-layer Epoxy.", "Default: true"})
