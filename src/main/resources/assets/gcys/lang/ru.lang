@@ -466,3 +466,6 @@ metaitem.circuit.spintronic_mainframe.tooltip=Самый маленький из
 material.bromo_bromomethyl_naphthalene=1-Бром-2-(бромметил)нафталин
 metaitem.circuit.spintronic_assembly.name=Спинтронный вычислительный блок
 metaitem.circuit.spintronic_computer.tooltip=Кто вообще пользуется нанометрами?/n§5UIV уровень
+
+# SMDs
+metaitem.component.optical_smd.capacitor.name=Оптический интегратор
