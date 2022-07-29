@@ -470,3 +470,4 @@ metaitem.circuit.spintronic_computer.tooltip=Кто вообще пользуе�
 # SMDs
 metaitem.component.optical_smd.capacitor.name=Оптический интегратор
 material.neptunium_aluminide=Алюминид нептуния
+material.perrhenic_acid=Перреновая кислота
