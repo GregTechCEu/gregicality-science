@@ -828,5 +828,13 @@ public class GCYSFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Nitrogen, 1, Hydrogen, 4, Rhenium, 1, Oxygen, 4)
                 .build();
+
+        ThalliumSulfate = new Material.Builder(3608, "thallium_sulfate")
+                .dust()
+                .color(0x9C222C)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Thallium, 2, Sulfur, 1, Oxygen, 4)
+                .build();
     }
 }
