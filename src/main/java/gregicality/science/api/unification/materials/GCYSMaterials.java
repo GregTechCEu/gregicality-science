@@ -118,6 +118,7 @@ public class GCYSMaterials {
     public static Material ThalliumCopperChloride;
     public static Material PerrhenicAcid;
     public static Material AmmoniumPerrhenate;
+    public static Material ThalliumSulfate;
 
 
     // Second Degree Materials

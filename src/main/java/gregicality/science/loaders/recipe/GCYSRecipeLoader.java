@@ -60,7 +60,8 @@ public class GCYSRecipeLoader {
         GermaniumProcessing.init();
         NiobiumTantalumChain.init();
         SeleniumTelluriumChain.init();
-        MolybdenumChain.init();
+        MolybdenumProcessing.init();
+        ThalliumProcessing.init();
     }
 
     private static void initCircuits() {

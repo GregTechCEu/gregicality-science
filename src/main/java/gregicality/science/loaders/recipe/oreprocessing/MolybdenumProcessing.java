@@ -1,7 +1,6 @@
 package gregicality.science.loaders.recipe.oreprocessing;
 
 import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 
 import static gregicality.science.api.recipes.GCYSRecipeMaps.ROASTER_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
@@ -11,7 +10,7 @@ import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
-public class MolybdenumChain {
+public class MolybdenumProcessing {
 
     public static void init(){
         molybdenum();
@@ -22,7 +21,7 @@ public class MolybdenumChain {
         // MoS2 + 9O -> MoO3 + 2SO2 + ReO2
         ROASTER_RECIPES.recipeBuilder()
                 .input(dust, Molybdenite, 3)
-                .fluidInputs(Oxygen.getFluid(9000))
+                .fluidInputs(Oxygen.getFluid(8000))
                 .output(dust, MolybdenumTrioxide, 4)
                 .fluidOutputs(SulfurDioxide.getFluid(2000))
                 .fluidOutputs(MolybdenumFlue.getFluid(1000))
@@ -67,16 +66,7 @@ public class MolybdenumChain {
     private static void rhenium() {
         CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(MolybdenumFlue.getFluid(1000))
-                .notConsumable(new IntCircuitIngredient(1))
                 .chancedOutput(dust, MolybdenumTrioxide, 1000, 0)
-                .fluidOutputs(Oxygen.getFluid(2000))
-                .duration(200).EUt(60).buildAndRegister();
-
-        CENTRIFUGE_RECIPES.recipeBuilder()
-                .fluidInputs(MolybdenumFlue.getFluid(1000))
-                .notConsumable(new IntCircuitIngredient(2))
-                .chancedOutput(dust, MolybdenumTrioxide, 1000, 0)
-                .fluidOutputs(Oxygen.getFluid(1000))
                 .fluidOutputs(TraceRheniumFlue.getFluid(500))
                 .duration(200).EUt(60).buildAndRegister();
 
