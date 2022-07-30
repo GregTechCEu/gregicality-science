@@ -7,7 +7,6 @@ import gregicality.science.loaders.recipe.circuits.OpticalCircuits;
 import gregicality.science.loaders.recipe.circuits.SpintronicCircuits;
 import gregicality.science.loaders.recipe.handlers.BouleRecipeHandler;
 import gregicality.science.loaders.recipe.oreprocessing.*;
-import gregicality.science.loaders.recipe.vacuum.VacuumRecipes;
 
 public class GCYSRecipeLoader {
 
@@ -18,7 +17,6 @@ public class GCYSRecipeLoader {
         initCircuits();
         MiscRecipes.init();
         RecipeConflicts.init();
-        VacuumRecipes.init();
         GCYSMetaTileEntityLoader.init();
     }
 

@@ -12,18 +12,27 @@ public class NumberFormattingUtil {
     private static final NavigableMap<Double, String> suffixesByPower = new TreeMap<>();
 
     static {
+        suffixesByPower.put(0.000_000_000_000_000_000_000_000_000_001D, "q");
+        suffixesByPower.put(0.000_000_000_000_000_000_000_000_001D, "r");
+        suffixesByPower.put(0.000_000_000_000_000_000_000_001D, "y");
+        suffixesByPower.put(0.000_000_000_000_000_000_001D, "z");
         suffixesByPower.put(0.000_000_000_000_000_001D, "a");
         suffixesByPower.put(0.000_000_000_000_001D, "f");
         suffixesByPower.put(0.000_000_000_001D, "p");
         suffixesByPower.put(0.000_000_001D, "n");
         suffixesByPower.put(0.000_001D, "u");
         suffixesByPower.put(0.001D, "m");
+        suffixesByPower.put(1.0D, "");
         suffixesByPower.put(1_000D, "k");
         suffixesByPower.put(1_000_000D, "M");
         suffixesByPower.put(1_000_000_000D, "G");
-        suffixesByPower.put(1_000_000000_000D, "T");
-        suffixesByPower.put(1_000_000000_000_000D, "P");
-        suffixesByPower.put(1_000_000000_000_000_000D, "E");
+        suffixesByPower.put(1_000_000_000_000D, "T");
+        suffixesByPower.put(1_000_000_000_000_000D, "P");
+        suffixesByPower.put(1_000_000_000_000_000_000D, "E");
+        suffixesByPower.put(1_000_000_000_000_000_000_000D, "Z");
+        suffixesByPower.put(1_000_000_000_000_000_000_000_000D, "Y");
+        suffixesByPower.put(1_000_000_000_000_000_000_000_000_000D, "R");
+        suffixesByPower.put(1_000_000_000_000_000_000_000_000_000_000D, "Q");
     }
 
     @Nonnull
