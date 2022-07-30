@@ -315,6 +315,9 @@ gcys.machine.fracker.name=Hydraulic Fracker
 gcys.multiblock.fracker.tooltip.1=Uses 1000L of Fracturing Fluid to replenish veins under bedrock.
 gcys.multiblock.fracker.tooltip.2=Consumes §a%s§r EU per tick.
 
+# Sonicator
+gcys.machine.sonicator.name=Sonicator
+
 # Single Block Machines
 
 gcys.machine.dryer.lv.name=Basic Dryer

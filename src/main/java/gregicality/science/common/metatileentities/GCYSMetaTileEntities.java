@@ -29,11 +29,12 @@ public class GCYSMetaTileEntities {
     public static MetaTileEntityBurnerReactor BURNER_REACTOR;
     public static MetaTileEntityCryoReactor CRYOGENIC_REACTOR;
     public static MetaTileEntityFracker HYDRAULIC_FRACKER;
+    public static MetaTileEntitySonicator SONICATOR;
 
     public static void init() {
         registerSimpleMetaTileEntity(DRYER, 2100, "dryer", GCYSRecipeMaps.DRYER_RECIPES, GCYSTextures.DRYER_OVERLAY, true, GCYSMetaTileEntities::gcysId, GTUtility.hvCappedTankSizeFunction);
 
-
+        SONICATOR = registerMetaTileEntity(4096, new MetaTileEntitySonicator(gcysId("sonicator")));
         HYDRAULIC_FRACKER = registerMetaTileEntity(4097, new MetaTileEntityFracker(gcysId("fracker"), GTValues.ZPM));
         NANOSCALE_FABRICATOR = registerMetaTileEntity(4098, new MetaTileEntityNanoscaleFabricator(gcysId("nanoscale_fabricator")));
         ROASTER = registerMetaTileEntity(4099, new MetaTileEntityRoaster(gcysId("roaster")));
