@@ -240,6 +240,7 @@ public class GCYSMaterials {
     public static Material SteamCrackedSodioIndene;
     public static Material MolybdenumFlue;
     public static Material TraceRheniumFlue;
+    public static Material FracturingFluid;
 
 
     /**

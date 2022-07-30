@@ -63,5 +63,7 @@ public class GCYSUnknownCompositionMaterials {
         MolybdenumFlue = new Material.Builder(18023, "molybdenum_flue").fluid(FluidTypes.GAS).color(0x39194A).build();
 
         TraceRheniumFlue = new Material.Builder(18024, "trace_rhenium_flue").fluid(FluidTypes.GAS).color(0x96D6D5).build();
+
+        FracturingFluid = new Material.Builder(18025, "fracturing_fluid").fluid().color(0x96D6D5).build();
     }
 }

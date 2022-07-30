@@ -275,6 +275,7 @@ material.sodio_indene=Sodio-Indene
 material.steam_cracked_sodio_indene=Steam-Cracked Sodio-Indene
 material.molybdenum_flue=Molybdenum Flue Gas
 material.trace_rhenium_flue=Trace Rhenium Flue Gas
+material.fracturing_fluid=Fracturing Fluid
 
 
 # Single Block Machines
@@ -307,6 +308,11 @@ gcys.multiblock.nanoscale_fabricator.tooltip.1=Average Crucible heat cannot exce
 
 # CVD Unit
 gcys.machine.cvd_unit.name=CVD Unit
+
+# Fracking Machine
+gcys.machine.fracker.name=Hydraulic Fracker
+gcys.multiblock.fracker.tooltip.1=Uses 1000L of Fracturing Fluid to replenish veins under bedrock.
+gcys.multiblock.fracker.tooltip.2=Consumes §a%s§r EU per tick.
 
 # Single Block Machines
 

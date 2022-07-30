@@ -16,6 +16,7 @@ public class GCYSRecipeLoader {
         initChains();
         initOreProcessing();
         initCircuits();
+        MiscRecipes.init();
         RecipeConflicts.init();
         VacuumRecipes.init();
         GCYSMetaTileEntityLoader.init();
@@ -26,11 +27,8 @@ public class GCYSRecipeLoader {
     }
 
     private static void initChains() {
-        RareEarthProcessing.init();
-        TungstenProcessing.init();
         GrapheneChain.init();
         HydrogenPeroxideChain.init();
-        NiobiumTantalumChain.init();
         AcetyleneChain.init();
         TurpentineChain.init();
         EDTAChain.init();
@@ -39,9 +37,7 @@ public class GCYSRecipeLoader {
         DimethylformamideChain.init();
         KaptonChain.init();
         AmmoniaChain.init();
-        MolybdenumChain.init();
         BrineChain.init();
-        SeleniumTelluriumChain.init();
         MethylamineChain.init();
         KevlarChain.init();
         BoronNitrideChain.init();
@@ -59,7 +55,12 @@ public class GCYSRecipeLoader {
 
     private static void initOreProcessing() {
         PlatinumGroupProcessing.init();
+        RareEarthProcessing.init();
+        TungstenProcessing.init();
         GermaniumProcessing.init();
+        NiobiumTantalumChain.init();
+        SeleniumTelluriumChain.init();
+        MolybdenumChain.init();
     }
 
     private static void initCircuits() {
