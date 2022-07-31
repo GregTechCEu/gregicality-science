@@ -290,6 +290,9 @@ gcys.multiblock.fracker.tooltip.2=Consumes §a%s§r EU per tick.
 # Sonicator
 gcys.machine.sonicator.name=Sonicator
 
+# Catalytic Reformer
+gcys.machine.catalytic_reformer.name=Catalytic Reformer
+
 # Single Block Machines
 
 gcys.machine.dryer.lv.name=Basic Dryer
