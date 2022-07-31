@@ -126,69 +126,30 @@ public class GCYSFirstDegreeMaterials {
                 .components(Lutetium, 2, Oxygen, 3)
                 .build();
 
-        PlatinumMetallic = new Material.Builder(3516, "platinum_metallic")
-                .dust()
-                .color(0xFFFBC5)
+        PurifiedPlatinumGroupConcentrate = new Material.Builder(3516, "purified_platinum_group_concentrate")
+                .fluid()
+                .color(0xFFFFC8)
                 .flags(DISABLE_DECOMPOSITION)
-                .iconSet(MaterialIconSet.METALLIC)
-                .components(Platinum, 1, RareEarth, 1)
+                .components(Hydrogen, 2, Platinum, 1, Palladium, 1, Chlorine, 6)
                 .build();
 
-        PalladiumMetallic = new Material.Builder(3517, "palladium_metallic")
-                .dust()
-                .color(0x808080)
-                .flags(DISABLE_DECOMPOSITION)
-                .iconSet(MaterialIconSet.METALLIC)
-                .components(Platinum, 1, RareEarth, 1)
-                .build();
-
-        AmmoniumHexachloroplatinate = new Material.Builder(3518, "ammonium_hexachloroplatinate")
-                .dust()
+        AmmoniumHexachloroplatinate = new Material.Builder(3517, "ammonium_hexachloroplatinate")
+                .fluid()
                 .color(0xFEF0C2)
                 .flags(DISABLE_DECOMPOSITION)
-                .iconSet(MaterialIconSet.METALLIC)
                 .components(Nitrogen, 2, Hydrogen, 8, Platinum, 1, Chlorine, 6)
                 .build()
                 .setFormula("(NH4)2PtCl6", true);
 
-        PotassiumHydroxide = new Material.Builder(3519, "potassium_hydroxide")
-                .dust().fluid()
-                .color(0xFA9849)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Potassium, 1, Oxygen, 1, Hydrogen, 1)
-                .fluidTemp(633)
-                .build();
-
-        PotassiumBromate = new Material.Builder(3520, "potassium_bromate")
-                .dust()
-                .color(0x782828)
-                .flags(DISABLE_DECOMPOSITION)
-                .iconSet(MaterialIconSet.ROUGH)
-                .components(Potassium, 1, Bromine, 1, Oxygen, 3)
-                .build();
-
-        PotassiumPyrosulfate = new Material.Builder(3521, "potassium_pyrosulfate")
-                .dust()
-                .color(0xFBBB66)
-                .iconSet(MaterialIconSet.SHINY)
-                .components(Potassium, 2, Sulfur, 2, Oxygen, 7)
-                .build();
-
-        PotassiumSulfate = new Material.Builder(3522, "potassium_sulfate")
-                .dust()
-                .color(0xF0B064)
+        AmmoniumHexachloropalladate = new Material.Builder(3518, "ammonium_hexachloropalladate")
+                .fluid()
+                .color(0x808080)
                 .iconSet(MaterialIconSet.METALLIC)
-                .components(Potassium, 2, Sulfur, 1, Oxygen, 4)
-                .build();
+                .components(Nitrogen, 2, Hydrogen, 8, Palladium, 1, Chlorine, 6)
+                .build()
+                .setFormula("(NH4)2PdCl6", true);
 
-        ZincSulfate = new Material.Builder(3523, "zinc_sulfate")
-                .dust()
-                .color(0x846649)
-                .iconSet(MaterialIconSet.FINE)
-                .components(Zinc, 1, Sulfur, 1, Oxygen, 4)
-                .build();
-
-        SodiumNitrate = new Material.Builder(3524, "sodium_nitrate")
+        SodiumNitrate = new Material.Builder(3519, "sodium_nitrate")
                 .dust()
                 .color(0x846684)
                 .iconSet(MaterialIconSet.ROUGH)
@@ -196,46 +157,77 @@ public class GCYSFirstDegreeMaterials {
                 .build()
                 .setFormula("Na(NO3)3", true);
 
-        RhodiumNitrate = new Material.Builder(3525, "rhodium_nitrate")
-                .dust()
-                .color(0x776649)
-                .iconSet(MaterialIconSet.FINE)
+        PotassiumHydroxide = new Material.Builder(3520, "potassium_hydroxide")
+                .dust().fluid()
+                .color(0xFA9849)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Rhodium, 1, Nitrogen, 3, Oxygen, 9)
-                .build()
-                .setFormula("Rh(NO3)3", true);
-
-        SodiumRuthenate = new Material.Builder(3526, "sodium_ruthenate")
-                .dust()
-                .color(0x3A40CB)
-                .iconSet(MaterialIconSet.SHINY)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Sodium, 2, Ruthenium, 1, Oxygen, 4)
+                .components(Potassium, 1, Oxygen, 1, Hydrogen, 1)
+                .fluidTemp(633)
                 .build();
 
-        SodiumPeroxide = new Material.Builder(3527, "sodium_peroxide")
+        CarbonTetrachloride = new Material.Builder(3521, "carbon_tetrachloride")
+                .fluid()
+                .color(0x75201A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 1, Chlorine, 4)
+                .build();
+
+        RutheniumChloride = new Material.Builder(3522, "ruthenium_chloride")
+                .dust()
+                .color(0x605C6C)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Ruthenium, 1, Chlorine, 3)
+                .build();
+
+        SodiumPeroxide = new Material.Builder(3523, "sodium_peroxide")
                 .dust()
                 .color(0xECFF80)
                 .iconSet(MaterialIconSet.ROUGH)
                 .components(Sodium, 2, Oxygen, 2)
                 .build();
 
-        IridiumDioxideResidue = new Material.Builder(3528, "iridium_dioxide_residue")
+        RhodiumOxide = new Material.Builder(3524, "rhodium_oxide")
                 .dust()
-                .color(0x17182E)
-                .iconSet(MaterialIconSet.ROUGH)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Iridium, 1, Oxygen, 2, RareEarth, 1)
+                .color(0xD93D16)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Rhodium, 2, Oxygen, 3)
                 .build();
 
-        AmmoniumHexachloroIridiate = new Material.Builder(3529, "ammonium_hexachloroiridiate")
+        SodiumChlorate = new Material.Builder(3525, "sodium_chlorate")
                 .dust()
-                .color(0x644629)
-                .iconSet(MaterialIconSet.ROUGH)
+                .color(0xAB8D85)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Sodium, 1, Chlorine, 1, Oxygen, 3)
+                .build();
+
+        SulfurDichloride = new Material.Builder(3526, "sulfur_dichloride")
+                .fluid()
+                .color(0x761410)
+                .components(Sulfur, 1, Chlorine, 2)
+                .build();
+
+        ThionylChloride = new Material.Builder(3527, "thionyl_chloride")
+                .fluid()
+                .color(0xEBE863)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Nitrogen, 2, Hydrogen, 8, Iridium, 1, Chlorine, 6)
-                .build()
-                .setFormula("(NH4)2IrCl6", true);
+                .components(Sulfur, 1, Oxygen, 1, Chlorine, 2)
+                .build();
+
+        OsmiumTetrachloride = new Material.Builder(3528, "osmium_tetrachloride")
+                .dust()
+                .color(0x29080A)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Osmium, 1, Chlorine, 4)
+                .build();
+
+        PotassiumBromate = new Material.Builder(3529, "potassium_bromate")
+                .dust()
+                .color(0x782828)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Potassium, 1, Bromine, 1, Oxygen, 3)
+                .build();
 
         TungstenTrioxide = new Material.Builder(3530, "tungsten_trioxide")
                 .dust()

@@ -13,14 +13,9 @@ public class GCYSMaterialFlagAddition {
         // Formula Changes
         PalladiumRaw.setFormula("PdCl2", true);
         RarestMetalMixture.setFormula("IrOs?", true);
-        AcidicOsmiumSolution.setFormula("OsO4(HCl)", true);
-        IridiumMetalResidue.setFormula("Ir?", true);
+        IridiumMetalResidue.setFormula("Ir2O3", true);
 
         // Disable Decomposition
-        if (GCYSConfigHolder.chainOverrides.disablePlatinumProcessing) {
-            SulfuricCopperSolution.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
-            SulfuricNickelSolution.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
-        }
         if (GCYSConfigHolder.chainOverrides.disableNiobiumTantalumProcessing) {
             Pyrochlore.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
             Tantalite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
