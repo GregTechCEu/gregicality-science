@@ -26,20 +26,20 @@ public class GCYSMaterials {
     public static Material ThuliumOxide;
     public static Material YtterbiumOxide;
     public static Material LutetiumOxide;
-    public static Material PlatinumMetallic;
-    public static Material PalladiumMetallic;
+    public static Material PurifiedPlatinumGroupConcentrate;
     public static Material AmmoniumHexachloroplatinate;
+    public static Material AmmoniumHexachloropalladate;
     public static Material PotassiumHydroxide;
+    public static Material CarbonTetrachloride;
+    public static Material RutheniumChloride;
     public static Material PotassiumBromate;
-    public static Material PotassiumPyrosulfate;
-    public static Material PotassiumSulfate;
-    public static Material ZincSulfate;
     public static Material SodiumNitrate;
-    public static Material RhodiumNitrate;
-    public static Material SodiumRuthenate;
     public static Material SodiumPeroxide;
-    public static Material IridiumDioxideResidue;
-    public static Material AmmoniumHexachloroIridiate;
+    public static Material RhodiumOxide;
+    public static Material SodiumChlorate;
+    public static Material SulfurDichloride;
+    public static Material ThionylChloride;
+    public static Material OsmiumTetrachloride;
     public static Material TungstenTrioxide;
     public static Material Hydrazine;
     public static Material HydrogenPeroxide;
@@ -126,16 +126,8 @@ public class GCYSMaterials {
     public static Material ScEuGdSmOxidesSolution;
     public static Material YTbDyHoOxidesSolution;
     public static Material ErTmYbLuOxidesSolution;
+    public static Material PlatinumGroupConcentrate;
     public static Material PlatinumGroupResidue;
-    public static Material PalladiumRichAmmonia;
-    public static Material CrudePlatinumResidue;
-    public static Material CrudePalladiumResidue;
-    public static Material IridiumGroupSludge;
-    public static Material RhodiumSulfateSolution;
-    public static Material CrudeRhodiumResidue;
-    public static Material RhodiumSalt;
-    public static Material AcidicSodiumRuthenateSolution;
-    public static Material AcidicIridiumDioxideSolution;
     public static Material GrapheneOxide;
     public static Material AmmoniumNitrate;
     public static Material Wollastonite;
@@ -150,8 +142,6 @@ public class GCYSMaterials {
 
 
     // Third Degree Materials
-    public static Material PlatinumPalladiumLeachate;
-    public static Material RhodiumSaltSolution;
     public static Material ZincRichSphalerite;
 
 

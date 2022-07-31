@@ -21,8 +21,6 @@ public class GCYSMaterialPropertyAddition {
         Erbium.setProperty(PropertyKey.DUST, new DustProperty());
         Thulium.setProperty(PropertyKey.DUST, new DustProperty());
         Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
-        RhodiumSulfate.setProperty(PropertyKey.DUST, new DustProperty());
-        RhodiumSulfate.setMaterialIconSet(MaterialIconSet.ROUGH);
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
         Tellurium.setProperty(PropertyKey.DUST, new DustProperty());
         Selenium.setProperty(PropertyKey.DUST, new DustProperty());
@@ -40,5 +38,8 @@ public class GCYSMaterialPropertyAddition {
         Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
         Bromine.setMaterialIconSet(MaterialIconSet.FLUID);
         Germanium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        FluidProperty prop = new FluidProperty();
+        prop.setFluidTemperature(332);
+        SodiumBisulfate.setProperty(PropertyKey.FLUID, prop);
     }
 }

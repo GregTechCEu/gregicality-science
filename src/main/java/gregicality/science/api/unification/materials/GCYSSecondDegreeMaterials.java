@@ -41,7 +41,14 @@ public class GCYSSecondDegreeMaterials {
                 .components(ErbiumOxide, 1, ThuliumOxide, 1, YtterbiumOxide, 1, LutetiumOxide, 1)
                 .build();
 
-        PlatinumGroupResidue = new Material.Builder(6004, "platinum_group_residue")
+        PlatinumGroupConcentrate = new Material.Builder(6004, "platinum_group_concentrate")
+                .fluid()
+                .color(0xFFFFA6)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Gold, 1, Platinum, 1, Palladium, 1, HydrochloricAcid, 6)
+                .build();
+
+        PlatinumGroupResidue = new Material.Builder(6005, "platinum_group_residue")
                 .dust()
                 .color(0x64632E)
                 .iconSet(MaterialIconSet.ROUGH)
@@ -49,73 +56,7 @@ public class GCYSSecondDegreeMaterials {
                 .components(Iridium, 1, Osmium, 1, Rhodium, 1, Ruthenium, 1, RareEarth, 1)
                 .build();
 
-        PalladiumRichAmmonia = new Material.Builder(6005, "palladium_rich_ammonia")
-                .fluid()
-                .color(0x808080)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Ammonia, 2, Palladium, 1, Chlorine, 2)
-                .build();
-
-        CrudePlatinumResidue = new Material.Builder(6006, "crude_platinum_residue")
-                .dust()
-                .color(0xFFFBC5)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(PlatinumRaw, 1)
-                .build();
-
-        CrudePalladiumResidue = new Material.Builder(6007, "crude_palladium_residue")
-                .dust()
-                .color(0x808080)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(PalladiumRaw, 1)
-                .build()
-                .setFormula("PdCl2", true);
-
-        IridiumGroupSludge = new Material.Builder(6008, "iridium_group_sludge")
-                .dust()
-                .color(0x644629)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Iridium, 1, Osmium, 1, Ruthenium, 1, RareEarth, 1)
-                .build();
-
-        RhodiumSulfateSolution = new Material.Builder(6009, "rhodium_sulfate_solution")
-                .fluid()
-                .color(0xFFBB66)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(RhodiumSulfate, 1, Water, 1)
-                .build()
-                .setFormula("RH2(SO4)3(H2O)", true);
-
-        CrudeRhodiumResidue = new Material.Builder(6010, "crude_rhodium_residue")
-                .dust()
-                .color(0x666666)
-                .iconSet(MaterialIconSet.DULL)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Rhodium, 2, Water, 1)
-                .build();
-
-        RhodiumSalt = new Material.Builder(6011, "rhodium_salt")
-                .dust()
-                .color(0x848484)
-                .iconSet(MaterialIconSet.SHINY)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Salt, 2, Rhodium, 2, Chlorine, 6)
-                .build()
-                .setFormula("(NaCl)2(RhCl3)2", true);
-
-        AcidicSodiumRuthenateSolution = new Material.Builder(6012, "acidic_sodium_ruthenate_solution")
-                .fluid()
-                .color(0xC7C7C7)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(SodiumRuthenate, 1, Water, 2, Chlorine, 2)
-                .build();
-
-        AcidicIridiumDioxideSolution = new Material.Builder(6013, "acidic_iridium_dioxide_solution")
-                .fluid()
-                .color(0x27284E)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(IridiumDioxideResidue, 1, HydrochloricAcid, 4)
-                .build();
+        // FREE ID 6006-6013
 
         GrapheneOxide = new Material.Builder(6014, "graphene_oxide")
                 .dust()
@@ -158,14 +99,14 @@ public class GCYSSecondDegreeMaterials {
                 .components(Zinc, 1, GermaniumDioxide, 1)
                 .build();
 
+        //TODO move to first degree
         WaelzSlag = new Material.Builder(6019, "waelz_slag")
                 .dust()
                 .color(0xAC8B5C)
                 .iconSet(MaterialIconSet.ROUGH)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(ZincSulfate, 1)
-                .build()
-                .setFormula("GaZnSO4", true);
+                .components(Gallium, 1, Zinc, 1, Sulfur, 1, Oxygen, 1)
+                .build();
 
         ImpureGermaniumDioxide = new Material.Builder(6020, "impure_germanium_dioxide")
                 .dust()
