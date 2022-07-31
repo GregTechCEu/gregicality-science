@@ -1,15 +1,15 @@
 package gregicality.science.common.entities;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import gregicality.science.api.sound.GCYSSounds;
-import gregicality.science.api.utils.GCYSLog;
+import gregicality.science.client.render.particles.ParticleFlameHuge;
+import gregicality.science.client.render.particles.ParticleSmokeHuge;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -136,12 +136,11 @@ public class RocketEntity extends Entity {
         compound.setFloat("StartPos", this.getStartPos());
     }
 
-    //TODO Add bigger custom particles for flame and smoke
     protected void spawnParticles(){
-        this.world.spawnParticle(EnumParticleTypes.FLAME, this.posX, this.posY, this.posZ, 0., -0.1, 0.);
-        this.world.spawnParticle(EnumParticleTypes.FLAME, this.posX, this.posY, this.posZ, 0., -0.1, 0.);
-        this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX, this.posY, this.posZ, 0., -0.2, 0.);
-        this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX, this.posY, this.posZ, 0., -0.2, 0.);
+        ParticleFlameHuge flame = new ParticleFlameHuge(this.world, this.posX, this.posY, this.posZ, 0., -0.1, 0.);
+        ParticleSmokeHuge smoke = new ParticleSmokeHuge(this.world, this.posX, this.posY, this.posZ, 0., -0.2, 0.);
+        Minecraft.getMinecraft().effectRenderer.addEffect(smoke);
+        Minecraft.getMinecraft().effectRenderer.addEffect(flame);
     }
 
     @Override
@@ -171,7 +170,9 @@ public class RocketEntity extends Entity {
             this.motionY = jerk * Math.pow(getFlightTime(), 2) / 2;
             this.setPosition(this.posX, startPos + jerk * Math.pow(flightTime, 3) / 6, this.posZ);
             this.setFlightTime(flightTime + 1);
-            this.spawnParticles();
+            if(flightTime % 2 == 0) {
+                this.spawnParticles();
+            }
             if (this.posY > 300 || flightTime > 1200) {
                 this.setDead();
             }
