@@ -13,6 +13,8 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.Random;
+
 public class RocketEntity extends Entity {
 
     /**
@@ -28,6 +30,8 @@ public class RocketEntity extends Entity {
     private static final DataParameter<Integer> FLIGHT_TIME = EntityDataManager.<Integer>createKey(RocketEntity.class, DataSerializers.VARINT);
 
     private static final DataParameter<Float> START_POS = EntityDataManager.<Float>createKey(RocketEntity.class, DataSerializers.FLOAT);
+
+    private static final Random rnd = new Random();
 
     public RocketEntity(World worldIn) {
         super(worldIn);
@@ -105,12 +109,12 @@ public class RocketEntity extends Entity {
         this.setCountdownStarted(true);
         this.setLaunchTime(this.getAge() + 200);
         this.playSound(GCYSSounds.ROCKET_LAUNCH, 0.9F, 1.F);
+        this.setStartPos((float)this.posY);
     }
 
     public void Launch(){
         this.setLaunched(true);
         this.isAirBorne = true;
-        this.setStartPos((float)this.posY);
     }
 
     @Override
@@ -136,11 +140,24 @@ public class RocketEntity extends Entity {
         compound.setFloat("StartPos", this.getStartPos());
     }
 
-    protected void spawnParticles(){
-        ParticleFlameHuge flame = new ParticleFlameHuge(this.world, this.posX, this.posY, this.posZ, 0., -0.1, 0.);
-        ParticleSmokeHuge smoke = new ParticleSmokeHuge(this.world, this.posX, this.posY, this.posZ, 0., -0.2, 0.);
+    protected void spawnFlightParticles(){
+        ParticleFlameHuge flame = new ParticleFlameHuge(this.world, this.posX, this.posY, this.posZ, 1.5*(rnd.nextFloat()-0.5)*0.08, -1.5, 1.5*(rnd.nextFloat()-0.5)*0.08);
+        ParticleSmokeHuge smoke = new ParticleSmokeHuge(this.world, this.posX, this.posY, this.posZ, 1.5*(rnd.nextFloat()-0.5)*0.16, -1.5, 1.5*(rnd.nextFloat()-0.5)*0.16);
         Minecraft.getMinecraft().effectRenderer.addEffect(smoke);
         Minecraft.getMinecraft().effectRenderer.addEffect(flame);
+    }
+
+    protected void spawnLaunchParticles(){
+        float startPos = this.getStartPos();
+        float randFloat = rnd.nextFloat();
+        ParticleSmokeHuge smoke_x1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16);
+        ParticleSmokeHuge smoke_x2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, -1.5, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16);
+        ParticleSmokeHuge smoke_z1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16, 1.5);
+        ParticleSmokeHuge smoke_z2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16, -1.5);
+        Minecraft.getMinecraft().effectRenderer.addEffect(smoke_x1);
+        Minecraft.getMinecraft().effectRenderer.addEffect(smoke_x2);
+        Minecraft.getMinecraft().effectRenderer.addEffect(smoke_z1);
+        Minecraft.getMinecraft().effectRenderer.addEffect(smoke_z2);
     }
 
     @Override
@@ -162,6 +179,9 @@ public class RocketEntity extends Entity {
             if (age >= launchTime) {
                 this.Launch();
             }
+            if(launchTime - age < 60 && age % 2 == 0){
+                this.spawnLaunchParticles();
+            }
         }
 
         if (launched) {
@@ -171,7 +191,10 @@ public class RocketEntity extends Entity {
             this.setPosition(this.posX, startPos + jerk * Math.pow(flightTime, 3) / 6, this.posZ);
             this.setFlightTime(flightTime + 1);
             if(flightTime % 2 == 0) {
-                this.spawnParticles();
+                this.spawnFlightParticles();
+                if(flightTime < 140){
+                    this.spawnLaunchParticles();
+                }
             }
             if (this.posY > 300 || flightTime > 1200) {
                 this.setDead();
