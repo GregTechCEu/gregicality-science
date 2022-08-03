@@ -150,10 +150,11 @@ public class RocketEntity extends Entity {
     protected void spawnLaunchParticles(){
         float startPos = this.getStartPos();
         float randFloat = rnd.nextFloat();
-        ParticleSmokeHuge smoke_x1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16);
-        ParticleSmokeHuge smoke_x2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, -1.5, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16);
-        ParticleSmokeHuge smoke_z1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16, 1.5);
-        ParticleSmokeHuge smoke_z2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16, -1.5);
+        float randSpeed = rnd.nextFloat();
+        ParticleSmokeHuge smoke_x1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 0.5 + randSpeed, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16);
+        ParticleSmokeHuge smoke_x2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, -(0.5 + randSpeed), 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16);
+        ParticleSmokeHuge smoke_z1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16, 0.5 + randSpeed);
+        ParticleSmokeHuge smoke_z2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16, -(0.5 + randSpeed));
         Minecraft.getMinecraft().effectRenderer.addEffect(smoke_x1);
         Minecraft.getMinecraft().effectRenderer.addEffect(smoke_x2);
         Minecraft.getMinecraft().effectRenderer.addEffect(smoke_z1);
