@@ -4,10 +4,12 @@ import crafttweaker.annotations.ZenRegister;
 import gregicality.science.api.recipes.builders.NoCoilTemperatureRecipeBuilder;
 import gregicality.science.api.recipes.builders.TemperaturePressureRecipeBuilder;
 import gregicality.science.client.render.GCYSGuiTextures;
+import gregtech.api.GTValues;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.builders.BlastRecipeBuilder;
+import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.sound.GTSounds;
 import stanhebben.zenscript.annotations.ZenExpansion;
@@ -15,6 +17,8 @@ import stanhebben.zenscript.annotations.ZenExpansion;
 @ZenExpansion("mods.gregtech.recipe.RecipeMaps")
 @ZenRegister
 public class GCYSRecipeMaps {
+
+    // Machines
 
     public static final RecipeMap<SimpleRecipeBuilder> STEAM_EJECTOR_RECIPES = new RecipeMap<>("vacuum_ejector", 0, 0, 0, 0, 1, 1, 0, 0, new SimpleRecipeBuilder(), true)
             .setSlotOverlay(false, true, true, GuiTextures.EXTRACTOR_OVERLAY)
@@ -80,4 +84,28 @@ public class GCYSRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> ION_IMPLANTATOR_RECIPES = new RecipeMap<>("ion_implanter_recipes", 1, 3, 1, 1, 0, 1, 0, 0, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSounds.ELECTROLYZER);
+
+    public static final RecipeMap<SimpleRecipeBuilder> SUPERHEAVY_RECIPES = new RecipeMap<>("superheavy_reactor_recipes", 0, 2, 0, 4, 0, 4, 0, 2, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.MOLECULAR_OVERLAY_1)
+            .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
+            .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+            .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+            .setSlotOverlay(true, false, GuiTextures.VIAL_OVERLAY_1)
+            .setSlotOverlay(true, true, GuiTextures.VIAL_OVERLAY_2)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTValues.FOOLS.get() ? GTSounds.SCIENCE : GTSounds.CHEMICAL_REACTOR);
+
+    // Generators
+
+    public static final RecipeMap<FuelRecipeBuilder> TARANIUM_REACTOR_MK1_RECIPES = new RecipeMap<>("taranium_reactor_mk1_recipes", 0, 0, 0, 0, 1, 1, 0, 0, new FuelRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.ARC);
+
+    public static final RecipeMap<FuelRecipeBuilder> TARANIUM_REACTOR_MK2_RECIPES = new RecipeMap<>("taranium_reactor_mk2_recipes", 0, 0, 0, 0, 1, 1, 0, 0, new FuelRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.ARC);
+
+    public static final RecipeMap<FuelRecipeBuilder> TARANIUM_REACTOR_MK3_RECIPES = new RecipeMap<>("taranium_reactor_mk3_recipes", 0, 0, 0, 0, 1, 1, 0, 0, new FuelRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.ARC);
 }

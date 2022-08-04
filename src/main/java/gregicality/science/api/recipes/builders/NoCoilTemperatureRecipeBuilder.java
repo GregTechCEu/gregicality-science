@@ -3,7 +3,9 @@ package gregicality.science.api.recipes.builders;
 import gregicality.science.api.recipes.recipeproperties.NoCoilTemperatureProperty;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
+import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.EnumValidationResult;
+import gregtech.api.util.GTLog;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.ValidationResult;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -12,15 +14,17 @@ import javax.annotation.Nonnull;
 
 public class NoCoilTemperatureRecipeBuilder extends RecipeBuilder<NoCoilTemperatureRecipeBuilder> {
 
-    private int temperature;
-
     public NoCoilTemperatureRecipeBuilder() {
 
     }
 
+    @SuppressWarnings("unused")
+    public NoCoilTemperatureRecipeBuilder(Recipe recipe, RecipeMap<NoCoilTemperatureRecipeBuilder> recipeMap) {
+        super(recipe, recipeMap);
+    }
+
     public NoCoilTemperatureRecipeBuilder(NoCoilTemperatureRecipeBuilder builder) {
         super(builder);
-        this.temperature = builder.temperature;
     }
 
     @Override
@@ -34,30 +38,37 @@ public class NoCoilTemperatureRecipeBuilder extends RecipeBuilder<NoCoilTemperat
             this.temperature(((Number) value).intValue());
             return true;
         }
-        return true;
+        return super.applyProperty(key, value);
     }
 
-    @Nonnull
     public NoCoilTemperatureRecipeBuilder temperature(int temperature) {
-        this.temperature = temperature;
+        if (temperature <= 0) {
+            GTLog.logger.error("Temperature cannot be less than or equal to 0", new IllegalArgumentException());
+            recipeStatus = EnumValidationResult.INVALID;
+        }
+        this.applyProperty(NoCoilTemperatureProperty.getInstance(), temperature);
         return this;
     }
 
+    @Override
     public ValidationResult<Recipe> build() {
-        Recipe recipe = new Recipe(inputs, outputs, chancedOutputs, fluidInputs, fluidOutputs,
-                duration, EUt, hidden, isCTRecipe);
-        if (!recipe.setProperty(NoCoilTemperatureProperty.getInstance(), temperature)) {
-            return ValidationResult.newResult(EnumValidationResult.INVALID, recipe);
+        if (this.recipePropertyStorage != null && this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), -1) <= 0) {
+            this.recipePropertyStorage.store(NoCoilTemperatureProperty.getInstance(), 298);
         }
 
-        return ValidationResult.newResult(finalizeAndValidate(), recipe);
+        return super.build();
+    }
+
+    public int getTemperature() {
+        return this.recipePropertyStorage == null ? 0 :
+                this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), 0);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
                 .appendSuper(super.toString())
-                .append(NoCoilTemperatureProperty.getInstance().getKey(), GTUtility.formatNumbers(temperature))
+                .append(NoCoilTemperatureProperty.getInstance().getKey(), GTUtility.formatNumbers(getTemperature()))
                 .toString();
     }
 }

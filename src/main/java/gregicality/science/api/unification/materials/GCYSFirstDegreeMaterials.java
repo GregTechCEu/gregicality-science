@@ -828,5 +828,92 @@ public class GCYSFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Thallium, 2, Sulfur, 1, Oxygen, 4)
                 .build();
+
+        HeavyTaraniumFuel = new Material.Builder(3609, "heavy_taranium_fuel")
+                .fluid()
+                .color(0x141414)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        MediumTaraniumFuel = new Material.Builder(3610, "medium_taranium_fuel")
+                .fluid()
+                .color(0x181818)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        LightTaraniumFuel = new Material.Builder(3611, "light_taranium_fuel")
+                .fluid()
+                .color(0x1C1C1C)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        HeavyEnrichedTaraniumFuel = new Material.Builder(3612, "heavy_enriched_taranium_fuel")
+                .fluid()
+                .color(0x0F1414)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        MediumEnrichedTaraniumFuel = new Material.Builder(3613, "medium_enriched_taranium_fuel")
+                .fluid()
+                .color(0x0F1818)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        LightEnrichedTaraniumFuel = new Material.Builder(3614, "light_enriched_taranium_fuel")
+                .fluid()
+                .color(0x0F1C1C)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        Adamantite = new Material.Builder(3615, "adamantite")
+                .dust()
+                .color(0xC83C3C)
+                .iconSet(MaterialIconSet.ROUGH)
+                .components(Adamantium, 3, Oxygen, 4)
+                .build();
+
+        AdamantiumUnstable = new Material.Builder(3616, "adamantium_unstable")
+                .fluid()
+                .color(0xFF763C)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Adamantium, 1)
+                .build();
+
+        OrichalcumEnergized = new Material.Builder(3617, "orichalcum_energized")
+                .dust()
+                .color(0xF4FC0C)
+                .iconSet(MaterialIconSet.BRIGHT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Orichalcum, 1)
+                .build();
+
+        AdamantiumEnriched = new Material.Builder(3618, "adamantium_enriched")
+                .dust()
+                .color(0x64B4FF)
+                .iconSet(MaterialIconSet.ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Vibranium, 1, RareEarth, 1)
+                .build();
+
+        DeepIron = new Material.Builder(3619, "deep_iron")
+                .dust()
+                .color(0x968C8C)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Iron, 2, Trinium, 1, Indium, 1)
+                .build();
+
+        VibraniumUnstable = new Material.Builder(3620, "vibranium_unstable")
+                .fluid()
+                .color(0xFF7832)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Vibranium, 1)
+                .build();
     }
 }
