@@ -12,6 +12,8 @@ import gregicality.science.api.utils.GCYSUtility;
 import gregicality.science.api.utils.NumberFormattingUtil;
 import gregtech.api.GTValues;
 import gregtech.api.capability.GregtechDataCodes;
+import gregtech.api.capability.GregtechTileCapabilities;
+import gregtech.api.capability.IActiveOutputSide;
 import gregtech.api.capability.impl.FilteredFluidHandler;
 import gregtech.api.capability.impl.FluidTankList;
 import gregtech.api.gui.GuiTextures;
@@ -50,7 +52,7 @@ import java.util.List;
 
 import static gregtech.api.capability.GregtechDataCodes.UPDATE_OUTPUT_FACING;
 
-public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataInfoProvider {
+public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataInfoProvider, IActiveOutputSide {
 
     private static final int PRESSURE_DECREASE = -1000;
     private static final int STEAM_CONSUMPTION = 160;
@@ -65,7 +67,6 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     public MetaTileEntitySteamEjector(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId);
         this.isHighPressure = true;
-        setOutputFacing(getFrontFacing().getOpposite());
     }
 
     @Override
@@ -95,7 +96,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
             Textures.STEAM_CASING_STEEL.renderSided(facing, renderState, translation, pipeline);
         }
         Textures.AIR_VENT_OVERLAY.renderSided(getFrontFacing(), renderState, translation, pipeline);
-        Textures.PIPE_OUT_OVERLAY.renderSided(outputFacing, renderState, translation, pipeline);
+        Textures.PIPE_OUT_OVERLAY.renderSided(getOutputFacing(), renderState, translation, pipeline);
     }
 
     @Override
@@ -128,7 +129,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     @Override
     public boolean onWrenchClick(@Nonnull EntityPlayer playerIn, EnumHand hand, @Nonnull EnumFacing wrenchSide, CuboidRayTraceResult hitResult) {
         if (!playerIn.isSneaking()) {
-            EnumFacing currentOutputSide = this.outputFacing;
+            EnumFacing currentOutputSide = this.getOutputFacing();
             if (currentOutputSide == wrenchSide || getFrontFacing() == wrenchSide) {
                 return false;
             }
@@ -163,9 +164,9 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
                 }
             }
 
-            TileEntity te = getWorld().getTileEntity(getPos().offset(this.outputFacing));
+            TileEntity te = getWorld().getTileEntity(getPos().offset(getOutputFacing()));
             if (te != null) {
-                IPressureContainer container = te.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, this.outputFacing.getOpposite());
+                IPressureContainer container = te.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, this.getOutputFacing().getOpposite());
                 if (container == null || container.getPressure() == container.getMinPressure()) return;
                 IPressureContainer.mergeContainers(false, container, pressureContainer);
             }
@@ -207,7 +208,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     @Override
     public NBTTagCompound writeToNBT(@Nonnull NBTTagCompound data) {
         super.writeToNBT(data);
-        data.setInteger("outputFacing", outputFacing.getIndex());
+        data.setInteger("outputFacing", getOutputFacing().getIndex());
         return data;
     }
 
@@ -220,7 +221,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     @Override
     public void writeInitialSyncData(@Nonnull PacketBuffer buf) {
         super.writeInitialSyncData(buf);
-        buf.writeInt(outputFacing.getIndex());
+        buf.writeInt(getOutputFacing().getIndex());
     }
 
     @Override
@@ -238,6 +239,10 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
         }
     }
 
+    public EnumFacing getOutputFacing() {
+        return this.outputFacing == null ? this.frontFacing.getOpposite() : this.outputFacing;
+    }
+
     public void setOutputFacing(@Nonnull EnumFacing outputFacing) {
         this.outputFacing = outputFacing;
         if (getWorld() != null && !getWorld().isRemote) {
@@ -248,8 +253,11 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     }
 
     @Override
-    @Nonnull
+    @Nullable
     public <T> T getCapability(@Nonnull Capability<T> capability, EnumFacing side) {
+        if (capability == GregtechTileCapabilities.CAPABILITY_ACTIVE_OUTPUT_SIDE) {
+            return side == this.getOutputFacing() ? GregtechTileCapabilities.CAPABILITY_ACTIVE_OUTPUT_SIDE.cast(this) : null;
+        }
         if (capability.equals(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER)) {
             return GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER.cast(pressureContainer);
         }
@@ -261,6 +269,12 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
         return 0xFFFFFF;
     }
 
+    @Override
+    public boolean isValidFrontFacing(EnumFacing facing) {
+        return super.isValidFrontFacing(facing) && facing != this.outputFacing;
+    }
+
+
     @Nonnull
     @Override
     public List<ITextComponent> getDataInfo() {
@@ -269,5 +283,25 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
         list.add(new TextComponentTranslation("behavior.tricorder.min_pressure", new TextComponentString(NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getMinPressure())).setStyle(new Style().setColor(TextFormatting.GREEN))));
         list.add(new TextComponentTranslation("behavior.tricorder.max_pressure", new TextComponentString(NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getMaxPressure())).setStyle(new Style().setColor(TextFormatting.GREEN))));
         return list;
+    }
+
+    @Override
+    public boolean isAutoOutputItems() {
+        return false;
+    }
+
+    @Override
+    public boolean isAutoOutputFluids() {
+        return false;
+    }
+
+    @Override
+    public boolean isAllowInputFromOutputSideItems() {
+        return false;
+    }
+
+    @Override
+    public boolean isAllowInputFromOutputSideFluids() {
+        return false;
     }
 }

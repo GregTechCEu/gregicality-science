@@ -60,7 +60,6 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     @Override
     public void onPipeConnectionsUpdate() {
         super.onPipeConnectionsUpdate();
-        PressureNetWalker.checkPressure(getWorldData(), getAllNodes().keySet().iterator().next(), getPressure());
     }
 
     @Override
