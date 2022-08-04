@@ -361,7 +361,7 @@ metaitem.component.insane_smd.diode.name=Совершенный SMD диод
 metaitem.component.insane_smd.resistor.name=Совершенный SMD резистор
 metaitem.component.insane_smd.transistor.name=Совершенный SMD транзистор
 metaitem.component.insane_smd.inductor.name=Совершенный SMD индуктор
-material.bz_medium=БЖ среда (Название временное)
+material.bz_medium=БЖ среда
 recipemap.bio_vat_recipes.name=Биологический котел
 recipemap.roaster_recipes.name=Обжарка
 recipemap.burner_reactor_recipes.name=Высокотемпературные реакции
@@ -483,3 +483,38 @@ material.ammonium_hexachloropalladate=Гексахлоропалладат (IV) 
 material.ruthenium_chloride=Хлорид рутения (III)
 material.platinum_group_concentrate=Концентрат платиновой группы
 material.ammonium_perrhenate=Перренат аммония
+material.orichalcum=Орихалк
+material.vibranium=Вибраниум
+material.taranium=Тараниум
+material.light_taranium_fuel=Легкое тараниевое топливо
+material.heavy_enriched_taranium_fuel=Тяжелое обогащенное тараниевое топливо
+material.light_enriched_taranium_fuel=Легкое обогащенное тараниевое топливо
+material.adamantite=Адамантит
+material.adamantium_unstable=Нестабильный адамантий
+material.orichalcum_energized=Заряженный орихалк
+material.adamantium_enriched=Обогащенный адамантий
+material.vibranium_unstable=Нестабильный вибраниум
+
+
+# Third Degree Materials
+material.zinc_rich_sphalerite=Богатый цинком сфалерит
+material.cracked_light_enriched_taranium=Легкий обогащенный тараниум прошедший крекинг радоном
+material.energetic_naquadria=Энергичная наквадриа
+material.light_hyper_fuel=Легкое гипер топливо
+material.medium_hyper_fuel=Среднее гипер топливо
+material.heavy_hyper_fuel=Тяжелое гипер топливо
+
+# CVD Unit
+gcys.machine.cvd_unit.name=ХОГФ реактор
+material.beryllium_7=Бериллий-7
+material.adamantium=Адамантий
+material.heavy_taranium_fuel=Тяжелое тараниевое топливо
+material.medium_taranium_fuel=Среднее тараниевое топливо
+material.medium_enriched_taranium_fuel=Среднее обогащенное тараниевое топливо
+material.deep_iron=Глубинное железо
+material.bedrock=Коренная порода
+material.cracked_heavy_enriched_taranium=Тяжелый обогащенный тараниум прошедший крекинг радоном
+material.cracked_medium_enriched_taranium=Средний обогащенный тараниум прошедший крекинг радоном
+
+# Burner Reactor
+gcys.machine.burner_reactor.name=Реактор горения
