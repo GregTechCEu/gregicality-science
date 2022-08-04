@@ -14,6 +14,7 @@ import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -56,7 +57,8 @@ public class CommonProxy {
         return itemBlock;
     }
 
-    @SubscribeEvent()
+    // using low to ensure some recipes from CEu are removed
+    @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         // Main recipe registration
         // This is called AFTER GregTech registers recipes, so

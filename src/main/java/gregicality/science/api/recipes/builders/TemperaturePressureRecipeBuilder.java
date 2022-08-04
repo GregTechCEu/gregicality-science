@@ -4,7 +4,9 @@ import gregicality.science.api.recipes.recipeproperties.NoCoilTemperaturePropert
 import gregicality.science.api.recipes.recipeproperties.PressureProperty;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
+import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.EnumValidationResult;
+import gregtech.api.util.GTLog;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.ValidationResult;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -13,17 +15,17 @@ import javax.annotation.Nonnull;
 
 public class TemperaturePressureRecipeBuilder extends RecipeBuilder<TemperaturePressureRecipeBuilder> {
 
-    private int temperature = 298;
-    private double pressure = 101_325;
-
     public TemperaturePressureRecipeBuilder() {
 
     }
 
+    @SuppressWarnings("unused")
+    public TemperaturePressureRecipeBuilder(Recipe recipe, RecipeMap<TemperaturePressureRecipeBuilder> recipeMap) {
+        super(recipe, recipeMap);
+    }
+
     public TemperaturePressureRecipeBuilder(TemperaturePressureRecipeBuilder builder) {
         super(builder);
-        this.temperature = builder.temperature;
-        this.pressure = builder.pressure;
     }
 
     @Override
@@ -41,40 +43,58 @@ public class TemperaturePressureRecipeBuilder extends RecipeBuilder<TemperatureP
             this.pressure(((Number) value).doubleValue());
             return true;
         }
-        return true;
+        return super.applyProperty(key, value);
     }
 
     @Nonnull
     public TemperaturePressureRecipeBuilder temperature(int temperature) {
-        this.temperature = temperature;
+        if (temperature <= 0) {
+            GTLog.logger.error("Temperature cannot be less than or equal to 0", new IllegalArgumentException());
+            recipeStatus = EnumValidationResult.INVALID;
+        }
+        this.applyProperty(NoCoilTemperatureProperty.getInstance(), temperature);
         return this;
     }
 
     @Nonnull
     public TemperaturePressureRecipeBuilder pressure(double pressure) {
-        this.pressure = pressure;
+        if (pressure <= 0) {
+            GTLog.logger.error("Pressure cannot be less than or equal to 0", new IllegalArgumentException());
+            recipeStatus = EnumValidationResult.INVALID;
+        }
+        this.applyProperty(PressureProperty.getInstance(), pressure);
         return this;
     }
 
+    @Override
     public ValidationResult<Recipe> build() {
-        Recipe recipe = new Recipe(inputs, outputs, chancedOutputs, fluidInputs, fluidOutputs,
-                duration, EUt, hidden, isCTRecipe);
-        if (!recipe.setProperty(NoCoilTemperatureProperty.getInstance(), temperature)) {
-            return ValidationResult.newResult(EnumValidationResult.INVALID, recipe);
+        if (this.recipePropertyStorage != null) {
+            if (this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), -1) <= 0) {
+                this.recipePropertyStorage.store(NoCoilTemperatureProperty.getInstance(), 298);
+            }
+            if (this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), -1.0D) <= 0) {
+                this.recipePropertyStorage.store(PressureProperty.getInstance(), 101_325);
+            }
         }
-        if (!recipe.setProperty(PressureProperty.getInstance(), pressure)) {
-            return ValidationResult.newResult(EnumValidationResult.INVALID, recipe);
-        }
+        return super.build();
+    }
 
-        return ValidationResult.newResult(finalizeAndValidate(), recipe);
+    public int getTemperature() {
+        return this.recipePropertyStorage == null ? 0 :
+                this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), 0);
+    }
+
+    public double getPressure() {
+        return this.recipePropertyStorage == null ? 0.0D :
+                this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), 0.0D);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
                 .appendSuper(super.toString())
-                .append(NoCoilTemperatureProperty.getInstance().getKey(), GTUtility.formatNumbers(temperature))
-                .append(PressureProperty.getInstance().getKey(), GTUtility.formatNumbers(pressure))
+                .append(NoCoilTemperatureProperty.getInstance().getKey(), GTUtility.formatNumbers(getTemperature()))
+                .append(PressureProperty.getInstance().getKey(), GTUtility.formatNumbers(getPressure()))
                 .toString();
     }
 }

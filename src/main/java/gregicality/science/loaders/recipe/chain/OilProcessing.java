@@ -23,14 +23,13 @@ public class OilProcessing {
                 .fluidOutputs(Ethylbenzene.getFluid(200))
                 .duration(120).EUt(VA[MV]).buildAndRegister();
 
-        // TODO Rhenium Production
-//        CATALYTIC_REFORMER_RECIPES.recipeBuilder()
-//                .notConsumable(plate, Rhenium)
-//                .fluidInputs(Naphtha.getFluid(1000))
-//                .fluidOutputs(Toluene.getFluid(120))
-//                .fluidOutputs(Benzene.getFluid(400))
-//                .fluidOutputs(ParaXylene.getFluid(700))
-//                .fluidOutputs(Ethylbenzene.getFluid(400))
-//                .duration(120).EUt(VA[MV]).buildAndRegister();
+        CATALYTIC_REFORMER_RECIPES.recipeBuilder()
+                .notConsumable(plate, Rhenium)
+                .fluidInputs(Naphtha.getFluid(1000))
+                .fluidOutputs(Toluene.getFluid(120))
+                .fluidOutputs(Benzene.getFluid(400))
+                .fluidOutputs(ParaXylene.getFluid(700))
+                .fluidOutputs(Ethylbenzene.getFluid(400))
+                .duration(120).EUt(VA[MV]).buildAndRegister();
     }
 }

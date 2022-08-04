@@ -5,6 +5,11 @@
 # Element Materials
 material.lithium_6=Lithium-6
 material.lithium_7=Lithium-7
+material.beryllium_7=Beryllium-7
+material.orichalcum=Orichalcum
+material.vibranium=Vibranium
+material.adamantium=Adamantium
+material.taranium=Taranium
 
 
 # First Degree Materials
@@ -123,6 +128,18 @@ material.thallium_copper_chloride=Thallium Copper Chloride
 material.perrhenic_acid=Perrhenic Acid
 material.ammonium_perrhenate=Ammonium Perrhenate
 material.thallium_sulfate=Thallium Sulfate
+material.heavy_taranium_fuel=Heavy Taranium Fuel
+material.medium_taranium_fuel=Medium Taranium Fuel
+material.light_taranium_fuel=Light Taranium Fuel
+material.heavy_enriched_taranium_fuel=Heavy Enriched Taranium Fuel
+material.medium_enriched_taranium_fuel=Medium Enriched Taranium Fuel
+material.light_enriched_taranium_fuel=Light Enriched Taranium Fuel
+material.adamantite=Adamantite
+material.adamantium_unstable=Unstable Adamantium
+material.orichalcum_energized=Energized Orichalcumn
+material.adamantium_enriched=Enriched Adamantium
+material.deep_iron=Deep Iron
+material.vibranium_unstable=Unstable Vibranium
 
 
 # Second Degree Materials
@@ -249,6 +266,37 @@ material.steam_cracked_sodio_indene=Steam-Cracked Sodio-Indene
 material.molybdenum_flue=Molybdenum Flue Gas
 material.trace_rhenium_flue=Trace Rhenium Flue Gas
 material.fracturing_fluid=Fracturing Fluid
+material.bedrock_smoke=Bedrock Smoke
+material.dense_bedrock_smoke=Dense Bedrock Smoke
+material.bedrock=Bedrock
+material.bedrock_soot_solution=Bedrock Soot Solution
+material.clean_bedrock_solution=Clean Bedrock Solution
+material.heavy_bedrock_smoke=Heavy Bedrock Smoke
+material.medium_bedrock_smoke=Medium Bedrock Smoke
+material.light_bedrock_smoke=Light Bedrock Smoke
+material.ultralight_bedrock_smoke=Ultralight Bedrock Smoke
+material.heavy_taranium_gas=Heavy Taranium Gas
+material.medium_taranium_gas=Medium Taranium Gas
+material.light_taranium_gas=Light Taranium Gas
+material.bedrock_gas=Bedrock Gas
+material.cracked_heavy_taranium=Fluorine-Cracked Heavy Taranium
+material.cracked_medium_taranium=Fluorine-Cracked Medium Taranium
+material.cracked_light_taranium=Fluorine-Cracked Light Taranium
+material.enriched_bedrock_soot_solution=Enriched Bedrock Soot Solution
+material.clean_enriched_bedrock_solution=Clean Enriched Bedrock Solution
+material.heavy_enriched_bedrock_smoke=Heavy Enriched Bedrock Smoke
+material.medium_enriched_bedrock_smoke=Medium Enriched Bedrock Smoke
+material.light_enriched_bedrock_smoke=Light Enriched Bedrock Smoke
+material.heavy_enriched_taranium_gas=Heavy Enriched Taranium Gas
+material.medium_enriched_taranium_gas=Medium Enriched Taranium Gas
+material.light_enriched_taranium_gas=Light Enriched Taranium Gas
+material.cracked_heavy_enriched_taranium=Radon-Cracked Heavy Enriched Taranium
+material.cracked_medium_enriched_taranium=Radon-Cracked Medium Enriched Taranium
+material.cracked_light_enriched_taranium=Radon-Cracked Light Enriched Taranium
+material.energetic_naquadria=Energetic Naquadria
+material.light_hyper_fuel=Light Hyper Fuel
+material.medium_hyper_fuel=Medium Hyper Fuel
+material.heavy_hyper_fuel=Heavy Hyper Fuel
 
 
 # Single Block Machines
@@ -289,6 +337,9 @@ gcys.multiblock.fracker.tooltip.2=Consumes §a%s§r EU per tick.
 
 # Sonicator
 gcys.machine.sonicator.name=Sonicator
+
+# Catalytic Reformer
+gcys.machine.catalytic_reformer.name=Catalytic Reformer
 
 # Single Block Machines
 
@@ -493,6 +544,7 @@ metaitem.circuit.supracausal_mainframe.name=Supra-Causal Mainframe
 metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier Circuit
 
 # RecipeMaps
+# Machines
 recipemap.dryer_recipes.name=Drying
 recipemap.bio_vat_recipes.name=Biological Vat
 recipemap.catalytic_reformer_recipes.name=Catalytic Reformation
@@ -505,6 +557,13 @@ recipemap.cvd_recipes.name=Chemical Vapor Deposition
 recipemap.plasma_cvd_recipes.name=Plasma Enhanced CVD
 recipemap.sonication_recipes.name=Sonication
 recipemap.ion_implanter_recipes.name=Ion Implantation
+recipemap.superheavy_reactor_recipes.name=Superheavy Reactions
+
+# Generators
+recipemap.taranium_reactor_mk1_recipes.name=Taranium Reactor Mk.1
+recipemap.taranium_reactor_mk2_recipes.name=Taranium Reactor Mk.2
+recipemap.taranium_reactor_mk3_recipes.name=Taranium Hyper Reactor Mk.3
+
 
 # Recipe Properties
 gcys.recipe.temperature=Temperature: %,dK

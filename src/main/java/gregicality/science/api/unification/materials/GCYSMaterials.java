@@ -7,6 +7,11 @@ public class GCYSMaterials {
     // Element Materials
     public static Material Lithium6;
     public static Material Lithium7;
+    public static Material Beryllium7;
+    public static Material Orichalcum;
+    public static Material Vibranium;
+    public static Material Adamantium;
+    public static Material Taranium;
 
 
     // First Degree Materials
@@ -119,6 +124,18 @@ public class GCYSMaterials {
     public static Material PerrhenicAcid;
     public static Material AmmoniumPerrhenate;
     public static Material ThalliumSulfate;
+    public static Material HeavyTaraniumFuel;
+    public static Material MediumTaraniumFuel;
+    public static Material LightTaraniumFuel;
+    public static Material HeavyEnrichedTaraniumFuel;
+    public static Material MediumEnrichedTaraniumFuel;
+    public static Material LightEnrichedTaraniumFuel;
+    public static Material Adamantite;
+    public static Material AdamantiumUnstable;
+    public static Material OrichalcumEnergized;
+    public static Material AdamantiumEnriched;
+    public static Material DeepIron;
+    public static Material VibraniumUnstable;
 
 
     // Second Degree Materials
@@ -232,6 +249,37 @@ public class GCYSMaterials {
     public static Material MolybdenumFlue;
     public static Material TraceRheniumFlue;
     public static Material FracturingFluid;
+    public static Material BedrockSmoke;
+    public static Material DenseBedrockSmoke;
+    public static Material Bedrock;
+    public static Material BedrockSootSolution;
+    public static Material CleanBedrockSolution;
+    public static Material HeavyBedrockSmoke;
+    public static Material MediumBedrockSmoke;
+    public static Material LightBedrockSmoke;
+    public static Material UltralightBedrockSmoke;
+    public static Material HeavyTaraniumGas;
+    public static Material MediumTaraniumGas;
+    public static Material LightTaraniumGas;
+    public static Material BedrockGas;
+    public static Material CrackedHeavyTaranium;
+    public static Material CrackedMediumTaranium;
+    public static Material CrackedLightTaranium;
+    public static Material EnrichedBedrockSootSolution;
+    public static Material CleanEnrichedBedrockSolution;
+    public static Material HeavyEnrichedBedrockSmoke;
+    public static Material MediumEnrichedBedrockSmoke;
+    public static Material LightEnrichedBedrockSmoke;
+    public static Material HeavyEnrichedTaraniumGas;
+    public static Material MediumEnrichedTaraniumGas;
+    public static Material LightEnrichedTaraniumGas;
+    public static Material CrackedHeavyEnrichedTaranium;
+    public static Material CrackedMediumEnrichedTaranium;
+    public static Material CrackedLightEnrichedTaranium;
+    public static Material EnergeticNaquadria;
+    public static Material LightHyperFuel;
+    public static Material MediumHyperFuel;
+    public static Material HeavyHyperFuel;
 
 
     /**

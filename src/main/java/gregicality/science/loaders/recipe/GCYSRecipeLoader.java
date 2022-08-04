@@ -51,6 +51,7 @@ public class GCYSRecipeLoader {
         NanotubesChain.init();
         IsotopesChain.init();
         FullereneChain.init();
+        FantasyMaterials.init();
     }
 
     private static void initOreProcessing() {
@@ -62,6 +63,7 @@ public class GCYSRecipeLoader {
         SeleniumTelluriumChain.init();
         MolybdenumProcessing.init();
         ThalliumProcessing.init();
+        TaraniumProcessing.init();
     }
 
     private static void initCircuits() {

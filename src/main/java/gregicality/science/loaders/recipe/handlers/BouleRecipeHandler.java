@@ -14,11 +14,11 @@ import gregtech.api.unification.material.properties.GemProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.MaterialStack;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
 import java.util.List;
 
 import static gregtech.api.GTValues.HV;
@@ -43,8 +43,8 @@ public class BouleRecipeHandler {
 
         int componentAmount = 0;
         int temperature = 0;
-        List<ItemStack> inputs = new ArrayList<>();
-        List<FluidStack> fluidInputs = new ArrayList<>();
+        List<ItemStack> inputs = new ObjectArrayList<>();
+        List<FluidStack> fluidInputs = new ObjectArrayList<>();
 
         for (MaterialStack materialStack : material.getMaterialComponents()) {
             Material componentMaterial = materialStack.material;
@@ -113,8 +113,8 @@ public class BouleRecipeHandler {
                 .output(GCYSOrePrefix.boule, material, componentAmount);
 
         // Add the fluid and item inputs, then build the recipe
-        if (!inputs.isEmpty()) builder.inputs(inputs);
-        if (!fluidInputs.isEmpty()) builder.fluidInputs(fluidInputs);
+        if (!inputs.isEmpty()) builder.inputStacks(inputs);
+        if (!fluidInputs.isEmpty()) builder.fluidInputs(fluidInputs.toArray(new FluidStack[0]));
         builder.buildAndRegister();
 
         // Cut boules into one exquisite gem

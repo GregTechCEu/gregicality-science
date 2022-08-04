@@ -3,7 +3,9 @@ package gregicality.science.api.recipes.builders;
 import gregicality.science.api.recipes.recipeproperties.PressureProperty;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
+import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.EnumValidationResult;
+import gregtech.api.util.GTLog;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.ValidationResult;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -12,15 +14,17 @@ import javax.annotation.Nonnull;
 
 public class PressureRecipeBuilder extends RecipeBuilder<PressureRecipeBuilder> {
 
-    private double pressure;
-
     public PressureRecipeBuilder() {
 
     }
 
+    @SuppressWarnings("unused")
+    public PressureRecipeBuilder(Recipe recipe, RecipeMap<PressureRecipeBuilder> recipeMap) {
+        super(recipe, recipeMap);
+    }
+
     public PressureRecipeBuilder(PressureRecipeBuilder builder) {
         super(builder);
-        this.pressure = builder.pressure;
     }
 
     @Override
@@ -34,30 +38,38 @@ public class PressureRecipeBuilder extends RecipeBuilder<PressureRecipeBuilder> 
             this.pressure(((Number) value).doubleValue());
             return true;
         }
-        return true;
+        return super.applyProperty(key, value);
     }
 
     @Nonnull
-    public PressureRecipeBuilder pressure(Double pressure) {
-        this.pressure = pressure;
+    public PressureRecipeBuilder pressure(double pressure) {
+        if (pressure <= 0) {
+            GTLog.logger.error("Pressure cannot be less than or equal to 0", new IllegalArgumentException());
+            recipeStatus = EnumValidationResult.INVALID;
+        }
+        this.applyProperty(PressureProperty.getInstance(), pressure);
         return this;
     }
 
+    @Override
     public ValidationResult<Recipe> build() {
-        Recipe recipe = new Recipe(inputs, outputs, chancedOutputs, fluidInputs, fluidOutputs,
-                duration, EUt, hidden, isCTRecipe);
-        if (!recipe.setProperty(PressureProperty.getInstance(), pressure)) {
-            return ValidationResult.newResult(EnumValidationResult.INVALID, recipe);
+        if (this.recipePropertyStorage != null && this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), -1.0D) <= 0) {
+            this.recipePropertyStorage.store(PressureProperty.getInstance(), 101_325);
         }
 
-        return ValidationResult.newResult(finalizeAndValidate(), recipe);
+        return super.build();
+    }
+
+    public double getPressure() {
+        return this.recipePropertyStorage == null ? 0.0D :
+                this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), 0.0D);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
                 .appendSuper(super.toString())
-                .append(PressureProperty.getInstance().getKey(), GTUtility.formatNumbers(pressure))
+                .append(PressureProperty.getInstance().getKey(), GTUtility.formatNumbers(getPressure()))
                 .toString();
     }
 }
