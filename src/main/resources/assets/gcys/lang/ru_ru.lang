@@ -470,3 +470,16 @@ metaitem.circuit.spintronic_computer.tooltip=Кто вообще пользуе�
 # SMDs
 metaitem.component.optical_smd.capacitor.name=Оптический интегратор
 material.neptunium_aluminide=Алюминид нептуния
+material.perrhenic_acid=Перреновая кислота
+material.thallium_sulfate=Сульфат таллия
+material.carbon_tetrachloride=Тетрахлорметан
+material.rhodium_oxide=Оксид родия
+material.sodium_chlorate=Хлорат натрия
+material.sulfur_dichloride=Дихлорид серы
+material.thionyl_chloride=Тионилхлорид
+material.osmium_tetrachloride=Хлорид осмия (IV)
+material.purified_platinum_group_concentrate=Очищенный концентрат платиновой группы
+material.ammonium_hexachloropalladate=Гексахлоропалладат (IV) аммония
+material.ruthenium_chloride=Хлорид рутения (III)
+material.platinum_group_concentrate=Концентрат платиновой группы
+material.ammonium_perrhenate=Перренат аммония
