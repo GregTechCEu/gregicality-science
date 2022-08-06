@@ -53,7 +53,8 @@ public class PressureRecipeBuilder extends RecipeBuilder<PressureRecipeBuilder> 
 
     @Override
     public ValidationResult<Recipe> build() {
-        if (this.recipePropertyStorage != null && this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), -1.0D) <= 0) {
+        if (this.recipePropertyStorage != null && this.recipePropertyStorage.hasRecipeProperty(PressureProperty.getInstance()) &&
+                this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), -1.0D) <= 0) {
             this.recipePropertyStorage.store(PressureProperty.getInstance(), 101_325);
         }
 

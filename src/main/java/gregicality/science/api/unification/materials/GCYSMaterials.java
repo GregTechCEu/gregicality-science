@@ -250,7 +250,6 @@ public class GCYSMaterials {
     public static Material TraceRheniumFlue;
     public static Material FracturingFluid;
     public static Material BedrockSmoke;
-    public static Material DenseBedrockSmoke;
     public static Material Bedrock;
     public static Material BedrockSootSolution;
     public static Material CleanBedrockSolution;

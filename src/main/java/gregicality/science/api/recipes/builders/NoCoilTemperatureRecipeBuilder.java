@@ -52,7 +52,8 @@ public class NoCoilTemperatureRecipeBuilder extends RecipeBuilder<NoCoilTemperat
 
     @Override
     public ValidationResult<Recipe> build() {
-        if (this.recipePropertyStorage != null && this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), -1) <= 0) {
+        if (this.recipePropertyStorage != null && this.recipePropertyStorage.hasRecipeProperty(NoCoilTemperatureProperty.getInstance())
+                && this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), -1) <= 0) {
             this.recipePropertyStorage.store(NoCoilTemperatureProperty.getInstance(), 298);
         }
 

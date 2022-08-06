@@ -56,7 +56,7 @@ public class MetaTileEntityCatalyticReformer extends RecipeMapMultiblockControll
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return GCYSTextures.CATALYTIC_REFORMER;
+        return GCYSTextures.CATALYTIC_REFORMER_OVERLAY;
     }
 
     @Override

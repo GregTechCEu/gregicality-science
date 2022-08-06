@@ -31,10 +31,12 @@ public class GCYSMetaTileEntities {
     public static MetaTileEntityFracker HYDRAULIC_FRACKER;
     public static MetaTileEntitySonicator SONICATOR;
     public static MetaTileEntityCatalyticReformer CATALYTIC_REFORMER;
+    public static MetaTileEntityIndustrialDrill INDUSTRIAL_DRILL;
 
     public static void init() {
         registerSimpleMetaTileEntity(DRYER, 2100, "dryer", GCYSRecipeMaps.DRYER_RECIPES, GCYSTextures.DRYER_OVERLAY, true, GCYSMetaTileEntities::gcysId, GTUtility.hvCappedTankSizeFunction);
 
+        INDUSTRIAL_DRILL = registerMetaTileEntity(4094, new MetaTileEntityIndustrialDrill(gcysId("industrial_drill")));
         CATALYTIC_REFORMER = registerMetaTileEntity(4095, new MetaTileEntityCatalyticReformer(gcysId("catalytic_reformer")));
         SONICATOR = registerMetaTileEntity(4096, new MetaTileEntitySonicator(gcysId("sonicator")));
         HYDRAULIC_FRACKER = registerMetaTileEntity(4097, new MetaTileEntityFracker(gcysId("fracker"), GTValues.ZPM));

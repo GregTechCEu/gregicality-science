@@ -69,10 +69,12 @@ public class TemperaturePressureRecipeBuilder extends RecipeBuilder<TemperatureP
     @Override
     public ValidationResult<Recipe> build() {
         if (this.recipePropertyStorage != null) {
-            if (this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), -1) <= 0) {
+            if (this.recipePropertyStorage.hasRecipeProperty(NoCoilTemperatureProperty.getInstance()) &&
+                    this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), -1) <= 0) {
                 this.recipePropertyStorage.store(NoCoilTemperatureProperty.getInstance(), 298);
             }
-            if (this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), -1.0D) <= 0) {
+            if (this.recipePropertyStorage.hasRecipeProperty(PressureProperty.getInstance()) &&
+                    this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), -1.0D) <= 0) {
                 this.recipePropertyStorage.store(PressureProperty.getInstance(), 101_325);
             }
         }

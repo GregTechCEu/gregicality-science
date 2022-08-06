@@ -69,7 +69,7 @@ public class GCYSUnknownCompositionMaterials {
 
         BedrockSmoke = new Material.Builder(18026, "bedrock_smoke").fluid(FluidTypes.GAS).color(0x525252).build();
 
-        DenseBedrockSmoke = new Material.Builder(18027, "dense_bedrock_smoke").fluid(FluidTypes.GAS).color(0x404040).build();
+        // FREE ID 18027
 
         Bedrock = new Material.Builder(18028, "bedrock").dust().color(0x404040).iconSet(ROUGH).build();
 

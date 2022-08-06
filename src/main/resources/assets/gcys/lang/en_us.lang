@@ -267,7 +267,6 @@ material.molybdenum_flue=Molybdenum Flue Gas
 material.trace_rhenium_flue=Trace Rhenium Flue Gas
 material.fracturing_fluid=Fracturing Fluid
 material.bedrock_smoke=Bedrock Smoke
-material.dense_bedrock_smoke=Dense Bedrock Smoke
 material.bedrock=Bedrock
 material.bedrock_soot_solution=Bedrock Soot Solution
 material.clean_bedrock_solution=Clean Bedrock Solution
@@ -341,6 +340,11 @@ gcys.machine.sonicator.name=Sonicator
 # Catalytic Reformer
 gcys.machine.catalytic_reformer.name=Catalytic Reformer
 
+# Industrial Drill
+gcys.machine.industrial_drill.name=Industrial Drilling Rig
+gcys.machine.industrial_drill.tooltip.1=Drills the block placed beneath the Drill Head.
+gcys.machine.industrial_drill.tooltip.2=The target block is not broken when non-consumable.
+
 # Single Block Machines
 
 gcys.machine.dryer.lv.name=Basic Dryer
@@ -367,6 +371,7 @@ tile.crucible.boron_nitride.name=Boron Nitride Crucible
 
 tile.multiblock_casing.substrate.name=Substrate Casing
 tile.multiblock_casing.advanced_substrate.name=Advanced Substrate Casing
+tile.multiblock_casing.drill_head.name=Drill Head
 
 
 # Vacuums
@@ -558,6 +563,7 @@ recipemap.plasma_cvd_recipes.name=Plasma Enhanced CVD
 recipemap.sonication_recipes.name=Sonication
 recipemap.ion_implanter_recipes.name=Ion Implantation
 recipemap.superheavy_reactor_recipes.name=Superheavy Reactions
+recipemap.drill_recipes.name=Drilling
 
 # Generators
 recipemap.taranium_reactor_mk1_recipes.name=Taranium Reactor Mk.1

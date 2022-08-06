@@ -1,7 +1,8 @@
 package gregicality.science.loaders.recipe.oreprocessing;
 
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
-import gregtech.api.unification.ore.OrePrefix;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 
 import static com.ibm.icu.lang.UCharacter.GraphemeClusterBreak.LV;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.*;
@@ -38,11 +39,11 @@ public class TaraniumProcessing {
     }
 
     private static void regularFractions() {
-        CENTRIFUGE_RECIPES.recipeBuilder()
-                .fluidInputs(DenseBedrockSmoke.getFluid(1000))
-                .output(OrePrefix.dust, Bedrock, 4)
-                .fluidOutputs(BedrockSmoke.getFluid(1000))
-                .duration(80).EUt(240).buildAndRegister();
+        DRILLING_RECIPES.recipeBuilder()
+                .notConsumable(new ItemStack(Blocks.BEDROCK))
+                .chancedOutput(dust, Bedrock, 100, 0)
+                .fluidOutputs(BedrockSmoke.getFluid(100))
+                .duration(100).EUt(VA[UHV]).buildAndRegister();
 
         // NH3 + HNO3 -> NH4NO3
         CHEMICAL_RECIPES.recipeBuilder()

@@ -95,6 +95,11 @@ public class GCYSRecipeMaps {
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTValues.FOOLS.get() ? GTSounds.SCIENCE : GTSounds.CHEMICAL_REACTOR);
 
+    public static final RecipeMap<SimpleRecipeBuilder> DRILLING_RECIPES = new RecipeMap<>("drill_recipes", 1, 1, 0, 1, 0, 0, 0, 1, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, true, GuiTextures.CRUSHED_ORE_OVERLAY)
+            .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
+            .setSound(GTSounds.MACERATOR);
+
     // Generators
 
     public static final RecipeMap<FuelRecipeBuilder> TARANIUM_REACTOR_MK1_RECIPES = new RecipeMap<>("taranium_reactor_mk1_recipes", 0, 0, 0, 0, 1, 1, 0, 0, new FuelRecipeBuilder(), false)
