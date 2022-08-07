@@ -147,14 +147,14 @@ public class RocketEntity extends Entity {
         Minecraft.getMinecraft().effectRenderer.addEffect(flame);
     }
 
-    protected void spawnLaunchParticles(){
+    protected void spawnLaunchParticles(double v){
         float startPos = this.getStartPos();
         float randFloat = rnd.nextFloat();
         float randSpeed = rnd.nextFloat();
-        ParticleSmokeHuge smoke_x1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 0.5 + randSpeed, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16);
-        ParticleSmokeHuge smoke_x2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, -(0.5 + randSpeed), 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16);
-        ParticleSmokeHuge smoke_z1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16, 0.5 + randSpeed);
-        ParticleSmokeHuge smoke_z2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 1.5*(randFloat-0.5)*0.16, 1.5*(randFloat-0.5)*0.16, -(0.5 + randSpeed));
+        ParticleSmokeHuge smoke_x1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, 0.5 + randSpeed, v*(randFloat-0.5)*0.16, v*(randFloat-0.5)*0.16);
+        ParticleSmokeHuge smoke_x2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, -(0.5 + randSpeed), v*(randFloat-0.5)*0.16, v*(randFloat-0.5)*0.16);
+        ParticleSmokeHuge smoke_z1 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, v*(randFloat-0.5)*0.16, v*(randFloat-0.5)*0.16, 0.5 + randSpeed);
+        ParticleSmokeHuge smoke_z2 = new ParticleSmokeHuge(this.world, this.posX, startPos - 3, this.posZ, v*(randFloat-0.5)*0.16, v*(randFloat-0.5)*0.16, -(0.5 + randSpeed));
         Minecraft.getMinecraft().effectRenderer.addEffect(smoke_x1);
         Minecraft.getMinecraft().effectRenderer.addEffect(smoke_x2);
         Minecraft.getMinecraft().effectRenderer.addEffect(smoke_z1);
@@ -176,13 +176,8 @@ public class RocketEntity extends Entity {
         int age = this.getAge();
         int launchTime = this.getLaunchTime();
 
-        if (this.isCountDownStarted() && !launched) {
-            if (age >= launchTime) {
-                this.Launch();
-            }
-            if(launchTime - age < 60 && age % 2 == 0){
-                this.spawnLaunchParticles();
-            }
+        if (this.isCountDownStarted() && !launched && age >= launchTime) {
+            this.Launch();
         }
 
         if (launched) {
@@ -191,14 +186,23 @@ public class RocketEntity extends Entity {
             this.motionY = jerk * Math.pow(getFlightTime(), 2) / 2;
             this.setPosition(this.posX, startPos + jerk * Math.pow(flightTime, 3) / 6, this.posZ);
             this.setFlightTime(flightTime + 1);
+
             if(flightTime % 2 == 0) {
                 this.spawnFlightParticles();
-                if(flightTime < 140){
-                    this.spawnLaunchParticles();
-                }
             }
+
             if (this.posY > 300 || flightTime > 1200) {
                 this.setDead();
+            }
+        }
+
+        if(age % 2 == 0 && this.isCountDownStarted()){
+            if(launchTime - age < 60 && launchTime - age > 0){
+                this.spawnLaunchParticles(0.025*(age - launchTime + 60));
+            }else if(launchTime - age > -100 && launchTime - age < 0){
+                this.spawnLaunchParticles(1.5);
+            }else if(launchTime - age > -150 && launchTime - age < -100){
+                this.spawnLaunchParticles(-0.03*(age - launchTime + 150));
             }
         }
 
