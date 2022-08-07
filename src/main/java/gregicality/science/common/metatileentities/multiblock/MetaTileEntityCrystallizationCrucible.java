@@ -67,7 +67,7 @@ public class MetaTileEntityCrystallizationCrucible extends RecipeMapMultiblockCo
     protected void addDisplayText(List<ITextComponent> textList) {
         if (isStructureFormed()) {
             textList.add(new TextComponentTranslation("gregtech.multiblock.blast_furnace.max_temperature",
-                    new TextComponentTranslation(GTUtility.formatNumbers(temperature) + "K").setStyle(new Style().setColor(TextFormatting.RED))));
+                    TextFormatting.RED + GTUtility.formatNumbers(temperature) + "K"));
         }
         super.addDisplayText(textList);
     }
