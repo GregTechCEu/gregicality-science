@@ -23,6 +23,30 @@
           "side": "gregtech:blocks/casings/solid/substrate_side",
           "bottom": "#side"
         }
+      },
+      "structural_beam": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gregtech:blocks/casings/solid/structural_beam_top",
+          "side": "gregtech:blocks/casings/solid/structural_beam_side",
+          "bottom": "#top"
+        }
+      },
+      "tower_piping": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gregtech:blocks/casings/solid/tower_piping_top",
+          "side": "gregtech:blocks/casings/solid/tower_piping_side",
+          "bottom": "#top"
+        }
+      },
+      "tower_instruments": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gregtech:blocks/casings/solid/tower_instruments_top",
+          "side": "gregtech:blocks/casings/solid/tower_instruments_side",
+          "bottom": "#top"
+        }
       }
     }
   }
