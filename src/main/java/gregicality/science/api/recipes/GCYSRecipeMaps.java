@@ -81,4 +81,9 @@ public class GCYSRecipeMaps {
             .setProgressBar(GCYSGuiTextures.PROGRESS_BAR_NANOSCALE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSounds.ELECTROLYZER);
 
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> LAUNCHPAD_RECIPES = new RecipeMap<>("launchpad_recipes", 0, 9, 0, 1, 0, 3, 0, 0, new SimpleRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLY_LINE, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.ASSEMBLER);
+
 }

@@ -28,12 +28,14 @@ public class GCYSMetaTileEntities {
     public static MetaTileEntityCVDUnit CVD_UNIT;
     public static MetaTileEntityBurnerReactor BURNER_REACTOR;
     public static MetaTileEntityCryoReactor CRYOGENIC_REACTOR;
+    public static MetaTileEntityLaunchPad LAUNCH_PAD;
 
     public static void init() {
         registerSimpleMetaTileEntity(DRYER, 2100, "dryer", GCYSRecipeMaps.DRYER_RECIPES, GCYSTextures.DRYER_OVERLAY, true, GCYSMetaTileEntities::gcysId, GTUtility.hvCappedTankSizeFunction);
 
 
 
+        LAUNCH_PAD = registerMetaTileEntity(4097, new MetaTileEntityLaunchPad(gcysId("launch_pad")));
         NANOSCALE_FABRICATOR = registerMetaTileEntity(4098, new MetaTileEntityNanoscaleFabricator(gcysId("nanoscale_fabricator")));
         ROASTER = registerMetaTileEntity(4099, new MetaTileEntityRoaster(gcysId("roaster")));
         BIO_VAT = registerMetaTileEntity(4100, new MetaTileEntityBioVat(gcysId("bio_vat")));
