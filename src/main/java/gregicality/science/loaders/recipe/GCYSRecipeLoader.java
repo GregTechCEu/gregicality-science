@@ -19,7 +19,6 @@ public class GCYSRecipeLoader {
         MiscRecipes.init();
         RecipeConflicts.init();
         GCYSComponentRecipes.init();
-        VacuumRecipes.init();
         GCYSMetaTileEntityLoader.init();
     }
 
