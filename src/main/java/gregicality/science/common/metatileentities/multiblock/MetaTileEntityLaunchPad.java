@@ -47,7 +47,7 @@ public class MetaTileEntityLaunchPad extends RecipeMapMultiblockController {
                 .where('C', states(MetaBlocks.STONE_SMOOTH.getState(BlockStoneSmooth.BlockType.CONCRETE_LIGHT)).or(states(MetaBlocks.STONE_SMOOTH.getState(BlockStoneSmooth.BlockType.CONCRETE_DARK))))
                 .where('A', air())
                 .where('F', states(MetaBlocks.FRAMES.get(GCYMMaterials.HSLASteel).getBlock(GCYMMaterials.HSLASteel)))
-                .where('I', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID)))
+                .where('I', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID)).or(autoAbilities(true, true, true, true, true, false, false)))
                 .where('B', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.CasingType.STRUCTURAL_BEAM)))
                 .where('T', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.CasingType.TOWER_INSTRUMENTS)))
                 .where('P', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.CasingType.TOWER_PIPING)))
