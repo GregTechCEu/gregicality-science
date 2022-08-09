@@ -57,21 +57,13 @@ public class KevlarChain {
                 .EUt(240)
                 .buildAndRegister();
 
-        // Te + 2O -> TeO2
+        // C4H8 + HClO + H2O -> C4H10O2 + HCl
         CHEMICAL_RECIPES.recipeBuilder()
-                .input(dust, Tellurium)
-                .fluidInputs(Oxygen.getFluid(2000))
-                .output(dust, TelluriumDioxide, 3)
-                .duration(60)
-                .EUt(8)
-                .buildAndRegister();
-
-        // TeO2 + C4H10 + TeO2 -> C4H10O2 + Te
-        CHEMICAL_RECIPES.recipeBuilder()
-                .input(dust, TelluriumDioxide, 3)
-                .fluidInputs(Butane.getFluid(1000))
+                .fluidInputs(Butene.getFluid(1000))
+                .fluidInputs(HypochlorousAcid.getFluid(1000))
+                .fluidInputs(Water.getFluid(1000))
                 .fluidOutputs(Butanediol.getFluid(1000))
-                .output(dust, Tellurium)
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .duration(60)
                 .EUt(VA[HV])
                 .buildAndRegister();

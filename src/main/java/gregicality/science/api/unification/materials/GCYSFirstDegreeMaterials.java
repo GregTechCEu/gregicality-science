@@ -450,6 +450,7 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.DIAMOND)
                 .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, CRYSTALLIZABLE, FLAMMABLE, EXPLOSIVE, DISABLE_CRYSTALLIZATION) // to disable implosion recipes
                 .components(Boron, 1, Nitrogen, 1)
+                .toolStats(14.0F, 9.0F, 12400, 15)
                 .build()
                 .setFormula("c-BN", true);
 
@@ -660,7 +661,7 @@ public class GCYSFirstDegreeMaterials {
         CadmiumSulfide = new Material.Builder(3587, "cadmium_sulfide")
                 .dust()
                 .color(0xC8C43C)
-                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING, GENERATE_PLATE)
                 .iconSet(MaterialIconSet.METALLIC)
                 .components(Cadmium, 1, Sulfur, 1)
                 .build();
@@ -704,7 +705,7 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.BRIGHT)
                 .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD,
                         GENERATE_FINE_WIRE, GENERATE_SPRING)
-                .cableProperties(GTValues.V[GTValues.UEV], 8, 6, false)
+                .cableProperties(GTValues.V[GTValues.UEV], 8, 6)
                 .components(Carbon, 48)
                 .build()
                 .setFormula("CNT", false);
@@ -765,7 +766,7 @@ public class GCYSFirstDegreeMaterials {
                 .color(0x823C80).iconSet(MaterialIconSet.BRIGHT)
                 .flags(GENERATE_FINE_WIRE)
                 .components(Mercury, 2, Cadmium, 1, Tellurium, 2)
-                .cableProperties(GTValues.V[GTValues.UHV], 3, 10)
+                .cableProperties(GTValues.V[GTValues.UHV], 6, 8)
                 .blastTemp(2170, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.UHV])
                 .build();
 
@@ -914,6 +915,25 @@ public class GCYSFirstDegreeMaterials {
                 .color(0xFF7832)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Vibranium, 1)
+                .build();
+
+        SiliconCarbide = new Material.Builder(3621, "silicon_carbide") //TODO Carborundum tooltip
+                .dust()
+                .color(0x4D4D4D)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(GENERATE_FINE_WIRE)
+                .components(Silicon, 1, Carbon, 1)
+                .blastTemp(2500, BlastProperty.GasTier.HIGH, GTValues.VA[GTValues.UV])
+                .cableProperties(GTValues.V[GTValues.UHV], 6, 8)
+                .build();
+
+        ChromiumGermaniumTelluride = new Material.Builder(3622, "cgt")
+                .ingot().fluid()
+                .color(0x8F103E)
+                .iconSet(MaterialIconSet.METALLIC)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD)
+                .components(Chrome, 1, Germanium, 1, Tellurium, 3)
+                .blastTemp(2900, BlastProperty.GasTier.HIGHER)
                 .build();
     }
 }

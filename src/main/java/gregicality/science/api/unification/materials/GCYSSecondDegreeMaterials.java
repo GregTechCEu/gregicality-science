@@ -2,6 +2,7 @@ package gregicality.science.api.unification.materials;
 
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
+import gregtech.api.unification.material.properties.PropertyKey;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -152,5 +153,17 @@ public class GCYSSecondDegreeMaterials {
                 .components(BismuthTrioxide, 2, FerricOxide, 2)
                 .build()
                 .setFormula("BiFeO3", true);
+
+        ChromiumGermaniumTellurideMagnetic = new Material.Builder(6025, "cgt_magnetic")
+                .ingot()
+                .color(0x8F103E)
+                .iconSet(MaterialIconSet.MAGNETIC)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, IS_MAGNETIC)
+                .components(ChromiumGermaniumTelluride, 1)
+                .ingotSmeltInto(ChromiumGermaniumTelluride)
+                .arcSmeltInto(ChromiumGermaniumTelluride)
+                .macerateInto(ChromiumGermaniumTelluride)
+                .build();
+        ChromiumGermaniumTelluride.getProperty(PropertyKey.INGOT).setMagneticMaterial(ChromiumGermaniumTellurideMagnetic);
     }
 }

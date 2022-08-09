@@ -4,7 +4,10 @@ import gregicality.science.GregicalityScience;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.loaders.recipe.GCYSMaterialInfoLoader;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
+import gregicality.science.loaders.recipe.component.GCYSCraftingComponent;
+import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.loaders.recipe.CraftingComponent;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -41,6 +44,7 @@ public class CommonProxy {
         IForgeRegistry<Block> registry = event.getRegistry();
         registry.register(GCYSMetaBlocks.CRUCIBLE);
         registry.register(GCYSMetaBlocks.MULTIBLOCK_CASING);
+        registry.register(GCYSMetaBlocks.TRANSPARENT_CASING);
     }
 
     @SubscribeEvent
@@ -48,6 +52,7 @@ public class CommonProxy {
         IForgeRegistry<Item> registry = event.getRegistry();
         registry.register(createItemBlock(GCYSMetaBlocks.CRUCIBLE, VariantItemBlock::new));
         registry.register(createItemBlock(GCYSMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
     }
 
     @Nonnull
@@ -58,12 +63,17 @@ public class CommonProxy {
     }
 
     // using low to ensure some recipes from CEu are removed
-    @SubscribeEvent(priority = EventPriority.LOW)
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         // Main recipe registration
         // This is called AFTER GregTech registers recipes, so
         // anything here is safe to call removals in
         GCYSRecipeLoader.init();
         GCYSMaterialInfoLoader.init();
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void initComponents(GregTechAPI.RegisterEvent<CraftingComponent> event) {
+        GCYSCraftingComponent.init();
     }
 }

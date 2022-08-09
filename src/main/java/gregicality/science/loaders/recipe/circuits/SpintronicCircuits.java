@@ -18,6 +18,7 @@ import static gregtech.common.items.MetaItems.*;
 
 public class SpintronicCircuits {
 
+    //TODO additional magnets as needed: YbPtBi - antiferromagnetic, GaMnAs - ferromagnetic semiconductor
     public static void init() {
         sttram();
         topologicalIsolators();

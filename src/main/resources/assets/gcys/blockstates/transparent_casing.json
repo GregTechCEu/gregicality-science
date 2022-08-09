@@ -1,0 +1,20 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "block/cube_all",
+    "textures": {
+      "all": "gregtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "variant": {
+      "pmma": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gregtech:blocks/casings/transparent/pmma_glass"
+        }
+      }
+    }
+  }
+}

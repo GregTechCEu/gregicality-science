@@ -1,10 +1,14 @@
 package gregicality.science.common.items;
 
+import gregicality.science.api.unification.materials.GCYSMaterials;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.unification.stack.ItemMaterialInfo;
+import gregtech.api.unification.stack.MaterialStack;
 
 import static gregicality.science.common.items.GCYSMetaItems.*;
+import static gregtech.api.GTValues.M;
 
 public class GCYSMetaItem1 extends StandardMetaItem {
 
@@ -41,20 +45,29 @@ public class GCYSMetaItem1 extends StandardMetaItem {
         SUPRACAUSAL_COMPUTER = addItem(19, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
         SUPRACAUSAL_MAINFRAME = addItem(20, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
 
-        CARBON_ALLOTROPE_MIXTURE = addItem(21, "mixture.carbon_allotrope");
-        GRAPHENE_ALIGNED_CNT = addItem(22, "cnt.graphene_aligned");
+        VOLTAGE_COIL_UHV = addItem(21, "voltage_coil.uhv").setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GCYSMaterials.MercuryCadmiumTelluride, M * 2), new MaterialStack(GCYSMaterials.ChromiumGermaniumTellurideMagnetic, M / 2)));
+        VOLTAGE_COIL_UEV = addItem(22, "voltage_coil.uev").setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GCYSMaterials.MercuryCadmiumTelluride, M * 2), new MaterialStack(GCYSMaterials.ChromiumGermaniumTellurideMagnetic, M / 2)));
+        VOLTAGE_COIL_UIV = addItem(23, "voltage_coil.uiv").setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GCYSMaterials.MercuryCadmiumTelluride, M * 2), new MaterialStack(GCYSMaterials.ChromiumGermaniumTellurideMagnetic, M / 2)));
+        VOLTAGE_COIL_UXV = addItem(24, "voltage_coil.uxv").setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GCYSMaterials.MercuryCadmiumTelluride, M * 2), new MaterialStack(GCYSMaterials.ChromiumGermaniumTellurideMagnetic, M / 2)));
+        VOLTAGE_COIL_OpV = addItem(25, "voltage_coil.opv").setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GCYSMaterials.MercuryCadmiumTelluride, M * 2), new MaterialStack(GCYSMaterials.ChromiumGermaniumTellurideMagnetic, M / 2)));
+        VOLTAGE_COIL_MAX = addItem(26, "voltage_coil.max").setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GCYSMaterials.MercuryCadmiumTelluride, M * 2), new MaterialStack(GCYSMaterials.ChromiumGermaniumTellurideMagnetic, M / 2)));
 
-        GOOWARE_BOARD = addItem(28, "board.gooware");
-        OPTICAL_BOARD = addItem(29, "board.optical");
-        SPINTRONIC_BOARD = addItem(30, "board.spintronic");
-        GOOWARE_CIRCUIT_BOARD = addItem(35, "circuit_board.gooware");
-        OPTICAL_CIRCUIT_BOARD = addItem(36, "circuit_board.optical");
-        SPINTRONIC_CIRCUIT_BOARD = addItem(37, "circuit_board.spintronic");
+        CARBON_ALLOTROPE_MIXTURE = addItem(27, "mixture.carbon_allotrope");
+        GRAPHENE_ALIGNED_CNT = addItem(28, "cnt.graphene_aligned");
+        COMPONENT_GRINDER_BORON_NITRIDE = addItem(29, "component.grinder.boron_nitride")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GCYSMaterials.CubicBoronNitride, M * 4), new MaterialStack(GCYSMaterials.Vibranium, M * 8), new MaterialStack(GCYSMaterials.CubicHeterodiamond, M)));
 
-        BZ_REACTION_CHAMBER = addItem(40, "reaction_chamber.bz");
-        NONLINEAR_CHEMICAL_OSCILLATOR = addItem(41, "nonlinear_chemical_oscillator");
-        OPTICAL_LASER_CONTROL_UNIT = addItem(42, "optical_laser_control_unit");
-        ESR_COMPUTATION_UNIT = addItem(43, "esr_computation_unit");
+        GOOWARE_BOARD = addItem(30, "board.gooware");
+        OPTICAL_BOARD = addItem(31, "board.optical");
+        SPINTRONIC_BOARD = addItem(32, "board.spintronic");
+        GOOWARE_CIRCUIT_BOARD = addItem(37, "circuit_board.gooware");
+        OPTICAL_CIRCUIT_BOARD = addItem(38, "circuit_board.optical");
+        SPINTRONIC_CIRCUIT_BOARD = addItem(39, "circuit_board.spintronic");
+
+        BZ_REACTION_CHAMBER = addItem(42, "reaction_chamber.bz");
+        NONLINEAR_CHEMICAL_OSCILLATOR = addItem(43, "nonlinear_chemical_oscillator");
+        OPTICAL_LASER_CONTROL_UNIT = addItem(44, "optical_laser_control_unit");
+        ESR_COMPUTATION_UNIT = addItem(45, "esr_computation_unit");
 
         PHASE_CHANGE_MEMORY = addItem(46, "plate.phase_change_memory");
         OPTICAL_FIBER = addItem(47, "optical_fiber");

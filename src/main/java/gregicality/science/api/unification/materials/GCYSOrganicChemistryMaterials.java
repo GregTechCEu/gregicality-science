@@ -5,6 +5,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 
@@ -199,7 +200,7 @@ public class GCYSOrganicChemistryMaterials {
                 .build()
                 .setFormula("C6H2(CH3)4", true);
 
-        PyrometalliticDianhydride = new Material.Builder(15032, "pyromellitic_dianhydride") //TODO PDMA Tooltip
+        PyromelliticDianhydride = new Material.Builder(15032, "pyromellitic_dianhydride") //TODO PDMA Tooltip
                 .dust()
                 .color(0xF0EAD6)
                 .iconSet(MaterialIconSet.ROUGH)
@@ -316,6 +317,7 @@ public class GCYSOrganicChemistryMaterials {
         Butanediol = new Material.Builder(15047, "butanediol")
                 .fluid()
                 .color(0xAAC4DA)
+                .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
                 .build();
 
@@ -367,7 +369,11 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 2, Hydrogen, 6, Oxygen, 2)
                 .build();
 
-        // FREE ID: 15055
+        Diacetyl = new Material.Builder(15055, "diacetyl") //TODO "Tastes like butter" tooltip
+                .fluid()
+                .color(0xF7FF65)
+                .components(Carbon, 4, Hydrogen, 6, Oxygen, 2)
+                .build();
 
         AcetoneCyanohydrin = new Material.Builder(15056, "acetone_cyanohydrin")
                 .fluid()
@@ -376,9 +382,9 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 4, Hydrogen, 7, Nitrogen, 1, Oxygen, 1)
                 .build();
 
-        Polymethylmethacrylate = new Material.Builder(15057, "polymethylmethacrylate")
+        PMMA = new Material.Builder(15057, "pmma") //TODO Polymethylmethacrylate tooltip
                 .ingot().fluid()
-                .color(0x95E5A5)
+                .color(0x91CAE1)
                 .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
                 .components(Carbon, 5, Hydrogen, 8, Oxygen, 2)
                 .build();
@@ -399,21 +405,21 @@ public class GCYSOrganicChemistryMaterials {
                 .build()
                 .setFormula("Ga(CH3)3", true);
 
-        EthyleneDibromide = new Material.Builder(1560, "ethylene_dibromide") //TODO "EDB" tooltip
+        EthyleneDibromide = new Material.Builder(15060, "ethylene_dibromide") //TODO "EDB" tooltip
                 .fluid()
                 .color(0x4F1743)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 2, Hydrogen, 4, Bromine, 2)
                 .build();
 
-        GrignardReagent = new Material.Builder(1561, "grignard_reagent")
+        GrignardReagent = new Material.Builder(15061, "grignard_reagent")
                 .fluid()
                 .color(0xA12AA1)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 1, Hydrogen, 3, Magnesium, 1, Bromine, 1)
                 .build();
 
-        Dimethylcadmium = new Material.Builder(1562, "dimethylcadmium")
+        Dimethylcadmium = new Material.Builder(15062, "dimethylcadmium")
                 .fluid()
                 .color(0x5C037F)
                 .flags(DISABLE_DECOMPOSITION)
@@ -421,7 +427,7 @@ public class GCYSOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2Cd", true);
 
-        DiethylSuflide = new Material.Builder(1563, "diethyl_sulfide")
+        DiethylSuflide = new Material.Builder(15063, "diethyl_sulfide")
                 .fluid()
                 .color(0xFF7E4B)
                 .flags(DISABLE_DECOMPOSITION)
@@ -429,59 +435,59 @@ public class GCYSOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2S", true);
 
-        Cycloparaphenylene = new Material.Builder(1564, "cycloparaphenylene") //TODO "CPP" tooltip
+        Cycloparaphenylene = new Material.Builder(15064, "cycloparaphenylene") //TODO "CPP" tooltip
                 .fluid()
                 .color(0x60545A)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 6, Hydrogen, 4)
                 .build();
 
-        Indene = new Material.Builder(1565, "indene")
+        Indene = new Material.Builder(15065, "indene")
                 .fluid()
                 .color(0x171429)
                 .components(Carbon, 9, Hydrogen, 8)
                 .build();
 
-        Indanone = new Material.Builder(1566, "indanone")
+        Indanone = new Material.Builder(15066, "indanone")
                 .dust()
                 .color(0x2E1616).iconSet(MaterialIconSet.SHINY)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 9, Hydrogen, 8, Oxygen, 1)
                 .build();
 
-        Truxene = new Material.Builder(1567, "truxene")
+        Truxene = new Material.Builder(15067, "truxene")
                 .fluid()
                 .color(0x1A3336)
                 .components(Carbon, 27, Hydrogen, 18)
                 .build();
 
-        Bromomethane = new Material.Builder(1568, "bromomethane")
+        Bromomethane = new Material.Builder(15068, "bromomethane")
                 .fluid(FluidTypes.GAS)
                 .color(0xC82C31)
                 .components(Carbon, 1, Hydrogen, 3, Bromine, 1)
                 .build();
 
-        BromoBromomethylNaphthalene = new Material.Builder(1569, "bromo_bromomethyl_naphthalene")
+        BromoBromomethylNaphthalene = new Material.Builder(15069, "bromo_bromomethyl_naphthalene")
                 .fluid()
                 .color(0x52122E)
                 .components(Carbon, 11, Hydrogen, 8, Bromine, 2)
                 .build();
 
-        Bromobutane = new Material.Builder(1570, "bromobutane")
+        Bromobutane = new Material.Builder(15070, "bromobutane")
                 .fluid(FluidTypes.GAS)
                 .color(0xE6E8A2)
                 .components(Butene, 1, HydrobromicAcid, 1)
                 .build()
                 .setFormula("C4H9Br", true);
 
-        Butyllithium = new Material.Builder(1571, "butyllithium")
+        Butyllithium = new Material.Builder(15071, "butyllithium")
                 .fluid()
                 .color(0xE683B6B)
                 .components(Butene, 1, Hydrogen, 1, Lithium, 1)
                 .build()
                 .setFormula("C4H9Li", true);
 
-        PalladiumAcetate = new Material.Builder(1572, "palladium_acetate")
+        PalladiumAcetate = new Material.Builder(15072, "palladium_acetate")
                 .dust()
                 .color(0x693C2D).iconSet(MaterialIconSet.SHINY)
                 .flags(DISABLE_DECOMPOSITION)
@@ -489,12 +495,47 @@ public class GCYSOrganicChemistryMaterials {
                 .build()
                 .setFormula("Pd(CH3COOH)2", true);
 
-        GeodesicPolyarene = new Material.Builder(1573, "geodesic_polyarene")
+        GeodesicPolyarene = new Material.Builder(15073, "geodesic_polyarene")
                 .dust()
                 .color(0x9E81A8).iconSet(MaterialIconSet.METALLIC)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 60, Hydrogen, 30)
                 .build();
 
+        Edot = new Material.Builder(15074, "edot")
+                .fluid()
+                .color(0xB1FFD7)
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 2, Sulfur, 1)
+                .build();
+
+        Polystyrene = new Material.Builder(15075, "polystyrene")
+                .fluid()
+                .color(0xE1C2C2)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 8, Hydrogen, 8)
+                .build();
+
+        PolystyreneSulfonate = new Material.Builder(15076, "polystyrene_sulfonate")
+                .ingot().fluid()
+                .color(0xE17C72)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .components(Carbon, 8, Hydrogen, 8, Sulfur, 1, Oxygen, 3)
+                .build();
+
+        PedotPSS = new Material.Builder(15077, "pedot_pss")
+                .ingot().fluid()
+                .color(0xE165A7)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_FINE_WIRE)
+                .components(Edot, 1, PolystyreneSulfonate, 1)
+                .cableProperties(V[UHV], 24, 0, true)
+                .build();
+
+        PedotTMA = new Material.Builder(15078, "pedot_tma")
+                .ingot().fluid()
+                .color(0x5E9EE1)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_SPRING)
+                .components(Edot, 1, PMMA, 2)
+                .cableProperties(V[UEV], 8, 6)
+                .build();
     }
 }

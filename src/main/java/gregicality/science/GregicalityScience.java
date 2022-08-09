@@ -8,6 +8,7 @@ import gregicality.science.common.metatileentities.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import javax.annotation.Nonnull;
@@ -24,6 +25,11 @@ public class GregicalityScience {
 
     @SidedProxy(modId = MODID, clientSide = "gregicality.science.common.ClientProxy", serverSide = "gregicality.science.common.CommonProxy")
     public static CommonProxy proxy;
+
+    @Mod.EventHandler
+    public void onModConstruction(FMLConstructionEvent event) {
+        GTValues.HT = true;
+    }
 
     @Mod.EventHandler
     public void onPreInit(@Nonnull FMLPreInitializationEvent event) {

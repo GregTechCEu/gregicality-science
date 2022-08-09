@@ -9,6 +9,7 @@ public class GCYSMaterials {
     public static Material Lithium7;
     public static Material Beryllium7;
     public static Material Orichalcum;
+    public static Material NeutroniumReal;
     public static Material Vibranium;
     public static Material Adamantium;
     public static Material Taranium;
@@ -136,6 +137,8 @@ public class GCYSMaterials {
     public static Material AdamantiumEnriched;
     public static Material DeepIron;
     public static Material VibraniumUnstable;
+    public static Material SiliconCarbide;
+    public static Material ChromiumGermaniumTelluride;
 
 
     // Second Degree Materials
@@ -156,6 +159,7 @@ public class GCYSMaterials {
     public static Material PraseodymiumDopedZBLANGlass;
     public static Material NdYAG;
     public static Material BismuthFerrite;
+    public static Material ChromiumGermaniumTellurideMagnetic;
 
 
     // Third Degree Materials
@@ -186,7 +190,7 @@ public class GCYSMaterials {
     public static Material AceticAnhydride;
     public static Material ParaXylene;
     public static Material Durene;
-    public static Material PyrometalliticDianhydride;
+    public static Material PyromelliticDianhydride;
     public static Material Aminophenol;
     public static Material Dimethylformamide;
     public static Material Oxydianiline;
@@ -210,8 +214,9 @@ public class GCYSMaterials {
     public static Material Pyrocatechol;
     public static Material EthyleneOxide;
     public static Material EthyleneGlycol;
+    public static Material Diacetyl;
     public static Material AcetoneCyanohydrin;
-    public static Material Polymethylmethacrylate;
+    public static Material PMMA;
     public static Material Trimethylaluminium;
     public static Material Trimethylgallium;
     public static Material EthyleneDibromide;
@@ -228,6 +233,11 @@ public class GCYSMaterials {
     public static Material Butyllithium;
     public static Material PalladiumAcetate;
     public static Material GeodesicPolyarene;
+    public static Material Edot;
+    public static Material Polystyrene;
+    public static Material PolystyreneSulfonate;
+    public static Material PedotPSS;
+    public static Material PedotTMA;
 
 
     // Unknown Composition Materials

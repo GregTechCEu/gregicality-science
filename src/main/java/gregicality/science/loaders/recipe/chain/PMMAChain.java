@@ -23,7 +23,7 @@ public class PMMAChain {
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(AcetoneCyanohydrin.getFluid(2000))
                 .fluidInputs(Methanol.getFluid(1000))
-                .fluidOutputs(Polymethylmethacrylate.getFluid(L * 4))
+                .fluidOutputs(PMMA.getFluid(L * 4))
                 .fluidOutputs(Ammonia.getFluid(1000))
                 .duration(200).EUt(240).buildAndRegister();
     }

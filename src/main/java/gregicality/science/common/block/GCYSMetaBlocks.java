@@ -2,6 +2,7 @@ package gregicality.science.common.block;
 
 import gregicality.science.common.block.blocks.BlockCrucible;
 import gregicality.science.common.block.blocks.BlockMultiblockCasing;
+import gregicality.science.common.block.blocks.BlockTransparentCasing;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
@@ -21,6 +22,7 @@ public class GCYSMetaBlocks {
 
     public static BlockCrucible CRUCIBLE;
     public static BlockMultiblockCasing MULTIBLOCK_CASING;
+    public static BlockTransparentCasing TRANSPARENT_CASING;
 
     private GCYSMetaBlocks() {
 
@@ -31,12 +33,15 @@ public class GCYSMetaBlocks {
         CRUCIBLE.setRegistryName("crucible");
         MULTIBLOCK_CASING = new BlockMultiblockCasing();
         MULTIBLOCK_CASING.setRegistryName("multiblock_casing");
+        TRANSPARENT_CASING = new BlockTransparentCasing();
+        TRANSPARENT_CASING.setRegistryName("transparent_casing");
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
         registerItemModel(CRUCIBLE);
         registerItemModel(MULTIBLOCK_CASING);
+        registerItemModel(TRANSPARENT_CASING);
     }
 
     @SideOnly(Side.CLIENT)

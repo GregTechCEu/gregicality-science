@@ -226,7 +226,7 @@ public class OpticalCircuits {
 
         ION_IMPLANTATOR_RECIPES.recipeBuilder()
                 .input(dust, Silver, 4)
-                .input(plate, Polymethylmethacrylate)
+                .input(plate, PMMA)
                 .output(OPTICAL_INDUCTOR, 16)
                 .duration(160).EUt(VA[UV]).buildAndRegister();
     }

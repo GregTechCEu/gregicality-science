@@ -33,9 +33,20 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_COMPUTER;
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_MAINFRAME;
 
+    // Voltage Coils
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UEV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UIV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UXV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_OpV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_MAX;
+
     // Nanotube Stuff
     public static MetaItem<?>.MetaValueItem CARBON_ALLOTROPE_MIXTURE;
     public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
+
+    // Crafting Components
+    public static MetaItem<?>.MetaValueItem COMPONENT_GRINDER_BORON_NITRIDE;
 
     // Circuit Boards
     public static MetaItem<?>.MetaValueItem GOOWARE_BOARD;

@@ -40,6 +40,13 @@ public class GCYSMaterialFlagAddition {
         // Rods
         Darmstadtium.addFlags(MaterialFlags.GENERATE_ROD);
 
+        // Springs
+        Trinium.addFlags(MaterialFlags.GENERATE_SPRING);
+        Tritanium.addFlags(MaterialFlags.GENERATE_SPRING);
+
+        // Small Springs
+        Europium.addFlags(MaterialFlags.GENERATE_SPRING_SMALL);
+
         // Frames
         Darmstadtium.addFlags(MaterialFlags.GENERATE_FRAME);
 
