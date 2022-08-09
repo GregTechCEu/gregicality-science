@@ -2,7 +2,6 @@ package gregicality.science.api.unification.materials;
 
 import gregicality.science.api.unification.GCYSElements;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.properties.BlastProperty;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
@@ -43,9 +42,6 @@ public class GCYSElementMaterials {
                 .toolStats(7.0F, 25.0F, 17000, 22)
                 .blastTemp(9000, BlastProperty.GasTier.HIGH)
                 .build();
-        // this is really bad...
-        NeutroniumReal = Materials.Neutronium;
-        Materials.Neutronium = Orichalcum;
 
         Vibranium = new Material.Builder(3104, "vibranium")
                 .ingot().fluid().plasma()

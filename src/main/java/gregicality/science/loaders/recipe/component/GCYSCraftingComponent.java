@@ -230,11 +230,12 @@ public class GCYSCraftingComponent {
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         VOLTAGE_COIL.appendIngredients(Stream.of(new Object[][]{
-//                {9, GCYSMetaItems.}, //TODO
-//                {10, GCYSMetaItems.},
-//                {11, GCYSMetaItems.},
-//                {12, GCYSMetaItems.},
-//                {13, GCYSMetaItems.},
+                {9, GCYSMetaItems.VOLTAGE_COIL_UHV},
+                {10, GCYSMetaItems.VOLTAGE_COIL_UEV},
+                {11, GCYSMetaItems.VOLTAGE_COIL_UIV},
+                {12, GCYSMetaItems.VOLTAGE_COIL_UXV},
+                {13, GCYSMetaItems.VOLTAGE_COIL_OpV},
+                {14, GCYSMetaItems.VOLTAGE_COIL_MAX},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         SPRING.appendIngredients(Stream.of(new Object[][]{

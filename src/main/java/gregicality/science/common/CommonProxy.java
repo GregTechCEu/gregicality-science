@@ -7,6 +7,7 @@ import gregicality.science.loaders.recipe.GCYSRecipeLoader;
 import gregicality.science.loaders.recipe.component.GCYSCraftingComponent;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.loaders.recipe.CraftingComponent;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -69,6 +70,10 @@ public class CommonProxy {
         // This is called AFTER GregTech registers recipes, so
         // anything here is safe to call removals in
         GCYSRecipeLoader.init();
+    }
+
+    @SubscribeEvent
+    public static void initMaterialInfo(GregTechAPI.RegisterEvent<ItemMaterialInfo> event) {
         GCYSMaterialInfoLoader.init();
     }
 

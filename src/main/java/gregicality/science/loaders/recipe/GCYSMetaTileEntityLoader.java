@@ -5,11 +5,14 @@ import gregicality.science.common.metatileentities.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.BlockMachineCasing;
+import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
@@ -17,6 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import org.apache.commons.lang3.ArrayUtils;
 
+import static gregicality.science.api.unification.materials.GCYSMaterials.Orichalcum;
 import static gregicality.science.api.unification.materials.GCYSMaterials.PedotTMA;
 import static gregicality.science.common.items.GCYSMetaItems.VOLTAGE_COIL_UHV;
 import static gregtech.api.GTValues.UHV;
@@ -163,18 +167,17 @@ public class GCYSMetaTileEntityLoader {
     }
 
     private static void hulls() {
-        //TODO if setting Nt to something else stays remove this
-//        ModHandler.removeRecipeByName("gregtech:casing_uhv");
-//        //TODO remove the aaaaaaaaaaaaaa after CEu #1119 is merged
-//        ModHandler.addShapedRecipe(true, "casing_uhvaaaaaaaaaaaaaa", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV),
-//                "PPP", "PwP", "PPP",
-//                'P', new UnificationEntry(plate, Orichalcum));
-//
-//        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, IntCircuitIngredient.getIntegratedCircuit(8), OreDictUnifier.get(plate, Neutronium, 8));
-//        ASSEMBLER_RECIPES.recipeBuilder()
-//                .input(plate, Orichalcum, 8)
-//                .circuitMeta(8)
-//                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV))
-//                .duration(50).EUt(16).buildAndRegister();
+        ModHandler.removeRecipeByName("gregtech:casing_uhv");
+        //TODO remove the aaaaaaaaaaaaaa after CEu #1119 is merged
+        ModHandler.addShapedRecipe(true, "casing_uhvaaaaaaaaaaaaaa", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV),
+                "PPP", "PwP", "PPP",
+                'P', new UnificationEntry(plate, Orichalcum));
+
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, IntCircuitIngredient.getIntegratedCircuit(8), OreDictUnifier.get(plate, Neutronium, 8));
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Orichalcum, 8)
+                .circuitMeta(8)
+                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV))
+                .duration(50).EUt(16).buildAndRegister();
     }
 }

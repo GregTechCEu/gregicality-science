@@ -2,11 +2,7 @@ package gregicality.science.loaders.recipe;
 
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
-import gregtech.api.unification.OreDictUnifier;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 
-import static gregicality.science.api.unification.materials.GCYSMaterials.Orichalcum;
 import static gregtech.api.GTValues.LV;
 import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -17,7 +13,6 @@ public class RecipeConflicts {
 
     public static void init() {
         chemistryConflicts();
-        mixerConflicts();
     }
 
     private static void chemistryConflicts() {
@@ -49,14 +44,5 @@ public class RecipeConflicts {
                 .output(dust, Potassium)
                 .fluidOutputs(Chlorine.getFluid(1000))
                 .duration(72).EUt(VA[LV]).buildAndRegister();
-    }
-
-    private static void mixerConflicts() {
-        // Fix orichalcum replacment for ruthenium trinium neutronate
-        GTRecipeHandler.removeRecipesByInputs(MIXER_RECIPES,
-                new ItemStack[]{OreDictUnifier.get(dust, Ruthenium), OreDictUnifier.get(dust, Trinium, 2),
-                        OreDictUnifier.get(dust, Americium), OreDictUnifier.get(dust, Orichalcum, 2),
-                        IntCircuitIngredient.getIntegratedCircuit(4)},
-                new FluidStack[]{Oxygen.getFluid(8000)});
     }
 }
