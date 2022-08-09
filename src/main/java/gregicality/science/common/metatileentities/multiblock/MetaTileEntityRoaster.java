@@ -143,7 +143,7 @@ public class MetaTileEntityRoaster extends RecipeMapMultiblockController impleme
     protected void addDisplayText(List<ITextComponent> textList) {
         if (isStructureFormed()) {
             textList.add(new TextComponentTranslation("gregtech.multiblock.blast_furnace.max_temperature",
-                    new TextComponentTranslation(GTUtility.formatNumbers(temperature) + "K").setStyle(new Style().setColor(TextFormatting.RED))));
+                    TextFormatting.RED + GTUtility.formatNumbers(temperature) + "K"));
         }
         super.addDisplayText(textList);
     }
@@ -179,7 +179,7 @@ public class MetaTileEntityRoaster extends RecipeMapMultiblockController impleme
     public List<ITextComponent> getDataInfo() {
         List<ITextComponent> list = super.getDataInfo();
         list.add(new TextComponentTranslation("gregtech.multiblock.blast_furnace.max_temperature",
-                new TextComponentTranslation(GTUtility.formatNumbers(temperature) + "K").setStyle(new Style().setColor(TextFormatting.RED))));
+                TextFormatting.RED + GTUtility.formatNumbers(temperature) + "K"));
         return list;
     }
 
