@@ -137,7 +137,7 @@ public class PlatinumGroupProcessing {
                 .fluidInputs(SodiumBisulfate.getFluid(L * 21))
                 .output(dust, InertMetalMixture)
                 .output(dust, RarestMetalMixture)
-                .output(dust, SodiumNitrate, 15)
+                .output(dust, SodiumNitrate, 5)
                 .fluidOutputs(SulfuricAcid.getFluid(3000))
                 .duration(200).EUt(240).buildAndRegister();
     }

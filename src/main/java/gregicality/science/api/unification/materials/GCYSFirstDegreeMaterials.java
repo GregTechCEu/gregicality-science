@@ -130,8 +130,9 @@ public class GCYSFirstDegreeMaterials {
                 .fluid()
                 .color(0xFFFFC8)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Hydrogen, 2, Platinum, 1, Palladium, 1, Chlorine, 6)
-                .build();
+                .components(Hydrogen, 4, Platinum, 1, Palladium, 1, Chlorine, 12)
+                .build()
+                .setFormula("H2(Pt,Pd)Cl6", true);
 
         AmmoniumHexachloroplatinate = new Material.Builder(3517, "ammonium_hexachloroplatinate")
                 .fluid()
@@ -153,9 +154,8 @@ public class GCYSFirstDegreeMaterials {
                 .dust()
                 .color(0x846684)
                 .iconSet(MaterialIconSet.ROUGH)
-                .components(Sodium, 1, Nitrogen, 3, Oxygen, 9)
-                .build()
-                .setFormula("Na(NO3)3", true);
+                .components(Sodium, 1, Nitrogen, 1, Oxygen, 3)
+                .build();
 
         PotassiumHydroxide = new Material.Builder(3520, "potassium_hydroxide")
                 .dust().fluid()
@@ -313,7 +313,7 @@ public class GCYSFirstDegreeMaterials {
         ChlorosulfuricAcid = new Material.Builder(3541, "chlorosulfuric_acid")
                 .fluid()
                 .color(0x916C1D)
-                .components(Hydrogen, 1, Chlorine, 1, Sulfur, 1, Oxygen, 3)
+                .components(Hydrogen, 1, Sulfur, 1, Oxygen, 3, Chlorine, 1)
                 .build();
 
         CubicZirconia = new Material.Builder(3542, "cubic_zirconia")
@@ -586,7 +586,7 @@ public class GCYSFirstDegreeMaterials {
                 .color(0xCFFFFF)
                 .iconSet(MaterialIconSet.SHINY)
                 .flags(GENERATE_PLATE, NO_SMASHING, NO_WORKING, DECOMPOSITION_BY_CENTRIFUGING)
-                .components(Germanium, 2, Tellurium, 2, Antimony, 5)
+                .components(Germanium, 2, Antimony, 2, Tellurium, 5)
                 .blastTemp(873, BlastProperty.GasTier.MID)
                 .build();
 

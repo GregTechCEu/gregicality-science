@@ -158,7 +158,7 @@ public class GCYSOrganicChemistryMaterials {
                 .color(0x8890E0)
                 .iconSet(MaterialIconSet.SHINY)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 10, Hydrogen, 12, Sodium, 4, Nitrogen, 2, Oxygen, 8)
+                .components(Carbon, 10, Hydrogen, 12, Nitrogen, 2, Oxygen, 8, Sodium, 4)
                 .build();
 
         EthylenediaminetetraaceticAcid = new Material.Builder(15022, "ethylenediaminetetraacetic_acid") //TODO EDTA Tooltip
@@ -238,7 +238,7 @@ public class GCYSOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL)
                 .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
                 .build()
-                .setFormula("O(C6H4NH2)2", true);
+                .setFormula("(C7H2N2O4)(O(C6H4)2)", true);
 
         BiphenylTetracarboxylicAcidDianhydride = new Material.Builder(15037, "biphenyl_tetracarboxylic_acid_dianhydride") //TODO BPDA Tooltip
                 .dust()
@@ -246,7 +246,7 @@ public class GCYSOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 16, Hydrogen, 6, Oxygen, 6)
                 .build()
-                .setFormula("O(C6H4NH2)2", true);
+                .setFormula("(C8H3O3)2", true);
 
         Nitroaniline = new Material.Builder(15038, "nitroaniline")
                 .fluid()
@@ -276,14 +276,14 @@ public class GCYSOrganicChemistryMaterials {
                 .color(0xAA6600)
                 .components(Carbon, 1, Hydrogen, 5, Nitrogen, 1)
                 .build()
-                .setFormula("(CH3)NH2", true);
+                .setFormula("CH3NH2", true);
 
         Trimethylamine = new Material.Builder(15042, "trimethylamine")
                 .fluid(FluidTypes.GAS)
                 .color(0xBB7700)
                 .components(Carbon, 3, Hydrogen, 11, Nitrogen, 1)
                 .build()
-                .setFormula("(CH3)3NH2", true);
+                .setFormula("(CH3)3N", true);
 
         Bistrichloromethylbenzene = new Material.Builder(15043, "bistrichloromethylbenzene")
                 .fluid()
@@ -319,7 +319,8 @@ public class GCYSOrganicChemistryMaterials {
                 .color(0xAAC4DA)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
-                .build();
+                .build()
+                .setFormula("C4H8(OH)2", true);
 
         GammaButyrolactone = new Material.Builder(15048, "gamma_butyrolactone") //TODO "GBL" tooltip
                 .fluid()
@@ -345,9 +346,9 @@ public class GCYSOrganicChemistryMaterials {
                 .fluid() //this should be a solid, however it will be liquid for circuit etching purposes
                 .color(0x40FFD6)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 4, Hydrogen, 12, Oxygen, 1, Hydrogen, 1)
+                .components(Nitrogen, 1, Carbon, 4, Hydrogen, 12, Oxygen, 1, Hydrogen, 1)
                 .build()
-                .setFormula("(CH3)4OH", true);
+                .setFormula("N(CH3)4OH", true);
 
         Pyrocatechol = new Material.Builder(15052, "pyrocatechol")
                 .dust()
@@ -367,7 +368,8 @@ public class GCYSOrganicChemistryMaterials {
                 .fluid()
                 .color(0x286632)
                 .components(Carbon, 2, Hydrogen, 6, Oxygen, 2)
-                .build();
+                .build()
+                .setFormula("C2H4(OH)2", true);
 
         Diacetyl = new Material.Builder(15055, "diacetyl") //TODO "Tastes like butter" tooltip
                 .fluid()
@@ -433,7 +435,7 @@ public class GCYSOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Ethylene, 2, Sulfur, 1)
                 .build()
-                .setFormula("(CH3)2S", true);
+                .setFormula("(C2H5)2S", true);
 
         Cycloparaphenylene = new Material.Builder(15064, "cycloparaphenylene") //TODO "CPP" tooltip
                 .fluid()
