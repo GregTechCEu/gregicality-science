@@ -781,7 +781,7 @@ public class GCYSFirstDegreeMaterials {
                 .components(Hydrogen, 2, Selenium, 1)
                 .build();
 
-        PalladiumNitrite = new Material.Builder(3603, "palladium_nitrate")
+        PalladiumNitrate = new Material.Builder(3603, "palladium_nitrate")
                 .dust()
                 .color(0x82312A).iconSet(MaterialIconSet.METALLIC)
                 .components(Palladium, 1, Nitrogen, 2, Oxygen, 6)

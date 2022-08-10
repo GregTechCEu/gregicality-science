@@ -119,7 +119,7 @@ public class GCYSMaterials {
     public static Material MercuryCadmiumTelluride;
     public static Material AluminiumSelenide;
     public static Material HydrogenSelenide;
-    public static Material PalladiumNitrite;
+    public static Material PalladiumNitrate;
     public static Material Fullerene;
     public static Material ThalliumCopperChloride;
     public static Material PerrhenicAcid;
