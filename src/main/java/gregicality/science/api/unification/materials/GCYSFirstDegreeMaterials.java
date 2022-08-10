@@ -130,9 +130,8 @@ public class GCYSFirstDegreeMaterials {
                 .fluid()
                 .color(0xFFFFC8)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Hydrogen, 4, Platinum, 1, Palladium, 1, Chlorine, 12)
-                .build()
-                .setFormula("H2(Pt,Pd)Cl6", true);
+                .components(Hydrogen, 2, Platinum, 1, Palladium, 1, Chlorine, 6)
+                .build();
 
         AmmoniumHexachloroplatinate = new Material.Builder(3517, "ammonium_hexachloroplatinate")
                 .fluid()
