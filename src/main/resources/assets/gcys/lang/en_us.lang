@@ -573,6 +573,38 @@ metaitem.circuit.supracausal_computer.tooltip=Using Wormholes to our Advantage/n
 metaitem.circuit.supracausal_mainframe.name=Supra-Causal Mainframe
 metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier Circuit
 
+# Suprachronal
+metaitem.circuit.suprachronal.ulv.name=Supra-Chronal Primitive Circuit
+metaitem.circuit.suprachronal.ulv.tooltip=§fULV-tier Circuit/n
+metaitem.circuit.suprachronal.lv.name=Supra-Chronal Basic Circuit
+metaitem.circuit.suprachronal.lv.tooltip=§fLV-tier Circuit/n
+metaitem.circuit.suprachronal.mv.name=Supra-Chronal Good Circuit
+metaitem.circuit.suprachronal.mv.tooltip=§fMV-tier Circuit/n
+metaitem.circuit.suprachronal.hv.name=Supra-Chronal Advanced Circuit
+metaitem.circuit.suprachronal.hv.tooltip=§fHV-tier Circuit/n
+metaitem.circuit.suprachronal.ev.name=Supra-Chronal Extreme Circuit
+metaitem.circuit.suprachronal.ev.tooltip=§fEV-tier Circuit/n
+metaitem.circuit.suprachronal.iv.name=Supra-Chronal Elite Circuit
+metaitem.circuit.suprachronal.iv.tooltip=§fIV-tier Circuit/n
+metaitem.circuit.suprachronal.luv.name=Supra-Chronal Master Circuit
+metaitem.circuit.suprachronal.luv.tooltip=§fLuV-tier Circuit/n
+metaitem.circuit.suprachronal.zpm.name=Supra-Chronal Ultimate Circuit
+metaitem.circuit.suprachronal.zpm.tooltip=§fZPM-tier Circuit/n
+metaitem.circuit.suprachronal.uv.name=Supra-Chronal Super Circuit
+metaitem.circuit.suprachronal.uv.tooltip=§fUV-tier Circuit/n
+metaitem.circuit.suprachronal.uhv.name=Supra-Chronal Infinite Circuit
+metaitem.circuit.suprachronal.uhv.tooltip=§fUHV-tier Circuit/n
+metaitem.circuit.suprachronal.uev.name=Supra-Chronal Epic Circuit
+metaitem.circuit.suprachronal.uev.tooltip=§fUEV-tier Circuit/n
+metaitem.circuit.suprachronal.uiv.name=Supra-Chronal Insane Circuit
+metaitem.circuit.suprachronal.uiv.tooltip=§fUIV-tier Circuit/n
+metaitem.circuit.suprachronal.uxv.name=Supra-Chronal Legendary Circuit
+metaitem.circuit.suprachronal.uxv.tooltip=§fUXV-tier Circuit/n
+metaitem.circuit.suprachronal.opv.name=Supra-Chronal Overpowered Circuit
+metaitem.circuit.suprachronal.opv.tooltip=§fOpV-tier Circuit/n
+metaitem.circuit.suprachronal.max.name=Supra-Chronal Maximum Circuit
+metaitem.circuit.suprachronal.max.tooltip=§fMAX-tier Circuit/n
+
 # RecipeMaps
 # Machines
 recipemap.dryer_recipes.name=Drying

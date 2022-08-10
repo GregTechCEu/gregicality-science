@@ -191,7 +191,7 @@ public class SpintronicCircuits {
                 .input(SPINTRONIC_DIODE, 8)
                 .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
                 .input(SPIN_TRANSFER_TORQUE_MEMORY, 32)
-                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2) //TODO new PIC
+                .input(NANO_POWER_IC, 2)
                 .input(cableGtSingle, CarbonNanotube, 8)
                 .input(SPINTRONIC_INDUCTOR, 8)
                 .input(SPINTRONIC_CAPACITOR, 16)

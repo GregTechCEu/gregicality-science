@@ -2,6 +2,7 @@ package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
 import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.common.items.GCYSMetaItems;
 import gregicality.science.loaders.recipe.GCYSMaterialInfoLoader;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
 import gregicality.science.loaders.recipe.component.GCYSCraftingComponent;
@@ -50,6 +51,8 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
+        GCYSMetaItems.initSubitems();
+
         IForgeRegistry<Item> registry = event.getRegistry();
         registry.register(createItemBlock(GCYSMetaBlocks.CRUCIBLE, VariantItemBlock::new));
         registry.register(createItemBlock(GCYSMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));

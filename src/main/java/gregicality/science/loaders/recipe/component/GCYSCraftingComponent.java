@@ -222,11 +222,12 @@ public class GCYSCraftingComponent {
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         POWER_COMPONENT.appendIngredients(Stream.of(new Object[][]{
-//                {9, GCYSMetaItems.}, //TODO
-//                {10, GCYSMetaItems.},
-//                {11, GCYSMetaItems.},
-//                {12, GCYSMetaItems.},
-//                {13, GCYSMetaItems.},
+                {9, GCYSMetaItems.NANO_POWER_IC},
+                {10, GCYSMetaItems.NANO_POWER_IC},
+                {11, GCYSMetaItems.PICO_POWER_IC},
+                {12, GCYSMetaItems.PICO_POWER_IC},
+                {13, GCYSMetaItems.FEMTO_POWER_IC},
+                {14, GCYSMetaItems.FEMTO_POWER_IC},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         VOLTAGE_COIL.appendIngredients(Stream.of(new Object[][]{

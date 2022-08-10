@@ -35,8 +35,8 @@ public class GregicalityScience {
     public void onPreInit(@Nonnull FMLPreInitializationEvent event) {
         GCYSLog.init(event.getModLog());
 
+        GCYSMetaItems.initMetaItems();
         GCYSMetaBlocks.init();
-        GCYSMetaItems.init();
         GCYSMetaTileEntities.init();
 
         proxy.preLoad();

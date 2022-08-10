@@ -13,7 +13,8 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.items.MetaItems.CRYSTAL_CENTRAL_PROCESSING_UNIT;
+import static gregtech.common.items.MetaItems.NOR_MEMORY_CHIP;
 
 public class OpticalCircuits {
 
@@ -273,7 +274,7 @@ public class OpticalCircuits {
                 .input(OPTICAL_DIODE, 8)
                 .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
                 .input(PHASE_CHANGE_MEMORY, 32)
-                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2) //TODO new PIC
+                .input(NANO_POWER_IC, 2)
 //                .input(OPTICAL_FIBER_CABLE, 8) //TODO Optical Fiber Cable
                 .input(OPTICAL_INDUCTOR, 8)
                 .input(OPTICAL_CAPACITOR, 16)

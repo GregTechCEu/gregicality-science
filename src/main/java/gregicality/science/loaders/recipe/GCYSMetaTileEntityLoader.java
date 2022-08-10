@@ -22,6 +22,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.Orichalcum;
 import static gregicality.science.api.unification.materials.GCYSMaterials.PedotTMA;
+import static gregicality.science.common.items.GCYSMetaItems.NANO_POWER_IC;
 import static gregicality.science.common.items.GCYSMetaItems.VOLTAGE_COIL_UHV;
 import static gregtech.api.GTValues.UHV;
 import static gregtech.api.GTValues.VA;
@@ -60,7 +61,7 @@ public class GCYSMetaTileEntityLoader {
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(MetaTileEntities.HULL[UHV])
                 .input(cableGtSingle, Europium, 4)
-                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2) //TODO next PIC
+                .input(NANO_POWER_IC, 2)
                 .input(circuit, MarkerMaterials.Tier.UHV)
                 .input(VOLTAGE_COIL_UHV, 2)
                 .fluidInputs(SodiumPotassium.getFluid(12000))
@@ -75,7 +76,7 @@ public class GCYSMetaTileEntityLoader {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(TRANSFORMER[UHV])
                 .input(ENERGY_INPUT_HATCH[UHV])
-                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT) //TODO next PIC
+                .input(NANO_POWER_IC)
                 .input(VOLTAGE_COIL_UHV)
                 .input(wireGtQuadruple, Europium, 2)
                 .output(ENERGY_INPUT_HATCH_4A[5])
@@ -88,7 +89,7 @@ public class GCYSMetaTileEntityLoader {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(ADJUSTABLE_TRANSFORMER[UHV])
                 .input(ENERGY_INPUT_HATCH_4A[5])
-                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2) //TODO next PIC
+                .input(NANO_POWER_IC, 2)
                 .input(VOLTAGE_COIL_UHV)
                 .input(wireGtOctal, Europium, 2)
                 .output(ENERGY_INPUT_HATCH_16A[4])
@@ -104,7 +105,7 @@ public class GCYSMetaTileEntityLoader {
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(MetaTileEntities.HULL[UHV])
                 .input(spring, Europium, 4)
-                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2) //TODO next PIC
+                .input(NANO_POWER_IC, 2)
                 .input(circuit, MarkerMaterials.Tier.UHV)
                 .input(VOLTAGE_COIL_UHV, 2)
                 .fluidInputs(SodiumPotassium.getFluid(12000))
@@ -119,7 +120,7 @@ public class GCYSMetaTileEntityLoader {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(TRANSFORMER[UHV])
                 .input(ENERGY_OUTPUT_HATCH[UHV])
-                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT) //TODO next PIC
+                .input(NANO_POWER_IC)
                 .input(VOLTAGE_COIL_UHV)
                 .input(wireGtQuadruple, Europium, 2)
                 .output(ENERGY_OUTPUT_HATCH_4A[5])
@@ -132,7 +133,7 @@ public class GCYSMetaTileEntityLoader {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(ADJUSTABLE_TRANSFORMER[UHV])
                 .input(ENERGY_OUTPUT_HATCH_4A[5])
-                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2) //TODO next PIC
+                .input(NANO_POWER_IC, 2)
                 .input(VOLTAGE_COIL_UHV)
                 .input(wireGtOctal, Europium, 2)
                 .output(ENERGY_OUTPUT_HATCH_16A[4])
