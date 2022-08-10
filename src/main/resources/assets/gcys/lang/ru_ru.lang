@@ -518,3 +518,23 @@ material.cracked_medium_enriched_taranium=Средний обогащенный 
 
 # Burner Reactor
 gcys.machine.burner_reactor.name=Реактор горения
+material.pmma=Оргстекло
+material.polystyrene=Полистирол
+material.polystyrene_sulfonate=Полистирол Сульфонат
+behavior.tricorder.min_pressure=Минимальное давление: %s Па
+behavior.tricorder.max_pressure=Максимальное давление: %s Па
+gcys.steam_ejector.tooltip.1=Создаёт ваш первый Вакуум.
+material.silicon_carbide=Карбид кремния
+material.diacetyl=Диацетил
+
+
+# Tricorder Info
+behavior.tricorder.current_pressure=Текущее давление: %s Па
+gcys.machine.infinite_pressure_pump.tooltip=Вам нужен §5р§dе§4ж§cи§eм §aТ§bв§3о§7р§1ч§5е§dс§4т§6в§eа§8, чтобы использовать это
+
+# Industrial Drill
+gcys.machine.industrial_drill.name=Индустриальная буровая установка
+
+
+# Nanotube Stuff
+metaitem.mixture.carbon_allotrope.name=Углеродная аллотропная смесь
