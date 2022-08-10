@@ -306,9 +306,27 @@ material.medium_hyper_fuel=Medium Hyper Fuel
 material.heavy_hyper_fuel=Heavy Hyper Fuel
 
 
+# Tricorder Info
+behavior.tricorder.current_pressure=Current Pressure: %s Pa
+behavior.tricorder.min_pressure=Minimum Pressure: %s Pa
+behavior.tricorder.max_pressure=Maximum Pressure: %s Pa
+
+
+# Generic Pressure Info
+gcys.universal.tooltip.pressure.minimum=Minimum Pressure Capacity: §a%sPa (§r%s§a)
+gcys.universal.tooltip.pressure.maximum=Maximum Pressure Capacity: §a%sPa (§r%s§a)
+
 # Single Block Machines
+
+# Steam Ejector
 gcys.machine.steam_ejector.name=Steam Ejector
-gcys.steam_ejector.tooltip=Creates a Low Vacuum with 41L of Steam per second
+gcys.steam_ejector.tooltip.1=Creating your first Vacuum.
+gcys.steam_ejector.tooltip.2=Decreases pressure by §b%sPa§7 per second.
+gcys.steam_ejector.tooltip.3=Consumes %sL of Steam per second.
+
+# Infinite Pressure Pump
+gcys.machine.infinite_pressure_pump.name=Infinite Pressure Pump
+gcys.machine.infinite_pressure_pump.tooltip=§8You just need §o§5C§dr§4e§ca§et§ai§bv§3e §7m§1o§5d§de§r§8 to use this
 
 # Dryer
 gregtech.machine.dryer.tooltip=Vaporizing liquids
@@ -382,6 +400,8 @@ gcys.machine.dryer.umv.tooltip=Moisture Remover
 gcys.machine.dryer.uxv.name=Legendary Dryer
 gcys.machine.dryer.uxv.tooltip=Moisture Remover
 
+# Pipes
+gcys.pipe.pressure_pipe_normal.name=Pressure Pipe
 
 # Blocks
 tile.crucible.quartz.name=Quartz Crucible

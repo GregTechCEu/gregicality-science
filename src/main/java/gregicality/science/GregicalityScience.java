@@ -1,5 +1,6 @@
 package gregicality.science;
 
+import gregicality.science.api.capability.GCYSTileCapabilities;
 import gregicality.science.api.utils.GCYSLog;
 import gregicality.science.common.CommonProxy;
 import gregicality.science.common.block.GCYSMetaBlocks;
@@ -34,6 +35,8 @@ public class GregicalityScience {
     @Mod.EventHandler
     public void onPreInit(@Nonnull FMLPreInitializationEvent event) {
         GCYSLog.init(event.getModLog());
+
+        GCYSTileCapabilities.init();
 
         GCYSMetaItems.initMetaItems();
         GCYSMetaBlocks.init();
