@@ -115,13 +115,13 @@ public class FullereneChain {
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, Palladium)
                 .fluidInputs(NitricAcid.getFluid(2000))
-                .output(dust, PalladiumNitrite, 9)
+                .output(dust, PalladiumNitrate, 9)
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .duration(200).EUt(VA[MV]).buildAndRegister();
 
         // Pd(NO3)2 + 2CH3COOH -> Pd(CH3COOH)2 + 2HNO3
         CHEMICAL_RECIPES.recipeBuilder()
-                .input(dust, PalladiumNitrite, 9)
+                .input(dust, PalladiumNitrate, 9)
                 .fluidInputs(AceticAcid.getFluid(2000))
                 .output(dust, PalladiumAcetate, 5)
                 .fluidOutputs(NitricAcid.getFluid(2000))
