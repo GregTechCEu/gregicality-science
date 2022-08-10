@@ -105,7 +105,7 @@ public class GCYSSecondDegreeMaterials {
                 .color(0xAC8B5C)
                 .iconSet(MaterialIconSet.ROUGH)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Gallium, 1, Zinc, 1, Sulfur, 1, Oxygen, 1)
+                .components(Gallium, 1, Zinc, 1, Sulfur, 1, Oxygen, 4)
                 .build();
 
         ImpureGermaniumDioxide = new Material.Builder(6020, "impure_germanium_dioxide")

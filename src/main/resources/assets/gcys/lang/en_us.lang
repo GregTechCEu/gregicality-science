@@ -340,7 +340,10 @@ gcys.machine.bio_vat.name=Biological Vat
 
 # Roaster
 gcys.machine.roaster.name=Roaster
-
+gcys.multiblock.roaster.tooltip.1=Bronze Firebox: §c1000K
+gcys.multiblock.roaster.tooltip.2=Steel Firebox: §c1500K
+gcys.multiblock.roaster.tooltip.3=Titanium Firebox: §c2000K
+gcys.multiblock.roaster.tooltip.4=Tungstensteel Firebox: §c2500K
 # Burner Reactor
 gcys.machine.burner_reactor.name=Burner Reactor
 
