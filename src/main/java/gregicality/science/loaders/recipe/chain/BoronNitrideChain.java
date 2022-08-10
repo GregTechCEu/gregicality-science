@@ -29,20 +29,11 @@ public class BoronNitrideChain {
                 .EUt(VA[MV])
                 .buildAndRegister();
 
-        // H3BO3 -> HBO2 + H2O
+        // 2H3BO3 -> B2O3 + 3H2O
         DRYER_RECIPES.recipeBuilder()
-                .input(dust, BoricAcid, 4)
-                .output(dust, MetaboricAcid, 4)
-                .fluidOutputs(Water.getFluid(1000))
-                .duration(50)
-                .EUt(VA[MV])
-                .buildAndRegister();
-
-        // 2HBO2 -> B2O3 + H2O
-        DRYER_RECIPES.recipeBuilder()
-                .input(dust, MetaboricAcid, 8)
+                .input(dust, BoricAcid, 8)
                 .output(dust, BoronTrioxide, 5)
-                .fluidOutputs(Water.getFluid(1000))
+                .fluidOutputs(Water.getFluid(3000))
                 .duration(100)
                 .EUt(VA[MV])
                 .buildAndRegister();
@@ -122,7 +113,6 @@ public class BoronNitrideChain {
     }
 
     private static void boronNitride() {
-
         // B3H6N3 + 3O -> 3BN + 3H2O
         CVD_RECIPES.recipeBuilder()
                 .fluidInputs(Borazine.getFluid(1000))

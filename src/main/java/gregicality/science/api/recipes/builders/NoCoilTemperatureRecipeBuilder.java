@@ -1,9 +1,11 @@
 package gregicality.science.api.recipes.builders;
 
+import gregicality.science.api.GCYSValues;
 import gregicality.science.api.recipes.recipeproperties.NoCoilTemperatureProperty;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.recipeproperties.RecipePropertyStorage;
 import gregtech.api.util.EnumValidationResult;
 import gregtech.api.util.GTLog;
 import gregtech.api.util.GTUtility;
@@ -52,9 +54,13 @@ public class NoCoilTemperatureRecipeBuilder extends RecipeBuilder<NoCoilTemperat
 
     @Override
     public ValidationResult<Recipe> build() {
-        if (this.recipePropertyStorage != null && this.recipePropertyStorage.hasRecipeProperty(NoCoilTemperatureProperty.getInstance())
-                && this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), -1) <= 0) {
-            this.recipePropertyStorage.store(NoCoilTemperatureProperty.getInstance(), 298);
+        if (this.recipePropertyStorage == null) this.recipePropertyStorage = new RecipePropertyStorage();
+        if (this.recipePropertyStorage.hasRecipeProperty(NoCoilTemperatureProperty.getInstance())) {
+            if (this.recipePropertyStorage.getRecipePropertyValue(NoCoilTemperatureProperty.getInstance(), -1) <= 0) {
+                this.recipePropertyStorage.store(NoCoilTemperatureProperty.getInstance(), GCYSValues.EARTH_TEMPERATURE);
+            }
+        } else {
+            this.recipePropertyStorage.store(NoCoilTemperatureProperty.getInstance(), GCYSValues.EARTH_TEMPERATURE);
         }
 
         return super.build();

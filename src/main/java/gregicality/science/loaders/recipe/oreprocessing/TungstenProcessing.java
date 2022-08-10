@@ -13,6 +13,18 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.ingotHot;
 
+/**
+ * The Tungsten Process
+ *
+ * <p>
+ * Adds extra steps for making Tungsten
+ * </p>
+ *
+ * <p>Main Products: Tungsten</p>
+ * <p>Side Products: None</p>
+ *
+ * <p>Does not modify the original CEu product yields</p>
+ */
 public class TungstenProcessing {
 
     public static void init() {

@@ -13,11 +13,19 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
 /**
+ * <p>Credit to the <a href="https://github.com/GT-IMPACT">GT-IMPACT Modpack</a>.
+ * This processing chain was adapted from their Hyper Fuel production process</p>
+ *
+ *
+ * The Taranium Production Process
+ *
  * <p>
- * Credit to the <a href="https://github.com/GT-IMPACT">GT-IMPACT Modpack</a>.
+ * Produces Taranium and Bedrock Dust from Bedrock Smoke
  * </p>
- * <p>
- * This processing chain was adapted from their Hyper Fuel production process
+ *
+ * <p>Main Products: Taranium Dust, Taranium Fuels, Bedrock Dust</p>
+ * <p>Side Products: Platinum, Iridium, Osmium</p>
+ *
  */
 public class TaraniumProcessing {
 

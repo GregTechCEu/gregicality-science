@@ -101,7 +101,7 @@ public interface IPressureContainer {
      * @return if the pressure is around atmospheric levels
      */
     default boolean isNormalPressure() {
-        return Math.abs(getPressure() - GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) < PRESSURE_TOLERANCE;
+        return Math.abs(getPressure() - GCYSValues.EARTH_PRESSURE) < PRESSURE_TOLERANCE;
     }
 
     /**
@@ -109,7 +109,7 @@ public interface IPressureContainer {
      * @return if the pressure is a vacuum
      */
     default boolean isVacuum() {
-        return getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE - PRESSURE_TOLERANCE;
+        return getPressure() < GCYSValues.EARTH_PRESSURE - PRESSURE_TOLERANCE;
     }
 
     /**
@@ -184,12 +184,12 @@ public interface IPressureContainer {
 
         @Override
         public double getMinPressure() {
-            return GCYSValues.EARTH_ATMOSPHERIC_PRESSURE / 2;
+            return GCYSValues.EARTH_PRESSURE / 2;
         }
 
         @Override
         public double getMaxPressure() {
-            return GCYSValues.EARTH_ATMOSPHERIC_PRESSURE * 2;
+            return GCYSValues.EARTH_PRESSURE * 2;
         }
     };
 }

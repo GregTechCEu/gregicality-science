@@ -16,8 +16,8 @@ public class GCYSThirdDegreeMaterials {
                 .color(0xC3AC8F)
                 .iconSet(MaterialIconSet.METALLIC)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(RoastedSphalerite, 3, Zinc, 2)
+                .components(Zinc, 2, RoastedSphalerite, 3)
                 .build()
-                .setFormula("Zn2(GeO2)", true);
+                .setFormula("Zn2(GaGeO2)", true);
     }
 }

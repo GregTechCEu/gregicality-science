@@ -25,7 +25,7 @@ public class SeleniumTelluriumChain {
                 .fluidInputs(Water.getFluid(1000))
                 .notConsumable(new IntCircuitIngredient(3))
                 .output(dust, Copper)
-                .chancedOutput(dust, ChalcogenAnodeMud, 2500, 0)
+                .chancedOutput(dust, ChalcogenAnodeMud, 500, 0)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(Oxygen.getFluid(1000))
                 .duration(100)
@@ -77,14 +77,14 @@ public class SeleniumTelluriumChain {
                 .output(dust, Tellurium)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(SulfurTrioxide.getFluid(1000))
-                .duration(200)
-                .EUt(VA[HV])
+                .duration(300)
+                .EUt(VA[EV])
                 .buildAndRegister();
     }
 
     private static void selenium() {
         // SeO2 + H2O -> H2SeO3
-        CHEMICAL_BATH_RECIPES.recipeBuilder()
+        MIXER_RECIPES.recipeBuilder()
                 .input(dust, SeleniumDioxide, 3)
                 .fluidInputs(Water.getFluid(1000))
                 .output(dust, SelenousAcid, 6)
@@ -99,8 +99,8 @@ public class SeleniumTelluriumChain {
                 .output(dust, Selenium)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(SulfurTrioxide.getFluid(1000))
-                .duration(200)
-                .EUt(VA[HV])
+                .duration(300)
+                .EUt(VA[EV])
                 .buildAndRegister();
     }
 }

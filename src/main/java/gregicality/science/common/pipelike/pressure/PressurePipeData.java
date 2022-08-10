@@ -4,7 +4,7 @@ import gregicality.science.api.GCYSValues;
 
 public class PressurePipeData {
 
-    public static final PressurePipeData EMPTY = new PressurePipeData(GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, 1.0);
+    public static final PressurePipeData EMPTY = new PressurePipeData(GCYSValues.EARTH_PRESSURE, GCYSValues.EARTH_PRESSURE, 1.0);
 
     private final double minPressure;
     private final double maxPressure;

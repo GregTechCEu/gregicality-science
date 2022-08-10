@@ -88,9 +88,8 @@ public class GCYSSecondDegreeMaterials {
                 .color(0xAC8B5C)
                 .iconSet(MaterialIconSet.FINE)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(GermaniumDioxide, 1)
-                .build()
-                .setFormula("GaGeO2", true);
+                .components(Gallium, 1, GermaniumDioxide, 1)
+                .build();
 
         WaelzOxide = new Material.Builder(6018, "waelz_oxide")
                 .dust()

@@ -77,7 +77,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     @Override
     protected void initializeInventory() {
         super.initializeInventory();
-        this.pressureContainer = new PressureContainer(this, 10E-6, GCYSValues.EARTH_ATMOSPHERIC_PRESSURE, 1.0);
+        this.pressureContainer = new PressureContainer(this, 10E-6, GCYSValues.EARTH_PRESSURE, 1.0);
         this.mteTraits.add(pressureContainer);
     }
 

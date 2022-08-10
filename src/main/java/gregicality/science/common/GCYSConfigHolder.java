@@ -33,6 +33,9 @@ public class GCYSConfigHolder {
 
         @Config.Comment({"Disables production of Ammonia from Oxygen and Hydrogen, requiring Gregicality's process.", "Default: false"})
         public boolean disableAmmoniaProcessing = false;
+
+        @Config.Comment({"Disables electrolysis of Molybdenite, Powellite, and Wulfenite, requiring Gregicality's processes for Molybdenum.", "Default: true"})
+        public boolean disableMolybdenumProcessing = true;
     }
 
     public static class CircuitOverrides {

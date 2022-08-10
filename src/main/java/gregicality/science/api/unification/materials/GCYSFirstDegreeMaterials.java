@@ -144,7 +144,7 @@ public class GCYSFirstDegreeMaterials {
         AmmoniumHexachloropalladate = new Material.Builder(3518, "ammonium_hexachloropalladate")
                 .fluid()
                 .color(0x808080)
-                .iconSet(MaterialIconSet.METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
                 .components(Nitrogen, 2, Hydrogen, 8, Palladium, 1, Chlorine, 6)
                 .build()
                 .setFormula("(NH4)2PdCl6", true);
@@ -378,13 +378,7 @@ public class GCYSFirstDegreeMaterials {
                 .components(Hydrogen, 3, Boron, 1, Oxygen, 3)
                 .build();
 
-        MetaboricAcid = new Material.Builder(3550, "metaboric_acid")
-                .dust()
-                .color(0xCBFACF)
-                .iconSet(MaterialIconSet.ROUGH)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Hydrogen, 1, Boron, 1, Oxygen, 2)
-                .build();
+        // FREE ID: 3550
 
         BoronTrioxide = new Material.Builder(3551, "boron_trioxide")
                 .dust()
@@ -770,7 +764,7 @@ public class GCYSFirstDegreeMaterials {
                 .build();
 
         AluminiumSelenide = new Material.Builder(3601, "aluminium_selenide")
-                .ingot()
+                .dust()
                 .color(0x969651)
                 .components(Aluminium, 2, Selenium, 3)
                 .build();

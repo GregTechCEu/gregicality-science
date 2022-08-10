@@ -15,29 +15,25 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
+/**
+ * The Platinum Process
+ *
+ * <p>
+ * Produces Platinum Group Metals from Platinum Group Sludge
+ * </p>
+ *
+ * <p>Main Products: Platinum, Palladium, Rhodium, Ruthenium, Iridium, Osmium</p>
+ * <p>Side Products: Gold, Silicon Dioxide</p>
+ *
+ * <p>4.8 PGS -> 1 Platinum</p>
+ * <p>8 PGS -> 1 Palladium</p>
+ * <p>18 PGS -> 1 Rhodium</p>
+ * <p>18 PGS -> 1 Ruthenium</p>
+ * <p>18 PGS -> 1 Iridium</p>
+ * <p>36 PGS -> 1 Osmium</p>
+ */
 public class PlatinumGroupProcessing {
 
-    /**
-     * PGS -> Material Yield
-     * <p>
-     * Platinum:  4.8 -> 1
-     * </p>
-     * <p>
-     * Palladium: 8   -> 1
-     * </p>
-     * <p>
-     * Rhodium:   18  -> 1
-     * </p>
-     * <p>
-     * Ruthenium: 18  -> 1
-     * </p>
-     * <p>
-     * Iridium:   18  -> 1
-     * </p>
-     * <p>
-     * Osmium:    36  -> 1
-     * </p>
-     */
     public static void init() {
         sludge();
         platinum();
@@ -121,6 +117,13 @@ public class PlatinumGroupProcessing {
                 .output(dust, PlatinumSludgeResidue)
                 .fluidOutputs(PurifiedPlatinumGroupConcentrate.getFluid(1000))
                 .duration(100).EUt(VA[LV]).buildAndRegister();
+
+        // HCl + NH3 -> NH4Cl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Ammonia.getFluid(1000))
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .output(dust, AmmoniumChloride, 2)
+                .duration(60).EUt(VA[LV]).buildAndRegister();
 
         // H2PtPdCl6 + 2NH4Cl -> 0.625 (NH4)2PtCl6 + 0.375 (NH4)2PdCl6 + 2HCl
         LARGE_CHEMICAL_RECIPES.recipeBuilder()

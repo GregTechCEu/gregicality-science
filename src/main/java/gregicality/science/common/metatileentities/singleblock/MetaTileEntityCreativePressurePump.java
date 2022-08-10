@@ -36,7 +36,7 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity {
 
     private PressureContainer pressureContainer;
 
-    private double particles = GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
+    private double particles = GCYSValues.EARTH_PRESSURE;
 
     private boolean active = false;
     private boolean source = true;

@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 
 public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPressureContainer {
 
-    private double netParticles = GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
+    private double netParticles = GCYSValues.EARTH_PRESSURE;
     private double volume = 1.0D;
     private double minNetPressure = Double.MAX_VALUE;
     private double maxNetPressure = Double.MIN_VALUE;
@@ -86,8 +86,8 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     }
 
     public void onLeak() {
-        if (getPressure() < GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changeParticles(getLeakRate(), false);
-        else if (getPressure() > GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) changeParticles(-getLeakRate(), false);
+        if (getPressure() < GCYSValues.EARTH_PRESSURE) changeParticles(getLeakRate(), false);
+        else if (getPressure() > GCYSValues.EARTH_PRESSURE) changeParticles(-getLeakRate(), false);
     }
 
     public double getLeakRate() {

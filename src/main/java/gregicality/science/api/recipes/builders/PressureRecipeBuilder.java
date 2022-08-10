@@ -1,9 +1,11 @@
 package gregicality.science.api.recipes.builders;
 
+import gregicality.science.api.GCYSValues;
 import gregicality.science.api.recipes.recipeproperties.PressureProperty;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.recipeproperties.RecipePropertyStorage;
 import gregtech.api.util.EnumValidationResult;
 import gregtech.api.util.GTLog;
 import gregtech.api.util.GTUtility;
@@ -12,8 +14,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import javax.annotation.Nonnull;
 
+@SuppressWarnings("unused")
 public class PressureRecipeBuilder extends RecipeBuilder<PressureRecipeBuilder> {
 
+    @SuppressWarnings("unused")
     public PressureRecipeBuilder() {
 
     }
@@ -53,9 +57,13 @@ public class PressureRecipeBuilder extends RecipeBuilder<PressureRecipeBuilder> 
 
     @Override
     public ValidationResult<Recipe> build() {
-        if (this.recipePropertyStorage != null && this.recipePropertyStorage.hasRecipeProperty(PressureProperty.getInstance()) &&
-                this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), -1.0D) <= 0) {
-            this.recipePropertyStorage.store(PressureProperty.getInstance(), 101_325);
+        if (this.recipePropertyStorage == null) this.recipePropertyStorage = new RecipePropertyStorage();
+        if (this.recipePropertyStorage.hasRecipeProperty(PressureProperty.getInstance())) {
+            if (this.recipePropertyStorage.getRecipePropertyValue(PressureProperty.getInstance(), -1.0D) <= 0) {
+                this.recipePropertyStorage.store(PressureProperty.getInstance(), GCYSValues.EARTH_PRESSURE);
+            }
+        } else {
+            this.recipePropertyStorage.store(PressureProperty.getInstance(), GCYSValues.EARTH_PRESSURE);
         }
 
         return super.build();

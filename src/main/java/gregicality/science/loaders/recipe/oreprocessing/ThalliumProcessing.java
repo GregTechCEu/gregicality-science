@@ -8,6 +8,19 @@ import static gregtech.api.recipes.RecipeMaps.ELECTROLYZER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
+/**
+ * The Thallium Process
+ *
+ * <p>
+ * Produces Thallium from Pyrite or Galena
+ * </p>
+ *
+ * <p>Main Products: Thallium</p>
+ * <p>Side Products: None</p>
+ *
+ * <p>3 Pyrite -> 2 Thallium</p>
+ * <p>4 Galena -> 2 Thallium</p>
+ */
 public class ThalliumProcessing {
 
     public static void init() {

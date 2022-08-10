@@ -66,7 +66,6 @@ public class GCYSMaterials {
     public static Material SeleniumDioxide;
     public static Material SelenousAcid;
     public static Material BoricAcid;
-    public static Material MetaboricAcid;
     public static Material BoronTrioxide;
     public static Material BoronTrifluoride;
     public static Material LithiumTetrafluoroborate;

@@ -5,14 +5,14 @@ import gregicality.science.api.GCYSValues;
 public class GCYSUtility {
 
     public static int getTierByPressure(double pressure) {
-        if (pressure == GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) return GCYSValues.EAP;
+        if (pressure == GCYSValues.EARTH_PRESSURE) return GCYSValues.EAP;
         for (int i = 0; i < GCYSValues.P.length; i++) {
             double p = GCYSValues.P[i];
-            if (pressure <= GCYSValues.EARTH_ATMOSPHERIC_PRESSURE && p <= GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) {
+            if (pressure <= GCYSValues.EARTH_PRESSURE && p <= GCYSValues.EARTH_PRESSURE) {
                 if (p < pressure) continue;
                 else return i;
             }
-            if (pressure >= GCYSValues.EARTH_ATMOSPHERIC_PRESSURE && p > GCYSValues.EARTH_ATMOSPHERIC_PRESSURE) {
+            if (pressure >= GCYSValues.EARTH_PRESSURE && p > GCYSValues.EARTH_PRESSURE) {
                 if (p >= pressure) return i;
             }
         }

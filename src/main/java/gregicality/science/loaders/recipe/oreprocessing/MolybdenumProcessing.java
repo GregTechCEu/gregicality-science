@@ -1,20 +1,44 @@
 package gregicality.science.loaders.recipe.oreprocessing;
 
-import gregtech.api.recipes.RecipeMaps;
+import gregicality.science.common.GCYSConfigHolder;
+import gregtech.api.recipes.GTRecipeHandler;
+import gregtech.api.unification.OreDictUnifier;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 
 import static gregicality.science.api.recipes.GCYSRecipeMaps.ROASTER_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.CENTRIFUGE_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 
+/**
+ * The Molybdenum Process
+ *
+ * <p>
+ * Produces Molybdenum from Molybdenite, Powellite, or Wulfenite
+ * Produces Rhenium from Molybdenite
+ * </p>
+ *
+ * <p>Main Products: Molybdenum, Rhenium</p>
+ * <p>Side Products: None</p>
+ *
+ * <p>3 Molybdenite -> 1 Molybdenum</p>
+ * <p>6 Powellite/Wulfenite -> 1 Molybdenum</p>
+ * <p>3 Molybdenite -> 1 Rhenium</p>
+ */
 public class MolybdenumProcessing {
 
     public static void init(){
         molybdenum();
         rhenium();
+
+        if (GCYSConfigHolder.chainOverrides.disableMolybdenumProcessing) {
+            GTRecipeHandler.removeRecipesByInputs(ARC_FURNACE_RECIPES,
+                    new ItemStack[]{OreDictUnifier.get(dust, Molybdenite, 3)},
+                    new FluidStack[]{Oxygen.getFluid(4000)});
+        }
     }
 
     private static void molybdenum() {
@@ -31,7 +55,7 @@ public class MolybdenumProcessing {
                 .buildAndRegister();
 
         // MoO3 + 6H -> Mo + 3H2O
-        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
+        CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, MolybdenumTrioxide, 4)
                 .fluidInputs(Hydrogen.getFluid(6000))
                 .output(dust, Molybdenum)
@@ -41,7 +65,7 @@ public class MolybdenumProcessing {
                 .buildAndRegister();
 
         // CaMoO4 + 2HCl -> MoO3 + CaCl2 + H2O
-        RecipeMaps.CHEMICAL_BATH_RECIPES.recipeBuilder()
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .input(dust, Powellite, 6)
                 .fluidInputs(HydrochloricAcid.getFluid(2000))
                 .output(dust, MolybdenumTrioxide, 4)
@@ -52,7 +76,7 @@ public class MolybdenumProcessing {
                 .buildAndRegister();
 
         // PbMoO4 + 2HCl -> MoO3 + H2O + PbCl2
-        RecipeMaps.CHEMICAL_BATH_RECIPES.recipeBuilder()
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .input(dust, Wulfenite, 6)
                 .fluidInputs(HydrochloricAcid.getFluid(2000))
                 .output(dust, MolybdenumTrioxide, 4)
@@ -66,7 +90,7 @@ public class MolybdenumProcessing {
     private static void rhenium() {
         CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(MolybdenumFlue.getFluid(1000))
-                .chancedOutput(dust, MolybdenumTrioxide, 1000, 0)
+                .output(dust, MolybdenumTrioxide)
                 .fluidOutputs(TraceRheniumFlue.getFluid(500))
                 .duration(200).EUt(60).buildAndRegister();
 

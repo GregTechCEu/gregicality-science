@@ -30,7 +30,7 @@ public class PressureContainer extends MTETrait implements IPressureContainer {
         this.minPressure = minPressure;
         this.maxPressure = maxPressure;
         this.volume = volume;
-        this.particles = volume * GCYSValues.EARTH_ATMOSPHERIC_PRESSURE;
+        this.particles = volume * GCYSValues.EARTH_PRESSURE;
     }
 
     @Override

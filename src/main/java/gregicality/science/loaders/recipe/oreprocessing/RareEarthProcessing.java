@@ -15,6 +15,18 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.dustSmall;
 
+/**
+ * The Rare Earth Extraction Process
+ *
+ * <p>
+ * Produces Rare Earth Element Oxides from Rare Earth
+ * </p>
+ *
+ * <p>Main Products: All of the REE Oxides</p>
+ * <p>Side Products: None</p>
+ *
+ * <p>4 Rare Earth -> 1 of every REE Oxide</p>
+ */
 public class RareEarthProcessing {
 
     public static void init() {

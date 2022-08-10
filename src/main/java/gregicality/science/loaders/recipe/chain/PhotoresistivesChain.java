@@ -6,7 +6,6 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.ingot;
 
 public class PhotoresistivesChain {
 
@@ -78,10 +77,10 @@ public class PhotoresistivesChain {
 
     private static void cadmiumSelenide() {
         // 2Al + 3Se -> Al2Se3
-        ALLOY_SMELTER_RECIPES.recipeBuilder()
+        MIXER_RECIPES.recipeBuilder()
                 .input(dust, Aluminium, 2)
                 .input(dust, Selenium, 3)
-                .output(ingot, AluminiumSelenide, 5)
+                .output(dust, AluminiumSelenide, 5)
                 .duration(400).EUt(VA[LV]).buildAndRegister();
 
         // Al2Se3 + 6H2O -> 2Al(OH)3 + 3H2Se
