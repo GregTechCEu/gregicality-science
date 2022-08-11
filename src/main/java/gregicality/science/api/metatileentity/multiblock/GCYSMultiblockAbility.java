@@ -1,4 +1,4 @@
-package gregicality.science.api.metatileentity;
+package gregicality.science.api.metatileentity.multiblock;
 
 import gregicality.science.api.capability.IPressureContainer;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;

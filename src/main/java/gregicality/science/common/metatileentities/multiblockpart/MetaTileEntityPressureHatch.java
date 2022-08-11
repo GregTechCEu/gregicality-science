@@ -7,7 +7,7 @@ import gregicality.science.api.GCYSValues;
 import gregicality.science.api.capability.GCYSTileCapabilities;
 import gregicality.science.api.capability.IPressureContainer;
 import gregicality.science.api.capability.impl.PressureContainer;
-import gregicality.science.api.metatileentity.GCYSMultiblockAbility;
+import gregicality.science.api.metatileentity.multiblock.GCYSMultiblockAbility;
 import gregicality.science.api.utils.GCYSUtility;
 import gregicality.science.api.utils.NumberFormattingUtil;
 import gregtech.api.gui.GuiTextures;
@@ -53,8 +53,10 @@ public class MetaTileEntityPressureHatch extends MetaTileEntityMultiblockPart im
     public void update() {
         super.update();
         if (!getWorld().isRemote && getOffsetTimer() % 20 == 0) {
-            boolean needsPressureDecrease = pressureContainer.getPressure() > pressureContainer.getMinPressure() && this.pressureContainer.getMinPressure() < GCYSValues.P[GCYSValues.EAP];
-            boolean needsPressureIncrease = pressureContainer.getPressure() < pressureContainer.getMaxPressure() && this.pressureContainer.getMaxPressure() > GCYSValues.P[GCYSValues.EAP];
+            // vacuum container, needs to increase pressure
+            boolean needsPressureIncrease = pressureContainer.getPressure() > pressureContainer.getMinPressure() && this.pressureContainer.getMinPressure() < GCYSValues.P[GCYSValues.EAP];
+            // pressure container, needs to decrease pressure
+            boolean needsPressureDecrease = pressureContainer.getPressure() < pressureContainer.getMaxPressure() && this.pressureContainer.getMaxPressure() > GCYSValues.P[GCYSValues.EAP];
             boolean canChangePressure = needsPressureDecrease || needsPressureIncrease;
 
             if (canChangePressure) {

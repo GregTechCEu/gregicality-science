@@ -94,7 +94,7 @@ public interface IPressureContainer {
      * @return true if the pressure is safe for the container, else false
      */
     default boolean isPressureSafe(double pressure) {
-        return pressure < getMaxPressure() && pressure > getMinPressure();
+        return pressure <= getMaxPressure() && pressure >= getMinPressure();
     }
 
     /**
@@ -120,7 +120,7 @@ public interface IPressureContainer {
      */
     default void causePressureExplosion(World world, BlockPos pos) {
         if (world != null && !world.isRemote) {
-            final float explosionPower = (float) Math.abs(Math.log10(getPressure()));
+            final float explosionPower = (float) Math.abs(Math.abs(Math.log10(getPressure())) - 4);
             world.setBlockToAir(pos);
 
             if (isVacuum()) {
