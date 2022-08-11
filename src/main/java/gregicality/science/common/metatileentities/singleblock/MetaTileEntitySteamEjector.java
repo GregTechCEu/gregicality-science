@@ -108,7 +108,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     protected ModularUI createUI(@Nonnull EntityPlayer entityPlayer) {
         return ModularUI.builder(GuiTextures.BACKGROUND_STEAM.get(isHighPressure), 176, 166)
                 .label(6, 6, getMetaFullName()).shouldColor(false)
-                .widget(new ProgressWidget(this::getPressurePercent, 96, 26, 10, 54)
+                .widget(new ProgressWidget(() -> pressureContainer.getPressurePercent(true), 96, 26, 10, 54)
                         .setProgressBar(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure),
                                 GuiTextures.PROGRESS_BAR_BOILER_HEAT, ProgressWidget.MoveType.VERTICAL))
 
@@ -117,13 +117,6 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
 
                 .bindPlayerInventory(entityPlayer.inventory, GuiTextures.SLOT_STEAM.get(isHighPressure), 0)
                 .build(getHolder(), entityPlayer);
-    }
-
-    protected double getPressurePercent() {
-        if (this.pressureContainer.getPressure() == 0) return 0;
-        double min = Math.abs(Math.log(pressureContainer.getMinPressure()));
-        double current = Math.log(pressureContainer.getPressure());
-        return (min - current) / (min * 2);
     }
 
     @Override
@@ -167,8 +160,13 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
             TileEntity te = getWorld().getTileEntity(getPos().offset(getOutputFacing()));
             if (te != null) {
                 IPressureContainer container = te.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, this.getOutputFacing().getOpposite());
-                if (container == null || container.getPressure() == container.getMinPressure()) return;
-                IPressureContainer.mergeContainers(false, container, pressureContainer);
+                if (container != null) {
+                    IPressureContainer.mergeContainers(false, container, pressureContainer);
+                }
+            }
+
+            if (!this.pressureContainer.isPressureSafe()) {
+                this.pressureContainer.causePressureExplosion(getWorld(), getPos());
             }
         }
     }
@@ -273,7 +271,6 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     public boolean isValidFrontFacing(EnumFacing facing) {
         return super.isValidFrontFacing(facing) && facing != this.outputFacing;
     }
-
 
     @Nonnull
     @Override

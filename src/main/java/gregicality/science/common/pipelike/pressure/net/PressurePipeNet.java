@@ -28,23 +28,28 @@ public class PressurePipeNet extends PipeNet<PressurePipeData> implements IPress
     }
 
     @Override
+    protected PressurePipeData readNodeData(@Nonnull NBTTagCompound nbt) {
+        return new PressurePipeData(nbt.getDouble("MinP"), nbt.getDouble("MaxP"), nbt.getDouble("Volume"));
+    }
+
+    @Override
     public NBTTagCompound serializeNBT() {
         NBTTagCompound compound = super.serializeNBT();
         compound.setDouble("minNetP", minNetPressure);
         compound.setDouble("maxNetP", maxNetPressure);
+        compound.setDouble("Volume", volume);
+        compound.setDouble("Particles", netParticles);
         return compound;
     }
 
-    @Override
-    protected PressurePipeData readNodeData(@Nonnull NBTTagCompound nbt) {
-        return new PressurePipeData(nbt.getDouble("MinP"), nbt.getDouble("MaxP"), nbt.getDouble("Volume"));
-    }
 
     @Override
     public void deserializeNBT(NBTTagCompound nbt) {
         super.deserializeNBT(nbt);
         this.minNetPressure = nbt.getDouble("minNetP");
         this.maxNetPressure = nbt.getDouble("maxNetP");
+        this.volume = nbt.getDouble("Volume");
+        this.netParticles = nbt.getDouble("Particles");
     }
 
     @Override

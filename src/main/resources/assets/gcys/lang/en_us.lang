@@ -330,6 +330,22 @@ gcys.machine.infinite_pressure_pump.tooltip=§8You just need §o§5C§dr§4e§ca
 # Dryer
 gregtech.machine.dryer.tooltip=Vaporizing liquids
 
+# Multi Block Hatches
+gcys.machine.pressure_hatch.ivv.name=Intergalactic Void Vacuum Hatch
+gcys.machine.pressure_hatch.csv.name=Close-Space Vacuum Hatch
+gcys.machine.pressure_hatch.ehv.name=Extremely High Vacuum Hatch
+gcys.machine.pressure_hatch.uhv.name=Ultra High Vacuum Hatch
+gcys.machine.pressure_hatch.hv.name=High Vacuum Hatch
+gcys.machine.pressure_hatch.mv.name=Medium Vacuum Hatch
+gcys.machine.pressure_hatch.lv.name=Low Vacuum Hatch
+gcys.machine.pressure_hatch.lp.name=Low Pressure Hatch
+gcys.machine.pressure_hatch.mp.name=Medium Pressure Hatch
+gcys.machine.pressure_hatch.hp.name=High Pressure Hatch
+gcys.machine.pressure_hatch.uhp.name=Ultra High Pressure Hatch
+gcys.machine.pressure_hatch.edp.name=Electron Degeneracy Pressure Hatch
+gcys.machine.pressure_hatch.wdp.name=White Dwarf Pressure Hatch
+gcys.machine.pressure_hatch.nsp.name=Neutron Star Pressure Hatch
+
 # Multi Block Machines
 
 # Crystallizer

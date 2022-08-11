@@ -31,8 +31,9 @@ public class GCYSValues {
             7E5,
             8E6,
             10E7,
-            10E10,
-            10E113
+            4E10,
+            10E23,
+            10E32
     };
 
     public static final int IVV = 0;
@@ -47,9 +48,9 @@ public class GCYSValues {
     public static final int MP = 9;
     public static final int HP = 10;
     public static final int UHP = 11;
-    public static final int EHP = 12;
-    public static final int EDP = 13;
-    public static final int PlP = 14;
+    public static final int EDP = 12;
+    public static final int WDP = 13;
+    public static final int NSP = 14;
 
     /**
      * The short names of each pressure threshold
@@ -67,9 +68,9 @@ public class GCYSValues {
             "MP",
             "HP",
             "UHP",
-            "EHP",
             "EDP",
-            "PlP"
+            "WDP",
+            "NSP"
     };
 
     /**
@@ -88,9 +89,9 @@ public class GCYSValues {
             DARK_PURPLE + "MP",
             LIGHT_PURPLE + "HP",
             DARK_AQUA + "UHP",
-            GREEN + "EHP",
-            YELLOW + "EDP",
-            RED + "PlP"
+            GREEN + "EDP",
+            YELLOW + "WDP",
+            RED + "NSP"
     };
 
     /**
@@ -109,8 +110,8 @@ public class GCYSValues {
             "Medium Pressure",
             "High Pressure",
             "Ultra High Pressure",
-            "Extremely High Pressure",
             "Electron Degeneracy Pressure",
-            "Planck Pressure"
+            "White Dwarf Pressure",
+            "Neutron Star Pressure"
     };
 }

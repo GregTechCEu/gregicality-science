@@ -120,7 +120,7 @@ public interface IPressureContainer {
      */
     default void causePressureExplosion(World world, BlockPos pos) {
         if (world != null && !world.isRemote) {
-            final float explosionPower = (float) Math.abs(Math.log(getPressure()));
+            final float explosionPower = (float) Math.abs(Math.log10(getPressure()));
             world.setBlockToAir(pos);
 
             if (isVacuum()) {
@@ -166,6 +166,19 @@ public interface IPressureContainer {
                 container.changeParticles(amount, false);
             }
         }
+    }
+
+    /**
+     *
+     * @param trackVacuum true if percentage should be tracked in relation to the min pressure, else the max
+     * @return a double from 0.0 to 1.0 representing how close the current pressure is to the max or min
+     */
+    default double getPressurePercent(boolean trackVacuum) {
+        if (getPressure() == 0) return 0;
+        if (getMaxPressure() - getMinPressure() == 0) return 1.0D;
+        double min = Math.log10(getMinPressure());
+        double percent = (Math.log10(getPressure()) - min) / (Math.log10(getMaxPressure()) - min);
+        return trackVacuum ? 1.0D - percent : percent;
     }
 
     IPressureContainer EMPTY = new IPressureContainer() {

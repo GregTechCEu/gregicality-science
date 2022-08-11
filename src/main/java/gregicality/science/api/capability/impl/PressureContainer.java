@@ -6,6 +6,7 @@ import gregicality.science.api.capability.IPressureContainer;
 import gregtech.api.metatileentity.MTETrait;
 import gregtech.api.metatileentity.MetaTileEntity;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.common.capabilities.Capability;
 
 import javax.annotation.Nonnull;
@@ -51,6 +52,7 @@ public class PressureContainer extends MTETrait implements IPressureContainer {
     @Override
     public void setParticles(double amount) {
         this.particles = amount;
+        this.metaTileEntity.markDirty();
     }
 
     @Override
@@ -68,6 +70,18 @@ public class PressureContainer extends MTETrait implements IPressureContainer {
     @Override
     public void deserializeNBT(@Nonnull NBTTagCompound compound) {
         this.particles = compound.getDouble("particles");
+    }
+
+    @Override
+    public void writeInitialData(PacketBuffer buffer) {
+        super.writeInitialData(buffer);
+        buffer.writeDouble(this.particles);
+    }
+
+    @Override
+    public void receiveInitialData(PacketBuffer buffer) {
+        super.receiveInitialData(buffer);
+        this.particles = buffer.readDouble();
     }
 
     @Override
