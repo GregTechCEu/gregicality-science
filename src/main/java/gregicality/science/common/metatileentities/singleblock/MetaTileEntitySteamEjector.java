@@ -18,6 +18,7 @@ import gregtech.api.capability.impl.FilteredFluidHandler;
 import gregtech.api.capability.impl.FluidTankList;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
+import gregtech.api.gui.widgets.ImageWidget;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.gui.widgets.TankWidget;
 import gregtech.api.metatileentity.IDataInfoProvider;
@@ -50,8 +51,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static gregtech.api.capability.GregtechDataCodes.UPDATE_OUTPUT_FACING;
-
 public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataInfoProvider, IActiveOutputSide {
 
     private static final int PRESSURE_DECREASE = -1000;
@@ -77,8 +76,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     @Override
     protected void initializeInventory() {
         super.initializeInventory();
-        this.pressureContainer = new PressureContainer(this, 10E-6, GCYSValues.EARTH_PRESSURE, 1.0);
-        this.mteTraits.add(pressureContainer);
+        this.pressureContainer = new PressureContainer(this, 13E-5, GCYSValues.EARTH_PRESSURE, 1.0);
     }
 
     @Override
@@ -108,8 +106,13 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     protected ModularUI createUI(@Nonnull EntityPlayer entityPlayer) {
         return ModularUI.builder(GuiTextures.BACKGROUND_STEAM.get(isHighPressure), 176, 166)
                 .label(6, 6, getMetaFullName()).shouldColor(false)
+
+                // TODO add tooltip directly to ProgressWidget in CEu
+                .widget(new ImageWidget(96, 26, 10, 54, GuiTextures.SLOT)
+                        .setTooltip(NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getPressure()) + "Pa / " +
+                                NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getMinPressure()) + "Pa"))
                 .widget(new ProgressWidget(() -> pressureContainer.getPressurePercent(true), 96, 26, 10, 54)
-                        .setProgressBar(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure),
+                        .setProgressBar(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(true),
                                 GuiTextures.PROGRESS_BAR_BOILER_HEAT, ProgressWidget.MoveType.VERTICAL))
 
                 .widget(new TankWidget(fuelFluidTank, 70, 26, 10, 54)
@@ -120,18 +123,13 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     }
 
     @Override
-    public boolean onWrenchClick(@Nonnull EntityPlayer playerIn, EnumHand hand, @Nonnull EnumFacing wrenchSide, CuboidRayTraceResult hitResult) {
+    public boolean onWrenchClick(@Nonnull EntityPlayer playerIn, EnumHand hand, EnumFacing facing, CuboidRayTraceResult hitResult) {
         if (!playerIn.isSneaking()) {
-            EnumFacing currentOutputSide = this.getOutputFacing();
-            if (currentOutputSide == wrenchSide || getFrontFacing() == wrenchSide) {
-                return false;
-            }
-            if (!getWorld().isRemote) {
-                setOutputFacing(wrenchSide);
-            }
+            if (getOutputFacing() == facing || getFrontFacing() == facing) return false;
+            this.setOutputFacing(facing);
             return true;
         }
-        return super.onWrenchClick(playerIn, hand, wrenchSide, hitResult);
+        return super.onWrenchClick(playerIn, hand, facing, hitResult);
     }
 
     @Override
@@ -202,6 +200,15 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
         }
     }
 
+    @Override
+    public void setFrontFacing(EnumFacing frontFacing) {
+        super.setFrontFacing(frontFacing);
+        if (getWorld() != null && !getWorld().isRemote && outputFacing == null) {
+            setOutputFacing(frontFacing.getOpposite());
+
+        }
+    }
+
     @Nonnull
     @Override
     public NBTTagCompound writeToNBT(@Nonnull NBTTagCompound data) {
@@ -231,22 +238,21 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     @Override
     public void receiveCustomData(int dataId, @Nonnull PacketBuffer buf) {
         super.receiveCustomData(dataId, buf);
-        if (dataId == GregtechDataCodes.UPDATE_OUTPUT_FACING) {
-            this.outputFacing = EnumFacing.VALUES[buf.readInt()];
+        if (dataId == GregtechDataCodes.VENTING_SIDE) {
+            this.outputFacing = EnumFacing.VALUES[buf.readByte()];
             scheduleRenderUpdate();
         }
     }
 
     public EnumFacing getOutputFacing() {
-        return this.outputFacing == null ? this.frontFacing.getOpposite() : this.outputFacing;
+        return this.outputFacing == null ? EnumFacing.SOUTH : this.outputFacing;
     }
 
     public void setOutputFacing(@Nonnull EnumFacing outputFacing) {
         this.outputFacing = outputFacing;
-        if (getWorld() != null && !getWorld().isRemote) {
-            notifyBlockUpdate();
-            writeCustomData(UPDATE_OUTPUT_FACING, buf -> buf.writeInt(this.outputFacing.getIndex()));
-            markDirty();
+        if (!this.getWorld().isRemote) {
+            this.markDirty();
+            writeCustomData(GregtechDataCodes.VENTING_SIDE, buf -> buf.writeByte(this.getOutputFacing().getIndex()));
         }
     }
 

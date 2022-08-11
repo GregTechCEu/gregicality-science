@@ -12,6 +12,7 @@ import gregicality.science.api.utils.GCYSUtility;
 import gregicality.science.api.utils.NumberFormattingUtil;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
+import gregtech.api.gui.widgets.ImageWidget;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.metatileentity.IDataInfoProvider;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -79,13 +80,22 @@ public class MetaTileEntityPressureHatch extends MetaTileEntityMultiblockPart im
     protected ModularUI createUI(@Nonnull EntityPlayer entityPlayer) {
         return ModularUI.builder(GuiTextures.BACKGROUND, 176, 166)
                 .label(6, 6, getMetaFullName())
-                .widget(new ProgressWidget(() -> pressureContainer.getPressurePercent(true), 96, 26, 10, 54)
-                        .setProgressBar(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(true),
-                                GuiTextures.PROGRESS_BAR_BOILER_HEAT, ProgressWidget.MoveType.VERTICAL))
 
+                // TODO add tooltip directly to ProgressWidget in CEu
+                .widget(new ImageWidget(70, 26, 10, 54, GuiTextures.SLOT)
+                        .setTooltip(NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getPressure()) + "Pa / " +
+                                NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getMaxPressure()) + "Pa"))
                 .widget(new ProgressWidget(() -> pressureContainer.getPressurePercent(false), 70, 26, 10, 54)
                         .setProgressBar(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(true),
                                 GuiTextures.PROGRESS_BAR_BOILER_HEAT, ProgressWidget.MoveType.VERTICAL))
+
+                .widget(new ImageWidget(96, 26, 10, 54, GuiTextures.SLOT)
+                        .setTooltip(NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getPressure()) + "Pa / " +
+                                NumberFormattingUtil.formatDoubleToCompactString(pressureContainer.getMinPressure()) + "Pa"))
+                .widget(new ProgressWidget(() -> pressureContainer.getPressurePercent(true), 96, 26, 10, 54)
+                        .setProgressBar(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(true),
+                        GuiTextures.PROGRESS_BAR_BOILER_HEAT, ProgressWidget.MoveType.VERTICAL))
+
 
                 .bindPlayerInventory(entityPlayer.inventory, GuiTextures.SLOT, 0)
                 .build(getHolder(), entityPlayer);

@@ -323,6 +323,9 @@ gcys.steam_ejector.tooltip.1=Creating your first Vacuum.
 gcys.steam_ejector.tooltip.2=Decreases pressure by §b%sPa§7 per second.
 gcys.steam_ejector.tooltip.3=Consumes %sL of Steam per second.
 
+# Vacuum Chamber
+gcys.machine.steam_vacuum_chamber.name=Small Steam Vacuum Chamber
+
 # Infinite Pressure Pump
 gcys.machine.infinite_pressure_pump.name=Infinite Pressure Pump
 gcys.machine.infinite_pressure_pump.tooltip=§8You just need §o§5C§dr§4e§ca§et§ai§bv§3e §7m§1o§5d§de§r§8 to use this
@@ -350,9 +353,6 @@ gcys.machine.pressure_hatch.nsp.name=Neutron Star Pressure Hatch
 
 # Crystallizer
 gcys.machine.crystallization_crucible.name=Crystallization Crucible
-
-# Biological Vat
-gcys.machine.bio_vat.name=Biological Vat
 
 # Roaster
 gcys.machine.roaster.name=Roaster
@@ -661,7 +661,7 @@ metaitem.circuit.suprachronal.max.tooltip=§fMAX-tier Circuit/n
 # RecipeMaps
 # Machines
 recipemap.dryer_recipes.name=Drying
-recipemap.bio_vat_recipes.name=Biological Vat
+recipemap.pressure_chamber_recipes.name=Pressure Chamber
 recipemap.catalytic_reformer_recipes.name=Catalytic Reformation
 recipemap.crystallization_recipes.name=Crystallization
 recipemap.roaster_recipes.name=Roasting

@@ -1,10 +1,10 @@
 package gregicality.science.api.capability;
 
-public interface IPressureMultiblock {
+public interface IPressureMachine {
 
     /**
      *
-     * @return the pressure container of this multiblock
+     * @return the pressure container of this machine
      */
     IPressureContainer getPressureContainer();
 }

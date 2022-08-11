@@ -1,10 +1,7 @@
 package gregicality.science.loaders.recipe;
 
 import gregicality.science.loaders.recipe.chain.*;
-import gregicality.science.loaders.recipe.circuits.CrystalCircuits;
-import gregicality.science.loaders.recipe.circuits.GoowareCircuits;
-import gregicality.science.loaders.recipe.circuits.OpticalCircuits;
-import gregicality.science.loaders.recipe.circuits.SpintronicCircuits;
+import gregicality.science.loaders.recipe.circuits.*;
 import gregicality.science.loaders.recipe.component.GCYSComponentRecipes;
 import gregicality.science.loaders.recipe.handlers.BouleRecipeHandler;
 import gregicality.science.loaders.recipe.oreprocessing.*;
@@ -69,6 +66,7 @@ public class GCYSRecipeLoader {
     }
 
     private static void initCircuits() {
+        PrimitiveCircuits.init();
         CrystalCircuits.init();
         GoowareCircuits.init();
         OpticalCircuits.init();

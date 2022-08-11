@@ -1,7 +1,7 @@
 package gregicality.science.api.metatileentity.multiblock;
 
 import gregicality.science.api.capability.IPressureContainer;
-import gregicality.science.api.capability.IPressureMultiblock;
+import gregicality.science.api.capability.IPressureMachine;
 import gregicality.science.api.capability.impl.AtmosphericPressureContainer;
 import gregicality.science.api.capability.impl.PressureMultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
@@ -11,11 +11,11 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.List;
 
-public abstract class PressureMultiblockController extends RecipeMapMultiblockController implements IPressureMultiblock {
+public abstract class PressureMachineController extends RecipeMapMultiblockController implements IPressureMachine {
 
     private IPressureContainer container;
 
-    public PressureMultiblockController(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap) {
+    public PressureMachineController(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap) {
         super(metaTileEntityId, recipeMap);
         this.recipeMapWorkable = new PressureMultiblockRecipeLogic(this);
     }

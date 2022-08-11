@@ -8,6 +8,7 @@ import gregicality.science.common.metatileentities.multiblock.*;
 import gregicality.science.common.metatileentities.multiblockpart.MetaTileEntityPressureHatch;
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntityCreativePressurePump;
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntitySteamEjector;
+import gregicality.science.common.metatileentities.singleblock.MetaTileEntitySteamVacuumChamber;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
 import gregtech.api.util.GTUtility;
@@ -21,13 +22,13 @@ import static gregtech.common.metatileentities.MetaTileEntities.registerSimpleMe
 public class GCYSMetaTileEntities {
 
     public static MetaTileEntitySteamEjector STEAM_EJECTOR;
+    public static MetaTileEntitySteamVacuumChamber SMALL_VACUUM_CHAMBER;
     public static MetaTileEntityCreativePressurePump CREATIVE_PRESSURE;
 
     public static SimpleMachineMetaTileEntity[] DRYER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
 
     public static MetaTileEntityPressureHatch[] PRESSURE_HATCH = new MetaTileEntityPressureHatch[GCYSValues.P.length];
 
-    public static MetaTileEntityBioVat BIO_VAT;
     public static MetaTileEntityCrystallizationCrucible CRYSTALLIZATION_CRUCIBLE;
     public static MetaTileEntityRoaster ROASTER;
     public static MetaTileEntityNanoscaleFabricator NANOSCALE_FABRICATOR;
@@ -44,7 +45,8 @@ public class GCYSMetaTileEntities {
 
         // Random Machines: ID 2100-2299
         STEAM_EJECTOR = registerMetaTileEntity(2100, new MetaTileEntitySteamEjector(gcysId("steam_ejector")));
-        CREATIVE_PRESSURE = registerMetaTileEntity(2101, new MetaTileEntityCreativePressurePump(gcysId("infinite_pressure_pump")));
+        SMALL_VACUUM_CHAMBER = registerMetaTileEntity(2101, new MetaTileEntitySteamVacuumChamber(gcysId("steam_vacuum_chamber")));
+        CREATIVE_PRESSURE = registerMetaTileEntity(2102, new MetaTileEntityCreativePressurePump(gcysId("infinite_pressure_pump")));
 
         // Simple Machines: ID 2300-3000+
         registerSimpleMetaTileEntity(DRYER, 2200, "dryer", GCYSRecipeMaps.DRYER_RECIPES, GCYSTextures.DRYER_OVERLAY, true, GCYSMetaTileEntities::gcysId, GTUtility.hvCappedTankSizeFunction);
@@ -70,7 +72,6 @@ public class GCYSMetaTileEntities {
         HYDRAULIC_FRACKER = registerMetaTileEntity(3903, new MetaTileEntityFracker(gcysId("fracker"), GTValues.ZPM));
         NANOSCALE_FABRICATOR = registerMetaTileEntity(3904, new MetaTileEntityNanoscaleFabricator(gcysId("nanoscale_fabricator")));
         ROASTER = registerMetaTileEntity(3905, new MetaTileEntityRoaster(gcysId("roaster")));
-        BIO_VAT = registerMetaTileEntity(3906, new MetaTileEntityBioVat(gcysId("bio_vat")));
         CRYSTALLIZATION_CRUCIBLE = registerMetaTileEntity(3907, new MetaTileEntityCrystallizationCrucible(gcysId("crystallization_crucible")));
         CVD_UNIT = registerMetaTileEntity(3908, new MetaTileEntityCVDUnit(gcysId("cvd_unit")));
         BURNER_REACTOR = registerMetaTileEntity(3909, new MetaTileEntityBurnerReactor(gcysId("burner_reactor")));

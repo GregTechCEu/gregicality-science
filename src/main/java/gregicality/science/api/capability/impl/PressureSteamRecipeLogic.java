@@ -4,20 +4,22 @@ import gregicality.science.api.GCYSValues;
 import gregicality.science.api.capability.IPressureContainer;
 import gregicality.science.api.capability.IPressureMachine;
 import gregicality.science.api.recipes.recipeproperties.PressureProperty;
-import gregtech.api.capability.impl.MultiblockRecipeLogic;
-import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
+import gregtech.api.capability.impl.RecipeLogicSteam;
+import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.recipes.Recipe;
+import gregtech.api.recipes.RecipeMap;
 import gregtech.common.ConfigHolder;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fluids.IFluidTank;
 
 import javax.annotation.Nonnull;
 
-public class PressureMultiblockRecipeLogic extends MultiblockRecipeLogic {
+public class PressureSteamRecipeLogic extends RecipeLogicSteam {
 
     private double recipePressure = GCYSValues.EARTH_PRESSURE;
 
-    public PressureMultiblockRecipeLogic(RecipeMapMultiblockController tileEntity) {
-        super(tileEntity);
+    public PressureSteamRecipeLogic(MetaTileEntity tileEntity, RecipeMap<?> recipeMap, boolean isHighPressure, IFluidTank steamFluidTank, double conversionRate) {
+        super(tileEntity, recipeMap, isHighPressure, steamFluidTank, conversionRate);
     }
 
     @Override

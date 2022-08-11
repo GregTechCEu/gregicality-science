@@ -2,6 +2,7 @@ package gregicality.science.api.recipes;
 
 import crafttweaker.annotations.ZenRegister;
 import gregicality.science.api.recipes.builders.NoCoilTemperatureRecipeBuilder;
+import gregicality.science.api.recipes.builders.PressureRecipeBuilder;
 import gregicality.science.api.recipes.builders.TemperaturePressureRecipeBuilder;
 import gregicality.science.client.render.GCYSGuiTextures;
 import gregtech.api.GTValues;
@@ -35,8 +36,9 @@ public class GCYSRecipeMaps {
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSounds.FURNACE);
 
-    public static final RecipeMap<SimpleRecipeBuilder> BIO_VAT_RECIPES = new RecipeMap<>("bio_vat_recipes", 0, 3, 0, 3, 0, 4, 0, 4, new SimpleRecipeBuilder(), false)
-            .setSound(GTSounds.CHEMICAL_REACTOR);
+    public static final RecipeMap<PressureRecipeBuilder> PRESSURE_CHAMBER_RECIPES = new RecipeMap<>("pressure_chamber_recipes", 1, 4, 1, 1, 0, 0, 0, 0, new PressureRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.COMPRESSOR);
 
     public static final RecipeMap<SimpleRecipeBuilder> CATALYTIC_REFORMER_RECIPES = new RecipeMap<>("catalytic_reformer_recipes", 1, 1, 0, 0, 1, 1, 1, 4, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CRACKING, ProgressWidget.MoveType.HORIZONTAL)
