@@ -26,7 +26,7 @@ public class GoowareCircuits {
                 .output(GOOWARE_BOARD)
                 .duration(40).EUt(VA[UV]).buildAndRegister();
 
-        for (FluidStack stack : new FluidStack[]{TetramethylammoniumHydroxide.getFluid(2000), EPD.getFluid(500)}) {
+        for (FluidStack stack : new FluidStack[]{TetramethylammoniumHydroxide.getFluid(2000), EDP.getFluid(500)}) {
             CHEMICAL_RECIPES.recipeBuilder()
                     .input(GOOWARE_BOARD)
                     .input(foil, YttriumBariumCuprate, 48)

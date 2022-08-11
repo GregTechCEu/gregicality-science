@@ -88,7 +88,7 @@ public class SpintronicCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .duration(40).EUt(VA[UEV]).buildAndRegister();
 
-        for (FluidStack stack : new FluidStack[]{TetramethylammoniumHydroxide.getFluid(4000), EPD.getFluid(1000)}) {
+        for (FluidStack stack : new FluidStack[]{TetramethylammoniumHydroxide.getFluid(4000), EDP.getFluid(1000)}) {
             CHEMICAL_RECIPES.recipeBuilder()
                     .input(SPINTRONIC_BOARD)
                     .input(foil, Fullerene, 16)

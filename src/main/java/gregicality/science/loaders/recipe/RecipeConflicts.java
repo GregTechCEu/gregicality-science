@@ -44,5 +44,13 @@ public class RecipeConflicts {
                 .output(dust, Potassium)
                 .fluidOutputs(Chlorine.getFluid(1000))
                 .duration(72).EUt(VA[LV]).buildAndRegister();
+
+        // Conflict between Salt Electrolysis and Sodium Chlorate
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .input(dust, Salt, 2)
+                .notConsumable(new IntCircuitIngredient(1))
+                .output(dust, Sodium)
+                .fluidOutputs(Chlorine.getFluid(1000))
+                .duration(56).EUt(VA[LV]).buildAndRegister();
     }
 }

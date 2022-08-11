@@ -1,7 +1,5 @@
 package gregicality.science.loaders.recipe.chain;
 
-import gregtech.api.recipes.ingredients.IntCircuitIngredient;
-
 import static gregicality.science.api.recipes.GCYSRecipeMaps.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
@@ -30,12 +28,11 @@ public class PhosphorusChain {
                 .temperature(1073)
                 .duration(200).EUt(VA[MV]).buildAndRegister();
 
-        BLAST_RECIPES.recipeBuilder()
+        ROASTER_RECIPES.recipeBuilder()
                 .input(dust, WhitePhosphorus)
-                .notConsumable(new IntCircuitIngredient(2))
                 .fluidInputs(Argon.getFluid(50))
                 .output(gem, RedPhosphorus)
-                .blastFurnaceTemp(573)
+                .temperature(573)
                 .duration(200).EUt(VA[MV]).buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()

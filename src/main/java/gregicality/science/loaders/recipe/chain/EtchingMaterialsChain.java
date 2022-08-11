@@ -12,7 +12,7 @@ public class EtchingMaterialsChain {
 
     public static void init() {
         tmah();
-        epd();
+        edp();
     }
 
     private static void tmah() {
@@ -34,7 +34,8 @@ public class EtchingMaterialsChain {
                 .duration(200).EUt(VA[IV]).buildAndRegister();
     }
 
-    private static void epd() {
+    private static void edp() {
+        // C6H5OH + H2O2 → C6H4(OH)2 + H2O
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Phenol.getFluid(1000))
                 .fluidInputs(HydrogenPeroxide.getFluid(1000))
@@ -46,7 +47,7 @@ public class EtchingMaterialsChain {
                 .input(dust, Pyrocatechol, 3)
                 .fluidInputs(DistilledWater.getFluid(500))
                 .fluidInputs(Ethylenediamine.getFluid(500))
-                .fluidOutputs(EPD.getFluid(1000))
+                .fluidOutputs(EDP.getFluid(1000))
                 .duration(200).EUt(VA[IV]).buildAndRegister();
     }
 }

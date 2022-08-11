@@ -3,16 +3,13 @@ package gregicality.science.loaders.recipe;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.common.block.blocks.BlockTransparentCasing;
 
-import static gregicality.science.api.unification.materials.GCYSMaterials.FracturingFluid;
-import static gregicality.science.api.unification.materials.GCYSMaterials.PMMA;
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.IV;
 import static gregtech.api.GTValues.VA;
-import static gregtech.api.recipes.RecipeMaps.COMPRESSOR_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.Alumina;
 import static gregtech.api.unification.material.Materials.Water;
-import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.plate;
+import static gregtech.api.unification.ore.OrePrefix.*;
 
 /**
  * Use this class to add miscellaneous recipes which have no category otherwise
@@ -20,6 +17,8 @@ import static gregtech.api.unification.ore.OrePrefix.plate;
 public class MiscRecipes {
 
     public static void init() {
+        metaBlockRecipes();
+
         //TODO add Iodine-131 gas or liquid
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, Alumina)
@@ -28,7 +27,11 @@ public class MiscRecipes {
                 .fluidOutputs(FracturingFluid.getFluid(1000))
                 .duration(100).EUt(VA[IV]).buildAndRegister();
 
-        metaBlockRecipes();
+        // c-BN sawblade
+        LATHE_RECIPES.recipeBuilder()
+                .input(gemExquisite, CubicBoronNitride)
+                .output(toolHeadBuzzSaw, CubicBoronNitride)
+                .duration((int) (CubicBoronNitride.getMass() * 4)).EUt(240).buildAndRegister();
     }
 
     private static void metaBlockRecipes() {

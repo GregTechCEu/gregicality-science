@@ -266,7 +266,7 @@ item.chalcogen_anode_mud.dust=Chalcogen Anode Mud
 item.chalcogen_anode_mud.dustSmall=Small Pile of Chalcogen Anode Mud
 item.chalcogen_anode_mud.dustTiny=Tiny Pile of Chalcogen Anode Mud
 material.methylamine_mixture=Methylamine Mixture
-material.epd=EPD Etching Solution
+material.edp=EDP Etching Solution
 material.phosphorene_solution=Phosphorene Exfoliation Solution
 material.sodio_indene=Sodio-Indene
 material.steam_cracked_sodio_indene=Steam-Cracked Sodio-Indene
@@ -487,6 +487,21 @@ metaitem.bose_einstein_condensate.name=Bose-Einstein Condensate
 metaitem.bose_einstein_condensate.tooltip=2,000 §cRb-87§7 Atoms at §b170nK§7!
 
 
+# Power Components
+metaitem.wafer.nano_power_integrated_circuit.name=NPIC Wafer
+metaitem.wafer.nano_power_integrated_circuit.tooltip=Raw Nano Power Circuit
+metaitem.wafer.pico_power_integrated_circuit.name=PPIC Wafer
+metaitem.wafer.pico_power_integrated_circuit.tooltip=Raw Pico Power Circuit
+metaitem.wafer.femto_power_integrated_circuit.name=FPIC Wafer
+metaitem.wafer.femto_power_integrated_circuit.tooltip=Raw Femto Power Circuit
+metaitem.plate.nano_power_integrated_circuit.name=NPIC
+metaitem.plate.nano_power_integrated_circuit.tooltip=Nano Power Integrated Circuit
+metaitem.plate.pico_power_integrated_circuit.name=PPIC
+metaitem.plate.pico_power_integrated_circuit.tooltip=Pico Power Integrated Circuit
+metaitem.plate.femto_power_integrated_circuit.name=FPIC
+metaitem.plate.femto_power_integrated_circuit.tooltip=Femto Power Integrated Circuit
+
+
 # Item Behaviors
 metaitem.behavior.held_item_destroy.message=Holding the %s damaged it!
 
@@ -566,13 +581,13 @@ metaitem.circuit.optical_mainframe.tooltip=Could Anything be faster?/n§6UIV-tie
 
 # Spintronic
 metaitem.circuit.spintronic_processor.name=Spintronic Processor
-metaitem.circuit.spintronic_processor.tooltip=Spinning Electroncs/n§5UHV-tier Circuit
+metaitem.circuit.spintronic_processor.tooltip=Spinning Electrons/n§5UHV-tier Circuit
 metaitem.circuit.spintronic_assembly.name=Spintronic Assembly
 metaitem.circuit.spintronic_assembly.tooltip=Discrete Quantum Walks/n§5UEV-tier Circuit
 metaitem.circuit.spintronic_computer.name=Spintronic Computer
-metaitem.circuit.spintronic_computer.tooltip=Who uses Nanometers anyways?/n§5UIV-tier Circuit
+metaitem.circuit.spintronic_computer.tooltip=Ballistic Spin Filtration/n§5UIV-tier Circuit
 metaitem.circuit.spintronic_mainframe.name=Spintronic Mainframe
-metaitem.circuit.spintronic_mainframe.tooltip=The smallest Scale ever!/n§5UXV-tier Circuit
+metaitem.circuit.spintronic_mainframe.tooltip=Spin-Wave Logic!/n§5UXV-tier Circuit
 
 
 # Cosmic

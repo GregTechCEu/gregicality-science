@@ -26,6 +26,7 @@ public class GCYSMaterialFlagAddition {
             Wulfenite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
         }
         RockSalt.addFlags(MaterialFlags.DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis
+        Salt.addFlags(MaterialFlags.DISABLE_DECOMPOSITION); // Conflict between Sodium Chlorate and Salt Electrolysis
 
         // Disable Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

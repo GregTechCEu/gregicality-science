@@ -251,7 +251,7 @@ public class GCYSMaterials {
     public static Material ChlorinatedBrine;
     public static Material ChalcogenAnodeMud;
     public static Material MethylamineMixture;
-    public static Material EPD;
+    public static Material EDP;
     public static Material PhosphoreneSolution;
     public static Material SodioIndene;
     public static Material SteamCrackedSodioIndene;

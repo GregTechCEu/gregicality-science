@@ -46,7 +46,7 @@ public class GCYSMetaTileEntityLoader {
     }
 
     private static void singleBlocks() {
-        MetaTileEntityLoader.registerMachineRecipe(GCYSMetaTileEntities.DRYER, "WCW", "SHS", "WCW", 'W', CraftingComponent.CABLE, 'C', CraftingComponent.CIRCUIT, 'S', CraftingComponent.SPRING, 'H', CraftingComponent.HULL);
+        MetaTileEntityLoader.registerMachineRecipe(true, GCYSMetaTileEntities.DRYER, "WCW", "SHS", "WCW", 'W', CraftingComponent.CABLE, 'C', CraftingComponent.CIRCUIT, 'S', CraftingComponent.SPRING, 'H', CraftingComponent.HULL);
     }
 
     private static void energy() {

@@ -87,6 +87,13 @@ public class KevlarChain {
                 .EUt(VA[IV])
                 .buildAndRegister();
 
+        // Ca + 2Cl -> CaCl2
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Calcium)
+                .fluidInputs(Chlorine.getFluid(2000))
+                .output(dust, CalciumChloride, 3)
+                .duration(80).EUt(VA[LV]).buildAndRegister();
+
         // C6H4(NH2)2 + C6H4(COCl)2 -> [-CO-C6H4-CO-NH-C6H4-NH-]n + 2HCl
         LARGE_CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, CalciumChloride)

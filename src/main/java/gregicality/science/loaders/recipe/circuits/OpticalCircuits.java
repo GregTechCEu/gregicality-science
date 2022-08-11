@@ -176,7 +176,7 @@ public class OpticalCircuits {
                 .output(OPTICAL_BOARD)
                 .duration(40).EUt(VA[UHV]).buildAndRegister();
 
-        for (FluidStack stack : new FluidStack[]{TetramethylammoniumHydroxide.getFluid(4000), EPD.getFluid(1000)}) {
+        for (FluidStack stack : new FluidStack[]{TetramethylammoniumHydroxide.getFluid(4000), EDP.getFluid(1000)}) {
             CHEMICAL_RECIPES.recipeBuilder()
                     .input(OPTICAL_BOARD)
                     .input(foil, Americium, 64)

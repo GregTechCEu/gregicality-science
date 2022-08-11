@@ -212,7 +212,7 @@ public class PlatinumGroupProcessing {
                 .fluidOutputs(RhodiumSulfate.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
                 .fluidOutputs(Methane.getFluid(1000))
-                .duration(100).EUt(VA[LV]).buildAndRegister();
+                .duration(100).EUt(VA[EV]).buildAndRegister();
 
         // 2Na + 2O -> Na2O2
         ROASTER_RECIPES.recipeBuilder()
@@ -251,7 +251,7 @@ public class PlatinumGroupProcessing {
         ELECTROLYZER_RECIPES.recipeBuilder()
                 .input(dust, Salt, 2)
                 .fluidInputs(Water.getFluid(3000))
-                .notConsumable(new IntCircuitIngredient(3))
+                .notConsumable(new IntCircuitIngredient(2))
                 .output(dust, SodiumChlorate, 5)
                 .fluidOutputs(Hydrogen.getFluid(6000))
                 .duration(100).EUt(VA[MV]).buildAndRegister();

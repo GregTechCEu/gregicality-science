@@ -64,7 +64,7 @@ public class BoronNitrideChain {
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, LithiumHydride, 12)
                 .fluidInputs(BoronTrifluoride.getFluid(8000))
-                .output(dust, LithiumTetrafluoroborate, 12)
+                .output(dust, LithiumTetrafluoroborate, 36)
                 .fluidOutputs(Diborane.getFluid(1000))
                 .duration(640)
                 .EUt(VA[HV])
