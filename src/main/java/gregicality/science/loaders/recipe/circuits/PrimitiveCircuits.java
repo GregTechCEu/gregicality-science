@@ -7,6 +7,7 @@ import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.unification.stack.UnificationEntry;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidStack;
@@ -46,9 +47,21 @@ public class PrimitiveCircuits {
 
         removeGTCERecipes();
 
+        ModHandler.addShapedRecipe("vacuum_tube_components", VACUUM_TUBE_COMPONENTS.getStackForm(),
+                "RGR", "WWW",
+                'R', new UnificationEntry(OrePrefix.stick, Steel),
+                'G', new UnificationEntry(OrePrefix.dust, Glowstone),
+                'W', new UnificationEntry(OrePrefix.wireGtSingle, Copper));
+
+        ModHandler.addShapedRecipe("vacuum_tube_components_foil", VACUUM_TUBE_COMPONENTS.getStackForm(),
+                "RGR", "WWW",
+                'R', new UnificationEntry(OrePrefix.stick, Steel),
+                'G', new UnificationEntry(OrePrefix.foil, Gold),
+                'W', new UnificationEntry(OrePrefix.wireGtSingle, Copper));
+
         for (Material copper : new Material[]{Copper, AnnealedCopper}) {
             ASSEMBLER_RECIPES.recipeBuilder()
-                    .input(GLASS_TUBE)
+                    .input(OrePrefix.foil, Gold)
                     .input(OrePrefix.bolt, Steel, 2)
                     .input(OrePrefix.wireGtSingle, copper, 2)
                     .circuitMeta(1)
@@ -56,7 +69,7 @@ public class PrimitiveCircuits {
                     .duration(120).EUt(VA[ULV]).buildAndRegister();
 
             ASSEMBLER_RECIPES.recipeBuilder()
-                    .input(GLASS_TUBE)
+                    .input(OrePrefix.foil, Gold)
                     .input(OrePrefix.bolt, Steel)
                     .input(OrePrefix.wireGtSingle, copper, 2)
                     .fluidInputs(RedAlloy.getFluid(L / 8))
