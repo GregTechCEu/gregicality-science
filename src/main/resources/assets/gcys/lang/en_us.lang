@@ -211,7 +211,7 @@ material.para_phenylenediamine=Para-Phenylenediamine
 material.kapton_e=Kapton E
 material.methylamine=Methylamine
 material.trimethylamine=Trimethylamine
-material.bistrichloromethylbenzene=1,4-Bis(trichloromethyl) Benzene
+material.bistrichloromethylbenzene=1,4-Bis(trichloromethyl)benzene
 material.tetrabromoethane=Tetrabromoethane
 material.terephthalic_acid=Terephthalic Acid
 material.terephthaloyl_chloride=Terephthaloyl Chloride
@@ -220,7 +220,7 @@ material.gamma_butyrolactone=Gamma-Butyrolactone
 material.n_methyl_pyrrolidone=N-Methyl-2-Pyrrolidone
 material.kevlar=Kevlar
 material.malonic_acid=Malonic Acid
-material.tetramethylammonium_chloride=Tetraemthylammonium Chloride
+material.tetramethylammonium_chloride=Tetramethylammonium Chloride
 material.tetramethylammonium_hydroxide=Tetramethylammonium Hydroxide
 material.pyrocatechol=Pyrocatechol
 material.ethylene_oxide=Ethylene Oxide
@@ -239,12 +239,12 @@ material.indene=Indene
 material.indanone=1-Indanone
 material.truxene=Truxene
 material.bromomethane=Bromomethane
-material.bromo_bromomethyl_naphthalene=1-Bromo-2-Bromomethyl Naphthalene
+material.bromo_bromomethyl_naphthalene=1-Bromo-2-(bromomethyl)naphthalene
 material.bromobutane=1-Bromobutane
 material.butyllithium=n-Butyllithium
 material.palladium_acetate=Palladium Acetate
 material.geodesic_polyarene=Geodesic Polyarene
-material.edot=EDOT
+material.edot=3,4-Ethylenedioxythiophene (EDOT)
 material.polystyrene=Polystyrene
 material.polystyrene_sulfonate=Polystyrene Sulfonate
 material.pedot_pss=PEDOT:PSS
@@ -378,7 +378,7 @@ gcys.machine.cvd_unit.name=CVD Unit
 # Fracking Machine
 gcys.machine.fracker.name=Hydraulic Fracker
 gcys.multiblock.fracker.tooltip.1=Uses 1000L of Fracturing Fluid to replenish veins under bedrock.
-gcys.multiblock.fracker.tooltip.2=Consumes §a%s§7 EU per tick.
+gcys.multiblock.fracker.tooltip.2=Consumes §a%s EU/t§7.
 
 # Sonicator
 gcys.machine.sonicator.name=Sonicator
@@ -395,14 +395,14 @@ gcys.multiblock.industrial_drill.tooltip.2=The target block is not broken when n
 gcys.machine.axial_compressor.subsonic.name=Subsonic Axial Compressor
 gcys.machine.axial_compressor.supersonic.name=Supersonic Axial Compressor
 gcys.multiblock.axial_compressor.tooltip.1=Increases pressure by §b%sPa/s§7 up to §a%sPa (§r%s§a).
-gcys.multiblock.axial_compressor.tooltip.2=Consumes §e%sL/s§7e lubricant when increasing pressure.
+gcys.multiblock.axial_compressor.tooltip.2=Consumes §e%sL/s§7 Lubricant when increasing pressure.
 gcys.multiblock.axial_compressor.tooltip.3=Uses %s§7 power. Does not overclock.
 
 # Turbomolecular Pumps
 gcys.machine.turbomolecular_pump.low_power.name=Low-Power Turbomolecular Pump
 gcys.machine.turbomolecular_pump.high_power.name=High-Power Turbomolecular Pump
 gcys.multiblock.turbomolecular_pump.tooltip.1=Decreases pressure by §b%sPa/s§7 up to §a%sPa (§r%s§a).
-gcys.multiblock.turbomolecular_pump.tooltip.2=Consumes §e%sL/s§7e lubricant when decreasing pressure.
+gcys.multiblock.turbomolecular_pump.tooltip.2=Consumes §e%sL/s§7e Lubricant when decreasing pressure.
 gcys.multiblock.turbomolecular_pump.tooltip.3=Uses %s§7 power. Does not overclock.
 
 # Single Block Machines
