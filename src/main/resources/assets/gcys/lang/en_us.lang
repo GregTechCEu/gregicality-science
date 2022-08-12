@@ -378,7 +378,7 @@ gcys.machine.cvd_unit.name=CVD Unit
 # Fracking Machine
 gcys.machine.fracker.name=Hydraulic Fracker
 gcys.multiblock.fracker.tooltip.1=Uses 1000L of Fracturing Fluid to replenish veins under bedrock.
-gcys.multiblock.fracker.tooltip.2=Consumes §a%s§r EU per tick.
+gcys.multiblock.fracker.tooltip.2=Consumes §a%s§7 EU per tick.
 
 # Sonicator
 gcys.machine.sonicator.name=Sonicator
@@ -429,13 +429,29 @@ gcys.machine.dryer.uev.name=Epic Dryer II
 gcys.machine.dryer.uev.tooltip=Moisture Remover
 gcys.machine.dryer.uiv.name=Epic Dryer III
 gcys.machine.dryer.uiv.tooltip=Moisture Remover
-gcys.machine.dryer.umv.name=Epic Dryer IV
-gcys.machine.dryer.umv.tooltip=Moisture Remover
-gcys.machine.dryer.uxv.name=Legendary Dryer
+gcys.machine.dryer.uxv.name=Epic Dryer IV
 gcys.machine.dryer.uxv.tooltip=Moisture Remover
+gcys.machine.dryer.opv.name=Legendary Dryer
+gcys.machine.dryer.opv.tooltip=Moisture Remover
 
 # Pipes
-gcys.pipe.pressure_pipe_normal.name=Pressure Pipe
+gcys.pipe.pressure_pipe_low_vacuum.name=Low Vacuum Pipe
+gcys.pipe.pressure_pipe_medium_vacuum.name=Medium Vacuum Pipe
+gcys.pipe.pressure_pipe_high_vacuum.name=High Vacuum Pipe
+gcys.pipe.pressure_pipe_ultra_high_vacuum.name=Ultra High Vacuum Pipe
+gcys.pipe.pressure_pipe_extremely_high_vacuum.name=Extremely High Vacuum Pipe
+gcys.pipe.pressure_pipe_close_space_vacuum.name=Close-Space Vacuum Pipe
+gcys.pipe.pressure_pipe_intergalactic_void_vacuum.name=Intergalactic Void Vacuum Pipe
+gcys.pipe.pressure_pipe_low_pressure.name=Low Pressure Pipe
+gcys.pipe.pressure_pipe_medium_pressure.name=Medium Pressure Pipe
+gcys.pipe.pressure_pipe_high_pressure.name=High Pressure Pipe
+gcys.pipe.pressure_pipe_ultra_high_pressure.name=Ultra High Pressure Pipe
+gcys.pipe.pressure_pipe_electron_degeneracy_pressure.name=Electron Degeneracy Pressure Pipe
+gcys.pipe.pressure_pipe_white_dwarf_pressure.name=White Dwarf Pressure Pipe
+gcys.pipe.pressure_pipe_neutron_star_pressure.name=Neutron Star Pressure Pipe
+
+gcys.pipe.pressure.tooltip.volume=Volume: §a%sL
+
 
 # Blocks
 tile.crucible.quartz.name=Quartz Crucible

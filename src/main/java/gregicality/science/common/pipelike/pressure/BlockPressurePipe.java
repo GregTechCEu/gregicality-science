@@ -26,10 +26,13 @@ import javax.annotation.Nullable;
 
 public class BlockPressurePipe extends BlockSimplePipe<PressurePipeType, PressurePipeData, WorldPressureNet> {
 
-    private static final String TRANSLATION_KEY = "gcys.pipe.pressure_pipe_normal";
+    private static final String TRANSLATION_KEY = "gcys.pipe.pressure_pipe_%s";
 
-    public BlockPressurePipe() {
-        setHarvestLevel("pickaxe", 1);
+    private final PressurePipeType pressurePipeType;
+
+    public BlockPressurePipe(PressurePipeType pressurePipeType) {
+        setHarvestLevel("pickaxe", 2);
+        this.pressurePipeType = pressurePipeType;
     }
 
     @Override
@@ -59,9 +62,7 @@ public class BlockPressurePipe extends BlockSimplePipe<PressurePipeType, Pressur
 
     @Override
     public void getSubBlocks(@Nonnull CreativeTabs creativeTabs, @Nonnull NonNullList<ItemStack> items) {
-        for (PressurePipeType type : PressurePipeType.values()) {
-            items.add(new ItemStack(this, 1, type.ordinal()));
-        }
+        items.add(new ItemStack(this, 1, pressurePipeType.ordinal()));
     }
 
     @Override
@@ -98,7 +99,7 @@ public class BlockPressurePipe extends BlockSimplePipe<PressurePipeType, Pressur
     @Nonnull
     @Override
     public String getTranslationKey() {
-        return TRANSLATION_KEY;
+        return String.format(TRANSLATION_KEY, this.pressurePipeType.name);
     }
 
     @Override

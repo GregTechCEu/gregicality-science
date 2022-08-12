@@ -1,6 +1,9 @@
 package gregicality.science.loaders.recipe.component;
 
+import gregicality.science.common.items.GCYSMetaItems;
+import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
+import gregtech.api.unification.stack.UnificationEntry;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.L;
@@ -20,6 +23,7 @@ public class GCYSComponentRecipes {
         emitter();
         sensor();
         fieldGenerator();
+        craftingComponents();
     }
 
     private static void motor() {
@@ -151,5 +155,13 @@ public class GCYSComponentRecipes {
                 .fluidInputs(Vibranium.getFluid(L))
                 .output(FIELD_GENERATOR_UHV)
                 .duration(600).EUt(400000).buildAndRegister();
+    }
+
+    private static void craftingComponents() {
+        ModHandler.addShapedRecipe("component_grinder_boron_nitride", GCYSMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm(),
+                "PDP", "DGD", "PDP",
+                'P', new UnificationEntry(plate, CubicBoronNitride),
+                'D', new UnificationEntry(plateDouble, Vibranium),
+                'G', new UnificationEntry(gem, CubicHeterodiamond));
     }
 }

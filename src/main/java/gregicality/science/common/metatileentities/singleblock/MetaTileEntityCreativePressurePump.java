@@ -86,7 +86,7 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity {
         builder.widget(new ImageWidget(7, 44, 156, 20, GuiTextures.DISPLAY));
         builder.widget(new TextFieldWidget2(9, 50, 152, 16, () -> String.valueOf(particles), value -> {
             if (!value.isEmpty()) particles = Double.parseDouble(value);
-        }).setAllowedChars(TextFieldWidget2.DECIMALS).setMaxLength(19).setValidator(getTextFieldValidator()));
+        }).setAllowedChars(TextFieldWidget2.DECIMALS).setMaxLength(35).setValidator(getTextFieldValidator()));
 
         builder.widget(new CycleButtonWidget(7, 139, 77, 20, () -> active, value -> active = value, "gregtech.creative.activity.off", "gregtech.creative.activity.on"));
 
@@ -102,8 +102,10 @@ public class MetaTileEntityCreativePressurePump extends MetaTileEntity {
             TileEntity tile = getWorld().getTileEntity(getPos().offset(facing));
             if (tile != null) {
                 IPressureContainer container = tile.getCapability(GCYSTileCapabilities.CAPABILITY_PRESSURE_CONTAINER, facing.getOpposite());
-                if (container == null || container.getPressure() == container.getMinPressure() || container.getPressure() == container.getMaxPressure())
-                    continue;
+                if (container == null) continue;
+                if (container.getPressure() != GCYSValues.EARTH_PRESSURE &&
+                        (container.getPressure() == container.getMinPressure() ||
+                        container.getPressure() == container.getMaxPressure())) continue;
                 IPressureContainer.mergeContainers(this.pressureContainer, container);
             }
         }

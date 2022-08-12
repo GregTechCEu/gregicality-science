@@ -47,7 +47,7 @@ public class GCYSMetaBlocks {
         TRANSPARENT_CASING.setRegistryName("transparent_casing");
 
         for (PressurePipeType type : PressurePipeType.values()) {
-            PRESSURE_PIPES[type.ordinal()] = new BlockPressurePipe();
+            PRESSURE_PIPES[type.ordinal()] = new BlockPressurePipe(type);
             PRESSURE_PIPES[type.ordinal()].setRegistryName(String.format("pressure_pipe_%s", type.name));
         }
     }

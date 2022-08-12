@@ -16,6 +16,7 @@ public class GCYSRecipeLoader {
         RecipeConflicts.init();
         GCYSComponentRecipes.init();
         GCYSMetaTileEntityLoader.init();
+        GCYSBlockRecipeLoader.init();
     }
 
     public static void initHandlers() {

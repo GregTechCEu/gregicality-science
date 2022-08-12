@@ -41,5 +41,9 @@ public class GCYSMaterialPropertyAddition {
         FluidProperty prop = new FluidProperty();
         prop.setFluidTemperature(332);
         SodiumBisulfate.setProperty(PropertyKey.FLUID, prop);
+
+        // Ore Byproducts
+        //TODO Fix ore byproduct changes
+        Pollucite.getProperty(PropertyKey.ORE).setOreByProducts(Aluminium, Potassium, Caesium, Pollucite);
     }
 }
