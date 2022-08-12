@@ -9,7 +9,6 @@ import gregicality.science.loaders.recipe.oreprocessing.*;
 public class GCYSRecipeLoader {
 
     public static void init() {
-        initHandlers();
         initChains();
         initOreProcessing();
         initCircuits();
@@ -19,7 +18,7 @@ public class GCYSRecipeLoader {
         GCYSMetaTileEntityLoader.init();
     }
 
-    private static void initHandlers() {
+    public static void initHandlers() {
         BouleRecipeHandler.register();
     }
 

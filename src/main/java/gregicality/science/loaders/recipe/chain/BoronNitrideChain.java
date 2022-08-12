@@ -126,15 +126,16 @@ public class BoronNitrideChain {
                 .buildAndRegister();
 
         // B + N -> BN
-        MOLECULAR_BEAM_RECIPES.recipeBuilder()
-                .input(foil, Nickel, 8)
-                .input(dust, Boron)
-                .fluidInputs(Nitrogen.getFluid(1000))
-                .output(gem, HexagonalBoronNitride, 2)
-                .temperature(2900)
-                .duration(80)
-                .EUt(VA[UEV])
-                .buildAndRegister();
+        //TODO figure out what will happen to this
+//        MOLECULAR_BEAM_RECIPES.recipeBuilder()
+//                .input(foil, Nickel, 8)
+//                .input(dust, Boron)
+//                .fluidInputs(Nitrogen.getFluid(1000))
+//                .output(gem, HexagonalBoronNitride, 2)
+//                .temperature(2900)
+//                .duration(80)
+//                .EUt(VA[UEV])
+//                .buildAndRegister();
 
         // h-BN -> c-BN
         CVD_RECIPES.recipeBuilder()
