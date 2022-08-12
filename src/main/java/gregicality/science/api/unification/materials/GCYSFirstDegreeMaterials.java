@@ -928,5 +928,12 @@ public class GCYSFirstDegreeMaterials {
                 .components(Chrome, 1, Germanium, 1, Tellurium, 3)
                 .blastTemp(2900, BlastProperty.GasTier.HIGHER)
                 .build();
+
+        Kovar = new Material.Builder(3623, "kovar")
+                .ingot()
+                .color(0xCBC0A6)
+                .flags(GENERATE_ROD, GENERATE_RING, DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Iron, 4, Nickel, 2, Cobalt, 1)
+                .build();
     }
 }

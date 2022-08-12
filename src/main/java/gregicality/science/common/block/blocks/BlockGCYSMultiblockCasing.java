@@ -7,9 +7,9 @@ import net.minecraft.util.IStringSerializable;
 
 import javax.annotation.Nonnull;
 
-public class BlockMultiblockCasing extends VariantBlock<BlockMultiblockCasing.CasingType> {
+public class BlockGCYSMultiblockCasing extends VariantBlock<BlockGCYSMultiblockCasing.CasingType> {
 
-    public BlockMultiblockCasing() {
+    public BlockGCYSMultiblockCasing() {
         super(Material.IRON);
         setTranslationKey("multiblock_casing");
         setHardness(5.0f);

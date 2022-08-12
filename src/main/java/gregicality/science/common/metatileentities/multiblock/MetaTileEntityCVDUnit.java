@@ -3,11 +3,11 @@ package gregicality.science.common.metatileentities.multiblock;
 import gregicality.multiblocks.api.render.GCYMTextures;
 import gregicality.multiblocks.common.block.GCYMMetaBlocks;
 import gregicality.multiblocks.common.block.blocks.BlockLargeMultiblockCasing;
-import gregicality.science.api.metatileentity.multiblock.PressureMachineController;
+import gregicality.science.api.metatileentity.multiblock.PressureMultiblockController;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.client.render.GCYSTextures;
 import gregicality.science.common.block.GCYSMetaBlocks;
-import gregicality.science.common.block.blocks.BlockMultiblockCasing;
+import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasing;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -22,7 +22,7 @@ import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nonnull;
 
-public class MetaTileEntityCVDUnit extends PressureMachineController {
+public class MetaTileEntityCVDUnit extends PressureMultiblockController {
 
     public MetaTileEntityCVDUnit(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GCYSRecipeMaps.CVD_RECIPES);
@@ -51,7 +51,7 @@ public class MetaTileEntityCVDUnit extends PressureMachineController {
     }
 
     private static IBlockState getSubstrateState() {
-        return GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.CasingType.SUBSTRATE);
+        return GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockGCYSMultiblockCasing.CasingType.SUBSTRATE);
     }
 
     private static IBlockState getGlassState() {

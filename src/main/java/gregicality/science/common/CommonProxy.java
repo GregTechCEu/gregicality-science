@@ -2,10 +2,10 @@ package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
 import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.common.items.GCYSMetaItems;
 import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
 import gregicality.science.common.pipelike.pressure.ItemBlockPressurePipe;
 import gregicality.science.common.pipelike.pressure.tile.TileEntityPressurePipe;
-import gregicality.science.common.items.GCYSMetaItems;
 import gregicality.science.loaders.recipe.GCYSMaterialInfoLoader;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
 import gregicality.science.loaders.recipe.component.GCYSCraftingComponent;
@@ -51,6 +51,7 @@ public class CommonProxy {
         IForgeRegistry<Block> registry = event.getRegistry();
         registry.register(GCYSMetaBlocks.CRUCIBLE);
         registry.register(GCYSMetaBlocks.MULTIBLOCK_CASING);
+        registry.register(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE);
         registry.register(GCYSMetaBlocks.TRANSPARENT_CASING);
 
         for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(pipe);
@@ -63,6 +64,7 @@ public class CommonProxy {
         IForgeRegistry<Item> registry = event.getRegistry();
         registry.register(createItemBlock(GCYSMetaBlocks.CRUCIBLE, VariantItemBlock::new));
         registry.register(createItemBlock(GCYSMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE, VariantItemBlock::new));
         registry.register(createItemBlock(GCYSMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
 
         for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(createItemBlock(pipe, ItemBlockPressurePipe::new));

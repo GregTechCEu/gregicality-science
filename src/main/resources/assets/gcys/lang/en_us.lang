@@ -50,7 +50,7 @@ material.beryllium_oxide=Beryllium Oxide
 material.tantalum_pentoxide=Tantalum Pentoxide
 material.niobium_pentoxide=Niobium Pentoxide
 material.calcium_difluoride=Calcium Difluoride
-material.manganese_difluoride=Manganese Difluoride
+material.manganese_difluoride=Manganegermanse Difluoride
 material.calcium_carbide=Calcium Carbide
 material.calcium_hydroxide=Calcium Hydroxide
 material.sodium_cyanide=Sodium Cyanide
@@ -141,7 +141,7 @@ material.deep_iron=Deep Iron
 material.vibranium_unstable=Unstable Vibranium
 material.silicon_carbide=Silicon Carbide
 material.cgt=Chromium Germanium Telluride
-
+material.kovar=Kovar
 
 # Second Degree Materials
 material.la_pr_nd_ce_oxides_solution=La-Pr-Nd-Ce Oxides Solution
@@ -314,6 +314,8 @@ behavior.tricorder.max_pressure=Maximum Pressure: %s Pa
 # Generic Pressure Info
 gcys.universal.tooltip.pressure.minimum=Minimum Pressure Capacity: §a%sPa (§r%s§a)
 gcys.universal.tooltip.pressure.maximum=Maximum Pressure Capacity: §a%sPa (§r%s§a)
+gcys.universal.tooltip.pressure.target=Pressure Target
+
 
 # Single Block Machines
 
@@ -386,8 +388,22 @@ gcys.machine.catalytic_reformer.name=Catalytic Reformer
 
 # Industrial Drill
 gcys.machine.industrial_drill.name=Industrial Drilling Rig
-gcys.machine.industrial_drill.tooltip.1=Drills the block placed beneath the Drill Head.
-gcys.machine.industrial_drill.tooltip.2=The target block is not broken when non-consumable.
+gcys.multiblock.industrial_drill.tooltip.1=Drills the block placed beneath the Drill Head.
+gcys.multiblock.industrial_drill.tooltip.2=The target block is not broken when non-consumable.
+
+# Axial Compressors
+gcys.machine.axial_compressor.subsonic.name=Subsonic Axial Compressor
+gcys.machine.axial_compressor.supersonic.name=Supersonic Axial Compressor
+gcys.multiblock.axial_compressor.tooltip.1=Increases pressure by §b%sPa/s§7 up to §a%sPa (§r%s§a).
+gcys.multiblock.axial_compressor.tooltip.2=Consumes §e%sL/s§7e lubricant when increasing pressure.
+gcys.multiblock.axial_compressor.tooltip.3=Uses %s§7 power. Does not overclock.
+
+# Turbomolecular Pumps
+gcys.machine.turbomolecular_pump.low_power.name=Low-Power Turbomolecular Pump
+gcys.machine.turbomolecular_pump.high_power.name=High-Power Turbomolecular Pump
+gcys.multiblock.turbomolecular_pump.tooltip.1=Decreases pressure by §b%sPa/s§7 up to §a%sPa (§r%s§a).
+gcys.multiblock.turbomolecular_pump.tooltip.2=Consumes §e%sL/s§7e lubricant when decreasing pressure.
+gcys.multiblock.turbomolecular_pump.tooltip.3=Uses %s§7 power. Does not overclock.
 
 # Single Block Machines
 
@@ -431,6 +447,9 @@ tile.multiblock_casing.substrate.name=Substrate Casing
 tile.multiblock_casing.advanced_substrate.name=Advanced Substrate Casing
 tile.multiblock_casing.drill_head.name=Drill Head
 
+tile.multiblock_casing_active.airfoil.name=Airfoil Chamber
+tile.multiblock_casing_active.advanced_airfoil.name=Advanced Airfoil Chamber
+
 tile.transparent_casing.pmma.name=PMMA Glass
 
 
@@ -448,6 +467,10 @@ item.material.oreprefix.seedCrystal=%s Seed Crystal
 item.material.oreprefix.boule=%s Boule
 
 # Metaitems
+
+# Primitive Stuff
+metaitem.vacuum_tube.components.name=Vacuum Tube Components
+metaitem.vacuum_tube.components.tooltip=You hope it won't burn out
 
 # Crystal Stuff
 metaitem.boule.cubic_zirconia.europium.name=Europium-doped Monocrystalline Cubic Zirconia Boule
@@ -657,6 +680,7 @@ metaitem.circuit.suprachronal.opv.name=Supra-Chronal Overpowered Circuit
 metaitem.circuit.suprachronal.opv.tooltip=§fOpV-tier Circuit/n
 metaitem.circuit.suprachronal.max.name=Supra-Chronal Maximum Circuit
 metaitem.circuit.suprachronal.max.tooltip=§fMAX-tier Circuit/n
+
 
 # RecipeMaps
 # Machines

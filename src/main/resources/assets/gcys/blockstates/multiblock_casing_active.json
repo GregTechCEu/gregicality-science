@@ -1,0 +1,43 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "block/cube_all",
+    "textures": {
+      "all": "gregtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "active=false,variant=airfoil": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gregtech:blocks/casings/pressure/airfoil_chamber",
+        "side": "#top",
+        "bottom": "gregtech:blocks/casings/solid/machine_casing_stable_titanium"
+      }
+    },
+    "active=true,variant=airfoil": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gregtech:blocks/casings/pressure/airfoil_chamber_on",
+        "side": "#top",
+        "bottom": "gregtech:blocks/casings/solid/machine_casing_stable_titanium"
+      }
+    },
+    "active=false,variant=advanced_airfoil": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gregtech:blocks/casings/pressure/airfoil_chamber_advanced",
+        "side": "#top",
+        "bottom": "gregtech:blocks/casings/solid/machine_casing_robust_tungstensteel"
+      }
+    },
+    "active=true,variant=advanced_airfoil": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gregtech:blocks/casings/pressure/airfoil_chamber_advanced_on",
+        "side": "#top",
+        "bottom": "gregtech:blocks/casings/solid/machine_casing_robust_tungstensteel"
+      }
+    }
+  }
+}

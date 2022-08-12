@@ -123,8 +123,9 @@ public class MetaTileEntityFracker extends MultiblockWithDisplayBase implements 
         drainEnergy(false);
 
         // since energy is being consumed the fracker is now active
-        if (!this.isActive())
+        if (!this.isActive()) {
             setActive(true);
+        }
 
         // increase progress
         progressTime++;
@@ -250,8 +251,7 @@ public class MetaTileEntityFracker extends MultiblockWithDisplayBase implements 
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
         super.addDisplayText(textList);
-        if (!isStructureFormed())
-            return;
+        if (!isStructureFormed()) return;
 
         if (energyContainer != null && energyContainer.getEnergyCapacity() > 0) {
             long maxVoltage = Math.max(energyContainer.getInputVoltage(), energyContainer.getOutputVoltage());

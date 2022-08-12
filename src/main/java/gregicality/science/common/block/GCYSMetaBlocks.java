@@ -2,14 +2,12 @@ package gregicality.science.common.block;
 
 import gregicality.science.client.render.pipe.PressurePipeRenderer;
 import gregicality.science.common.block.blocks.BlockCrucible;
-import gregicality.science.common.block.blocks.BlockMultiblockCasing;
+import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasing;
+import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasingActive;
+import gregicality.science.common.block.blocks.BlockTransparentCasing;
 import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
 import gregicality.science.common.pipelike.pressure.PressurePipeType;
 import gregtech.client.model.SimpleStateMapper;
-import gregtech.client.renderer.pipe.ItemPipeRenderer;
-import gregtech.common.pipelike.itempipe.BlockItemPipe;
-import gregtech.common.pipelike.itempipe.ItemPipeType;
-import gregicality.science.common.block.blocks.BlockTransparentCasing;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
@@ -30,7 +28,8 @@ public class GCYSMetaBlocks {
 
     public static final BlockPressurePipe[] PRESSURE_PIPES = new BlockPressurePipe[PressurePipeType.values().length];
     public static BlockCrucible CRUCIBLE;
-    public static BlockMultiblockCasing MULTIBLOCK_CASING;
+    public static BlockGCYSMultiblockCasing MULTIBLOCK_CASING;
+    public static BlockGCYSMultiblockCasingActive MULTIBLOCK_CASING_ACTIVE;
     public static BlockTransparentCasing TRANSPARENT_CASING;
 
     private GCYSMetaBlocks() {
@@ -40,8 +39,10 @@ public class GCYSMetaBlocks {
     public static void init() {
         CRUCIBLE = new BlockCrucible();
         CRUCIBLE.setRegistryName("crucible");
-        MULTIBLOCK_CASING = new BlockMultiblockCasing();
+        MULTIBLOCK_CASING = new BlockGCYSMultiblockCasing();
         MULTIBLOCK_CASING.setRegistryName("multiblock_casing");
+        MULTIBLOCK_CASING_ACTIVE = new BlockGCYSMultiblockCasingActive();
+        MULTIBLOCK_CASING_ACTIVE.setRegistryName("multiblock_casing_active");
         TRANSPARENT_CASING = new BlockTransparentCasing();
         TRANSPARENT_CASING.setRegistryName("transparent_casing");
 
@@ -55,6 +56,7 @@ public class GCYSMetaBlocks {
     public static void registerItemModels() {
         registerItemModel(CRUCIBLE);
         registerItemModel(MULTIBLOCK_CASING);
+        registerItemModel(MULTIBLOCK_CASING_ACTIVE);
         registerItemModel(TRANSPARENT_CASING);
 
         IStateMapper normalStateMapper = new SimpleStateMapper(PressurePipeRenderer.INSTANCE.getModelLocation());

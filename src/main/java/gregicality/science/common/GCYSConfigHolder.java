@@ -40,6 +40,9 @@ public class GCYSConfigHolder {
 
     public static class CircuitOverrides {
 
+        @Config.Comment({"Requires Steam-Tier Vacuum Equipment in order to produce Vacuum Tubes, instead of just crafting.", "Default: true"})
+        public boolean harderVacuumTubes = true;
+
         @Config.Comment({"Requires Cubic Zirconia and more components in order to produce Crystal SOCs, instead of just Crystal CPUs.", "Default: true"})
         public boolean harderCrystalCircuits = true;
 

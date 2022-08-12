@@ -6,6 +6,7 @@ import gregicality.multiblocks.common.block.blocks.BlockLargeMultiblockCasing;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.client.render.GCYSTextures;
 import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasing;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.capability.impl.NotifiableItemStackHandler;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -68,7 +69,7 @@ public class MetaTileEntityIndustrialDrill extends RecipeMapMultiblockController
                 .where('B', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID))
                         .setMinGlobalLimited(4)
                         .or(autoAbilities(true, true, false, true, true, true, true)))
-                .where('D', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(gregicality.science.common.block.blocks.BlockMultiblockCasing.CasingType.DRILL_HEAD)))
+                .where('D', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockGCYSMultiblockCasing.CasingType.DRILL_HEAD)))
                 .where('R', bedrockPredicate())
                 .where(' ', any())
                 .build();
@@ -125,8 +126,8 @@ public class MetaTileEntityIndustrialDrill extends RecipeMapMultiblockController
     @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("gcys.machine.industrial_drill.tooltip.1"));
-        tooltip.add(I18n.format("gcys.machine.industrial_drill.tooltip.2"));
+        tooltip.add(I18n.format("gcys.multiblock.industrial_drill.tooltip.1"));
+        tooltip.add(I18n.format("gcys.multiblock.industrial_drill.tooltip.2"));
     }
 
     protected static class IndustrialDrillWorkableHandler extends MultiblockRecipeLogic {

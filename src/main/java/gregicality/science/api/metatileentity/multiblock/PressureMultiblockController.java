@@ -11,11 +11,11 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.List;
 
-public abstract class PressureMachineController extends RecipeMapMultiblockController implements IPressureMachine {
+public abstract class PressureMultiblockController extends RecipeMapMultiblockController implements IPressureMachine {
 
     private IPressureContainer container;
 
-    public PressureMachineController(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap) {
+    public PressureMultiblockController(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap) {
         super(metaTileEntityId, recipeMap);
         this.recipeMapWorkable = new PressureMultiblockRecipeLogic(this);
     }

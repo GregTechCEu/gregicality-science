@@ -1,6 +1,7 @@
 package gregicality.science.common.items;
 
 import gregicality.science.api.unification.materials.GCYSMaterials;
+import gregicality.science.common.GCYSConfigHolder;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
@@ -61,6 +62,9 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACHRONAL_UXV;
     public static MetaItem<?>.MetaValueItem SUPRACHRONAL_OpV;
     public static MetaItem<?>.MetaValueItem SUPRACHRONAL_MAX;
+
+    // Primitive Circuit Components
+    public static MetaItem<?>.MetaValueItem VACUUM_TUBE_COMPONENTS;
 
     // Crystal Circuit Components
     public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_BOULE;
@@ -196,7 +200,7 @@ public class GCYSMetaItems {
         SUPRACHRONAL_MAX = metaItem1.addItem(34, "circuit.suprachronal.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
 
         // Primitive Circuit Components: ID 50-59
-
+        VACUUM_TUBE_COMPONENTS = metaItem1.addItem(51, "vacuum_tube.components").setInvisible(GCYSConfigHolder.circuitOverrides.harderVacuumTubes);
 
         // Electronic Circuit Components: ID 60-69
 

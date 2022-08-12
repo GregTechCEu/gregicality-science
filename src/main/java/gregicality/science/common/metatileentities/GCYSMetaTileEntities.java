@@ -5,6 +5,8 @@ import gregicality.science.api.GCYSValues;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.client.render.GCYSTextures;
 import gregicality.science.common.metatileentities.multiblock.*;
+import gregicality.science.common.metatileentities.multiblock.pressure.MetaTileEntityAxialCompressor;
+import gregicality.science.common.metatileentities.multiblock.pressure.MetaTileEntityTurbomolecularPump;
 import gregicality.science.common.metatileentities.multiblockpart.MetaTileEntityPressureHatch;
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntityCreativePressurePump;
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntitySteamEjector;
@@ -39,6 +41,10 @@ public class GCYSMetaTileEntities {
     public static MetaTileEntitySonicator SONICATOR;
     public static MetaTileEntityCatalyticReformer CATALYTIC_REFORMER;
     public static MetaTileEntityIndustrialDrill INDUSTRIAL_DRILL;
+    public static MetaTileEntityAxialCompressor SUBSONIC_AXIAL_COMPRESSOR;
+    public static MetaTileEntityAxialCompressor SUPERSONIC_AXIAL_COMPRESSOR;
+    public static MetaTileEntityTurbomolecularPump LOW_POWER_TURBOMOLECULAR_PUMP;
+    public static MetaTileEntityTurbomolecularPump HIGH_POWER_TURBOMOLECULAR_PUMP;
 
     public static void init() {
         // GCYM Machines: ID 2000-2099
@@ -76,6 +82,10 @@ public class GCYSMetaTileEntities {
         CVD_UNIT = registerMetaTileEntity(3908, new MetaTileEntityCVDUnit(gcysId("cvd_unit")));
         BURNER_REACTOR = registerMetaTileEntity(3909, new MetaTileEntityBurnerReactor(gcysId("burner_reactor")));
         CRYOGENIC_REACTOR = registerMetaTileEntity(3910, new MetaTileEntityCryoReactor(gcysId("cryogenic_reactor")));
+        SUBSONIC_AXIAL_COMPRESSOR = registerMetaTileEntity(3911, new MetaTileEntityAxialCompressor(gcysId("axial_compressor.subsonic"), GTValues.EV, 5E6, 10_000.0));
+        SUPERSONIC_AXIAL_COMPRESSOR = registerMetaTileEntity(3912, new MetaTileEntityAxialCompressor(gcysId("axial_compressor.supersonic"), GTValues.LuV, 18E9, 50_000.0));
+        LOW_POWER_TURBOMOLECULAR_PUMP = registerMetaTileEntity(3913, new MetaTileEntityTurbomolecularPump(gcysId("turbomolecular_pump.low_power"), GTValues.EV, 1E-4, 10_000.0));
+        HIGH_POWER_TURBOMOLECULAR_PUMP = registerMetaTileEntity(3914, new MetaTileEntityTurbomolecularPump(gcysId("turbomolecular_pump.high_power"), GTValues.LuV, 1E-7, 50_000.0));
     }
 
     @Nonnull
