@@ -82,7 +82,7 @@ public class PrimitiveCircuits {
                 .input(VACUUM_TUBE_COMPONENTS)
                 .input(OrePrefix.ring, Kovar)
                 .output(VACUUM_TUBE)
-                .pressure(13E-4)
+                .pressure(13E-5)
                 .duration(100).EUt(16).buildAndRegister();
     }
 
