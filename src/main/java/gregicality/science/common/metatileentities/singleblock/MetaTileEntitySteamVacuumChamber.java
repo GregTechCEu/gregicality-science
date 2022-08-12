@@ -144,4 +144,8 @@ public class MetaTileEntitySteamVacuumChamber extends SteamMetaTileEntity implem
     public IPressureContainer getPressureContainer() {
         return this.pressureContainer;
     }
+
+    // the vacuum chamber does not emit particles
+    @Override
+    public void randomDisplayTick() {/**/}
 }
