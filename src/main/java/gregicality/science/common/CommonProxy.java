@@ -78,12 +78,20 @@ public class CommonProxy {
     }
 
     // using low to ensure some recipes from CEu are removed
-    @SubscribeEvent(priority = EventPriority.LOWEST)
+    @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         // Main recipe registration
         // This is called AFTER GregTech registers recipes, so
         // anything here is safe to call removals in
         GCYSRecipeLoader.init();
+    }
+
+     @SubscribeEvent()
+    public static void registerRecipesNormal(RegistryEvent.Register<IRecipe> event) {
+        // Main recipe registration
+        // This is called AFTER GregTech registers recipes, so
+        // anything here is safe to call removals in
+        GCYSRecipeLoader.initHandlers();
     }
 
     @SubscribeEvent

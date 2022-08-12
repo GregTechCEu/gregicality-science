@@ -55,9 +55,9 @@ public class MetaTileEntityPressureHatch extends MetaTileEntityMultiblockPart im
         super.update();
         if (!getWorld().isRemote && getOffsetTimer() % 20 == 0) {
             // vacuum container, needs to increase pressure
-            boolean needsPressureIncrease = pressureContainer.getPressure() > pressureContainer.getMinPressure() && this.pressureContainer.getMinPressure() < GCYSValues.P[GCYSValues.EAP];
+            boolean needsPressureIncrease = pressureContainer.getPressure() > pressureContainer.getMinPressure() && this.pressureContainer.getMinPressure() < GCYSValues.EARTH_PRESSURE;
             // pressure container, needs to decrease pressure
-            boolean needsPressureDecrease = pressureContainer.getPressure() < pressureContainer.getMaxPressure() && this.pressureContainer.getMaxPressure() > GCYSValues.P[GCYSValues.EAP];
+            boolean needsPressureDecrease = pressureContainer.getPressure() < pressureContainer.getMaxPressure() && this.pressureContainer.getMaxPressure() > GCYSValues.EARTH_PRESSURE;
             boolean canChangePressure = needsPressureDecrease || needsPressureIncrease;
 
             if (canChangePressure) {

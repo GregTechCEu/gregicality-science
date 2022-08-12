@@ -148,21 +148,19 @@ public class MetaTileEntityTurbomolecularPump extends MultiblockWithDisplayBase 
 
     @Override
     protected BlockPattern createStructurePattern() {
-        TraceabilityPredicate casing = states(getCasingState())
-                .or(autoAbilities())
-                .or(abilities(MultiblockAbility.IMPORT_FLUIDS).setExactLimit(1))
-                .or(abilities(MultiblockAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(3));
-
         return FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.FRONT, RelativeDirection.DOWN)
                 .aisle("XXX", "XSX", "XXX")
                 .aisle("XGX", "GAG", "XGX").setRepeatable(4)
                 .aisle("FPF", "PPP", "FPF")
                 .where('S', selfPredicate())
                 .where('F', states(getFrameState()))
-                .where('X', casing)
+                .where('X', states(getCasingState()).setMinGlobalLimited(20)
+                        .or(autoAbilities())
+                        .or(abilities(MultiblockAbility.IMPORT_FLUIDS).setExactLimit(1))
+                        .or(abilities(MultiblockAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(3)))
                 .where('G', states(getGlassState()))
                 .where('A', airfoilPredicate())
-                .where('P', casing
+                .where('P', states(getCasingState())
                         .or(abilities(GCYSMultiblockAbility.PRESSURE_CONTAINER).setExactLimit(1)))
                 .build();
     }
@@ -196,21 +194,8 @@ public class MetaTileEntityTurbomolecularPump extends MultiblockWithDisplayBase 
 
     @Nonnull
     protected TraceabilityPredicate airfoilPredicate() {
-        return new TraceabilityPredicate(blockWorldState -> {
-            if (tier == GTValues.LuV) {
-                if (blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.ADVANCED_AIRFOIL)
-                        || blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.ADVANCED_AIRFOIL, true)) {
-                    blockWorldState.getMatchContext().getOrPut("VABlock", new LinkedList<>()).add(blockWorldState.getPos());
-                    return true;
-                }
-            } else if (blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.AIRFOIL)
-                    || blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.AIRFOIL, true)) {
-                blockWorldState.getMatchContext().getOrPut("VABlock", new LinkedList<>()).add(blockWorldState.getPos());
-                return true;
-            }
-
-            return false;
-        });
+        if (tier == GTValues.LuV) return states(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.ADVANCED_AIRFOIL));
+        else return states(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.AIRFOIL));
     }
 
     @Override

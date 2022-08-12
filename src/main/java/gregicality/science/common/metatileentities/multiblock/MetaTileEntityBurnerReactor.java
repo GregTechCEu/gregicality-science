@@ -48,7 +48,7 @@ public class MetaTileEntityBurnerReactor extends PressureMultiblockController {
                 .aisle("  X  ", " XCX ", "XCCCX", " XCX ", "  X  ", "  X  ")
                 .aisle("F   F", "F X F", "FXSXF", "F X F", "F   F", "     ")
                 .where('S', selfPredicate())
-                .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF))
+                .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF)).setMinGlobalLimited(25)
                         .or(autoAbilities(true, true, true, true, true, true, false)))
                 .where('F', states(MetaBlocks.FRAMES.get(GCYMMaterials.MaragingSteel300).getBlock(GCYMMaterials.MaragingSteel300)))
                 .where('C', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STAINLESS_CLEAN)))

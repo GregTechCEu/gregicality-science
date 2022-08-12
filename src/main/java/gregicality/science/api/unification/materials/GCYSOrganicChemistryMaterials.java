@@ -384,7 +384,7 @@ public class GCYSOrganicChemistryMaterials {
                 .components(Carbon, 4, Hydrogen, 7, Nitrogen, 1, Oxygen, 1)
                 .build();
 
-        PMMA = new Material.Builder(15057, "pmma") //TODO Polymethylmethacrylate tooltip
+        PMMA = new Material.Builder(15057, "polymethylmethacrylate") //TODO PMMA tooltip
                 .ingot().fluid()
                 .color(0x91CAE1)
                 .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)

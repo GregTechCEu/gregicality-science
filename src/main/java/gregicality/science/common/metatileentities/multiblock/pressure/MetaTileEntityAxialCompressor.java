@@ -153,7 +153,7 @@ public class MetaTileEntityAxialCompressor extends MultiblockWithDisplayBase imp
                 .aisle("FXF", "XSX", "XXX")
                 .where('S', selfPredicate())
                 .where('F', states(getFrameState()))
-                .where('X', states(getCasingState())
+                .where('X', states(getCasingState()).setMinGlobalLimited(27)
                         .or(autoAbilities())
                         .or(abilities(MultiblockAbility.IMPORT_FLUIDS).setExactLimit(1))
                         .or(abilities(MultiblockAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(3)))
@@ -192,21 +192,8 @@ public class MetaTileEntityAxialCompressor extends MultiblockWithDisplayBase imp
 
     @Nonnull
     protected TraceabilityPredicate airfoilPredicate() {
-        return new TraceabilityPredicate(blockWorldState -> {
-            if (tier == GTValues.LuV) {
-                if (blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.ADVANCED_AIRFOIL)
-                        || blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.ADVANCED_AIRFOIL, true)) {
-                    blockWorldState.getMatchContext().getOrPut("VABlock", new LinkedList<>()).add(blockWorldState.getPos());
-                    return true;
-                }
-            } else if (blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.AIRFOIL)
-                    || blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.AIRFOIL, true)) {
-                blockWorldState.getMatchContext().getOrPut("VABlock", new LinkedList<>()).add(blockWorldState.getPos());
-                return true;
-            }
-
-            return false;
-        });
+        if (tier == GTValues.LuV) return states(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.ADVANCED_AIRFOIL));
+        else return states(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.AIRFOIL));
     }
 
     @Override

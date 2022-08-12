@@ -28,6 +28,12 @@ public class PhosphorusChain {
                 .temperature(1073)
                 .duration(200).EUt(VA[MV]).buildAndRegister();
 
+        //TODO find better recipe
+        COMPRESSOR_RECIPES.recipeBuilder()
+                .input(dust, Phosphorus, 4)
+                .output(gem, WhitePhosphorus)
+                .duration(800).EUt(VA[HV]).buildAndRegister();
+
         ROASTER_RECIPES.recipeBuilder()
                 .input(dust, WhitePhosphorus)
                 .fluidInputs(Argon.getFluid(50))
