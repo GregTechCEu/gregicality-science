@@ -194,21 +194,8 @@ public class MetaTileEntityTurbomolecularPump extends MultiblockWithDisplayBase 
 
     @Nonnull
     protected TraceabilityPredicate airfoilPredicate() {
-        return new TraceabilityPredicate(blockWorldState -> {
-            if (tier == GTValues.LuV) {
-                if (blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.ADVANCED_AIRFOIL)
-                        || blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.ADVANCED_AIRFOIL, true)) {
-                    blockWorldState.getMatchContext().getOrPut("VABlock", new LinkedList<>()).add(blockWorldState.getPos());
-                    return true;
-                }
-            } else if (blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.AIRFOIL)
-                    || blockWorldState.getBlockState() == GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.AIRFOIL, true)) {
-                blockWorldState.getMatchContext().getOrPut("VABlock", new LinkedList<>()).add(blockWorldState.getPos());
-                return true;
-            }
-
-            return false;
-        });
+        if (tier == GTValues.LuV) return states(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.ADVANCED_AIRFOIL));
+        else return states(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE.getState(BlockGCYSMultiblockCasingActive.CasingType.AIRFOIL));
     }
 
     @Override
