@@ -1,0 +1,540 @@
+
+
+# First Degree Materials
+material.lanthanum_oxide=Оксид лантана
+material.praseodymium_oxide=Оксид празеодима
+material.cerium_oxide=Оксид церия
+material.scandium_oxide=Оксид скандия
+material.europium_oxide=Оксид европия
+metaitem.circuit.supracausal_assembly.tooltip=Сингулярность космических масштабов/n§fUXV уровень
+metaitem.circuit.supracausal_computer.name=Надпричинный компьютер
+metaitem.circuit.supracausal_computer.tooltip=Использование червоточин в наших интересах/n§fOpV уровень
+metaitem.circuit.supracausal_mainframe.name=Надпричинный мейнфрейм
+metaitem.circuit.supracausal_mainframe.tooltip=Ответы вперед вопросов/n§b§oMAX Микросхема
+material.yttrium_oxide=Оксид иттрия
+material.zinc_sulfate=Сульфат цинка
+material.sodium_nitrate=Нитрат натрия
+material.rhodium_nitrate=Нитрат родия
+material.sodium_ruthenate=Рутенат натрия
+material.tungsten_trioxide=Триоксид вольфрама
+material.hydrogen_peroxide=Пероксид водорода
+material.hydrazine=Гидразин
+material.cubic_zirconia=Фианит
+material.rhodium_sulfate_solution=Раствор сульфата родия
+material.rhodium_salt=Родиевая соль
+material.rhodium_salt_solution=Раствор родиевой соли
+material.formic_acid=Муравьиная кислота
+material.ethylanthraquinone=2-Этилантрахинон
+material.ethylanthrahydroquinone=2-Этилантрагидрохинон
+
+# Circuits
+# Bioware
+metaitem.circuit.bioware_processor.name=Биологический процессор
+metaitem.circuit.bioware_processor.tooltip=§b§oZPM микросхема
+metaitem.circuit.bioware_assembly.name=Биологический вычислительный блок
+metaitem.circuit.bioware_assembly.tooltip=§b§oUV микросхема
+metaitem.circuit.bioware_computer.name=Биологический компьютер
+metaitem.circuit.bioware_computer.tooltip=§b§oUHV миркосхема
+metaitem.circuit.bioware_mainframe.name=Биологический мейнфрейм
+metaitem.circuit.bioware_mainframe.tooltip=§b§oUEV микросхема
+
+# Optical
+metaitem.circuit.optical_processor.name=Оптический процессор
+metaitem.circuit.optical_processor.tooltip=Вычисления со скоростью света/n§6UV уровень
+metaitem.circuit.optical_assembly.name=Оптический вычислительный блок
+metaitem.circuit.optical_assembly.tooltip=Теперь с силой лазеров!/n§6UHV уровень
+metaitem.circuit.optical_computer.name=Оптический компьютер
+metaitem.circuit.optical_computer.tooltip=В мгновение ока/n§6UEV уровень
+metaitem.circuit.optical_mainframe.name=Оптический мейнфрейм
+metaitem.circuit.optical_mainframe.tooltip=Может ли что-нибудь быть быстрее?/n§6UIV уровень
+
+# Exotic
+metaitem.circuit.exotic_processor.name=Экзотический процессор
+metaitem.circuit.exotic_processor.tooltip=Довольно странный/n§5UHV уровень
+metaitem.circuit.exotic_assembly.name=Экзотический вычислительный блок
+metaitem.circuit.exotic_assembly.tooltip=Обычный с необычными свойствами/n§5UEV уровень
+metaitem.circuit.exotic_computer.name=Экзотический компьютер
+metaitem.circuit.exotic_computer.tooltip=Кто вообще использует нанометры?/n§5UIV уровень
+metaitem.circuit.exotic_mainframe.name=Экзотический мейнфрейм
+metaitem.circuit.exotic_mainframe.tooltip=Самый маленький среди мельчайших!/n§5UXV уровень
+
+
+# Cosmic
+metaitem.circuit.cosmic_processor.name=Космический процессор
+metaitem.circuit.cosmic_processor.tooltip=Феноменальные космические силы!/n§8UEV уровень
+metaitem.circuit.cosmic_assembly.name=Космический вычислительный блок
+metaitem.circuit.cosmic_assembly.tooltip=Феноменальные космические силы!/n§8UIV уровень
+metaitem.circuit.cosmic_computer.name=Космический компьютер
+metaitem.circuit.cosmic_computer.tooltip=Феноменальные космические силы!/n§8UXV уровень
+metaitem.circuit.cosmic_mainframe.name=Космический мейнфрейм
+metaitem.circuit.cosmic_mainframe.tooltip=Феноменальные космические силы!!/n§8OpV уровень
+
+# Supracausal
+metaitem.circuit.supracausal_processor.name=Надпричинный процессор
+metaitem.circuit.supracausal_processor.tooltip=С силой черных дыр/n§fUIV уровень
+metaitem.circuit.supracausal_assembly.name=Надпричинный вычислительный блок
+material.neodymium_oxide=Оксид неодима
+material.gadolinium_oxide=Оксид гадолиния
+material.samarium_oxide=Оксид самария
+material.terbium_oxide=Оксид тербия
+material.dysprosium_oxide=Оксид диспрозия
+material.holmium_oxide=Оксид гольмия
+material.erbium_oxide=Оксид эрбия
+material.thulium_oxide=Оксид тулия
+material.ytterbium_oxide=Оксид иттербия
+material.lutetium_oxide=Оксид лютеция
+material.platinum_metallic=Металлическая платина
+item.platinum_metallic.dust=Порошок металлической платины
+item.platinum_metallic.dustSmall=Маленькая кучка порошка металлической платины
+item.platinum_metallic.dustTiny=Крошечная кучка порошка металлической платины
+material.palladium_metallic=Металлический палладий
+item.palladium_metallic.dust=Порошок металлического палладия
+item.palladium_metallic.dustTiny=Крошечная кучка порошка металлического палладия
+material.ammonium_hexachloroplatinate=Гексахлороплатинат аммония
+material.chloroplatinic_acid=Хлороплатиновая кислота
+material.potassium_bisulfate=Бисульфат калия
+material.potassium_pyrosulfate=Дисульфат калия
+material.potassium_sulfate=Сульфат калия
+material.sodium_peroxide=Перекись натрия
+material.iridium_dioxide_residue=Остаток диоксида иридия
+material.ammonium_hexachloroiridiate=Гексахлороиридат аммония
+material.beryllium_oxide=Оксид бериллия
+material.tantalum_pentoxide=Пятиокись тантала
+material.niobium_pentoxide=Пятиокись ниобия
+material.calcium_difluoride=Дифторид кальция
+material.manganese_difluoride=Дифторид марганца
+material.calcium_carbide=Карбид кальция
+material.calcium_hydroxide=Гидроксид кальция
+material.sodium_cyanide=Цианид натрия
+material.chlorosulfuric_acid=Хлорсерная кислота
+item.palladium_metallic.dustSmall=Маленькая кучка порошка металлического палладия
+material.molybdenum_trioxide=Триоксид молибдена
+material.lead_chloride=Хлорид свинца
+material.sodium_tellurite=Теллурит натрия
+material.tellurium_dioxide=Диоксид теллура
+material.selenous_acid=Селенистая кислота
+material.boric_acid=Борная кислота
+material.boron_trioxide=Триоксид бора
+material.boron_trifluoride=Трифторид бора
+material.lithium_tetrafluoroborate=Тетрафтороборат лития
+material.diborane=Диборан
+material.boron_trichloride=Трихлорид бора
+material.trichloroborazine=Трихлорборазин
+material.cubic_boron_nitride=Кубический нитрид бора
+material.amorphous_boron_nitride=Аморфный нитрид бора
+material.heterodiamond=Гипералмаз
+material.cubic_heterodiamond=Кубический гипералмаз
+material.lithium_hydride=Гидрид лития
+material.sc_eu_gd_sm_oxides_solution=Раствор оксидов Sc-Eu-Gd-Sm
+material.y_tb_dy_ho_oxides_solution=Раствор оксидов Y-Tb-Dy-Ho
+material.er_tm_yb_lu_oxides_solution=Раствор оксидов Er-Tm-Yb-Lu
+material.platinum_group_residue=Остаток платиновой группы
+item.platinum_group_residue.dustSmall=Маленькая кучка остатка платиновой группы
+material.palladium_rich_ammonia=Аммиак, богатый палладием
+material.crude_platinum_residue=Неочищенный платиновый остаток
+item.crude_platinum_residue.dust=Пыль неочищенного платинового остатка
+item.crude_platinum_residue.dustTiny=Крошечная кучка пыли неочищенного платинового остатка
+item.crude_palladium_residue.dust=Пыль неочищенного палладиевого остатка
+item.crude_palladium_residue.dustSmall=Маленькая кучка пыли неочищенного палладиевого остатка
+material.iridium_group_sludge=Шлам иридиевой группы
+item.iridium_group_sludge.dust=Пыль шлама иридиевой группы
+item.iridium_group_sludge.dustSmall=Маленькая кучка пыли шлама иридиевой группы
+material.crude_rhodium_residue=Неочищенный остаток родия
+item.crude_rhodium_residue.dust=Пыль неочищенного остатка родия
+item.crude_rhodium_residue.dustSmall=Маленькая кучка пыли неочищенного остатка родия
+material.acidic_sodium_ruthenate_solution=Кислотный раствор рутената натрия
+material.acidic_iridium_dioxide_solution=Кислотный раствор диоксида иридия
+material.graphene_oxide=Оксид графена
+material.ammonium_nitrate=Нитрат аммония
+
+
+# Third Degree Materials
+material.platinum_palladium_leachate=Платино-палладиевый фильтрат
+
+
+# Organic Chemistry Materials
+material.ethylhexanol=2-Этилгексанол
+material.diethylhexyl_phosphoric_acid=Ди-(2-Этилгексил) фосфорная кислота
+material.butanol=Бутанол
+material.selenium_dioxide=Диоксид селена
+material.metaboric_acid=Метаборная кислота
+material.borazine=Боразол
+material.hexagonal_boron_nitride=Шестиугольный нитрид бора
+
+
+# Second Degree Materials
+material.la_pr_nd_ce_oxides_solution=Раствор оксидов La-Pr-Nd-Ce
+item.platinum_group_residue.dust=Пыль остатка платиновой группы
+item.platinum_group_residue.dustTiny=Крошечная кучка остатка платиновой группы
+item.crude_platinum_residue.dustSmall=Маленькая кучка пыли неочищенного платинового остатка
+material.crude_palladium_residue=Неочищенный палладиевый остаток
+item.crude_palladium_residue.dustTiny=Крошечная кучка пыли неочищенного палладиевого остатка
+item.iridium_group_sludge.dustTiny=Крошечная кучка пыли шлама иридиевой группы
+item.crude_rhodium_residue.dustTiny=Крошечная кучка пыли неочищенного остатка родия
+material.methyl_formate=Метилформиат
+material.phthalic_anhydride=Фталевый ангидрид
+material.formaldehyde=Формальдегид
+material.acetylene=Ацетилен
+material.propargyl_alcohol=Пропаргиловый спирт
+material.propargyl_chloride=Пропаргилхлорид
+material.turpentine=Скипидар
+material.beta_pinene=Бета-пинен
+material.citral=Цитрал
+material.beta_ionone=Бета-ионон
+material.retinol=Ретинол
+material.dichloroethane=1,2-Дихлорэтан
+material.ethylenediamine=Этилендиамин
+material.hydrogen_cyanide=Цианистый водород
+material.tetrasodium_edta=Тетранатрий ЭДТА
+material.ethylenediaminetetraacetic_acid=ЭДТА
+material.biotin=Биотин
+material.linoleic_acid=Линолевая кислота
+material.glutamine=Глутамин
+material.aniline=Анилин
+material.acetic_anhydride=Уксусный ангидрид
+material.acetylsulfanilyl_chloride=Ацетилсульфанилхлорид
+material.sulfanilamide=Сульфаниламид
+material.para_xylene=Пара-ксилол
+material.durene=Дурол
+material.pyromellitic_dianhydride=Пиромеллитовый диангидрид
+material.aminophenol=4-Аминофенол
+material.dimethylformamide=Диметилформамид
+material.oxydianiline=4,4'-Оксидианилин
+material.kapton_k=Каптон К
+material.biphenyl_tetracarboxylic_acid_dianhydride=BPDA
+material.nitroaniline=4-Нитроанилин
+material.para_phenylenediamine=п-Фенилендиамин
+material.kapton_e=Каптон Е
+material.methylamine=Метиламин
+material.trimethylamine=Триметиламин
+material.bistrichloromethylbenzene=Хлоксил
+material.tetrabromoethane=Тетрабромэтан
+material.terephthalic_acid=Терефталевая кислота
+material.terephthaloyl_chloride=Терефталоилхлорид
+material.butanediol=1,4-Бутандиол
+material.gamma_butyrolactone=Гамма-бутиролактон
+material.n_methyl_pyrrolidone=N-метил-2-пирролидон
+material.kevlar=Кевлар
+
+
+# Unknown Composition Materials
+material.rare_earth_hydroxides_solution=Раствор гидроксидов редкоземельных элементов
+material.rare_earth_chlorides_solution=Раствор хлоридов редкоземельных элементов
+material.leached_turpentine=Выщелоченный скипидар
+material.steamcracked_turpentine=Скипидар прошедший крекинг паром
+material.blood=Кровь
+material.non_coagulating_blood=Несвернувшаяся кровь
+material.catalase=Каталаза
+material.basic_fibroblast_growth_factor=Основной фактор роста фибробластов
+material.epidermal_growth_factor=Эпидермальный фактор роста
+material.yeast=Дрожжи
+material.hydrobromic_acid=Бромистоводородная кислота
+material.trichloroethylene=Трихлорэтилен
+material.tetramethylammonium_hydroxide=Гидроксид тетраметиламмония
+material.potassium_hydroxide=Гидроксид калия
+material.potassium_bromate=Бромат калия
+material.chloroacetic_acid=Монохлоруксусная кислота
+material.malonic_acid=Малоновая кислота
+material.tetramethylammonium_chloride=Хлорид тетраметиламмония
+material.pyrocatechol=Пирокатехин
+gcys.machine.dryer.mv.name=Улучшенная сушилка
+gcys.machine.dryer.hv.name=Улучшенная сушилка II
+gcys.multiblock.nanoscale_fabricator.tooltip.1=Средняя температура тигля не может превышать заданную более чем на §c250K§7.
+
+# Single Block Machines
+
+gcys.machine.dryer.lv.name=Обычная сушилка
+gcys.machine.dryer.ev.name=Улучшенная сушилка III
+material.rich_nitrogen_mixture=Богатая азотная смесь
+material.rich_ammonia_mixture=Богатая аммиачная смесь
+material.brine=Соляной раствор
+material.chlorinated_brine=Хлорированный соляной раствор
+material.chalcogen_anode_mud=Халькогенный анодный шлам
+item.chalcogen_anode_mud.dustSmall=Маленькая кучка халькогенового анодного шлама
+item.chalcogen_anode_mud.dust=Пыль халькогенового анодного шлама
+item.chalcogen_anode_mud.dustTiny=Крошечная кучка халькогенового анодного шлама
+material.methylamine_mixture=Смесь метиламина
+
+
+# Single Block Machines
+gcys.machine.steam_ejector.name=Паровой эжектор
+gcys.steam_ejector.tooltip=Создает низкий вакуум с 41mb пара в секунду
+
+# Dryer
+gregtech.machine.dryer.tooltip=Испаряет жидкости
+
+# Multi Block Machines
+
+# Crystallizer
+gcys.machine.crystallization_crucible.name=Кристаллизационный тигель
+
+# Biological Vat
+gcys.machine.bio_vat.name=Биологический котел
+
+# Roaster
+gcys.machine.roaster.name=Жаровня
+
+# Cryogenic Reactor
+gcys.machine.cryogenic_reactor.name=Криогенная реакционная камера
+
+# Nanoscale Fabricator
+gcys.machine.nanoscale_fabricator.name=Нано фабрикатор
+gcys.machine.dryer.iv.name=Превосходная сушилка
+gcys.machine.dryer.luv.name=Превосходная сушилка II
+gcys.machine.dryer.zpm.name=Превосходная сушилка III
+gcys.machine.dryer.uxv.name=Совершенная сушилка
+gcys.machine.dryer.uv.name=Безупречная сушилка
+gcys.machine.dryer.uhv.name=Идеальная сушилка
+gcys.machine.dryer.uev.name=Идеальная сушилка II
+gcys.machine.dryer.uiv.name=Идеальная сушилка III
+gcys.machine.dryer.umv.name=Идеальная сушилка IV
+material.epd=Раствор для травления EPD
+tile.crucible.boron_nitride.name=Тигель из нитрида бора
+tile.multiblock_casing.substrate.name=Оболочка подложки
+tile.multiblock_casing.advanced_substrate.name=Усовершенствованный корпус подложки
+
+
+# Vacuums
+gcys.vacuum_level.none=Отсутствие вакуума
+
+
+# Blocks
+tile.crucible.quartz.name=Кварцевый тигель
+tile.crucible.tungsten.name=Вольфрамовый тигель
+gcys.machine.dryer.max.name=Безграничная сушилка
+tile.crucible.graphite.name=Графитовый тигель
+gcys.vacuum_level.low=Низкий вакуум
+gcys.vacuum_level.medium=Средний вакуум
+gcys.vacuum_level.high=Высокий вакуум
+gcys.vacuum_level.ultra_high=Сверхвысокий вакуум
+gcys.vacuum_level.extremely_high=Экстремальный вакуум
+gcys.vacuum_level.perfect=Абсолютный вакуум
+
+# Metaitems
+
+# Crystal Stuff
+metaitem.boule.cubic_zirconia.europium.name=Монокристаллический кубический цирконий, легированный европием
+metaitem.boule.cubic_zirconia.europium.tooltip=Необработанный кристалл
+metaitem.board.gooware.tooltip=Безупречный подложка
+metaitem.nonlinear_chemical_oscillator.tooltip=Неравновесная термодинамика!
+
+# Circuits
+# Gooware
+metaitem.circuit.gooware_processor.name=Слизневый процессор
+metaitem.circuit.gooware_assembly.name=Слизневый вычислительный блок
+metaitem.circuit.gooware_assembly.tooltip=Цикличные концетрации/n§2UV уровень
+metaitem.circuit.gooware_computer.name=Слизневый компьютер
+metaitem.circuit.gooware_computer.tooltip=Сложные волновые явления!/n§2UHV уровень
+metaitem.circuit.gooware_mainframe.name=Слизневый мейнфрейм
+
+# Circuit Boards
+metaitem.board.gooware.name=Каптоновая подложка
+
+# Processing Units
+metaitem.reaction_chamber.bz.name=Реакционная камера Белоусова-Жаботинского
+metaitem.nonlinear_chemical_oscillator.name=Нелинейный химический осциллятор
+metaitem.circuit.gooware_processor.tooltip=Реакционно-диффузные вычисления/n§2ZPM уровень
+metaitem.circuit.gooware_mainframe.tooltip=Спиралевидные цветные волны/n§2UEV уровень
+metaitem.wafer.cubic_zirconia.europium.name=Пластина кубического циркония легированная европием
+metaitem.wafer.cubic_zirconia.europium.tooltip=Необработанный кристалл
+metaitem.engraved.crystal_chip.ruby.name=Гравированный рубиновый кристальный чип
+metaitem.engraved.crystal_chip.ruby.tooltip=Управляющий рубин
+metaitem.engraved.crystal_chip.sapphire.name=Гравированный сапфировый кристальный чип
+metaitem.engraved.crystal_chip.diamond.name=Гравированный алмазный кристальный чип
+metaitem.engraved.crystal_chip.diamond.tooltip=Логический алмаз
+metaitem.crystal.modulator.ruby.name=Рубиновый кристальный модулятор
+gcys.recipe.pressure=Давление: %sPa
+metaitem.engraved.crystal_chip.sapphire.tooltip=Преобразующий сапфир
+
+# Recipe Properties
+gcys.recipe.temperature=Температура: %,dK
+gcys.recipe.vacuum=Вакуум: %sPa
+metaitem.crystal.modulator.sapphire.name=Сапфировый кристальный модулятор
+metaitem.crystal.modulator.diamond.name=Алмазный кристальный модулятор
+
+# Wetware Stuff
+metaitem.magnetron.name=Магнетрон
+
+# SMDs
+metaitem.component.insane_smd.capacitor.name=Совершенный SMD конденсатор
+metaitem.component.insane_smd.diode.name=Совершенный SMD диод
+metaitem.component.insane_smd.resistor.name=Совершенный SMD резистор
+metaitem.component.insane_smd.transistor.name=Совершенный SMD транзистор
+metaitem.component.insane_smd.inductor.name=Совершенный SMD индуктор
+material.bz_medium=БЖ среда
+recipemap.bio_vat_recipes.name=Биологический котел
+recipemap.roaster_recipes.name=Обжарка
+recipemap.burner_reactor_recipes.name=Высокотемпературные реакции
+recipemap.cryogenic_reactor_recipes.name=Криогенные реакции
+recipemap.molecular_beam_recipes.name=Молекулярно-лучевая эпитаксия
+recipemap.cvd_recipes.name=Химическое осаждение
+
+# RecipeMaps
+recipemap.dryer_recipes.name=Сушка
+material.white_phosphorus=Белый фосфор
+material.red_phosphorus=Красный фосфор
+material.violet_phosphorus=Фиолетовый фосфор
+material.blue_phosphorus=Синий фосфор
+material.phosphorene=Фосфорен
+material.black_phosphorus=Чёрный фосфор
+material.wollastonite=Волластонит
+material.phosphorus_trichloride=Трихлорид фосфора
+material.phosphoryl_chloride=Оксихлорид фосфора
+material.zinc_oxide=Оксид цинка
+material.germanium_dioxide=Диоксид германия
+material.silicon_tetrachloride=Тетрахлорид кремния
+material.gst_glass=Стекло GST
+material.zblan_glass=Стекло ZBLAN
+material.helium_neon=Гелий-неон
+material.aluminium_trichloride=Трихлорид алюминия
+material.gallium_trichloride=Трихлорид галлия
+material.gallium_trioxide=Триоксид галлия
+material.gallium_nitride=Нитрид галлия
+material.cadmium_bromide=Бромид кадмия
+material.cadmium_selenide=Селенид кадмия
+material.praseodymium_doped_zblan_glass=Стекло ZBLAN легированное празеодимом
+material.nd_yag=Nd:YAG
+material.polyethylene_terephthalate=Полиэтилентерефталат
+material.acetone_cyanohydrin=Ацетонциангидрин
+material.polymethylmethacrylate=Полиметилметакрилат
+material.trimethylgallium=Триметилгаллий
+material.ethylene_dibromide=1,2-Дибромэтан
+material.dimethylcadmium=Диметилкадмий
+material.grignard_reagent=Реактив Гриньяра
+material.diethyl_sulfide=Диметилсульфид
+metaitem.circuit_board.gooware.name=Сверхпроводящая подложка
+material.germanium_tetrachloride=Тетрахлорид германия
+material.aluminium_hydroxide=Гидроксид алюминия
+material.magnesium_bromide=Бромид магния
+material.cadmium_sulfide=Сульфид кадмия
+material.roasted_sphalerite=Обожженный сфалерит
+material.erbium_doped_zblan_glass=Cтекло ZBLAN легированное эрбием
+material.ethylene_oxide=Оксид этилена
+material.ethylene_glycol=Этиленгликоль
+material.trimethylaluminium=Триметилалюминий
+material.phosphorene_solution=Фосфореновый отшелушивающий раствор
+metaitem.board.optical.name=Нитрид галлиевая подложка
+metaitem.plate.phase_change_memory.tooltip=PCM память
+material.phosphine=Фосфин
+material.plutonium_trihydride=Тригидрид плутония
+material.plutonium_phosphide=Фосфид плутония
+metaitem.dielectric_mirror.name=Диэлектрическое зеркало
+metaitem.dielectric_mirror.tooltip=Брэгговское зеркало
+metaitem.optical_fiber.tooltip=Светопропускающее стекло
+metaitem.optical_fiber.name=Оптоволокно
+# Element Materials
+material.lithium_6=Литий-6
+material.lithium_7=Литий-7
+material.carbon_nanotube=Углеродные нанотрубки
+item.carbon_nanotube.dustSmall=Маленькая кучка углеродных нанотрубок
+item.carbon_nanotube.dustTiny=Крошечная кучка углеродных нанотрубок
+material.lithium_amalgam=Амальгама лития
+material.lithium_hydroxide=Гидроксид лития
+material.lithium_7_hydroxide=Гидроксид лития-7
+material.bismuth_trioxide=Триоксид висмута
+material.ferric_oxide=Оксид железа (III)
+material.bismuth_chalcogenide=Халькогенид висмута
+material.mercury_cadmium_telluride=Теллурид кадмия-ртути
+material.aluminium_selenide=Селенид алюминия
+material.hydrogen_selenide=Cеленоводород
+material.palladium_nitrate=Нитрат палладия (II)
+material.fullerene=Фуллерен
+item.fullerene.ingot=Фуллерит
+item.fullerene.dust=Бакминстерфуллерен
+item.fullerene.dustSmall=Малый бакминстерфуллерен
+item.fullerene.dustTiny=Крошечный бакминстерфуллерен
+material.thallium_copper_chloride=Хлорид таллия-меди
+material.bismuth_ferrite=Феррит висмута
+material.cycloparaphenylene=Циклопарафенилен
+material.indene=Инден
+material.indanone=1-Инданон
+material.truxene=Труксен
+material.bromomethane=Бромметан
+material.bromobutane=1-Бромобутан
+material.butyllithium=н-Бутиллитий
+material.palladium_acetate=Ацетат палладия (II)
+material.geodesic_polyarene=Геодезический полиарен
+metaitem.component.spintronic_smd.diode.name=Диод Шоттки
+
+# Spintronic
+metaitem.circuit.spintronic_processor.name=Спинтронный процессор
+metaitem.circuit.spintronic_processor.tooltip=Вращающаяся электроника/n§5UHV уровень
+metaitem.circuit.spintronic_assembly.tooltip=Дискретные квантовые прогулки/n§5UEV уровень
+metaitem.circuit.spintronic_computer.name=Спинтронный компьютер
+metaitem.circuit.spintronic_mainframe.name=Спинтронный мейнфрейм
+metaitem.circuit.spintronic_mainframe.tooltip=Самый маленький из возможных/n§5UXV уровень
+material.bromo_bromomethyl_naphthalene=1-Бром-2-(бромметил)нафталин
+metaitem.circuit.spintronic_assembly.name=Спинтронный вычислительный блок
+metaitem.circuit.spintronic_computer.tooltip=Кто вообще пользуется нанометрами?/n§5UIV уровень
+
+# SMDs
+metaitem.component.optical_smd.capacitor.name=Оптический интегратор
+material.neptunium_aluminide=Алюминид нептуния
+material.perrhenic_acid=Перреновая кислота
+material.thallium_sulfate=Сульфат таллия
+material.carbon_tetrachloride=Тетрахлорметан
+material.rhodium_oxide=Оксид родия
+material.sodium_chlorate=Хлорат натрия
+material.sulfur_dichloride=Дихлорид серы
+material.thionyl_chloride=Тионилхлорид
+material.osmium_tetrachloride=Хлорид осмия (IV)
+material.purified_platinum_group_concentrate=Очищенный концентрат платиновой группы
+material.ammonium_hexachloropalladate=Гексахлоропалладат (IV) аммония
+material.ruthenium_chloride=Хлорид рутения (III)
+material.platinum_group_concentrate=Концентрат платиновой группы
+material.ammonium_perrhenate=Перренат аммония
+material.orichalcum=Орихалк
+material.vibranium=Вибраниум
+material.taranium=Тараниум
+material.light_taranium_fuel=Легкое тараниевое топливо
+material.heavy_enriched_taranium_fuel=Тяжелое обогащенное тараниевое топливо
+material.light_enriched_taranium_fuel=Легкое обогащенное тараниевое топливо
+material.adamantite=Адамантит
+material.adamantium_unstable=Нестабильный адамантий
+material.orichalcum_energized=Заряженный орихалк
+material.adamantium_enriched=Обогащенный адамантий
+material.vibranium_unstable=Нестабильный вибраниум
+
+
+# Third Degree Materials
+material.zinc_rich_sphalerite=Богатый цинком сфалерит
+material.cracked_light_enriched_taranium=Легкий обогащенный тараниум прошедший крекинг радоном
+material.energetic_naquadria=Энергичная наквадриа
+material.light_hyper_fuel=Легкое гипер топливо
+material.medium_hyper_fuel=Среднее гипер топливо
+material.heavy_hyper_fuel=Тяжелое гипер топливо
+
+# CVD Unit
+gcys.machine.cvd_unit.name=ХОГФ реактор
+material.beryllium_7=Бериллий-7
+material.adamantium=Адамантий
+material.heavy_taranium_fuel=Тяжелое тараниевое топливо
+material.medium_taranium_fuel=Среднее тараниевое топливо
+material.medium_enriched_taranium_fuel=Среднее обогащенное тараниевое топливо
+material.deep_iron=Глубинное железо
+material.bedrock=Коренная порода
+material.cracked_heavy_enriched_taranium=Тяжелый обогащенный тараниум прошедший крекинг радоном
+material.cracked_medium_enriched_taranium=Средний обогащенный тараниум прошедший крекинг радоном
+
+# Burner Reactor
+gcys.machine.burner_reactor.name=Реактор горения
+material.pmma=Оргстекло
+material.polystyrene=Полистирол
+material.polystyrene_sulfonate=Полистирол Сульфонат
+behavior.tricorder.min_pressure=Минимальное давление: %s Па
+behavior.tricorder.max_pressure=Максимальное давление: %s Па
+gcys.steam_ejector.tooltip.1=Создаёт ваш первый Вакуум.
+material.silicon_carbide=Карбид кремния
+material.diacetyl=Диацетил
+
+
+# Tricorder Info
+behavior.tricorder.current_pressure=Текущее давление: %s Па
+gcys.machine.infinite_pressure_pump.tooltip=Вам нужен §5р§dе§4ж§cи§eм §aТ§bв§3о§7р§1ч§5е§dс§4т§6в§eа§8, чтобы использовать это
+
+# Industrial Drill
+gcys.machine.industrial_drill.name=Индустриальная буровая установка
+
+
+# Nanotube Stuff
+metaitem.mixture.carbon_allotrope.name=Углеродная аллотропная смесь
