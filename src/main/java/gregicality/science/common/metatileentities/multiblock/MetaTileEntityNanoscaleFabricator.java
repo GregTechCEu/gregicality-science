@@ -69,7 +69,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
                 .aisle("  XXXXX  ", "  XX#XX  ", "  XXXXX  ", "  XXSXX  ")
                 .aisle("   TTT   ", "   TIT   ", "   TCT   ", "         ")
                 .where('S', selfPredicate())
-                .where('X', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.ENGRAVER_CASING))
+                .where('X', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.ENGRAVER_CASING)).setMinGlobalLimited(84)
                         .or(autoAbilities(true, true, false, true, true, true, true)))
                 .where('T', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.NONCONDUCTING_CASING)).setMinGlobalLimited(36))
                 .where('G', states(MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.LAMINATED_GLASS)))

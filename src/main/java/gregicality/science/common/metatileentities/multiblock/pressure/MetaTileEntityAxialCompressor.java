@@ -153,7 +153,7 @@ public class MetaTileEntityAxialCompressor extends MultiblockWithDisplayBase imp
                 .aisle("FXF", "XSX", "XXX")
                 .where('S', selfPredicate())
                 .where('F', states(getFrameState()))
-                .where('X', states(getCasingState())
+                .where('X', states(getCasingState()).setMinGlobalLimited(27)
                         .or(autoAbilities())
                         .or(abilities(MultiblockAbility.IMPORT_FLUIDS).setExactLimit(1))
                         .or(abilities(MultiblockAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(3)))

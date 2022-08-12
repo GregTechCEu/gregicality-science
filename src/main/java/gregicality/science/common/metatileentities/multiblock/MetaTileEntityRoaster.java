@@ -102,7 +102,7 @@ public class MetaTileEntityRoaster extends RecipeMapMultiblockController impleme
                 .aisle("     ", "XBBBX", "XP#PX", "XPMPX", " P P ")
                 .aisle("F   F", "FBBBF", "XXSXX", "XXXXX", "     ")
                 .where('S', selfPredicate())
-                .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF))
+                .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF)).setMinGlobalLimited(14)
                         .or(autoAbilities(true, true, true, true, true, true, false)))
                 .where('P', states(MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.TITANIUM_PIPE)))
                 .where('F', states(MetaBlocks.FRAMES.get(Materials.Invar).getBlock(Materials.Invar)))
