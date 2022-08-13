@@ -48,6 +48,10 @@ public class RocketEntity extends Entity {
         ignoreFrustumCheck = true;
     }
 
+    public RocketEntity(World worldIn, BlockPos pos) {
+        this(worldIn, (float)pos.getX() + 0.5F, pos.getY(), (float)pos.getZ() + 0.5F);
+    }
+
     protected void entityInit(){
         this.dataManager.register(LAUNCHED, false);
         this.dataManager.register(COUNTDOWN_STARTED, false);

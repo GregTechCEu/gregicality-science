@@ -4,6 +4,8 @@ import gregicality.multiblocks.api.unification.GCYMMaterials;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.common.block.blocks.BlockMultiblockCasing;
+import gregicality.science.common.entities.RocketEntity;
+import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -16,12 +18,15 @@ import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.BlockStoneSmooth;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 
 public class MetaTileEntityLaunchPad extends RecipeMapMultiblockController {
 
     public MetaTileEntityLaunchPad(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GCYSRecipeMaps.LAUNCHPAD_RECIPES);
-        //TODO: Add handler
+
+        this.recipeMapWorkable = new LaunchPadWorkableHandler(this);
     }
 
     @Override
@@ -53,11 +58,31 @@ public class MetaTileEntityLaunchPad extends RecipeMapMultiblockController {
                 .where('P', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.CasingType.TOWER_PIPING)))
                 .where(' ', any())
                 .build();
-        //TODO: Create pattern
     }
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
         return Textures.SOLID_STEEL_CASING;
+    }
+
+    @SuppressWarnings("InnerClassMayBeStatic")
+    private class LaunchPadWorkableHandler extends MultiblockRecipeLogic {
+
+        public LaunchPadWorkableHandler(RecipeMapMultiblockController tileEntity) {
+            super(tileEntity);
+        }
+
+        public BlockPos getRocketSpawnPosition() {
+            Vec3i direction = this.getMetaTileEntity().getFrontFacing().getOpposite().getDirectionVec();
+            BlockPos rocketPos = this.getMetaTileEntity().getPos();
+            rocketPos = rocketPos.add(5 * direction.getX(), 0, 5 * direction.getZ());
+            return rocketPos;
+        }
+
+        @Override
+        protected void completeRecipe() {
+            this.getMetaTileEntity().getWorld().spawnEntity(new RocketEntity(this.getMetaTileEntity().getWorld(), this.getRocketSpawnPosition()));
+            super.completeRecipe();
+        }
     }
 }
