@@ -499,7 +499,7 @@ material.vibranium_unstable=Нестабильный вибраниум
 # Third Degree Materials
 material.zinc_rich_sphalerite=Богатый цинком сфалерит
 material.cracked_light_enriched_taranium=Легкий обогащенный тараниум прошедший крекинг радоном
-material.energetic_naquadria=Энергичная наквадриа
+material.energetic_naquadria=Энергетическая наквадриа
 material.light_hyper_fuel=Легкое гипер топливо
 material.medium_hyper_fuel=Среднее гипер топливо
 material.heavy_hyper_fuel=Тяжелое гипер топливо
@@ -538,3 +538,14 @@ gcys.machine.industrial_drill.name=Индустриальная буровая �
 
 # Nanotube Stuff
 metaitem.mixture.carbon_allotrope.name=Углеродная аллотропная смесь
+recipemap.taranium_reactor_mk3_recipes.name=Тараниумный гипер реактор модель 3
+recipemap.taranium_reactor_mk2_recipes.name=Тараниумный реактор модель 2
+
+# Generators
+recipemap.taranium_reactor_mk1_recipes.name=Тараниумный реактор модель 1
+material.cgt=Теллурид германия хрома
+material.cgt_magnetic=Магнитный теллурид германия хрома
+material.kovar=Ковар
+material.edot=3,4-Этилендиокситиофен
+material.pedot_pss=PEDOT:PSS
+material.pedot_tma=PEDOT-TMA
