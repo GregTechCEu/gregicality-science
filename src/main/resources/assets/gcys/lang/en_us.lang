@@ -484,6 +484,10 @@ item.material.oreprefix.boule=%s Boule
 
 # Metaitems
 
+# mold
+
+metaitem.shape.mold.chunk.name=Mold (Chunks)
+
 # Primitive Stuff
 metaitem.vacuum_tube.components.name=Vacuum Tube Components
 metaitem.vacuum_tube.components.tooltip=You hope it won't burn out

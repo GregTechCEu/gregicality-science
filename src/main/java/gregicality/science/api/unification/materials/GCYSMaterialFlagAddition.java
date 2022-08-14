@@ -2,6 +2,8 @@ package gregicality.science.api.unification.materials;
 
 import gregicality.science.common.GCYSConfigHolder;
 import gregtech.api.unification.material.info.MaterialFlags;
+import gregtech.api.unification.material.properties.OreProperty;
+import gregtech.api.unification.material.properties.PropertyKey;
 
 import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.DISABLE_CRYSTALLIZATION;
 import static gregtech.api.unification.material.Materials.*;
@@ -22,6 +24,8 @@ public class GCYSMaterialFlagAddition {
         }
         if (GCYSConfigHolder.chainOverrides.disableMolybdenumProcessing) {
             Molybdenite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
+            OreProperty oreProp = Molybdenite.getProperty(PropertyKey.ORE);
+            oreProp.setDirectSmeltResult(null);
             Powellite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
             Wulfenite.addFlags(MaterialFlags.DISABLE_DECOMPOSITION);
         }

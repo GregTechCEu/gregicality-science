@@ -159,7 +159,7 @@ public class SpintronicCircuits {
                 .input(SPINTRONIC_TRANSISTOR, 8)
                 .input(wireFine, CarbonNanotube, 8)
                 .output(SPINTRONIC_PROCESSOR, 2)
-                .duration(200).EUt(VA[UEV]).buildAndRegister();
+                .duration(200).EUt(VA[UEV]).cleanroom(CleanroomType.CLEANROOM).buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(SPINTRONIC_CIRCUIT_BOARD)
@@ -170,7 +170,7 @@ public class SpintronicCircuits {
                 .input(wireFine, CarbonNanotube, 16)
                 .output(SPINTRONIC_ASSEMBLY, 2)
                 .solderMultiplier(2)
-                .duration(400).EUt(VA[UEV]).buildAndRegister();
+                .duration(400).EUt(VA[UEV]).cleanroom(CleanroomType.CLEANROOM).buildAndRegister();
 
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(SPINTRONIC_CIRCUIT_BOARD)
