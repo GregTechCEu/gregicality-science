@@ -20,7 +20,7 @@ public class PedotChain {
         ELECTROLYZER_RECIPES.recipeBuilder()
                 .fluidInputs(Butanediol.getFluid(1000))
                 .fluidOutputs(Diacetyl.getFluid(1000))
-                .fluidOutputs(Hydrogen.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(4000))
                 .duration(80).EUt(VA[MV]).buildAndRegister();
 
         // C4H6O2 + C2H6O2 + SCl2 -> C6H6O2S + 2HCl + 2H2O (lost)
