@@ -549,3 +549,4 @@ material.kovar=Ковар
 material.edot=3,4-Этилендиокситиофен
 material.pedot_pss=PEDOT:PSS
 material.pedot_tma=PEDOT-TMA
+gcys.machine.pressure_hatch.mv.name=Средний вакуумный люк
