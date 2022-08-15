@@ -332,9 +332,6 @@ gcys.machine.steam_vacuum_chamber.name=Small Steam Vacuum Chamber
 gcys.machine.infinite_pressure_pump.name=Infinite Pressure Pump
 gcys.machine.infinite_pressure_pump.tooltip=§8You just need §o§5C§dr§4e§ca§et§ai§bv§3e §7m§1o§5d§de§r§8 to use this
 
-# Dryer
-gregtech.machine.dryer.tooltip=Vaporizing liquids
-
 # Multi Block Hatches
 gcys.machine.pressure_hatch.ivv.name=Intergalactic Void Vacuum Hatch
 gcys.machine.pressure_hatch.csv.name=Close-Space Vacuum Hatch
