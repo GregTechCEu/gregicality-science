@@ -1,6 +1,7 @@
 package gregicality.science.loaders.recipe.circuits;
 
 import gregicality.science.api.unification.ore.GCYSOrePrefix;
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.common.items.MetaItems;
 import net.minecraftforge.fluids.FluidStack;
@@ -242,7 +243,7 @@ public class OpticalCircuits {
                 .input(OPTICAL_TRANSISTOR, 8)
                 .input(OPTICAL_FIBER, 8)
                 .output(OPTICAL_PROCESSOR, 2)
-                .duration(200).EUt(VA[UHV]).buildAndRegister();
+                .duration(200).EUt(VA[UHV]).cleanroom(CleanroomType.CLEANROOM).buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(OPTICAL_CIRCUIT_BOARD)
@@ -253,7 +254,7 @@ public class OpticalCircuits {
                 .input(OPTICAL_FIBER, 16)
                 .output(OPTICAL_ASSEMBLY, 2)
                 .solderMultiplier(2)
-                .duration(400).EUt(VA[UHV]).buildAndRegister();
+                .duration(400).EUt(VA[UHV]).cleanroom(CleanroomType.CLEANROOM).buildAndRegister();
 
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(OPTICAL_CIRCUIT_BOARD)

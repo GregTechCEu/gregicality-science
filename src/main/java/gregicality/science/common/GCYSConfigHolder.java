@@ -31,7 +31,7 @@ public class GCYSConfigHolder {
         @Config.Comment({"Disables electrolysis of Tantalite and Pyrochlore, requiring Gregicality's processes for Niobium and Tantalum.", "Default: true"})
         public boolean disableNiobiumTantalumProcessing = true;
 
-        @Config.Comment({"Disables production of Ammonia from Oxygen and Hydrogen, requiring Gregicality's process.", "Default: false"})
+        @Config.Comment({"Disables production of Ammonia from Nitrogen and Hydrogen, requiring Gregicality's process.", "Default: false"})
         public boolean disableAmmoniaProcessing = false;
 
         @Config.Comment({"Disables electrolysis of Molybdenite, Powellite, and Wulfenite, requiring Gregicality's processes for Molybdenum.", "Default: true"})
