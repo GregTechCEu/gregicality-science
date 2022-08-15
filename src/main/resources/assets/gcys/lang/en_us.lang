@@ -399,7 +399,7 @@ gcys.multiblock.axial_compressor.tooltip.3=Uses %s§7 power. Does not overclock.
 gcys.machine.turbomolecular_pump.low_power.name=Low-Power Turbomolecular Pump
 gcys.machine.turbomolecular_pump.high_power.name=High-Power Turbomolecular Pump
 gcys.multiblock.turbomolecular_pump.tooltip.1=Decreases pressure by §b%sPa/s§7 up to §a%sPa (§r%s§a).
-gcys.multiblock.turbomolecular_pump.tooltip.2=Consumes §e%sL/s§7e Lubricant when decreasing pressure.
+gcys.multiblock.turbomolecular_pump.tooltip.2=Consumes §e%sL/s§7 Lubricant when decreasing pressure.
 gcys.multiblock.turbomolecular_pump.tooltip.3=Uses %s§7 power. Does not overclock.
 
 # Single Block Machines
