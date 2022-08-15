@@ -63,6 +63,7 @@ public class GCYSRecipeLoader {
         MolybdenumProcessing.init();
         ThalliumProcessing.init();
         TaraniumProcessing.init();
+        RubidiumProcessing.init();
     }
 
     private static void initCircuits() {

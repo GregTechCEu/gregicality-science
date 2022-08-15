@@ -935,5 +935,25 @@ public class GCYSFirstDegreeMaterials {
                 .flags(GENERATE_ROD, GENERATE_RING, DECOMPOSITION_BY_CENTRIFUGING)
                 .components(Iron, 4, Nickel, 2, Cobalt, 1)
                 .build();
+
+        StannicChloride = new Material.Builder(3624, "stannic_chloride")
+                .fluid()
+                .color(0x33BBF5)
+                .components(Tin, 1, Chlorine, 4)
+                .build();
+
+        RubidiumChlorostannate = new Material.Builder(3625, "rubidium_chlorostannate")
+                .dust()
+                .color(0xBD888A)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Rubidium, 2, Tin, 1, Chlorine, 6)
+                .build();
+
+        CaesiumChlorostannate = new Material.Builder(3626, "caesium_chlorostannate")
+                .dust()
+                .color(0xBDAD88)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Caesium, 2, Tin, 1, Chlorine, 6)
+                .build();
     }
 }

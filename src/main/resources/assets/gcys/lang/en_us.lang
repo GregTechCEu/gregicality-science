@@ -142,6 +142,10 @@ material.vibranium_unstable=Unstable Vibranium
 material.silicon_carbide=Silicon Carbide
 material.cgt=Chromium Germanium Telluride
 material.kovar=Kovar
+material.stannic_chloride=Stannic Chloride
+material.rubidium_chlorostannate=Rubidium Chlorostannate
+material.caesium_chlorostannate=Caesium Chlorostannate
+
 
 # Second Degree Materials
 material.la_pr_nd_ce_oxides_solution=La-Pr-Nd-Ce Oxides Solution
@@ -171,6 +175,7 @@ material.praseodymium_doped_zblan_glass=Praseodymium-Doped ZBLAN Glass
 material.nd_yag=Nd:YAG
 material.bismuth_ferrite=Bismuth Ferrite
 material.cgt_magnetic=Magnetic Chromium Germanium Telluride
+material.heavy_alkali_chloride_solution=Heavy Alkali Chloride Solution
 
 
 # Third Degree Materials

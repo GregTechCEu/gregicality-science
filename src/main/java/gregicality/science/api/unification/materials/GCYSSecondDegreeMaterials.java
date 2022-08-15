@@ -164,5 +164,13 @@ public class GCYSSecondDegreeMaterials {
                 .macerateInto(ChromiumGermaniumTelluride)
                 .build();
         ChromiumGermaniumTelluride.getProperty(PropertyKey.INGOT).setMagneticMaterial(ChromiumGermaniumTellurideMagnetic);
+
+        HeavyAlkaliChlorideSolution = new Material.Builder(6026, "heavy_alkali_chloride_solution")
+                .fluid()
+                .color(0x8F5353)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Rubidium, 1, Caesium, 2, Chlorine, 6, Water, 2)
+                .build()
+                .setFormula("RbCl(CsCl)2Cl3(H2O)2", true);
     }
 }
