@@ -46,6 +46,10 @@ public class AmmoniaChain {
                     new ItemStack[]{IntCircuitIngredient.getIntegratedCircuit(1)},
                     new FluidStack[]{Nitrogen.getFluid(1000), Hydrogen.getFluid(3000)}
             );
+            GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES,
+                    new ItemStack[]{IntCircuitIngredient.getIntegratedCircuit(1)},
+                    new FluidStack[]{Nitrogen.getFluid(1000), Hydrogen.getFluid(3000)}
+            );
         }
     }
 }
