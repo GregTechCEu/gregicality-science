@@ -18,6 +18,7 @@ import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.*;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.recipeproperties.TemperatureProperty;
+import gregtech.api.util.BlockInfo;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.ConfigHolder;
@@ -40,6 +41,8 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockController { //TODO Pressure for this machine
@@ -71,14 +74,18 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
                 .where('S', selfPredicate())
                 .where('X', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.ENGRAVER_CASING)).setMinGlobalLimited(84)
                         .or(autoAbilities(true, true, false, true, true, true, true)))
-                .where('T', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.NONCONDUCTING_CASING)).setMinGlobalLimited(36))
+                .where('T', states(getNonconductingState()).setMinGlobalLimited(36))
                 .where('G', states(MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.LAMINATED_GLASS)))
                 .where('I', metaTileEntities(MetaTileEntities.ITEM_IMPORT_BUS[GTValues.ULV]).or(states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.NONCONDUCTING_CASING))))
-                .where('C', cruciblePredicate().or(states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.NONCONDUCTING_CASING))))
+                .where('C', states(getNonconductingState()).or(cruciblePredicate()))
                 .where('A', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockGCYSMultiblockCasing.CasingType.ADVANCED_SUBSTRATE)))
                 .where('#', air())
                 .where(' ', any())
                 .build();
+    }
+
+    private IBlockState getNonconductingState() {
+        return GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.NONCONDUCTING_CASING);
     }
 
     @Nonnull
@@ -95,7 +102,10 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
                 return true;
             }
             return false;
-        });
+        }, () -> Arrays.stream(BlockCrucible.CrucibleType.values())
+                .sorted(Comparator.comparingInt(BlockCrucible.CrucibleType::getTemperature))
+                .map(type -> new BlockInfo(GCYSMetaBlocks.CRUCIBLE.getState(type), null))
+                .toArray(BlockInfo[]::new));
     }
 
     @Override
