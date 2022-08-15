@@ -1,5 +1,6 @@
 package gregicality.science.loaders.recipe;
 
+import gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities;
 import gregicality.science.api.GCYSValues;
 import gregtech.api.GTValues;
 import gregtech.api.recipes.GTRecipeHandler;
@@ -351,6 +352,24 @@ public class GCYSMetaTileEntityLoader {
                 'K', new UnificationEntry(cableGtSingle, Osmium),
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM)
         );
+
+        ModHandler.addShapedRecipe(true, "rotary_hearth_furnace", GCYMMetaTileEntities.MEGA_BLAST_FURNACE.getStackForm(),
+                "SCS", "FEF", "PKP",
+                'S', new UnificationEntry(spring, Europium),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
+                'F', FIELD_GENERATOR_UHV.getStackForm(),
+                'E', ELECTRIC_BLAST_FURNACE.getStackForm(),
+                'P', new UnificationEntry(plate, Vibranium),
+                'K', new UnificationEntry(cableGtHex, SiliconCarbide));
+
+        ModHandler.addShapedRecipe(true, "mega_vacuum_freezer", GCYMMetaTileEntities.MEGA_VACUUM_FREEZER.getStackForm(),
+                "SCS", "FEF", "PKP",
+                'S', new UnificationEntry(pipeHugeFluid, Duranium),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
+                'F', FIELD_GENERATOR_UHV.getStackForm(),
+                'E', ELECTRIC_BLAST_FURNACE.getStackForm(),
+                'P', new UnificationEntry(plate, Vibranium),
+                'K', new UnificationEntry(cableGtHex, SiliconCarbide));
     }
 
     private static void hulls() {
