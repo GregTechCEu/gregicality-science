@@ -175,6 +175,7 @@ public class OpticalCircuits {
                 .input(plate, GalliumNitride)
                 .input(foil, Americium, 4)
                 .output(OPTICAL_BOARD)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .duration(40).EUt(VA[UHV]).buildAndRegister();
 
         for (FluidStack stack : new FluidStack[]{TetramethylammoniumHydroxide.getFluid(4000), EDP.getFluid(1000)}) {
@@ -183,6 +184,7 @@ public class OpticalCircuits {
                     .input(foil, Americium, 64)
                     .fluidInputs(stack)
                     .output(OPTICAL_CIRCUIT_BOARD)
+                    .cleanroom(CleanroomType.CLEANROOM)
                     .duration(210).EUt(VA[IV]).buildAndRegister();
         }
 
