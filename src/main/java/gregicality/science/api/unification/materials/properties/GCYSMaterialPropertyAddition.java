@@ -45,5 +45,11 @@ public class GCYSMaterialPropertyAddition {
         // Ore Byproducts
         //TODO Fix ore byproduct changes
         Pollucite.getProperty(PropertyKey.ORE).setOreByProducts(Aluminium, Potassium, Caesium, Pollucite);
+
+        // Cable Properties
+        WireProperties wireProp = RutheniumTriniumAmericiumNeutronate.getProperty(PropertyKey.WIRE);
+        wireProp.setSuperconductor(false);
+        wireProp.setLossPerBlock(32);
+        wireProp.setVoltage((int) GTValues.V[GTValues.UIV]);
     }
 }
