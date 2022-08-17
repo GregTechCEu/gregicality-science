@@ -720,7 +720,7 @@ recipemap.drill_recipes.name=钻取
 # Generators
 recipemap.taranium_reactor_mk1_recipes.name=塔兰金属反应堆 MkI
 recipemap.taranium_reactor_mk2_recipes.name=塔兰金属反应堆 MkII
-recipemap.taranium_reactor_mk3_recipes.name=塔兰金属超级反应堆III
+recipemap.taranium_reactor_mk3_recipes.name=塔兰金属超级反应堆 MkIII
 
 
 # Recipe Properties
