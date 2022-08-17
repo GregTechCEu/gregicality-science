@@ -955,5 +955,12 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .components(Caesium, 2, Tin, 1, Chlorine, 6)
                 .build();
+
+        HRAMagnesium = new Material.Builder(3627, "hra_magnesium") //TODO "Reike Metal" tooltip
+                .dust()
+                .color(Magnesium.getMaterialRGB())
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Magnesium, 1)
+                .build();
     }
 }

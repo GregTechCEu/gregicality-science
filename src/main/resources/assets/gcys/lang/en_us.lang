@@ -145,6 +145,7 @@ material.kovar=Kovar
 material.stannic_chloride=Stannic Chloride
 material.rubidium_chlorostannate=Rubidium Chlorostannate
 material.caesium_chlorostannate=Caesium Chlorostannate
+material.hra_magnesium=Highly Reactive Activated Magnesium
 
 
 # Second Degree Materials
@@ -183,6 +184,7 @@ material.zinc_rich_sphalerite=Zinc-Rich Sphalerite
 
 
 # Organic Chemistry Materials
+material.tetrahydrofuran=Tetrahydrofuran
 material.ethylhexanol=2-Ethylhexanol
 material.diethylhexyl_phosphoric_acid=Di-(2-ethylhexyl)phosphoric Acid
 material.butanol=Butanol

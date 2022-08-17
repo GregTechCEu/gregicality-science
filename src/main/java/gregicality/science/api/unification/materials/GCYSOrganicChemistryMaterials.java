@@ -16,7 +16,11 @@ public class GCYSOrganicChemistryMaterials {
      */
     public static void init() {
 
-        // FREE ID: 15000
+        Tetrahydrofuran = new Material.Builder(15000, "tetrahydrofuran") //TODO "THF" tooltip
+                .fluid()
+                .color(0x3234A8)
+                .components(Carbon, 4, Hydrogen, 8, Oxygen, 1)
+                .build();
 
         Ethylhexanol = new Material.Builder(15001, "ethylhexanol")
                 .fluid()
