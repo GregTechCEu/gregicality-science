@@ -145,6 +145,7 @@ material.kovar=封接合金
 material.stannic_chloride=氯化锡
 material.rubidium_chlorostannate=六氯合锡酸铷
 material.caesium_chlorostannate=六氯合锡酸铯
+material.hra_magnesium=高反应活化镁
 
 
 # Second Degree Materials
@@ -183,6 +184,7 @@ material.zinc_rich_sphalerite=富锌闪锌矿
 
 
 # Organic Chemistry Materials
+material.tetrahydrofuran=四氢呋喃
 material.ethylhexanol=2-乙基己醇
 material.diethylhexyl_phosphoric_acid=二-(2-乙基己基)磷酸（D₂EHPA）
 material.butanol=丁醇
