@@ -17,6 +17,30 @@ public class PhotoresistivesChain {
     }
 
     private static void grignardReagent() {
+        // C4H10O2 -> C4H8O + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Butanediol.getFluid(1000))
+                .fluidInputs(SulfuricAcid.getFluid(1000))
+                .fluidOutputs(Tetrahydrofuran.getFluid(1000))
+                .fluidOutputs(DilutedSulfuricAcid.getFluid(1500))
+                .duration(100).EUt(VA[HV]).buildAndRegister();
+
+        // Mg + 2Cl -> MgCl2
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Magnesium)
+                .fluidInputs(Chlorine.getFluid(2000))
+                .output(dust, MagnesiumChloride, 3)
+                .duration(50).EUt(VA[LV]).buildAndRegister();
+
+        // MgCl2 + 2K -> Mg + 2KCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, MagnesiumChloride, 3)
+                .fluidInputs(Potassium.getFluid(L * 2))
+                .fluidInputs(Tetrahydrofuran.getFluid(10))
+                .output(dust, HRAMagnesium)
+                .output(dust, RockSalt, 4)
+                .duration(140).EUt(VA[IV]).buildAndRegister();
+
         // C2H4 + 2Br -> C2H4Br2
         MIXER_RECIPES.recipeBuilder()
                 .fluidInputs(Ethylene.getFluid(1000))
@@ -26,7 +50,7 @@ public class PhotoresistivesChain {
 
         // Mg + C2H4Br2 -> CH3MgBr + HBr + C (C lost)
         CHEMICAL_RECIPES.recipeBuilder()
-                .input(dust, Magnesium)
+                .input(dust, HRAMagnesium)
                 .fluidInputs(EthyleneDibromide.getFluid(3000))
                 .fluidOutputs(GrignardReagent.getFluid(1000))
                 .fluidOutputs(HydrobromicAcid.getFluid(1000))

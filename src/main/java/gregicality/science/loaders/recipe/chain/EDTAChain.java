@@ -8,6 +8,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.dustTiny;
 
 public class EDTAChain {
 
@@ -65,6 +66,15 @@ public class EDTAChain {
                 .output(dust, SodiumCyanide, 3)
                 .fluidOutputs(Water.getFluid(1000))
                 .duration(120).EUt(VA[LV]).buildAndRegister();
+
+        // CH3OH -> CH2O + 2H
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .input(dustTiny, Silver)
+                .fluidInputs(Methanol.getFluid(1000))
+                .fluidOutputs(Formaldehyde.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .temperature(923)
+                .duration(180).EUt(VA[HV]).buildAndRegister();
 
         // C2H4(NH2)2 + 4CH2O + 4NaCN + 6H2O -> C10H12Na4N2O8 + 4NH3 + 2O
         CHEMICAL_RECIPES.recipeBuilder()

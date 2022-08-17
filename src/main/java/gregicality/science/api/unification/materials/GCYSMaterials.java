@@ -141,6 +141,7 @@ public class GCYSMaterials {
     public static Material StannicChloride;
     public static Material RubidiumChlorostannate;
     public static Material CaesiumChlorostannate;
+    public static Material HRAMagnesium;
 
 
     // Second Degree Materials
@@ -170,6 +171,7 @@ public class GCYSMaterials {
 
 
     // Organic Chemistry Materials
+    public static Material Tetrahydrofuran;
     public static Material Ethylhexanol;
     public static Material DiethylhexylPhosphoricAcid;
     public static Material Butanol;

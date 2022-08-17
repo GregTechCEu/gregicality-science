@@ -103,6 +103,7 @@ public class SpintronicCircuits {
                 .input(SPINTRONIC_CIRCUIT_BOARD)
                 .input(plate, PlutoniumPhosphide, 2)
                 .input(plate, BismuthFerrite)
+                .input(foil, BismuthChalcogenide, 2)
                 .input(TOPOLOGICAL_INSULATOR_TUBE)
                 .input(BOSE_EINSTEIN_CONDENSATE)
                 .input(wireFine, ThalliumCopperChloride, 24)
