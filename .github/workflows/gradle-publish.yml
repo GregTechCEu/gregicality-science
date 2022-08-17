@@ -17,7 +17,7 @@ jobs:
     - name: Clone Repository
       shell: bash
       run: |
-        /usr/bin/git clone https://github.com/Amamiya-Nagisa/gregicality-legacy.git ./
+        /usr/bin/git clone https://github.com/sakuranosakana/gregicality-science.git ./
     - name: Declare some variables
       id: vars
       shell: bash
