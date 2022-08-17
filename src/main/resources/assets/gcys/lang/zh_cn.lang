@@ -381,7 +381,7 @@ gcys.machine.cvd_unit.name=化学气相沉积单元(CVD装置)
 
 # Fracking Machine
 gcys.machine.fracker.name=液压压裂机
-gcys.multiblock.fracker.tooltip.1=使用1000L压裂液补充基岩下的矿脉。
+gcys.multiblock.fracker.tooltip.1=使用1000L压裂液补充基岩下的区块流体。
 gcys.multiblock.fracker.tooltip.2=消耗§a%sEU/t§7。
 
 # Sonicator
