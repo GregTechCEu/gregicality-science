@@ -245,8 +245,8 @@ gcys.multiblock.nanoscale_fabricator.tooltip.1=Средняя температу
 
 gcys.machine.dryer.lv.name=Обычная сушилка
 gcys.machine.dryer.ev.name=Улучшенная сушилка III
-material.rich_nitrogen_mixture=Богатая азотная смесь
-material.rich_ammonia_mixture=Богатая аммиачная смесь
+material.rich_nitrogen_mixture=Обогащенная азотная смесь
+material.rich_ammonia_mixture=Обогащенная аммиачная смесь
 material.brine=Соляной раствор
 material.chlorinated_brine=Хлорированный соляной раствор
 material.chalcogen_anode_mud=Халькогенный анодный шлам
@@ -361,7 +361,7 @@ metaitem.component.insane_smd.diode.name=Совершенный SMD диод
 metaitem.component.insane_smd.resistor.name=Совершенный SMD резистор
 metaitem.component.insane_smd.transistor.name=Совершенный SMD транзистор
 metaitem.component.insane_smd.inductor.name=Совершенный SMD индуктор
-material.bz_medium=БЖ среда
+material.bz_medium=Среда БЖ(Белоусова-Жаботинского)
 recipemap.bio_vat_recipes.name=Биологический котел
 recipemap.roaster_recipes.name=Обжарка
 recipemap.burner_reactor_recipes.name=Высокотемпературные реакции
@@ -485,7 +485,7 @@ material.platinum_group_concentrate=Концентрат платиновой г
 material.ammonium_perrhenate=Перренат аммония
 material.orichalcum=Орихалк
 material.vibranium=Вибраниум
-material.taranium=Тараниум
+material.taranium=Тараний
 material.light_taranium_fuel=Легкое тараниевое топливо
 material.heavy_enriched_taranium_fuel=Тяжелое обогащенное тараниевое топливо
 material.light_enriched_taranium_fuel=Легкое обогащенное тараниевое топливо
@@ -498,7 +498,7 @@ material.vibranium_unstable=Нестабильный вибраниум
 
 # Third Degree Materials
 material.zinc_rich_sphalerite=Богатый цинком сфалерит
-material.cracked_light_enriched_taranium=Легкий обогащенный тараниум прошедший крекинг радоном
+material.cracked_light_enriched_taranium=Легкий обогащенный тараний прошедший крекинг радоном
 material.energetic_naquadria=Энергетическая наквадриа
 material.light_hyper_fuel=Легкое гипер топливо
 material.medium_hyper_fuel=Среднее гипер топливо
@@ -513,8 +513,8 @@ material.medium_taranium_fuel=Среднее тараниевое топливо
 material.medium_enriched_taranium_fuel=Среднее обогащенное тараниевое топливо
 material.deep_iron=Глубинное железо
 material.bedrock=Коренная порода
-material.cracked_heavy_enriched_taranium=Тяжелый обогащенный тараниум прошедший крекинг радоном
-material.cracked_medium_enriched_taranium=Средний обогащенный тараниум прошедший крекинг радоном
+material.cracked_heavy_enriched_taranium=Тяжелый обогащенный тараний прошедший крекинг радоном
+material.cracked_medium_enriched_taranium=Средний обогащенный тараний прошедший крекинг радоном
 
 # Burner Reactor
 gcys.machine.burner_reactor.name=Реактор горения
@@ -538,15 +538,43 @@ gcys.machine.industrial_drill.name=Индустриальная буровая �
 
 # Nanotube Stuff
 metaitem.mixture.carbon_allotrope.name=Углеродная аллотропная смесь
-recipemap.taranium_reactor_mk3_recipes.name=Тараниумный гипер реактор модель 3
-recipemap.taranium_reactor_mk2_recipes.name=Тараниумный реактор модель 2
+recipemap.taranium_reactor_mk3_recipes.name=Тараниевый гипер реактор модель 3
+recipemap.taranium_reactor_mk2_recipes.name=Тараниевый реактор модель 2
 
 # Generators
-recipemap.taranium_reactor_mk1_recipes.name=Тараниумный реактор модель 1
-material.cgt=Теллурид германия хрома
+recipemap.taranium_reactor_mk1_recipes.name=Тараниевый реактор модель 1
+material.cgt=Теллурид германий-хрома
 material.cgt_magnetic=Магнитный теллурид германия хрома
 material.kovar=Ковар
-material.edot=3,4-Этилендиокситиофен
+material.edot=3,4-Этилендиокситиофен (EDOT)
 material.pedot_pss=PEDOT:PSS
 material.pedot_tma=PEDOT-TMA
 gcys.machine.pressure_hatch.mv.name=Средний вакуумный люк
+material.waelz_oxide=Вельц-оксид
+item.waelz_oxide.dust=Вельц-оксид
+material.waelz_slag=Вельц-шлак
+item.waelz_slag.dustSmall=Маленькая кучка вельц-шлака
+item.waelz_slag.dustTiny=Крошечная кучка вельц-шлака
+material.clean_bedrock_solution=Очищенный раствор коренной породы
+material.bedrock_soot_solution=Раствор сажи коренной породы
+material.heavy_enriched_taranium_gas=Тяжёлый обогащенный тараниевый газ
+material.medium_enriched_taranium_gas=Средний обогащенный тараниевый газ
+material.light_enriched_taranium_gas=Легкий обогащенный тараниевый газ
+material.impure_germanium_dioxide=Загрязненный диоксид германия
+item.waelz_slag.dust=Вельц-шлак
+item.waelz_oxide.dustSmall=Маленькая кучка вельц-оксида
+item.waelz_oxide.dustTiny=Крошечная кучка вельц-оксида
+material.bedrock_gas=Газ коренной породы
+material.rubidium_chlorostannate=Хлорстаннат рубидия
+material.caesium_chlorostannate=Хлорстаннат цезия
+material.fracturing_fluid=Жидкость для гидроразрыва
+material.heavy_taranium_gas=Тяжёлый тараниевый газ
+material.medium_taranium_gas=Средний тараниевый газ
+material.light_taranium_gas=Легкий тараниевый газ
+material.enriched_bedrock_soot_solution=Обогащенный раствор сажи коренной породы
+material.clean_enriched_bedrock_solution=Обогащенный раствор сажи коренной породы
+material.stannic_chloride=Хлорид олова
+material.heavy_alkali_chloride_solution=Тяжелый раствор щелочного хлорида
+material.cracked_heavy_taranium=Тяжелый тараний прошедший крекинг фтором
+material.cracked_medium_taranium=Средний тараний прошедший крекинг фтором
+material.cracked_light_taranium=Легкий тараний прошедший крекинг фтором
