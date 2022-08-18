@@ -142,6 +142,7 @@ public class GCYSMaterials {
     public static Material RubidiumChlorostannate;
     public static Material CaesiumChlorostannate;
     public static Material HRAMagnesium;
+    public static Material LithiumFluoride;
 
 
     // Second Degree Materials
