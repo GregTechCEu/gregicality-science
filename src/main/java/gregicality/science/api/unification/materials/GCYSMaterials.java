@@ -138,6 +138,7 @@ public class GCYSMaterials {
     public static Material VibraniumUnstable;
     public static Material SiliconCarbide;
     public static Material ChromiumGermaniumTelluride;
+    public static Material LithiumFluoride;
 
 
     // Second Degree Materials

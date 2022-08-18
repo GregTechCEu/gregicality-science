@@ -23,7 +23,7 @@ public class KaptonChain {
         // C6H4(CH3)2 + 2CH3Cl -> C6H2(CH3)4 + 2HCl
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(ParaXylene.getFluid(1000))
-                .fluidInputs(Chloromethane.getFluid(1000))
+                .fluidInputs(Chloromethane.getFluid(2000))
                 .output(dust, Durene, 24)
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
                 .duration(120).EUt(VA[MV]).buildAndRegister();

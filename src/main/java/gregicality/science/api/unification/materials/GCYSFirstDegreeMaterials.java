@@ -474,7 +474,7 @@ public class GCYSFirstDegreeMaterials {
                 .setFormula("c-BC2N", true);
 
         LithiumHydride = new Material.Builder(3563, "lithium_hydride")
-                .ingot()
+                .dust()
                 .color(0x9BAFDB)
                 .iconSet(MaterialIconSet.METALLIC)
                 .components(Lithium, 1, Hydrogen, 1)
@@ -927,6 +927,12 @@ public class GCYSFirstDegreeMaterials {
                 .flags(GENERATE_ROD, GENERATE_LONG_ROD)
                 .components(Chrome, 1, Germanium, 1, Tellurium, 3)
                 .blastTemp(2900, BlastProperty.GasTier.HIGHER)
+                .build();
+
+        LithiumFluoride = new Material.Builder(3623, "lithium_fluoride")
+                .dust()
+                .color(LithiumHydride.getMaterialRGB())
+                .components(Lithium, 1, Fluorine, 1)
                 .build();
     }
 }

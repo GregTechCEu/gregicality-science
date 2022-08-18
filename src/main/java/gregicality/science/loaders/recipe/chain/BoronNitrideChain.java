@@ -54,7 +54,7 @@ public class BoronNitrideChain {
         BURNER_REACTOR_RECIPES.recipeBuilder()
                 .input(dust, Lithium)
                 .fluidInputs(Hydrogen.getFluid(1000))
-                .output(ingot, LithiumHydride)
+                .output(dust, LithiumHydride)
                 .temperature(873)
                 .duration(300)
                 .EUt(VA[HV])
@@ -73,7 +73,7 @@ public class BoronNitrideChain {
         // LiBF4 -> LiH + BF3
         DRYER_RECIPES.recipeBuilder()
                 .input(dust, LithiumTetrafluoroborate, 6)
-                .output(ingot, LithiumHydride, 2)
+                .output(ingot, LithiumFluoride, 2)
                 .fluidOutputs(BoronTrifluoride.getFluid(1000))
                 .duration(80)
                 .EUt(VA[LV])
