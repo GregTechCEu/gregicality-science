@@ -51,6 +51,7 @@ public class GCYSRecipeLoader {
         FantasyMaterials.init();
         SimpleMaterials.init();
         PedotChain.init();
+        C4Chains.init();
     }
 
     private static void initOreProcessing() {
