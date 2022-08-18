@@ -1,5 +1,7 @@
 package gregicality.science.loaders.recipe.chain;
 
+import gregicality.science.common.GCYSConfigHolder;
+import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.ore.OrePrefix;
 
@@ -15,6 +17,8 @@ public class C4Chains {
         butenes();
         butane_12_23_diol();
         butane_14_diol();
+        butadiene();
+        new_etbe();
     }
 
     private static void butenes() {
@@ -77,5 +81,36 @@ public class C4Chains {
                 .fluidOutputs(Butane12diol.getFluid(150))
                 .pressure(5_000_000).temperature(450)
                 .duration(300).EUt(VA[EV]).buildAndRegister();
+    }
+
+    private static void butadiene() {
+        // C4H10O2 (Al2O3 cat.) -> C4H6 + 2 H2O
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(Butane14diol.getFluid(1000))
+                .notConsumable(dust, Alumina)
+                .fluidOutputs(Butadiene.getFluid(1000))
+                .fluidOutputs(Steam.getFluid(2000)) // TODO Superheated Steam
+                .temperature(625)
+                .duration(150).EUt(VA[HV]).buildAndRegister();
+
+        // C4H10O2 (Al2O3 cat.) -> C4H6 + 2 H2O
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(Butane23diol.getFluid(1000))
+                .notConsumable(dust, Alumina)
+                .fluidOutputs(Butadiene.getFluid(1000))
+                .fluidOutputs(Steam.getFluid(2000)) // TODO Superheated Steam
+                .temperature(625)
+                .duration(150).EUt(VA[HV]).buildAndRegister();
+    }
+
+    public static void new_etbe() {
+        if (GCYSConfigHolder.chainOverrides.disableETBEProcessing) GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES, Ethanol.getFluid(1000), Butene.getFluid(1000));
+
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(Ethanol.getFluid(1000))
+                .fluidInputs(Isobutene.getFluid(1000))
+                .fluidOutputs(EthylTertButylEther.getFluid(1000))
+                .pressure(1_000_000).temperature(350)
+                .duration(400).EUt(VA[HV]).buildAndRegister();
     }
 }
