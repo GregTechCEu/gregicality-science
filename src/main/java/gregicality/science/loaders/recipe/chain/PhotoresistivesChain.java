@@ -19,7 +19,7 @@ public class PhotoresistivesChain {
     private static void grignardReagent() {
         // C4H10O2 -> C4H8O + H2O
         CHEMICAL_RECIPES.recipeBuilder()
-                .fluidInputs(Butanediol.getFluid(1000))
+                .fluidInputs(Butane12diol.getFluid(1000))
                 .fluidInputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(Tetrahydrofuran.getFluid(1000))
                 .fluidOutputs(DilutedSulfuricAcid.getFluid(1500))

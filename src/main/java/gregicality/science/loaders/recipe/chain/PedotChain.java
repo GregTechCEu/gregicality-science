@@ -18,7 +18,7 @@ public class PedotChain {
     private static void edot() {
         //C4H10O2 -> C4H6O2 + 4H
         ELECTROLYZER_RECIPES.recipeBuilder()
-                .fluidInputs(Butanediol.getFluid(1000))
+                .fluidInputs(Butane12diol.getFluid(1000))
                 .fluidOutputs(Diacetyl.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(4000))
                 .duration(80).EUt(VA[MV]).buildAndRegister();

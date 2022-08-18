@@ -318,7 +318,7 @@ public class GCYSOrganicChemistryMaterials {
                 .build()
                 .setFormula("C6H4(COCl)2", true);
 
-        Butanediol = new Material.Builder(15047, "butanediol")
+        Butane12diol = new Material.Builder(15047, "butane_12_diol")
                 .fluid()
                 .color(0xAAC4DA)
                 .flags(DISABLE_DECOMPOSITION)
@@ -542,6 +542,53 @@ public class GCYSOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_SPRING)
                 .components(Edot, 1, PMMA, 2)
                 .cableProperties(V[UEV], 8, 6)
+                .build();
+
+        // FREE ID 15079 - 15089
+
+        Butane13diol = new Material.Builder(15090, "butane_13_diol")
+                .fluid()
+                .color(0xAAC4DA)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
+                .build()
+                .setFormula("C4H8(OH)2", true);
+
+        Butane14diol = new Material.Builder(15091, "butane_14_diol")
+                .fluid()
+                .color(0xAAC4DA)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
+                .build()
+                .setFormula("C4H8(OH)2", true);
+
+        Butane23diol = new Material.Builder(15092, "butane_23_diol")
+                .fluid()
+                .color(0xAAC4DA)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
+                .build()
+                .setFormula("C4H8(OH)2", true);
+
+        But1ene = new Material.Builder(15093, "but_1_ene")
+                .fluid(FluidTypes.GAS)
+                .color(0xCF5005)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 8)
+                .build();
+
+        But2ene = new Material.Builder(15094, "but_2_ene")
+                .fluid(FluidTypes.GAS)
+                .color(0xCF5005)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 8)
+                .build();
+
+        Isobutene = new Material.Builder(15095, "isobutene")
+                .fluid(FluidTypes.GAS)
+                .color(0xCF5005)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 8)
                 .build();
     }
 }
