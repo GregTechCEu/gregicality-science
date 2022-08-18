@@ -132,7 +132,5 @@ public class GCYSUnknownCompositionMaterials {
         // FREE ID 18057 - 18067
 
         ButeneOxidesMixture = new Material.Builder(18068, "butene_oxides_mixture").fluid().color(0xC1DEF7).build();
-
-        ButanediolsMixture = new Material.Builder(18069, "butanediols_mixture").fluid().color(0xAAC4DA).build();
     }
 }

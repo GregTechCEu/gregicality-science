@@ -302,7 +302,6 @@ public class GCYSMaterials {
     public static Material HeavyHyperFuel;
 
     public static Material ButeneOxidesMixture;
-    public static Material ButanediolsMixture;
 
 
     /**

@@ -57,21 +57,10 @@ public class KevlarChain {
                 .EUt(240)
                 .buildAndRegister();
 
-        // C4H8 + HClO + H2O -> C4H10O2 + HCl
-        CHEMICAL_RECIPES.recipeBuilder()
-                .fluidInputs(Butene.getFluid(1000))
-                .fluidInputs(HypochlorousAcid.getFluid(1000))
-                .fluidInputs(Water.getFluid(1000))
-                .fluidOutputs(Butane12diol.getFluid(1000))
-                .fluidOutputs(HydrochloricAcid.getFluid(1000))
-                .duration(60)
-                .EUt(VA[HV])
-                .buildAndRegister();
-
         // C4H10O2 -> C4H6O2 + 4H (4H lost)
         BREWING_RECIPES.recipeBuilder()
                 .input(dust, Copper)
-                .fluidInputs(Butane12diol.getFluid(1000))
+                .fluidInputs(Butane14diol.getFluid(1000))
                 .fluidOutputs(GammaButyrolactone.getFluid(1000))
                 .duration(120)
                 .EUt(VA[EV])
