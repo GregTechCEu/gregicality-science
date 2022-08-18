@@ -544,15 +544,7 @@ public class GCYSOrganicChemistryMaterials {
                 .cableProperties(V[UEV], 8, 6)
                 .build();
 
-        // FREE ID 15079 - 15089
-
-        Butane13diol = new Material.Builder(15090, "butane_13_diol")
-                .fluid()
-                .color(0xAAC4DA)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
-                .build()
-                .setFormula("C4H8(OH)2", true);
+        // FREE ID 15079 - 15090
 
         Butane14diol = new Material.Builder(15091, "butane_14_diol")
                 .fluid()

@@ -244,7 +244,6 @@ public class GCYSMaterials {
     public static Material PedotPSS;
     public static Material PedotTMA;
 
-    public static Material Butane13diol;
     public static Material Butane14diol;
     public static Material Butane23diol;
     public static Material But1ene;
