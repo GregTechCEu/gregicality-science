@@ -33,7 +33,7 @@ public class C4Chains {
     }
 
     private static void butane_14_diol() {
-        // C2H2 + H2CO -> HO-CH2#CH2-OH; HO-CH2-C#C-CH2-OH + 4H -> HO-C4H8-OH
+        // C2H2 + H2CO -> HO-CH2-C#C-CH2-OH; HO-CH2-C#C-CH2-OH + 4H -> HO-C4H8-OH
         BURNER_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(Acetylene.getFluid(1000))
                 .fluidInputs(Formaldehyde.getFluid(2000))
@@ -67,10 +67,18 @@ public class C4Chains {
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Butene.getFluid(1000))
                 .fluidInputs(Chlorine.getFluid(1000))
-                .fluidInputs(Water.getFluid(1000))
+                .fluidInputs(Water.getFluid(1000)) // TODO sequential reactor?
                 .input(dust, SodiumHydroxide)
                 .fluidOutputs(ButeneOxidesMixture.getFluid(1000))
                 .output(dust, Salt, 2)
+                .duration(400).EUt(VA[EV]).buildAndRegister();
+
+        // C4H8 + HOCl -> C4H8O + HCl (55% trans-2,3-butene oxide, 30% cis-2,3-butene oxide, and 15% 1,2-butene oxide)
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Butene.getFluid(1000))
+                .fluidInputs(HypochlorousAcid.getFluid(1000))
+                .fluidOutputs(ButeneOxidesMixture.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .duration(400).EUt(VA[EV]).buildAndRegister();
 
         // C4H8O + H2O -> C4H10O2 (Large excess of H2O)
@@ -104,11 +112,15 @@ public class C4Chains {
     }
 
     public static void new_etbe() {
-        if (GCYSConfigHolder.chainOverrides.disableETBEProcessing) GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES, Ethanol.getFluid(1000), Butene.getFluid(1000));
+        if (GCYSConfigHolder.chainOverrides.disableETBEProcessing) {
+            GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES, Ethanol.getFluid(1000), Butene.getFluid(1000));
+            GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES, Ethanol.getFluid(1000), Butene.getFluid(1000)); // TODO remove once CR recipe removal issue gets fixed
+        }
 
         BURNER_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(Ethanol.getFluid(1000))
                 .fluidInputs(Isobutene.getFluid(1000))
+                .fluidInputs(SulfuricAcid.getFluid(50))
                 .fluidOutputs(EthylTertButylEther.getFluid(1000))
                 .pressure(1_000_000).temperature(350)
                 .duration(400).EUt(VA[HV]).buildAndRegister();
