@@ -549,7 +549,6 @@ public class GCYSOrganicChemistryMaterials {
         Butane14diol = new Material.Builder(15091, "butane_14_diol")
                 .fluid()
                 .color(0xAAC4DA)
-                .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
                 .build()
                 .setFormula("C4H8(OH)2", true);
@@ -557,7 +556,6 @@ public class GCYSOrganicChemistryMaterials {
         Butane23diol = new Material.Builder(15092, "butane_23_diol")
                 .fluid()
                 .color(0xAAC4DA)
-                .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
                 .build()
                 .setFormula("C4H8(OH)2", true);
@@ -565,21 +563,18 @@ public class GCYSOrganicChemistryMaterials {
         But1ene = new Material.Builder(15093, "but_1_ene")
                 .fluid(FluidTypes.GAS)
                 .color(0xCF5005)
-                .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 4, Hydrogen, 8)
                 .build();
 
         But2ene = new Material.Builder(15094, "but_2_ene")
                 .fluid(FluidTypes.GAS)
                 .color(0xCF5005)
-                .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 4, Hydrogen, 8)
                 .build();
 
         Isobutene = new Material.Builder(15095, "isobutene")
                 .fluid(FluidTypes.GAS)
                 .color(0xCF5005)
-                .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 4, Hydrogen, 8)
                 .build();
     }
