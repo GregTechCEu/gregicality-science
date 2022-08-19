@@ -578,3 +578,7 @@ material.heavy_alkali_chloride_solution=Тяжелый раствор щелоч
 material.cracked_heavy_taranium=Тяжелый тараний прошедший крекинг фтором
 material.cracked_medium_taranium=Средний тараний прошедший крекинг фтором
 material.cracked_light_taranium=Легкий тараний прошедший крекинг фтором
+
+
+# Organic Chemistry Materials
+material.tetrahydrofuran=Тетрагидрофуран
