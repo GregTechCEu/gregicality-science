@@ -965,7 +965,7 @@ public class GCYSFirstDegreeMaterials {
 
         LithiumFluoride = new Material.Builder(3628,"lithium_fluoride")
                 .dust()
-                .color(LithiumHydride.getMaterialRGB())
+                .color(0x9AE7AD)
                 .components(Lithium,1 , Fluorine, 1)
                 .build();
     }
