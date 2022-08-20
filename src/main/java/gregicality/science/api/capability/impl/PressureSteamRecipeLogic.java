@@ -53,10 +53,10 @@ public class PressureSteamRecipeLogic extends RecipeLogicSteam {
         double pressureToChange;
 
         // pressure changes by 1 percent per tick
-        if (pressure != GCYSValues.EAP) pressureToChange = containerPressure * 0.01;
+        if (pressure != GCYSValues.EARTH_PRESSURE) pressureToChange = containerPressure * 0.01;
         else return true;
 
-        if (pressure > GCYSValues.EAP) pressureToChange = -pressureToChange;
+        if (pressure > GCYSValues.EARTH_PRESSURE) pressureToChange = -pressureToChange;
 
         final double newPressure = containerPressure + pressureToChange;
         // pressure must be within +/- 1 exponent of the target
