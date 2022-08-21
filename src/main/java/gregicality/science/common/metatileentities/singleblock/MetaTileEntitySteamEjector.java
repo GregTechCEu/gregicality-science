@@ -28,9 +28,13 @@ import gregtech.api.unification.material.Materials;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.ConfigHolder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockSnow;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -138,7 +142,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
         if (!getWorld().isRemote && getOffsetTimer() % 20 == 0) {
             if (pressureContainer.getPressure() > pressureContainer.getMinPressure()) {
                 FluidStack drained = fuelFluidTank.drain(STEAM_CONSUMPTION, false);
-                if (drained != null && drained.amount == STEAM_CONSUMPTION) {
+                if (drained != null && drained.amount == STEAM_CONSUMPTION && ventSteam(true)) {
                     fuelFluidTank.drain(STEAM_CONSUMPTION, true);
 
                     if (pressureContainer.changeParticles(PRESSURE_DECREASE, true)) {
@@ -151,7 +155,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
                         pressureContainer.setParticles(pressureContainer.getMinPressure() * pressureContainer.getVolume());
                     }
 
-                    ventSteam();
+                    ventSteam(false);
                 }
             }
 
@@ -169,7 +173,23 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
         }
     }
 
-    private void ventSteam() {
+    private boolean ventSteam(boolean simulate) {
+        BlockPos pos = getPos().offset(getFrontFacing());
+        IBlockState targetBlock = getWorld().getBlockState(pos);
+        if (targetBlock.getCollisionBoundingBox(getWorld(), pos) == Block.NULL_AABB) {
+            if (!simulate) performVentingAnimation();
+            return true;
+        } else if (targetBlock.getBlock() == Blocks.SNOW_LAYER && targetBlock.getValue(BlockSnow.LAYERS) == 1) {
+            if (!simulate) {
+                performVentingAnimation();
+                getWorld().destroyBlock(pos, false);
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private void performVentingAnimation() {
         final BlockPos pos = getPos();
         final EnumFacing facing = getFrontFacing();
         double posX = pos.getX() + 0.5 + facing.getXOffset() * 0.6;
