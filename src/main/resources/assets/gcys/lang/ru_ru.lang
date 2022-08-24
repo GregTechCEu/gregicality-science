@@ -601,3 +601,4 @@ material.heavy_enriched_bedrock_smoke=Тяжелая взвесь обогаще
 gcys.multiblock.roaster.tooltip.2=Стальная топка: §c1500K
 gcys.multiblock.roaster.tooltip.3=Титановая топка: §c2000K
 material.trace_rhenium_flue=Дымовой газ содержащий рений
+item.material.oreprefix.boule=Монокристалл (%s)
