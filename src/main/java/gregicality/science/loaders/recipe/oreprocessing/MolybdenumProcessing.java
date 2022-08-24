@@ -112,12 +112,13 @@ public class MolybdenumProcessing {
                 .output(dust, AmmoniumPerrhenate, 10)
                 .duration(100).EUt(VA[EV]).buildAndRegister();
 
-        // NH4ReO4 + H2S -> Re + NH3 + H2SO4 + H (H lost)
+        // NH4ReO4 + H2S + Cl -> Re + NH4Cl + H2SO4 +
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, AmmoniumPerrhenate, 10)
                 .fluidInputs(HydrogenSulfide.getFluid(1000))
+                .fluidInputs(Chlorine.getFluid(1000))
                 .output(dust, Rhenium)
-                .fluidOutputs(Ammonia.getFluid(1000))
+                .output(dust, AmmoniumChloride, 2)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .duration(100).EUt(VA[EV]).buildAndRegister();
 
