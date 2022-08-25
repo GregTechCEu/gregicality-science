@@ -211,7 +211,7 @@ public class GCYSMaterials {
     public static Material Tetrabromoethane;
     public static Material TerephthalicAcid;
     public static Material TerephthaloylChloride;
-    public static Material Butanediol;
+    public static Material Butane12diol;
     public static Material GammaButyrolactone;
     public static Material NMethylPyrrolidone;
     public static Material Kevlar;
@@ -244,6 +244,12 @@ public class GCYSMaterials {
     public static Material PolystyreneSulfonate;
     public static Material PedotPSS;
     public static Material PedotTMA;
+
+    public static Material Butane14diol;
+    public static Material Butane23diol;
+    public static Material But1ene;
+    public static Material But2ene;
+    public static Material Isobutene;
 
 
     // Unknown Composition Materials
@@ -295,6 +301,8 @@ public class GCYSMaterials {
     public static Material LightHyperFuel;
     public static Material MediumHyperFuel;
     public static Material HeavyHyperFuel;
+
+    public static Material ButeneOxidesMixture;
 
 
     /**

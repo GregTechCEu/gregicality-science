@@ -36,6 +36,9 @@ public class GCYSConfigHolder {
 
         @Config.Comment({"Disables electrolysis of Molybdenite, Powellite, and Wulfenite, requiring Gregicality's processes for Molybdenum.", "Default: true"})
         public boolean disableMolybdenumProcessing = true;
+
+        @Config.Comment({"Disables production of Ethyl Tert-Butyl Ether, requiring Gregicality's process.", "Default: true"})
+        public boolean disableETBEProcessing = true;
     }
 
     public static class CircuitOverrides {

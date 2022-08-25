@@ -128,5 +128,9 @@ public class GCYSUnknownCompositionMaterials {
         MediumHyperFuel = new Material.Builder(18055, "medium_hyper_fuel").fluid().color(0xDC0A0A).build();
 
         HeavyHyperFuel = new Material.Builder(18056, "heavy_hyper_fuel").fluid().color(0x1E5064).build();
+
+        // FREE ID 18057 - 18067
+
+        ButeneOxidesMixture = new Material.Builder(18068, "butene_oxides_mixture").fluid().color(0xC1DEF7).build();
     }
 }

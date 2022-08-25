@@ -222,7 +222,7 @@ material.bistrichloromethylbenzene=1,4-Bis(trichloromethyl)benzene
 material.tetrabromoethane=Tetrabromoethane
 material.terephthalic_acid=Terephthalic Acid
 material.terephthaloyl_chloride=Terephthaloyl Chloride
-material.butanediol=Butanediol
+material.butane_12_diol=1,2-Butanediol
 material.gamma_butyrolactone=Gamma-Butyrolactone
 material.n_methyl_pyrrolidone=N-Methyl-2-Pyrrolidone
 material.kevlar=Kevlar
@@ -256,6 +256,13 @@ material.polystyrene=Polystyrene
 material.polystyrene_sulfonate=Polystyrene Sulfonate
 material.pedot_pss=PEDOT:PSS
 material.pedot_tma=PEDOT-TMA
+
+material.but_1_ene=1-Butene
+material.but_2_ene=2-Butene
+material.isobutene=Isobutene
+material.butane_13_diol=1,3-Butanediol
+material.butane_14_diol=1,4-Butanediol
+material.butane_23_diol=2,3-Butanediol
 
 
 # Unknown Composition Materials
@@ -310,6 +317,8 @@ material.energetic_naquadria=Energetic Naquadria
 material.light_hyper_fuel=Light Hyper Fuel
 material.medium_hyper_fuel=Medium Hyper Fuel
 material.heavy_hyper_fuel=Heavy Hyper Fuel
+
+material.butene_oxides_mixture=Butene Oxides Mixture
 
 
 # Tricorder Info
