@@ -674,3 +674,11 @@ gcys.multiblock.turbomolecular_pump.tooltip.2=Потребляет §e%sЛ/с§7
 
 # Primitive Stuff
 metaitem.vacuum_tube.components.name=Компонент электровакуумной лампы
+recipemap.ion_implanter_recipes.name=Ионная имплантация
+recipemap.crystallization_recipes.name=Кристаллизация
+recipemap.sonication_recipes.name=Гомогенизация
+recipemap.catalytic_reformer_recipes.name=Каталитическая реформация
+recipemap.superheavy_reactor_recipes.name=Сверхтяжелые реакции
+recipemap.drill_recipes.name=Бурение
+recipemap.pressure_chamber_recipes.name=Барокамера
+recipemap.plasma_cvd_recipes.name=Плазменное осаждение
