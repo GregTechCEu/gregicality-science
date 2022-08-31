@@ -64,7 +64,7 @@ metaitem.circuit.cosmic_processor.name=Космический процессор
 metaitem.circuit.cosmic_processor.tooltip=Феноменальные космические силы!/n§8UEV уровень
 metaitem.circuit.cosmic_assembly.name=Космический вычислительный блок
 metaitem.circuit.cosmic_assembly.tooltip=Феноменальные космические силы!/n§8UIV уровень
-metaitem.circuit.cosmic_computer.name=Космический компьютер
+metaitem.circuit.cosmic_computer.name=Космический суперкомпьютер
 metaitem.circuit.cosmic_computer.tooltip=Феноменальные космические силы!/n§8UXV уровень
 metaitem.circuit.cosmic_mainframe.name=Космический мейнфрейм
 metaitem.circuit.cosmic_mainframe.tooltip=Феноменальные космические силы!!/n§8OpV уровень
@@ -458,14 +458,14 @@ metaitem.component.spintronic_smd.diode.name=Диод Шоттки
 
 # Spintronic
 metaitem.circuit.spintronic_processor.name=Спинтронный процессор
-metaitem.circuit.spintronic_processor.tooltip=Вращающаяся электроника/n§5UHV уровень
+metaitem.circuit.spintronic_processor.tooltip=Вращающиеся электроны/n§5UHV уровень
 metaitem.circuit.spintronic_assembly.tooltip=Дискретные квантовые прогулки/n§5UEV уровень
-metaitem.circuit.spintronic_computer.name=Спинтронный компьютер
+metaitem.circuit.spintronic_computer.name=Спинтронный суперкомпьютер
 metaitem.circuit.spintronic_mainframe.name=Спинтронный мейнфрейм
-metaitem.circuit.spintronic_mainframe.tooltip=Самый маленький из возможных/n§5UXV уровень
+metaitem.circuit.spintronic_mainframe.tooltip=Спин-волновая логика!/n§5UXV уровень
 material.bromo_bromomethyl_naphthalene=1-Бром-2-(бромметил)нафталин
 metaitem.circuit.spintronic_assembly.name=Спинтронный вычислительный блок
-metaitem.circuit.spintronic_computer.tooltip=Кто вообще пользуется нанометрами?/n§5UIV уровень
+metaitem.circuit.spintronic_computer.tooltip=Баллистическая спиновая фильтрация/n§5UIV уровень
 
 # SMDs
 metaitem.component.optical_smd.capacitor.name=Оптический интегратор
