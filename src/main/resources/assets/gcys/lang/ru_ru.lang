@@ -323,7 +323,7 @@ metaitem.nonlinear_chemical_oscillator.tooltip=Неравновесная тер
 metaitem.circuit.gooware_processor.name=Слизневый процессор
 metaitem.circuit.gooware_assembly.name=Слизневый вычислительный блок
 metaitem.circuit.gooware_assembly.tooltip=Цикличные концетрации/n§2UV уровень
-metaitem.circuit.gooware_computer.name=Слизневый компьютер
+metaitem.circuit.gooware_computer.name=Слизневый суперкомпьютер
 metaitem.circuit.gooware_computer.tooltip=Сложные волновые явления!/n§2UHV уровень
 metaitem.circuit.gooware_mainframe.name=Слизневый мейнфрейм
 
@@ -682,3 +682,9 @@ recipemap.superheavy_reactor_recipes.name=Сверхтяжелые реакци�
 recipemap.drill_recipes.name=Бурение
 recipemap.pressure_chamber_recipes.name=Барокамера
 recipemap.plasma_cvd_recipes.name=Плазменное осаждение
+metaitem.wafer.femto_power_integrated_circuit.name=Пластина FPIC
+
+
+# Power Components
+metaitem.wafer.nano_power_integrated_circuit.name=Пластина NPIC
+metaitem.wafer.pico_power_integrated_circuit.name=Пластина PPIC
