@@ -37,8 +37,10 @@ public class RareEarthProcessing {
 
         // Separating Agent Production: Di-(2-ethylhexyl)phosphoric Acid
 
+        // Aldol Condensation
         // 2C4H8O + 4H -> C8H18O + H2O
         CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(dust, SodiumHydroxide)
                 .fluidInputs(Butyraldehyde.getFluid(2000))
                 .fluidInputs(Hydrogen.getFluid(4000))
                 .fluidOutputs(Ethylhexanol.getFluid(1000))
