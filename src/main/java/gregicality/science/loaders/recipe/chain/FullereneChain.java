@@ -85,6 +85,7 @@ public class FullereneChain {
     private static void butyllitium() {
         // C4H8O + 2H -> C4H10O
         CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(new IntCircuitIngredient(1))
                 .fluidInputs(Butyraldehyde.getFluid(1000))
                 .fluidInputs(Hydrogen.getFluid(2000))
                 .fluidOutputs(Butanol.getFluid(1000))
