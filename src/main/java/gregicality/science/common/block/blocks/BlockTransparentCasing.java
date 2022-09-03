@@ -22,7 +22,7 @@ public class BlockTransparentCasing extends VariantBlock<BlockTransparentCasing.
         super(Material.IRON);
         setTranslationKey("transparent_casing");
         setHardness(5.0F);
-        setResistance(5.0F);
+        setResistance(69.0F);
         setSoundType(SoundType.GLASS);
         setHarvestLevel("pickaxe", 1);
         setDefaultState(getState(CasingType.PMMA));
