@@ -609,7 +609,7 @@ gcys.pipe.pressure_pipe_extremely_high_vacuum.name=Труба экстремал
 gcys.pipe.pressure_pipe_electron_degeneracy_pressure.name=Труба давления вырождения электронов
 
 # Turbomolecular Pumps
-gcys.machine.turbomolecular_pump.low_power.name=турбомолекулярный насос
+gcys.machine.turbomolecular_pump.low_power.name=Низковольтажный турбомолекулярный насос
 gcys.multiblock.axial_compressor.tooltip.2=Потребляет §e%sЛ/с§7 смазки когда увеличивает давление.
 gcys.multiblock.turbomolecular_pump.tooltip.3=Использует %s§7. Не ускоряется.
 metaitem.vacuum_tube.components.tooltip=Ты молишься, чтобы она не сгорела
@@ -666,7 +666,7 @@ gcys.pipe.pressure_pipe_medium_pressure.name=Труба среднего дав�
 gcys.pipe.pressure_pipe_white_dwarf_pressure.name=Труба давления белого карлика
 gcys.pipe.pressure_pipe_neutron_star_pressure.name=Труба давления нейтронной звезды
 gcys.pipe.pressure.tooltip.volume=Обьём: §a%sЛ
-gcys.machine.turbomolecular_pump.high_power.name=турбомолекулярный насос
+gcys.machine.turbomolecular_pump.high_power.name=Высоковольтажный турбомолекулярный насос
 gcys.multiblock.turbomolecular_pump.tooltip.1=Уменьшает давление на §b%sПа/s§7 до §a%sПа (§r%s§a).
 gcys.multiblock.turbomolecular_pump.tooltip.2=Потребляет §e%sЛ/с§7 смазки когда уменьшает давление.
 
