@@ -261,6 +261,16 @@ public class GCYSMetaTileEntityLoader {
                 'E', EMITTER_EV.getStackForm()
         );
 
+        ModHandler.addShapedRecipe(true, "plasma_cvd_unit", PLASMA_CVD_UNIT.getStackForm(),
+                "PKP", "CHC", "ESE",
+                'P', new UnificationEntry(plate, Adamantium),
+                'K', new UnificationEntry(cableGtSingle, SiliconCarbide),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                'H', MetaTileEntities.HULL[UV].getStackForm(),
+                'S', SENSOR_UV.getStackForm(),
+                'E', EMITTER_UV.getStackForm()
+        );
+
         ModHandler.addShapedRecipe(true, "burner_reactor", BURNER_REACTOR.getStackForm(),
                 "KRK", "IHI", "CMC",
                 'K', new UnificationEntry(cableGtSingle, Platinum),
