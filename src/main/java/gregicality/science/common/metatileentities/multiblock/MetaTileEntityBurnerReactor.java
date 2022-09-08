@@ -43,8 +43,8 @@ public class MetaTileEntityBurnerReactor extends PressureMultiblockController {
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
                 .aisle("F   F", "F X F", "FXXXF", "F X F", "F   F", "     ")
-                .aisle("  X  ", " XCX ", "XCCCX", " XCX ", "  X  ", "  X  ")
-                .aisle(" XXX ", "XCCCX", "XK#KX", "XC#CX", " XCX ", " XMX ")
+                .aisle("  X  ", " XCX ", "XCCCX", " XCX ", "  M  ", "  X  ")
+                .aisle(" XXX ", "XCCCX", "XK#KX", "XC#CX", " XCX ", " XXX ")
                 .aisle("  X  ", " XCX ", "XCCCX", " XCX ", "  X  ", "  X  ")
                 .aisle("F   F", "F X F", "FXSXF", "F X F", "F   F", "     ")
                 .where('S', selfPredicate())

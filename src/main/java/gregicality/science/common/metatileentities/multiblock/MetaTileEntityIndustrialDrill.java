@@ -7,6 +7,7 @@ import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.client.render.GCYSTextures;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasing;
+import gregicality.science.common.block.blocks.BlockTransparentCasing;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.capability.impl.NotifiableItemStackHandler;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -18,13 +19,12 @@ import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.PatternMatchContext;
 import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.api.recipes.Recipe;
+import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
-import gregtech.common.blocks.BlockMetalCasing;
-import gregtech.common.blocks.BlockMultiblockCasing;
-import gregtech.common.blocks.BlockTurbineCasing;
-import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.blocks.*;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -50,27 +50,32 @@ public class MetaTileEntityIndustrialDrill extends RecipeMapMultiblockController
         return new MetaTileEntityIndustrialDrill(metaTileEntityId);
     }
 
+    // Dimensions: 9 x (16 + 1) x 9
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("       ", "XXXXXXX", "X     X", "X     X", "X     X", "X     X", "X     X", "XXXXXXX")
-                .aisle("       ", "X     X", "       ", " F   F ", "       ", "       ", "       ", "X  F  X")
-                .aisle("       ", "X     X", "   C   ", "  FCF  ", "   C   ", "  CVC  ", "  CVC  ", "X BBB X")
-                .aisle("   R   ", "X  D  X", "  CGC  ", "  CGC  ", "  CGC  ", "  VGV  ", "  VGV  ", "XFBBBFX")
-                .aisle("       ", "X     X", "   C   ", "  FCF  ", "   C   ", "  CSC  ", "  CVC  ", "X BBB X")
-                .aisle("       ", "X     X", "       ", " F   F ", "       ", "       ", "       ", "X  F  X")
-                .aisle("       ", "XXXXXXX", "X     X", "X     X", "X     X", "X     X", "X     X", "XXXXXXX")
+                .aisle("         ", "   F F   ", "   F F   ", "   F F   ", "   F F   ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ")
+                .aisle("         ", "  GGGGG  ", "  GGGGG  ", "  GGGGG  ", "   F F   ", "   F F   ", "   F F   ", "         ", "         ", "         ", "         ", "         ", "   AAA   ", "   AAA   ", "         ", "         ", "         ")
+                .aisle("         ", " G     G ", " G     G ", " G     G ", "         ", "         ", "   F F   ", "   F F   ", "         ", "         ", "   RXR   ", "   RXR   ", "  ADDDA  ", "  ADDDA  ", "   RXR   ", "   RXR   ", "         ")
+                .aisle("         ", "FG     GF", "FG I I GF", "FG III GF", "FF FIF FF", " F FXF F ", " FFFXFFF ", "  FFXFF  ", "   FXF   ", "   FXF   ", "  RXXXR  ", "  RDDDR  ", " AEEDEEA ", " AEEDEEA ", "  RDDDR  ", "  RDDDR  ", "   AAA   ")
+                .aisle("    Z    ", " G  H  G ", " G  E  G ", " G IDI G ", "   IDI   ", "   XDX   ", "   XDX   ", "   XDX   ", "   XDX   ", "   XDX   ", "  XXDXX  ", "  XDDDX  ", " ADDDDDA ", " ADDDDDA ", "  XDDDX  ", "  XDDDX  ", "   AAA   ")
+                .aisle("         ", "FG     GF", "FG I I GF", "FG III GF", "FF FIF FF", " F FXF F ", " FFFXFFF ", "  FFXFF  ", "   FXF   ", "   FXF   ", "  RXXXR  ", "  RDDDR  ", " AEEDEEA ", " AEEDEEA ", "  RDDDR  ", "  RDDDR  ", "   AAA   ")
+                .aisle("         ", " G     G ", " G     G ", " G     G ", "         ", "         ", "   F F   ", "   F F   ", "         ", "         ", "   RSR   ", "   RXR   ", "  ADDDA  ", "  ADDDA  ", "   RXR   ", "   RXR   ", "         ")
+                .aisle("         ", "  GGGGG  ", "  GGGGG  ", "  GGGGG  ", "   F F   ", "   F F   ", "   F F   ", "         ", "         ", "         ", "         ", "         ", "   AAA   ", "   AAA   ", "         ", "         ", "         ")
+                .aisle("         ", "   F F   ", "   F F   ", "   F F   ", "   F F   ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ")
                 .where('S', selfPredicate())
-                .where('X', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.ATOMIC_CASING)))
-                .where('F', states(MetaBlocks.FRAMES.get(GCYMMaterials.HSLASteel).getBlock(GCYMMaterials.HSLASteel)))
-                .where('C', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID)))
-                .where('G', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX)))
-                .where('V', states(MetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.MultiblockCasingType.GRATE_CASING)))
-                .where('B', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID))
-                        .setMinGlobalLimited(4)
-                        .or(autoAbilities(true, true, false, true, true, true, true)))
-                .where('D', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockGCYSMultiblockCasing.CasingType.DRILL_HEAD)))
-                .where('R', bedrockPredicate())
+                .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.TUNGSTENSTEEL_ROBUST))
+                    .setMinGlobalLimited(30)
+                    .or(autoAbilities(true, true, false, true, true, true, true)))
+                .where('F', states(MetaBlocks.FRAMES.get(Materials.Darmstadtium).getBlock(Materials.Darmstadtium)))
+                .where('I', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.VIBRATION_SAFE_CASING)))
+                .where('G', states(GCYSMetaBlocks.TRANSPARENT_CASING.getState(BlockTransparentCasing.CasingType.PMMA)))
+                .where('R', states(MetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.MultiblockCasingType.GRATE_CASING)))
+                .where('A', states(MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.TUNGSTENSTEEL_PIPE)))
+                .where('E', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX)))
+                .where('D', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID))) // TODO Laser Focus Casing
+                .where('H', states(GCYSMetaBlocks.MULTIBLOCK_CASING.getState(BlockGCYSMultiblockCasing.CasingType.DRILL_HEAD)))
+                .where('Z', bedrockPredicate())
                 .where(' ', any())
                 .build();
     }
@@ -88,7 +93,7 @@ public class MetaTileEntityIndustrialDrill extends RecipeMapMultiblockController
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return Textures.SOLID_STEEL_CASING;
+        return Textures.ROBUST_TUNGSTENSTEEL_CASING;
     }
 
     @Override
