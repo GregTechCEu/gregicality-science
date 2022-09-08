@@ -1017,5 +1017,13 @@ public class GCYSFirstDegreeMaterials {
                 .color(0x0F0F0F)
                 .components(Copper, 1, Oxygen, 1)
                 .build();
+
+        AdvancedSolder = new Material.Builder(3647, "advanced_solder")
+                .fluid()
+                .color(0xBAA0FF)
+                .components(Tin, 4, Lead, 3, Bismuth, 1, Cadmium, 1, Indium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .fluidTemp(450)
+                .build();
     }
 }

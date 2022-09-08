@@ -19,6 +19,7 @@ public class SimpleMaterials {
         siliconCarbide();
         lithiumNiobate();
         bscco();
+        advancedSolder();
     }
 
     private static void siliconCarbide() {
@@ -111,5 +112,16 @@ public class SimpleMaterials {
                 .input(dust, CupricOxide, 4)
                 .output(dust, BSCCO, 15)
                 .duration(1200).EUt(VA[LuV]).buildAndRegister();
+    }
+
+    public static void advancedSolder() {
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Tin, 4)
+                .input(dust, Lead, 3)
+                .input(dust, Bismuth, 1)
+                .input(dust, Cadmium, 1)
+                .input(dust, Indium, 1)
+                .fluidOutputs(AdvancedSolder.getFluid(4000))
+                .duration(400).EUt(VA[LuV]).buildAndRegister();
     }
 }

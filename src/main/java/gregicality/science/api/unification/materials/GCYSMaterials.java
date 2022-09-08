@@ -151,6 +151,7 @@ public class GCYSMaterials {
     public static Material Celestine;
     public static Material StrontiumSulfide;
     public static Material CupricOxide;
+    public static Material AdvancedSolder;
 
     // Second Degree Materials
     public static Material LaPrNdCeOxidesSolution;
