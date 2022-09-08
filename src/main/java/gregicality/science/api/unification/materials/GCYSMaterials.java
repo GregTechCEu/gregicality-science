@@ -143,7 +143,9 @@ public class GCYSMaterials {
     public static Material CaesiumChlorostannate;
     public static Material HRAMagnesium;
     public static Material LithiumFluoride;
-
+    public static Material LithiumNiobate;
+    public static Material LithiumPeroxide;
+    public static Material LithiumOxide;
 
     // Second Degree Materials
     public static Material LaPrNdCeOxidesSolution;

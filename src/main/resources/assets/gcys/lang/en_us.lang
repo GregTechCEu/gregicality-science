@@ -146,6 +146,9 @@ material.stannic_chloride=Stannic Chloride
 material.rubidium_chlorostannate=Rubidium Chlorostannate
 material.caesium_chlorostannate=Caesium Chlorostannate
 material.hra_magnesium=Highly Reactive Activated Magnesium
+material.lithium_niobate=Lithium Niobate
+material.lithium_peroxide=Lithium Peroxide
+material.lithium_oxide=Lithium Oxide
 
 
 # Second Degree Materials

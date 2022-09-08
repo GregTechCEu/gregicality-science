@@ -7,6 +7,7 @@ import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty;
 
 import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.DISABLE_CRYSTALLIZATION;
+import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.GENERATE_BOULE;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -967,6 +968,20 @@ public class GCYSFirstDegreeMaterials {
                 .dust()
                 .color(0x9AE7AD)
                 .components(Lithium,1 , Fluorine, 1)
+                .build();
+
+        // FREE IDs 3629 - 3639
+
+        LithiumPeroxide = new Material.Builder(3640, "lithium_peroxide")
+                .dust()
+                .color(0xB4D0D8)
+                .components(Lithium, 2, Oxygen, 2)
+                .build();
+
+        LithiumOxide = new Material.Builder(3641, "lithium_oxide")
+                .dust()
+                .color(0xA0D0D8)
+                .components(Lithium, 2, Oxygen, 1)
                 .build();
     }
 }
