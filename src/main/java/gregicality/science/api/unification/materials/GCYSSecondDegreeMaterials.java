@@ -4,6 +4,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.PropertyKey;
 
+import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.GENERATE_BOULE;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -172,5 +173,14 @@ public class GCYSSecondDegreeMaterials {
                 .components(Rubidium, 1, Caesium, 2, Chlorine, 6, Water, 2)
                 .build()
                 .setFormula("RbCl(CsCl)2Cl3(H2O)2", true);
+
+        // FREE IDs 6027 - 6036
+
+        LithiumNiobate = new Material.Builder(6037, "lithium_niobate")
+                .gem()
+                .color(0x80E0E0).iconSet(MaterialIconSet.QUARTZ)
+                .components(LithiumOxide, 1, NiobiumPentoxide, 1)
+                .flags(GENERATE_BOULE, CRYSTALLIZABLE)
+                .build().setFormula("LiNbO3", true);
     }
 }

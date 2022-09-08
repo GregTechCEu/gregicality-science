@@ -146,6 +146,15 @@ material.stannic_chloride=Stannic Chloride
 material.rubidium_chlorostannate=Rubidium Chlorostannate
 material.caesium_chlorostannate=Caesium Chlorostannate
 material.hra_magnesium=Highly Reactive Activated Magnesium
+material.lithium_niobate=Lithium Niobate
+material.lithium_peroxide=Lithium Peroxide
+material.lithium_oxide=Lithium Oxide
+material.bscco=BSCCO
+material.strontium_carbonate=Strontium Carbonate
+material.strontium_sulfide=Strontium Sulfide
+material.celestine=Celestine
+material.cupric_oxide=Cupric Oxide
+material.advanced_solder=Advanced Solder
 
 
 # Second Degree Materials
