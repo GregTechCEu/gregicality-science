@@ -9,6 +9,7 @@ import gregtech.api.unification.material.properties.BlastProperty;
 import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.DISABLE_CRYSTALLIZATION;
 import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.GENERATE_BOULE;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 
@@ -699,7 +700,7 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.BRIGHT)
                 .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD,
                         GENERATE_FINE_WIRE, GENERATE_SPRING)
-                .cableProperties(GTValues.V[GTValues.UEV], 8, 6)
+                .cableProperties(GTValues.V[UEV], 8, 6)
                 .components(Carbon, 48)
                 .build()
                 .setFormula("CNT", false);
@@ -982,6 +983,39 @@ public class GCYSFirstDegreeMaterials {
                 .dust()
                 .color(0xA0D0D8)
                 .components(Lithium, 2, Oxygen, 1)
+                .build();
+
+        BSCCO = new Material.Builder(3642, "bscco")
+                .ingot()
+                .color(0xD880D8)
+                .components(Bismuth, 2, Strontium, 2, Calcium, 1, Copper, 2, Oxygen, 8)
+                .blastTemp(7000, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.UEV])
+                .cableProperties(GTValues.V[UEV], 24, 0, true)
+                .build();
+
+        StrontiumCarbonate = new Material.Builder(3643, "strontium_carbonate")
+                .dust()
+                .color(0xFFFFF0).iconSet(MaterialIconSet.FINE)
+                .components(Strontium, 1, Carbon, 1, Oxygen, 3)
+                .build();
+
+        Celestine = new Material.Builder(3644, "celestine")
+                .gem(2).ore()
+                .color(0x85C1C4).iconSet(MaterialIconSet.NETHERSTAR)
+                .components(Strontium, 1, Sulfur, 1, Oxygen, 4)
+                .addOreByproducts(Salt, Gypsum, Barite)
+                .build();
+
+        StrontiumSulfide = new Material.Builder(3645, "strontium_sulfide")
+                .dust()
+                .color(0xFFEAA0).iconSet(MaterialIconSet.FINE)
+                .components(Strontium, 1, Sulfur, 1)
+                .build();
+
+        CupricOxide = new Material.Builder(3646, "cupric_oxide")
+                .dust(1)
+                .color(0x0F0F0F)
+                .components(Copper, 1, Oxygen, 1)
                 .build();
     }
 }

@@ -1,6 +1,7 @@
 package gregicality.science.api.unification.materials;
 
 import gregicality.science.common.GCYSConfigHolder;
+import gregtech.api.unification.material.properties.IngotProperty;
 import gregtech.api.unification.material.properties.OreProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 
@@ -43,6 +44,9 @@ public class GCYSMaterialFlagAddition {
         Olivine.addFlags(CRYSTALLIZABLE);
         Amethyst.addFlags(CRYSTALLIZABLE);
         Opal.addFlags(CRYSTALLIZABLE);
+
+        // Ingots
+        Strontium.setProperty(PropertyKey.INGOT, new IngotProperty());
 
         // Plates
         Germanium.addFlags(GENERATE_PLATE);

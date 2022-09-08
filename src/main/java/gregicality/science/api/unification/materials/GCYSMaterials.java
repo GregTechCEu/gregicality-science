@@ -146,6 +146,11 @@ public class GCYSMaterials {
     public static Material LithiumNiobate;
     public static Material LithiumPeroxide;
     public static Material LithiumOxide;
+    public static Material BSCCO;
+    public static Material StrontiumCarbonate;
+    public static Material Celestine;
+    public static Material StrontiumSulfide;
+    public static Material CupricOxide;
 
     // Second Degree Materials
     public static Material LaPrNdCeOxidesSolution;
