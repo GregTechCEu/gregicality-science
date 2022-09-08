@@ -35,10 +35,7 @@ import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.ConfigHolder;
-import gregtech.common.blocks.BlockFireboxCasing;
-import gregtech.common.blocks.BlockGlassCasing;
-import gregtech.common.blocks.BlockMetalCasing;
-import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.blocks.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -147,6 +144,27 @@ public class MetaTileEntityAxialCompressor extends MultiblockWithDisplayBase imp
 
     @Override
     protected BlockPattern createStructurePattern() {
+        if (tier == GTValues.LuV) {
+            return FactoryBlockPattern.start()
+                    .aisle("  F  ", "  F  ", " XXX ", " XPX ", " XXX ", "  F  ", "  F  ")
+                    .aisle("     ", "     ", " XXX ", " XAX ", " XXX ", "     ", "     ").setRepeatable(2)
+                    .aisle("     ", "  X  ", " XTX ", "GTATX", " XTX ", "  G  ", "     ")
+                    .aisle("     ", "  X  ", "XTATX", "GAAAG", "XTATX", " XGX ", "     ").setRepeatable(3)
+                    .aisle("F   F", "FXXXF", "XBTBX", "XTSTX", "XBTBX", "FXXXF", "F   F")
+                    .where('S', selfPredicate())
+                    .where('F', states(getFrameState()))
+                    .where('X', states(getCasingState()).setMinGlobalLimited(50)
+                            .or(autoAbilities())
+                            .or(abilities(MultiblockAbility.IMPORT_FLUIDS).setExactLimit(1))
+                            .or(abilities(MultiblockAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(3)))
+                    .where('G', states(getGlassState()))
+                    .where('B', states(MetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.MultiblockCasingType.EXTREME_ENGINE_INTAKE_CASING)))
+                    .where('T', states(MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.TUNGSTENSTEEL_PIPE)))
+                    .where('A', airfoilPredicate())
+                    .where('P', abilities(GCYSMultiblockAbility.PRESSURE_CONTAINER))
+                    .build();
+        }
+
         return FactoryBlockPattern.start()
                 .aisle("FXF", "XPX", "XXX")
                 .aisle("XXX", "GAG", "XXX").setRepeatable(4)
