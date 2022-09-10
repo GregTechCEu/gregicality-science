@@ -99,6 +99,12 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem BOSE_EINSTEIN_CONDENSATE;
     public static MetaItem<?>.MetaValueItem ESR_COMPUTATION_UNIT;
 
+    // Supra-Causal Circuit Components
+    public static MetaItem<?>.MetaValueItem EIGENFOLDED_KERR_MANIFOLD;
+
+    // Supra-Chronal Circuit Components
+    public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_DRONE;
+
     // Voltage Coils
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UEV;
@@ -254,9 +260,11 @@ public class GCYSMetaItems {
 
 
         // Supra-Causal Circuit Components: ID 260-299
+        EIGENFOLDED_KERR_MANIFOLD = metaItem1.addItem(260, "eigenfolded.kerr.manifold");
 
 
         // Supra-Chronal Circuit Components: ID 300-349
+        HYPERDIMENSIONAL_DRONE = metaItem1.addItem(300, "hyperdimensional.drone");
 
 
         // Voltage Coils: ID 350-355

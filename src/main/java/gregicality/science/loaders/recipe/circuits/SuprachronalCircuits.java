@@ -3,15 +3,13 @@ package gregicality.science.loaders.recipe.circuits;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.api.unification.materials.GCYSMaterials;
 import gregicality.science.common.block.GCYSMetaBlocks;
-import gregicality.science.common.block.blocks.BlockMultiblockCasing;
+import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasing;
 import gregicality.science.common.items.GCYSMetaItems;
 import gregicality.science.common.metatileentities.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
-import gregtech.api.items.metaitem.MetaItem;
-import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.material.MarkerMaterials;
-import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.blocks.BlockMachineCasing;
@@ -19,27 +17,12 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
 
+import static gregtech.api.GTValues.OpV;
+import static gregtech.api.GTValues.UXV;
+
 public class SuprachronalCircuits {
 
-    private static final Material[] tierList = {
-            MarkerMaterials.Tier.ULV,
-            MarkerMaterials.Tier.LV,
-            MarkerMaterials.Tier.MV,
-            MarkerMaterials.Tier.HV,
-            MarkerMaterials.Tier.EV,
-            MarkerMaterials.Tier.IV,
-            MarkerMaterials.Tier.LuV,
-            MarkerMaterials.Tier.ZPM,
-            MarkerMaterials.Tier.UV,
-            MarkerMaterials.Tier.UHV,
-            MarkerMaterials.Tier.UEV,
-            MarkerMaterials.Tier.UIV,
-            MarkerMaterials.Tier.UXV,
-            MarkerMaterials.Tier.OpV,
-            MarkerMaterials.Tier.MAX
-    };
-
-    private static final ItemStack[] suprachronals = {
+    private static final ItemStack[] SUPRACHRONAL_CIRCUITS = {
             GCYSMetaItems.SUPRACHRONAL_ULV.getStackForm(),
             GCYSMetaItems.SUPRACHRONAL_LV.getStackForm(),
             GCYSMetaItems.SUPRACHRONAL_MV.getStackForm(),
@@ -65,15 +48,15 @@ public class SuprachronalCircuits {
                 .input(OrePrefix.stick, GCYSMaterials.QCDConfinedMatter)
                 .fluidInputs(Materials.Neutronium.getFluid(1296))
                 .fluidInputs(GCYSMaterials.SentientMetal.getFluid(1296))
-                .outputs(GCYSMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.CasingType.SUPRACHRONAL_CASING))
+                .outputs(GCYSMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockGCYSMultiblockCasing.CasingType.SUPRACHRONAL_CASING))
                 .duration(200)
-                .EUt(GTValues.VA[12])
+                .EUt(GTValues.VA[UXV])
                 .buildAndRegister();
 
         //TODO Add Teralloy and make its fluid used in this recipe
         //TODO Add Quark-Gluon plasma and make its fluid used in this recipe
         RecipeMaps.ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .inputs(GCYSMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.CasingType.SUPRACHRONAL_CASING))
+                .inputs(GCYSMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockGCYSMultiblockCasing.CasingType.SUPRACHRONAL_CASING))
                 .inputs(MetaItems.EMITTER_OpV.getStackForm())
                 .inputs(MetaItems.SENSOR_OpV.getStackForm())
                 .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV))
@@ -84,7 +67,7 @@ public class SuprachronalCircuits {
                 .fluidInputs(GCYSMaterials.SentientMetal.getFluid(1296))
                 .outputs(GCYSMetaTileEntities.SUPRACHRONAL_ASSEMBLER.getStackForm())
                 .duration(600)
-                .EUt(GTValues.VA[13])
+                .EUt(GTValues.VA[OpV])
                 .buildAndRegister();
 
         //TODO Add Trinium-Tritanium and use it as a fluid input for this
@@ -101,21 +84,17 @@ public class SuprachronalCircuits {
                 .fluidInputs(GCYSMaterials.SentientMetal.getFluid(1296))
                 .outputs(GCYSMetaItems.HYPERDIMENSIONAL_DRONE.getStackForm())
                 .duration(600)
-                .EUt(GTValues.VA[13])
+                .EUt(GTValues.VA[OpV])
                 .buildAndRegister();
 
-        for(int tier = 0; tier < 15; tier++) {
-
+        for(int i = 0; i < GTValues.V.length; i++) {
             GCYSRecipeMaps.SUPRACHRONAL_ASSEMBLER_RECIPES.recipeBuilder()
                     .notConsumable(GCYSMetaItems.HYPERDIMENSIONAL_DRONE.getStackForm())
-                    .notConsumable(new IntCircuitIngredient(tier))
-                    .outputs(suprachronals[tier])
+                    .notConsumable(new IntCircuitIngredient(i))
+                    .outputs(SUPRACHRONAL_CIRCUITS[i])
                     .duration(600)
-                    .EUt(GTValues.VA[tier])
+                    .EUt(GTValues.VA[i])
                     .buildAndRegister();
-
         }
-
     }
-
 }
