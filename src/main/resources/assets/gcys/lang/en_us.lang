@@ -412,6 +412,9 @@ gcys.multiblock.turbomolecular_pump.tooltip.1=Decreases pressure by §b%sPa/s§7
 gcys.multiblock.turbomolecular_pump.tooltip.2=Consumes §e%sL/s§7 Lubricant when decreasing pressure.
 gcys.multiblock.turbomolecular_pump.tooltip.3=Uses %s§7 power. Does not overclock.
 
+# Supra-Chronal Assembler
+gcys.machine.suprachronal_assembler.name=Supra-Chronal Assembler
+
 # Single Block Machines
 
 gcys.machine.dryer.lv.name=Basic Dryer
