@@ -34,7 +34,7 @@ public class RecipeConflicts {
                 .fluidInputs(Ethylbenzene.getFluid(1000))
                 .notConsumable(dust, Hematite)
                 .fluidOutputs(Styrene.getFluid(1000))
-                .fluidOutputs(Hydrogen.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(2000))
                 .duration(30).EUt(VA[LV]).buildAndRegister();
 
         // Conflict between Potassium Hydroxide and Rock Salt Electrolysis

@@ -962,5 +962,11 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .components(Magnesium, 1)
                 .build();
+
+        LithiumFluoride = new Material.Builder(3628,"lithium_fluoride")
+                .dust()
+                .color(0x9AE7AD)
+                .components(Lithium,1 , Fluorine, 1)
+                .build();
     }
 }
