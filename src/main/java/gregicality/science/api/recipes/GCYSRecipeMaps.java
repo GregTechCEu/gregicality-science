@@ -97,6 +97,15 @@ public class GCYSRecipeMaps {
             .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
             .setSound(GTSounds.MACERATOR);
 
+    public static final RecipeMap<SimpleRecipeBuilder> SUPRACHRONAL_ASSEMBLER_RECIPES = new RecipeMap<>("suprachronal_assembler_recipes", 1, 16, 0, 1, 0, 4, 0, 0, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.BOX_OVERLAY)
+            .setSlotOverlay(false, false, true, GuiTextures.BOX_OVERLAY)
+            .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+            .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+            .setSlotOverlay(true, false, GuiTextures.BOX_OVERLAY)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLY_LINE, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.REPLICATOR);
+
     // Generators
 
     public static final RecipeMap<FuelRecipeBuilder> TARANIUM_REACTOR_MK1_RECIPES = new RecipeMap<>("taranium_reactor_mk1_recipes", 0, 0, 0, 0, 1, 1, 0, 0, new FuelRecipeBuilder(), false)

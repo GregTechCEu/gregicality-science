@@ -5,7 +5,7 @@ import gregtech.api.unification.material.Material;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.FINE;
 import static gregtech.api.unification.material.info.MaterialIconSet.ROUGH;
 
@@ -128,5 +128,22 @@ public class GCYSUnknownCompositionMaterials {
         MediumHyperFuel = new Material.Builder(18055, "medium_hyper_fuel").fluid().color(0xDC0A0A).build();
 
         HeavyHyperFuel = new Material.Builder(18056, "heavy_hyper_fuel").fluid().color(0x1E5064).build();
+
+        QCDConfinedMatter = new Material.Builder(18057, "qcd_confined_matter")
+                .ingot()
+                .color(0xc82828)
+                .flags(NO_UNIFICATION, GENERATE_PLATE, GENERATE_ROD)
+                .build();
+
+        ReissnerNordstromMatrix = new Material.Builder(18058, "reissner_nordstrom_matrix")
+                .ingot()
+                .color(0x0a0a0a)
+                .flags(NO_UNIFICATION, GENERATE_PLATE, GENERATE_FRAME)
+                .build();
+
+        SentientMetal = new Material.Builder(18059, "sentient_metal")
+                .fluid()
+                .color(0x0c0c0c)
+                .build();
     }
 }

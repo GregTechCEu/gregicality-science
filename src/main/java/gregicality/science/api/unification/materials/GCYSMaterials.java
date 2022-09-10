@@ -295,6 +295,9 @@ public class GCYSMaterials {
     public static Material LightHyperFuel;
     public static Material MediumHyperFuel;
     public static Material HeavyHyperFuel;
+    public static Material QCDConfinedMatter;
+    public static Material ReissnerNordstromMatrix;
+    public static Material SentientMetal;
 
 
     /**
