@@ -10,9 +10,12 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.List;
 import java.util.Random;
 
 public class RocketEntity extends Entity {
@@ -46,6 +49,7 @@ public class RocketEntity extends Entity {
         this.setSize(3F, 31F);
         rideCooldown = -1;
         ignoreFrustumCheck = true;
+        this.setEntityBoundingBox(new AxisAlignedBB(x - 1, y + 0.1, z - 1, x + 1, y + 40, z + 1));
     }
 
     public RocketEntity(World worldIn, BlockPos pos) {
@@ -198,19 +202,36 @@ public class RocketEntity extends Entity {
             if (this.posY > 300 || flightTime > 1200) {
                 this.setDead();
             }
+
+            if(this.world.collidesWithAnyBlock(this.getEntityBoundingBox())) {
+                this.explode();
+            }
+
+            List<Entity> collidingEntities = this.world.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox());
+
+            if(!collidingEntities.isEmpty()) {
+                for(Entity entity : collidingEntities) {
+                    entity.attackEntityFrom(DamageSource.FLY_INTO_WALL, 500);
+                }
+            }
         }
 
-        if(age % 2 == 0 && this.isCountDownStarted()){
-            if(launchTime - age < 60 && launchTime - age > 0){
+        if(age % 2 == 0 && this.isCountDownStarted()) {
+            if(launchTime - age < 60 && launchTime - age > 0) {
                 this.spawnLaunchParticles(0.025*(age - launchTime + 60));
-            }else if(launchTime - age > -100 && launchTime - age < 0){
+            }else if(launchTime - age > -100 && launchTime - age < 0) {
                 this.spawnLaunchParticles(1.5);
-            }else if(launchTime - age > -150 && launchTime - age < -100){
+            }else if(launchTime - age > -150 && launchTime - age < -100) {
                 this.spawnLaunchParticles(-0.03*(age - launchTime + 150));
             }
         }
 
         this.setAge(age + 1);
+    }
+
+    public void explode() {
+        this.world.newExplosion(this, this.posX, this.posY, this.posZ, 8, true, true);
+        this.setDead();
     }
 
 }

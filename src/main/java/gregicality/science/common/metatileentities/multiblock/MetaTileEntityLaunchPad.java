@@ -84,5 +84,10 @@ public class MetaTileEntityLaunchPad extends RecipeMapMultiblockController {
             this.getMetaTileEntity().getWorld().spawnEntity(new RocketEntity(this.getMetaTileEntity().getWorld(), this.getRocketSpawnPosition()));
             super.completeRecipe();
         }
+
+        @Override
+        public boolean isAllowOverclocking() {
+            return false;
+        }
     }
 }

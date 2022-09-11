@@ -13,7 +13,7 @@ public class RocketRecipes {
         LAUNCHPAD_RECIPES.recipeBuilder()
                 .input(OrePrefix.ingot, Materials.Iron)
                 .output(OrePrefix.gemExquisite, Materials.Diamond)
-                .duration(20)
+                .duration(1200)
                 .EUt(20)
                 .buildAndRegister();
     }
