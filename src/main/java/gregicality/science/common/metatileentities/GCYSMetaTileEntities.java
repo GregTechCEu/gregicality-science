@@ -11,6 +11,7 @@ import gregicality.science.common.metatileentities.multiblockpart.MetaTileEntity
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntityCreativePressurePump;
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntitySteamEjector;
 import gregicality.science.common.metatileentities.singleblock.MetaTileEntitySteamVacuumChamber;
+import gregicality.science.loaders.recipe.circuits.SuprachronalCircuits;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
 import gregtech.api.util.GTUtility;
@@ -45,6 +46,7 @@ public class GCYSMetaTileEntities {
     public static MetaTileEntityAxialCompressor SUPERSONIC_AXIAL_COMPRESSOR;
     public static MetaTileEntityTurbomolecularPump LOW_POWER_TURBOMOLECULAR_PUMP;
     public static MetaTileEntityTurbomolecularPump HIGH_POWER_TURBOMOLECULAR_PUMP;
+    public static MetaTileEntitySuprachronalAssembler SUPRACHRONAL_ASSEMBLER;
 
     public static void init() {
         // GCYM Machines: ID 2000-2099
@@ -86,6 +88,7 @@ public class GCYSMetaTileEntities {
         SUPERSONIC_AXIAL_COMPRESSOR = registerMetaTileEntity(3912, new MetaTileEntityAxialCompressor(gcysId("axial_compressor.supersonic"), GTValues.LuV, 18E9, 50_000.0));
         LOW_POWER_TURBOMOLECULAR_PUMP = registerMetaTileEntity(3913, new MetaTileEntityTurbomolecularPump(gcysId("turbomolecular_pump.low_power"), GTValues.EV, 1E-4, 10_000.0));
         HIGH_POWER_TURBOMOLECULAR_PUMP = registerMetaTileEntity(3914, new MetaTileEntityTurbomolecularPump(gcysId("turbomolecular_pump.high_power"), GTValues.LuV, 1E-7, 50_000.0));
+        SUPRACHRONAL_ASSEMBLER = registerMetaTileEntity(3915, new MetaTileEntitySuprachronalAssembler(gcysId("suprachronal_assembler")));
     }
 
     @Nonnull

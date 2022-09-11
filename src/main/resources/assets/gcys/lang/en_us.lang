@@ -310,6 +310,9 @@ material.energetic_naquadria=Energetic Naquadria
 material.light_hyper_fuel=Light Hyper Fuel
 material.medium_hyper_fuel=Medium Hyper Fuel
 material.heavy_hyper_fuel=Heavy Hyper Fuel
+material.qcd_confined_matter=Quantumchromodynamically Confined Matter
+material.reissner_nordstrom_matrix=Reissner-Nordstrom Matrix
+material.sentient_metal=Sentient Metal
 
 
 # Tricorder Info
@@ -409,6 +412,9 @@ gcys.multiblock.turbomolecular_pump.tooltip.1=Decreases pressure by §b%sPa/s§7
 gcys.multiblock.turbomolecular_pump.tooltip.2=Consumes §e%sL/s§7 Lubricant when decreasing pressure.
 gcys.multiblock.turbomolecular_pump.tooltip.3=Uses %s§7 power. Does not overclock.
 
+# Supra-Chronal Assembler
+gcys.machine.suprachronal_assembler.name=Supra-Chronal Assembler
+
 # Single Block Machines
 
 gcys.machine.dryer.lv.name=Basic Dryer
@@ -466,6 +472,7 @@ tile.crucible.boron_nitride.name=Boron Nitride Crucible
 tile.multiblock_casing.substrate.name=Substrate Casing
 tile.multiblock_casing.advanced_substrate.name=Advanced Substrate Casing
 tile.multiblock_casing.drill_head.name=Drill Head
+tile.multiblock_casing.suprachronal_casing.name=Supra-Chronal Assembler Casing
 
 tile.multiblock_casing_active.airfoil.name=Airfoil Chamber
 tile.multiblock_casing_active.advanced_airfoil.name=Advanced Airfoil Chamber
@@ -545,6 +552,11 @@ metaitem.containment_unit.bose_einstein_condensate.tooltip=Magnetic Evaporative 
 metaitem.bose_einstein_condensate.name=Bose-Einstein Condensate
 metaitem.bose_einstein_condensate.tooltip=2,000 §cRb-87§7 Atoms at §b170nK§7!
 
+# Supra-Causal Stuff
+metaitem.eigenfolded.kerr.manifold.name=Eigenfolded Kerr Manifold
+
+# Supra-Chronal Stuff
+metaitem.hyperdimensional.drone.name=Hyperdimensional Drone
 
 # Power Components
 metaitem.wafer.nano_power_integrated_circuit.name=NPIC Wafer
@@ -670,37 +682,36 @@ metaitem.circuit.supracausal_mainframe.name=Supra-Causal Mainframe
 metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier Circuit
 
 # Suprachronal
-metaitem.circuit.suprachronal.ulv.name=Supra-Chronal Primitive Circuit
-metaitem.circuit.suprachronal.ulv.tooltip=§fULV-tier Circuit/n
-metaitem.circuit.suprachronal.lv.name=Supra-Chronal Basic Circuit
-metaitem.circuit.suprachronal.lv.tooltip=§fLV-tier Circuit/n
-metaitem.circuit.suprachronal.mv.name=Supra-Chronal Good Circuit
-metaitem.circuit.suprachronal.mv.tooltip=§fMV-tier Circuit/n
-metaitem.circuit.suprachronal.hv.name=Supra-Chronal Advanced Circuit
-metaitem.circuit.suprachronal.hv.tooltip=§fHV-tier Circuit/n
-metaitem.circuit.suprachronal.ev.name=Supra-Chronal Extreme Circuit
-metaitem.circuit.suprachronal.ev.tooltip=§fEV-tier Circuit/n
-metaitem.circuit.suprachronal.iv.name=Supra-Chronal Elite Circuit
-metaitem.circuit.suprachronal.iv.tooltip=§fIV-tier Circuit/n
-metaitem.circuit.suprachronal.luv.name=Supra-Chronal Master Circuit
-metaitem.circuit.suprachronal.luv.tooltip=§fLuV-tier Circuit/n
-metaitem.circuit.suprachronal.zpm.name=Supra-Chronal Ultimate Circuit
-metaitem.circuit.suprachronal.zpm.tooltip=§fZPM-tier Circuit/n
-metaitem.circuit.suprachronal.uv.name=Supra-Chronal Super Circuit
-metaitem.circuit.suprachronal.uv.tooltip=§fUV-tier Circuit/n
-metaitem.circuit.suprachronal.uhv.name=Supra-Chronal Infinite Circuit
-metaitem.circuit.suprachronal.uhv.tooltip=§fUHV-tier Circuit/n
-metaitem.circuit.suprachronal.uev.name=Supra-Chronal Epic Circuit
-metaitem.circuit.suprachronal.uev.tooltip=§fUEV-tier Circuit/n
-metaitem.circuit.suprachronal.uiv.name=Supra-Chronal Insane Circuit
-metaitem.circuit.suprachronal.uiv.tooltip=§fUIV-tier Circuit/n
-metaitem.circuit.suprachronal.uxv.name=Supra-Chronal Legendary Circuit
-metaitem.circuit.suprachronal.uxv.tooltip=§fUXV-tier Circuit/n
-metaitem.circuit.suprachronal.opv.name=Supra-Chronal Overpowered Circuit
-metaitem.circuit.suprachronal.opv.tooltip=§fOpV-tier Circuit/n
-metaitem.circuit.suprachronal.max.name=Supra-Chronal Maximum Circuit
-metaitem.circuit.suprachronal.max.tooltip=§fMAX-tier Circuit/n
-
+metaitem.circuit.suprachronal.ulv.name=Supra-Chronal Circuit (ULV)
+metaitem.circuit.suprachronal.ulv.tooltip=Full control over spacetime/n§fULV-tier Circuit
+metaitem.circuit.suprachronal.lv.name=Supra-Chronal Circuit (LV)
+metaitem.circuit.suprachronal.lv.tooltip=Full control over spacetime/n§fLV-tier Circuit
+metaitem.circuit.suprachronal.mv.name=Supra-Chronal Circuit (MV)
+metaitem.circuit.suprachronal.mv.tooltip=Full control over spacetime/n§fMV-tier Circuit
+metaitem.circuit.suprachronal.hv.name=Supra-Chronal Circuit (HV)
+metaitem.circuit.suprachronal.hv.tooltip=Full control over spacetime/n§fHV-tier Circuit
+metaitem.circuit.suprachronal.ev.name=Supra-Chronal Circuit (EV)
+metaitem.circuit.suprachronal.ev.tooltip=Full control over spacetime/n§fEV-tier Circuit
+metaitem.circuit.suprachronal.iv.name=Supra-Chronal Circuit (IV)
+metaitem.circuit.suprachronal.iv.tooltip=Full control over spacetime/n§fIV-tier Circuit
+metaitem.circuit.suprachronal.luv.name=Supra-Chronal Circuit (LuV)
+metaitem.circuit.suprachronal.luv.tooltip=Full control over spacetime/n§fLuV-tier Circuit
+metaitem.circuit.suprachronal.zpm.name=Supra-Chronal Circuit (ZPM)
+metaitem.circuit.suprachronal.zpm.tooltip=Full control over spacetime/n§fZPM-tier Circuit
+metaitem.circuit.suprachronal.uv.name=Supra-Chronal Circuit (UV)
+metaitem.circuit.suprachronal.uv.tooltip=Full control over spacetime/n§fUV-tier Circuit
+metaitem.circuit.suprachronal.uhv.name=Supra-Chronal Circuit (UHV)
+metaitem.circuit.suprachronal.uhv.tooltip=Full control over spacetime/n§fUHV-tier Circuit
+metaitem.circuit.suprachronal.uev.name=Supra-Chronal Circuit (UEV)
+metaitem.circuit.suprachronal.uev.tooltip=Full control over spacetime/n§fUEV-tier Circuit
+metaitem.circuit.suprachronal.uiv.name=Supra-Chronal Circuit (UIV)
+metaitem.circuit.suprachronal.uiv.tooltip=Full control over spacetime/n§fUIV-tier
+metaitem.circuit.suprachronal.uxv.name=Supra-Chronal Circuit (UXV)
+metaitem.circuit.suprachronal.uxv.tooltip=Full control over spacetime/n§fUXV-tier Circuit
+metaitem.circuit.suprachronal.opv.name=Supra-Chronal Circuit (OpV)
+metaitem.circuit.suprachronal.opv.tooltip=Full control over spacetime/n§fOpV-tier Circuit
+metaitem.circuit.suprachronal.max.name=Supra-Chronal Circuit (MAX)
+metaitem.circuit.suprachronal.max.tooltip=Full control over spacetime/n§fMAX-tier Circuit
 
 # RecipeMaps
 # Machines
@@ -718,6 +729,7 @@ recipemap.sonication_recipes.name=Sonication
 recipemap.ion_implanter_recipes.name=Ion Implantation
 recipemap.superheavy_reactor_recipes.name=Superheavy Reactions
 recipemap.drill_recipes.name=Drilling
+recipemap.suprachronal_assembler_recipes.name=Supra-Chronal Assembler
 
 # Generators
 recipemap.taranium_reactor_mk1_recipes.name=Taranium Reactor Mk.1

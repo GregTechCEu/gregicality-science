@@ -2,6 +2,7 @@ package gregicality.science.client.render;
 
 import gregicality.science.GregicalityScience;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
+import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.util.ResourceLocation;
@@ -29,6 +30,9 @@ public class GCYSTextures {
     public static OrientedOverlayRenderer SUPERSONIC_AXIAL_COMPRESSOR_OVERLAY = new OrientedOverlayRenderer("multiblock/supersonic_axial_compressor", FRONT);
     public static OrientedOverlayRenderer LOW_POWER_TURBOMOLECULAR_PUMP = new OrientedOverlayRenderer("multiblock/low_power_turbomolecular_pump", TOP);
     public static OrientedOverlayRenderer HIGH_POWER_TURBOMOLECULAR_PUMP = new OrientedOverlayRenderer("multiblock/high_power_turbomolecular_pump", TOP);
+    public static OrientedOverlayRenderer SUPRACHRONAL_OVERLAY = new OrientedOverlayRenderer("multiblock/suprachronal_assembler", FRONT);
+
+    public static SimpleOverlayRenderer SUPRACHRONAL_CASING = new SimpleOverlayRenderer("casings/solid/suprachronal_casing");
 
     public static TextureAtlasSprite PRESSURE_PIPE_SIDE;
     public static TextureAtlasSprite PRESSURE_PIPE_OPEN;

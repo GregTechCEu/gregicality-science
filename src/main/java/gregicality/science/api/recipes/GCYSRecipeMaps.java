@@ -4,6 +4,7 @@ import crafttweaker.annotations.ZenRegister;
 import gregicality.science.api.recipes.builders.NoCoilTemperatureRecipeBuilder;
 import gregicality.science.api.recipes.builders.PressureRecipeBuilder;
 import gregicality.science.api.recipes.builders.TemperaturePressureRecipeBuilder;
+import gregicality.science.api.recipes.machines.RecipeMapSuprachronalAssembler;
 import gregicality.science.client.render.GCYSGuiTextures;
 import gregtech.api.GTValues;
 import gregtech.api.gui.GuiTextures;
@@ -96,6 +97,10 @@ public class GCYSRecipeMaps {
             .setSlotOverlay(false, false, true, GuiTextures.CRUSHED_ORE_OVERLAY)
             .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
             .setSound(GTSounds.MACERATOR);
+
+    public static final RecipeMapSuprachronalAssembler<SimpleRecipeBuilder> SUPRACHRONAL_ASSEMBLER_RECIPES = (RecipeMapSuprachronalAssembler<SimpleRecipeBuilder>) new RecipeMapSuprachronalAssembler<>("suprachronal_assembler_recipes", 1, 16, 0, 1, 0, 4, 0, 0, new SimpleRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLY_LINE, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSounds.REPLICATOR);
 
     // Generators
 

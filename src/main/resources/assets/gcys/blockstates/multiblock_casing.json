@@ -31,6 +31,12 @@
           "side": "gregtech:blocks/casings/solid/machine_casing_solid_steel",
           "bottom": "gregtech:blocks/casings/solid/drill_head_bottom"
         }
+      },
+      "suprachronal_casing": {
+        "model": "cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/suprachronal_casing"
+        }
       }
     }
   }
