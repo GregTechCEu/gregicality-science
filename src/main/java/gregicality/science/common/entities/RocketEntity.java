@@ -211,7 +211,7 @@ public class RocketEntity extends Entity {
 
             if(!collidingEntities.isEmpty()) {
                 for(Entity entity : collidingEntities) {
-                    entity.attackEntityFrom(DamageSource.FLY_INTO_WALL, 500);
+                    entity.attackEntityFrom(DamageSource.FLY_INTO_WALL, (float) this.motionY * 10.f);
                 }
             }
         }
