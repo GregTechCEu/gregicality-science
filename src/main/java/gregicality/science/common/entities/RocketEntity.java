@@ -116,7 +116,7 @@ public class RocketEntity extends Entity {
     public void startCountdown(){
         this.setCountdownStarted(true);
         this.setLaunchTime(this.getAge() + 200);
-        this.playSound(GCYSSounds.ROCKET_LAUNCH, 0.9F, 1.F);
+        this.playSound(GCYSSounds.ROCKET_LAUNCH, 8F, 1.F);
         this.setStartPos((float)this.posY);
     }
 
@@ -191,6 +191,9 @@ public class RocketEntity extends Entity {
         if (launched) {
             int flightTime = getFlightTime();
             float startPos = this.getStartPos();
+            this.prevPosX = this.posX;
+            this.prevPosY = this.posY;
+            this.prevPosZ = this.posZ;
             this.motionY = jerk * Math.pow(getFlightTime(), 2) / 2;
             this.setPosition(this.posX, startPos + jerk * Math.pow(flightTime, 3) / 6, this.posZ);
             this.setFlightTime(flightTime + 1);
@@ -230,7 +233,7 @@ public class RocketEntity extends Entity {
     }
 
     public void explode() {
-        this.world.newExplosion(this, this.posX, this.posY, this.posZ, 8, true, true);
+        this.world.newExplosion(this, this.posX, this.posY, this.posZ, 24, true, true);
         this.setDead();
     }
 
