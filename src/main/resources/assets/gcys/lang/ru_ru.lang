@@ -688,3 +688,11 @@ metaitem.wafer.femto_power_integrated_circuit.name=Пластина FPIC
 # Power Components
 metaitem.wafer.nano_power_integrated_circuit.name=Пластина NPIC
 metaitem.wafer.pico_power_integrated_circuit.name=Пластина PPIC
+metaitem.component.optical_smd.transistor.name=Оптический транзистор
+metaitem.component.optical_smd.inductor.name=Оптический поляризатор
+metaitem.component.optical_smd.diode.name=Оптический изолятор
+metaitem.component.optical_smd.diode.tooltip=Оптоэлектронный диод
+metaitem.component.optical_smd.resistor.name=Фоторезистор
+metaitem.component.optical_smd.resistor.tooltip=Оптоэлектронный резистор
+metaitem.component.optical_smd.transistor.tooltip=Оптоэлектронный транзистор
+metaitem.component.optical_smd.inductor.tooltip=Оптоэлектронный индуктор
