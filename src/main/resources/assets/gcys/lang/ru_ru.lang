@@ -315,7 +315,7 @@ gcys.vacuum_level.perfect=Абсолютный вакуум
 # Crystal Stuff
 metaitem.boule.cubic_zirconia.europium.name=Монокристаллический кубический цирконий, легированный европием
 metaitem.boule.cubic_zirconia.europium.tooltip=Необработанный кристалл
-metaitem.board.gooware.tooltip=Безупречный подложка
+metaitem.board.gooware.tooltip=Суперподложка
 metaitem.nonlinear_chemical_oscillator.tooltip=Неравновесная термодинамика!
 
 # Circuits
@@ -716,3 +716,12 @@ metaitem.circuit_board.gooware.tooltip=Печатная плата котора�
 metaitem.circuit_board.optical.tooltip=Печатная плата передающая свет
 metaitem.circuit_board.spintronic.tooltip=Печатная плата управляющая спином
 metaitem.component.optical_smd.capacitor.tooltip=Оптоэлектронный конденсатор
+metaitem.component.spintronic_smd.inductor.tooltip=Спин-электронный индуктор
+metaitem.component.spintronic_smd.inductor.name=Спин поляризатор
+metaitem.component.spintronic_smd.transistor.name=Спин МОП-транзистор
+metaitem.component.spintronic_smd.capacitor.name=Суперконденсатор
+metaitem.component.spintronic_smd.capacitor.tooltip=Суперконденсатор
+metaitem.component.spintronic_smd.diode.tooltip=Спин-электронный диод
+metaitem.component.spintronic_smd.resistor.name=Магнитостриктор
+metaitem.component.spintronic_smd.resistor.tooltip=Спин-электронный резистор
+metaitem.component.spintronic_smd.transistor.tooltip=Спин-электронный транзистор
