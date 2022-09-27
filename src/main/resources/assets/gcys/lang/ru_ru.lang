@@ -639,7 +639,7 @@ gcys.machine.pressure_hatch.hv.name=Шлюз высокого вакуума
 gcys.machine.pressure_hatch.hp.name=Шлюз высокого давления
 gcys.machine.pressure_hatch.edp.name=Шлюз давления вырождения электронов
 gcys.machine.pressure_hatch.wdp.name=Шлюз давления белого карлика
-gcys.multiblock.industrial_drill.tooltip.1=
+gcys.multiblock.industrial_drill.tooltip.1=Сверлит блоки, расположенные под буровой головкой.
 gcys.machine.axial_compressor.supersonic.name=Сверхзвуковой лопастной компрессор
 
 # Axial Compressors
@@ -714,7 +714,7 @@ metaitem.bose_einstein_condensate.name=Конденсат Бозе-Эйнште�
 metaitem.board.spintronic.name=Подложка из углеродных нанотрубок
 metaitem.circuit_board.gooware.tooltip=Печатная плата которая проводит реакции
 metaitem.circuit_board.optical.tooltip=Печатная плата передающая свет
-metaitem.circuit_board.spintronic.tooltip=Печатная плата управляющая спином
+metaitem.circuit_board.spintronic.tooltip=Печатная плата управляющая вращением
 metaitem.component.optical_smd.capacitor.tooltip=Оптоэлектронный конденсатор
 metaitem.component.spintronic_smd.inductor.tooltip=Спин-электронный индуктор
 metaitem.component.spintronic_smd.inductor.name=Спин поляризатор
@@ -725,3 +725,73 @@ metaitem.component.spintronic_smd.diode.tooltip=Спин-электронный 
 metaitem.component.spintronic_smd.resistor.name=Магнитостриктор
 metaitem.component.spintronic_smd.resistor.tooltip=Спин-электронный резистор
 metaitem.component.spintronic_smd.transistor.tooltip=Спин-электронный транзистор
+metaitem.circuit.suprachronal.uiv.tooltip=§fUIV микросхема/n
+metaitem.circuit.suprachronal.uhv.name=Вневременная UHV микросхема
+gcys.multiblock.fracker.tooltip.2=Потребляет §a%s EU/тик§7.
+
+# Catalytic Reformer
+gcys.machine.catalytic_reformer.name=Каталитический риформер
+
+
+# Optical Stuff
+metaitem.plate.phase_change_memory.name=PRAM
+metaitem.circuit.suprachronal.zpm.tooltip=§fZPM микросхема/n
+metaitem.circuit.suprachronal.uv.tooltip=§fUV микросхема/n
+metaitem.circuit.suprachronal.uhv.tooltip=§fUHV микросхема/n
+metaitem.circuit.suprachronal.uv.name=Вневременная UV микросхема
+metaitem.circuit.suprachronal.uev.name=Вневременная UEV микросхема
+
+# Vacuum Chamber
+gcys.machine.steam_vacuum_chamber.name=Маленькая паровая вакуумная камера
+metaitem.circuit.suprachronal.uxv.tooltip=§fUXV микросхема/n
+metaitem.circuit.suprachronal.opv.tooltip=§fOpV микросхема/n
+metaitem.circuit.suprachronal.max.tooltip=§fMAX микросхема/n
+metaitem.circuit.suprachronal.opv.name=Вневременная OpV микросхема
+metaitem.circuit.suprachronal.max.name=Вневременная MAX микросхема
+
+# Fracking Machine
+gcys.machine.fracker.name=Гидравлический фракер
+gcys.multiblock.fracker.tooltip.1=Использует 1000 Л жидкости для гидроразрыва пласта, чтобы заполнить жилы под коренной породой.
+
+# Infinite Pressure Pump
+gcys.machine.infinite_pressure_pump.name=Помпа бесконечного давления
+
+# Ore Prefixes
+item.material.oreprefix.seedCrystal=Семя кристалла (%s)
+metaitem.plate.nano_power_integrated_circuit.name=NPIC
+
+
+# Spintronic Stuff
+metaitem.plate.spin_transfer_torque_memory.name=STTRAM
+metaitem.wafer.nano_power_integrated_circuit.tooltip=Необработанная нановольтажная микросхема
+metaitem.wafer.pico_power_integrated_circuit.tooltip=Необработанная пиковольтажная микросхема
+metaitem.wafer.femto_power_integrated_circuit.tooltip=Необработанная фемтовольтажная микросхема
+metaitem.plate.nano_power_integrated_circuit.tooltip=Нановольтная интегрированная электросхема
+metaitem.esr_computation_unit.tooltip=Квантовый расчет электронного спинового резонанса!
+
+# Crafting Components
+metaitem.component.grinder.boron_nitride.name=Нитрид борная шлифовальная головка
+metaitem.plate.femto_power_integrated_circuit.name=FPIC
+metaitem.plate.pico_power_integrated_circuit.name=PPIC
+metaitem.plate.femto_power_integrated_circuit.tooltip=Фемтовольтная интегрированная электросхема
+metaitem.plate.pico_power_integrated_circuit.tooltip=Пиковольтная интегрированная электросхема
+metaitem.circuit.suprachronal.ulv.tooltip=§fULV микросхема/n
+metaitem.circuit.suprachronal.lv.tooltip=§fLV микросхема/n
+metaitem.circuit.suprachronal.mv.tooltip=§fMV микросхема/n
+metaitem.circuit.suprachronal.hv.tooltip=§fHV микросхема/n
+metaitem.circuit.suprachronal.ev.tooltip=§fEV микросхема/n
+metaitem.circuit.suprachronal.iv.tooltip=§fIV микросхема/n
+metaitem.circuit.suprachronal.luv.tooltip=§fLuV микросхема/n
+metaitem.circuit.suprachronal.uev.tooltip=§fUEV микросхема/n
+
+# Suprachronal
+metaitem.circuit.suprachronal.ulv.name=Вневременная ULV микросхема
+metaitem.circuit.suprachronal.lv.name=Вневременная LV микросхема
+metaitem.circuit.suprachronal.mv.name=Вневременная MV микросхема
+metaitem.circuit.suprachronal.hv.name=Вневременная HV микросхема
+metaitem.circuit.suprachronal.ev.name=Вневременная EV микросхема
+metaitem.circuit.suprachronal.iv.name=Вневременная IV микросхема
+metaitem.circuit.suprachronal.luv.name=Вневременная LuV микросхема
+metaitem.circuit.suprachronal.zpm.name=Вневременная ZPMмикросхема
+metaitem.circuit.suprachronal.uiv.name=Вневременная UIV микросхема
+metaitem.circuit.suprachronal.uxv.name=Вневременная UXV микросхема
