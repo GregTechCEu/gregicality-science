@@ -811,3 +811,16 @@ metaitem.containment_unit.bose_einstein_condensate.tooltip=Магнитно-ис
 metaitem.bose_einstein_condensate.tooltip=2000 атомов Rb-87 при температуре 170 nK!
 metaitem.cnt.graphene_aligned.name=Углеродная нанотрубка, ориентированная на графен
 metaitem.optical_laser_control_unit.name=Блок управления оптического лазера
+gcys.universal.tooltip.pressure.maximum=Максимально возможное давление: §a%sПа (§r%s§a)
+
+
+# Generic Pressure Info
+gcys.universal.tooltip.pressure.minimum=Минимально возможное давление: §a%sПа (§r%s§a)
+gcys.universal.tooltip.pressure.target=Цель давления
+gcys.multiblock.industrial_drill.tooltip.2=Целевой блок не ломается, когда он не расходуемый.
+metaitem.optical_laser_control_unit.tooltip=Лазерная передача информации
+metaitem.esr_computation_unit.name=Блок вычисления ESR
+
+
+# Item Behaviors
+metaitem.behavior.held_item_destroy.message=Держит %s урона!
